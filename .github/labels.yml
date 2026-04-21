@@ -1,0 +1,19 @@
+- name: "type:epic"
+  color: "5319e7"
+  description: "大項目（複数の機能やタスクをまとめた単位）"
+
+- name: "type:feature"
+  color: "1d76db"
+  description: "機能単位（特定の機能を実現する単位）"
+
+- name: "type:task"
+  color: "0e8a16"
+  description: "作業単位（具体的な実装や対応を行う単位）"
+
+- name: "type:bug"
+  color: "d73a4a"
+  description: "不具合報告（予期しない動作・エラーの報告）"
+
+- name: "type:enhancement"
+  color: "e4c442"
+  description: "改善提案（既存の機能・仕様・構成などの改善提案）"
