@@ -1,0 +1,67 @@
+name: ✨ Feature
+labels: ["type:feature"]
+title: "【Feat】"
+description: 機能単位（特定の機能を実現する単位）
+body:
+
+  - type: markdown
+    attributes:
+      value: |
+        > Feature は1つの機能を表す単位です。
+        > 階層構造（Epic → Feature → Task）は Sub-issue で管理します。
+        > 作成後、Project 上で Layer / Priority / Area を設定してください。
+        > Layer はこの Issue の種別（Epic / Feature / Task）に合わせてください。
+
+  - type: textarea
+    id: overview
+    attributes:
+      label: 🔍 概要
+      description: この機能で何を実現するか、一言で説明します。
+      placeholder: 例）ユーザーがメールアドレスとパスワードで認証できるようにする
+    validations:
+      required: true
+
+  - type: textarea
+    id: purpose
+    attributes:
+      label: 🎯 目的
+      description: なぜこの機能が必要か。背景や動機を記述します。
+      placeholder: 例）現状は○○がなく、△△の問題が起きているため
+    validations:
+      required: true
+
+  - type: textarea
+    id: specification
+    attributes:
+      label: 📐 仕様
+      description: 機能の入力・出力・動作・UI/UX などの仕様を記述します。Out of Scope も明示してください。
+      placeholder: |
+        **動作仕様**
+        - 入力：
+        - 出力：
+        - エラー時の挙動：
+
+        **Out of Scope（この機能では対応しない）**
+        - 
+    validations:
+      required: false
+
+  - type: textarea
+    id: completion
+    attributes:
+      label: ✅ 完了条件
+      description: この機能が完成したと判断できる条件を記述します。
+      placeholder: |
+        - [ ] 条件1
+        - [ ] 条件2
+    validations:
+      required: false
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: 📝 備考
+      description: 参考情報・制約・注意点など。
+      placeholder: 関連ドキュメント、外部リンク、前提条件など
+    validations:
+      required: false

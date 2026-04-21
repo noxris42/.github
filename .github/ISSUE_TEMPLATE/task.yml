@@ -1,0 +1,63 @@
+name: 🔧 Task
+labels: ["type:task"]
+title: "【Task】"
+description: 作業単位（具体的な実装や対応を行う単位）
+body:
+
+  - type: markdown
+    attributes:
+      value: |
+        > Task は実装・調査・修正などの具体的な作業単位です。
+        > 階層構造（Epic → Feature → Task）は Sub-issue で管理します。
+        > 作成後、Project 上で Layer / Priority / Area を設定してください。
+        > Layer はこの Issue の種別（Epic / Feature / Task）に合わせてください。
+
+  - type: textarea
+    id: overview
+    attributes:
+      label: 🔍 作業概要
+      description: 何をするタスクか、一言で説明します。
+      placeholder: 例）ログインAPIのエンドポイントを実装する
+    validations:
+      required: true
+
+  - type: textarea
+    id: background
+    attributes:
+      label: 🎯 目的・背景
+      description: なぜこのTaskが必要か。技術的な背景や設計方針があれば記述します。
+      placeholder: 例）○○の設計方針に基づき、△△の方法で実装する
+    validations:
+      required: false
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: 🪜 作業手順
+      description: 具体的な実装ステップや調査手順を記述します。
+      placeholder: |
+        - [ ] Step 1
+        - [ ] Step 2
+        - [ ] Step 3
+    validations:
+      required: false
+
+  - type: textarea
+    id: completion
+    attributes:
+      label: ✅ 完了条件
+      description: 何をもってこのTaskが完了したと判断するか。
+      placeholder: |
+        - [ ] 条件1
+        - [ ] 条件2
+    validations:
+      required: true
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: 📝 備考
+      description: 参考情報・制約・注意点など。
+      placeholder: 関連ドキュメント、外部リンク、注意点など
+    validations:
+      required: false
