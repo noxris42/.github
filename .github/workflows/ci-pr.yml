@@ -1,0 +1,126 @@
+name: ✅ CI - Pull Request
+
+on:
+  pull_request:
+    types: [opened, edited, synchronize, reopened]
+
+jobs:
+  # ─────────────────────────────────────────
+  # A. PRタイトルの検証
+  # フォーマット: <gitmoji> <type>(<scope>): <subject>
+  # ─────────────────────────────────────────
+  validate-pr-title:
+    name: Validate PR Title
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check PR title format
+        env:
+          PR_TITLE: ${{ github.event.pull_request.title }}
+        run: |
+          # gitmoji + type の定義済み組み合わせ（11種）
+          # ⚡️ は複数バイト絵文字のため、正規表現では . で代替してマッチさせる
+          VALID_PREFIXES=(
+            "✨ feat"
+            "🐛 fix"
+            "📝 docs"
+            "💄 style"
+            "♻️ refactor"
+            "⚡️ perf"
+            "✅ test"
+            "🔧 chore"
+            "📦 build"
+            "👷 ci"
+            "⏪ revert"
+          )
+
+          echo "PR Title: ${PR_TITLE}"
+
+          # いずれかの prefix で始まり、続けて "(<scope>): " または ": " が来るか検証
+          MATCHED=false
+          for PREFIX in "${VALID_PREFIXES[@]}"; do
+            # prefix の後に "(<scope>): <subject>" または ": <subject>" が続くパターン
+            if echo "${PR_TITLE}" | grep -qP "^${PREFIX}(\([^)]+\))?: .+"; then
+              MATCHED=true
+              break
+            fi
+          done
+
+          if [ "${MATCHED}" = "true" ]; then
+            echo "✅ PR title is valid."
+          else
+            echo "❌ PR title does not match the required format."
+            echo ""
+            echo "Required format:"
+            echo "  <gitmoji> <type>(<scope>): <subject>"
+            echo "  <gitmoji> <type>: <subject>"
+            echo ""
+            echo "Valid gitmoji + type combinations:"
+            echo "  ✨ feat  🐛 fix  📝 docs  💄 style  ♻️ refactor"
+            echo "  ⚡️ perf  ✅ test  🔧 chore  📦 build  👷 ci  ⏪ revert"
+            echo ""
+            echo "Examples:"
+            echo "  ✨ feat(auth): Google OAuthログインを追加"
+            echo "  🐛 fix: トークン検証の競合状態を修正"
+            exit 1
+          fi
+
+  # ─────────────────────────────────────────
+  # D. ブランチ名の検証
+  # ルール:
+  #   feature/fix/refactor/docs/chore  → <type>/<issue番号>-<description>
+  #   hotfix                           → hotfix/<issue番号>-<description> または hotfix/<description>
+  #   release                          → release/v<major>.<minor>.<patch>
+  #   main                             → 検証をスキップ
+  # ─────────────────────────────────────────
+  validate-branch-name:
+    name: Validate Branch Name
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check branch name format
+        env:
+          BRANCH_NAME: ${{ github.head_ref }}
+        run: |
+          echo "Branch: ${BRANCH_NAME}"
+
+          # main ブランチはスキップ（hotfix等が直接mainへPRを出すケースは想定しないが念のため）
+          if [ "${BRANCH_NAME}" = "main" ]; then
+            echo "✅ main branch: skipped."
+            exit 0
+          fi
+
+          # release ブランチ: release/v{major}.{minor}.{patch}
+          if echo "${BRANCH_NAME}" | grep -qP "^release\/v[0-9]+\.[0-9]+\.[0-9]+$"; then
+            echo "✅ Branch name is valid (release)."
+            exit 0
+          fi
+
+          # hotfix ブランチ: hotfix/{番号}-{description} または hotfix/{description}
+          if echo "${BRANCH_NAME}" | grep -qP "^hotfix\/(\d+-)?[a-z0-9-]+$"; then
+            echo "✅ Branch name is valid (hotfix)."
+            exit 0
+          fi
+
+          # 通常ブランチ: <type>/<issue番号>-<description>
+          # type: feature / fix / refactor / docs / chore
+          if echo "${BRANCH_NAME}" | grep -qP "^(feature|fix|refactor|docs|chore)\/[0-9]+-[a-z0-9-]+$"; then
+            echo "✅ Branch name is valid."
+            exit 0
+          fi
+
+          echo "❌ Branch name does not match the required format."
+          echo ""
+          echo "Required formats:"
+          echo "  feature|fix|refactor|docs|chore → <type>/<issue番号>-<kebab-description>"
+          echo "  hotfix                           → hotfix/<issue番号>-<kebab-description> or hotfix/<kebab-description>"
+          echo "  release                          → release/v<major>.<minor>.<patch>"
+          echo ""
+          echo "Examples:"
+          echo "  feature/42-google-oauth"
+          echo "  fix/88-token-race-condition"
+          echo "  hotfix/101-critical-auth-bypass"
+          echo "  hotfix/critical-auth-bypass"
+          echo "  docs/12-update-readme"
+          echo "  chore/5-setup-eslint"
+          echo "  refactor/33-auth-module"
+          echo "  release/v1.2.0"
+          exit 1
