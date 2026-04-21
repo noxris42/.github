@@ -1,0 +1,6 @@
+# コードオーナー定義
+# PRの作成時にオーナーが自動でレビュワーとしてリクエストされます
+# Rulesetsの「Require review from Code Owners」はOFFにして運用します（個人開発のため）
+# チーム開発に移行する際は Rulesets と合わせて見直してください
+
+* @noxris42
