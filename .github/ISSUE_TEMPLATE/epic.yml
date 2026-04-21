@@ -1,0 +1,71 @@
+name: 🗺️ Epic
+labels: ["type:epic"]
+title: "【Epic】"
+description: 大項目（複数の機能やタスクをまとめた単位）
+body:
+
+  - type: markdown
+    attributes:
+      value: |
+        > Epic は複数の Feature をまとめる大きな単位です。
+        > 階層構造（Epic → Feature → Task）は Sub-issue で管理します。
+        > 作成後、Project 上で Layer / Priority / Area を設定してください。
+        > Layer はこの Issue の種別（Epic / Feature / Task）に合わせてください。
+
+  - type: textarea
+    id: background
+    attributes:
+      label: 🔍 背景・課題
+      description: このEpicが生まれた背景や、解決したい課題を記述します。
+      placeholder: |
+        例）
+        - 現状、○○が△△の理由で困っている
+        - □□を改善する必要がある
+    validations:
+      required: true
+
+  - type: textarea
+    id: goal
+    attributes:
+      label: 🎯 達成目標
+      description: このEpicが完了したとき、何が実現できている状態か。成果・状態で表現してください。
+      placeholder: |
+        例）
+        - ユーザーが○○できるようになる
+        - □□のエラーが発生しなくなる
+    validations:
+      required: true
+
+  - type: textarea
+    id: scope
+    attributes:
+      label: 📐 対象範囲
+      description: このEpicで対応すること・対応しないことを明示します。
+      placeholder: |
+        **In Scope（含む）**
+        - 
+
+        **Out of Scope（含まない）**
+        - 
+    validations:
+      required: false
+
+  - type: textarea
+    id: completion
+    attributes:
+      label: ✅ 完了条件
+      description: どの状態になれば、このEpicが完了したと判断するか。
+      placeholder: |
+        - [ ] 条件1
+        - [ ] 条件2
+    validations:
+      required: false
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: 📝 備考
+      description: 参考情報・制約・注意点など。
+      placeholder: 関連ドキュメント、外部リンク、前提条件など
+    validations:
+      required: false
