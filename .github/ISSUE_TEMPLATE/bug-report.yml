@@ -1,0 +1,73 @@
+name: 🐛 Bug
+labels: ["type:bug"]
+title: "【Bug】"
+description: 不具合報告（予期しない動作・エラーの報告）
+body:
+
+  - type: markdown
+    attributes:
+      value: |
+        > Bug は予期しない動作・エラーの報告です。
+        > 階層構造が必要な場合は Sub-issue で管理します。
+        > 作成後、Project 上で Layer / Priority / Area を設定してください。
+        > Layer は対応規模に応じて種別（Epic / Feature / Task）を設定してください。
+
+  - type: textarea
+    id: overview
+    attributes:
+      label: 🔍 不具合の概要
+      description: 何が起きているか、一言で説明します。
+      placeholder: 例）ログインボタンを押すと500エラーが返る
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: 🪜 再現手順
+      description: 不具合を再現するための手順を記述します。
+      placeholder: |
+        1. 
+        2. 
+        3. 
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: ✅ 期待する動作
+      description: 本来どのような動作をすべきか。
+      placeholder: 例）ログインに成功し、ダッシュボードへ遷移する
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: ❌ 実際の動作
+      description: 実際にどのような動作をするか。エラーメッセージがあれば記載してください。
+      placeholder: 例）500エラーが返り、ダッシュボードへ遷移しない
+    validations:
+      required: true
+
+  - type: textarea
+    id: environment
+    attributes:
+      label: 🌐 環境
+      description: 発生環境を記述します。
+      placeholder: |
+        - OS：
+        - ブラウザ／ランタイム：
+        - バージョン：
+    validations:
+      required: false
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: 📝 備考
+      description: 参考情報・制約・注意点など。
+      placeholder: 関連ドキュメント、外部リンク、注意点など
+    validations:
+      required: false
