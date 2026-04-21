@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+
+contact_links:
+
+  - name: 📖 開発参加規定（CONTRIBUTING.md）
+    url: https://github.com/noxris42/.github/blob/main/.github/CONTRIBUTING.md
+    about: 開発フロー全体の概要はこちら
+
+  - name: 🔀 ワークフロー規約（WORKFLOW_CONVENTION.md）
+    url: https://github.com/noxris42/.github/blob/main/docs/WORKFLOW_CONVENTION.md
+    about: Issue・ブランチ・PRの詳細な運用ルールはこちら
