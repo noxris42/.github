@@ -51,6 +51,37 @@ templates/
 
 ---
 
+## Template Directory Design Principles（テンプレートディレクトリ設計原則）
+
+### Express Differences Through Directory Hierarchy（差分はディレクトリ階層で表現する）
+
+Templateの違いは、末端ファイル名ではなくディレクトリ階層によって表現する。同じ種類のTemplate部品であっても、用途の差分はディレクトリで区別する。
+
+### Match Terminal Filename to Deployment Destination（末端ファイル名は配置先と一致させる）
+
+Template部品の末端ファイル名は、配置先のファイル名と一致させる。リポジトリ構築時にリネームを前提としない構成を維持する。
+
+**Examples:**
+
+```text
+templates/
+└── issue-templates/
+    ├── documentation-management/
+    │   └── task.yml       ← 配置先: .github/ISSUE_TEMPLATE/task.yml
+    └── software-development/
+        └── task.yml       ← 配置先: .github/ISSUE_TEMPLATE/task.yml
+```
+
+ディレクトリを選択してファイルをそのまま取得することで、リネーム不要で配置できる。
+
+### Independent from Repository Setup（Repository Setupから独立した設計）
+
+Template部品の構造はRepository Setupの判断に依存しない。Template部品は、Repository Setupがどのように部品を選択・配置するかに関わらず、単独で意味を持つ構造として設計する。
+
+この原則はIssue Templateに限らず、Workflows・Actions・Labels・Pull Request Template・Documentsなど、すべてのTemplate部品カテゴリに共通して適用する。
+
+---
+
 ## Directory Responsibilities（各ディレクトリの責務）
 
 ### `workflows/`（ワークフロー）
@@ -231,6 +262,10 @@ Update Template（Template部品の更新）
 
 - [ ] TemplateはConvention本文を複製していないか
 - [ ] ディレクトリは成果物の種類によって分類されているか
+- [ ] Template部品の差分はディレクトリ階層で表現されているか
+- [ ] 末端ファイル名は配置先のファイル名と一致しているか
+- [ ] リネームを前提とした構成になっていないか
+- [ ] Template部品はRepository Setupの判断に依存せず単独で意味を持つか
 - [ ] Template部品の選択・適用の判断をTemplateに含めていないか
 - [ ] 個別リポジトリ固有ルールをTemplateへ戻していないか
 - [ ] 共通Conventionへの入口として機能しているか
