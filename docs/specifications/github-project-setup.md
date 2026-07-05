@@ -157,7 +157,6 @@ Projectに連携するRepositoryを設定する。
 - [ ] 管理対象のRepositoryが連携されているか
 - [ ] Issue階層（Epic・Feature・Task）が必要に応じて定義されているか
 - [ ] 親子関係がSub-issueで管理されているか
-- [ ] すべてのIssueにStatusとPriorityが設定されているか
 - [ ] 標準仕様にない独自Fieldを不必要に追加していないか
 
 ---
