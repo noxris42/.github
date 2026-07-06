@@ -1,0 +1,44 @@
+name: 🔧 Task
+description: "【作業】具体的な作業単位。"
+title: "[Task] "
+labels:
+  - "type: task"
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## 🔧 Task
+        具体的な作業単位。
+
+        ### ⚠️ 運用上の注意
+        - 親となる Feature または Epic が存在する場合は、Sub-issue として紐づけること。
+        - Task のみで運用する場合、Sub-issue の紐づけは不要。
+
+  - type: textarea
+    id: description
+    attributes:
+      label: 🔍 説明
+      description: このTaskで何を行うか。1〜2文で簡潔に記述する。
+      placeholder: 例）○○の対応を実施する。
+    validations:
+      required: true
+
+  - type: textarea
+    id: criteria
+    attributes:
+      label: ✅ 完了条件
+      description: 何が満たされたらこのTaskを閉じられるか。
+      value: |
+        - [ ] 
+        - [ ] 
+        - [ ] 
+    validations:
+      required: true
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: 📝 備考
+      description: 補足情報・関連リンク・判断の背景など。任意。
+    validations:
+      required: false

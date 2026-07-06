@@ -1,0 +1,43 @@
+name: 🗺️ Epic
+description: "【テーマ】複数のFeatureやTaskをまとめる大きな目的・テーマの単位。"
+title: "[Epic] "
+labels:
+  - "type: epic"
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## 🗺️ Epic
+        複数のFeatureやTaskをまとめる大きな目的・テーマの単位。
+
+        ### ⚠️ 運用上の注意
+        - 配下の Feature または Task を Sub-issue として紐づけること。
+
+  - type: textarea
+    id: description
+    attributes:
+      label: 🔍 説明
+      description: このEpicで何を達成するか。1〜2文で簡潔に記述する。
+      placeholder: 例）○○を達成する。
+    validations:
+      required: true
+
+  - type: textarea
+    id: criteria
+    attributes:
+      label: ✅ 完了条件
+      description: 何が満たされたらこのEpicを閉じられるか。
+      value: |
+        - [ ] 
+        - [ ] 
+        - [ ] 
+    validations:
+      required: true
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: 📝 備考
+      description: 補足情報・関連リンク・判断の背景など。任意。
+    validations:
+      required: false
