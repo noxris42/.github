@@ -1,0 +1,44 @@
+name: ✨ Feature
+description: "【成果物】複数のTaskをまとめる成果物単位。"
+title: "[Feature] "
+labels:
+  - "type: feature"
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## ✨ Feature
+        複数のTaskをまとめる成果物単位。
+
+        ### ⚠️ 運用上の注意
+        - 親となる Epic が存在する場合は、Sub-issue として紐づけること。
+        - 配下の Task を Sub-issue として紐づけること。
+
+  - type: textarea
+    id: description
+    attributes:
+      label: 🔍 説明
+      description: このFeatureで何を実現するか。1〜2文で簡潔に記述する。
+      placeholder: 例）○○を実現する。
+    validations:
+      required: true
+
+  - type: textarea
+    id: criteria
+    attributes:
+      label: ✅ 完了条件
+      description: 何が満たされたらこのFeatureを閉じられるか。
+      value: |
+        - [ ] 
+        - [ ] 
+        - [ ] 
+    validations:
+      required: true
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: 📝 備考
+      description: 補足情報・関連リンク・判断の背景など。任意。
+    validations:
+      required: false
