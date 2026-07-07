@@ -87,7 +87,7 @@ Issueは「何をするか」を定義する要素である。以下を明確に
 
 Issueが明確になった段階で作業を開始する。
 
-GitHub Projectを利用する場合は、Project Operationに従いStatusを更新する。
+GitHub Projectを利用する場合は、`docs/conventions/github-project.md` に従いStatusを更新する。
 
 ### 3. Create Branch（Branch作成）
 
@@ -120,7 +120,7 @@ Pull Requestが作成されたら、レビューを実施する。
 
 ReviewはIssueの完了条件を満たしているかを確認する工程である。コードの正確性とともに、Issueに定義された完了条件との対応を確認する。
 
-GitHub Projectを利用する場合は、Project Operationに従いStatusを更新する。
+GitHub Projectを利用する場合は、`docs/conventions/github-project.md` に従いStatusを更新する。
 
 ### 7. Merge（マージ）
 
@@ -132,7 +132,7 @@ MergeはIssueに対応する作業完了の確定点である。Merge後のBranc
 
 Closing Keywordを使用している場合、MergeによりIssueは自動的にクローズされる。
 
-Issue CloseはMergeの結果として発生し、Workflow全体の終点である。Closing Keywordを使用していない場合は手動でクローズする。GitHub Projectを利用する場合は、Project Operationに従いStatusを更新する。
+Issue CloseはMergeの結果として発生し、Workflow全体の終点である。Closing Keywordを使用していない場合は手動でクローズする。GitHub Projectを利用する場合は、`docs/conventions/github-project.md` に従いStatusを更新する。
 
 ---
 
@@ -168,7 +168,7 @@ main-only / no-branch / no-PR
 
 これは初期構築・設計の試行錯誤段階に限定した運用である。通常運用への移行後は、Issue駆動運用へ切り替える。
 
-例外を適用する期間および条件は、各リポジトリのドキュメントで明示する。
+例外を適用する期間および条件は、Repository Overrideとして各リポジトリのドキュメントに明示する。
 
 ---
 
