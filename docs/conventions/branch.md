@@ -16,7 +16,7 @@ Requirement Levels・Rule Components・Rule Sourcesの定義は `docs/convention
 
 - GitHub上での作業ライフサイクル全体
 - Commitメッセージ規約 → `docs/conventions/commit.md`
-- Pull Request規約 → `templates/pull-request-templates/`
+- Pull Request規約
 - GitHub Project運用 → GitHub Project Operation
 
 ---

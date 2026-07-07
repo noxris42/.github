@@ -20,7 +20,7 @@ Requirement Levels・Rule Components・Rule Sourcesの定義は `docs/convention
 - 識別子・名称の命名規則 → Naming Convention
 - Git Flow・Branch Strategy・Release Flow → 将来のGit Convention
 - Issue・Pull Request・Projects・Actions → 将来のGitHub Convention
-- Changelog生成・Release Notes自動化 → 将来のSpecifications
+- Changelog生成・Release Notes自動化
 
 ---
 

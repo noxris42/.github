@@ -156,6 +156,22 @@ philosophy・architecture・conventions・specifications・adrの各責務領域
 
 Philosophy を基準として、Architecture・Conventions・Specifications の順で具体化する。下位領域を設計する前に、上位領域の定義が確定していることを確認する。
 
+### Layer Dependency Direction（レイヤー依存方向）
+
+各文書は、同一レイヤーまたは上位レイヤーのみを参照する。上位レイヤーは下位レイヤーに依存しない。
+
+```text
+Philosophy / Architecture
+        ↓
+Conventions
+        ↓
+Specifications
+        ↓
+Templates
+```
+
+下位レイヤーは必要に応じて上位レイヤーを参照・利用する。作成順と依存方向は別物であり、先に作成した文書であっても上位レイヤーに属するならば下位レイヤーを参照しない。
+
 ### Mature Domains by Responsibility（責務領域は責務に従って成熟させる）
 
 責務が明確でない限り、新しい責務領域を追加しない。既存領域へ統合できないことを確認した上で、新たな責務領域を設計する。
