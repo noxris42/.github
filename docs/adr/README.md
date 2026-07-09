@@ -79,6 +79,30 @@ ADRが記録しないのは以下である。
 
 ADR IDとTitleを更新し、Statusを `Proposed` から始める。
 
+### セクション構成（テンプレート構成）
+
+| セクション | 責務 |
+| --- | --- |
+| Metadata | ADR ID・Status・関連情報 |
+| Summary | ADR全体の要約（3〜5行） |
+| Context | 設計判断が必要になった背景・制約 |
+| Problem | 解決しようとした課題 |
+| Alternatives Considered | 検討した案・採否・理由 |
+| Decision Evolution | 設計途中の考え方の変遷（本プロジェクト固有） |
+| Decision | 採用した判断の内容 |
+| Rationale | 判断の根拠・設計原則との関係 |
+| Consequences | 判断による影響（利点・欠点・将来への影響） |
+| Design Insights | 判断を通じて得られた設計知見（本プロジェクト固有） |
+| Related Documents | 判断が反映された現行文書 |
+| Follow-up | 将来の見直し条件 |
+| Notes | 自由記述 |
+
+### 本プロジェクト固有のセクション
+
+**Decision Evolution**：設計過程の思考の変遷を記録する。一般的なADRでは省略されることが多いが、本プロジェクトでは「なぜ最終判断に至ったか」の経路そのものを設計知識として保存する。
+
+**Design Insights**：判断の結果として得られた知見を、Decisionとは独立して記録する。このセクション単体を読んでも意味が通るように書くことで、後から知見のみを抽出・再利用できる構造にする。
+
 ---
 
 ## 他文書との関係（依存方向）

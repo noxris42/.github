@@ -17,36 +17,36 @@
 
 ## Summary（要約）
 
-このADR全体を3〜5行で要約する。
+このADRで記録する設計判断を簡潔に要約する。
 
 ---
 
 ## Context（背景）
 
-設計を始めた背景を書く。当時の制約・状況・目的を書く。
+この設計判断が必要となった背景、目的、制約を記録する。
 
 ---
 
-## Problem（問題）
+## Problem（課題）
 
-解決しようとしていた問題を書く。
+解決しようとしていた設計上の課題を記録する。
 
 ---
 
 ## Alternatives Considered（検討した案）
 
-採用案だけでなく、検討した案をすべて残す。
+検討した選択肢を記録する。
 
-| 案 | 内容 | 採否 | 却下理由 |
-| --- | --- | --- | --- |
-| 案A | | 採用 / 却下 | |
-| 案B | | 採用 / 却下 | |
+| Alternative | Decision | Reason |
+| --- | --- | --- |
+| | Adopted / Rejected | |
+| | Adopted / Rejected | |
 
 ---
 
 ## Decision Evolution（判断の変遷）
 
-設計途中の考え方の変化を書く。最終判断に至るまでの思考の経路を保存する。
+設計途中の考え方の変化を記録する。最終判断に至るまでの思考の経路を保存する。
 
 ```text
 Initial Idea
@@ -60,33 +60,35 @@ Final Decision
 
 ---
 
-## Decision（決定）
+## Decision（設計判断）
 
-最終的に採用した判断を書く。現行仕様そのものは書かない。現行仕様はRelated Documentsが指す文書に委ねる。
+採用した設計判断を記録する。
+
+現行仕様や運用ルールは記載せず、判断内容のみを記録する。
 
 ---
 
-## Rationale（根拠）
+## Rationale（判断理由）
 
-なぜその判断になったかを書く。設計原則との関係を書く。
+Decisionを採用した理由を記録する。必要に応じて設計原則との関係も記録する。
 
 ---
 
 ## Consequences（影響）
 
-判断による影響を書く。
+この判断による影響を記録する。
 
-**良くなること:**
+### Positive（利点）
 
-**デメリット:**
+### Negative（欠点）
 
-**将来への影響:**
+### Future Impact（将来への影響）
 
 ---
 
 ## Design Insights（設計知見）
 
-今回の設計で新しく得られた知見を書く。Decisionとは独立して、この項目だけを読んでも意味が通るように記述する。
+今回の設計で新しく得られた知見を記録する。Decisionとは独立して、この項目だけを読んでも意味が通るように記述する。
 
 例: Layer Dependency Direction・Setup と Operation の責務分離・Workflow は Convention を利用する Specification である、など。
 
@@ -94,25 +96,24 @@ Final Decision
 
 ## Related Documents（関連文書）
 
-判断が最終的に反映された文書を書く。
+この判断が反映された現行Documentationを記録する。
 
-- Philosophy: 
-- Architecture: 
-- Convention: 
-- Specification: 
+- Philosophy:
+- Architecture:
+- Convention:
+- Specification:
+- Template:
 
-ADRは他文書を参照する。他文書からADRへは依存しない。
+ADRは他文書を参照する。他文書はADRを現行仕様・運用ルールの根拠として依存しない。
 
 ---
 
-## Follow-up（見直し条件）
+## Follow-up（今後）
 
-将来見直す条件を書く。
-
-例: Automation導入時・Repository Override採用時・MVP終了時、など。
+将来見直す条件や追加検討事項を記録する。
 
 ---
 
 ## Notes（補足）
 
-自由記述。
+必要に応じて自由に記録する。
