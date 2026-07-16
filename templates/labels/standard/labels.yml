@@ -1,0 +1,9 @@
+- name: 'type: epic'
+  color: 'D8BFD8'
+  description: テーマ単位（複数のFeatureやTaskをまとめる目的・テーマ）
+- name: 'type: feature'
+  color: 'AEE1F9'
+  description: 成果物単位（複数のTaskをまとめる成果物）
+- name: 'type: task'
+  color: 'D9F2B4'
+  description: 作業単位（具体的な作業内容）

@@ -1,0 +1,21 @@
+name: 🏷️ Sync Labels（ラベル同期）
+
+on:
+  workflow_dispatch:
+    inputs:
+      delete-other-labels:
+        description: 定義にないラベルを削除するか
+        type: boolean
+        required: false
+        default: false
+
+jobs:
+  sync-labels:
+    permissions:
+      contents: read
+      issues: write
+    # noxris42/.github が提供するLabel Sync Reusable Workflowを呼び出す
+    uses: noxris42/.github/.github/workflows/sync-labels.yml@main
+    with:
+      labels-file: .github/labels.yml
+      delete-other-labels: ${{ inputs.delete-other-labels }}

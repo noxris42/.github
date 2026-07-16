@@ -1,0 +1,48 @@
+name: 🏷️ Sync Labels（ラベル同期）
+
+on:
+  workflow_call:
+    inputs:
+      labels-file:
+        description: ラベル定義ファイルのリポジトリ内相対パス
+        type: string
+        required: false
+        default: .github/labels.yml
+      delete-other-labels:
+        description: 定義にないラベルを削除するか
+        type: boolean
+        required: false
+        default: false
+
+jobs:
+  sync-labels:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      issues: write
+    steps:
+      # 呼び出し元リポジトリをcheckoutし、個別ラベル定義ファイルの有無を確認できるようにする
+      - name: Checkout caller repository
+        uses: actions/checkout@v4
+
+      # 個別定義（labels-file）が存在すればそのローカルパス、なければ共通URLをconfig-fileとして選択する
+      - name: Resolve label definition source
+        id: resolve
+        shell: bash
+        env:
+          LABELS_FILE: ${{ inputs.labels-file }}
+        run: |
+          set -euo pipefail
+          if [ -f "$LABELS_FILE" ]; then
+            echo "config-file=$LABELS_FILE" >> "$GITHUB_OUTPUT"
+          else
+            echo "config-file=https://raw.githubusercontent.com/noxris42/.github/main/.github/labels.yml" >> "$GITHUB_OUTPUT"
+          fi
+
+      # 選択したラベル定義に従い、対象リポジトリのラベルを作成・更新・（設定に応じて）削除する
+      - name: Sync labels
+        uses: EndBug/label-sync@v2
+        with:
+          config-file: ${{ steps.resolve.outputs.config-file }}
+          delete-other-labels: ${{ inputs.delete-other-labels }}
+          token: ${{ secrets.GITHUB_TOKEN }}
