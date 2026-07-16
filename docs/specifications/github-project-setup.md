@@ -41,7 +41,7 @@ GitHub Projectsを構築する前に、必要な設計判断を行う。
 
 ### Project Structure（プロジェクト構造）
 
-GitHub Projectsで管理するIssueは、以下の階層構造を基本とする。
+GitHub Projectsで管理するIssueは、以下の階層構造を標準とする。
 
 ```text
 Epic
@@ -49,25 +49,55 @@ Epic
         └── Task
 ```
 
+この構造は固定された必須階層ではない。プロジェクトの規模・性質に応じて、上位階層または中間階層を省略できる。
+
+許容する構造は以下とする。
+
+```text
+Epic → Feature → Task
+Epic → Task
+Feature → Task
+Task only
+```
+
 **Epic:**
 
-複数のFeatureを束ねる大きな開発テーマ・目標を表す。
+複数のFeatureまたはTaskを束ねる、大きな開発テーマ・目標を表す。
 
 **Feature:**
 
-Epicを構成する機能単位・成果物単位を表す。
+複数のTaskを束ねる機能単位・成果物単位を表す。Epic配下に置くことも、上位Epicを持たずに使用することもできる。
 
 **Task:**
 
-実際の作業単位を表す。最小のトラッキング粒度である。
+実際の作業単位を表す。最小のトラッキング粒度であり、子Issueは持たない。
 
 **Parent-Child Relationship（親子関係）:**
 
-EpicとFeature、FeatureとTaskの親子関係はSub-issueで管理する。Issue本文への親Issue記載は行わない。
+以下の親子関係を許容する。
 
-**Task-only Operation（Taskのみの運用）:**
+- EpicとFeature
+- EpicとTask
+- FeatureとTask
 
-EpicやFeatureを使わず、Taskのみで運用することを許容する。プロジェクトの規模・性質に応じて判断する。
+親子関係はSub-issueで管理する。Issue本文への親Issue記載は行わない。
+
+以下の構造は許容しない。
+
+- Epic→Epic、Feature→Feature（同一Type間の階層）
+- Feature→Epic、Task→Feature、Task→Epic（階層方向の逆転）
+- Taskが子Issueを持つ構造
+
+**Hierarchy Omission（階層の省略）:**
+
+階層はIssue数を増やすための形式要件ではなく、管理対象の規模とまとまりを表現するために使用する。
+
+- 大規模なテーマで複数成果物を含む場合はEpic → Feature → Task
+- 複数作業をまとめるテーマだがFeatureへ分ける必要がない場合はEpic → Task
+- 一つの成果物を複数作業へ分解する場合はFeature → Task
+- 単発または小規模な作業はTask only
+
+不要な上位Issueや中間Issueを、階層を満たす目的だけで作成しない。
 
 ---
 
@@ -123,6 +153,9 @@ Backlog → Ready → In Progress → Review → Done
 - 標準Fieldを基本とし、必要が明確になった場合のみFieldを追加する。
 - 親子関係はSub-issueのみで表現し、Issue本文に記載しない。
 - Projectは1つ以上のRepositoryに連携する。
+- 階層を満たす目的だけで、不要なEpicまたはFeatureを作成しない。
+- Issueの規模・性質に応じて必要な階層のみを使用する。
+- 親子関係の方向と各Typeの責務は維持する。
 
 ---
 
@@ -155,7 +188,9 @@ Projectに連携するRepositoryを設定する。
 - [ ] StatusフィールドがStandard Project Fieldsの定義と一致しているか
 - [ ] PriorityフィールドがStandard Project Fieldsの定義と一致しているか
 - [ ] 管理対象のRepositoryが連携されているか
-- [ ] Issue階層（Epic・Feature・Task）が必要に応じて定義されているか
+- [ ] Issueの規模・性質に応じて必要な階層が選択されているか
+- [ ] Epic・Feature・Taskの親子関係が許容された方向になっているか
+- [ ] 不要なEpicまたはFeatureを階層維持のためだけに作成していないか
 - [ ] 親子関係がSub-issueで管理されているか
 - [ ] 標準仕様にない独自Fieldを不必要に追加していないか
 
