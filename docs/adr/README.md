@@ -162,4 +162,4 @@ design-notesとの関係は `docs/design-notes/README.md` および `docs/philos
 - ADR設計思想: `docs/philosophy/adr.md`
 - テンプレート: `docs/adr/0000-template.md`
 - ドキュメント体系での位置づけ: `docs/architecture/documentation.md`
-- 命名規則: `docs/conventions/naming.md`（NM-ID-004）
+- 命名規則: `docs/conventions/naming.md`（NM-BS-ID-004）

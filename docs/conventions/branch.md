@@ -29,7 +29,7 @@ Requirement Levels・Rule Components・Rule Sourcesの定義は `docs/convention
 
 ### Commit Conventionとの関係
 
-ブランチ名に使用するTypeはCommit ConventionのType定義（CM-TG-002）と対応させる。
+ブランチ名に使用するTypeはCommit ConventionのType定義（CM-BS-TG-002）と対応させる。
 
 ---
 
@@ -68,19 +68,19 @@ GitHub・Git・CI/CDツールが正しく解釈できる形式で命名する。
 | Branch Deletion | DL | ブランチ削除タイミングと原則 |
 | Exceptions | EX | 例外運用 |
 
-Rule IDはREADMEで定義された `BR-<Category>-<Number>` 形式に従う。
+Rule IDはREADMEで定義された `BR-<Scope>-<Category>-<Number>` 形式に従う。本Conventionで新規定義するRuleのScopeには`BS`を使用する。
 
 ---
 
 ## Branch Naming（ブランチ命名）
 
-### BR-NM-001: Branch Name Format（ブランチ名の基本形式）
+### BR-BS-NM-001: Branch Name Format（ブランチ名の基本形式）
 
 | 項目 | 内容 |
 | --- | --- |
 | Rule | ブランチ名は `<type>/<issue-number>-<short-description>` の形式とする |
 | Requirement | MUST |
-| Source | Naming Convention (NM-FN-002), Project Conventions |
+| Source | Naming Convention (NM-BS-FN-002), Project Conventions |
 
 **Reason:**
 
@@ -97,13 +97,13 @@ chore/126-update-template
 
 ---
 
-### BR-NM-002: Branch Name Character Set（ブランチ名の使用文字）
+### BR-BS-NM-002: Branch Name Character Set（ブランチ名の使用文字）
 
 | 項目 | 内容 |
 | --- | --- |
 | Rule | ブランチ名は小文字・英数字・ハイフン（`-`）のみを使用する |
 | Requirement | MUST |
-| Source | Naming Convention (NM-FN-001, NM-FN-002), Project Conventions |
+| Source | Naming Convention (NM-BS-FN-001, NM-BS-FN-002), Project Conventions |
 
 **Reason:**
 
@@ -117,13 +117,13 @@ chore/126-update-template
 
 ## Branch Types（ブランチ種別）
 
-### BR-TY-001: Standard Branch Types（標準ブランチ種別）
+### BR-BS-TY-001: Standard Branch Types（標準ブランチ種別）
 
 | 項目 | 内容 |
 | --- | --- |
-| Rule | ブランチのTypeはCommit Conventionの共通Type候補（CM-TG-002）から選択する |
+| Rule | ブランチのTypeはCommit Conventionの共通Type候補（CM-BS-TG-002）から選択する |
 | Requirement | MUST |
-| Source | Commit Convention (CM-TG-002), Project Conventions |
+| Source | Commit Convention (CM-BS-TG-002), Project Conventions |
 
 **Reason:**
 
@@ -146,7 +146,7 @@ chore/126-update-template
 
 ## Branch Lifecycle（ブランチライフサイクル）
 
-### BR-LC-001: Branch Lifecycle（ブランチのライフサイクル）
+### BR-BS-LC-001: Branch Lifecycle（ブランチのライフサイクル）
 
 | 項目 | 内容 |
 | --- | --- |
@@ -178,7 +178,7 @@ Delete Branch
 
 ## Branch Creation（ブランチ作成）
 
-### BR-CR-001: Create Branch at Work Start（作業開始時のブランチ作成）
+### BR-BS-CR-001: Create Branch at Work Start（作業開始時のブランチ作成）
 
 | 項目 | 内容 |
 | --- | --- |
@@ -192,7 +192,7 @@ Delete Branch
 
 ---
 
-### BR-CR-002: One Branch per Issue（1 Issue = 1 Branch）
+### BR-BS-CR-002: One Branch per Issue（1 Issue = 1 Branch）
 
 | 項目 | 内容 |
 | --- | --- |
@@ -208,7 +208,7 @@ Delete Branch
 
 ## Branch Deletion（ブランチ削除）
 
-### BR-DL-001: Delete Branch after Merge（Merge後のブランチ削除）
+### BR-BS-DL-001: Delete Branch after Merge（Merge後のブランチ削除）
 
 | 項目 | 内容 |
 | --- | --- |
@@ -218,7 +218,7 @@ Delete Branch
 
 ---
 
-### BR-DL-002: No Long-Lived Work Branches（長期作業ブランチの禁止）
+### BR-BS-DL-002: No Long-Lived Work Branches（長期作業ブランチの禁止）
 
 | 項目 | 内容 |
 | --- | --- |
@@ -234,7 +234,7 @@ Delete Branch
 
 ## Exceptions（例外）
 
-### BR-EX-001: Repository Override（リポジトリ固有の例外）
+### BR-BS-EX-001: Repository Override（リポジトリ固有の例外）
 
 | 項目 | 内容 |
 | --- | --- |

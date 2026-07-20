@@ -80,13 +80,13 @@ Markdown記法・見出し・コードブロック・リンク・表などの表
 | Sentence Structure | SS | 文章構造に関するルール |
 | Project Writing | PW | プロジェクト固有の文章表現ルール |
 
-Rule IDはREADMEで定義された `WR-<Category>-<Number>` 形式に従う。
+Rule IDはREADMEで定義された `WR-<Scope>-<Category>-<Number>` 形式に従う。本Conventionで新規定義するRuleのScopeには`BS`を使用する。
 
 ---
 
 ## Language（言語）
 
-### WR-LG-001: Primary Language
+### WR-BS-LG-001: Primary Language
 
 | 項目 | 内容 |
 | --- | --- |
@@ -100,7 +100,7 @@ Rule IDはREADMEで定義された `WR-<Category>-<Number>` 形式に従う。
 
 ---
 
-### WR-LG-002: English Terms
+### WR-BS-LG-002: English Terms
 
 | 項目 | 内容 |
 | --- | --- |
@@ -125,7 +125,7 @@ Rule IDはREADMEで定義された `WR-<Category>-<Number>` 形式に従う。
 
 ---
 
-### WR-LG-003: Bilingual Headings
+### WR-BS-LG-003: Bilingual Headings
 
 | 項目 | 内容 |
 | --- | --- |
@@ -147,7 +147,7 @@ Rule IDはREADMEで定義された `WR-<Category>-<Number>` 形式に従う。
 
 ---
 
-### WR-LG-004: Abbreviations
+### WR-BS-LG-004: Abbreviations
 
 | 項目 | 内容 |
 | --- | --- |
@@ -170,7 +170,7 @@ Rule IDはREADMEで定義された `WR-<Category>-<Number>` 形式に従う。
 
 ## Terminology（用語）
 
-### WR-TM-001: Consistent Terminology
+### WR-BS-TM-001: Consistent Terminology
 
 | 項目 | 内容 |
 | --- | --- |
@@ -191,7 +191,7 @@ Rule IDはREADMEで定義された `WR-<Category>-<Number>` 形式に従う。
 
 ---
 
-### WR-TM-002: Glossary Reference
+### WR-BS-TM-002: Glossary Reference
 
 | 項目 | 内容 |
 | --- | --- |
@@ -211,7 +211,7 @@ Glossaryが未整備の期間は、各文書内で初出時に定義を明示す
 
 ## Writing Style（文体）
 
-### WR-WS-001: Writing Form
+### WR-BS-WS-001: Writing Form
 
 | 項目 | 内容 |
 | --- | --- |
@@ -232,7 +232,7 @@ Glossaryが未整備の期間は、各文書内で初出時に定義を明示す
 
 ---
 
-### WR-WS-002: Imperative Rule Statements
+### WR-BS-WS-002: Imperative Rule Statements
 
 | 項目 | 内容 |
 | --- | --- |
@@ -253,7 +253,7 @@ Glossaryが未整備の期間は、各文書内で初出時に定義を明示す
 
 ---
 
-### WR-WS-003: Active Voice
+### WR-BS-WS-003: Active Voice
 
 | 項目 | 内容 |
 | --- | --- |
@@ -276,7 +276,7 @@ Glossaryが未整備の期間は、各文書内で初出時に定義を明示す
 
 ## Sentence Structure（文章構造）
 
-### WR-SS-001: One Sentence One Idea
+### WR-BS-SS-001: One Sentence One Idea
 
 | 項目 | 内容 |
 | --- | --- |
@@ -301,7 +301,7 @@ Glossaryが未整備の期間は、各文書内で初出時に定義を明示す
 
 ---
 
-### WR-SS-002: Avoid Ambiguous References
+### WR-BS-SS-002: Avoid Ambiguous References
 
 | 項目 | 内容 |
 | --- | --- |
@@ -322,7 +322,7 @@ Glossaryが未整備の期間は、各文書内で初出時に定義を明示す
 
 ---
 
-### WR-SS-003: Explicit List Usage
+### WR-BS-SS-003: Explicit List Usage
 
 | 項目 | 内容 |
 | --- | --- |
@@ -351,7 +351,7 @@ Glossaryが未整備の期間は、各文書内で初出時に定義を明示す
 
 ## Project Writing（プロジェクト文章表現）
 
-### WR-PW-001: Purpose Section
+### WR-BS-PW-001: Purpose Section
 
 | 項目 | 内容 |
 | --- | --- |
@@ -372,7 +372,7 @@ Glossaryが未整備の期間は、各文書内で初出時に定義を明示す
 
 ---
 
-### WR-PW-002: Scope Section
+### WR-BS-PW-002: Scope Section
 
 | 項目 | 内容 |
 | --- | --- |
@@ -386,7 +386,7 @@ Glossaryが未整備の期間は、各文書内で初出時に定義を明示す
 
 ---
 
-### WR-PW-003: Rule Header Writing
+### WR-BS-PW-003: Rule Header Writing
 
 | 項目 | 内容 |
 | --- | --- |
@@ -400,7 +400,7 @@ Rule HeaderはHeaderだけで概要を把握できる構造データである。
 
 ---
 
-### WR-PW-004: Reason Writing
+### WR-BS-PW-004: Reason Writing
 
 | 項目 | 内容 |
 | --- | --- |
