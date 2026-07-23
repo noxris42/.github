@@ -201,3 +201,5 @@ Projectに連携するRepositoryを設定する。
 GitHub Project Setupは初期構築のみを対象とする。
 
 運用開始後の変更は、GitHub Project Setupではなく、適切なConvention・または個別リポジトリのドキュメントで管理する。
+
+Epic／Feature／TaskのIssue Typeおよび各Typeの責務は、GitHub Projectの階層管理で使用する標準概念である。Task Issueの作成自体は、GitHub Projectへの登録を必須としない。
