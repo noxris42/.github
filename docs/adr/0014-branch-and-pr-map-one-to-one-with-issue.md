@@ -4,8 +4,9 @@
 
 | 項目 | 内容 |
 | --- | --- |
-| Status | Accepted |
+| Status | Superseded |
 | Date | 2026-07-14 |
+| Superseded by | 0024 |
 
 ---
 
