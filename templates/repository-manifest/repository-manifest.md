@@ -41,5 +41,5 @@
 
 | 項目 | 内容 |
 | --- | --- |
-| Source | `noxris42/.github@templates/workflows/sync-labels.yml` |
+| Source | `noxris42/.github@templates/workflows/label-sync/sync-labels.yml` |
 | Destination | `.github/workflows/sync-labels.yml` |

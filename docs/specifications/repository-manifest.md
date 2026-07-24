@@ -292,7 +292,7 @@ Labelsでは`Mode`項目を追加しない。
 
 | 項目 | 内容 |
 | --- | --- |
-| Source | `noxris42/.github@templates/workflows/sync-labels.yml` |
+| Source | `noxris42/.github@templates/workflows/label-sync/sync-labels.yml` |
 | Destination | `.github/workflows/sync-labels.yml` |
 ```
 
@@ -480,11 +480,11 @@ SourceとDestinationの内容一致や派生関係をどのように確認する
 
 | 項目 | 内容 |
 | --- | --- |
-| Source | `noxris42/.github@templates/workflows/sync-labels.yml` |
+| Source | `noxris42/.github@templates/workflows/label-sync/sync-labels.yml` |
 | Destination | `.github/workflows/sync-labels.yml` |
 ```
 
-これは宣言完成状態（Declaration Validation合格）を示す概念上の完成例である。Branch PatternとLabel Sync Workflowは、本書執筆時点でSourceとなる資産（`branch-default.md`・`templates/workflows/sync-labels.yml`）がまだ共通リポジトリに実装されていないため、実際に構築すればDeployment Validationは不合格となる。Manifestの宣言完成と実際のリポジトリ構築完了は別の状態として扱う。
+これは宣言完成状態（Declaration Validation合格）を示す概念上の完成例である。この例で使用している`branch-default.md`は、本書執筆時点では実在しない概念例であるため、この構成のままではDeployment Validationは不合格となる。Manifestの宣言完成と実際のリポジトリ構築完了は別の状態として扱う。
 
 ### 2. Branch Pattern選択例
 
@@ -578,11 +578,11 @@ SourceとDestinationの内容一致や派生関係をどのように確認する
 
 | 項目 | 内容 |
 | --- | --- |
-| Source | `noxris42/.github@templates/workflows/sync-labels.yml` |
+| Source | `noxris42/.github@templates/workflows/label-sync/sync-labels.yml` |
 | Destination | `.github/workflows/sync-labels.yml` |
 ```
 
-この例のSourceは、個別リポジトリへ配置するWorkflowファイルの予定パスを示す。共通リポジトリ上で当該Workflowから参照される別のWorkflowは、展開対象ではないためSourceとして記載しない。
+この例のSourceは、個別リポジトリへ配置するWorkflowファイルを示す。共通リポジトリ上で当該Workflowから参照される別のWorkflowは、展開対象ではないためSourceとして記載しない。
 
 ### 10. 対象資産なしのセクション
 
