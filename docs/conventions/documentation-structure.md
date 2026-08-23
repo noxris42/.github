@@ -1,12 +1,15 @@
-# Documentation Convention（文書規約）
+# Documentation Structure Convention（文書構造規約）
 
 ## Purpose（目的）
 
 本文書は、`noxris42` において
-**Documentation Asset（文書資産）が、そのDocument Responsibility（文書責務）に従って
-Section（節）を構成し、
-必要な共通Information Responsibility（情報責務）を
-一貫して保持・提供するための
+**Documentation Asset（文書資産）の内部Semantic Structure（意味構造）について、
+Document Responsibility（文書責務）に従う
+Section Structure（Section構造）の構成規範と、
+複数のDocumentation Asset（文書資産）へ反復適用される
+Standard Section Mechanism（標準Section機構）および
+Documentation-wide Standard Sections（Documentation全体標準Section）を定義し、
+一貫して適用可能にする
 Reusable Normative Standard（再利用可能な規範標準）**
 を定義するConvention Asset（規約資産）である。
 
@@ -50,7 +53,7 @@ Design Dependency（設計依存）は次の一方向とする。
 Documentation Structure Architecture（文書構造の意味モデル）
         ▲
         │ refines（具体的規範へ具体化する）
-Documentation Convention（本文書）
+Documentation Structure Convention（本文書）
 
 Convention Architecture（規約の意味構造）
         ▲
@@ -58,7 +61,7 @@ Convention Architecture（規約の意味構造）
 Convention Authoring Convention（規約記述表記）
         ▲
         │ conforms to（記述表記に従う）
-Documentation Convention（本文書）
+Documentation Structure Convention（本文書）
 ```
 
 本文書は
@@ -164,7 +167,7 @@ Definition Authority（定義権限）は上位設計にある。
 本Convention Asset（規約資産）のConvention Code（規約コード）は次である。
 
 ```text
-Convention Code: DOC
+Convention Code: DST
 ```
 
 ### Namespace Code（名前空間コード）
@@ -255,9 +258,9 @@ Rule ID（規約ルールID）はCategory（分類）を表現しない。
 
 ### Section Structure（Section構造）
 
-#### DOC-SF-001 — Document Responsibility Clarity
+#### DST-SF-001 — Document Responsibility Clarity
 
-**Rule ID:** `DOC-SF-001`
+**Rule ID:** `DST-SF-001`
 
 **Rule Name:** Document Responsibility Clarity
 
@@ -280,11 +283,11 @@ Section（節）の妥当性も評価できない。
 **Note:** 本Rule（ルール）は識別可能性のみを要求する。
 どのSection（節）でそれを担うかは要求しない。
 Purpose Standard Section（目的標準Section）の
-Presence Requirement（設置要求）は `DOC-SF-013` が別に定める。
+Presence Requirement（設置要求）は `DST-SF-013` が別に定める。
 
-#### DOC-SF-002 — Responsibility-based Sectioning
+#### DST-SF-002 — Responsibility-based Sectioning
 
-**Rule ID:** `DOC-SF-002`
+**Rule ID:** `DST-SF-002`
 
 **Rule Name:** Responsibility-based Sectioning
 
@@ -304,9 +307,9 @@ Semantic Unit（意味単位）である。
 内部構成が意味構造ではなく記述量や体裁の都合で決まり、
 どこに何を書くかの判断根拠が失われる。
 
-#### DOC-SF-003 — Section Responsibility Boundary
+#### DST-SF-003 — Section Responsibility Boundary
 
-**Rule ID:** `DOC-SF-003`
+**Rule ID:** `DST-SF-003`
 
 **Rule Name:** Section Responsibility Boundary
 
@@ -326,9 +329,9 @@ Responsibility Boundary（責務境界）が崩れ、
 その内容を保持・提供する責務を
 どの資産が担っているのかが不明確になる。
 
-#### DOC-SF-004 — Child Section Responsibility Boundary
+#### DST-SF-004 — Child Section Responsibility Boundary
 
-**Rule ID:** `DOC-SF-004`
+**Rule ID:** `DST-SF-004`
 
 **Rule Name:** Child Section Responsibility Boundary
 
@@ -350,9 +353,9 @@ Responsibility Decomposition（責務分解）である。
 
 ### Standard Section Mechanism（標準Section機構）
 
-#### DOC-SF-005 — Standard Section Definition
+#### DST-SF-005 — Standard Section Definition
 
-**Rule ID:** `DOC-SF-005`
+**Rule ID:** `DST-SF-005`
 
 **Rule Name:** Standard Section Definition
 
@@ -373,9 +376,9 @@ Section Responsibility（Section責務）を明示して
 名称の一致だけで異なる責務へ適用され、
 共通化した意味が失われる。
 
-#### DOC-SF-006 — Standard Section Applicability
+#### DST-SF-006 — Standard Section Applicability
 
-**Rule ID:** `DOC-SF-006`
+**Rule ID:** `DST-SF-006`
 
 **Rule Name:** Standard Section Applicability
 
@@ -401,9 +404,9 @@ Framework + Area（文書体系＋領域）を扱える。
 これは現時点で必要な粒度の例示であり、
 将来にわたるClosed Taxonomy（閉じた分類体系）ではない。
 
-#### DOC-SF-007 — Standard Identity Selection
+#### DST-SF-007 — Standard Identity Selection
 
-**Rule ID:** `DOC-SF-007`
+**Rule ID:** `DST-SF-007`
 
 **Rule Name:** Standard Identity Selection
 
@@ -425,9 +428,9 @@ Framework + Area（文書体系＋領域）を扱える。
 **Note:** 責務の部分一致や類似だけでは本Rule（ルール）は適用されない。
 Section Responsibility（Section責務）が同一である場合に限られる。
 
-#### DOC-SF-008 — Standard Identity Conformance
+#### DST-SF-008 — Standard Identity Conformance
 
-**Rule ID:** `DOC-SF-008`
+**Rule ID:** `DST-SF-008`
 
 **Rule Name:** Standard Identity Conformance
 
@@ -446,9 +449,9 @@ Standard Section（標準Section）は名称の慣習に退化する。
 適合を要求することで、
 Identity（同一性）が責務の保証として機能する。
 
-#### DOC-SF-009 — Standard Identity and Presence Separation
+#### DST-SF-009 — Standard Identity and Presence Separation
 
-**Rule ID:** `DOC-SF-009`
+**Rule ID:** `DST-SF-009`
 
 **Rule Name:** Standard Identity and Presence Separation
 
@@ -472,9 +475,9 @@ Document Responsibility（文書責務）に照らして
 そのStandard Section（標準Section）ごとに
 独立したNormative Rule（規範的ルール）として定める。
 
-#### DOC-SF-010 — Open Section Vocabulary
+#### DST-SF-010 — Open Section Vocabulary
 
-**Rule ID:** `DOC-SF-010`
+**Rule ID:** `DST-SF-010`
 
 **Rule Name:** Open Section Vocabulary
 
@@ -501,9 +504,9 @@ Section Responsibility（Section責務）は、
 必要な場合、
 Document-specific Section（文書固有Section）として構成できる。
 
-#### DOC-SF-011 — Standard Section Non-duplication
+#### DST-SF-011 — Standard Section Non-duplication
 
-**Rule ID:** `DOC-SF-011`
+**Rule ID:** `DST-SF-011`
 
 **Rule Name:** Standard Section Non-duplication
 
@@ -520,7 +523,7 @@ Document-specific Section（文書固有Section）として構成できる。
 
 **Reason:** 同一責務に複数のIdentity（同一性）が並立すると、
 どちらを使用すべきかがScope（適用範囲）の重なりによって決まり、
-`DOC-SF-007` によるIdentity（同一性）の選択が一意に定まらなくなる。
+`DST-SF-007` によるIdentity（同一性）の選択が一意に定まらなくなる。
 広いScope（適用範囲）の定義を唯一のIdentity（同一性）とすることで、
 同じ責務が常に同じIdentity（同一性）で現れる。
 
@@ -532,9 +535,9 @@ Section Responsibility（Section責務）と
 
 ### Documentation-wide Standard Sections（Documentation全体標準Section）
 
-#### DOC-SF-012 — Purpose Standard Section
+#### DST-SF-012 — Purpose Standard Section
 
-**Rule ID:** `DOC-SF-012`
+**Rule ID:** `DST-SF-012`
 
 **Rule Name:** Purpose Standard Section
 
@@ -559,11 +562,11 @@ Documentation Asset（文書資産）が
 
 **Note:** 本Rule（ルール）は定義であり、
 設置を要求しない。
-Presence Requirement（設置要求）は `DOC-SF-013` が定める。
+Presence Requirement（設置要求）は `DST-SF-013` が定める。
 
-#### DOC-SF-013 — Purpose Presence
+#### DST-SF-013 — Purpose Presence
 
-**Rule ID:** `DOC-SF-013`
+**Rule ID:** `DST-SF-013`
 
 **Rule Name:** Purpose Presence
 
@@ -585,9 +588,9 @@ Document Responsibility（文書責務）が他の内容から十分に明確で
 Semantic Clarity（意味上の明確性）を実質的に増加させない場合は
 省略できる。
 
-#### DOC-SF-014 — Scope Standard Section
+#### DST-SF-014 — Scope Standard Section
 
-**Rule ID:** `DOC-SF-014`
+**Rule ID:** `DST-SF-014`
 
 **Rule Name:** Scope Standard Section
 
@@ -611,12 +614,12 @@ Documentation Asset（文書資産）が
 
 **Note:** 本Rule（ルール）は定義であり、
 設置を要求しない。
-Scope Information（対象範囲情報）の保持要求は `DOC-SF-015` が、
-Section（節）としての構成は `DOC-SF-016` が定める。
+Scope Information（対象範囲情報）の保持要求は `DST-SF-015` が、
+Section（節）としての構成は `DST-SF-016` が定める。
 
-#### DOC-SF-015 — Scope Information Requirement
+#### DST-SF-015 — Scope Information Requirement
 
-**Rule ID:** `DOC-SF-015`
+**Rule ID:** `DST-SF-015`
 
 **Rule Name:** Scope Information Requirement
 
@@ -640,9 +643,9 @@ Documentation Asset（文書資産）は
 **Note:** 本Rule（ルール）が要求するのは情報の保持であり、
 独立したScope Section（対象範囲Section）の設置ではない。
 
-#### DOC-SF-016 — Scope Presence
+#### DST-SF-016 — Scope Presence
 
-**Rule ID:** `DOC-SF-016`
+**Rule ID:** `DST-SF-016`
 
 **Rule Name:** Scope Presence
 
@@ -664,9 +667,9 @@ Scope Standard Section（対象範囲標準Section）として構成する。
 **Note:** `In Scope` / `Out of Scope` 等を
 固定のChild Section（子Section）として要求しない。
 
-#### DOC-SF-017 — Relationships Standard Section
+#### DST-SF-017 — Relationships Standard Section
 
-**Rule ID:** `DOC-SF-017`
+**Rule ID:** `DST-SF-017`
 
 **Rule Name:** Relationships Standard Section
 
@@ -703,7 +706,7 @@ Presence Requirement（設置要求）を定めない。
 - Convention Code（規約コード）を
   「Concrete Declarations（具体宣言）」で明示的に宣言している。
 - すべてのNormative Rule（規範的ルール）が
-  `DOC-SF-NNN` 形式のRule ID（規約ルールID）を持つ。
+  `DST-SF-NNN` 形式のRule ID（規約ルールID）を持つ。
 - すべてのNormative Rule（規範的ルール）が、
   必須Field（フィールド）を規定の順序・表現で持つ。
 - すべてのNormative Rule（規範的ルール）が
