@@ -30,7 +30,7 @@ Commit Message（コミットメッセージ）上で一貫して成立させる
 本文書は
 [Convention Architecture](../architecture/convention.md)
 および
-[Convention Authoring Convention](convention.md)
+[Convention Authoring Convention](convention-authoring.md)
 を上位Source（上位の情報源）として参照する。
 
 Design Dependency（設計依存）は
@@ -133,7 +133,7 @@ Convention Code: CMT
 ### Namespace Code（名前空間コード）
 
 本文書のNormative Rule（規範的ルール）は、
-[Convention Authoring Convention](convention.md)
+[Convention Authoring Convention](convention-authoring.md)
 が割り当てたNamespace Code（名前空間コード） `SF`
 （Shared Foundation Namespace／共有基盤名前空間）に属する。
 
@@ -750,7 +750,7 @@ Natural Language Representation（自然言語表現）は、
 ## Self Application（本文書自身への適用）
 
 本文書は通常のConvention Asset（規約資産）であり、
-[Convention Authoring Convention](convention.md)
+[Convention Authoring Convention](convention-authoring.md)
 が定めるRule（規則）に従って記述されている。
 
 - Convention Code（規約コード）を

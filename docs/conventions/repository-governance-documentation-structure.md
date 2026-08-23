@@ -48,7 +48,7 @@ Standard Section（標準Section）を定義する。
 - [Documentation Structure Architecture](../architecture/documentation-structure.md)
 - [Convention Architecture](../architecture/convention.md)
 - [Documentation Structure Convention](documentation-structure.md)
-- [Convention Authoring Convention](convention.md)
+- [Convention Authoring Convention](convention-authoring.md)
 
 Design Dependency（設計依存）は次の一方向とする。
 
@@ -201,7 +201,7 @@ Convention Code: RDS
 ### Namespace Code（名前空間コード）
 
 本文書のNormative Rule（規範的ルール）は、
-[Convention Authoring Convention](convention.md)
+[Convention Authoring Convention](convention-authoring.md)
 が割り当てたNamespace Code（名前空間コード） `SF`
 （Shared Foundation Namespace／共有基盤名前空間）に属する。
 
@@ -485,7 +485,7 @@ Non-goals（非目標）に必要に応じて付随する情報として扱う�
 ## Self Application（本文書自身への適用）
 
 本文書は通常のConvention Asset（規約資産）であり、
-[Convention Authoring Convention](convention.md)
+[Convention Authoring Convention](convention-authoring.md)
 が定めるRule（規則）に従って記述されている。
 
 - Convention Code（規約コード）を

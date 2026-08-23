@@ -44,7 +44,7 @@ Standard Section（標準Section）の一般機構、および
 本文書は
 [Documentation Structure Architecture](../architecture/documentation-structure.md)
 および
-[Convention Authoring Convention](convention.md)
+[Convention Authoring Convention](convention-authoring.md)
 を上位Source（上位の情報源）として参照する。
 
 Design Dependency（設計依存）は次の一方向とする。
@@ -173,7 +173,7 @@ Convention Code: DST
 ### Namespace Code（名前空間コード）
 
 本文書のNormative Rule（規範的ルール）は、
-[Convention Authoring Convention](convention.md)
+[Convention Authoring Convention](convention-authoring.md)
 が割り当てたNamespace Code（名前空間コード） `SF`
 （Shared Foundation Namespace／共有基盤名前空間）に属する。
 
@@ -700,7 +700,7 @@ Presence Requirement（設置要求）を定めない。
 ## Self Application（本文書自身への適用）
 
 本文書は通常のConvention Asset（規約資産）であり、
-[Convention Authoring Convention](convention.md)
+[Convention Authoring Convention](convention-authoring.md)
 が定めるRule（規則）に従って記述されている。
 
 - Convention Code（規約コード）を

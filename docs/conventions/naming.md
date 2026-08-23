@@ -69,7 +69,7 @@ Responsibility（責務）を成立・推論させない。
 - [Documentation Structure Architecture](../architecture/documentation-structure.md)
 - [Repository Governance Documentation Framework Architecture](../architecture/repository-governance-documentation-framework.md)
 - [Convention Architecture](../architecture/convention.md)
-- [Convention Authoring Convention](convention.md)
+- [Convention Authoring Convention](convention-authoring.md)
 
 Design Dependency（設計依存）は次の一方向とする。
 
@@ -184,7 +184,7 @@ Convention Code: NAM
 ### Namespace Code（名前空間コード）
 
 本文書のNormative Rule（規範的ルール）は、
-[Convention Authoring Convention](convention.md)
+[Convention Authoring Convention](convention-authoring.md)
 が割り当てたNamespace Code（名前空間コード） `SF`
 （Shared Foundation Namespace／共有基盤名前空間）に属する。
 
@@ -260,7 +260,7 @@ Applicability Map（適用対応表）ではない。
 本節はNon-normative Content（非規範的内容）である。
 Convention Code（規約コード）の
 Format（形式）・使用条件・変更制約は
-[Convention Authoring Convention](convention.md)
+[Convention Authoring Convention](convention-authoring.md)
 が所有する。
 本節は新たなNormative Requirement（規範要求）を追加せず、
 Convention Code Uniqueness（規約コード一意性）に関する
@@ -285,7 +285,7 @@ Convention Code（規約コード）を選ぶ際、
 
 Stable Rule ID（安定済み規約ルールID）で使用済みの
 Convention Code（規約コード）に対する変更制約は、
-[Convention Authoring Convention](convention.md)
+[Convention Authoring Convention](convention-authoring.md)
 のNormative Rule（規範的ルール）による。
 本節はそれを再定義しない。
 
@@ -449,20 +449,22 @@ documentation-structure.md
 
 の方が、Documentation（文書）に関するどの責務を扱う対象なのかを
 識別するために適切となり得る。
-同様に、
+同様に、かつて
 
 ````text
 docs/conventions/convention.md
 ````
 
-について、その資産の責務が
-Convention Authoring（規約記述）である場合、
+であった資産について、その資産の責務が
+Convention Authoring（規約記述）であることから、
 
 ````text
-convention-authoring.md
+docs/conventions/convention-authoring.md
 ````
 
-の方が識別上より適切であるという設計判断が成立し得る。
+の方が識別上より適切であるという設計判断が成立した。
+この資産のCurrent Physical Name（現在の物理名称）は後者であり、
+前者は当該Rename（名称変更）以前の状態である。
 
 本Rule（ルール）が扱う方向は次に限られる。
 
@@ -620,7 +622,7 @@ Subject Identity（対象同一性）の一部として成立している場合�
 ## Self Application（本文書自身への適用）
 
 本文書は通常のConvention Asset（規約資産）であり、
-[Convention Authoring Convention](convention.md)
+[Convention Authoring Convention](convention-authoring.md)
 が定めるRule（規則）に従って記述されている。
 
 - Convention Code（規約コード）を
