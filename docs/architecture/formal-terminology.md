@@ -12,14 +12,19 @@ Canonical Documentation Representation（正規文書表現）、および
 Definition Authority Boundary（定義権限境界）を定義する
 Architecture Asset（アーキテクチャ資産）である。
 
-本文書が扱う問いは次の4点である。
+本文書が扱う問いは次の5点である。
 
 1. Formal Term（正式用語）は、何によって成立するのか。
 2. Formal Term（正式用語）は、何を識別・参照するのか。
 3. Formal Term（正式用語）は、
    Repository Documentation（Repository文書）上で
    どのように表現されるのか。
-4. Formal Term（正式用語）に関する
+4. Formal Term（正式用語）が
+   Canonical Documentation Representation（正規文書表現）を
+   保持していることと、
+   それがConcrete Usage Occurrence（具体使用箇所）で
+   表示されることは、どこで分かれるのか。
+5. Formal Term（正式用語）に関する
    Definition Responsibility（定義責務）は、
    参照対象を所有する既存の
    Definition Authority（定義権限）とどこで分かれるのか。
@@ -167,6 +172,19 @@ Reusable Normative Standard（再利用可能な規範標準）ではない。
 - Canonical English Representation（正規英語表現）と
   Canonical Japanese Explanation（正規日本語説明）の
   非対称な責務の区別
+- Canonical Japanese Explanation（正規日本語説明）が
+  Current Formal Term Model（現在の正式用語モデル）の
+  必要構成要素として成立すること
+- Canonical Representation Availability
+  （Canonical Representation（正規表現）がFormal Term（正式用語）に属し
+  利用可能であること）と、
+  Documentation Presentation（文書上の表示）との
+  Semantic Boundary（意味上の境界）
+- Presentation Requirement（表示要求）が
+  Concrete Usage Context（具体使用文脈）に応じて
+  異なり得るという境界
+- Canonical Japanese Explanation（正規日本語説明）が
+  存在しない状態と、存在するが表示されない状態との区別
 - Terminology Referent Meaning（用語参照対象の意味）と、
   Formal Terminology（正式用語）側の
   Definition Responsibility（定義責務）との
@@ -194,8 +212,18 @@ Reusable Normative Standard（再利用可能な規範標準）ではない。
 - Term Lifecycle（用語ライフサイクル）、
   Versioning（版管理）、Deprecation（廃止）
 - Canonical Documentation Representation（正規文書表現）の
-  具体的な表記形式、併記の要否、および
-  Explicit Omission（明示的非併記）が成立する条件
+  具体的な表記形式
+- Presentation Requirement（表示要求）、すなわち
+  どのUsage Context（使用文脈）で、
+  どのCanonical Representation Element（正規表現要素）を、
+  どの頻度で表示するか
+- Presentation Context（表示文脈）の
+  Closed Taxonomy（閉じた分類体系）
+- Canonical Japanese Explanation（正規日本語説明）が
+  表示されないことが許容される条件
+- 表示・非表示のConcrete State Representation（具体状態表現）
+- Configuration（設定）のModel（モデル）
+- Generic Presentation Architecture（汎用表示アーキテクチャ）
 - Generic Language Map（汎用言語対応表）、
   Localization Model（多言語化モデル）
 - Formal Term（正式用語）に関する
@@ -226,12 +254,23 @@ Formal Term（正式用語）
         │
         ├─ Formal Term Identity（正式用語同一性）
         │
-        └─ Canonical Documentation Representation
+        └─ has（保持する）
+           ↓
+           Canonical Documentation Representation
            （正規文書表現）
                 ├─ Canonical English Representation
                 │  （正規英語表現）
                 └─ Canonical Japanese Explanation
                    （正規日本語説明）
+                        │
+                        │ available for presentation
+                        │ （表示のために利用可能である）
+                        ▼
+                   Documentation Presentation
+                   （文書上の表示）
+                        │
+                        └─ governed by downstream normative rules
+                           （下位の規範的ルールが決定する）
 ```
 
 このModel（モデル）が成立させる中心的な境界は次である。
@@ -246,6 +285,15 @@ Referent Meaning（参照対象の意味）
 Formal Term（正式用語）
 ≠ English String（英語文字列）
 ≠ Japanese Explanation（日本語説明）
+```
+
+```text
+Canonical Representation Availability
+（Canonical Representation（正規表現）がFormal Term（正式用語）に属し
+利用可能であること）
+≠
+Documentation Presentation
+（Concrete Usage Occurrence（具体使用箇所）で表示されること）
 ```
 
 ### Terminology Referent（用語参照対象）
@@ -393,6 +441,15 @@ Representation（表現）として成立する。
 Formal Term Identity（正式用語同一性）そのものでも、
 Terminology Referent Meaning（用語参照対象の意味）でもない。
 
+Formal Term（正式用語）は、
+Canonical Documentation Representation（正規文書表現）を保持する。
+保持されるのは、
+Repository Documentation（Repository文書）上で
+一貫した表現を成立させるために利用可能な
+Canonical Representation Elements（正規表現要素）である。
+Concrete Usage Occurrence（具体使用箇所）へ
+そのまま表示される完成文字列ではない。
+
 本文書が現在扱うのは、
 次の2つの非対称な要素のみである。
 
@@ -404,6 +461,11 @@ Canonical Documentation Representation（正規文書表現）
 
 この2つは対等な言語対ではない。
 それぞれが担う責務が異なる。
+
+本文書は、
+Generic Language Map（汎用言語対応表）または
+Localization Model（多言語化モデル）を導入しない。
+現在扱うのは、この非対称な2要素に限られる。
 
 #### Canonical English Representation（正規英語表現）
 
@@ -435,10 +497,101 @@ Formal Term Identity（正式用語同一性）を
 Terminology Referent Meaning（用語参照対象の意味）を
 確定させるDefinition（定義）でもない。
 
-本文書は、
-Generic Language Map（汎用言語対応表）または
-Localization Model（多言語化モデル）を導入しない。
-現在扱うのは、上記の非対称な2要素に限られる。
+Canonical Japanese Explanation（正規日本語説明）は、
+Current Formal Term Model（現在の正式用語モデル）において、
+各Formal Term（正式用語）が保持する必要構成要素である。
+
+この必要性が成立する根拠は、
+Formal Terminology（正式用語）の現在の
+Semantic Need（意味上の必要性）にある。
+Formal Term（正式用語）を補助する日本語説明が
+箇所ごとに揺れると、
+同じFormal Term（正式用語）であってもConcept（概念）の範囲が
+異なって理解される。
+Canonical Explanation（正規説明）を
+Formal Term（正式用語）側に成立させることで、
+その日本語説明のSemantic Drift（意味上の揺れ）を防ぐ。
+
+この必要性は、
+下位Convention（規約）が現在定めている
+Normative Rule（規範的ルール）から逆に導出したものではない。
+Rule（規則）の有無とは独立に、
+本Model（モデル）の構成要素として成立する。
+
+#### Representation Availability（正規表現の利用可能性）とDocumentation Presentation（文書上の表示）
+
+Documentation Presentation（文書上の表示）は、
+Canonical Representation Element（正規表現要素）が
+Concrete Usage Occurrence（具体使用箇所）へ
+実際に現れることである。
+
+本文書は、次を境界として成立させる。
+
+```text
+Canonical Representation Availability
+（Canonical Representation（正規表現）がFormal Term（正式用語）に属し
+利用可能であること）
+≠
+Documentation Presentation
+（Concrete Usage Occurrence（具体使用箇所）で表示されること）
+```
+
+すなわち、あるFormal Term（正式用語）が
+Canonical Representation Element（正規表現要素）を保持していることは、
+その要素がすべてのUsage Occurrence（使用箇所）へ
+表示されることを意味しない。
+逆に、ある使用箇所へ表示されていないことは、
+その要素がFormal Term（正式用語）に属していないことを意味しない。
+
+Presentation Requirement（表示要求）は、
+Concrete Usage Context（具体使用文脈）に応じて
+異なり得る。
+本文書が保持するのは、この境界のみである。
+
+本文書は、Presentation Context（表示文脈）の
+Closed Taxonomy（閉じた分類体系）を導入しない。
+Document Title（文書題名）・Heading Label（見出しラベル）・
+Natural Language Prose（自然言語本文）等を、
+Architecture-level Closed Set（アーキテクチャレベル閉集合）として
+定義しない。
+
+本文書は、Documentation Presentation（文書上の表示）を
+Formal Terminology（正式用語）以外の対象へ適用する
+Generic Presentation Architecture（汎用表示アーキテクチャ）へ
+一般化しない。
+
+#### Canonical Japanese Explanation（正規日本語説明）の不在と非表示
+
+本文書は、次の2つの状態を区別する。
+
+```text
+Canonical Japanese Explanation does not exist
+（Canonical Japanese Explanation（正規日本語説明）が存在しない）
+≠
+Canonical Japanese Explanation exists but is not presented
+（Canonical Japanese Explanation（正規日本語説明）は存在するが
+表示されていない）
+```
+
+Canonical Japanese Explanation（正規日本語説明）は
+Current Formal Term Model（現在の正式用語モデル）の
+必要構成要素であるため、
+それが存在しない状態は、
+そのFormal Term（正式用語）が
+本Model（モデル）を満たしていない状態である。
+本文書は、この状態を
+正式なExplicit Omission State（明示的非併記状態）として導入しない。
+
+Canonical Japanese Explanation（正規日本語説明）が存在し、
+特定のUsage Occurrence（使用箇所）で表示されていない状態は、
+本Model（モデル）の上で区別可能な状態である。
+その非表示が許容されるかどうかは、
+適用されるPresentation Rule（表示規則）が決定する。
+本文書はその可否を定めない。
+
+本文書は、これらの状態を表す
+`none` ・ `omit` ・ Boolean Flag（真偽値フラグ）等の
+Concrete State Representation（具体状態表現）を設計しない。
 
 ### Formal Term（正式用語）とName（名称）の境界
 
@@ -563,6 +716,18 @@ Schema・Tool（ツール）等の具体機構から独立して成立させる�
 具体機構は、必要性が確認された時点で、
 本Model（モデル）を前提とする後続設計が定める。
 
+### 6. Availability over Presentation（保持と表示を分離する）
+
+Canonical Representation Element（正規表現要素）が
+Formal Term（正式用語）に属し利用可能であることと、
+それがConcrete Usage Occurrence（具体使用箇所）で表示されることを
+分離して扱う。
+表示の有無だけを根拠として、
+その要素がFormal Term（正式用語）に属するかどうかを導出しない。
+表示の可否を決めるのは、
+本Model（モデル）を前提とする
+Presentation Rule（表示規則）である。
+
 ## Non-goals / Delegation（今回扱わず後続へ委譲する事項）
 
 本文書は次を定義しない。これらは後続設計へ委譲する。
@@ -589,10 +754,54 @@ Schema・Tool（ツール）等の具体機構から独立して成立させる�
 ### Representation（表現）に関する事項
 
 - Canonical Documentation Representation（正規文書表現）の
-  具体的な表記形式、および併記の要否
-- Explicit Omission（明示的非併記）が成立する条件
+  具体的な表記形式
 - Generic Language Map（汎用言語対応表）、
   Localization Model（多言語化モデル）
+
+### Presentation（表示）に関する事項
+
+本文書が所有するのは、次までである。
+
+- Canonical Representation（正規表現）が何であるか
+- Formal Term（正式用語）が
+  Canonical Representation（正規表現）を保持すること
+- Canonical Representation Availability（正規表現の利用可能性）と
+  Documentation Presentation（文書上の表示）が別であること
+
+次は所有しない。
+
+- どのUsage Context（使用文脈）で表示するか
+- どのCanonical Representation Element（正規表現要素）を表示するか
+- 初出箇所のみ表示するか、常に表示するか
+- Document Title（文書題名）・Heading Label（見出しラベル）・
+  Natural Language Prose（自然言語本文）等で
+  どのように表示するか
+- Presentation Context（表示文脈）の
+  Closed Taxonomy（閉じた分類体系）
+- Canonical Japanese Explanation（正規日本語説明）が
+  表示されないことが許容される条件、および
+  その状態のConcrete State Representation（具体状態表現）
+- Configuration（設定）のModel（モデル）
+- Documentation Presentation（文書上の表示）を
+  Formal Terminology（正式用語）以外へ適用する
+  Generic Presentation Architecture（汎用表示アーキテクチャ）
+
+これらのPresentation Requirement（表示要求）は、
+Human-readable Natural Language Representation（人間可読な自然言語表現）を
+対象とする下位Convention（規約）の責務とする。
+
+現在必要なSemantic Need（意味上の必要性）は、次の分担で解決する。
+Configuration（設定）を
+Architecture Concept（アーキテクチャ概念）として導入しない。
+
+```text
+Architecture
+    → Canonical Representation Availability（正規表現の利用可能性）と
+      Documentation Presentation（文書上の表示）を分離する
+
+Convention
+    → Presentation Rule（表示規則）を定義する
+```
 
 ### Normative Standard（規範標準）に関する事項
 
@@ -602,13 +811,25 @@ Schema・Tool（ツール）等の具体機構から独立して成立させる�
   Formal Term（正式用語）を一括適用する作業
 
 [Writing Convention](../conventions/writing.md)
-は、本文書が定義するModel（モデル）の
+は、Human-readable Natural Language Representation（人間可読な自然言語表現）を
+対象とするConvention（規約）であり、
+本文書が定義するModel（モデル）の
 下位利用者になり得る。
+Presentation Requirement（表示要求）を担う責務は、
+Current Repository（現在のRepository）では同Convention（規約）に該当する。
+
 ただし本文書は、同Convention（規約）との
 Concrete Dependency（具体依存）を今回設計しない。
 本文書は、同Convention（規約）が定義する
 Normative Rule（規範的ルール）を前提とせず、
 それを本文書側で変更・再定義することもしない。
+同Convention（規約）が現在
+Formal English Term（正式英語用語）の使用箇所へ
+日本語説明の併記を要求していることは、
+Presentation Rule（表示規則）側の判断である。
+本Model（モデル）における
+Canonical Representation Availability（正規表現の利用可能性）と
+同一視しない。
 
 ### 導入しないConcept（概念）
 
@@ -664,12 +885,51 @@ Normative Rule（規範的ルール）を前提とせず、
 3. Formal Term（正式用語）に関する
    Definition Responsibility（定義責務）が及ぶ範囲。
    → 「Definition Authority Boundary（定義権限境界）」による。
+4. Canonical Representation Element（正規表現要素）の保持と、
+   その表示が別であること。
+   → 「Representation Availability（正規表現の利用可能性）と
+   Documentation Presentation（文書上の表示）」による。
+5. Canonical Japanese Explanation（正規日本語説明）が
+   各Formal Term（正式用語）に必要な構成要素であること、および
+   不在と非表示が別の状態であること。
+   → 「Canonical Japanese Explanation（正規日本語説明）」および
+   「Canonical Japanese Explanation（正規日本語説明）の不在と非表示」による。
+
+### Canonical Declaration（正規宣言）を具体化する下位Asset
+
+Canonical Declaration（正規宣言）を具体化する
+下位のDocumentation Asset（文書資産）は、
+本文書のModel（モデル）から、
+少なくとも次の情報を保持し得ることを導出できる。
+
+- Formal Term Identity（正式用語同一性）
+- Formal Term（正式用語）と
+  Terminology Referent（用語参照対象）の
+  Relationship（関係）
+- Canonical English Representation（正規英語表現）
+- Canonical Japanese Explanation（正規日本語説明）
+
+そのAsset（資産）は
+Presentation Policy（表示方針）を所有しない。
+次はCanonical Terminology Data（正規用語データ）ではなく、
+Presentation Rule（表示規則）側の責務である。
+
+- Title Presentation Requirement（文書題名における表示要求）
+- Heading Presentation Requirement（見出しにおける表示要求）
+- Body Presentation Requirement（本文における表示要求）
+- Presentation Frequency（表示頻度）
+- Context-specific Presentation Selection（文脈ごとの表示選択）
+
+本文書は、そのAsset（資産）の成立要否、保持形式、
+およびField（フィールド）構成を定義しない。
+
+### 本文書からは判断できない事項
 
 本文書からは判断できないのは、
 どの用語がFormal Term（正式用語）として成立するかという個別の判定、
-その用語の
-Terminology Referent Meaning（用語参照対象の意味）、および
+その用語のTerminology Referent Meaning（用語参照対象の意味）、
 Canonical Documentation Representation（正規文書表現）の
-具体的な表記形式である。
+具体的な表記形式、および
+Presentation Requirement（表示要求）である。
 これらは後続設計、または参照対象を所有する
 Definition Authority（定義権限）の責務に属する。
