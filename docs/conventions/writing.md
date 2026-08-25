@@ -10,18 +10,22 @@ Semantic Meaning（意味）を明確・一貫・安定して伝達するため�
 Reusable Normative Standard（再利用可能な規範標準）**
 を定義するConvention Asset（規約資産）である。
 
-本文書が扱う問いは次の4点である。
+本文書が扱う問いは次の5点である。
 
 1. Repository Documentation（Repository文書）の
    Natural Language Prose（自然言語本文）は、
    どの言語で記述されるのか。
-2. Repository内で特定のConcept（概念）・Responsibility（責務）・
-   Role（役割）等を識別するために使用される
-   Formal English Term（正式英語用語）は、
-   どのように表現され、どのように一貫させるのか。
-3. 文章が伝えるSemantic Meaning（意味）は、
+2. Canonical Japanese Support Association（正規日本語補助対応）が
+   成立しているEnglish Representation（英語表現）は、
+   Human-readable Natural Language Representation（人間可読な自然言語表現）において
+   どのように表示されるのか。
+3. あるSubject / Meaning（対象／意味）について
+   Definition Authority（定義権限）側で
+   English Representation（英語表現）が成立している場合、
+   その対象を参照する箇所では、どの表現を使用するのか。
+4. 文章が伝えるSemantic Meaning（意味）は、
    何が満たされているとき明確に成立するのか。
-4. Normative Rule（規範的ルール）を記述する文章は、
+5. Normative Rule（規範的ルール）を記述する文章は、
    宣言されたRequirement Level（要求レベル）に対して
    どのような関係になければならないのか。
 
@@ -29,6 +33,12 @@ Reusable Normative Standard（再利用可能な規範標準）**
 Natural Language Representation（自然言語表現）そのものである。
 本文書は、文章術一般、
 またはStyle Guide（文体指針）一般を目的としない。
+
+本文書が担うのは
+Presentation / Usage Responsibility（表示／使用責務）である。
+本文書は、English Representation（英語表現）そのもの、および
+Canonical Japanese Support（正規日本語補助）の
+Canonicality（正規性）を定義しない。
 
 本文書は、上位設計が定義するConcept（概念）を再定義しない。
 
@@ -40,6 +50,8 @@ Natural Language Representation（自然言語表現）そのものである。
 - [Repository Governance Documentation Framework Architecture](../architecture/repository-governance-documentation-framework.md)
 - [Convention Architecture](../architecture/convention.md)
 - [Convention Authoring Convention](convention-authoring.md)
+- [Canonical Japanese Support Architecture](../architecture/canonical-japanese-support.md)
+- [Canonical Japanese Support Convention](canonical-japanese-support.md)
 
 Design Dependency（設計依存）は次の一方向とする。
 
@@ -51,7 +63,21 @@ Convention Authoring Convention（規約記述表記）
         ▲
         │ conforms to（記述表記に従う）
 Writing Convention（本文書）
+
+Canonical Japanese Support Architecture（正規日本語補助の意味モデル）
+        ▲
+        │ presupposes（成立した対応を前提として使用する）
+Writing Convention（本文書）
+
+Canonical Japanese Support Convention（正規日本語補助の宣言規則）
+        ▲
+        │ presupposes（Canonical Declaration（正規宣言）を参照する）
+Writing Convention（本文書）
 ```
+
+本文書は、Canonical Japanese Support（正規日本語補助）側の
+Rule（規則）およびCanonical Declaration（正規宣言）を
+参照するのみであり、変更・再定義しない。
 
 本文書は
 [Repository Governance Documentation Framework Architecture](../architecture/repository-governance-documentation-framework.md)
@@ -85,6 +111,16 @@ Definition Authority（定義権限）は上位設計にある。
   Rule Field（規則フィールド）の構成・順序・Markdown表現、
   Stability（安定性）のField表現
 - Namespace Code（名前空間コード）の割当
+- English Representation（英語表現）のIdentity（同一性）および
+  Meaning（意味）
+- Canonical Japanese Support Representation（正規日本語補助表現）の意味
+- Canonical Japanese Support Association（正規日本語補助対応）の意味、
+  その成立、およびMultiplicity（多重度）
+- 同Association（対応）の成立と
+  Documentation Presentation（文書上の表示）との
+  Boundary（境界）
+- 個々のCanonical Japanese Support Association（正規日本語補助対応）の値、
+  およびそのCanonical Declaration（正規宣言）としての保持
 
 ### Responsibility Boundary（責務境界）
 
@@ -100,7 +136,22 @@ Semantic Structure（意味構造）
 Physical Name（物理名称）
     → Naming Convention（命名規約）
 
-Human-readable Natural Language Representation（人間可読な自然言語表現）
+English Representation（英語表現）そのもの、および
+それが指すUnderlying Meaning（対象の意味）
+    → それぞれの対象を所有するDefinition Authority（定義権限）
+
+Canonical Japanese Support Association（正規日本語補助対応）の
+Semantic Model（意味モデル）とその成立
+    → Canonical Japanese Support Architecture（正規日本語補助のArchitecture）
+
+個々のCanonical Japanese Support Association（正規日本語補助対応）の値と
+そのCanonical Declaration（正規宣言）
+    → Canonical Japanese Support Convention（正規日本語補助規約）、および
+      同規約が定める
+      Central Concrete Declaration Source（中央具体宣言情報源）
+
+Human-readable Natural Language Representation（人間可読な自然言語表現）における
+使用と表示
     → 本文書
 
 Markdown Syntax / Markup Representation（Markdown構文／マークアップ表現）
@@ -111,6 +162,10 @@ Markdown Syntax / Markup Representation（Markdown構文／マークアップ表
 Semantic Structure（意味構造）、
 Physical Name（物理名称）、
 Markdown Syntax（Markdown構文）を定義しない。
+本文書は、English Representation（英語表現）の
+Definition Authority（定義権限）を取得せず、
+Canonical Japanese Support Association（正規日本語補助対応）の
+成立可否およびCanonicality（正規性）も定めない。
 本文書は、Markdown Syntax（Markdown構文）の責務を担う
 Convention（規約）の存在や内容を前提とせず、
 その責務を本文書側で新たに成立させることもしない。
@@ -128,10 +183,13 @@ Natural Language Representation（自然言語表現）は
 - Repository Documentation（Repository文書）の
   Natural Language Prose（自然言語本文）における
   Primary Language（主要言語）
-- Formal English Term（正式英語用語）の
-  Representation Form（表現形式）と、その適用対象
-- 同一のFormal Concept（正式概念）を参照する場合の
-  Formal Term Consistency（正式用語一貫性）
+- Canonical Japanese Support Association（正規日本語補助対応）が
+  成立しているEnglish Representation（英語表現）に対する
+  Canonical Japanese Support Representation（正規日本語補助表現）の
+  表示形式と、その適用対象
+- Definition Authority（定義権限）側で成立している
+  English Representation（英語表現）の、
+  参照箇所における一貫した使用
 - Subject（主体）・Responsibility Holder（責務主体）・
   Reference Target（参照対象）等に関する
   Semantic Reference Clarity（意味上の参照明確性）
@@ -150,9 +208,11 @@ Document Title（文書題名）およびHeading Label（見出しラベル）�
 Natural Language Representation（自然言語表現）が含まれる。
 
 Document Title（文書題名）およびHeading Label（見出しラベル）に対しては、
-Primary Language（主要言語）を定める `WRT-SF-001` と、
-Formal English Term（正式英語用語）に関する
-`WRT-SF-002` ・ `WRT-SF-003` が適用される。
+Primary Language（主要言語）を定める `WRT-SF-001` 、
+Canonical Japanese Support Representation（正規日本語補助表現）の
+表示を定める `WRT-SF-002` 、および
+English Representation（英語表現）の一貫した使用を定める
+`WRT-SF-003` が適用される。
 
 その他のRule（規則）の適用範囲は、
 各Rule（ルール）のRule Statement（ルール文）が示す
@@ -179,11 +239,18 @@ Document Title（文書題名）およびHeading Label（見出しラベル）�
 - Commit Message（コミットメッセージ）等、
   Documentation Asset（文書資産）以外の成果物の
   Natural Language Representation（自然言語表現）
-- Formal Name（正式名称）の
-  Semantic Model（意味モデル）、および
-  Term Taxonomy（用語分類体系）
-- Glossary（用語集）・Term Registry（用語登録簿）等の
-  用語管理機構
+- English Representation（英語表現）のIdentity（同一性）、
+  Meaning（意味）、Canonical Name（正規名称）、
+  Formal Status（正式地位）、Category（分類）、
+  およびName Status（名称としての地位）
+- English Representation（英語表現）が指す
+  Underlying Meaning（対象の意味）
+- Canonical Japanese Support Association（正規日本語補助対応）の成立、
+  そのMultiplicity（多重度）、および
+  Canonical Japanese Support Representation（正規日本語補助表現）の値
+- Canonical Declaration（正規宣言）の保持先、
+  そのConcrete Representation（具体表現）、および
+  Candidate Recommendation（候補提案）
 - Definition Model（定義モデル）、すなわち
   Definition（定義）が意味上どのような要素から成るかのModel（モデル）
 - 文末表現（`である調` / `です・ます調`）、Voice（態）、
@@ -227,8 +294,8 @@ Normative Meaning（規範的意味）を保持しない。
 すべてNormative Rule（規範的ルール）側で確定する。
 
 ここで示すのは本文書が必要とする範囲の区別であり、
-Term Taxonomy（用語分類体系）でも
-Formal Name Semantic Model（正式名称意味モデル）でもない。
+English Representation（英語表現）またはその表示について
+分類体系を成立させるものではない。
 
 ### Natural Language Prose（自然言語本文）
 
@@ -249,31 +316,31 @@ Rule Statement（ルール文）が
 Natural Language Prose（自然言語本文）のみを対象とする場合、
 その適用は本文に限られる。
 
-### Formal English Term（正式英語用語）とOrdinary Technical Term（一般技術用語）
+### Canonical Japanese Support（正規日本語補助）側の成立との関係
 
-本文書が区別するのは次の2つである。
+本文書は、あるEnglish Representation（英語表現）について
+Canonical Japanese Support Association（正規日本語補助対応）が
+成立しているかどうか、および
+Canonical Japanese Support Representation（正規日本語補助表現）の値を
+自ら判断しない。
+いずれも
+[Canonical Japanese Support Convention](canonical-japanese-support.md)
+が定めるCanonical Declaration（正規宣言）から得られる。
+
+同様に、あるSubject / Meaning（対象／意味）について
+どのEnglish Representation（英語表現）が成立しているかは、
+その対象を所有するDefinition Authority（定義権限）側で定まる。
+
+本文書が扱うのは、これらがすでに成立している場合の
+使用と表示のみである。
 
 ```text
-Formal English Term（正式英語用語）
-    = Repository内で特定のConcept（概念）・Responsibility（責務）・
-      Role（役割）等を安定して識別するために使用される英語用語
+Association / English Representationの成立
+    → 本文書の外側
 
-Ordinary Technical Term（一般技術用語）
-    = Repository固有の識別を担わず、
-      一般に通用する意味で使用される技術用語
+使用と表示
+    → 本文書
 ```
-
-`Repository`・`Commit`・`Branch`・`File`・`API` のような
-Ordinary Technical Term（一般技術用語）は、
-Repository固有のConcept（概念）を識別するために
-使用されているのではない。
-
-本文書は、どの用語が
-Formal English Term（正式英語用語）として成立するかの
-Catalog（一覧）を保持しない。
-成立の根拠は、
-その用語が使用されている箇所において
-Repository固有の識別を担っているかどうかにある。
 
 ### Normative Strength（規範強度）
 
@@ -319,7 +386,6 @@ Primary Language（主要言語）である日本語で記述する。
 
 - Code（コード）およびIdentifier（識別子）
 - File名、Directory名、Path
-- Formal English Term（正式英語用語）
 - External Product / Tool / Protocol等の正式名称
 - External Contract（外部契約）によって表記が固定される文字列
 - 原文を維持する必要がある引用
@@ -363,117 +429,146 @@ Message Language（メッセージ言語）は
 [Commit Convention](commit.md)
 が所有する。
 
-### Terminology（用語）
+### English Representation and Japanese Support（英語表現と日本語補助）
 
-#### WRT-SF-002 — Formal English Term Representation
+#### WRT-SF-002 — Canonical Japanese Support Presentation
 
 **Rule ID:** `WRT-SF-002`
 
-**Rule Name:** Formal English Term Representation
+**Rule Name:** Canonical Japanese Support Presentation
 
 **Stability:** Development
 
 **Requirement:** MUST
 
-**Rule:** Repository内で特定のConcept（概念）・Responsibility（責務）・
-Role（役割）等を安定して識別するために使用する
-Formal English Term（正式英語用語）は、
-英語用語に日本語説明を併記した
-`English Term（日本語説明）` の形式で表現する。
+**Rule:** Canonical Japanese Support Association（正規日本語補助対応）が
+成立しているEnglish Representation（英語表現）を
+Human-readable Natural Language Representation（人間可読な自然言語表現）で
+使用する場合、次の形式で表示する。
 
-この形式は初出箇所に限らず、
-その用語をFormal English Term（正式英語用語）として
-使用する箇所へ適用する。
-この箇所には、
-Natural Language Prose（自然言語本文）に加えて、
-Human-readable（人間可読）なDocument Title（文書題名）および
-Heading Label（見出しラベル）が含まれる。
+````text
+English Representation（Canonical Japanese Support Representation）
+````
 
-Repository固有の識別を担わず、
-一般に通用する意味で使用される
-Ordinary Technical Term（一般技術用語）は、
-本Rule（ルール）の対象ではない。
+本Rule（ルール）の適用対象は次の3つである。
 
-**Reason:** Formal English Term（正式英語用語）は、
-一般的な英単語と同じ語形を持ちながら、
-Repository内では特定のConcept（概念）を指す。
-日本語説明の併記がなければ、
-読み手はその語が一般語として使われているのか
-特定のConcept（概念）を指しているのかを判別できず、
-Semantic Meaning（意味）が読み手ごとに分岐する。
+- Natural Language Prose（自然言語本文）
+- Human-readable（人間可読）なDocument Title（文書題名）
+- Heading Label（見出しラベル）
+
+この表示は初出箇所に限らず、
+対象となる使用箇所へ適用する。
+
+Canonical Japanese Support Association（正規日本語補助対応）の有無、
+およびCanonical Japanese Support Representation（正規日本語補助表現）の値は
+本Rule（ルール）が決定しない。
+いずれも
+[Canonical Japanese Support Convention](canonical-japanese-support.md)
+が定めるCanonical Declaration（正規宣言）による。
+
+**Reason:** Canonical Japanese Support Association（正規日本語補助対応）は、
+そのEnglish Representation（英語表現）の理解補助として
+Repositoryが一貫して再利用すると決定した
+Japanese Representation（日本語表現）を保持している。
+その決定が使用箇所へ現れなければ、
+読み手は成立済みの理解補助を受け取れず、
+決定が読み手に対して機能しない。
+English Representation（英語表現）と
+Canonical Japanese Support Representation（正規日本語補助表現）を
+同じ箇所へ併記することで、
+読み手は参照される表現とその日本語補助を対応付けたまま読み進められる。
 初出箇所に限定しないのは、
 Documentation Asset（文書資産）が
 先頭から通読されるとは限らず、
 Section（節）単位または検索経由での参照において
-初出箇所の併記が読み手へ届かないためである。
+初出箇所の表示が読み手へ届かないためである。
+Association（対応）の有無と値を本Rule（ルール）が決定しないのは、
+Canonicality（正規性）の成立が
+Canonical Japanese Support（正規日本語補助）側の責務であり、
+表示側でそれを再判断すると
+中央で成立した決定と使用箇所の表示が分岐するためである。
 
-**Note:** 本Rule（ルール）は、
-どの用語がFormal English Term（正式英語用語）に当たるかの
-Catalog（一覧）を保持せず、
-Glossary（用語集）・Term Registry（用語登録簿）等の
-用語管理機構を前提としない。
+**Note:** 本Rule（ルール）は
+Canonical Japanese Support Association（正規日本語補助対応）を
+成立させず、
+どのEnglish Representation（英語表現）について
+対応を成立させるべきかも定めない。
 
-本Rule（ルール）は
-Term Taxonomy（用語分類体系）を定義しない。
-区別されるのは、
-その箇所においてRepository固有の識別を担っているかどうかである。
+Canonical Japanese Support Association（正規日本語補助対応）が
+成立していないEnglish Representation（英語表現）の表示について、
+本Rule（ルール）は何も定めない。
 
-日本語説明の文言そのものを固定するCatalog（一覧）は
-本Rule（ルール）が定めない。
-Document Title（文書題名）およびHeading Label（見出しラベル）についても、
-固定のHeading Catalog（見出し一覧）および
-固定翻訳Catalog（翻訳一覧）は成立しない。
-同一のFormal Concept（正式概念）に対する
-日本語説明の一貫性は `WRT-SF-003` が扱う。
-
+Code（コード）・Identifier（識別子）・Path等として機能する
+Literal Representation（そのままの表記）は、
+Human-readable Natural Language Representation（人間可読な自然言語表現）としての
+使用ではなく、本Rule（ルール）の対象ではない。
 Rule ID（規約ルールID）、Rule Name（ルール名）等、
 対象を識別するIdentifier（識別子）または
-Label（ラベル）としての表記は、
-Formal English Term（正式英語用語）としての使用ではない。
+Label（ラベル）としての表記も同様である。
 
-#### WRT-SF-003 — Formal Term Consistency
+Document Title（文書題名）およびHeading Label（見出しラベル）について、
+固定のHeading Catalog（見出し一覧）および
+固定翻訳Catalog（翻訳一覧）は本Rule（ルール）から成立しない。
+
+#### WRT-SF-003 — English Representation Consistency
 
 **Rule ID:** `WRT-SF-003`
 
-**Rule Name:** Formal Term Consistency
+**Rule Name:** English Representation Consistency
 
 **Stability:** Development
 
 **Requirement:** MUST
 
-**Rule:** 同一のFormal Concept（正式概念）を参照する場合、
-同じFormal English Term（正式英語用語）と、
-それに対応する同じ日本語説明を使用する。
+**Rule:** あるSubject / Meaning（対象／意味）について、
+そのDefinition Authority（定義権限）側で
+English Representation（英語表現）が成立している場合、
+その対象をRepository Documentation（Repository文書）上で参照するときは、
+その定義済みEnglish Representation（英語表現）を一貫して使用する。
 
 本Rule（ルール）は、
 Natural Language Prose（自然言語本文）における参照に加えて、
 Human-readable（人間可読）なDocument Title（文書題名）および
 Heading Label（見出しラベル）における参照へ適用する。
 
-本Rule（ルール）が対象とするのは
-Formal Concept（正式概念）への参照であり、
-Formal English Term（正式英語用語）として参照していない
-通常の説明文における語の選択は対象ではない。
+**Reason:** Definition Authority（定義権限）側で成立している
+English Representation（英語表現）は、
+その対象を参照するための表現である。
+参照箇所ごとに異なる表現が用いられると、
+読み手はそれらが同じ対象を指すのか
+別の対象を指すのかを判定できず、
+表現の同一性による参照が成立しない。
+また、使用箇所の表現が定義側の表現と一致しなければ、
+読み手は使用箇所から定義へ到達できない。
+定義済みの表現をそのまま使用することで、
+参照の同一性と定義への到達可能性が保たれる。
 
-**Reason:** 同一のFormal Concept（正式概念）が
-箇所ごとに異なる用語で現れると、
-読み手はそれらが同じConcept（概念）を指すのか
-別のConcept（概念）を指すのかを判定できず、
-用語の同一性による参照が成立しなくなる。
-対応する日本語説明まで含めて一貫させるのは、
-説明側が揺れると、
-同じ英語用語であってもConcept（概念）の範囲が
-異なって読まれるためである。
+**Note:** 本Rule（ルール）は、
+English Representation（英語表現）のIdentity（同一性）、
+Meaning（意味）、Canonical Name（正規名称）、
+Formal Status（正式地位）、Category（分類）、
+およびName Status（名称としての地位）を定義しない。
+いずれもその対象を所有する
+Definition Authority（定義権限）側で成立する。
 
-**Note:** 本Rule（ルール）が要求するのは
-Formal Term Consistency（正式用語一貫性）であり、
+Canonical Japanese Support Representation（正規日本語補助表現）の一貫性は
+本Rule（ルール）が扱わない。
+Japanese Support（日本語補助）側の一貫性は、
+`WRT-SF-002` と
+[Canonical Japanese Support Convention](canonical-japanese-support.md)
+が定めるCanonical Declaration（正規宣言）によって成立する。
+
+本Rule（ルール）が要求するのは参照表現の一貫性であり、
 文章全体で同じ単語を機械的に反復することではない。
 
 ````text
-Formal Term Consistency
+English Representation Consistency
 ≠ Mechanical Word Repetition
 ````
 
+Definition Authority（定義権限）側で
+English Representation（英語表現）が成立していない対象について、
+本Rule（ルール）は使用する表現を定めない。
 通常の説明文において、
 読みやすさのために語や言い回しを変えることは
 本Rule（ルール）が禁じるところではない。
@@ -656,13 +751,16 @@ Example（例）は、理解を助ける記述として有用である。
 - Natural Language Prose（自然言語本文）、
   Document Title（文書題名）、およびHeading Label（見出しラベル）を
   日本語で記述している。
-- Formal English Term（正式英語用語）を、
-  Natural Language Prose（自然言語本文）および
-  Heading Label（見出しラベル）のいずれにおいても
-  `English Term（日本語説明）` の形式で表現している。
-- 同一のFormal Concept（正式概念）に対して、
-  同じFormal English Term（正式英語用語）と
-  同じ日本語説明を使用している。
+- Canonical Japanese Support Association（正規日本語補助対応）が
+  成立しているEnglish Representation（英語表現）を、
+  Natural Language Prose（自然言語本文）、
+  Document Title（文書題名）、およびHeading Label（見出しラベル）の
+  いずれにおいても
+  `English Representation（Canonical Japanese Support Representation）`
+  の形式で表示している。
+- Definition Authority（定義権限）側で成立している
+  English Representation（英語表現）を、
+  参照箇所において一貫して使用している。
 - 各Rule Statement（ルール文）の表現を、
   宣言したRequirement Level（要求レベル）へ一致させている。
 
