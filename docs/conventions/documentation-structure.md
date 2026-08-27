@@ -120,14 +120,18 @@ Definition Authority（定義権限）は上位設計にある。
   定義方法、およびその定義権限の所在
 - 定義済みStandard Section Heading Representation（標準Section見出し表現）の
   再利用要求
-- 本文書が定義するDocumentation-wide Standard Sections（Documentation全体標準Section）の
-  Concrete Heading Representation（具体見出し表現）
+- 本文書が定義するDocumentation-wide Standard Sections（Documentation全体標準Section）
+  のうち、Standard Section Heading Representation（標準Section見出し表現）を
+  宣言するものについてのConcrete Heading Representation（具体見出し表現）
 - Standard Section Catalog（標準Section一覧）の開放性と、
   Document-specific Section（文書固有Section）の許容
 - Applicability Scope（適用範囲）を跨ぐ
   Standard Identity（標準同一性）の非重複
 - Documentation-wide Standard Sections（Documentation全体標準Section）の
-  Section Responsibility（Section責務）、および
+  Section Responsibility（Section責務）、
+  他のStandard Section（標準Section）の
+  Responsibility Decomposition（責務分解）として成立する場合の
+  その関係、および
   必要な場合のPresence Requirement（設置要求）
 
 ### Out of Scope（本文書が定義しない範囲）
@@ -193,8 +197,11 @@ Convention Code: DST
 ### Standard Section Heading Representation（標準Section見出し表現）
 
 本文書が定義するDocumentation-wide Standard Sections（Documentation全体標準Section）
-に対するStandard Section Heading Representation（標準Section見出し表現）を、
+のうち、次に挙げるものに対する
+Standard Section Heading Representation（標準Section見出し表現）を、
 Standard Section（標準Section）ごとに次のとおり宣言する。
+ここに挙げないStandard Section（標準Section）については、
+Standard Section Heading Representation（標準Section見出し表現）を宣言しない。
 以下の宣言はいずれも、
 Standard Section Identity（標準Section同一性）の
 Meaning（意味）を変更しない。
@@ -273,7 +280,8 @@ Heading（見出し）の文字列、Heading Level（見出しレベル）、
 Markdown Marker（Markdown記号）、Section Order（Section順序）は
 その成立条件ではない。
 
-`Purpose`・`Scope`・`Relationships` は
+`Purpose`・`Scope`・`Relationships`・
+`In Scope`・`Out of Scope`・`Responsibility Boundary` は
 Standard Section Identity（標準Section同一性）を指す名称であり、
 それ自体がHeading（見出し）として記述されるべき
 Heading Representation（見出し表現）であることを意味しない。
@@ -902,6 +910,135 @@ Semantic Relationship（意味上の関係）を明確にすることである�
 **Note:** 本Rule（ルール）は定義であり、
 Presence Requirement（設置要求）を定めない。
 
+#### DST-SF-020 — In Scope Standard Section
+
+**Rule ID:** `DST-SF-020`
+
+**Rule Name:** In Scope Standard Section
+
+**Stability:** Development
+
+**Requirement:** MUST
+
+**Rule:** Applicability Scope（適用範囲）を
+Documentation-wide（Documentation全体）とする
+In Scope Standard Section（対象範囲内標準Section）を定義する。
+そのSection Responsibility（Section責務）は、
+Scope Standard Section（対象範囲標準Section）の
+Responsibility Decomposition（責務分解）として、
+当該Documentation Asset（文書資産）が
+Document Responsibility（文書責務）の範囲内で扱う事項を
+明確にすることである。
+
+**Reason:** 何を扱うかと何を扱わないかは、
+いずれもResponsibility Boundary（責務境界）を構成するが、
+読み手と書き手が参照する場面は異なる。
+扱う事項の側を独立した責務として分離できる場合、
+その責務は資産の種類を問わず反復して現れる。
+共通のIdentity（同一性）を与えることで、
+その所在を資産横断で同じ根拠から確認できる。
+
+**Note:** 本Rule（ルール）は定義であり、
+Presence Requirement（設置要求）を定めない。
+`DST-SF-016` は
+`In Scope` / `Out of Scope` 等を固定のChild Section（子Section）として
+要求しない旨を定めており、本Rule（ルール）はこれを変更しない。
+
+本Standard Section（標準Section）と
+Scope Standard Section（対象範囲標準Section）の関係は、
+Responsibility Decomposition（責務分解）である。
+Scope Standard Section（対象範囲標準Section）の責務のうち、
+分解されていない部分は
+Scope Standard Section（対象範囲標準Section）自身が直接担う。
+
+#### DST-SF-021 — Out of Scope Standard Section
+
+**Rule ID:** `DST-SF-021`
+
+**Rule Name:** Out of Scope Standard Section
+
+**Stability:** Development
+
+**Requirement:** MUST
+
+**Rule:** Applicability Scope（適用範囲）を
+Documentation-wide（Documentation全体）とする
+Out of Scope Standard Section（対象範囲外標準Section）を定義する。
+そのSection Responsibility（Section責務）は、
+Scope Standard Section（対象範囲標準Section）の
+Responsibility Decomposition（責務分解）として、
+当該Documentation Asset（文書資産）が
+Document Responsibility（文書責務）の範囲外として扱わない事項を
+明確にすることである。
+
+**Reason:** 扱わない事項が明示されなければ、
+その資産が担っていない事柄が担われているものとして参照され、
+あるいは担うべき事柄が他所で重複して定義される。
+この責務を独立して保持できる場合、
+その責務は資産の種類を問わず反復して現れる。
+共通のIdentity（同一性）を与えることで、
+その所在を資産横断で同じ根拠から確認できる。
+
+**Note:** 本Rule（ルール）は定義であり、
+Presence Requirement（設置要求）を定めない。
+
+本Standard Section（標準Section）が担うのは、
+Document Responsibility（文書責務）の範囲外であるという
+Responsibility Boundary（責務境界）上の事実である。
+Architecture Asset（アーキテクチャ資産）が
+自身の責務範囲を踏まえたうえで意図的に定義・解決しないという
+設計判断は、これとは別の責務である。
+
+#### DST-SF-022 — Responsibility Boundary Standard Section
+
+**Rule ID:** `DST-SF-022`
+
+**Rule Name:** Responsibility Boundary Standard Section
+
+**Stability:** Development
+
+**Requirement:** MUST
+
+**Rule:** Applicability Scope（適用範囲）を
+Documentation-wide（Documentation全体）とする
+Responsibility Boundary Standard Section（責務境界標準Section）を定義する。
+そのSection Responsibility（Section責務）は、
+Relationships Standard Section（関係標準Section）の
+Responsibility Decomposition（責務分解）として、
+当該Documentation Asset（文書資産）が担う
+Responsibility（責務）およびDefinition Authority（定義権限）と、
+隣接する責務主体とのBoundary（境界）を
+明確にすることである。
+
+**Reason:** 他の責務主体との関係のうち、
+どこまでを自身が担い、どこから先を他が担うのかという境界は、
+参照関係や依存関係の記述とは別の判断根拠として使われる。
+この境界を独立した責務として保持できる場合、
+その責務は資産の種類を問わず反復して現れる。
+共通のIdentity（同一性）を与えることで、
+Definition Authority（定義権限）の所在を
+資産横断で同じ根拠から確認できる。
+
+**Note:** 本Rule（ルール）は定義であり、
+Presence Requirement（設置要求）を定めない。
+
+Scope Standard Section（対象範囲標準Section）とは
+Section Responsibility（Section責務）が異なる。
+Scope Standard Section（対象範囲標準Section）が担うのは、
+当該資産自身のDocument Responsibility（文書責務）が
+適用される範囲および境界である。
+本Standard Section（標準Section）が担うのは、
+隣接する責務主体との間で
+Responsibility（責務）およびDefinition Authority（定義権限）が
+どこで分かれるかである。
+
+本Standard Section（標準Section）と
+Relationships Standard Section（関係標準Section）の関係は、
+Responsibility Decomposition（責務分解）である。
+Relationships Standard Section（関係標準Section）の責務のうち、
+分解されていない部分は
+Relationships Standard Section（関係標準Section）自身が直接担う。
+
 ## Self Application（本文書自身への適用）
 
 本文書は通常のConvention Asset（規約資産）であり、
@@ -925,11 +1062,22 @@ Presence Requirement（設置要求）を定めない。
 - Purpose・Scope・Relationshipsの各
   Standard Section Identity（標準Section同一性）を、
   それぞれの責務に適合するSection（節）へ使用している。
+- Scope Standard Section（対象範囲標準Section）の
+  Responsibility Decomposition（責務分解）として構成しているSection（節）へ、
+  In Scope・Out of Scopeの
+  Standard Section Identity（標準Section同一性）を使用している。
+- Responsibility Boundary Standard Section（責務境界標準Section）に対応する
+  Section Responsibility（Section責務）は、
+  独立したSection（節）として構成していない。
 - その他のSection（節）は
   Document-specific Section（文書固有Section）である。
-- 本文書が定義するStandard Section（標準Section）に対する
-  Standard Section Heading Representation（標準Section見出し表現）を、
-  「Concrete Declarations（具体宣言）」で宣言している。
+- 本文書が定義するStandard Section（標準Section）のうち、
+  Standard Section Heading Representation（標準Section見出し表現）を
+  宣言するものについて、その宣言を
+  「Concrete Declarations（具体宣言）」で行っている。
+- In Scope・Out of Scope・Responsibility Boundaryについては
+  Standard Section Heading Representation（標準Section見出し表現）を
+  宣言していないため、`DST-SF-019` による再利用要求は生じない。
 - 本文書自身のPurpose・Scope・RelationshipsのHeading（見出し）は、
   宣言したStandard Section Heading Representation（標準Section見出し表現）と
   一致している。

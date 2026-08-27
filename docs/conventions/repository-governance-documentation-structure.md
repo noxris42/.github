@@ -137,6 +137,10 @@ Definition Authority（定義権限）は上位設計にある。
   Applicability Scope（適用範囲）とする
   Standard Section（標準Section）の
   Section Responsibility（Section責務）
+- それらのStandard Section（標準Section）が、
+  他のStandard Section（標準Section）の
+  Responsibility Decomposition（責務分解）として成立する場合の
+  その関係
 - それら固有のStandard Section（標準Section）について、
   将来Semantic Need（意味上の必要性）が確認された場合の
   Presence Requirement（設置要求）
@@ -241,7 +245,9 @@ Repository Governance Documentation Structure Convention（本文書）
 
 ### Identity（同一性）とRepresentation（表現）
 
-`Position`・`Concept Model`・`Design Principles`・`Non-goals` は、
+`Position`・`Concept Model`・`Design Principles`・`Non-goals`・
+`Concrete Declarations`・`Convention Code`・`Namespace Code`・
+`Normative Rules`・`Self Application` は、
 Standard Section Identity（標準Section同一性）を指す名称であり、
 そのまま記述されるべき
 Canonical Heading Representation（正規見出し表現）ではない。
@@ -482,6 +488,197 @@ Non-goals（非目標）に必要に応じて付随する情報として扱う�
 本文書はDelegation（委譲）を
 独立したStandard Section（標準Section）として定義しない。
 
+### Conventions Area Standard Sections（規約領域標準Section）
+
+#### RDS-SF-005 — Concrete Declarations Standard Section
+
+**Rule ID:** `RDS-SF-005`
+
+**Rule Name:** Concrete Declarations Standard Section
+
+**Stability:** Development
+
+**Requirement:** MUST
+
+**Rule:** Applicability Scope（適用範囲）を
+Repository Governance Documentation Framework（Repository統治文書体系）
+およびConventions Area（規約領域）とする
+Concrete Declarations Standard Section（具体宣言標準Section）を定義する。
+そのSection Responsibility（Section責務）は、
+Convention Asset（規約資産）が必要とする
+Concrete Assignment（具体割当）および
+Concrete Declaration（具体宣言）を、
+Normative Rule（規範的ルール）から区別して保持することである。
+
+**Reason:** Convention Asset（規約資産）は、
+識別子の形式および使用条件を定めるNormative Rule（規範的ルール）と、
+どの値が実際に割り当てられているかというConcrete Assignment（具体割当）の
+両方を必要とする。
+両者が区別されないまま置かれると、
+値の変更が規範の変更として読まれ、
+規範の変更が値の変更として読まれる。
+この区別を保持する責務は、
+Conventions Area（規約領域）の資産へ反復して現れる。
+共通のIdentity（同一性）を与えることで、
+その区別を一貫した根拠から確認できる。
+
+**Note:** 本Rule（ルール）は定義であり、
+Presence Requirement（設置要求）を定めない。
+
+本Standard Section（標準Section）はNon-normative Content（非規範的内容）を
+保持する責務であり、
+Normative Effect（規範的効力）を持たない。
+
+#### RDS-SF-006 — Convention Code Standard Section
+
+**Rule ID:** `RDS-SF-006`
+
+**Rule Name:** Convention Code Standard Section
+
+**Stability:** Development
+
+**Requirement:** MUST
+
+**Rule:** Applicability Scope（適用範囲）を
+Repository Governance Documentation Framework（Repository統治文書体系）
+およびConventions Area（規約領域）とする
+Convention Code Standard Section（規約コード標準Section）を定義する。
+そのSection Responsibility（Section責務）は、
+Concrete Declarations Standard Section（具体宣言標準Section）の
+Responsibility Decomposition（責務分解）として、
+包含するConvention Asset（規約資産）へ割り当てられた
+Convention Code（規約コード）の
+Concrete Assignment（具体割当）を宣言することである。
+
+**Reason:** Convention Code（規約コード）は、
+その規約が定めるRule ID（規約ルールID）の解釈に必要な前提である。
+どの値が割り当てられているかを保持する責務は、
+Conventions Area（規約領域）の資産へ反復して現れる。
+共通のIdentity（同一性）を与えることで、
+その所在を資産横断で同じ根拠から確認できる。
+
+**Note:** 本Rule（ルール）は定義であり、
+Presence Requirement（設置要求）を定めない。
+
+Convention Authoring Convention（規約記述規約）に存在する
+Convention Code（規約コード）関連のSection（節）と、
+Heading String（見出し文字列）が一致することだけを理由として、
+同一のStandard Section Identity（標準Section同一性）とみなさない。
+Standard Section Identity（標準Section同一性）は
+Applicability Scope（適用範囲）と
+Section Responsibility（Section責務）によって成立する。
+
+#### RDS-SF-007 — Namespace Code Standard Section
+
+**Rule ID:** `RDS-SF-007`
+
+**Rule Name:** Namespace Code Standard Section
+
+**Stability:** Development
+
+**Requirement:** MUST
+
+**Rule:** Applicability Scope（適用範囲）を
+Repository Governance Documentation Framework（Repository統治文書体系）
+およびConventions Area（規約領域）とする
+Namespace Code Standard Section（名前空間コード標準Section）を定義する。
+そのSection Responsibility（Section責務）は、
+Concrete Declarations Standard Section（具体宣言標準Section）の
+Responsibility Decomposition（責務分解）として、
+当該Convention Asset（規約資産）の
+Normative Rules（規範的ルール）が使用する
+割当済みNamespace Code（名前空間コード）を
+Concrete Declaration（具体宣言）として示すことである。
+
+**Reason:** Rule ID（規約ルールID）は
+Convention（規約）とNamespace（名前空間）の組合せの中で成立する。
+自身のRule（ルール）がどのNamespace Code（名前空間コード）に属するかが
+示されなければ、Rule ID（規約ルールID）の一意性の根拠が確定しない。
+この責務は、Conventions Area（規約領域）の資産へ反復して現れる。
+
+**Note:** 本Rule（ルール）は定義であり、
+Presence Requirement（設置要求）を定めない。
+
+Convention Authoring Convention（規約記述規約）の
+`Namespace Code Assignment` とは
+別のStandard Section Identity（標準Section同一性）である。
+本Standard Section（標準Section）が担うのは、
+当該資産が使用するNamespace Code（名前空間コード）の宣言である。
+`Namespace Code Assignment` が担うのは、
+Namespace Code（名前空間コード）そのものの割当である。
+両者を同一の責務として扱わない。
+
+#### RDS-SF-008 — Normative Rules Standard Section
+
+**Rule ID:** `RDS-SF-008`
+
+**Rule Name:** Normative Rules Standard Section
+
+**Stability:** Development
+
+**Requirement:** MUST
+
+**Rule:** Applicability Scope（適用範囲）を
+Repository Governance Documentation Framework（Repository統治文書体系）
+およびConventions Area（規約領域）とする
+Normative Rules Standard Section（規範的ルール標準Section）を定義する。
+そのSection Responsibility（Section責務）は、
+Convention（規約）がNormative Effect（規範的効力）を持たせる
+Normative Rule（規範的ルール）群を保持し、
+Non-normative Content（非規範的内容）から
+意味的に区別することである。
+
+**Reason:** Convention Asset（規約資産）は、
+規範的効力を持つ内容と持たない内容を併せ持つ。
+どこからどこまでが規範であるかが構造から判別できなければ、
+補足や説明が規範として運用され、
+あるいは規範が参考情報として扱われる。
+この区別を保持する責務は、
+Conventions Area（規約領域）の資産へ反復して現れる。
+
+**Note:** 本Rule（ルール）は定義であり、
+Presence Requirement（設置要求）を定めない。
+
+本Standard Section（標準Section）は、
+個々のNormative Rule（規範的ルール）およびその
+Category（分類）を、
+Standard Section（標準Section）として定義しない。
+
+#### RDS-SF-009 — Self Application Standard Section
+
+**Rule ID:** `RDS-SF-009`
+
+**Rule Name:** Self Application Standard Section
+
+**Stability:** Development
+
+**Requirement:** MUST
+
+**Rule:** Applicability Scope（適用範囲）を
+Repository Governance Documentation Framework（Repository統治文書体系）
+およびConventions Area（規約領域）とする
+Self Application Standard Section（自己適用標準Section）を定義する。
+そのSection Responsibility（Section責務）は、
+当該Convention Asset（規約資産）自身へ適用される
+Convention（規約）およびRule（規則）について、
+そのSelf Application（自己適用）および
+Conformance（適合）を明確にすることである。
+
+**Reason:** Convention Asset（規約資産）は、
+自身も他のConvention（規約）の適用対象であり、
+場合によっては自身が定めるRule（規則）の適用対象でもある。
+その適合状況が示されなければ、
+規約が自身に適用されない例外として運用され、
+規約の妥当性を自身の記述から検証できなくなる。
+この責務は、Conventions Area（規約領域）の資産へ反復して現れる。
+
+**Note:** 本Rule（ルール）は定義であり、
+Presence Requirement（設置要求）を定めない。
+
+本Standard Section（標準Section）はNon-normative Content（非規範的内容）を
+保持する責務であり、
+新たなNormative Requirement（規範要求）を成立させない。
+
 ## Self Application（本文書自身への適用）
 
 本文書は通常のConvention Asset（規約資産）であり、
@@ -513,9 +710,22 @@ Non-goals（非目標）に必要に応じて付随する情報として扱う�
   独立したSection（節）として構成しているため、
   そのStandard Section Identity（標準Section同一性）を使用している。
 - 本文書はConventions Area（規約領域）に属するため、
+  Conventions Area（規約領域）を
+  Applicability Scope（適用範囲）に含む
+  Standard Section（標準Section）が適用可能である。
+  Concrete Declarations・Convention Code・Namespace Code・
+  Normative Rules・Self Applicationの各
+  Section Responsibility（Section責務）を
+  独立したSection（節）として構成しているため、
+  対応するStandard Section Identity（標準Section同一性）を使用している。
+- 本文書はConventions Area（規約領域）に属するため、
   Architecture Area（アーキテクチャ領域）を
   Applicability Scope（適用範囲）に含む
   Standard Section（標準Section）は適用されない。
+- Scope Standard Section（対象範囲標準Section）の
+  Responsibility Decomposition（責務分解）として構成しているSection（節）へ、
+  In Scope・Out of Scopeの
+  Standard Section Identity（標準Section同一性）を使用している。
 - その他のSection（節）は
   Document-specific Section（文書固有Section）である。
 
