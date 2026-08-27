@@ -120,6 +120,8 @@ Definition Authority（定義権限）は上位設計にある。
   定義方法、およびその定義権限の所在
 - 定義済みStandard Section Heading Representation（標準Section見出し表現）の
   再利用要求
+- 本文書が定義するDocumentation-wide Standard Sections（Documentation全体標準Section）の
+  Concrete Heading Representation（具体見出し表現）
 - Standard Section Catalog（標準Section一覧）の開放性と、
   Document-specific Section（文書固有Section）の許容
 - Applicability Scope（適用範囲）を跨ぐ
@@ -144,8 +146,6 @@ Definition Authority（定義権限）は上位設計にある。
   Closed Taxonomy（閉じた分類体系）
 - Section（節）とHeading（見出し）・Heading Level（見出しレベル）の
   Mapping Rule（対応規則）
-- 本文書が定義するStandard Section（標準Section）の
-  Concrete Heading Value（具体見出し値）
 - Document-specific Section（文書固有Section）の
   Heading Representation（見出し表現）のModel（モデル）
 - Heading Registry（見出し登録簿）等、
@@ -170,7 +170,7 @@ Definition Authority（定義権限）は上位設計にある。
 
 ## Concrete Declarations（具体宣言）
 
-本節はConcrete Identifier Assignment（具体識別子割当）の宣言である。
+本節はConcrete Assignment（具体割当）の宣言である。
 **Normative Rule（規範的ルール）ではない** 。
 
 ### Convention Code（規約コード）
@@ -189,6 +189,55 @@ Convention Code: DST
 （Shared Foundation Namespace／共有基盤名前空間）に属する。
 
 本文書はNamespace Code（名前空間コード）を新たに割り当てない。
+
+### Standard Section Heading Representation（標準Section見出し表現）
+
+本文書が定義するDocumentation-wide Standard Sections（Documentation全体標準Section）
+に対するStandard Section Heading Representation（標準Section見出し表現）を、
+Standard Section（標準Section）ごとに次のとおり宣言する。
+以下の宣言はいずれも、
+Standard Section Identity（標準Section同一性）の
+Meaning（意味）を変更しない。
+
+以下の各Child Section（子Section）のHeading（見出し）は、
+どのStandard Section（標準Section）に対する
+Concrete Assignment（具体割当）を宣言しているかを示すものであり、
+Standard Section Heading Representation（標準Section見出し表現）そのものではない。
+
+#### Purpose Standard Section（目的標準Section）
+
+```text
+Standard Section:                Purpose
+English Heading Representation:  Purpose
+Japanese Heading Explanation:    目的
+```
+
+#### Scope Standard Section（対象範囲標準Section）
+
+```text
+Standard Section:                Scope
+English Heading Representation:  Scope
+Japanese Heading Explanation:    対象範囲
+```
+
+`Scope` のJapanese Heading Explanation（日本語見出し説明）を
+`対象範囲` とするのは、当該Standard Section（標準Section）が
+適用される範囲だけでなく、何を扱い何を扱わないかという
+Responsibility Boundary（責務境界）まで含むためである。
+
+#### Relationships Standard Section（関係標準Section）
+
+```text
+Standard Section:                Relationships
+English Heading Representation:  Relationships
+Japanese Heading Explanation:    関係
+```
+
+`Relationships` のJapanese Heading Explanation（日本語見出し説明）を
+`関係` とするのは、当該Standard Section（標準Section）が
+他のDocumentation Asset（文書資産）・Responsibility（責務）・
+Concept（概念）等とのSemantic Relationship（意味上の関係）全般を
+対象とするためである。
 
 ## Reading Aid（読解のための補足）
 
@@ -879,10 +928,14 @@ Presence Requirement（設置要求）を定めない。
 - その他のSection（節）は
   Document-specific Section（文書固有Section）である。
 - 本文書が定義するStandard Section（標準Section）に対する
-  Standard Section Heading Representation（標準Section見出し表現）は、
-  現時点では定義していない。
+  Standard Section Heading Representation（標準Section見出し表現）を、
+  「Concrete Declarations（具体宣言）」で宣言している。
+- 本文書自身のPurpose・Scope・RelationshipsのHeading（見出し）は、
+  宣言したStandard Section Heading Representation（標準Section見出し表現）と
+  一致している。
 
-本文書自身のHeading（見出し）表現・Section Order（Section順序）は、
+本文書自身のHeading Level（見出しレベル）・Section Order（Section順序）・
+Markdown Heading Marker（Markdown見出し記号）は、
 本文書が定めるものではない。
 
 本節はNon-normative Content（非規範的内容）であり、
