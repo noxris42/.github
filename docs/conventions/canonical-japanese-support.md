@@ -17,7 +17,8 @@ Reusable Normative Standard（再利用可能な規範標準）**
    Canonical Declaration（正規宣言）として保持されるのか。
 2. Canonical Japanese Support Association（正規日本語補助対応）の
    Candidate Recommendation（候補提案）は、
-   何を優先して行うのか。
+   何を優先して行い、
+   何を根拠として対象から除外しないのか。
 3. Candidate Recommendation（候補提案）と
    Canonical Association Establishment（正規対応成立）は、
    どこで分かれるのか。
@@ -113,8 +114,10 @@ English Representation（英語表現）そのもの、および
 Underlying Meaning（対象の意味）
     → それぞれの対象を所有する既存のDefinition Authority（定義権限）
 
-Canonical Declaration（正規宣言）の保持と反復規則、および
-Candidate Recommendation（候補提案）の規則
+Canonical Declaration（正規宣言）の保持と反復規則、
+Candidate Recommendation（候補提案）の規則、および
+Candidate Recommendation（候補提案）と
+Canonical Decision（正規判断）との分離
     → 本文書
 
 個々のCanonical Japanese Support Association（正規日本語補助対応）の値
@@ -153,6 +156,8 @@ Human-readable Natural Language Representation（人間可読な自然言語表�
   Concrete Representation（具体表現）
 - Candidate Recommendation（候補提案）において
   何を優先して提案するか
+- Candidate Recommendation（候補提案）の対象から
+  除外してはならない根拠
 - Candidate Recommendation（候補提案）と
   Canonical Association Establishment（正規対応成立）との
   Boundary（境界）
@@ -271,18 +276,70 @@ Canonical Association Establishment（正規対応成立）への
 Input（入力）であり、
 それ自体はCanonical Decision（正規判断）ではない。
 
+この位置づけから、Candidate Recommendation（候補提案）が果たすのは、
+判断の対象となり得るEnglish Representation（英語表現）を
+Canonical Decision（正規判断）の前に見えるようにすることである。
+どれを成立させるかを選び分けることではない。
+
+本文書は、この位置づけを
+Architecture-level Concept（アーキテクチャレベル概念）として
+新たに導入しない。
+
 ## Candidate Recommendation Guidance（候補提案指針）
 
 本節はNon-normative Content（非規範的内容）であり、
-`CJS-SF-004` の解釈補助として置かれる。
+`CJS-SF-004` および `CJS-SF-006` の解釈補助として置かれる。
 本節は新たなNormative Requirement（規範要求）を追加せず、
 Registration Qualification（登録条件）も定めない。
+
+### Candidate Pool（候補集合）の広さ
+
+Candidate Recommendation（候補提案）が生む
+Candidate Pool（候補集合）は、
+Canonical Decision（正規判断）を受ける前の集合である。
+したがって、そこへ現れることは
+成立の見込みが高いことを意味しない。
+
+`CJS-SF-004` が述べるのは提案の優先であり、
+提案順序または提示上の強調として働く。
+優先度が低いことは、
+Candidate Pool（候補集合）へ現れないことを意味しない。
+`CJS-SF-006` は、成立の見込みが低い・不明であることのみを根拠として
+Candidate Pool（候補集合）から落とすことを禁じる。
+
+```text
+低い優先度
+≠ Candidate Poolからの除外
+```
+
+これは、次のような
+English Representation（英語表現）が
+Canonical Decision（正規判断）を受けないまま
+Candidate Pool（候補集合）から消えることを防ぐためのものである。
+
+- 1つのDocumentation Asset（文書資産）にのみ現れる
+- Out of Scope（本文書が定義しない範囲）の列挙等、
+  対象外を示す文脈で現れる
+- Repository横断の概念ではなく、
+  局所的な区別として現れる
+- 日本語補助を定める価値があるかどうかが判断しにくい
+
+一方、Candidate Pool（候補集合）は
+Repository Documentation（Repository文書）に現れる
+英語表記の網羅一覧ではない。
+`CJS-SF-006` はCompleteness（網羅性）を要求せず、
+Japanese Reading Support（日本語読解補助）の対象でないことが明らかな
+Literal Representation（そのままの表記）まで
+提案対象へ含めることも求めない。
 
 ### 候補になり得るSignal（兆候）
 
 次は、Candidate Recommendation（候補提案）の優先を考える際に
 現時点で有用と考えられる観点である。
-いずれもRequirement（要求）ではない。
+いずれもRequirement（要求）ではなく、
+Candidate Pool（候補集合）へ入るための条件でもない。
+ここに挙げた観点へ当てはまらないことは、
+提案対象から外す根拠にならない。
 
 - Concept（概念）・Responsibility（責務）・Role（役割）・
   Relationship（関係）・Principle（原則）等の理解に
@@ -326,6 +383,57 @@ Literal Representation（そのままの表記）は、
 通常はCandidate Recommendation（候補提案）の優先対象としない。
 
 これはHard Exclusion Rule（厳密な除外規則）ではない。
+
+この扱いが `CJS-SF-006` と衝突しないのは、
+除外の根拠が成立の見込みではないためである。
+
+```text
+Japanese Reading Support（日本語読解補助）の対象でない
+→ CJS-SF-006が禁じる除外根拠ではない
+
+成立の見込みが低い・不明である
+→ CJS-SF-006が禁じる除外根拠である
+```
+
+同じSurface Form（表層形式）が、
+ある箇所ではCode（コード）等として、
+別の箇所では自然言語の一部として現れることがある。
+その場合、後者の使用があることをもって
+候補になり得る。
+
+### Definition-owned Representation（定義責務側の表現）の扱い
+
+あるHuman-readable Representation（人間可読表現）が、
+別のSubject（別対象）についての
+Definition Responsibility（定義責務）によって
+すでに定義されていることがある。
+そのような箇所は
+Canonical Japanese Support（正規日本語補助）の
+Definition Authority（定義権限）の外にある。
+
+この境界は
+[Canonical Japanese Support Architecture](../architecture/canonical-japanese-support.md)
+が保持するものであり、
+Candidate Recommendation（候補提案）の段階で
+判断を先取りする根拠にはならない。
+
+同じEnglish Representation（英語表現）が、
+定義済み表現が現れる箇所と、
+Natural Language Prose（自然言語本文）とで
+ともに使用されていることがある。
+前者に該当する箇所があることは、
+そのEnglish Representation（英語表現）全体が
+Candidate Pool（候補集合）から外れることを意味しない。
+
+```text
+定義済み表現が現れる箇所がある
+≠ 当該English RepresentationがCandidate Poolから外れる
+```
+
+どこまでが定義責務側の表現であり、
+どこからがCanonical Japanese Support Association（正規日本語補助対応）の
+対象であるかは、
+Canonical Decision（正規判断）の側で確定する。
 
 ### 再提案の扱い
 
@@ -522,6 +630,13 @@ Registration Qualification（登録条件）ではない。
 Canonical Japanese Support Association（正規日本語補助対応）が
 成立し得る対象を限定しない。
 
+本Rule（ルール）が述べる優先は、
+提案対象の順序または提示上の強調として働く。
+優先されないことは、
+Candidate Recommendation（候補提案）の対象から
+除外されることを意味しない。
+除外してはならない根拠は `CJS-SF-006` が定める。
+
 本Rule（ルール）は、次のいずれも必要条件としない。
 
 ````text
@@ -572,6 +687,66 @@ Canonical Japanese Support Association（正規日本語補助対応）が
 本Rule（ルール）は、
 Human Review Workflow（人によるレビュー手順）、
 具体的なActor（主体）、
+Approval / Rejection State（承認／却下状態）を規定しない。
+
+#### CJS-SF-006 — Recommendation Does Not Preempt Canonical Decision
+
+**Rule ID:** `CJS-SF-006`
+
+**Rule Name:** Recommendation Does Not Preempt Canonical Decision
+
+**Stability:** Development
+
+**Requirement:** MUST NOT
+
+**Rule:** あるEnglish Representation（英語表現）について
+Canonical Japanese Support Association（正規日本語補助対応）が
+成立する見込みが低いこと、または
+成立するかどうかが不明であることのみを根拠として、
+そのEnglish Representation（英語表現）を
+Candidate Recommendation（候補提案）の対象から除外してはならない。
+
+**Reason:** 成立するかどうかは
+Canonical Association Establishment（正規対応成立）の側で決まる。
+提案の段階でその見込みを先取りして対象を落とすと、
+落とされたEnglish Representation（英語表現）については
+成立させるか否かの判断自体が行われず、
+判断されなかったことと
+判断のうえ成立しなかったこととが区別できなくなる。
+`CJS-SF-005` は、提案されたことを成立と扱うことを禁じて
+提案と決定を分離している。
+成立の見込みを提案の可否へ持ち込むことは、
+同じ分離を逆向きに崩し、
+決定の範囲を提案の側が先に確定させることになる。
+見込みを除外根拠としないことで、
+Canonical Decision（正規判断）が
+提案の段階で先取りされない。
+
+**Note:** 本Rule（ルール）が禁じるのは、
+成立の見込みのみを根拠とする除外である。
+他の根拠による除外は本Rule（ルール）の対象ではない。
+Code（コード）・Identifier（識別子）・Path等として機能し、
+Japanese Reading Support（日本語読解補助）の対象でないことが
+明らかなLiteral Representation（そのままの表記）を
+提案対象としないことは、
+成立の見込みを根拠とする除外ではない。
+
+本Rule（ルール）は、
+Repository Documentation（Repository文書）に現れる
+English Representation（英語表現）の
+Completeness（網羅性）を要求しない。
+網羅一覧を作ることも、
+提案数を増やすことも要求しない。
+
+本Rule（ルール）は、
+`CJS-SF-004` が述べる提案の優先を妨げない。
+優先度の差は提案対象の順序または提示上の強調として働き、
+除外としては働かない。
+
+本Rule（ルール）は、
+Rejected Candidate History（非採用候補履歴）、
+Permanent Exclusion（永久除外）、
+Human Review Workflow（人によるレビュー手順）、
 Approval / Rejection State（承認／却下状態）を規定しない。
 
 ## Self Application（本文書自身への適用）
