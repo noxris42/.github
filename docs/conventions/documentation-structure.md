@@ -246,6 +246,39 @@ Japanese Heading Explanation:    関係
 Concept（概念）等とのSemantic Relationship（意味上の関係）全般を
 対象とするためである。
 
+#### In Scope Standard Section（対象範囲内標準Section）
+
+```text
+Standard Section:                In Scope
+English Heading Representation:  In Scope
+Japanese Heading Explanation:    本文書が定義する範囲
+```
+
+#### Out of Scope Standard Section（対象範囲外標準Section）
+
+```text
+Standard Section:                Out of Scope
+English Heading Representation:  Out of Scope
+Japanese Heading Explanation:    本文書が定義しない範囲
+```
+
+`In Scope` / `Out of Scope` のJapanese Heading Explanation
+（日本語見出し説明）を
+`本文書が定義する範囲` / `本文書が定義しない範囲` とするのは、
+両者がいずれもScope Standard Section（対象範囲標準Section）の
+Responsibility Decomposition（責務分解）であり、
+当該Documentation Asset（文書資産）自身の
+Document Responsibility（文書責務）の内外を対象とすることを
+示すためである。
+
+#### Responsibility Boundary Standard Section（責務境界標準Section）
+
+```text
+Standard Section:                Responsibility Boundary
+English Heading Representation:  Responsibility Boundary
+Japanese Heading Explanation:    責務境界
+```
+
 ## Reading Aid（読解のための補足）
 
 本節は、以降のNormative Rule（規範的ルール）を読むための補足である。
@@ -1075,12 +1108,13 @@ Relationships Standard Section（関係標準Section）自身が直接担う。
   Standard Section Heading Representation（標準Section見出し表現）を
   宣言するものについて、その宣言を
   「Concrete Declarations（具体宣言）」で行っている。
-- In Scope・Out of Scope・Responsibility Boundaryについては
-  Standard Section Heading Representation（標準Section見出し表現）を
-  宣言していないため、`DST-SF-019` による再利用要求は生じない。
-- 本文書自身のPurpose・Scope・RelationshipsのHeading（見出し）は、
+- 本文書自身のPurpose・Scope・Relationships・
+  In Scope・Out of ScopeのHeading（見出し）は、
   宣言したStandard Section Heading Representation（標準Section見出し表現）と
   一致している。
+- Responsibility BoundaryのStandard Section Identity（標準Section同一性）は、
+  対応するSection（節）を構成していないためHeading（見出し）として
+  表現しておらず、`DST-SF-019` による再利用要求は生じない。
 
 本文書自身のHeading Level（見出しレベル）・Section Order（Section順序）・
 Markdown Heading Marker（Markdown見出し記号）は、

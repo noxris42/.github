@@ -141,6 +141,10 @@ Definition Authority（定義権限）は上位設計にある。
   他のStandard Section（標準Section）の
   Responsibility Decomposition（責務分解）として成立する場合の
   その関係
+- それら固有のStandard Section（標準Section）のうち、
+  Standard Section Heading Representation（標準Section見出し表現）を
+  宣言するものについての、その具体の
+  Standard Section Heading Representation（標準Section見出し表現）
 - それら固有のStandard Section（標準Section）について、
   将来Semantic Need（意味上の必要性）が確認された場合の
   Presence Requirement（設置要求）
@@ -171,8 +175,7 @@ Definition Authority（定義権限）は上位設計にある。
 - Section Responsibilities（Section責務群）による
   Document Responsibility（文書責務）のCoverage（網羅）要求
 - Section（節）とHeading（見出し）・Heading Level（見出しレベル）の
-  Mapping Rule（対応規則）、および
-  Canonical Heading Representation（正規見出し表現）
+  Mapping Rule（対応規則）
 - Natural Language Representation（自然言語表現）、
   日英表記、文体、用語選択
 - Markdown Syntax、Markdown Heading Marker（Markdown見出し記号）、
@@ -191,7 +194,7 @@ Standard Section（標準Section）の定義のみで構成される。
 
 ## Concrete Declarations（具体宣言）
 
-本節はConcrete Identifier Assignment（具体識別子割当）の宣言である。
+本節はConcrete Assignment（具体割当）の宣言である。
 **Normative Rule（規範的ルール）ではない** 。
 
 ### Convention Code（規約コード）
@@ -210,6 +213,107 @@ Convention Code: RDS
 （Shared Foundation Namespace／共有基盤名前空間）に属する。
 
 本文書はNamespace Code（名前空間コード）を新たに割り当てない。
+
+### Standard Section Heading Representation（標準Section見出し表現）
+
+本文書が定義するStandard Section（標準Section）に対する
+Standard Section Heading Representation（標準Section見出し表現）を、
+Standard Section（標準Section）ごとに次のとおり宣言する。
+以下の宣言はいずれも、
+Standard Section Identity（標準Section同一性）の
+Meaning（意味）を変更しない。
+
+以下の各Child Section（子Section）のHeading（見出し）は、
+どのStandard Section（標準Section）に対する
+Concrete Assignment（具体割当）を宣言しているかを示すものであり、
+Standard Section Heading Representation（標準Section見出し表現）そのものではない。
+
+#### Position Standard Section（位置標準Section）
+
+```text
+Standard Section:                Position
+English Heading Representation:  Position
+Japanese Heading Explanation:    設計上の位置づけ
+```
+
+`Position` のJapanese Heading Explanation（日本語見出し説明）を
+`設計上の位置づけ` とするのは、当該Standard Section（標準Section）の
+Section Responsibility（Section責務）が、
+上位Source（上位の情報源）との関係に限らず、
+本Framework（体系）における当該資産の位置づけ全体を
+対象とするためである。
+
+#### Concept Model Standard Section（概念モデル標準Section）
+
+```text
+Standard Section:                Concept Model
+English Heading Representation:  Concept Model
+Japanese Heading Explanation:    概念モデル
+```
+
+#### Design Principles Standard Section（設計原則標準Section）
+
+```text
+Standard Section:                Design Principles
+English Heading Representation:  Design Principles
+Japanese Heading Explanation:    設計原則
+```
+
+#### Non-goals Standard Section（非目標標準Section）
+
+```text
+Standard Section:                Non-goals
+English Heading Representation:  Non-goals
+Japanese Heading Explanation:    現在扱わない事項
+```
+
+`Non-goals` のJapanese Heading Explanation（日本語見出し説明）に
+Delegation（委譲）を含めないのは、
+`RDS-SF-004` においてDelegation（委譲）が
+必要な場合にのみ付随する情報であり、
+当該Standard Section（標準Section）の
+Section Responsibility（Section責務）を常に構成するものでは
+ないためである。
+
+#### Concrete Declarations Standard Section（具体宣言標準Section）
+
+```text
+Standard Section:                Concrete Declarations
+English Heading Representation:  Concrete Declarations
+Japanese Heading Explanation:    具体宣言
+```
+
+#### Convention Code Standard Section（規約コード標準Section）
+
+```text
+Standard Section:                Convention Code
+English Heading Representation:  Convention Code
+Japanese Heading Explanation:    規約コード
+```
+
+#### Namespace Code Standard Section（名前空間コード標準Section）
+
+```text
+Standard Section:                Namespace Code
+English Heading Representation:  Namespace Code
+Japanese Heading Explanation:    名前空間コード
+```
+
+#### Normative Rules Standard Section（規範的ルール標準Section）
+
+```text
+Standard Section:                Normative Rules
+English Heading Representation:  Normative Rules
+Japanese Heading Explanation:    規範的ルール
+```
+
+#### Self Application Standard Section（自己適用標準Section）
+
+```text
+Standard Section:                Self Application
+English Heading Representation:  Self Application
+Japanese Heading Explanation:    本文書自身への適用
+```
 
 ## Reading Aid（読解のための補足）
 
@@ -248,11 +352,21 @@ Repository Governance Documentation Structure Convention（本文書）
 `Position`・`Concept Model`・`Design Principles`・`Non-goals`・
 `Concrete Declarations`・`Convention Code`・`Namespace Code`・
 `Normative Rules`・`Self Application` は、
-Standard Section Identity（標準Section同一性）を指す名称であり、
-そのまま記述されるべき
-Canonical Heading Representation（正規見出し表現）ではない。
+Standard Section Identity（標準Section同一性）を指す名称である。
+Standard Section Identity（標準Section同一性）は
+Heading（見出し）文字列の一致によって成立するものではなく、
+Applicability Scope（適用範囲）と
+Section Responsibility（Section責務）によって成立する。
 
-Heading（見出し）の文字列、日本語併記の有無、
+これらのStandard Section Identity（標準Section同一性）に対する
+Standard Section Heading Representation（標準Section見出し表現）は、
+「Concrete Declarations（具体宣言）」で宣言している。
+Standard Section Identity（標準Section同一性）を
+Heading（見出し）として表現する場合、
+宣言したRepresentation（表現）が再利用の対象である。
+宣言されたRepresentation（表現）が存在することは、
+当該Section（節）の設置を要求しない。
+
 Heading Level（見出しレベル）、
 Markdown Heading Marker（Markdown見出し記号）、
 Section Order（Section順序）は、本文書では定めない。
@@ -728,8 +842,27 @@ Presence Requirement（設置要求）を定めない。
   Standard Section Identity（標準Section同一性）を使用している。
 - その他のSection（節）は
   Document-specific Section（文書固有Section）である。
+- 本文書が定義するStandard Section（標準Section）の
+  Standard Section Heading Representation（標準Section見出し表現）を、
+  「Concrete Declarations（具体宣言）」で宣言している。
+- 本文書自身のPosition・Concrete Declarations・Convention Code・
+  Namespace Code・Normative Rules・Self ApplicationのHeading（見出し）は、
+  宣言したStandard Section Heading Representation（標準Section見出し表現）と
+  一致している。
+- Concept Model・Design Principles・Non-goalsの
+  Standard Section Identity（標準Section同一性）は、
+  Architecture Area（アーキテクチャ領域）を
+  Applicability Scope（適用範囲）に含むため、
+  Conventions Area（規約領域）に属する本文書では
+  Heading（見出し）として表現していない。
+- 本文書自身のPurpose・Scope・In Scope・Out of ScopeのHeading（見出し）は、
+  [Documentation Structure Convention](documentation-structure.md)
+  が宣言したStandard Section Heading Representation（標準Section見出し表現）と
+  一致している。
 
-本文書自身のHeading（見出し）表現・Section Order（Section順序）は、
+本文書自身のHeading Level（見出しレベル）・
+Markdown Heading Marker（Markdown見出し記号）・
+Section Order（Section順序）は、
 本文書が定めるものではない。
 
 本節はNon-normative Content（非規範的内容）であり、
