@@ -99,6 +99,11 @@ Definition Authority（定義権限）は上位設計にある。
 - Canonical Japanese Support Representation（正規日本語補助表現）と、
   Underlying Meaning（対象の意味）との
   Definition Authority Boundary（定義権限境界）
+- Canonical Japanese Support Representation（正規日本語補助表現）と、
+  別のSubject（別対象）についての
+  Definition Responsibility（定義責務）が定義する
+  Human-readable Representation（人間可読表現）との
+  Definition Authority Boundary（定義権限境界）
 - Architecture-level Semantic Model（アーキテクチャレベル意味モデル）と
   Individual Canonical Value（個別正規値）との
   Definition Authority Boundary（定義権限境界）
@@ -116,6 +121,12 @@ Definition Authority（定義権限）は上位設計にある。
 - 個々のEnglish Representation（英語表現）と
   個々のCanonical Japanese Support Representation（正規日本語補助表現）との
   具体的な対応の値
+- 別のSubject（別対象）についての
+  Definition Responsibility（定義責務）が定義する
+  Human-readable Representation（人間可読表現）そのもの、および
+  そのLanguage-specific Representation（言語固有表現）
+- Subject-specific Representation（対象固有表現）または
+  Local Presentation（局所表示）の詳細Model（詳細モデル）
 - Japanese Representation（日本語表現）側から見た
   逆方向のMultiplicity（多重度）
 - Title（題名）・Heading（見出し）・Body（本文）、初出、常時表示等の
@@ -306,6 +317,58 @@ Definition Authority（定義権限）側にある。
 Underlying Meaning（対象の意味）に関する
 Definition Authority（定義権限）の一般Model（一般モデル）を
 新たに設計しない。
+
+### 別のSubject（別対象）が定義するHuman-readable Representation（人間可読表現）との境界
+
+Canonical Japanese Support（正規日本語補助）が扱うのは、
+Repository Documentation（Repository文書）で使用される
+English Representation（英語表現）の理解を補助するために
+Repository横断で再利用される
+Japanese Reading Support（日本語読解補助）である。
+
+Human-readable Representation（人間可読表現）そのものが、
+別のSubject（別対象）についての
+Definition Responsibility（定義責務）の一部として
+定義されている場合がある。
+この場合、そのRepresentation（表現）の
+Language-specific Representation（言語固有表現）を定めるのは、
+そのSubject（対象）を所有する
+Definition Authority（定義権限）側である。
+
+```text
+別のSubject（別対象）についての
+Definition Responsibility（定義責務）が定義する
+Human-readable Representation（人間可読表現）
+        ↓
+そのSubject（対象）を所有するDefinition Authority（定義権限）
+
+English Representation（英語表現）の理解補助として
+Repository横断で再利用される
+Japanese Reading Support（日本語読解補助）
+        ↓
+本文書が成立させる
+Canonical Japanese Support Association（正規日本語補助対応）
+```
+
+したがって、そのようなRepresentation（表現）は
+本文書のDefinition Authority（定義権限）の外にある。
+本文書は、それを定義・置換・上書きしない。
+
+また、あるRepresentation（表現）が
+English Representation（英語表現）と
+同じSurface Form（表層形式）であること、または
+あるJapanese Representation（日本語表現）が
+Canonical Japanese Support Representation（正規日本語補助表現）と
+同じJapanese Value（日本語値）であることは、
+それだけでは同じSemantic Responsibility（意味上の責務）を意味しない。
+本文書は、Surface Form（表層形式）の一致、または
+Japanese Value（日本語値）の一致のみから
+Canonical Japanese Support Association（正規日本語補助対応）の成立を
+推論しない。
+
+本文書は、そのようなRepresentation（表現）が
+どのように定義または表示されるかについての
+Model（モデル）を新たに設計しない。
 
 ### Architecture-level Semantic Model（アーキテクチャレベル意味モデル）とIndividual Canonical Value（個別正規値）との境界
 
