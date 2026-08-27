@@ -116,6 +116,10 @@ Definition Authority（定義権限）は上位設計にある。
   Standard Section Identity（標準Section同一性）の選択と適合
 - Standard Section Definition（標準Section定義）と
   Presence Requirement（設置要求）の分離
+- Standard Section Heading Representation（標準Section見出し表現）の
+  定義方法、およびその定義権限の所在
+- 定義済みStandard Section Heading Representation（標準Section見出し表現）の
+  再利用要求
 - Standard Section Catalog（標準Section一覧）の開放性と、
   Document-specific Section（文書固有Section）の許容
 - Applicability Scope（適用範囲）を跨ぐ
@@ -139,11 +143,18 @@ Definition Authority（定義権限）は上位設計にある。
 - Applicability Scope（適用範囲）粒度の
   Closed Taxonomy（閉じた分類体系）
 - Section（節）とHeading（見出し）・Heading Level（見出しレベル）の
-  Mapping Rule（対応規則）、および
-  Canonical Heading Representation（正規見出し表現）
+  Mapping Rule（対応規則）
+- 本文書が定義するStandard Section（標準Section）の
+  Concrete Heading Value（具体見出し値）
+- Document-specific Section（文書固有Section）の
+  Heading Representation（見出し表現）のModel（モデル）
+- Heading Registry（見出し登録簿）等、
+  Heading Representation（見出し表現）の中央登録簿
 - Section Identifier（Section識別子）、
   Section Registry（Section登録簿）
-- Natural Language Representation（自然言語表現）、
+- Standard Section Heading Representation（標準Section見出し表現）の
+  定義および再利用を除く、
+  Natural Language Representation（自然言語表現）、
   日英表記、文体、用語選択
 - Markdown Syntax、Markdown Heading Marker（Markdown見出し記号）、
   その他Markdown固有の表現
@@ -215,8 +226,81 @@ Markdown Marker（Markdown記号）、Section Order（Section順序）は
 
 `Purpose`・`Scope`・`Relationships` は
 Standard Section Identity（標準Section同一性）を指す名称であり、
-そのまま記述されるべき
-Canonical Heading Representation（正規見出し表現）ではない。
+それ自体がHeading（見出し）として記述されるべき
+Heading Representation（見出し表現）であることを意味しない。
+Heading Representation（見出し表現）は、
+Standard Section Heading Representation（標準Section見出し表現）として
+別に定義された場合にのみ成立する。
+
+### Standard Section Heading Representation（標準Section見出し表現）
+
+Standard Section Heading Representation（標準Section見出し表現）は、
+Standard Section Identity（標準Section同一性）を
+Human-readable Heading（人間可読見出し）として表現するための
+Representation（表現）である。
+Identity（同一性）の成立条件ではない。
+
+現在成立するModel（モデル）は次である。
+
+```text
+Standard Section
+    │
+    ├─ Standard Section Identity
+    │     ├─ Applicability Scope
+    │     └─ Section Responsibility
+    │
+    └─ 0..1 Standard Section Heading Representation
+          ├─ English Heading Representation
+          └─ Japanese Heading Explanation
+```
+
+Standard Section Heading Representation（標準Section見出し表現）は
+`0..1` である。
+定義されていないことは、
+Standard Section（標準Section）の成立を妨げない。
+
+同一のHeading（見出し）文字列であることから
+Standard Section Identity（標準Section同一性）を導出しない。
+
+Japanese Heading Explanation（日本語見出し説明）は
+Canonical Japanese Support Representation（正規日本語補助表現）ではない。
+
+```text
+Japanese Heading Explanation
+    ≠ Canonical Japanese Support Representation
+
+same value
+    ≠ same semantic responsibility
+```
+
+同一のJapanese Value（日本語値）が
+Canonical Japanese Support（正規日本語補助）側にも存在し得ることは
+禁止されない。
+両者はSemantic Responsibility（意味上の責務）が異なる。
+
+Standard Section Heading Representation（標準Section見出し表現）には
+Preferred / Canonical等の複数段階を設けない。
+定義されたRepresentation（表現）が存在する場合、
+それが再利用の対象である。
+
+Definition Authority（定義権限）の所在は次である。
+
+```text
+Standard Sectionの意味定義
+    → そのStandard Sectionを定義するConvention
+
+Standard Section Heading Representationの機構
+    → 本文書
+
+具体のStandard Section Heading Representation
+    → そのStandard Sectionを定義するConvention
+```
+
+したがって中央のHeading Registry（見出し登録簿）は導入しない。
+
+本機構はStandard Section Identity（標準Section同一性）にのみ適用される。
+Document-specific Section（文書固有Section）の
+Heading Representation（見出し表現）へは自動的に適用されない。
 
 ### Applicability Scope（適用範囲）
 
@@ -239,7 +323,9 @@ Standard Section（標準Section）の機構と責務までである。
 
 次は本文書の責務ではない。
 
-- Natural Language Representation（自然言語表現）、
+- Standard Section Heading Representation（標準Section見出し表現）の
+  定義および再利用を除く、
+  Natural Language Representation（自然言語表現）、
   日英表記、文体、用語選択
 - Markdown Syntax、Heading Marker（見出し記号）等の
   Markdown固有表現
@@ -533,6 +619,76 @@ Section Responsibility（Section責務）と
 異なる責務が必要な場合は、
 別のStandard Section（標準Section）としての定義を妨げない。
 
+### Standard Section Heading Representation（標準Section見出し表現）
+
+#### DST-SF-018 — Standard Section Heading Representation Definition
+
+**Rule ID:** `DST-SF-018`
+
+**Rule Name:** Standard Section Heading Representation Definition
+
+**Stability:** Development
+
+**Requirement:** MUST
+
+**Rule:** Standard Section（標準Section）に対して
+Standard Section Heading Representation（標準Section見出し表現）を
+定義する場合、
+その定義は、当該Standard Section（標準Section）を定義する
+Convention（規約）上で行い、
+1つのStandard Section（標準Section）につき最大1つとし、
+English Heading Representation（英語見出し表現）と、
+それに対応するJapanese Heading Explanation（日本語見出し説明）によって
+構成しなければならない。
+
+**Reason:** 同一のStandard Section Identity（標準Section同一性）は
+複数のDocumentation Asset（文書資産）でHeading（見出し）として
+表現され得る。
+再利用可能なHuman-readable Heading Representation（人間可読見出し表現）が
+定義されていなければ、
+同じ責務のSection（節）が資産ごとに異なる見出しで現れる。
+定義の所在をStandard Section（標準Section）の定義側へ置くのは、
+Identity（同一性）とその表現の定義権限を分散させないためである。
+
+**Note:** 本Rule（ルール）は
+Standard Section Heading Representation（標準Section見出し表現）を
+定義することを要求しない。
+定義するかどうかは任意であり、
+本Rule（ルール）が必須とするのは定義する場合の構成条件のみである。
+定義されていないことは、
+`DST-SF-005` によるStandard Section（標準Section）の成立を妨げない。
+Japanese Heading Explanation（日本語見出し説明）は
+当該Heading Representation（見出し表現）を日本語で説明するものであり、
+Canonical Japanese Support Representation（正規日本語補助表現）ではない。
+
+#### DST-SF-019 — Standard Section Heading Representation Reuse
+
+**Rule ID:** `DST-SF-019`
+
+**Rule Name:** Standard Section Heading Representation Reuse
+
+**Stability:** Development
+
+**Requirement:** MUST
+
+**Rule:** Standard Section Heading Representation（標準Section見出し表現）が
+定義されているStandard Section Identity（標準Section同一性）を、
+Documentation Asset（文書資産）がHeading（見出し）として表現する場合、
+定義されたStandard Section Heading Representation（標準Section見出し表現）を
+使用しなければならない。
+
+**Reason:** 定義された表現が使用されなければ、
+表現は資産ごとに分岐し、
+読み手は同じ責務のSection（節）を毎回別の見出しから解釈することになる。
+再利用を要求することで、
+Identity（同一性）と表現の対応が資産横断で一定に保たれる。
+
+**Note:** 本Rule（ルール）はHeading（見出し）による表現を要求しない。
+Heading（見出し）として表現する場合の表現のみを定める。
+本Rule（ルール）は
+Standard Section Identity（標準Section同一性）にのみ適用され、
+Document-specific Section（文書固有Section）へは適用されない。
+
 ### Documentation-wide Standard Sections（Documentation全体標準Section）
 
 #### DST-SF-012 — Purpose Standard Section
@@ -722,6 +878,9 @@ Presence Requirement（設置要求）を定めない。
   それぞれの責務に適合するSection（節）へ使用している。
 - その他のSection（節）は
   Document-specific Section（文書固有Section）である。
+- 本文書が定義するStandard Section（標準Section）に対する
+  Standard Section Heading Representation（標準Section見出し表現）は、
+  現時点では定義していない。
 
 本文書自身のHeading（見出し）表現・Section Order（Section順序）は、
 本文書が定めるものではない。
