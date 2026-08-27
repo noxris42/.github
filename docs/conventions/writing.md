@@ -221,6 +221,9 @@ Semantic Subject（意味上の対象）によって定まる。
 Document Title（文書題名）およびHeading Label（見出しラベル）へ
 一律に適用しない。
 
+各Rule（ルール）が個別に定める適用条件は、
+当該Rule（ルール）のRule Statement（ルール文）が確定する。
+
 ### Out of Scope（本文書が定義しない範囲）
 
 - Section（節）・Section Responsibility（Section責務）・
@@ -459,6 +462,16 @@ English Representation（Canonical Japanese Support Representation）
 この表示は初出箇所に限らず、
 対象となる使用箇所へ適用する。
 
+ただし、ある使用箇所の
+Human-readable Representation（人間可読表現）が、
+別のSubject（別対象）についての
+Definition Responsibility（定義責務）によって
+すでに定義されている場合、
+その使用箇所は本Rule（ルール）の適用対象ではない。
+その箇所では定義済みの
+Human-readable Representation（人間可読表現）をそのまま使用し、
+本Rule（ルール）の表示形式がそれを置換・上書きすることはない。
+
 Canonical Japanese Support Association（正規日本語補助対応）の有無、
 およびCanonical Japanese Support Representation（正規日本語補助表現）の値は
 本Rule（ルール）が決定しない。
@@ -488,6 +501,18 @@ Canonical Japanese Support（正規日本語補助）側の責務であり、
 表示側でそれを再判断すると
 中央で成立した決定と使用箇所の表示が分岐するためである。
 
+定義済みのHuman-readable Representation（人間可読表現）を
+適用対象から外すのは、
+その箇所に現れる表現が、
+English Representation（英語表現）の理解補助として選ばれた表現ではなく、
+その対象を所有するDefinition Authority（定義権限）が定義した
+Human-readable Representation（人間可読表現）そのものであるためである。
+そこへ本Rule（ルール）の表示形式を適用すると、
+表示側が定義済みの表現を置き換えることになり、
+定義の所在と使用箇所の表現が分岐する。
+定義済みの表現をそのまま現すことで、
+定義側で成立した決定が使用箇所においても保たれる。
+
 **Note:** 本Rule（ルール）は
 Canonical Japanese Support Association（正規日本語補助対応）を
 成立させず、
@@ -509,6 +534,37 @@ Label（ラベル）としての表記も同様である。
 Document Title（文書題名）およびHeading Label（見出しラベル）について、
 固定のHeading Catalog（見出し一覧）および
 固定翻訳Catalog（翻訳一覧）は本Rule（ルール）から成立しない。
+
+本Rule（ルール）の適用境界は、
+その使用箇所のHuman-readable Representation（人間可読表現）について
+別のSubject（別対象）の
+Definition Responsibility（定義責務）が成立しているかどうかによって定まる。
+Document Title（文書題名）・Heading Label（見出しラベル）・
+Natural Language Prose（自然言語本文）という
+使用箇所の種別によっては定まらない。
+定義済みのHuman-readable Representation（人間可読表現）を持たない
+Document Title（文書題名）およびHeading Label（見出しラベル）は、
+引き続き本Rule（ルール）の適用対象である。
+
+たとえば、
+Standard Section Heading Representation（標準Section見出し表現）が
+定義されているStandard Section（標準Section）のHeading（見出し）は、
+その定義済みRepresentation（表現）が現れる箇所であり、
+本Rule（ルール）の適用対象ではない。
+そのHeading（見出し）に含まれるEnglish Representation（英語表現）について
+Canonical Japanese Support Association（正規日本語補助対応）が
+成立していたとしても、
+本Rule（ルール）を根拠として
+そのHeading（見出し）を上記の表示形式へ置き換えることはない。
+これは本Rule（ルール）の適用境界の一例であり、
+Standard Section（標準Section）に固有の例外ではない。
+
+本Rule（ルール）は、
+どのSubject（対象）について
+Human-readable Representation（人間可読表現）の
+Definition Responsibility（定義責務）が成立するかを定めない。
+いずれもその対象を所有する
+Definition Authority（定義権限）側で成立する。
 
 #### WRT-SF-003 — English Representation Consistency
 
