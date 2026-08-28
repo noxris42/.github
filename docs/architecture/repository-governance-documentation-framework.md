@@ -4,42 +4,42 @@
 
 本文書は、`noxris42` が現在採用する具体的な
 Documentation Framework（文書体系）である
-**Repository Governance Documentation Framework（Repository統治文書体系）**
+**Repository Governance Documentation Framework**
 を定義する。
 
 本文書が扱う問いは次の3点である。
 
 1. 本Framework（体系）は、Documentation全体として何を成立させるのか
-   （Framework Responsibility／体系責務）。
+   （Framework Responsibility（体系責務））。
 2. その責務は、どのDocumentation Area（文書責務領域）へ分解されるのか
-   （Area Composition／領域構成）。
-3. 各Area（領域）は何を所有し、何を所有しないのか
-   （Area Responsibility／領域責務）。
+   （Area Composition）。
+3. 各Areaは何を所有し、何を所有しないのか
+   （Area Responsibility（領域責務））。
 
-本文書は、Area（領域）の責務と構成を定義する。
+本文書は、Areaの責務と構成を定義する。
 個々のDocumentation Asset（文書資産）の内容、
 記述方法、命名規則は定義しない。
 
-## Position（上位Architectureとの関係）
+## Position（設計上の位置づけ）
 
 ### Documentation Structure Architectureとの関係
 
 本文書は
 [Documentation Structure Architecture](documentation-structure.md)
-（文書構造のArchitecture）を上位Source（上位の情報源）として参照する。
+を上位Sourceとして参照する。
 
 同Architectureは、
 Documentation Framework（文書体系）・
 Documentation Area（文書責務領域）・
 Documentation Asset（文書資産）と、
 それぞれの責務および責務粒度、
-ならびにLogical / Physical Boundary（論理／物理境界）を定義する。
+ならびにLogical / Physical Boundaryを定義する。
 本文書はこれらを再定義せず、前提として使用する。
 
 ```text
 Documentation Structure Architecture
         ▲
-        │ refines（具体化する）
+        │ refines
 Repository Governance Documentation Framework Architecture
 ```
 
@@ -47,12 +47,12 @@ Repository Governance Documentation Framework Architecture
 **一つの具体的なDocumentation Framework（文書体系）** である。
 Documentation Structure（文書構造）の一般Modelを拡張・上書きしない。
 
-#### Document Responsibilityとの関係
+#### Document Responsibility（文書責務）との関係
 
 同Architectureにおける
 Document Responsibility（文書責務）は、
 Documentation Asset（文書資産）が
-Documentation上で何を保持・提供する責務を担うかを示す一般Conceptであり、
+Documentation上で何を保持・提供する責務を担うかを示す一般Concept（概念）であり、
 Definition（定義）を保持する責務に限定されない。
 
 本Framework（体系）は、
@@ -69,27 +69,27 @@ Documentation Structure Architecture
 
 Repository Governance Documentation Framework
     Definition Responsibility
-    = 正式Definition（定義）を保持する責務
+    = 正式Definitionを保持する責務
 ```
 
 Definition Responsibility（定義責務）は、
-Document Responsibility（文書責務）の一般Conceptを
+Document Responsibility（文書責務）の一般Concept（概念）を
 本Framework（体系）の範囲において具体化したものである。
-一般Conceptを置き換えるものではない。
+一般Concept（概念）を置き換えるものではない。
 
-#### Area Responsibilityとの関係
+#### Area Responsibility（領域責務）との関係
 
 同Architectureにおける
 Area Responsibility（領域責務）は、
 Documentation Area（文書責務領域）が
 どのような種類のDocument Responsibility（文書責務）を担うかを示す
-一般Conceptであり、
+一般Concept（概念）であり、
 Definition（定義）を担う責務へ限定されない。
 
 本Framework（体系）は、
-その一般Conceptを本Framework（体系）の範囲において具体化し、
+その一般Concept（概念）を本Framework（体系）の範囲において具体化し、
 **Definition Responsibility（定義責務）の種類による領域分割**
-としてArea（領域）を構成する。
+としてAreaを構成する。
 
 ```text
 Documentation Structure Architecture
@@ -98,7 +98,7 @@ Documentation Structure Architecture
 
 Repository Governance Documentation Framework
     Area Responsibilities
-    = Definition Responsibility（定義責務）の種類による領域分割
+    = Definition Responsibilityの種類による領域分割
 ```
 
 これは本Framework（体系）が
@@ -114,7 +114,7 @@ Documentation Area（文書責務領域）へ所属することを要求しな�
 本Framework（体系）は、
 **本Framework（体系）に属する
 Documentation Asset（文書資産）** について、
-4つのArea（領域）のいずれかへ所属するModelを採る。
+4つのAreaのいずれかへ所属するModelを採る。
 
 これは本Framework（体系）の範囲における判断であり、
 Documentation Structure（文書構造）一般の要求ではない。
@@ -122,13 +122,13 @@ Documentation Structure（文書構造）一般の要求ではない。
 ### Repository Governance Architectureとの関係
 
 [Repository Governance Architecture](repository-governance.md)
-（Repository間の統治・責務Architecture）は、
-**本文書とは別Subject（対象）** を扱う。
+は、
+**本文書とは別Subject** を扱う。
 
-| 文書 | 扱うSubject（対象） |
+| 文書 | 扱うSubject |
 | --- | --- |
-| Repository Governance Architecture | Repository間のOwnership（所有責任）、Shared Development Foundation（複数Repositoryで共有する開発基盤）、Foundation Application（共通開発基盤を対象Repositoryへ適用する関係）、Repository-specific Responsibility（Repository固有責務） |
-| 本文書 | Documentation Framework（文書体系）、Area Composition（領域構成）、Area Responsibility（領域責務）、Documentation上のDefinition Responsibility（定義責務）の分離 |
+| Repository Governance Architecture | Repository間のOwnership（所有責任）、Shared Development Foundation、Foundation Application、Repository-specific Responsibility |
+| 本文書 | Documentation Framework（文書体系）、Area Composition、Area Responsibility（領域責務）、Documentation上のDefinition Responsibility（定義責務）の分離 |
 
 名称および用語が類似することを理由に、両者を統合しない。
 
@@ -138,8 +138,8 @@ Repository Governance Architectureは
 **Documentation上で定義責務をどう分離するか** を扱う。
 
 本文書は、Repository Governance Architectureが定義する
-Ownership（所有責任）・Shared Scope（共有範囲）・
-Foundation Application（共通開発基盤を対象Repositoryへ適用する関係）を
+Ownership（所有責任）・Shared Scope・
+Foundation Applicationを
 再定義・上書きしない。
 
 ## Scope（対象範囲）
@@ -147,10 +147,10 @@ Foundation Application（共通開発基盤を対象Repositoryへ適用する関
 ### In Scope（本文書が定義する範囲）
 
 - 本Framework（体系）のFramework Responsibility（体系責務）
-- Area Composition（領域構成）
-- 各Area（領域）のArea Responsibility（領域責務）、
-  およびOwns（所有する対象）／Does Not Own（所有しない対象）
-- Area（領域）間の境界判断の基準
+- Area Composition
+- 各AreaのArea Responsibility（領域責務）、
+  およびOwns／Does Not Own
+- Area間の境界判断の基準
 - 現在採用するPhysical Representation（物理表現）
 
 ### Out of Scope（本文書が定義しない範囲）
@@ -158,18 +158,18 @@ Foundation Application（共通開発基盤を対象Repositoryへ適用する関
 - 個々のDocumentation Asset（文書資産）の内容
 - Documentation Asset（文書資産）の命名、Path、File構成に関する
   Normative Rule（規範的ルール）
-- Area（領域）間の固定的なLayer Hierarchy（階層）や
+- Area間の固定的なLayer Hierarchyや
   一般的な依存規則
 - 他のDocumentation Framework（文書体系）との
-  Composition（体系間構成）・Priority（優先）・Refinement（具体化）
-- Metadata（構造化メタデータ）およびDeclaration（明示的宣言）のSchema
+  Composition・Priority・Refinement（具体化）
+- MetadataおよびDeclarationのSchema
 - Documentation Lifecycle（文書の生涯管理）・Review・Validation
 
-詳細は「Non-goals / Delegation（今回扱わず後続へ委譲する事項）」に示す。
+詳細は「Non-goals」に示す。
 
 ## Framework Responsibility（体系責務）
 
-Repository Governance Documentation Framework（Repository統治文書体系）は、
+Repository Governance Documentation Frameworkは、
 次のFramework Responsibility（体系責務）を担う。
 
 > Repository、およびRepositoryで管理・実施される対象について、
@@ -187,15 +187,15 @@ Repository Governance Documentation Framework（Repository統治文書体系）�
 
 ### Traceabilityの位置づけ
 
-Traceability（追跡可能性）は、
+Traceabilityは、
 本Framework（体系）の最上位目的ではない。
 
 本Framework（体系）が第一に行うのは
 **Semantic Responsibility（意味上の責務）による分離** であり、
-Traceability（追跡可能性）は
+Traceabilityは
 その分離の結果として成立する性質として扱う。
 
-したがって、Traceability（追跡可能性）を高めること自体を根拠として、
+したがって、Traceabilityを高めること自体を根拠として、
 責務分離に反する構造を導入しない。
 
 ## Area Composition（領域構成）
@@ -205,47 +205,46 @@ Documentation Area（文書責務領域）から構成される。
 
 ```text
 Repository Governance Documentation Framework
-（Repository統治文書体系）
 │
-├─ Philosophy Area（思想領域）
-├─ Architecture Area（アーキテクチャ領域）
-├─ Conventions Area（規約領域）
-└─ Specifications Area（仕様領域）
+├─ Philosophy Area
+├─ Architecture Area
+├─ Conventions Area
+└─ Specifications Area
 ```
 
 ### 列挙順をHierarchy（階層）として定義しない
 
 上記の列挙順は、
-**Linear Layer Hierarchy（線形階層）ではない** 。
+**Linear Layer Hierarchyではない** 。
 
-本文書は、Area（領域）間に固定的な上下関係・依存順序を定義しない。
+本文書は、Area間に固定的な上下関係・依存順序を定義しない。
 
-Area（領域）間のDependency（依存）は、
+Area間のDependency（依存）は、
 個々のDefinition（定義）が持つ
 Semantic Need（意味上の必要性）から個別に成立する。
 すなわち、あるDefinition（定義）が
 他のDefinition（定義）を根拠として必要とする場合に、
 その関係として依存が成立する。
-Area（領域）に属することそれ自体からは、依存関係を導出しない。
+Areaに属することそれ自体からは、依存関係を導出しない。
 
 ### 帰属の判断基準
 
-あるDocumentation Asset（文書資産）がどのArea（領域）に属するかは、
+あるDocumentation Asset（文書資産）がどのAreaに属するかは、
 **その資産が何を定義する責務を持つか**
-（Definition Responsibility／定義責務）によって決まる。
+（Definition Responsibility（定義責務））によって決まる。
 
 次によっては決まらない。
 
-- どのSubject（対象）を扱っているか
+- どのSubjectを扱っているか
 - どの程度抽象的か
 - どのDirectoryに配置されているか
 
-Subject（対象）とArea（領域）が独立であることの例として、
+SubjectとAreaが独立であることの例として、
 [Convention Architecture](convention.md) がある。
-同文書はConvention（規約）をSubject（対象）とするが、
+同文書はConvention（規約）をSubjectとするが、
 Normative Rule（規範的ルール）を定義するのではなく、
 Convention（規約）を成立させるConcept（概念）・Responsibility（責務）・
-Relationship（関係）を定義する。
+Relationshipを定義する。
 したがって同文書はArchitecture Area（アーキテクチャ領域）に属し、
 Conventions Area（規約領域）には属さない。
 
@@ -275,15 +274,15 @@ Repositoryにおける設計・判断の根拠となる
 ### Philosophy Area Owns（思想領域が所有する対象）
 
 - Fundamental Principle（根本原則）
-- Value / Judgment Basis（価値・判断基礎）
+- Value / Judgment Basis
 
 ### Philosophy Area Does Not Own（思想領域が所有しない対象）
 
-- Concrete Concept Model（具体概念モデル）
-- Responsibility Allocation（責務配分）
-- Relationship / Boundary（関係・境界）
-- Reusable Normative Rule（再利用可能な規範規則）
-- Subject-specific Contract（対象固有契約）
+- Concrete Concept Model
+- Responsibility Allocation
+- Relationship / Boundary（境界）
+- Reusable Normative Rule
+- Subject-specific Contract
 
 ### Architecture Area（アーキテクチャ領域）との境界
 
@@ -295,7 +294,7 @@ Definition Authority（定義権限）がどちらにあるべきかを判断す
 
 すなわち、あるDefinition（定義）が
 Fundamental Principle（根本原則）として成立するのか、
-Semantic / Structural Model（意味・構造モデル）として成立するのかを
+Semantic / Structural Modelとして成立するのかを
 判定する場面に限って適用する。
 
 両者の境界判断に用いるのは、
@@ -317,7 +316,7 @@ Semantic / Structural Model（意味・構造モデル）として成立する�
 ### 一般判定として用いない
 
 この基準を、
-**4つのArea（領域）全体に対する一般判定として用いない** 。
+**4つのArea全体に対する一般判定として用いない** 。
 
 次の推論は成立しない。
 
@@ -325,10 +324,10 @@ Semantic / Structural Model（意味・構造モデル）として成立する�
 > 特定のConcept Model（概念モデル）へ依存している。
 > したがってArchitecture Area（アーキテクチャ領域）に属する。
 
-Convention（規約）およびSpecification（仕様）も、
-Architecture Area（アーキテクチャ領域）が定義するModel（モデル）へ
+Convention（規約）およびSpecificationも、
+Architecture Area（アーキテクチャ領域）が定義するModelへ
 依存し得る。
-Model（モデル）への依存があること自体は、
+Modelへの依存があること自体は、
 Architecture Area（アーキテクチャ領域）への帰属を意味しない。
 
 Conventions Area（規約領域）および
@@ -336,34 +335,34 @@ Specifications Area（仕様領域）への帰属判定は、
 それぞれのArea Responsibility（領域責務）が示す
 Definition Responsibility（定義責務）によって別途行う。
 判定の基準は
-「Area Boundary Summary（領域境界の要約）」に示す。
+「Area Boundary Summary」に示す。
 
 ## Architecture Area（アーキテクチャ領域）
 
 ### Architecture Area Responsibility（アーキテクチャ領域の領域責務）
 
-Repositoryが扱うSubject（対象）について、
+Repositoryが扱うSubjectについて、
 その意味を成立させる
-**Semantic / Structural Model（意味・構造モデル）** を定義する。
+**Semantic / Structural Model** を定義する。
 
 ここでいうModelには、次が含まれる。
 
 - Concept（概念）
 - Responsibility（責務）
-- Relationship（関係）
+- Relationship
 - Boundary（境界）
 - Definition Authority（定義権限）
 
 ### Architecture Area Does Not Own（アーキテクチャ領域が所有しない対象）
 
-- Model（モデル）から独立したFundamental Principle（根本原則）
-- Reusable Normative Standard / Rule（再利用可能な規範標準・規則）
-- Subject-specific Concrete Contract（対象固有の具体契約）
+- Modelから独立したFundamental Principle（根本原則）
+- Reusable Normative Standard（再利用可能な規範標準） / Rule
+- Subject-specific Concrete Contract
 
 ### Local Design Principle（局所設計原則）の扱い
 
 Architecture Area（アーキテクチャ領域）の文書が、
-自身が定義するModel（モデル）の内部で成立する
+自身が定義するModelの内部で成立する
 Local Design Principle（局所設計原則）を含むことは許容する。
 
 ただし、それを
@@ -371,8 +370,8 @@ Philosophy Area（思想領域）が所有する
 Fundamental Principle（根本原則）と混同しない。
 
 Local Design Principle（局所設計原則）は、
-そのModel（モデル）を前提として初めて意味を持つ。
-Model（モデル）から独立して成立するものではない。
+そのModelを前提として初めて意味を持つ。
+Modelから独立して成立するものではない。
 
 ## Conventions Area（規約領域）
 
@@ -380,33 +379,33 @@ Model（モデル）から独立して成立するものではない。
 
 複数の該当する成果物・作業・表現へ
 **再利用・反復適用される
-Normative Standard / Rule（規範標準・規則）** を定義する。
+Normative Standard / Rule** を定義する。
 
 ### Identification Axis（識別軸）
 
-本Area（領域）の本質的な識別軸は、
+本Areaの本質的な識別軸は、
 **Normativeであること** だけではない。
 
 識別軸となるのは、
 その定義が
-**独立したReusable Standard（再利用可能標準）として
+**独立したReusable Standardとして
 反復適用されるか** である。
 
 Normativeであっても、
-特定Subject（対象）を成立させるために固有に定められる契約は、
+特定Subjectを成立させるために固有に定められる契約は、
 Specifications Area（仕様領域）に属する。
 
 ### Conventions Area Does Not Own（規約領域が所有しない対象）
 
-- Rule（規則）が前提とする
+- Ruleが前提とする
   Concept（概念）・Responsibility（責務）・
-  Relationship（関係）・Boundary（境界）の
+  Relationship・Boundary（境界）の
   Definition Authority（定義権限）
-- 特定Subject（対象）全体を成立させる
-  Concrete Contract（具体的契約）
-- Runtime Application Result（実際の適用結果）
+- 特定Subject全体を成立させる
+  Concrete Contract
+- Runtime Application Result
 
-Rule（規則）が前提とする概念や責務のDefinition Authority（定義権限）は
+Ruleが前提とする概念や責務のDefinition Authority（定義権限）は
 Architecture Area（アーキテクチャ領域）にある。
 Conventions Area（規約領域）は、それらを参照して規範を定める。
 
@@ -414,25 +413,23 @@ Conventions Area（規約領域）は、それらを参照して規範を定め�
 
 ### Specifications Area Responsibility（仕様領域の領域責務）
 
-特定Subject（対象）について、
-そのSubject（対象）を成立・実現・運用・検証可能にする
-**Concrete Contract（具体的契約）** を定義する。
+特定Subjectについて、
+そのSubjectを成立・実現・運用・検証可能にする
+**Concrete Contract** を定義する。
 
 ### Conventions Area（規約領域）との境界
 
 両者の差は、
-**Normative（規範的）か Non-normative（非規範的）かではない** 。
+**Normativeか Non-normativeかではない** 。
 
 差は次である。
 
 ```text
 Convention
 = reusable normative standard
-（再利用可能な規範標準）
 
 Specification
 = subject-specific concrete contract
-（対象固有の具体契約）
 ```
 
 判断に用いる問いは次である。
@@ -442,24 +439,24 @@ Specification
 
 ### Specifications Area Does Not Own（仕様領域が所有しない対象）
 
-- Subject（対象）から独立したReusable Standard（再利用可能標準）
+- Subjectから独立したReusable Standard
 - 上位Concept Model（概念モデル）
 - Fundamental Principle（根本原則）
 
 ## Area Boundary Summary（領域境界の要約）
 
-各Area（領域）は、
+各Areaは、
 Definition Responsibility（定義責務）によって区別される。
 抽象度によって区別されるのではない。
 
-| Area（領域） | 何を定義するか | 区別の基準 |
+| Area | 何を定義するか | 区別の基準 |
 | --- | --- | --- |
-| Philosophy Area（思想領域） | Fundamental Principle（根本原則） | 特定Concept Model（概念モデル）から独立してFundamental Principle（根本原則）として成立するか（Architecture Areaとの二者間判定） |
-| Architecture Area（アーキテクチャ領域） | Semantic / Structural Model（意味・構造モデル） | 対象の意味を成立させるConcept・Responsibility・Relationship・Boundaryを定めるか |
+| Philosophy Area（思想領域） | Fundamental Principle（根本原則） | 特定Concept Model（概念モデル）から独立してFundamental Principle（根本原則）として成立するか（Architecture Area（アーキテクチャ領域）との二者間判定） |
+| Architecture Area（アーキテクチャ領域） | Semantic / Structural Model | 対象の意味を成立させるConcept（概念）・Responsibility（責務）・Relationship・Boundary（境界）を定めるか |
 | Conventions Area（規約領域） | Reusable Normative Standard（再利用可能な規範標準） | 独立した標準として複数対象へ反復適用されるか |
-| Specifications Area（仕様領域） | Subject-specific Concrete Contract（対象固有の具体契約） | 特定対象を成立・実現・運用・検証可能にする契約か |
+| Specifications Area（仕様領域） | Subject-specific Concrete Contract | 特定対象を成立・実現・運用・検証可能にする契約か |
 
-## Physical Representation（現在採用する物理表現）
+## Physical Representation（物理表現）
 
 本Framework（体系）が現在採用している
 Physical Representation（物理表現）は次である。
@@ -495,10 +492,10 @@ Area ≠ Directory
 
 したがって次が成立する。
 
-- Area Identity（領域同一性）を、
+- Area Identityを、
   対応するDirectoryから導出しない。
 - Directoryが存在しないことだけを理由に、
-  そのArea（領域）が成立していないと判断しない。
+  そのAreaが成立していないと判断しない。
 - この対応は、現時点で採用している
   Physical Representation（物理表現）の記録であり、
   変更され得る。
@@ -512,33 +509,33 @@ Documentation Area（文書責務領域）として定義しない。
 
 ### 1 Area → 1 top-level Directoryの扱い
 
-本Framework（体系）の4つのArea（領域）について、
+本Framework（体系）の4つのAreaについて、
 1 Area → 1 top-level Directoryという対応を採用してよい。
 
 ただしこれを、
 Documentation Structure（文書構造）全般に適用される
-普遍Rule（規則）へ一般化しない。
+普遍Ruleへ一般化しない。
 これは本Framework（体系）が現在採る対応であり、
 一般Modelの要求ではない。
 
-### Mapping Ruleの所有
+### Mapping Rule（対応規則）の所有
 
-具体的なPhysical Mapping Rule（物理対応規則）を
+具体的なPhysical Mapping Ruleを
 最終的にどのConvention（規約）が所有するかは、
 本文書では確定しない。
 
 必要な範囲では、
 本文書が
-Current Physical Representation（現在の物理表現）として関係を記録する。
-Naming Convention（命名規約）や
-Documentation Structure Convention（文書構造規約）といった
-未設計のAsset（資産）を、本文書のために先行して新設しない。
+Current Physical Representationとして関係を記録する。
+Naming Conventionや
+Documentation Structure Conventionといった
+未設計のAssetを、本文書のために先行して新設しない。
 
 ## Design Principles（設計原則）
 
 ### 1. Separation by Definition Responsibility（定義責務で分離する）
 
-Area（領域）の分離は、
+Areaの分離は、
 抽象度・粒度・対象の種類ではなく、
 Definition Responsibility（定義責務）の違いによって行う。
 
@@ -546,22 +543,22 @@ Definition Responsibility（定義責務）の違いによって行う。
 
 あるDefinition（定義）のDefinition Authority（定義権限）は、
 一つのDocumentation Asset（文書資産）に置く。
-他のAsset（資産）は、それを再定義せず参照する。
+他のAssetは、それを再定義せず参照する。
 
 ### 3. No Fixed Layer Hierarchy（固定階層を設けない）
 
-Area（領域）の列挙順を階層として扱わない。
-Area（領域）間の依存は、
+Areaの列挙順を階層として扱わない。
+Area間の依存は、
 個々のDefinition（定義）のSemantic Need（意味上の必要性）から成立する。
 
 ### 4. Traceability as Consequence（追跡可能性は結果である）
 
-Traceability（追跡可能性）は責務分離の結果として成立する性質であり、
+Traceabilityは責務分離の結果として成立する性質であり、
 それ自体を目的として責務分離を歪めない。
 
 ### 5. Logical Identity over Physical Location（同一性は物理配置に優先する）
 
-Area Identity（領域同一性）を
+Area Identityを
 Directory構成から導出しない。
 Physical Representation（物理表現）は
 現在の対応の記録であって、成立条件ではない。
@@ -569,61 +566,61 @@ Physical Representation（物理表現）は
 ### 6. No Anticipatory Asset（先行してAssetを新設しない）
 
 現時点で必要性が確認されていない
-Convention（規約）・Specification（仕様）を、
+Convention（規約）・Specificationを、
 体系の見た目を整えるために先行して新設しない。
 
-## Non-goals / Delegation（今回扱わず後続へ委譲する事項）
+## Non-goals（現在扱わない事項）
 
 本文書は次を定義しない。これらは後続設計へ委譲する。
 
 ### Documentation Asset（文書資産）の内容に関する事項
 
-- 各Area（領域）に属する個々のDocumentation Asset（文書資産）の内容
-- Area（領域）ごとのDocumentation Asset（文書資産）一覧
+- 各Areaに属する個々のDocumentation Asset（文書資産）の内容
+- AreaごとのDocumentation Asset（文書資産）一覧
 
 ### 構造・命名に関する事項
 
-- Naming Convention（命名規約）
-- Documentation Structure Convention（文書構造規約）
-- Physical Mapping Rule（物理対応規則）の最終的な所有先
+- Naming Convention
+- Documentation Structure Convention
+- Physical Mapping Ruleの最終的な所有先
 - File名・Directory名・Pathの具体規則
 
 ### Composition（体系間構成）に関する事項
 
 - 他のDocumentation Framework（文書体系）との共存
-- Framework間のPriority（優先）／Refinement（具体化）／Dependency（依存）
+- Framework（体系）間のPriority／Refinement（具体化）／Dependency（依存）
 
 ### 宣言・記述形式に関する事項
 
-- Metadata（構造化メタデータ）およびDeclaration（明示的宣言）のSchema
-- Area（領域）帰属の機械可読な表現形式
+- MetadataおよびDeclarationのSchema
+- Area帰属の機械可読な表現形式
 
 ### 導入しないConcept（概念）
 
-- Representative Document（代表文書）
-- Navigation Document（案内文書）
+- Representative Document
+- Navigation Document
 
 いずれも
 [Documentation Structure Architecture](documentation-structure.md)
 の判断に従い、本Framework（体系）でも導入しない。
-Area（領域）全体に関わる責務が必要な場合は、
+Area全体に関わる責務が必要な場合は、
 通常のDocumentation Asset（文書資産）と
 Document Responsibility（文書責務）で表現する。
 
-これらはDesign Gap（設計不足）ではなく、
+これらはDesign Gapではなく、
 現時点で確定していない事項を先行決定しないための意図的な委譲である。
 
 ## Usage by Downstream Design（下位設計からの参照）
 
 後続設計は、本文書を参照して次を判断できる。
 
-1. ある定義が、本Framework（体系）のどのArea（領域）に属するか。
-   → 各Area（領域）のArea Responsibility（領域責務）と
-   「Area Boundary Summary（領域境界の要約）」による。
+1. ある定義が、本Framework（体系）のどのAreaに属するか。
+   → 各AreaのArea Responsibility（領域責務）と
+   「Area Boundary Summary」による。
 2. ある定義を、Convention（規約）として定めるべきか、
-   Specification（仕様）として定めるべきか。
-   → Reusable Standard（再利用可能標準）か
-   Subject-specific Contract（対象固有契約）かによる。
+   Specificationとして定めるべきか。
+   → Reusable Standardか
+   Subject-specific Contractかによる。
 3. ある定義が前提とするConcept（概念）・Responsibility（責務）の
    Definition Authority（定義権限）がどこにあるか。
    → Architecture Area（アーキテクチャ領域）にある。

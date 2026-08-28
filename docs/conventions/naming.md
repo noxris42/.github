@@ -11,38 +11,38 @@ Reusable Normative Standard（再利用可能な規範標準）**
 
 加えて本文書は、
 現在Semantic Need（意味上の必要性）が確認された
-Symbolic Identifier（記号識別子）の命名について、
+Symbolic Identifierの命名について、
 必要な範囲で
-Non-normative Naming Guidance（非規範的命名指針）を提供し得る。
+Non-normative Naming Guidanceを提供し得る。
 
 この2つは責務として分離される。
 
 ```text
-Physical Name（物理名称）
-    → Reusable Normative Standard（再利用可能な規範標準）
+Physical Name
+    → Reusable Normative Standard
 
-Symbolic Identifier（記号識別子）
-    → Non-normative Naming Guidance（非規範的命名指針）
+Symbolic Identifier
+    → Non-normative Naming Guidance
 ```
 
-現在、Symbolic Identifier（記号識別子）について本文書が保持するのは
-「Convention Code Selection Guidance（規約コード選定の指針）」のみであり、
+現在、Symbolic Identifierについて本文書が保持するのは
+「Convention Code Selection Guidance」のみであり、
 これはNon-normative Content（非規範的内容）である。
 本文書は
-Symbolic Identifier Naming（記号識別子命名）の
-一般Rule（一般規則）を定義しない。
+Symbolic Identifier Namingの
+一般Ruleを定義しない。
 
 本文書が扱う問いは次の3点である。
 
-1. Repository側が綴りを選択できるName（名称）は、
+1. Repository側が綴りを選択できるNameは、
    どのような形式で表現されなければならないのか。
 2. Physical Name（物理名称）は、
    対象を識別するために何を含んでいるべきなのか。
 3. Concrete Spelling（具体表記）が
-   External System（外部システム）等によって制約される場合、
+   External System等によって制約される場合、
    その適合はどう扱われるのか。
 
-本文書はNaming（命名）のRepresentation（表現）のみを扱う。
+本文書はNamingのRepresentation（表現）のみを扱う。
 本文書は
 Logical Identity（論理的同一性）または
 Responsibility（責務）の
@@ -57,13 +57,13 @@ Formal Name    ≠ Physical Name ≠ Identifier
 ```
 
 Responsibility（責務）は
-Naming Input（命名の入力）になり得るが、
+Naming Inputになり得るが、
 Physical Name（物理名称）から
 Responsibility（責務）を成立・推論させない。
 
 ## Relationships（関係）
 
-本文書は、次を上位Source（上位の情報源）として参照する。
+本文書は、次を上位Sourceとして参照する。
 
 - [Repository Governance Architecture](../architecture/repository-governance.md)
 - [Documentation Structure Architecture](../architecture/documentation-structure.md)
@@ -74,18 +74,18 @@ Responsibility（責務）を成立・推論させない。
 Design Dependency（設計依存）は次の一方向とする。
 
 ```text
-Documentation Structure Architecture（論理／物理境界の意味モデル）
+Documentation Structure Architecture
         ▲
-        │ refines（物理表現側の規範へ具体化する）
-Naming Convention（本文書）
+        │ refines
+Naming Convention
 
-Convention Architecture（規約の意味構造）
+Convention Architecture
         ▲
-        │ refines（表記へ具体化する）
-Convention Authoring Convention（規約記述表記）
+        │ refines
+Convention Authoring Convention
         ▲
-        │ conforms to（記述表記に従う）
-Naming Convention（本文書）
+        │ conforms to
+Naming Convention
 ```
 
 本文書は
@@ -95,7 +95,7 @@ Naming Convention（本文書）
 Repository上で反復して成立するPhysical Name（物理名称）へ
 繰り返し適用される
 Reusable Normative Standard（再利用可能な規範標準）として成立する。
-Area（領域）を代表・集約するAsset（資産）ではない。
+Areaを代表・集約するAssetではない。
 
 本文書が使用する次のConcept（概念）の
 Definition Authority（定義権限）は上位設計にある。
@@ -118,41 +118,41 @@ Definition Authority（定義権限）は上位設計にある。
 - Rule Identity（ルール同一性）とその安定性
 - Rule ID Format（規約ルールID形式）、
   Rule Field（規則フィールド）の構成・順序・Markdown表現、
-  Stability（安定性）のField表現
+  StabilityのField表現
 - Namespace Code（名前空間コード）の割当
 
 本文書は、これら上位設計が定義する
-Logical Model（論理モデル）を再定義せず、
+Logical Modelを再定義せず、
 Physical Name（物理名称）側から
-Logical Model（論理モデル）へ制約を課さない。
+Logical Modelへ制約を課さない。
 
 ## Scope（対象範囲）
 
 ### In Scope（本文書が定義する範囲）
 
-- Repository-controlled File Name（Repository管理ファイル名）の
-  Physical Naming Form（物理命名形式）
-- Repository-controlled Directory Name（Repository管理ディレクトリ名）の
-  Physical Naming Form（物理命名形式）
+- Repository-controlled File Nameの
+  Physical Naming Form
+- Repository-controlled Directory Nameの
+  Physical Naming Form
 - Physical Name（物理名称）の識別性、および
-  Path Context（Path上の文脈）における対象の区別
+  Path Contextにおける対象の区別
 - Responsibility（責務）を
-  Naming Input（命名の入力）として利用する場合の境界
-- External Naming Contract（外部命名契約）との境界と、
-  Repository-controlled Name（Repository管理名称）との適用分離
-- Name Selection Stability（名称選択安定性）
-- Existing Name Stability（既存名称安定性）
-- Convention Code Selection（規約コード選定）に関する
-  Non-normative Guidance（非規範的指針）
+  Naming Inputとして利用する場合の境界
+- External Naming Contractとの境界と、
+  Repository-controlled Nameとの適用分離
+- Name Selection Stability
+- Existing Name Stability
+- Convention Code Selectionに関する
+  Non-normative Guidance
 
 ### Out of Scope（本文書が定義しない範囲）
 
 - Logical Identity（論理的同一性）および
   Responsibility（責務）の成立条件
-- Directory Structure（ディレクトリ構造）、
-  Repository Layout（Repository配置）、
-  およびLogical Unit（論理単位）とのMapping Rule（対応規則）
-- File Format（ファイル形式）およびFile Extension Selection（拡張子選択）
+- Directory Structure、
+  Repository Layout、
+  およびLogical UnitとのMapping Rule（対応規則）
+- File FormatおよびFile Extension Selection
 - Formal Name（正式名称）のSemantic Model（意味モデル）
 - Document Title（文書題名）、Heading Label（見出しラベル）等の
   Natural Language Representation（自然言語表現）、
@@ -160,13 +160,13 @@ Logical Model（論理モデル）へ制約を課さない。
 - Programming Language固有のIdentifier（識別子）命名
 - Branch / Tag / Version / Issue / Pull Request / Commitの命名
 - Rule ID（規約ルールID）・Convention Code（規約コード）・
-  Namespace Code（名前空間コード）のFormat（形式）
-- Convention Code Uniqueness（規約コード一意性）の量化範囲、
-  およびConvention Registry（規約登録簿）
+  Namespace Code（名前空間コード）のFormat
+- Convention Code Uniquenessの量化範囲、
+  およびConvention Registry
 - Markdown Syntaxその他の記述媒体固有表現
-- External Platform（外部プラットフォーム）の
-  予約名称・特別扱い名称の完全Catalog（一覧）
-- Validator / Linter / CI / Rename Automation（名称変更自動化）
+- External Platformの
+  予約名称・特別扱い名称の完全Catalog
+- Validator / Linter / CI / Rename Automation
 
 ## Concrete Declarations（具体宣言）
 
@@ -186,7 +186,7 @@ Convention Code: NAM
 本文書のNormative Rule（規範的ルール）は、
 [Convention Authoring Convention](convention-authoring.md)
 が割り当てたNamespace Code（名前空間コード） `SF`
-（Shared Foundation Namespace／共有基盤名前空間）に属する。
+（Shared Foundation Namespace）に属する。
 
 本文書はNamespace Code（名前空間コード）を新たに割り当てない。
 
@@ -196,7 +196,7 @@ Convention Code: NAM
 適用対象を区別するために用いる局所Concept（概念）を示す。
 本節はNon-normative Content（非規範的内容）である。
 ここで示すのは本文書が必要とする範囲の区別であり、
-一般Naming Model（命名モデル）ではない。
+一般Naming Modelではない。
 
 ### Physical Name（物理名称）
 
@@ -211,16 +211,16 @@ Responsibility（責務）でもない。
 
 ### Repository-controlled Name（Repository管理名称）
 
-Repository-controlled Name（Repository管理名称）は、
-Concrete Spelling（具体的な綴り）を
+Repository-controlled Nameは、
+Concrete Spelling（具体表記）を
 Repository側が選択できるPhysical Name（物理名称）である。
 
 ### Externally Constrained Name（外部制約名称）
 
 Externally Constrained Name（外部制約名称）は、
-External System（外部システム）、Platform（プラットフォーム）、
-Tool（ツール）等が
-Concrete Spelling（具体的な綴り）へ
+External System、Platform、
+Tool等が
+Concrete Spelling（具体表記）へ
 意味または制約を与えるPhysical Name（物理名称）である。
 
 この場合、綴りの選択はRepository側の自由ではなく、
@@ -230,7 +230,7 @@ Concrete Spelling（具体的な綴り）へ
 
 Concrete Spelling（具体表記）をRepository側が決める名称と、
 外部から制約される名称とでは、
-Physical Naming Form（物理命名形式）の適用が分かれる。
+Physical Naming Formの適用が分かれる。
 
 ```text
 Repository-controlled File Name
@@ -245,45 +245,45 @@ Externally Constrained Name
 
 `NAM-SF-004` は
 `NAM-SF-001` ・ `NAM-SF-002` の
-Exception Catalog（例外一覧）ではない。
+Exception Catalogではない。
 両者は適用対象が異なる。
 
 この図は、
-Physical Naming Form（物理命名形式）に関する適用の分離を示すものであり、
-本文書のすべてのRule（規則）についての
-Applicability Map（適用対応表）ではない。
+Physical Naming Formに関する適用の分離を示すものであり、
+本文書のすべてのRuleについての
+Applicability Mapではない。
 `NAM-SF-003` ・ `NAM-SF-005` ・ `NAM-SF-006` ・ `NAM-SF-007` の
-適用対象は、各Rule（ルール）のRule Statement（ルール文）が定める。
+適用対象は、各RuleのRule Statement（ルール文）が定める。
 
 ## Convention Code Selection Guidance（規約コード選定の指針）
 
 本節はNon-normative Content（非規範的内容）である。
 Convention Code（規約コード）の
-Format（形式）・使用条件・変更制約は
+Format・使用条件・変更制約は
 [Convention Authoring Convention](convention-authoring.md)
 が所有する。
 本節は新たなNormative Requirement（規範要求）を追加せず、
-Convention Code Uniqueness（規約コード一意性）に関する
-Rule（規則）も設けない。
+Convention Code Uniquenessに関する
+Ruleも設けない。
 
 Convention Code（規約コード）を選ぶ際、
 現時点で有用と考えられる観点は次である。
 
 - Formal Name（正式名称）の単純な頭字語である必要はない。
-  Code（コード）はFormal Name（正式名称）の短縮表記ではなく、
+  CodeはFormal Name（正式名称）の短縮表記ではなく、
   Convention（規約）を識別するための値である。
 - `Convention` 等のAsset Type（資産種別）を
-  Code（コード）へ必ず含める必要はない。
+  Codeへ必ず含める必要はない。
   Convention Asset（規約資産）であることは、
-  Code（コード）の桁を使わずとも既に確定している。
-- Subject（対象）またはResponsibility（責務）を
+  Codeの桁を使わずとも既に確定している。
+- SubjectまたはResponsibility（責務）を
   識別・想起しやすい3文字を優先する。
-- 現在利用されているCode（コード）と
+- 現在利用されているCodeと
   混同しにくい値を選ぶ。
 - Formal Name（正式名称）が変更されたことだけを理由に
-  Code（コード）を自動的に変更しない。
+  Codeを自動的に変更しない。
 
-Stable Rule ID（安定済み規約ルールID）で使用済みの
+Stable Rule IDで使用済みの
 Convention Code（規約コード）に対する変更制約は、
 [Convention Authoring Convention](convention-authoring.md)
 のNormative Rule（規範的ルール）による。
@@ -291,7 +291,7 @@ Convention Code（規約コード）に対する変更制約は、
 
 ## Normative Rules（規範的ルール）
 
-以降の各Section（節）は、1つのNormative Rule（規範的ルール）を記述する。
+以降の各Sectionは、1つのNormative Rule（規範的ルール）を記述する。
 
 Category（分類）を示す小見出しは文書上の整理のためのものであり、
 Rule ID（規約ルールID）はCategory（分類）を表現しない。
@@ -308,13 +308,13 @@ Rule ID（規約ルールID）はCategory（分類）を表現しない。
 
 **Requirement:** MUST
 
-**Rule:** Repository-controlled File Name（Repository管理ファイル名）の
-File Stem（拡張子を除いた名称部分）は、次を満たすように表現する。
+**Rule:** Repository-controlled File Nameの
+File Stemは、次を満たすように表現する。
 
 - 英字を使用する場合は、小文字を使用する。
 - 複数の語を区切る場合は、ハイフン `-` を使用する。
 
-**Reason:** File Name（ファイル名）は、
+**Reason:** File Nameは、
 Path・URL・CLI・Tool・AIといった異なる経路から
 同一対象を参照するために使用される。
 大文字・小文字の揺れや、
@@ -325,24 +325,24 @@ space・underscore・camelCase等の複数の表現方式が併存すると、
 単語境界をハイフンで明示することで、
 どの経路からも同じ綴りで対象へ到達できる。
 
-**Note:** 本Rule（ルール）が規定するのは、
+**Note:** 本Ruleが規定するのは、
 Rule Statement（ルール文）に挙げた2つの制約のみである。
 `lowercase kebab-case` は、
-その形を想起するためのNon-normative Label（非規範的ラベル）として
+その形を想起するためのNon-normative Labelとして
 用いることができるが、
-本Rule（ルール）のNormative Meaning（規範的意味）は
+本RuleのNormative Meaning（規範的意味）は
 その一般用語の解釈ではなく
 Rule Statement（ルール文）によって確定する。
 
-次は本Rule（ルール）が定めない。
+次は本Ruleが定めない。
 
-- 使用可能なCharacter Set（文字集合）、
+- 使用可能なCharacter Set、
   および言語・文字種の限定
 - 数字その他の文字を使用してよいか
-- File Extension（拡張子）の種類および選択
+- File Extensionの種類および選択
 
 Externally Constrained Name（外部制約名称）は
-本Rule（ルール）の対象ではなく、
+本Ruleの対象ではなく、
 `NAM-SF-004` が扱う。
 
 #### NAM-SF-002 — Directory Name Form
@@ -355,42 +355,42 @@ Externally Constrained Name（外部制約名称）は
 
 **Requirement:** MUST
 
-**Rule:** Repository-controlled Directory Name（Repository管理ディレクトリ名）は、
+**Rule:** Repository-controlled Directory Nameは、
 次を満たすように表現する。
 
 - 英字を使用する場合は、小文字を使用する。
 - 複数の語を区切る場合は、ハイフン `-` を使用する。
 
-**Reason:** Directory Name（ディレクトリ名）はPathの構成要素として、
-File Name（ファイル名）と同じ経路から参照される。
+**Reason:** Directory NameはPathの構成要素として、
+File Nameと同じ経路から参照される。
 Path内で表記方式が要素ごとに異なると、
 Path全体の綴りを記憶・再現できず、
-File Name（ファイル名）側で表記を固定した効果も失われる。
-Path上のRepository-controlled Name（Repository管理名称）へ
+File Name側で表記を固定した効果も失われる。
+Path上のRepository-controlled Nameへ
 同一の表記形式を適用することで、
 Path全体が一貫した綴りとして扱える。
 
-**Note:** 本Rule（ルール）が規定するのは、
+**Note:** 本Ruleが規定するのは、
 Rule Statement（ルール文）に挙げた2つの制約のみであり、
-その内容は `NAM-SF-001` と同一のLexical Constraint（字句制約）である。
+その内容は `NAM-SF-001` と同一のLexical Constraintである。
 `lowercase kebab-case` は、
-その形を想起するためのNon-normative Label（非規範的ラベル）として
+その形を想起するためのNon-normative Labelとして
 用いることができるが、
-本Rule（ルール）のNormative Meaning（規範的意味）は
+本RuleのNormative Meaning（規範的意味）は
 その一般用語の解釈ではなく
 Rule Statement（ルール文）によって確定する。
 
-次は本Rule（ルール）が定めない。
+次は本Ruleが定めない。
 
-- 使用可能なCharacter Set（文字集合）、
+- 使用可能なCharacter Set、
   および言語・文字種の限定
 - 数字その他の文字を使用してよいか
-- Directory（ディレクトリ）の責務、配置、
+- Directoryの責務、配置、
   およびDocumentation Area（文書責務領域）等の
-  Logical Unit（論理単位）とのMapping（対応）
+  Logical UnitとのMapping
 
 Externally Constrained Name（外部制約名称）は
-本Rule（ルール）の対象ではなく、
+本Ruleの対象ではなく、
 `NAM-SF-004` が扱う。
 
 ### Name Identification（名称の識別性）
@@ -405,27 +405,27 @@ Externally Constrained Name（外部制約名称）は
 
 **Requirement:** SHOULD
 
-**Rule:** Repository-controlled Physical Name（Repository管理物理名称）は、
-そのPath Context（Path上の文脈）において
-Subject（対象）を示す語だけでは
+**Rule:** Repository-controlled Physical Nameは、
+そのPath Contextにおいて
+Subjectを示す語だけでは
 異なるResponsibility（責務）を十分に区別できない場合、
 区別に必要なResponsibility（責務）を表す語を含めるべきである。
 
 **Reason:** Physical Name（物理名称）が果たすべきことは、
 参照者が目的の対象へ到達できることである。
-同一のSubject（対象）について
+同一のSubjectについて
 異なる責務を担う対象が複数成立し得る場合、
-Subject（対象）だけの名称では
+Subjectだけの名称では
 どちらを指しているのかを名称から判別できず、
 参照のたびに内容を開いて確かめることを要求する。
 区別に必要な語を含めることで、
 参照の時点で対象を特定できる。
 
-**Note:** 本Rule（ルール）が求めるのは
+**Note:** 本Ruleが求めるのは
 識別に必要な区別であり、
 Responsibility（責務）全体を名称へ符号化することではない。
-Subject（対象）だけで
-そのPath Context（Path上の文脈）において十分に識別できる場合、
+Subjectだけで
+そのPath Contextにおいて十分に識別できる場合、
 追加の語は要求されない。
 
 理解を助ける関係として、次が挙げられる。
@@ -447,7 +447,7 @@ documentation.md
 documentation-structure.md
 ````
 
-の方が、Documentation（文書）に関するどの責務を扱う対象なのかを
+の方が、Documentationに関するどの責務を扱う対象なのかを
 識別するために適切となり得る。
 同様に、かつて
 
@@ -456,17 +456,17 @@ docs/conventions/convention.md
 ````
 
 であった資産について、その資産の責務が
-Convention Authoring（規約記述）であることから、
+Convention Authoringであることから、
 
 ````text
 docs/conventions/convention-authoring.md
 ````
 
 の方が識別上より適切であるという設計判断が成立した。
-この資産のCurrent Physical Name（現在の物理名称）は後者であり、
-前者は当該Rename（名称変更）以前の状態である。
+この資産のCurrent Physical Nameは後者であり、
+前者は当該Rename以前の状態である。
 
-本Rule（ルール）が扱う方向は次に限られる。
+本Ruleが扱う方向は次に限られる。
 
 ````text
 Responsibility → Naming Input
@@ -495,10 +495,10 @@ Responsibility（責務）を成立させたり推論したりしない。
 **Requirement:** MUST
 
 **Rule:** Concrete Spelling（具体表記）が
-External System（外部システム）、Platform（プラットフォーム）、
-Tool（ツール）等とのContract（契約）によって制約される
+External System、Platform、
+Tool等とのContractによって制約される
 Externally Constrained Name（外部制約名称）は、
-そのExternal Contract（外部契約）へ適合しなければならない。
+そのExternal Contractへ適合しなければならない。
 
 **Reason:** Externally Constrained Name（外部制約名称）では、
 綴りそのものが外部による認識の条件になっている。
@@ -509,19 +509,19 @@ Repository内部の表記上の都合で綴りを変更すると、
 Repository内部の表記方針が
 外部との契約を破壊しないようにする。
 
-**Note:** 本Rule（ルール）は
+**Note:** 本Ruleは
 `NAM-SF-001` ・ `NAM-SF-002` の
-Exception Catalog（例外一覧）ではない。
-Repository-controlled Name（Repository管理名称）と
+Exception Catalogではない。
+Repository-controlled Nameと
 Externally Constrained Name（外部制約名称）は
 適用対象として分離されている。
 
-本Rule（ルール）は、
-どのName（名称）が
+本Ruleは、
+どのNameが
 Externally Constrained Name（外部制約名称）に当たるかの
-完全なCatalog（一覧）を保持しない。
-適合すべきContract（契約）の内容は
-そのExternal System（外部システム）側にあり、
+完全なCatalogを保持しない。
+適合すべきContractの内容は
+そのExternal System側にあり、
 本文書がそれを複製・代理しない。
 
 ### Name Stability（名称の安定性）
@@ -536,7 +536,7 @@ Externally Constrained Name（外部制約名称）に当たるかの
 
 **Requirement:** SHOULD
 
-**Rule:** Repository-controlled Name（Repository管理名称）は、
+**Rule:** Repository-controlled Nameは、
 一時的な作業状態ではなく、
 対象を継続的に識別できる比較的安定した特徴に基づいて
 選択すべきである。
@@ -549,10 +549,10 @@ Path・Link・履歴・外部参照を通じて
 その時点で名称変更か、
 実態と合わない名称の放置かのいずれかを強いる。
 安定した特徴を根拠として選ぶことで、
-その必要が初回のNaming（命名）の時点から生じにくくなる。
+その必要が初回のNamingの時点から生じにくくなる。
 
-**Note:** 本Rule（ルール）は
-初回のNaming（命名）における選択の根拠を対象とする。
+**Note:** 本Ruleは
+初回のNamingにおける選択の根拠を対象とする。
 既存名称を変更してよいかは `NAM-SF-006` が扱う。
 
 #### NAM-SF-006 — Existing Name Stability
@@ -577,12 +577,12 @@ Physical Name（物理名称）は、
 変更に理由を求めることで、
 名称の変更が識別性の改善と引き換えに行われるようにする。
 
-**Note:** Name Stability（名称安定性）は
-Immutable Naming（名称不変性）ではない。
+**Note:** Name Stabilityは
+Immutable Namingではない。
 名称が現在の対象を十分に識別できない場合、
 または対象を誤認させる場合は、
-識別精度を改善するRename（名称変更）が妥当になり得る。
-本Rule（ルール）が抑止するのは、
+識別精度を改善するRenameが妥当になり得る。
+本Ruleが抑止するのは、
 識別上の理由を持たない変更である。
 
 #### NAM-SF-007 — Temporary State Naming
@@ -597,7 +597,7 @@ Immutable Naming（名称不変性）ではない。
 
 **Rule:** 一時的な作業状態だけを区別する目的で、
 その状態を
-Repository-controlled Name（Repository管理名称）へ
+Repository-controlled Nameへ
 埋め込むべきではない。
 
 **Reason:** 作業状態は作業の進行によって変化するが、
@@ -608,40 +608,40 @@ Repository-controlled Name（Repository管理名称）へ
 状態は名称ではなく、
 状態を保持できる手段によって区別されるべきである。
 
-**Note:** 本Rule（ルール）が対象とするのは
-Naming Reason（命名理由）であり、
+**Note:** 本Ruleが対象とするのは
+Naming Reasonであり、
 特定の語ではない。
-本Rule（ルール）は
-Prohibited Word Catalog（禁止語一覧）を定義しない。
+本Ruleは
+Prohibited Word Catalogを定義しない。
 
 したがって、ある語が
 一時的な作業状態ではなく
-Subject Identity（対象同一性）の一部として成立している場合、
-その語を名称へ含めることは本Rule（ルール）の対象ではない。
+Subject Identityの一部として成立している場合、
+その語を名称へ含めることは本Ruleの対象ではない。
 
 ## Self Application（本文書自身への適用）
 
 本文書は通常のConvention Asset（規約資産）であり、
 [Convention Authoring Convention](convention-authoring.md)
-が定めるRule（規則）に従って記述されている。
+が定めるRuleに従って記述されている。
 
 - Convention Code（規約コード）を
-  「Concrete Declarations（具体宣言）」で明示的に宣言している。
+  「Concrete Declarations」で明示的に宣言している。
 - すべてのNormative Rule（規範的ルール）が
   `NAM-SF-NNN` 形式のRule ID（規約ルールID）を持つ。
 - すべてのNormative Rule（規範的ルール）が、
-  必須Field（フィールド）を規定の順序・表現で持つ。
+  必須Fieldを規定の順序・表現で持つ。
 - すべてのNormative Rule（規範的ルール）が
   `Stability: Development` である。
 - Retired Rule ID（廃止済み規約ルールID）は現時点で存在しないため、
   `Retired Rule IDs` の記録を設けていない。
 
 また本文書自身のPhysical Name（物理名称）は、
-本文書が定めるRule（規則）に従っている。
+本文書が定めるRuleに従っている。
 
-- File Stem（拡張子を除いた名称部分）は
+- File Stemは
   英字をすべて小文字で表記している。
-- 現在のPath Context（Path上の文脈）において、
+- 現在のPath Contextにおいて、
   `naming` はその対象を十分に識別している。
 
 本節はNon-normative Content（非規範的内容）であり、

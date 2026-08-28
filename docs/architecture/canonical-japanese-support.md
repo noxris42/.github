@@ -16,7 +16,7 @@ Architecture Asset（アーキテクチャ資産）である。
    Repositoryが一貫して再利用する
    Japanese Representation（日本語表現）との対応は、
    何によって成立するのか。
-2. その対応は、English Representation（英語表現）1つに対して
+2. その対応は、English Representation1つに対して
    いくつ成立するのか。
 3. その対応を成立させることは、
    English Representation（英語表現）そのものの意味、および
@@ -24,23 +24,23 @@ Architecture Asset（アーキテクチャ資産）である。
    Underlying Meaning（対象の意味）を
    定めることとどこで分かれるのか。
 4. その対応が成立していることと、
-   Concrete Usage Occurrence（具体使用箇所）で
+   Concrete Usage Occurrenceで
    Japanese Representation（日本語表現）が
    表示されることは、どこで分かれるのか。
 
 本文書が定義するのは、この対応を成立させる
-Architecture-level Semantic Model（アーキテクチャレベル意味モデル）である。
+Architecture-level Semantic Modelである。
 個々のEnglish Representation（英語表現）に対する
 具体的なJapanese Representation（日本語表現）の値は、
 本文書が定義しない。
 
-本文書は、Formal Terminology Management（正式用語管理）、
-Translation Management（翻訳管理）、
-Naming Management（名称管理）を責務としない。
+本文書は、Formal Terminology Management、
+Translation Management、
+Naming Managementを責務としない。
 
-## Position（上位Architectureとの関係）
+## Position（設計上の位置づけ）
 
-本文書は、次を上位Source（上位の情報源）として参照する。
+本文書は、次を上位Sourceとして参照する。
 
 - [Documentation Structure Architecture](documentation-structure.md)
 - [Repository Governance Documentation Framework Architecture](repository-governance-documentation-framework.md)
@@ -48,28 +48,27 @@ Naming Management（名称管理）を責務としない。
 Design Dependency（設計依存）は次の一方向とする。
 
 ```text
-Documentation Structure Architecture（文書構造の一般意味モデル）
+Documentation Structure Architecture
         ▲
-        │ presupposes（前提として使用する）
-Canonical Japanese Support Architecture（本文書）
+        │ presupposes
+Canonical Japanese Support Architecture
 
 Repository Governance Documentation Framework Architecture
-（文書体系と領域責務）
         ▲
-        │ belongs to（Architecture Areaに属する）
-Canonical Japanese Support Architecture（本文書）
+        │ belongs to
+Canonical Japanese Support Architecture
 ```
 
 本文書は
 [Repository Governance Documentation Framework Architecture](repository-governance-documentation-framework.md)
 が定義するArchitecture Area（アーキテクチャ領域）に属する
 通常のDocumentation Asset（文書資産）である。
-同Area（領域）のArea Responsibility（領域責務）である
-Semantic / Structural Model（意味・構造モデル）の定義として、
+同AreaのArea Responsibility（領域責務）である
+Semantic / Structural Modelの定義として、
 本文書はCanonical Japanese Support Association（正規日本語補助対応）を
-成立させるConcept（概念）・Relationship（関係）・
+成立させるConcept（概念）・Relationship・
 Boundary（境界）・Definition Authority（定義権限）を定義する。
-Area（領域）を代表・集約するAsset（資産）ではない。
+Areaを代表・集約するAssetではない。
 
 本文書が使用する次のConcept（概念）の
 Definition Authority（定義権限）は上位設計にある。
@@ -95,18 +94,18 @@ Definition Authority（定義権限）は上位設計にある。
   Multiplicity（多重度）
 - Canonical Japanese Support Representation（正規日本語補助表現）と、
   English Representation（英語表現）そのものとの
-  Definition Authority Boundary（定義権限境界）
+  Definition Authority Boundary
 - Canonical Japanese Support Representation（正規日本語補助表現）と、
   Underlying Meaning（対象の意味）との
-  Definition Authority Boundary（定義権限境界）
+  Definition Authority Boundary
 - Canonical Japanese Support Representation（正規日本語補助表現）と、
-  別のSubject（別対象）についての
+  別のSubjectについての
   Definition Responsibility（定義責務）が定義する
   Human-readable Representation（人間可読表現）との
-  Definition Authority Boundary（定義権限境界）
-- Architecture-level Semantic Model（アーキテクチャレベル意味モデル）と
-  Individual Canonical Value（個別正規値）との
-  Definition Authority Boundary（定義権限境界）
+  Definition Authority Boundary
+- Architecture-level Semantic Modelと
+  Individual Canonical Valueとの
+  Definition Authority Boundary
 - Canonical Japanese Support Association（正規日本語補助対応）の成立と、
   Documentation Presentation（文書上の表示）との
   Boundary（境界）
@@ -115,34 +114,34 @@ Definition Authority（定義権限）は上位設計にある。
 
 - English Representation（英語表現）のIdentity（同一性）、
   Meaning（意味）、Formal Status（正式地位）、
-  Category（分類）、およびName（名称）としての地位
+  Category（分類）、およびNameとしての地位
 - English Representation（英語表現）が指す
   Underlying Meaning（対象の意味）そのもの
 - 個々のEnglish Representation（英語表現）と
   個々のCanonical Japanese Support Representation（正規日本語補助表現）との
   具体的な対応の値
-- 別のSubject（別対象）についての
+- 別のSubjectについての
   Definition Responsibility（定義責務）が定義する
   Human-readable Representation（人間可読表現）そのもの、および
-  そのLanguage-specific Representation（言語固有表現）
-- Subject-specific Representation（対象固有表現）または
-  Local Presentation（局所表示）の詳細Model（詳細モデル）
+  そのLanguage-specific Representation
+- Subject-specific Representationまたは
+  Local Presentationの詳細Model
 - Japanese Representation（日本語表現）側から見た
   逆方向のMultiplicity（多重度）
-- Title（題名）・Heading（見出し）・Body（本文）、初出、常時表示等の
-  Presentation Rule（表示規則）
-- Registry（登録簿）・Schema（スキーマ）・Field（フィールド）・
-  Stable Identifier（安定識別子）等の管理機構
-- Workflow（作業手順）、Actor Model（主体モデル）、
-  Candidate Detection（候補検出）、Occurrence Count（出現回数）
-- Alias（別名）・Synonym（同義語）、Lifecycle（生存期間）、
+- Title・Heading（見出し）・Body、初出、常時表示等の
+  Presentation Rule
+- Registry・Schema・Field・
+  Stable Identifier等の管理機構
+- Workflow、Actor Model、
+  Candidate Detection、Occurrence Count（出現回数）
+- Alias・Synonym、Lifecycle、
   Versioning（版管理）
 - English Representation（英語表現）以外の言語、または
   Japanese Representation（日本語表現）以外の言語を対象とする
-  Generic Translation Model（汎用翻訳モデル）、
-  Generic Language Map（汎用言語対応表）、
-  Localization Model（地域化モデル）
-- Validator（検証器）・Linter・CLI・CI等のTool（ツール）要求
+  Generic Translation Model、
+  Generic Language Map、
+  Localization Model
+- Validator・Linter・CLI・CI等のTool要求
 
 本節が示すのは、本文書がDefinition Authority（定義権限）を
 持たない範囲である。
@@ -153,22 +152,22 @@ Definition Authority（定義権限）は上位設計にある。
 
 ### Model全体像
 
-本文書が成立させるModel（モデル）は次である。
+本文書が成立させるModelは次である。
 
 ```text
-English Representation（英語表現）
+English Representation
         │
         │ 0..1
         │ is canonically supported by
-        │ （正規日本語補助対応を持つ）
+        │
         ▼
-Canonical Japanese Support Representation（正規日本語補助表現）
+Canonical Japanese Support Representation
 ```
 
-この矢印が表すRelationship（関係）を
+この矢印が表すRelationshipを
 Canonical Japanese Support Association（正規日本語補助対応）と呼ぶ。
 
-本Model（モデル）が保持するConcept（概念）は
+本Modelが保持するConcept（概念）は
 次の3つのみである。
 
 - English Representation（英語表現）
@@ -179,13 +178,13 @@ Canonical Japanese Support Association（正規日本語補助対応）と呼ぶ
 
 English Representation（英語表現）は、
 Repository Documentation（Repository文書）で意図的に使用され、
-本Model（モデル）において
+本Modelにおいて
 Canonical Japanese Support Association（正規日本語補助対応）の
 対応元として扱われ得る英語によるRepresentation（表現）である。
 
 本文書はEnglish Representation（英語表現）を、
-本Model（モデル）が対応元を指し示すために必要な範囲の
-Local Input Concept（局所的入力概念）として扱う。
+本Modelが対応元を指し示すために必要な範囲の
+Local Input Conceptとして扱う。
 
 したがって本文書は、
 English Representation（英語表現）について次を定義しない。
@@ -194,10 +193,10 @@ English Representation（英語表現）について次を定義しない。
 - Meaning（意味）
 - Formal Status（正式地位）
 - Category（分類）
-- Name（名称）としての地位
+- Nameとしての地位
 
 本文書は、これらを担う独立したConcept（概念）を
-本Model（モデル）へ導入しない。
+本Modelへ導入しない。
 
 ### Canonical Japanese Support Representation（正規日本語補助表現）
 
@@ -208,28 +207,28 @@ Canonical Japanese Support Association（正規日本語補助対応）におい
 Repositoryが一貫して再利用する
 Japanese Representation（日本語表現）である。
 
-Canonicality（正規性）は、
+Canonicalityは、
 Japanese Representation（日本語表現）単体に対して成立しない。
 成立するのは、特定のEnglish Representation（英語表現）との
 Association（対応）に対してである。
 同じ語形のJapanese Representation（日本語表現）が
 別のEnglish Representation（英語表現）との
-Association（対応）においてCanonical（正規）であるかどうかは、
+Association（対応）においてCanonicalであるかどうかは、
 そのAssociation（対応）ごとに定まる。
 
 本文書は、次の境界を保持する。
 
 ```text
-Canonical Japanese Support Representation（正規日本語補助表現）
-≠ English Representation（英語表現）のIdentity（同一性）
-≠ Underlying Meaning（対象の意味）のDefinition（定義）
-≠ Translation（翻訳）として唯一正しい表現
+Canonical Japanese Support Representation
+≠ English RepresentationのIdentity
+≠ Underlying MeaningのDefinition
+≠ Translationとして唯一正しい表現
 ```
 
 Canonical Japanese Support Representation（正規日本語補助表現）が
 成立していることは、
 そのJapanese Representation（日本語表現）が
-Translation（翻訳）として唯一正しいことを意味しない。
+Translationとして唯一正しいことを意味しない。
 成立しているのは、Repositoryが理解補助として
 一貫して再利用するという対応のみである。
 
@@ -239,18 +238,18 @@ Canonical Japanese Support Association（正規日本語補助対応）は、
 English Representation（英語表現）と、
 その理解補助としてRepositoryが一貫して再利用すると決定した
 Canonical Japanese Support Representation（正規日本語補助表現）との
-Relationship（関係）である。
+Relationshipである。
 
 ### Association Establishment（対応の成立）
 
 Canonical Japanese Support Association（正規日本語補助対応）は、
 Repositoryが、特定のEnglish Representation（英語表現）に対して
 一貫して再利用するJapanese Representation（日本語表現）を
-Canonical（正規）として決定したときに成立する。
+Canonicalとして決定したときに成立する。
 
-本文書は、この成立を上記Relationship（関係）の意味として扱い、
+本文書は、この成立を上記Relationshipの意味として扱い、
 成立可否を判定する独立したConcept（概念）を導入しない。
-Occurrence Count（出現回数）、Candidate Detection（候補検出）、
+Occurrence Count（出現回数）、Candidate Detection、
 Formal Status（正式地位）等の付随的な性質から
 成立を導出しない。
 
@@ -260,14 +259,14 @@ Formal Status（正式地位）等の付随的な性質から
 現在必要な方向のみである。
 
 ```text
-1 English Representation（英語表現）
-    → 0..1 Canonical Japanese Support Representation（正規日本語補助表現）
+1 English Representation
+    → 0..1 Canonical Japanese Support Representation
 ```
 
 これが意味するのは次の2点である。
 
 - あるEnglish Representation（英語表現）について
-  Japanese Support（日本語補助）が必要でない場合、
+  Japanese Supportが必要でない場合、
   Canonical Japanese Support Association（正規日本語補助対応）は
   存在しなくてよい。
 - Canonical Japanese Support Association（正規日本語補助対応）が
@@ -277,7 +276,7 @@ Formal Status（正式地位）等の付随的な性質から
 
 Japanese Representation（日本語表現）側から見た
 逆方向のMultiplicity（多重度）は、
-現在のNeed（必要性）から導出されないため、
+現在のNeedから導出されないため、
 本文書は定義しない。
 定義しないことは、
 逆方向に制約が存在しないことを意味しない。
@@ -288,19 +287,19 @@ Japanese Representation（日本語表現）側から見た
 
 本文書がDefinition Responsibility（定義責務）を持つのは、
 Canonical Japanese Support Association（正規日本語補助対応）を
-成立させるConcept（概念）・Relationship（関係）・
+成立させるConcept（概念）・Relationship・
 Boundary（境界）のみである。
 
 ```text
-English Representation（英語表現）そのもの
-Underlying Meaning（対象の意味）
+English Representationそのもの
+Underlying Meaning
         ↓
-それぞれの対象を所有する既存のDefinition Authority（定義権限）
+それぞれの対象を所有する既存のDefinition Authority
 
-Canonical Japanese Support Association（正規日本語補助対応）の
-Concept（概念）・Relationship（関係）・Boundary（境界）
+Canonical Japanese Support Associationの
+Concept・Relationship・Boundary
         ↓
-本文書のDefinition Responsibility（定義責務）
+本文書のDefinition Responsibility
 ```
 
 したがって、あるEnglish Representation（英語表現）が
@@ -315,7 +314,7 @@ Definition Authority（定義権限）側にある。
 
 本文書は、English Representation（英語表現）および
 Underlying Meaning（対象の意味）に関する
-Definition Authority（定義権限）の一般Model（一般モデル）を
+Definition Authority（定義権限）の一般Modelを
 新たに設計しない。
 
 ### 別のSubject（別対象）が定義するHuman-readable Representation（人間可読表現）との境界
@@ -324,30 +323,30 @@ Canonical Japanese Support（正規日本語補助）が扱うのは、
 Repository Documentation（Repository文書）で使用される
 English Representation（英語表現）の理解を補助するために
 Repository横断で再利用される
-Japanese Reading Support（日本語読解補助）である。
+Japanese Reading Supportである。
 
 Human-readable Representation（人間可読表現）そのものが、
-別のSubject（別対象）についての
+別のSubjectについての
 Definition Responsibility（定義責務）の一部として
 定義されている場合がある。
 この場合、そのRepresentation（表現）の
-Language-specific Representation（言語固有表現）を定めるのは、
-そのSubject（対象）を所有する
+Language-specific Representationを定めるのは、
+そのSubjectを所有する
 Definition Authority（定義権限）側である。
 
 ```text
-別のSubject（別対象）についての
-Definition Responsibility（定義責務）が定義する
-Human-readable Representation（人間可読表現）
+別のSubjectについての
+Definition Responsibilityが定義する
+Human-readable Representation
         ↓
-そのSubject（対象）を所有するDefinition Authority（定義権限）
+そのSubjectを所有するDefinition Authority
 
-English Representation（英語表現）の理解補助として
+English Representationの理解補助として
 Repository横断で再利用される
-Japanese Reading Support（日本語読解補助）
+Japanese Reading Support
         ↓
 本文書が成立させる
-Canonical Japanese Support Association（正規日本語補助対応）
+Canonical Japanese Support Association
 ```
 
 したがって、そのようなRepresentation（表現）は
@@ -356,35 +355,35 @@ Canonical Japanese Support Association（正規日本語補助対応）
 
 また、あるRepresentation（表現）が
 English Representation（英語表現）と
-同じSurface Form（表層形式）であること、または
+同じSurface Formであること、または
 あるJapanese Representation（日本語表現）が
 Canonical Japanese Support Representation（正規日本語補助表現）と
-同じJapanese Value（日本語値）であることは、
+同じJapanese Valueであることは、
 それだけでは同じSemantic Responsibility（意味上の責務）を意味しない。
-本文書は、Surface Form（表層形式）の一致、または
-Japanese Value（日本語値）の一致のみから
+本文書は、Surface Formの一致、または
+Japanese Valueの一致のみから
 Canonical Japanese Support Association（正規日本語補助対応）の成立を
 推論しない。
 
 本文書は、そのようなRepresentation（表現）が
 どのように定義または表示されるかについての
-Model（モデル）を新たに設計しない。
+Modelを新たに設計しない。
 
 ### Architecture-level Semantic Model（アーキテクチャレベル意味モデル）とIndividual Canonical Value（個別正規値）との境界
 
-本文書は、Architecture-level Definition（アーキテクチャレベル定義）と
-Individual Canonical Value（個別正規値）を分離する。
+本文書は、Architecture-level Definitionと
+Individual Canonical Valueを分離する。
 
 ```text
-Canonical Japanese Support（正規日本語補助）の
-Concept（概念）・Relationship（関係）・Boundary（境界）
+Canonical Japanese Supportの
+Concept・Relationship・Boundary
     → 本文書
 
-個々のEnglish Representation（英語表現）
+個々のEnglish Representation
     ↔
-個々のCanonical Japanese Support Representation（正規日本語補助表現）
-という具体的なCanonical Association（正規対応）とその値
-    → 下位のDefinition-holding Asset（定義保持資産）
+個々のCanonical Japanese Support Representation
+という具体的なCanonical Associationとその値
+    → 下位のDefinition-holding Asset
 ```
 
 本文書は、
@@ -393,38 +392,35 @@ Concept（概念）・Relationship（関係）・Boundary（境界）
 Design Dependency → 設計依存
 ```
 
-のような個別のPair（個別対応）を定義しない。
-本文書が成立させるのは、そのようなPair（個別対応）が
-何であるかを説明するModel（モデル）である。
+のような個別のPairを定義しない。
+本文書が成立させるのは、そのようなPairが
+何であるかを説明するModelである。
 
 ## Availability / Presentation Boundary（利用可能性と表示の境界）
 
 Documentation Presentation（文書上の表示）は、
 Canonical Japanese Support Representation（正規日本語補助表現）が
-Concrete Usage Occurrence（具体使用箇所）へ
+Concrete Usage Occurrenceへ
 実際に現れることである。
 
 本文書は、次を境界として成立させる。
 
 ```text
 Canonical Japanese Support Association exists
-（Canonical Japanese Support Association（正規日本語補助対応）が
-成立している）
 ≠
 Documentation Presentation
-（Concrete Usage Occurrence（具体使用箇所）で表示される）
 ```
 
 すなわち、あるEnglish Representation（英語表現）について
 Canonical Japanese Support Association（正規日本語補助対応）が
 成立していることは、
 Canonical Japanese Support Representation（正規日本語補助表現）が
-すべてのConcrete Usage Occurrence（具体使用箇所）へ
+すべてのConcrete Usage Occurrenceへ
 表示されることを意味しない。
 逆に、ある使用箇所へ表示されていないことは、
 そのAssociation（対応）が成立していないことを意味しない。
 
-どの箇所で表示するかを定めるPresentation Rule（表示規則）は、
+どの箇所で表示するかを定めるPresentation Ruleは、
 本文書が定義しない。
 本文書が保持するのは、この境界のみである。
 
@@ -440,7 +436,7 @@ Fundamental Principle（根本原則）ではない。
 
 Canonical Japanese Support（正規日本語補助）は、
 English Representation（英語表現）に対する
-Semantic Classification（意味上の分類）を成立させない。
+Semantic Classificationを成立させない。
 成立させるのは、対応元と対応先の
 Association（対応）のみである。
 
@@ -453,29 +449,29 @@ Underlying Meaning（対象の意味）を再定義しない。
 
 ### 3. Current Need Only（現在必要な範囲だけを定義する）
 
-本Model（モデル）は、English Representation（英語表現）から
+本Modelは、English Representation（英語表現）から
 Japanese Representation（日本語表現）への
-Support Association（補助対応）のみを扱う。
-Translation（翻訳）一般、
-Localization（地域化）一般へ拡張しない。
+Support Associationのみを扱う。
+Translation一般、
+Localization一般へ拡張しない。
 
 ### 4. Availability and Presentation Separation（利用可能性と表示の分離）
 
 Canonical Japanese Support Association（正規日本語補助対応）が
 成立していることと、
-Concrete Documentation Presentation（具体的な文書上の表示）とを
+Concrete Documentation Presentationとを
 分離して扱う。
 
 ## Usage by Downstream Design（下位設計からの参照）
 
-本文書を上位Source（上位の情報源）とする下位設計は、
+本文書を上位Sourceとする下位設計は、
 次を本文書側の定義として参照する。
 
 - Canonical Japanese Support Association（正規日本語補助対応）が
   何を表す関係であるか
 - 同Association（対応）のMultiplicity（多重度）
-- 本文書が保持するDefinition Authority Boundary（定義権限境界）および
-  Availability / Presentation Boundary（利用可能性と表示の境界）
+- 本文書が保持するDefinition Authority Boundaryおよび
+  Availability / Presentation Boundary
 
 次は本文書から判断できない。
 下位設計が自身の責務として決定する。

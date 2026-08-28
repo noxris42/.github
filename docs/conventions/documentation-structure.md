@@ -5,17 +5,17 @@
 本文書は、`noxris42` において
 **Documentation Asset（文書資産）の内部Semantic Structure（意味構造）について、
 Document Responsibility（文書責務）に従う
-Section Structure（Section構造）の構成規範と、
+Section Structureの構成規範と、
 複数のDocumentation Asset（文書資産）へ反復適用される
-Standard Section Mechanism（標準Section機構）および
-Documentation-wide Standard Sections（Documentation全体標準Section）を定義し、
+Standard Section Mechanismおよび
+Documentation-wide Standard Sectionsを定義し、
 一貫して適用可能にする
 Reusable Normative Standard（再利用可能な規範標準）**
 を定義するConvention Asset（規約資産）である。
 
 本文書が扱う問いは次の3点である。
 
-1. Documentation Asset（文書資産）のSection Structure（Section構造）は、
+1. Documentation Asset（文書資産）のSection Structureは、
    何に基づいて成立していなければならないのか。
 2. 複数のDocumentation Asset（文書資産）へ反復適用される
    Standard Section（標準Section）は、
@@ -24,7 +24,7 @@ Reusable Normative Standard（再利用可能な規範標準）**
    Standard Section（標準Section）として何が成立するのか。
 
 [Documentation Structure Architecture](../architecture/documentation-structure.md)
-は、Section（節）・Section Responsibility（Section責務）・
+は、Section・Section Responsibility（Section責務）・
 Responsibility Decomposition（責務分解）の一般
 Semantic Model（意味モデル）を定義する。
 ただし同Architectureは、具体的な
@@ -32,10 +32,10 @@ Standard Section（標準Section）を意図的に定義せず、
 後続のConvention（規約）へ委譲している。
 
 本文書はその委譲先として、
-一般Section Model（一般Sectionモデル）を前提に、
-Section（節）の適用に関する規範、
+一般Section Modelを前提に、
+Sectionの適用に関する規範、
 Standard Section（標準Section）の一般機構、および
-現在成立するDocumentation-wide Standard Sections（Documentation全体標準Section）を定める。
+現在成立するDocumentation-wide Standard Sectionsを定める。
 
 本文書は、上位設計が定義するConcept（概念）を再定義しない。
 
@@ -45,23 +45,23 @@ Standard Section（標準Section）の一般機構、および
 [Documentation Structure Architecture](../architecture/documentation-structure.md)
 および
 [Convention Authoring Convention](convention-authoring.md)
-を上位Source（上位の情報源）として参照する。
+を上位Sourceとして参照する。
 
 Design Dependency（設計依存）は次の一方向とする。
 
 ```text
-Documentation Structure Architecture（文書構造の意味モデル）
+Documentation Structure Architecture
         ▲
-        │ refines（具体的規範へ具体化する）
-Documentation Structure Convention（本文書）
+        │ refines
+Documentation Structure Convention
 
-Convention Architecture（規約の意味構造）
+Convention Architecture
         ▲
-        │ refines（表記へ具体化する）
-Convention Authoring Convention（規約記述表記）
+        │ refines
+Convention Authoring Convention
         ▲
-        │ conforms to（記述表記に従う）
-Documentation Structure Convention（本文書）
+        │ conforms to
+Documentation Structure Convention
 ```
 
 本文書は
@@ -71,7 +71,7 @@ Documentation Structure Convention（本文書）
 Documentation Asset（文書資産）という反復的に成立する成果物へ
 繰り返し適用される
 Reusable Normative Standard（再利用可能な規範標準）として成立する。
-Area（領域）を代表・集約するAsset（資産）ではない。
+Areaを代表・集約するAssetではない。
 
 本文書が使用する次のConcept（概念）の
 Definition Authority（定義権限）は上位設計にある。
@@ -79,14 +79,14 @@ Definition Authority（定義権限）は上位設計にある。
 
 - Documentation Asset（文書資産）と
   Document Responsibility（文書責務）
-- Section（節）とSection Responsibility（Section責務）
+- SectionとSection Responsibility（Section責務）
 - Section Responsibility（Section責務）が
   Document Responsibility（文書責務）の
   Responsibility Boundary（責務境界）に従属すること
-- Nested Section Structure（Section入れ子構造）における
+- Nested Section Structureにおける
   Responsibility Decomposition（責務分解）
 - `Section ≠ Heading` をはじめとする
-  Logical / Representation Boundary（論理／表現境界）
+  Logical / Representation Boundary
 - Documentation Framework（文書体系）と
   Documentation Area（文書責務領域）
 - Convention（規約）およびConvention Responsibility（規約責務）
@@ -97,7 +97,7 @@ Definition Authority（定義権限）は上位設計にある。
 - Rule Identity（ルール同一性）とその安定性
 - Rule ID Format（規約ルールID形式）、
   Rule Field（規則フィールド）の構成・順序・Markdown表現、
-  Stability（安定性）のField表現
+  StabilityのField表現
 - Namespace Code（名前空間コード）の割当
 
 ## Scope（対象範囲）
@@ -106,28 +106,28 @@ Definition Authority（定義権限）は上位設計にある。
 
 - Documentation Asset（文書資産）から
   Document Responsibility（文書責務）を識別可能にする要求
-- Section（節）を構成する場合の
+- Sectionを構成する場合の
   Section Responsibility（Section責務）に関する要求
 - Section Responsibility（Section責務）および
-  Child Section Responsibility（子Section責務）の
+  Child Section Responsibilityの
   Responsibility Boundary（責務境界）に関する要求
 - Standard Section（標準Section）の定義要件、
   Applicability Scope（適用範囲）に基づく適用、
   Standard Section Identity（標準Section同一性）の選択と適合
-- Standard Section Definition（標準Section定義）と
+- Standard Section Definitionと
   Presence Requirement（設置要求）の分離
 - Standard Section Heading Representation（標準Section見出し表現）の
   定義方法、およびその定義権限の所在
 - 定義済みStandard Section Heading Representation（標準Section見出し表現）の
   再利用要求
-- 本文書が定義するDocumentation-wide Standard Sections（Documentation全体標準Section）
+- 本文書が定義するDocumentation-wide Standard Sections
   のうち、Standard Section Heading Representation（標準Section見出し表現）を
-  宣言するものについてのConcrete Heading Representation（具体見出し表現）
-- Standard Section Catalog（標準Section一覧）の開放性と、
+  宣言するものについてのConcrete Heading Representation
+- Standard Section Catalogの開放性と、
   Document-specific Section（文書固有Section）の許容
 - Applicability Scope（適用範囲）を跨ぐ
-  Standard Identity（標準同一性）の非重複
-- Documentation-wide Standard Sections（Documentation全体標準Section）の
+  Standard Identityの非重複
+- Documentation-wide Standard Sectionsの
   Section Responsibility（Section責務）、
   他のStandard Section（標準Section）の
   Responsibility Decomposition（責務分解）として成立する場合の
@@ -136,40 +136,40 @@ Definition Authority（定義権限）は上位設計にある。
 
 ### Out of Scope（本文書が定義しない範囲）
 
-- Section（節）・Section Responsibility（Section責務）・
+- Section・Section Responsibility（Section責務）・
   Responsibility Decomposition（責務分解）の
   一般Semantic Model（意味モデル）
 - すべてのDocumentation Asset（文書資産）へ要求される
-  Fixed Section Set（固定Section集合）、
+  Fixed Section Set、
   およびSection Order（Section順序）
-- Section Responsibilities（Section責務群）による
+- Section Responsibilitiesによる
   Document Responsibility（文書責務）のCoverage（網羅）要求
 - Framework-scoped / Area-scoped Standard Section
-  （文書体系・領域限定標準Section）の具体Catalog（一覧）
+  の具体Catalog
 - Applicability Scope（適用範囲）粒度の
-  Closed Taxonomy（閉じた分類体系）
-- Section（節）とHeading（見出し）・Heading Level（見出しレベル）の
+  Closed Taxonomy
+- SectionとHeading（見出し）・Heading Level（見出しレベル）の
   Mapping Rule（対応規則）
 - Document-specific Section（文書固有Section）の
-  Heading Representation（見出し表現）のModel（モデル）
-- Heading Registry（見出し登録簿）等、
+  Heading Representation（見出し表現）のModel
+- Heading Registry等、
   Heading Representation（見出し表現）の中央登録簿
-- Section Identifier（Section識別子）、
-  Section Registry（Section登録簿）
+- Section Identifier、
+  Section Registry
 - Standard Section Heading Representation（標準Section見出し表現）の
   定義および再利用を除く、
   Natural Language Representation（自然言語表現）、
   日英表記、文体、用語選択
 - Markdown Syntax、Markdown Heading Marker（Markdown見出し記号）、
   その他Markdown固有の表現
-- File名、Directory名、Path等のNaming Convention（命名規約）
-- Document Title（文書題名）、Formal Asset Name（正式資産名）、
+- File名、Directory名、Path等のNaming Convention
+- Document Title（文書題名）、Formal Asset Name、
   およびそれらの構成規則
 - Documentation Asset（文書資産）間の
-  Dependency（依存）・Refinement（具体化）関係のModel（モデル）
-- Metadata（構造化メタデータ）およびDeclaration（明示的宣言）のSchema、
-  Template（雛形）
-- Validation（検証）・Lint等のTool（ツール）要求
+  Dependency（依存）・Refinement（具体化）関係のModel
+- MetadataおよびDeclarationのSchema、
+  Template
+- Validation・Lint等のTool要求
 - Documentation Lifecycle（文書の生涯管理）・Review
 
 ## Concrete Declarations（具体宣言）
@@ -190,13 +190,13 @@ Convention Code: DST
 本文書のNormative Rule（規範的ルール）は、
 [Convention Authoring Convention](convention-authoring.md)
 が割り当てたNamespace Code（名前空間コード） `SF`
-（Shared Foundation Namespace／共有基盤名前空間）に属する。
+（Shared Foundation Namespace）に属する。
 
 本文書はNamespace Code（名前空間コード）を新たに割り当てない。
 
 ### Standard Section Heading Representation（標準Section見出し表現）
 
-本文書が定義するDocumentation-wide Standard Sections（Documentation全体標準Section）
+本文書が定義するDocumentation-wide Standard Sections
 のうち、次に挙げるものに対する
 Standard Section Heading Representation（標準Section見出し表現）を、
 Standard Section（標準Section）ごとに次のとおり宣言する。
@@ -243,7 +243,7 @@ Japanese Heading Explanation:    関係
 `Relationships` のJapanese Heading Explanation（日本語見出し説明）を
 `関係` とするのは、当該Standard Section（標準Section）が
 他のDocumentation Asset（文書資産）・Responsibility（責務）・
-Concept（概念）等とのSemantic Relationship（意味上の関係）全般を
+Concept（概念）等とのSemantic Relationship全般を
 対象とするためである。
 
 #### In Scope Standard Section（対象範囲内標準Section）
@@ -262,10 +262,10 @@ English Heading Representation:  Out of Scope
 Japanese Heading Explanation:    本文書が定義しない範囲
 ```
 
-`In Scope` / `Out of Scope` のJapanese Heading Explanation
-（日本語見出し説明）を
+`In Scope` / `Out of Scope` のJapanese Heading Explanation（日本語見出し説明）
+を
 `本文書が定義する範囲` / `本文書が定義しない範囲` とするのは、
-両者がいずれもScope Standard Section（対象範囲標準Section）の
+両者がいずれもScope Standard Sectionの
 Responsibility Decomposition（責務分解）であり、
 当該Documentation Asset（文書資産）自身の
 Document Responsibility（文書責務）の内外を対象とすることを
@@ -297,20 +297,20 @@ Section Responsibility（Section責務）に対して、
 この機構が分離しているのは次の3点である。
 
 ```text
-Standard Section Definition（標準Section定義）
-    ≠ Presence Requirement（設置要求）
+Standard Section Definition
+    ≠ Presence Requirement
 
-Standard Section Identity（標準Section同一性）
-    ≠ Heading Representation（見出し表現）
+Standard Section Identity
+    ≠ Heading Representation
 
-Standard Section Catalog（標準Section一覧）
-    ≠ Closed Section Vocabulary（閉じたSection語彙）
+Standard Section Catalog
+    ≠ Closed Section Vocabulary
 ```
 
 Standard Section Identity（標準Section同一性）は
 Section Responsibility（Section責務）とApplicability Scope（適用範囲）によって成立する。
 Heading（見出し）の文字列、Heading Level（見出しレベル）、
-Markdown Marker（Markdown記号）、Section Order（Section順序）は
+Markdown Marker、Section Order（Section順序）は
 その成立条件ではない。
 
 `Purpose`・`Scope`・`Relationships`・
@@ -326,11 +326,11 @@ Standard Section Heading Representation（標準Section見出し表現）とし�
 
 Standard Section Heading Representation（標準Section見出し表現）は、
 Standard Section Identity（標準Section同一性）を
-Human-readable Heading（人間可読見出し）として表現するための
+Human-readable Headingとして表現するための
 Representation（表現）である。
 Identity（同一性）の成立条件ではない。
 
-現在成立するModel（モデル）は次である。
+現在成立するModelは次である。
 
 ```text
 Standard Section
@@ -363,7 +363,7 @@ same value
     ≠ same semantic responsibility
 ```
 
-同一のJapanese Value（日本語値）が
+同一のJapanese Valueが
 Canonical Japanese Support（正規日本語補助）側にも存在し得ることは
 禁止されない。
 両者はSemantic Responsibility（意味上の責務）が異なる。
@@ -386,7 +386,7 @@ Standard Section Heading Representationの機構
     → そのStandard Sectionを定義するConvention
 ```
 
-したがって中央のHeading Registry（見出し登録簿）は導入しない。
+したがって中央のHeading Registryは導入しない。
 
 本機構はStandard Section Identity（標準Section同一性）にのみ適用される。
 Document-specific Section（文書固有Section）の
@@ -400,14 +400,14 @@ Applicability Scope（適用範囲）は、
 
 本文書が今回定義するStandard Section（標準Section）の
 Applicability Scope（適用範囲）は
-Documentation-wide（Documentation全体）のみである。
+Documentation-wideのみである。
 Framework-scoped / Area-scoped Standard Section
-（文書体系・領域限定標準Section）の具体Catalog（一覧）は、
+の具体Catalogは、
 本文書では定義しない。
 
 ### 責務との境界
 
-本文書が扱うのは、Section（節）の適用、
+本文書が扱うのは、Sectionの適用、
 Section Responsibility（Section責務）との整合、および
 Standard Section（標準Section）の機構と責務までである。
 
@@ -417,7 +417,7 @@ Standard Section（標準Section）の機構と責務までである。
   定義および再利用を除く、
   Natural Language Representation（自然言語表現）、
   日英表記、文体、用語選択
-- Markdown Syntax、Heading Marker（見出し記号）等の
+- Markdown Syntax、Heading Marker等の
   Markdown固有表現
 - File / Directory / Path等の命名
 
@@ -427,7 +427,7 @@ Standard Section（標準Section）の機構と責務までである。
 
 ## Normative Rules（規範的ルール）
 
-以降の各Section（節）は、1つのNormative Rule（規範的ルール）を記述する。
+以降の各Sectionは、1つのNormative Rule（規範的ルール）を記述する。
 
 Category（分類）を示す小見出しは文書上の整理のためのものであり、
 Rule ID（規約ルールID）はCategory（分類）を表現しない。
@@ -454,11 +454,11 @@ Documentation Asset（文書資産）の意味と責務範囲を成立させる
 Semantic Basis（意味上の基礎）である。
 それが内容から識別できなければ、
 その資産に何を書くべきか、何を書くべきでないかを判断できず、
-Section（節）の妥当性も評価できない。
+Sectionの妥当性も評価できない。
 
-**Note:** 本Rule（ルール）は識別可能性のみを要求する。
-どのSection（節）でそれを担うかは要求しない。
-Purpose Standard Section（目的標準Section）の
+**Note:** 本Ruleは識別可能性のみを要求する。
+どのSectionでそれを担うかは要求しない。
+Purpose Standard Sectionの
 Presence Requirement（設置要求）は `DST-SF-013` が別に定める。
 
 #### DST-SF-002 — Responsibility-based Sectioning
@@ -471,14 +471,14 @@ Presence Requirement（設置要求）は `DST-SF-013` が別に定める。
 
 **Requirement:** MUST
 
-**Rule:** Documentation Asset（文書資産）がSection（節）を構成する場合、
-各Section（節）は、
+**Rule:** Documentation Asset（文書資産）がSectionを構成する場合、
+各Sectionは、
 Document Responsibility（文書責務）を内部で分担する
 Section Responsibility（Section責務）に基づかなければならない。
 
-**Reason:** Section（節）は
+**Reason:** Sectionは
 Section Responsibility（Section責務）によって成立する
-Semantic Unit（意味単位）である。
+Semantic Unitである。
 責務に基づかない区切りが混在すると、
 内部構成が意味構造ではなく記述量や体裁の都合で決まり、
 どこに何を書くかの判断根拠が失われる。
@@ -498,7 +498,7 @@ Semantic Unit（意味単位）である。
 Document Responsibility（文書責務）の範囲内に
 留まらなければならない。
 
-**Reason:** 責務境界を越えたSection（節）は、
+**Reason:** 責務境界を越えたSectionは、
 その資産が担っていない責務を実質的に持ち込む。
 結果として、その資産自身の
 Responsibility Boundary（責務境界）が崩れ、
@@ -517,7 +517,7 @@ Responsibility Boundary（責務境界）が崩れ、
 
 **Rule:** Child Section（子Section）の
 Section Responsibility（Section責務）は、
-Parent Section（親Section）の
+Parent Sectionの
 Section Responsibility（Section責務）を
 分担または具体化する範囲内に留まらなければならない。
 
@@ -574,11 +574,11 @@ Applicability Scope（適用範囲）を適用条件とすることで、
 標準の妥当性がその範囲の中で評価できる。
 
 **Note:** 現在必要なScope粒度として、
-Documentation-wide（Documentation全体）、
-Framework-wide（文書体系全体）、
-Framework + Area（文書体系＋領域）を扱える。
+Documentation-wide、
+Framework-wide、
+Framework（体系） + Areaを扱える。
 これは現時点で必要な粒度の例示であり、
-将来にわたるClosed Taxonomy（閉じた分類体系）ではない。
+将来にわたるClosed Taxonomyではない。
 
 #### DST-SF-007 — Standard Identity Selection
 
@@ -593,15 +593,15 @@ Framework + Area（文書体系＋領域）を扱える。
 **Rule:** Documentation Asset（文書資産）が、
 適用可能なStandard Section（標準Section）と
 同一のSection Responsibility（Section責務）を
-独立したSection（節）として構成する場合、
+独立したSectionとして構成する場合、
 対応するStandard Section Identity（標準Section同一性）を
 使用しなければならない。
 
 **Reason:** 同じ責務が資産ごとに別のIdentity（同一性）で現れると、
 標準として共通化した意味が反復適用されず、
-読み手は同じ責務のSection（節）を毎回別物として解釈することになる。
+読み手は同じ責務のSectionを毎回別物として解釈することになる。
 
-**Note:** 責務の部分一致や類似だけでは本Rule（ルール）は適用されない。
+**Note:** 責務の部分一致や類似だけでは本Ruleは適用されない。
 Section Responsibility（Section責務）が同一である場合に限られる。
 
 #### DST-SF-008 — Standard Identity Conformance
@@ -615,12 +615,12 @@ Section Responsibility（Section責務）が同一である場合に限られる
 **Requirement:** MUST
 
 **Rule:** Standard Section Identity（標準Section同一性）を使用する
-Section（節）は、
+Sectionは、
 そのStandard Section（標準Section）の
 Section Responsibility（Section責務）へ適合しなければならない。
 
 **Reason:** Identity（同一性）と責務が一致しなければ、
-読み手はそのSection（節）から得られる情報を予測できず、
+読み手はそのSectionから得られる情報を予測できず、
 Standard Section（標準Section）は名称の慣習に退化する。
 適合を要求することで、
 Identity（同一性）が責務の保証として機能する。
@@ -637,12 +637,12 @@ Identity（同一性）が責務の保証として機能する。
 
 **Rule:** Standard Section（標準Section）として
 定義されていることだけを根拠として、
-そのSection（節）の設置を要求してはならない。
+そのSectionの設置を要求してはならない。
 
 **Reason:** 定義と設置要求を同一視すると、
 Standard Section（標準Section）を追加するたびに
 すべての対象資産へ実質的な必須Sectionが増え、
-Fixed Section Set（固定Section集合）と変わらなくなる。
+Fixed Section Setと変わらなくなる。
 設置の要否は、その資産の
 Document Responsibility（文書責務）に照らして
 個別に判断されるべきである。
@@ -661,7 +661,7 @@ Document Responsibility（文書責務）に照らして
 
 **Requirement:** MUST NOT
 
-**Rule:** Standard Section Catalog（標準Section一覧）を、
+**Rule:** Standard Section Catalogを、
 使用可能なSection Responsibility（Section責務）または
 Section Identity（Section同一性）の
 Closed Set（閉じた集合）として扱ってはならない。
@@ -672,7 +672,7 @@ Closed Set（閉じた集合）として扱ってはならない。
 責務上必要な情報が既存の枠へ押し込まれ、
 Section Responsibility（Section責務）が不明瞭になる。
 
-**Note:** Open Vocabulary（開いた語彙）であることの帰結として、
+**Note:** Open Vocabularyであることの帰結として、
 適用可能なStandard Section（標準Section）に一致しない
 Section Responsibility（Section責務）は、
 一致しないことだけを理由として排除されない。
@@ -693,17 +693,17 @@ Document-specific Section（文書固有Section）として構成できる。
 **Rule:** より広いApplicability Scope（適用範囲）で
 すでに定義されたStandard Section（標準Section）と
 同一のSection Responsibility（Section責務）について、
-より狭いScope（適用範囲）で
+より狭いScopeで
 別のStandard Section Identity（標準Section同一性）を
 定義してはならない。
 
 **Reason:** 同一責務に複数のIdentity（同一性）が並立すると、
-どちらを使用すべきかがScope（適用範囲）の重なりによって決まり、
+どちらを使用すべきかがScopeの重なりによって決まり、
 `DST-SF-007` によるIdentity（同一性）の選択が一意に定まらなくなる。
-広いScope（適用範囲）の定義を唯一のIdentity（同一性）とすることで、
+広いScopeの定義を唯一のIdentity（同一性）とすることで、
 同じ責務が常に同じIdentity（同一性）で現れる。
 
-**Note:** より狭いScope（適用範囲）において、
+**Note:** より狭いScopeにおいて、
 既存Standard Section（標準Section）の
 Section Responsibility（Section責務）と
 異なる責務が必要な場合は、
@@ -727,24 +727,24 @@ Standard Section Heading Representation（標準Section見出し表現）を
 その定義は、当該Standard Section（標準Section）を定義する
 Convention（規約）上で行い、
 1つのStandard Section（標準Section）につき最大1つとし、
-English Heading Representation（英語見出し表現）と、
+English Heading Representationと、
 それに対応するJapanese Heading Explanation（日本語見出し説明）によって
 構成しなければならない。
 
 **Reason:** 同一のStandard Section Identity（標準Section同一性）は
 複数のDocumentation Asset（文書資産）でHeading（見出し）として
 表現され得る。
-再利用可能なHuman-readable Heading Representation（人間可読見出し表現）が
+再利用可能なHuman-readable Heading Representationが
 定義されていなければ、
-同じ責務のSection（節）が資産ごとに異なる見出しで現れる。
+同じ責務のSectionが資産ごとに異なる見出しで現れる。
 定義の所在をStandard Section（標準Section）の定義側へ置くのは、
 Identity（同一性）とその表現の定義権限を分散させないためである。
 
-**Note:** 本Rule（ルール）は
+**Note:** 本Ruleは
 Standard Section Heading Representation（標準Section見出し表現）を
 定義することを要求しない。
 定義するかどうかは任意であり、
-本Rule（ルール）が必須とするのは定義する場合の構成条件のみである。
+本Ruleが必須とするのは定義する場合の構成条件のみである。
 定義されていないことは、
 `DST-SF-005` によるStandard Section（標準Section）の成立を妨げない。
 Japanese Heading Explanation（日本語見出し説明）は
@@ -769,13 +769,13 @@ Documentation Asset（文書資産）がHeading（見出し）として表現す
 
 **Reason:** 定義された表現が使用されなければ、
 表現は資産ごとに分岐し、
-読み手は同じ責務のSection（節）を毎回別の見出しから解釈することになる。
+読み手は同じ責務のSectionを毎回別の見出しから解釈することになる。
 再利用を要求することで、
 Identity（同一性）と表現の対応が資産横断で一定に保たれる。
 
-**Note:** 本Rule（ルール）はHeading（見出し）による表現を要求しない。
+**Note:** 本RuleはHeading（見出し）による表現を要求しない。
 Heading（見出し）として表現する場合の表現のみを定める。
-本Rule（ルール）は
+本Ruleは
 Standard Section Identity（標準Section同一性）にのみ適用され、
 Document-specific Section（文書固有Section）へは適用されない。
 
@@ -792,8 +792,8 @@ Document-specific Section（文書固有Section）へは適用されない。
 **Requirement:** MUST
 
 **Rule:** Applicability Scope（適用範囲）を
-Documentation-wide（Documentation全体）とする
-Purpose Standard Section（目的標準Section）を定義する。
+Documentation-wideとする
+Purpose Standard Sectionを定義する。
 そのSection Responsibility（Section責務）は、
 Documentation Asset（文書資産）が
 何を保持・提供するために存在するのか、
@@ -806,7 +806,7 @@ Documentation Asset（文書資産）が
 共通のIdentity（同一性）を与えることで、
 読み手は資産の役割を一貫した根拠から確認できる。
 
-**Note:** 本Rule（ルール）は定義であり、
+**Note:** 本Ruleは定義であり、
 設置を要求しない。
 Presence Requirement（設置要求）は `DST-SF-013` が定める。
 
@@ -821,17 +821,17 @@ Presence Requirement（設置要求）は `DST-SF-013` が定める。
 **Requirement:** SHOULD
 
 **Rule:** Documentation Asset（文書資産）は、
-Purpose Standard Section（目的標準Section）を持つ。
+Purpose Standard Sectionを持つ。
 
 **Reason:** Document Responsibility（文書責務）が
 独立した責務として明示されない場合、
 読み手は本文全体からその役割を推測することになり、
 その資産が何を保持・提供する存在なのかの解釈が読み手ごとに分かれる。
 
-**Note:** 短いAsset（資産）で、
+**Note:** 短いAssetで、
 Document Responsibility（文書責務）が他の内容から十分に明確であり、
-独立したPurpose Section（目的Section）が
-Semantic Clarity（意味上の明確性）を実質的に増加させない場合は
+独立したPurpose Sectionが
+Semantic Clarityを実質的に増加させない場合は
 省略できる。
 
 #### DST-SF-014 — Scope Standard Section
@@ -845,8 +845,8 @@ Semantic Clarity（意味上の明確性）を実質的に増加させない場�
 **Requirement:** MUST
 
 **Rule:** Applicability Scope（適用範囲）を
-Documentation-wide（Documentation全体）とする
-Scope Standard Section（対象範囲標準Section）を定義する。
+Documentation-wideとする
+Scope Standard Sectionを定義する。
 そのSection Responsibility（Section責務）は、
 Document Responsibility（文書責務）が適用される範囲および
 必要な境界を明示し、
@@ -858,10 +858,10 @@ Documentation Asset（文書資産）が
 共通のIdentity（同一性）を与えることで、
 境界の確認と見直しを資産横断で同じ根拠から行える。
 
-**Note:** 本Rule（ルール）は定義であり、
+**Note:** 本Ruleは定義であり、
 設置を要求しない。
-Scope Information（対象範囲情報）の保持要求は `DST-SF-015` が、
-Section（節）としての構成は `DST-SF-016` が定める。
+Scope Informationの保持要求は `DST-SF-015` が、
+Sectionとしての構成は `DST-SF-016` が定める。
 
 #### DST-SF-015 — Scope Information Requirement
 
@@ -875,9 +875,9 @@ Section（節）としての構成は `DST-SF-016` が定める。
 
 **Rule:** Document Responsibility（文書責務）の
 適用範囲または境界を明示しなければ
-Material Ambiguity（重大な曖昧さ）が生じる場合、
+Material Ambiguityが生じる場合、
 Documentation Asset（文書資産）は
-必要なScope Information（対象範囲情報）を
+必要なScope Informationを
 保持しなければならない。
 
 **Reason:** 責務境界が曖昧なまま残ると、
@@ -886,8 +886,8 @@ Documentation Asset（文書資産）は
 曖昧さが実際に生じる場合に限定するのは、
 境界が自明な資産にまで形式的な記述を強いないためである。
 
-**Note:** 本Rule（ルール）が要求するのは情報の保持であり、
-独立したScope Section（対象範囲Section）の設置ではない。
+**Note:** 本Ruleが要求するのは情報の保持であり、
+独立したScope Sectionの設置ではない。
 
 #### DST-SF-016 — Scope Presence
 
@@ -899,15 +899,15 @@ Documentation Asset（文書資産）は
 
 **Requirement:** SHOULD
 
-**Rule:** Scope Information（対象範囲情報）が
+**Rule:** Scope Informationが
 独立したSection Responsibility（Section責務）としての
 意味的まとまりを持ち、
 その分離が責務境界の理解を改善する場合、
-Scope Standard Section（対象範囲標準Section）として構成する。
+Scope Standard Sectionとして構成する。
 
 **Reason:** 境界に関する情報が本文各所へ散在すると、
 その資産の境界を確認するために全体を読む必要が生じる。
-一方、分離する意味がない場合にまで独立Section（節）を要求すると、
+一方、分離する意味がない場合にまで独立Sectionを要求すると、
 責務を持たない区切りが増える。
 
 **Note:** `In Scope` / `Out of Scope` 等を
@@ -924,23 +924,23 @@ Scope Standard Section（対象範囲標準Section）として構成する。
 **Requirement:** MUST
 
 **Rule:** Applicability Scope（適用範囲）を
-Documentation-wide（Documentation全体）とする
-Relationships Standard Section（関係標準Section）を定義する。
+Documentation-wideとする
+Relationships Standard Sectionを定義する。
 そのSection Responsibility（Section責務）は、
-Documentation Asset（文書資産）またはそのSubject（対象）が、
+Documentation Asset（文書資産）またはそのSubjectが、
 他のDocumentation Asset（文書資産）・Responsibility（責務）・
 Concept（概念）等と持つ、
-当該Asset（資産）の意味成立に必要な
-Semantic Relationship（意味上の関係）を明確にすることである。
+当該Assetの意味成立に必要な
+Semantic Relationshipを明確にすることである。
 
 **Reason:** 資産の意味は、
 それ単体で閉じているとは限らない。
-上位Source（上位の情報源）・Definition Authority（定義権限）の所在・
+上位Source・Definition Authority（定義権限）の所在・
 他資産との責務境界といった関係が示されなければ、
 その資産の内容をどの前提の下で読むべきかが確定しない。
 この責務は資産の種類を問わず反復して現れる。
 
-**Note:** 本Rule（ルール）は定義であり、
+**Note:** 本Ruleは定義であり、
 Presence Requirement（設置要求）を定めない。
 
 #### DST-SF-020 — In Scope Standard Section
@@ -954,10 +954,10 @@ Presence Requirement（設置要求）を定めない。
 **Requirement:** MUST
 
 **Rule:** Applicability Scope（適用範囲）を
-Documentation-wide（Documentation全体）とする
-In Scope Standard Section（対象範囲内標準Section）を定義する。
+Documentation-wideとする
+In Scope Standard Sectionを定義する。
 そのSection Responsibility（Section責務）は、
-Scope Standard Section（対象範囲標準Section）の
+Scope Standard Sectionの
 Responsibility Decomposition（責務分解）として、
 当該Documentation Asset（文書資産）が
 Document Responsibility（文書責務）の範囲内で扱う事項を
@@ -971,18 +971,18 @@ Document Responsibility（文書責務）の範囲内で扱う事項を
 共通のIdentity（同一性）を与えることで、
 その所在を資産横断で同じ根拠から確認できる。
 
-**Note:** 本Rule（ルール）は定義であり、
+**Note:** 本Ruleは定義であり、
 Presence Requirement（設置要求）を定めない。
 `DST-SF-016` は
 `In Scope` / `Out of Scope` 等を固定のChild Section（子Section）として
-要求しない旨を定めており、本Rule（ルール）はこれを変更しない。
+要求しない旨を定めており、本Ruleはこれを変更しない。
 
 本Standard Section（標準Section）と
-Scope Standard Section（対象範囲標準Section）の関係は、
+Scope Standard Sectionの関係は、
 Responsibility Decomposition（責務分解）である。
-Scope Standard Section（対象範囲標準Section）の責務のうち、
+Scope Standard Sectionの責務のうち、
 分解されていない部分は
-Scope Standard Section（対象範囲標準Section）自身が直接担う。
+Scope Standard Section自身が直接担う。
 
 #### DST-SF-021 — Out of Scope Standard Section
 
@@ -995,10 +995,10 @@ Scope Standard Section（対象範囲標準Section）自身が直接担う。
 **Requirement:** MUST
 
 **Rule:** Applicability Scope（適用範囲）を
-Documentation-wide（Documentation全体）とする
-Out of Scope Standard Section（対象範囲外標準Section）を定義する。
+Documentation-wideとする
+Out of Scope Standard Sectionを定義する。
 そのSection Responsibility（Section責務）は、
-Scope Standard Section（対象範囲標準Section）の
+Scope Standard Sectionの
 Responsibility Decomposition（責務分解）として、
 当該Documentation Asset（文書資産）が
 Document Responsibility（文書責務）の範囲外として扱わない事項を
@@ -1012,7 +1012,7 @@ Document Responsibility（文書責務）の範囲外として扱わない事項
 共通のIdentity（同一性）を与えることで、
 その所在を資産横断で同じ根拠から確認できる。
 
-**Note:** 本Rule（ルール）は定義であり、
+**Note:** 本Ruleは定義であり、
 Presence Requirement（設置要求）を定めない。
 
 本Standard Section（標準Section）が担うのは、
@@ -1033,10 +1033,10 @@ Architecture Asset（アーキテクチャ資産）が
 **Requirement:** MUST
 
 **Rule:** Applicability Scope（適用範囲）を
-Documentation-wide（Documentation全体）とする
-Responsibility Boundary Standard Section（責務境界標準Section）を定義する。
+Documentation-wideとする
+Responsibility Boundary Standard Sectionを定義する。
 そのSection Responsibility（Section責務）は、
-Relationships Standard Section（関係標準Section）の
+Relationships Standard Sectionの
 Responsibility Decomposition（責務分解）として、
 当該Documentation Asset（文書資産）が担う
 Responsibility（責務）およびDefinition Authority（定義権限）と、
@@ -1052,12 +1052,12 @@ Responsibility（責務）およびDefinition Authority（定義権限）と、
 Definition Authority（定義権限）の所在を
 資産横断で同じ根拠から確認できる。
 
-**Note:** 本Rule（ルール）は定義であり、
+**Note:** 本Ruleは定義であり、
 Presence Requirement（設置要求）を定めない。
 
-Scope Standard Section（対象範囲標準Section）とは
+Scope Standard Sectionとは
 Section Responsibility（Section責務）が異なる。
-Scope Standard Section（対象範囲標準Section）が担うのは、
+Scope Standard Sectionが担うのは、
 当該資産自身のDocument Responsibility（文書責務）が
 適用される範囲および境界である。
 本Standard Section（標準Section）が担うのは、
@@ -1066,54 +1066,54 @@ Responsibility（責務）およびDefinition Authority（定義権限）が
 どこで分かれるかである。
 
 本Standard Section（標準Section）と
-Relationships Standard Section（関係標準Section）の関係は、
+Relationships Standard Sectionの関係は、
 Responsibility Decomposition（責務分解）である。
-Relationships Standard Section（関係標準Section）の責務のうち、
+Relationships Standard Sectionの責務のうち、
 分解されていない部分は
-Relationships Standard Section（関係標準Section）自身が直接担う。
+Relationships Standard Section自身が直接担う。
 
 ## Self Application（本文書自身への適用）
 
 本文書は通常のConvention Asset（規約資産）であり、
 [Convention Authoring Convention](convention-authoring.md)
-が定めるRule（規則）に従って記述されている。
+が定めるRuleに従って記述されている。
 
 - Convention Code（規約コード）を
-  「Concrete Declarations（具体宣言）」で明示的に宣言している。
+  「Concrete Declarations」で明示的に宣言している。
 - すべてのNormative Rule（規範的ルール）が
   `DST-SF-NNN` 形式のRule ID（規約ルールID）を持つ。
 - すべてのNormative Rule（規範的ルール）が、
-  必須Field（フィールド）を規定の順序・表現で持つ。
+  必須Fieldを規定の順序・表現で持つ。
 - すべてのNormative Rule（規範的ルール）が
   `Stability: Development` である。
 - Retired Rule ID（廃止済み規約ルールID）は現時点で存在しないため、
   `Retired Rule IDs` の記録を設けていない。
 
-また本文書は、自身が定めるRule（規則）にも従っている。
+また本文書は、自身が定めるRuleにも従っている。
 
 - Document Responsibility（文書責務）を内容から識別可能にしている。
 - Purpose・Scope・Relationshipsの各
   Standard Section Identity（標準Section同一性）を、
-  それぞれの責務に適合するSection（節）へ使用している。
-- Scope Standard Section（対象範囲標準Section）の
-  Responsibility Decomposition（責務分解）として構成しているSection（節）へ、
+  それぞれの責務に適合するSectionへ使用している。
+- Scope Standard Sectionの
+  Responsibility Decomposition（責務分解）として構成しているSectionへ、
   In Scope・Out of Scopeの
   Standard Section Identity（標準Section同一性）を使用している。
-- Responsibility Boundary Standard Section（責務境界標準Section）に対応する
+- Responsibility Boundary Standard Sectionに対応する
   Section Responsibility（Section責務）は、
-  独立したSection（節）として構成していない。
-- その他のSection（節）は
+  独立したSectionとして構成していない。
+- その他のSectionは
   Document-specific Section（文書固有Section）である。
 - 本文書が定義するStandard Section（標準Section）のうち、
   Standard Section Heading Representation（標準Section見出し表現）を
   宣言するものについて、その宣言を
-  「Concrete Declarations（具体宣言）」で行っている。
+  「Concrete Declarations」で行っている。
 - 本文書自身のPurpose・Scope・Relationships・
   In Scope・Out of ScopeのHeading（見出し）は、
   宣言したStandard Section Heading Representation（標準Section見出し表現）と
   一致している。
-- Responsibility BoundaryのStandard Section Identity（標準Section同一性）は、
-  対応するSection（節）を構成していないためHeading（見出し）として
+- Responsibility Boundary（責務境界）のStandard Section Identity（標準Section同一性）は、
+  対応するSectionを構成していないためHeading（見出し）として
   表現しておらず、`DST-SF-019` による再利用要求は生じない。
 
 本文書自身のHeading Level（見出しレベル）・Section Order（Section順序）・
