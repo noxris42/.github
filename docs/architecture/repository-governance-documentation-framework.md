@@ -249,6 +249,21 @@ Relationship（関係）を定義する。
 したがって同文書はArchitecture Area（アーキテクチャ領域）に属し、
 Conventions Area（規約領域）には属さない。
 
+Framework Membershipについても同じ判断による。
+あるDocumentation Asset（文書資産）が本Framework（体系）に属するかは、
+その資産のDocument Responsibility（文書責務）が
+本Framework（体系）のいずれかの
+Area Responsibility（領域責務）の配分結果として成立するかによって決まる。
+Area Membershipと別の判断を設けない。
+
+したがって、次はそれだけではFramework Membershipを否定しない。
+
+- 本Framework（体系）を定義する資産自身であること
+- Design Dependency（設計依存）において本Framework（体系）の上流に位置すること
+- 本Framework（体系）とは別のSubjectを扱うこと
+
+本文書自身も、この判断の例外ではない。
+
 ## Philosophy Area（思想領域）
 
 ### Philosophy Area Responsibility（思想領域の領域責務）
