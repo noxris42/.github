@@ -10,14 +10,14 @@
 
 1. Documentation Structure（文書構造）は、何に基づいて成立するのか。
 2. Documentation上の論理単位として、どのような単位が存在するのか
-   （Documentation Framework（文書体系）／Documentation Area（文書責務領域）／Documentation Asset（文書資産））。
+   — Documentation Framework（文書体系）／Documentation Area（文書責務領域）／Documentation Asset（文書資産）。
 3. それぞれの論理単位は、何を担うのか
-   （Framework Responsibility（体系責務）／Area Responsibility（領域責務）／
-   Document Responsibility（文書責務））。
+   — Framework Responsibility（体系責務）／Area Responsibility（領域責務）／
+   Document Responsibility（文書責務）。
 4. Documentation Asset（文書資産）の内部では、
    Document Responsibility（文書責務）がどのような
    最小のSemantic Structure（意味構造）へ分担され得るのか
-   （Section／Section Responsibility（Section責務））。
+   — Section／Section Responsibility（Section責務）。
 5. Logical Structure（論理構造）と、Directory / File等の
    Physical Structure（物理構造）、および
    Heading（見出し）等のRepresentation（表現）は、

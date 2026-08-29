@@ -9,7 +9,7 @@
 
 本文書が扱う問いは次の3点である。
 
-1. ある定義・資産（Asset）を **誰が所有するのか（Ownership（所有責任））**。
+1. ある定義・資産（Asset）を **誰が所有するのか** — Ownership（所有責任）。
 2. Shared Development Foundationに
    **何を含めてよいのか（Shared Scope）**。
 3. 共有された定義・資産が、どのようにして特定Repositoryで
@@ -97,8 +97,8 @@ Shared Foundation Assetを、
 特定Repositoryにおいて利用可能・有効な状態にする **関係** 。
 
 Foundation Applicationは
-関係そのものであり、その実現手段
-（Application Mechanism（適用方式））とは区別される。
+関係そのものであり、
+Application Mechanism（適用方式）としての実現手段とは区別される。
 
 ### Concept（概念）間の関係
 
@@ -213,8 +213,8 @@ Shared Foundation Asset由来の内容が
   **そのもの** のOwnership（所有責任）は `.github` 側にある。
 - ある内容がRepository-localに存在するという事実だけでは、
   Ownership（所有責任）は移転しない。
-  **存在すること** と
-  **所有すること（Ownership（所有責任））** は別の事柄である。
+  Ownership（所有責任）の観点では、
+  **存在すること** と **所有すること** は別の事柄である。
 - Foundation Applicationによって
   新たにRepository-localなAssetが成立する場合、
   そのAssetのOwnership（所有責任）を
@@ -268,7 +268,7 @@ Ownership（所有責任）とApplication（適用）は独立した概念であ
 ### Application Mechanism Independence（適用方式を上位で固定しない）
 
 Foundation Applicationの
-**具体方式（Application Mechanism（適用方式））は本文書で固定しない** 。
+**具体方式、すなわちApplication Mechanism（適用方式）は本文書で固定しない** 。
 
 将来的に、例えば次のような方式があり得る。
 
@@ -369,14 +369,14 @@ Responsibility（責務）によって説明される。
 
 ### 2. Separation of Ownership and Application（所有と適用を分離する）
 
-内容を所有すること（Ownership（所有責任））と、
-その内容が特定Repositoryで有効であること（Application（適用））を分離する。
+内容を所有するというOwnership（所有責任）と、
+その内容が特定Repositoryで有効であるというApplication（適用）を分離する。
 一方の変化が他方を自動的に決定しない。
 
 ### 3. Mechanism Independence（方式を上位で固定しない）
 
 上位Architectureは関係と責務を定義し、
-その実現手段（Application Mechanism（適用方式））を先行して固定しない。
+Application Mechanism（適用方式）としての実現手段を先行して固定しない。
 
 ### 4. Semantic Need over Reusability（再利用性ではなく意味上の必要性）
 

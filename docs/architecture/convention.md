@@ -10,15 +10,15 @@
 本文書が扱う問いは次の4点である。
 
 1. Convention（規約）は何を定義する存在なのか
-   （Convention Responsibility（規約責務））。
+   — Convention Responsibility（規約責務）。
 2. Convention（規約）の中で、何が
    **規範として効力を持つ単位** なのか
-   （Normative Rule（規範的ルール））。
+   — Normative Rule（規範的ルール）。
 3. Normative Rule（規範的ルール）は意味上どのような要素から成るのか
-   （Rule Model（ルールモデル））。
+   — Rule Model（ルールモデル）。
 4. Normative Rule（規範的ルール）はどのように
    **安定して参照され続けるのか**
-   （Rule Identity（ルール同一性））。
+   — Rule Identity（ルール同一性）。
 
 本文書は上位Architectureとして自己完結する。
 個別のConvention（規約）の内容、およびConvention（規約）の
@@ -453,11 +453,11 @@ Convention Authoring Ruleは、
 これらを再定義する必要はない。
 
 1. Convention（規約）が何を定義する存在であるか
-   （Convention Responsibility（規約責務））。
+   — Convention Responsibility（規約責務）。
 2. Convention（規約）内で何が規範単位であるか
-   （Normative Rule（規範的ルール））。
+   — Normative Rule（規範的ルール）。
 3. Normative Rule（規範的ルール）が意味上どの要素を持つか
-   （Rule Model（ルールモデル））。
+   — Rule Model（ルールモデル）。
 4. Requirement Level（要求レベル）の語彙とその意味。
 5. Rule Identity（ルール同一性）が何を識別し、
    どの条件で維持・更新されるか。

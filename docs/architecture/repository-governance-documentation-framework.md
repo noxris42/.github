@@ -10,11 +10,11 @@ Documentation Framework（文書体系）である
 本文書が扱う問いは次の3点である。
 
 1. 本Framework（体系）は、Documentation全体として何を成立させるのか
-   （Framework Responsibility（体系責務））。
+   — Framework Responsibility（体系責務）。
 2. その責務は、どのDocumentation Area（文書責務領域）へ分解されるのか
    （Area Composition）。
 3. 各Areaは何を所有し、何を所有しないのか
-   （Area Responsibility（領域責務））。
+   — Area Responsibility（領域責務）。
 
 本文書は、Areaの責務と構成を定義する。
 個々のDocumentation Asset（文書資産）の内容、
@@ -230,8 +230,8 @@ Areaに属することそれ自体からは、依存関係を導出しない。
 ### 帰属の判断基準
 
 あるDocumentation Asset（文書資産）がどのAreaに属するかは、
-**その資産が何を定義する責務を持つか**
-（Definition Responsibility（定義責務））によって決まる。
+**その資産が何を定義する責務を持つか** 、すなわち
+Definition Responsibility（定義責務）によって決まる。
 
 次によっては決まらない。
 
