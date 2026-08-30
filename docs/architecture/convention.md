@@ -422,7 +422,6 @@ Rule Identity（ルール同一性）の意味上の構成要素として位置�
 
 - Convention（規約）を代表・集約する文書の要否と責務
 - Convention（規約）の一覧・目録の構造
-- 個別Convention（規約）の内容
 
 ### Application（適用）に関する事項
 
