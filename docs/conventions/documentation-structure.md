@@ -322,6 +322,56 @@ Heading Representation（見出し表現）は、
 Standard Section Heading Representation（標準Section見出し表現）として
 別に定義された場合にのみ成立する。
 
+Standard Section Definition（標準Section定義）の間に
+Responsibility Decomposition（責務分解）が成立していることは、
+対応するConcrete Section（具体Section）の
+Parent Presence（親Section設置）や
+Parent / Child Nesting（親子入れ子）を要求しない。
+
+```text
+Semantic Responsibility Decomposition
+    ≠ Concrete Parent Section Presence Requirement
+```
+
+Concrete Parent Section（具体親Section）が存在しない場合でも、
+独立したSectionのSection Responsibility（Section責務）が
+Applicability Scope（適用範囲）とともに
+Child側のStandard Section Definition（標準Section定義）へ適合するならば、
+そのStandard Section Identity（標準Section同一性）を使用できる。
+これは新たな許可ではなく、
+Standard Section Definition（標準Section定義）と
+Presence Requirement（設置要求）の分離から導かれる帰結である。
+
+例として、
+
+```text
+Scope
+└─ In Scope
+```
+
+というStandard Section Responsibility（標準Section責務）間の
+Responsibility Decomposition（責務分解）が存在することは、
+
+```text
+Scope Section
+└─ In Scope Section
+```
+
+というConcrete Nesting（具体的な入れ子）を常に要求することを意味しない。
+同様に、`Relationships` Sectionが設置されていない文書においても、
+Responsibility Boundary Standard Section（責務境界標準Section）と
+同一のSection Responsibility（Section責務）を持つSectionを
+独立して構成できる。
+これらは説明のための例示であり、
+新たなNormative Meaning（規範的意味）を成立させない。
+
+一方、Concrete Parent Section（具体親Section）と
+Concrete Child Section（具体子Section）が
+実際にNested Section Structure（入れ子Section構造）を構成する場合、
+その責務関係は
+Documentation Structure Architecture（文書構造アーキテクチャ）の
+Responsibility Decomposition（責務分解）に従う。
+
 ### Standard Section Heading Representation（標準Section見出し表現）
 
 Standard Section Heading Representation（標準Section見出し表現）は、
