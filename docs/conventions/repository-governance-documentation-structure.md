@@ -426,10 +426,14 @@ Rule ID（規約ルールID）はCategory（分類）を表現しない。
 Repository Governance Documentation Framework
 全体とするPosition Standard Sectionを定義する。
 そのSection Responsibility（Section責務）は、
-本Framework（体系）に属するDocumentation Asset（文書資産）が、
+[Documentation Structure Convention](documentation-structure.md)
+が定義するRelationships Standard Sectionの
+Responsibility Decomposition（責務分解）として、
+本Framework（体系）に属するDocumentation Asset（文書資産）自身が、
 どの上位Definition（定義）を前提とし、
 何をRefinement（具体化）し、
-Design Dependency（設計依存）の中でどの位置を占めるのかを
+一方向のDesign Dependency（設計依存）の中で
+どの位置を占めるのかを
 明確にすることである。
 
 **Reason:** 本Framework（体系）は、
@@ -447,16 +451,33 @@ Refinement（具体化）の関係を示す責務が、
 **Note:** 本Ruleは定義であり、
 Presence Requirement（設置要求）を定めない。
 
-Relationships Standard Sectionとは
-Section Responsibility（Section責務）が異なる。
+本Standard Section（標準Section）と
+Relationships Standard Sectionの関係は、
+Responsibility Decomposition（責務分解）である。
 Relationships Standard Sectionが担うのは、
 当該資産の意味成立に必要な
 Semantic Relationship一般である。
 本Standard Section（標準Section）が担うのは、
-本Framework（体系）内における
-Definition（定義）・Refinement（具体化）・
-Design Dependency（設計依存）上の位置である。
-両者を同一の責務として扱わない。
+そのうち、当該資産自身の
+Definition（定義）上の前提・Refinement（具体化）・
+一方向のDesign Dependency（設計依存）上の位置を
+確定させる部分である。
+本Standard Section（標準Section）を、
+Relationships Standard Sectionから独立した
+Semantic Responsibility（意味上の責務）として扱わない。
+Relationships Standard Sectionの責務のうち、
+分解されていない部分は
+Relationships Standard Section自身が直接担う。
+
+Responsibility Boundary Standard Sectionとは、
+同一のRelationships Standard Sectionに対する
+Responsibility Decomposition（責務分解）における
+別のChild Responsibility（子責務）である。
+Framework / Areaへの帰属、
+Definition Authority（定義権限）の所在、
+および隣接する責務主体とのBoundary（境界）は、
+それだけでは本Standard Section（標準Section）の
+Section Responsibility（Section責務）ではない。
 
 ### Architecture Area Standard Sections（アーキテクチャ領域標準Section）
 
