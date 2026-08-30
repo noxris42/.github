@@ -571,7 +571,11 @@ Convention（規約）・Specificationを、
 
 ## Non-goals（現在扱わない事項）
 
-本文書は次を定義しない。これらは後続設計へ委譲する。
+本文書は次を定義しない。
+ここで示す事項はDesign Gapではない。
+本文書の現在の責務に基づいて、意図的に
+定義・解決・導入の対象外としている事項であり、
+必要な事項のみ後続設計へ委譲する。
 
 ### Documentation Asset（文書資産）の内容に関する事項
 
@@ -606,9 +610,6 @@ Convention（規約）・Specificationを、
 Area全体に関わる責務が必要な場合は、
 通常のDocumentation Asset（文書資産）と
 Document Responsibility（文書責務）で表現する。
-
-これらはDesign Gapではなく、
-現時点で確定していない事項を先行決定しないための意図的な委譲である。
 
 ## Usage by Downstream Design（下位設計からの参照）
 
