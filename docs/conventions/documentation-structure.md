@@ -287,7 +287,7 @@ Normative Meaning（規範的意味）を保持しない。
 Standard Section（標準Section）の要件・適用・責務は、
 すべてNormative Rule（規範的ルール）側で確定する。
 
-### Standard Section（標準Section）の位置づけ
+### Standard Section Positioning（Standard Sectionの位置づけ）
 
 Standard Section（標準Section）は、
 複数のDocumentation Asset（文書資産）へ反復適用され得る
@@ -455,7 +455,7 @@ Framework-scoped / Area-scoped Standard Section
 の具体Catalogは、
 本文書では定義しない。
 
-### 責務との境界
+### Convention Responsibility Boundary（本文書の責務との境界）
 
 本文書が扱うのは、Sectionの適用、
 Section Responsibility（Section責務）との整合、および
@@ -484,7 +484,7 @@ Rule ID（規約ルールID）はCategory（分類）を表現しない。
 
 ### Section Structure（Section構造）
 
-#### DST-SF-001 — Document Responsibility Clarity
+#### DST-SF-001 — Document Responsibility Clarity（文書責務の明確性）
 
 **Rule ID:** `DST-SF-001`
 
@@ -511,7 +511,7 @@ Sectionの妥当性も評価できない。
 Purpose Standard Sectionの
 Presence Requirement（設置要求）は `DST-SF-013` が別に定める。
 
-#### DST-SF-002 — Responsibility-based Sectioning
+#### DST-SF-002 — Responsibility-based Sectioning（責務に基づくSection構成）
 
 **Rule ID:** `DST-SF-002`
 
@@ -533,7 +533,7 @@ Semantic Unitである。
 内部構成が意味構造ではなく記述量や体裁の都合で決まり、
 どこに何を書くかの判断根拠が失われる。
 
-#### DST-SF-003 — Section Responsibility Boundary
+#### DST-SF-003 — Section Responsibility Boundary（Section責務の境界）
 
 **Rule ID:** `DST-SF-003`
 
@@ -555,7 +555,7 @@ Responsibility Boundary（責務境界）が崩れ、
 その内容を保持・提供する責務を
 どの資産が担っているのかが不明確になる。
 
-#### DST-SF-004 — Child Section Responsibility Boundary
+#### DST-SF-004 — Child Section Responsibility Boundary（子SectionのSection責務の境界）
 
 **Rule ID:** `DST-SF-004`
 
@@ -579,7 +579,7 @@ Responsibility Decomposition（責務分解）である。
 
 ### Standard Section Mechanism（標準Section機構）
 
-#### DST-SF-005 — Standard Section Definition
+#### DST-SF-005 — Standard Section Definition（標準Section定義）
 
 **Rule ID:** `DST-SF-005`
 
@@ -602,7 +602,7 @@ Section Responsibility（Section責務）を明示して
 名称の一致だけで異なる責務へ適用され、
 共通化した意味が失われる。
 
-#### DST-SF-006 — Standard Section Applicability
+#### DST-SF-006 — Standard Section Applicability（標準Sectionの適用範囲）
 
 **Rule ID:** `DST-SF-006`
 
@@ -630,7 +630,7 @@ Framework（体系） + Areaを扱える。
 これは現時点で必要な粒度の例示であり、
 将来にわたるClosed Taxonomyではない。
 
-#### DST-SF-007 — Standard Identity Selection
+#### DST-SF-007 — Standard Identity Selection（標準Section同一性の選択）
 
 **Rule ID:** `DST-SF-007`
 
@@ -654,7 +654,7 @@ Framework（体系） + Areaを扱える。
 **Note:** 責務の部分一致や類似だけでは本Ruleは適用されない。
 Section Responsibility（Section責務）が同一である場合に限られる。
 
-#### DST-SF-008 — Standard Identity Conformance
+#### DST-SF-008 — Standard Identity Conformance（標準Section同一性への適合）
 
 **Rule ID:** `DST-SF-008`
 
@@ -675,7 +675,7 @@ Standard Section（標準Section）は名称の慣習に退化する。
 適合を要求することで、
 Identity（同一性）が責務の保証として機能する。
 
-#### DST-SF-009 — Standard Identity and Presence Separation
+#### DST-SF-009 — Standard Identity and Presence Separation（標準Section同一性と設置要求の分離）
 
 **Rule ID:** `DST-SF-009`
 
@@ -701,7 +701,7 @@ Document Responsibility（文書責務）に照らして
 そのStandard Section（標準Section）ごとに
 独立したNormative Rule（規範的ルール）として定める。
 
-#### DST-SF-010 — Open Section Vocabulary
+#### DST-SF-010 — Open Section Vocabulary（Section語彙の開放性）
 
 **Rule ID:** `DST-SF-010`
 
@@ -730,7 +730,7 @@ Section Responsibility（Section責務）は、
 必要な場合、
 Document-specific Section（文書固有Section）として構成できる。
 
-#### DST-SF-011 — Standard Section Non-duplication
+#### DST-SF-011 — Standard Section Non-duplication（標準Sectionの非重複）
 
 **Rule ID:** `DST-SF-011`
 
@@ -761,7 +761,7 @@ Section Responsibility（Section責務）と
 
 ### Standard Section Heading Representation（標準Section見出し表現）
 
-#### DST-SF-018 — Standard Section Heading Representation Definition
+#### DST-SF-018 — Standard Section Heading Representation Definition（標準Section見出し表現の定義）
 
 **Rule ID:** `DST-SF-018`
 
@@ -801,7 +801,7 @@ Japanese Heading Explanation（日本語見出し説明）は
 当該Heading Representation（見出し表現）を日本語で説明するものであり、
 Canonical Japanese Support Representation（正規日本語補助表現）ではない。
 
-#### DST-SF-019 — Standard Section Heading Representation Reuse
+#### DST-SF-019 — Standard Section Heading Representation Reuse（標準Section見出し表現の再利用）
 
 **Rule ID:** `DST-SF-019`
 
@@ -831,7 +831,7 @@ Document-specific Section（文書固有Section）へは適用されない。
 
 ### Documentation-wide Standard Sections（Documentation全体標準Section）
 
-#### DST-SF-012 — Purpose Standard Section
+#### DST-SF-012 — Purpose Standard Section（目的標準Section）
 
 **Rule ID:** `DST-SF-012`
 
@@ -860,7 +860,7 @@ Documentation Asset（文書資産）が
 設置を要求しない。
 Presence Requirement（設置要求）は `DST-SF-013` が定める。
 
-#### DST-SF-013 — Purpose Presence
+#### DST-SF-013 — Purpose Presence（Purpose標準Sectionの設置要求）
 
 **Rule ID:** `DST-SF-013`
 
@@ -884,7 +884,7 @@ Document Responsibility（文書責務）が他の内容から十分に明確で
 Semantic Clarityを実質的に増加させない場合は
 省略できる。
 
-#### DST-SF-014 — Scope Standard Section
+#### DST-SF-014 — Scope Standard Section（対象範囲標準Section）
 
 **Rule ID:** `DST-SF-014`
 
@@ -913,7 +913,7 @@ Documentation Asset（文書資産）が
 Scope Informationの保持要求は `DST-SF-015` が、
 Sectionとしての構成は `DST-SF-016` が定める。
 
-#### DST-SF-015 — Scope Information Requirement
+#### DST-SF-015 — Scope Information Requirement（Scope情報の保持要求）
 
 **Rule ID:** `DST-SF-015`
 
@@ -939,7 +939,7 @@ Documentation Asset（文書資産）は
 **Note:** 本Ruleが要求するのは情報の保持であり、
 独立したScope Sectionの設置ではない。
 
-#### DST-SF-016 — Scope Presence
+#### DST-SF-016 — Scope Presence（Scope標準Sectionの設置要求）
 
 **Rule ID:** `DST-SF-016`
 
@@ -963,7 +963,7 @@ Scope Standard Sectionとして構成する。
 **Note:** `In Scope` / `Out of Scope` 等を
 固定のChild Section（子Section）として要求しない。
 
-#### DST-SF-017 — Relationships Standard Section
+#### DST-SF-017 — Relationships Standard Section（関係標準Section）
 
 **Rule ID:** `DST-SF-017`
 
@@ -993,7 +993,7 @@ Semantic Relationshipを明確にすることである。
 **Note:** 本Ruleは定義であり、
 Presence Requirement（設置要求）を定めない。
 
-#### DST-SF-020 — In Scope Standard Section
+#### DST-SF-020 — In Scope Standard Section（対象範囲内標準Section）
 
 **Rule ID:** `DST-SF-020`
 
@@ -1034,7 +1034,7 @@ Scope Standard Sectionの責務のうち、
 分解されていない部分は
 Scope Standard Section自身が直接担う。
 
-#### DST-SF-021 — Out of Scope Standard Section
+#### DST-SF-021 — Out of Scope Standard Section（対象範囲外標準Section）
 
 **Rule ID:** `DST-SF-021`
 
@@ -1072,7 +1072,7 @@ Architecture Asset（アーキテクチャ資産）が
 自身の責務範囲を踏まえたうえで意図的に定義・解決しないという
 設計判断は、これとは別の責務である。
 
-#### DST-SF-022 — Responsibility Boundary Standard Section
+#### DST-SF-022 — Responsibility Boundary Standard Section（責務境界標準Section）
 
 **Rule ID:** `DST-SF-022`
 

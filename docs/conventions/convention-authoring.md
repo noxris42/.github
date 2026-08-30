@@ -25,28 +25,15 @@ Reusable Normative Standard（再利用可能な規範標準）**
 Concept（概念）を再定義しない。
 本文書が定めるのは表記および記述運用に限られる。
 
-## Position（設計上の位置づけ）
-
-本文書は
-[Convention Architecture](../architecture/convention.md)
-を上位Sourceとして参照する。
-
-Design Dependency（設計依存）は
-**Convention Architecture → 本文書**
-の一方向とする。
-
-```text
-Convention Architecture
-        ▲
-        │ refines
-Convention Authoring Convention
-```
+## Relationships（関係）
 
 本文書は
 [Repository Governance Documentation Framework Architecture](../architecture/repository-governance-documentation-framework.md)
 が定義するConventions Area（規約領域）に属する
 通常のDocumentation Asset（文書資産）である。
 Areaを代表・集約するAssetではない。
+
+### Responsibility Boundary（責務境界）
 
 本文書が使用する次のConcept（概念）の
 Definition Authority（定義権限）は
@@ -62,6 +49,23 @@ Convention Architectureにある。
 - Definition Namespace（定義名前空間）の意味と、
   そこから関係を推論しないこと
 - Rule Identity Stabilityの原則
+
+### Position（設計上の位置づけ）
+
+本文書は
+[Convention Architecture](../architecture/convention.md)
+を上位Sourceとして参照する。
+
+Design Dependency（設計依存）は
+**Convention Architecture → 本文書**
+の一方向とする。
+
+```text
+Convention Architecture
+        ▲
+        │ refines
+Convention Authoring Convention
+```
 
 ## Scope（対象範囲）
 
@@ -207,7 +211,7 @@ Rule ID（規約ルールID）はCategory（分類）を表現しない。
 
 ### Convention Identification（規約識別）
 
-#### CVA-SF-001 — Convention Code Declaration
+#### CVA-SF-001 — Convention Code Declaration（規約コードの宣言）
 
 **Rule ID:** `CVA-SF-001`
 
@@ -228,7 +232,7 @@ CodeがFile名やDocument Title（文書題名）からの推論に依存する�
 明示的宣言により、
 Rule ID（規約ルールID）の解釈を資産自身の記述だけで確定させる。
 
-#### CVA-SF-002 — Convention Code Format
+#### CVA-SF-002 — Convention Code Format（規約コードの形式）
 
 **Rule ID:** `CVA-SF-002`
 
@@ -247,7 +251,7 @@ Rule ID（規約ルールID）のSegmentを
 同一Convention（規約）に対して
 長短の異なるCode表記が併存することも防ぐ。
 
-#### CVA-SF-003 — Convention Code Stability
+#### CVA-SF-003 — Convention Code Stability（規約コードの安定性）
 
 **Rule ID:** `CVA-SF-003`
 
@@ -267,7 +271,7 @@ Convention Code（規約コード）を変更してはならない。
 
 ### Rule Identifier（規約ルール識別子）
 
-#### CVA-SF-004 — Rule ID Requirement
+#### CVA-SF-004 — Rule ID Requirement（規約ルールIDの必須性）
 
 **Rule ID:** `CVA-SF-004`
 
@@ -286,7 +290,7 @@ Rule ID（規約ルールID）を欠くRuleは
 見出し・配置・Rule Name（ルール名）でしか参照できず、
 Stable Reference（安定参照）が成立しない。
 
-#### CVA-SF-005 — Rule ID Structure
+#### CVA-SF-005 — Rule ID Structure（規約ルールIDの構造）
 
 **Rule ID:** `CVA-SF-005`
 
@@ -311,7 +315,7 @@ Namespaceを判別できる。
 **Note:** 具体形式は `CCC-NN-NNN` となる。
 例：`CVA-SF-001`。
 
-#### CVA-SF-006 — Convention Segment
+#### CVA-SF-006 — Convention Segment（規約Segment）
 
 **Rule ID:** `CVA-SF-006`
 
@@ -331,7 +335,7 @@ Rule ID（規約ルールID）が指すConvention（規約）を
 宣言と使用を一致させることで、
 Rule ID（規約ルールID）の解決先が一意に定まる。
 
-#### CVA-SF-007 — Namespace Segment
+#### CVA-SF-007 — Namespace Segment（名前空間Segment）
 
 **Rule ID:** `CVA-SF-007`
 
@@ -355,7 +359,7 @@ Rule Identity（ルール同一性）の構成要素であり、
 **Note:** 現在割り当てられているNamespace Code（名前空間コード）は
 「Namespace Code Assignment」に示す。
 
-#### CVA-SF-008 — Rule Number Format
+#### CVA-SF-008 — Rule Number Format（Rule Numberの形式）
 
 **Rule ID:** `CVA-SF-008`
 
@@ -376,7 +380,7 @@ Rule-local Identityとして、
 開始値と桁数を固定することで、
 Rule ID（規約ルールID）の表記が一意に定まる。
 
-#### CVA-SF-009 — Opaque Rule Number
+#### CVA-SF-009 — Opaque Rule Number（意味を持たないRule Number）
 
 **Rule ID:** `CVA-SF-009`
 
@@ -399,7 +403,7 @@ Rule Identity（ルール同一性）の永続化と衝突する。
 
 ### Rule Presentation（規則記述形式）
 
-#### CVA-SF-010 — Rule Section
+#### CVA-SF-010 — Rule Section（ルールSection）
 
 **Rule ID:** `CVA-SF-010`
 
@@ -423,7 +427,7 @@ Rule Model（ルールモデル）のCanonical Representationではない。
 Heading Level（見出しレベル）およびHeading（見出し）の文字列形式は、
 本Convention（規約）では固定しない。
 
-#### CVA-SF-011 — Required Rule Fields
+#### CVA-SF-011 — Required Rule Fields（必須ルールフィールド）
 
 **Rule ID:** `CVA-SF-011`
 
@@ -443,7 +447,7 @@ Fieldとして明示しない限り、
 要求水準やReasonは本文へ埋没し、
 後からの検証・再評価ができなくなる。
 
-#### CVA-SF-012 — Optional Note Field
+#### CVA-SF-012 — Optional Note Field（任意のNote Field）
 
 **Rule ID:** `CVA-SF-012`
 
@@ -465,7 +469,7 @@ Supplementary Informationを含める場合は、
 空のFieldを残さないのは、
 補足の有無をFieldの有無で判別できるようにするためである。
 
-#### CVA-SF-013 — Rule Field Order
+#### CVA-SF-013 — Rule Field Order（ルールフィールドの順序）
 
 **Rule ID:** `CVA-SF-013`
 
@@ -485,7 +489,7 @@ Supplementary Informationを含める場合は、
 同じ位置に同じ要素が現れ、
 欠落や誤配置を目視でも機械的にも検出できる。
 
-#### CVA-SF-014 — Rule Field Presentation
+#### CVA-SF-014 — Rule Field Presentation（ルールフィールドの表示）
 
 **Rule ID:** `CVA-SF-014`
 
@@ -528,7 +532,7 @@ Rule Model（ルールモデル）の要素と文書上の記述単位が対応�
 
 ### Rule Stability（規則の安定性）
 
-#### CVA-SF-015 — Initial Stability
+#### CVA-SF-015 — Initial Stability（初期のStability）
 
 **Rule ID:** `CVA-SF-015`
 
@@ -547,7 +551,7 @@ Stable Releaseの有無で決まる。
 未リリースのRule ID（規約ルールID）が
 誤って永続化済みとして扱われることを防ぐ。
 
-#### CVA-SF-016 — Stable Transition
+#### CVA-SF-016 — Stable Transition（Stableへの遷移）
 
 **Rule ID:** `CVA-SF-016`
 
@@ -565,7 +569,7 @@ Stable Releaseの有無で決まる。
 `Development` へ戻せてしまえば再採番の余地が復活し、
 永続化されたはずのRule Identity（ルール同一性）の保証が失われる。
 
-#### CVA-SF-017 — Development Rule ID Changes
+#### CVA-SF-017 — Development Rule ID Changes（Development時の規約ルールID変更）
 
 **Rule ID:** `CVA-SF-017`
 
@@ -585,7 +589,7 @@ Stable Release前であれば削除または再採番できる。
 一方で欠番の解消を義務づけると、
 整理のたびに広範な書き換えが生じるため、許容に留める。
 
-#### CVA-SF-018 — Stable Rule ID Preservation
+#### CVA-SF-018 — Stable Rule ID Preservation（Stableな規約ルールIDの保持）
 
 **Rule ID:** `CVA-SF-018`
 
@@ -607,7 +611,7 @@ Stable Release前であれば削除または再採番できる。
 
 ### Number Allocation（番号割当）
 
-#### CVA-SF-019 — New Rule Number Allocation
+#### CVA-SF-019 — New Rule Number Allocation（新規Rule Numberの割当）
 
 **Rule ID:** `CVA-SF-019`
 
@@ -635,7 +639,7 @@ Retired Rule ID（廃止済み規約ルールID）として使用されている
 
 ### Rule Retirement（規則の廃止）
 
-#### CVA-SF-020 — Stable Rule Retirement
+#### CVA-SF-020 — Stable Rule Retirement（Stableなルールの廃止）
 
 **Rule ID:** `CVA-SF-020`
 
@@ -656,7 +660,7 @@ Retired Rule ID（廃止済み規約ルールID）として保持する。
 Rule本体を残さないのは、
 廃止された規範が現在の規範として読まれることを防ぐためである。
 
-#### CVA-SF-021 — Retired Rule ID Record
+#### CVA-SF-021 — Retired Rule ID Record（廃止済み規約ルールIDの記録）
 
 **Rule ID:** `CVA-SF-021`
 
@@ -688,7 +692,7 @@ Retired Rule ID（廃止済み規約ルールID）が存在する場合にのみ
 - `CVA-SF-006`
 ````
 
-#### CVA-SF-022 — Development Rule Removal
+#### CVA-SF-022 — Development Rule Removal（Development時のルール削除）
 
 **Rule ID:** `CVA-SF-022`
 

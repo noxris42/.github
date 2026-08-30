@@ -20,9 +20,11 @@ Documentation Framework（文書体系）である
 個々のDocumentation Asset（文書資産）の内容、
 記述方法、命名規則は定義しない。
 
-## Position（設計上の位置づけ）
+## Relationships（関係）
 
-### Documentation Structure Architectureとの関係
+### Relationship with Documentation Structure Architecture（Documentation Structure Architectureとの関係）
+
+#### Position（設計上の位置づけ）
 
 本文書は
 [Documentation Structure Architecture](documentation-structure.md)
@@ -47,7 +49,7 @@ Repository Governance Documentation Framework Architecture
 **一つの具体的なDocumentation Framework（文書体系）** である。
 Documentation Structure（文書構造）の一般Modelを拡張・上書きしない。
 
-#### Document Responsibility（文書責務）との関係
+#### Relationship with Document Responsibility（Document Responsibilityとの関係）
 
 同Architectureにおける
 Document Responsibility（文書責務）は、
@@ -77,7 +79,7 @@ Document Responsibility（文書責務）の一般Concept（概念）を
 本Framework（体系）の範囲において具体化したものである。
 一般Concept（概念）を置き換えるものではない。
 
-#### Area Responsibility（領域責務）との関係
+#### Relationship with Area Responsibility（Area Responsibilityとの関係）
 
 同Architectureにおける
 Area Responsibility（領域責務）は、
@@ -105,7 +107,7 @@ Repository Governance Documentation Framework
 Definition（定義）中心の体系であることによる具体化であり、
 Documentation Structure（文書構造）一般の要求ではない。
 
-#### Area所属の扱い
+#### Area Membership Handling（Area所属の扱い）
 
 同Architectureは、
 すべてのDocumentation Asset（文書資産）が
@@ -119,7 +121,7 @@ Documentation Asset（文書資産）** について、
 これは本Framework（体系）の範囲における判断であり、
 Documentation Structure（文書構造）一般の要求ではない。
 
-### Repository Governance Architectureとの関係
+### Responsibility Boundary（責務境界）
 
 [Repository Governance Architecture](repository-governance.md)
 は、
@@ -185,7 +187,7 @@ Repository Governance Documentation Frameworkは、
 - そのDefinition（定義）が、どの定義を根拠とし、
   どの定義を具体化するか。
 
-### Traceabilityの位置づけ
+### Traceability Positioning（Traceabilityの位置づけ）
 
 Traceabilityは、
 本Framework（体系）の最上位目的ではない。
@@ -212,7 +214,7 @@ Repository Governance Documentation Framework
 └─ Specifications Area
 ```
 
-### 列挙順をHierarchy（階層）として定義しない
+### Do Not Define Enumeration Order as Hierarchy（列挙順をHierarchyとして定義しない）
 
 上記の列挙順は、
 **Linear Layer Hierarchyではない** 。
@@ -227,7 +229,7 @@ Semantic Need（意味上の必要性）から個別に成立する。
 その関係として依存が成立する。
 Areaに属することそれ自体からは、依存関係を導出しない。
 
-### 帰属の判断基準
+### Membership Decision Criteria（帰属の判断基準）
 
 あるDocumentation Asset（文書資産）がどのAreaに属するかは、
 **その資産が何を定義する責務を持つか** 、すなわち
@@ -284,7 +286,7 @@ Repositoryにおける設計・判断の根拠となる
 - Reusable Normative Rule
 - Subject-specific Contract
 
-### Architecture Area（アーキテクチャ領域）との境界
+### Boundary with Architecture Area（Architecture Areaとの境界）
 
 ここで示すのは、
 **Philosophy Area（思想領域）と
@@ -313,7 +315,7 @@ Semantic / Structural Modelとして成立するのかを
 - 特定のConcept Model（概念モデル）を前提として初めて成立する
   → Architecture Area（アーキテクチャ領域）
 
-### 一般判定として用いない
+### Do Not Use as a General Decision Criterion（一般判定として用いない）
 
 この基準を、
 **4つのArea全体に対する一般判定として用いない** 。
@@ -359,7 +361,7 @@ Repositoryが扱うSubjectについて、
 - Reusable Normative Standard（再利用可能な規範標準） / Rule
 - Subject-specific Concrete Contract
 
-### Local Design Principle（局所設計原則）の扱い
+### Local Design Principle Handling（Local Design Principleの扱い）
 
 Architecture Area（アーキテクチャ領域）の文書が、
 自身が定義するModelの内部で成立する
@@ -417,7 +419,7 @@ Conventions Area（規約領域）は、それらを参照して規範を定め�
 そのSubjectを成立・実現・運用・検証可能にする
 **Concrete Contract** を定義する。
 
-### Conventions Area（規約領域）との境界
+### Boundary with Conventions Area（Conventions Areaとの境界）
 
 両者の差は、
 **Normativeか Non-normativeかではない** 。
@@ -478,7 +480,7 @@ docs/
 | Conventions Area（規約領域） | `docs/conventions/` |
 | Specifications Area（仕様領域） | `docs/specifications/` |
 
-### Mappingの位置づけ
+### Mapping Positioning（Mappingの位置づけ）
 
 この対応は、
 **Logical Identity（論理的同一性）の成立条件ではない** 。
@@ -500,14 +502,14 @@ Area ≠ Directory
   Physical Representation（物理表現）の記録であり、
   変更され得る。
 
-### `docs/` の扱い
+### `docs/` Handling（`docs/`の扱い）
 
 `docs/` 自体を
 Documentation Area（文書責務領域）として定義しない。
 `docs/` は本Framework（体系）のPhysical Representation（物理表現）を
 収める配置上の単位である。
 
-### 1 Area → 1 top-level Directoryの扱い
+### 1 Area → 1 top-level Directory Handling（1 Area → 1 top-level Directoryの扱い）
 
 本Framework（体系）の4つのAreaについて、
 1 Area → 1 top-level Directoryという対応を採用してよい。
@@ -518,7 +520,7 @@ Documentation Structure（文書構造）全般に適用される
 これは本Framework（体系）が現在採る対応であり、
 一般Modelの要求ではない。
 
-### Mapping Rule（対応規則）の所有
+### Mapping Rule Ownership（Mapping Ruleの所有）
 
 具体的なPhysical Mapping Ruleを
 最終的にどのConvention（規約）が所有するかは、
@@ -533,37 +535,37 @@ Documentation Structure Conventionといった
 
 ## Design Principles（設計原則）
 
-### 1. Separation by Definition Responsibility（定義責務で分離する）
+### Separation by Definition Responsibility（定義責務で分離する）
 
 Areaの分離は、
 抽象度・粒度・対象の種類ではなく、
 Definition Responsibility（定義責務）の違いによって行う。
 
-### 2. Single Definition Authority（定義権限を一箇所に置く）
+### Single Definition Authority（定義権限を一箇所に置く）
 
 あるDefinition（定義）のDefinition Authority（定義権限）は、
 一つのDocumentation Asset（文書資産）に置く。
 他のAssetは、それを再定義せず参照する。
 
-### 3. No Fixed Layer Hierarchy（固定階層を設けない）
+### No Fixed Layer Hierarchy（固定階層を設けない）
 
 Areaの列挙順を階層として扱わない。
 Area間の依存は、
 個々のDefinition（定義）のSemantic Need（意味上の必要性）から成立する。
 
-### 4. Traceability as Consequence（追跡可能性は結果である）
+### Traceability as Consequence（追跡可能性は結果である）
 
 Traceabilityは責務分離の結果として成立する性質であり、
 それ自体を目的として責務分離を歪めない。
 
-### 5. Logical Identity over Physical Location（同一性は物理配置に優先する）
+### Logical Identity over Physical Location（同一性は物理配置に優先する）
 
 Area Identityを
 Directory構成から導出しない。
 Physical Representation（物理表現）は
 現在の対応の記録であって、成立条件ではない。
 
-### 6. No Anticipatory Asset（先行してAssetを新設しない）
+### No Anticipatory Asset（先行してAssetを新設しない）
 
 現時点で必要性が確認されていない
 Convention（規約）・Specificationを、
@@ -577,29 +579,29 @@ Convention（規約）・Specificationを、
 定義・解決・導入の対象外としている事項であり、
 必要な事項のみ後続設計へ委譲する。
 
-### Documentation Asset（文書資産）の内容に関する事項
+### Documentation Asset Content（文書資産の内容に関する事項）
 
 - 各Areaに属する個々のDocumentation Asset（文書資産）の内容
 - AreaごとのDocumentation Asset（文書資産）一覧
 
-### 構造・命名に関する事項
+### Structure / Naming（構造・命名に関する事項）
 
 - Naming Convention
 - Documentation Structure Convention
 - Physical Mapping Ruleの最終的な所有先
 - File名・Directory名・Pathの具体規則
 
-### Composition（体系間構成）に関する事項
+### Composition（体系間構成に関する事項）
 
 - 他のDocumentation Framework（文書体系）との共存
 - Framework（体系）間のPriority／Refinement（具体化）／Dependency（依存）
 
-### 宣言・記述形式に関する事項
+### Declaration / Representation Format（宣言・記述形式に関する事項）
 
 - MetadataおよびDeclarationのSchema
 - Area帰属の機械可読な表現形式
 
-### 導入しないConcept（概念）
+### Concepts Not Introduced（導入しないConcept）
 
 - Representative Document
 - Navigation Document

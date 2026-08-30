@@ -319,7 +319,7 @@ Rule Statement（ルール文）が
 Natural Language Prose（自然言語本文）のみを対象とする場合、
 その適用は本文に限られる。
 
-### Canonical Japanese Support（正規日本語補助）側の成立との関係
+### Relationship with Canonical Japanese Support Establishment（Canonical Japanese Support側の成立との関係）
 
 本文書は、あるEnglish Representation（英語表現）について
 Canonical Japanese Support Association（正規日本語補助対応）が
@@ -368,7 +368,7 @@ Rule ID（規約ルールID）はCategory（分類）を表現しない。
 
 ### Language（言語）
 
-#### WRT-SF-001 — Primary Language
+#### WRT-SF-001 — Primary Language（主要言語）
 
 **Rule ID:** `WRT-SF-001`
 
@@ -434,7 +434,7 @@ Message Language（メッセージ言語）は
 
 ### English Representation and Japanese Support（英語表現と日本語補助）
 
-#### WRT-SF-002 — Canonical Japanese Support Presentation
+#### WRT-SF-002 — Canonical Japanese Support Presentation（正規日本語補助の表示）
 
 **Rule ID:** `WRT-SF-002`
 
@@ -566,7 +566,7 @@ Definition Responsibility（定義責務）が成立するかを定めない。
 いずれもその対象を所有する
 Definition Authority（定義権限）側で成立する。
 
-#### WRT-SF-003 — English Representation Consistency
+#### WRT-SF-003 — English Representation Consistency（英語表現の一貫性）
 
 **Rule ID:** `WRT-SF-003`
 
@@ -631,7 +631,7 @@ English Representation（英語表現）が成立していない対象につい�
 
 ### Semantic Clarity（意味の明確性）
 
-#### WRT-SF-004 — Semantic Reference Clarity
+#### WRT-SF-004 — Semantic Reference Clarity（意味上の参照の明確性）
 
 **Rule ID:** `WRT-SF-004`
 
@@ -668,7 +668,7 @@ Semantic Meaningが読み手側で分岐する。
 
 ### Normative Writing（規範的記述）
 
-#### WRT-SF-005 — Normative Strength Consistency
+#### WRT-SF-005 — Normative Strength Consistency（規範的強度の一貫性）
 
 **Rule ID:** `WRT-SF-005`
 
@@ -704,7 +704,7 @@ Requirement Level（要求レベル）が
 Requirement Level（要求レベル）ごとに使用してよい
 文末表現のCatalogを定めない。
 
-#### WRT-SF-006 — Normative Condition Clarity
+#### WRT-SF-006 — Normative Condition Clarity（規範的条件の明確性）
 
 **Rule ID:** `WRT-SF-006`
 
@@ -743,7 +743,7 @@ Prohibited Word Catalogを定義しない。
 
 ### Definition Writing（定義の記述）
 
-#### WRT-SF-007 — Definition Clarity
+#### WRT-SF-007 — Definition Clarity（定義の明確性）
 
 **Rule ID:** `WRT-SF-007`
 

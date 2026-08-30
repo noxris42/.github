@@ -226,7 +226,7 @@ Concrete Spelling（具体表記）へ
 この場合、綴りの選択はRepository側の自由ではなく、
 外部との契約に従属する。
 
-### Physical Naming Formにおける適用の分離
+### Application Separation in Physical Naming Form（Physical Naming Formにおける適用の分離）
 
 Concrete Spelling（具体表記）をRepository側が決める名称と、
 外部から制約される名称とでは、
@@ -298,7 +298,7 @@ Rule ID（規約ルールID）はCategory（分類）を表現しない。
 
 ### Physical Naming Form（物理命名形式）
 
-#### NAM-SF-001 — File Name Form
+#### NAM-SF-001 — File Name Form（File名の形式）
 
 **Rule ID:** `NAM-SF-001`
 
@@ -345,7 +345,7 @@ Externally Constrained Name（外部制約名称）は
 本Ruleの対象ではなく、
 `NAM-SF-004` が扱う。
 
-#### NAM-SF-002 — Directory Name Form
+#### NAM-SF-002 — Directory Name Form（Directory名の形式）
 
 **Rule ID:** `NAM-SF-002`
 
@@ -395,7 +395,7 @@ Externally Constrained Name（外部制約名称）は
 
 ### Name Identification（名称の識別性）
 
-#### NAM-SF-003 — Responsibility-distinguishing Name
+#### NAM-SF-003 — Responsibility-distinguishing Name（責務を区別する名称）
 
 **Rule ID:** `NAM-SF-003`
 
@@ -484,7 +484,7 @@ Responsibility（責務）を成立させたり推論したりしない。
 
 ### External Naming Contract（外部命名契約）
 
-#### NAM-SF-004 — External Naming Contract
+#### NAM-SF-004 — External Naming Contract（外部命名契約）
 
 **Rule ID:** `NAM-SF-004`
 
@@ -526,7 +526,7 @@ Externally Constrained Name（外部制約名称）に当たるかの
 
 ### Name Stability（名称の安定性）
 
-#### NAM-SF-005 — Stable Name Selection
+#### NAM-SF-005 — Stable Name Selection（安定した名称の選択）
 
 **Rule ID:** `NAM-SF-005`
 
@@ -555,7 +555,7 @@ Path・Link・履歴・外部参照を通じて
 初回のNamingにおける選択の根拠を対象とする。
 既存名称を変更してよいかは `NAM-SF-006` が扱う。
 
-#### NAM-SF-006 — Existing Name Stability
+#### NAM-SF-006 — Existing Name Stability（既存名称の安定性）
 
 **Rule ID:** `NAM-SF-006`
 
@@ -585,7 +585,7 @@ Immutable Namingではない。
 本Ruleが抑止するのは、
 識別上の理由を持たない変更である。
 
-#### NAM-SF-007 — Temporary State Naming
+#### NAM-SF-007 — Temporary State Naming（一時的な作業状態の命名）
 
 **Rule ID:** `NAM-SF-007`
 

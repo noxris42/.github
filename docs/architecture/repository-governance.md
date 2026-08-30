@@ -45,7 +45,7 @@
 
 ## Concept Model（概念モデル）
 
-### Repositoryの定義
+### Repository Definition（Repositoryの定義）
 
 Governanceの単位となる、独立したVersion管理境界。
 各Repositoryは自身のDomain（題材領域）・System・
@@ -100,7 +100,7 @@ Foundation Applicationは
 関係そのものであり、
 Application Mechanism（適用方式）としての実現手段とは区別される。
 
-### Concept（概念）間の関係
+### Concept Relationships（Concept間の関係）
 
 ```text
 Shared Development Foundation
@@ -121,7 +121,7 @@ OwnerはShared Development Foundation側にあり、
 
 ## Responsibility Model（責務モデル）
 
-### `.github` Repositoryの責務
+### `.github` Repository Responsibility（`.github` Repositoryの責務）
 
 `.github` は次の責務を持つ。
 
@@ -142,7 +142,7 @@ OwnerはShared Development Foundation側にあり、
   特定のShared Foundation Assetの
   適用を機械的に決定すること。
 
-### 個別Repositoryの責務
+### Individual Repository Responsibility（個別Repositoryの責務）
 
 個別Repositoryは次の責務を持つ。
 
@@ -177,7 +177,7 @@ Ownership（所有責任）を保持する。
 
 ## Ownership Boundary（所有責任の境界）
 
-### 境界はResponsibility（責務）で決まる
+### Boundary Is Determined by Responsibility（境界はResponsibilityで決まる）
 
 Ownership（所有責任）は、
 **Physical Location（物理配置）から決定しない** 。
@@ -191,7 +191,7 @@ Ownership（所有責任）は、
 Ownership（所有責任）は、
 **その定義・資産の内容を決定し維持する責務が誰にあるか** によって決まる。
 
-### 判定の基準
+### Decision Criteria（判定の基準）
 
 | 観点 | Shared Foundation Asset | Repository-owned Asset |
 | --- | --- | --- |
@@ -200,7 +200,7 @@ Ownership（所有責任）は、
 | 内容の影響範囲 | 複数Repositoryへ共有される内容であり、適用先Repositoryへ影響し得る | 原則として当該Repository固有 |
 | Physical Location（物理配置） | 判定基準ではない | 判定基準ではない |
 
-### 適用済みAssetの扱い
+### Applied Asset Handling（適用済みAssetの扱い）
 
 あるRepositoryのFile Tree上に、
 Foundation Applicationの結果として
@@ -229,7 +229,7 @@ Repository-owned Asset
 
 ## Foundation Application（共通開発基盤を対象Repositoryへ適用する関係）
 
-### Application（適用）とは何か
+### Foundation Application Definition（Foundation Applicationの定義）
 
 Foundation Applicationとは、
 Shared Foundation Assetを、
@@ -242,7 +242,7 @@ Shared Foundation Assetを、
 - 適用先：特定のRepository
 - 適用の判断主体：適用先Repository
 
-### Ownership（所有責任）とApplication（適用）の分離
+### Separation of Ownership and Application（OwnershipとApplicationの分離）
 
 Ownership（所有責任）とApplication（適用）は独立した概念であり、
 混同してはならない。
@@ -299,7 +299,7 @@ Shared Development Foundationへ
 **一元的に所有・維持すべきSemantic Need（意味上の必要性）** が
 存在することである。
 
-### 判断の指針
+### Decision Guidance（判断の指針）
 
 含める判断が成立するのは、次が言える場合である。
 
@@ -318,7 +318,7 @@ Shared Development Foundationへ
 - 単に他Repositoryへ複製しても機能する、という
   技術的な再利用可能性のみが根拠となっている。
 
-### 先行共通化を行わない
+### Do Not Preemptively Centralize（先行共通化を行わない）
 
 将来的に共有され得るという見込みだけを根拠として、
 Shared Development Foundationへ
@@ -360,43 +360,43 @@ Repository-owned Assetが
 
 ## Design Principles（設計原則）
 
-### 1. Responsibility over Location（配置ではなく責務で判断する）
+### Responsibility over Location（配置ではなく責務で判断する）
 
 Ownership（所有責任）および
 Shared／Repository-specificの区別は、
 Physical Location（物理配置）ではなく
 Responsibility（責務）によって説明される。
 
-### 2. Separation of Ownership and Application（所有と適用を分離する）
+### Separation of Ownership and Application（所有と適用を分離する）
 
 内容を所有するというOwnership（所有責任）と、
 その内容が特定Repositoryで有効であるというApplication（適用）を分離する。
 一方の変化が他方を自動的に決定しない。
 
-### 3. Mechanism Independence（方式を上位で固定しない）
+### Mechanism Independence（方式を上位で固定しない）
 
 上位Architectureは関係と責務を定義し、
 Application Mechanism（適用方式）としての実現手段を先行して固定しない。
 
-### 4. Semantic Need over Reusability（再利用性ではなく意味上の必要性）
+### Semantic Need over Reusability（再利用性ではなく意味上の必要性）
 
 共通化は、技術的な再利用可能性ではなく
 Semantic Need（意味上の必要性）に基づいて判断する。
 
-### 5. Repository Autonomy（Repositoryの自律性を保つ）
+### Repository Autonomy（Repositoryの自律性を保つ）
 
 各Repositoryは自身のDomain（題材領域）・System・
 Repository-specific concernについて
 Ownership（所有責任）を保持する。
 共有基盤の存在は、この自律性を縮小しない。
 
-### 6. Uniform Model including Self（自身も同じModelで説明する）
+### Uniform Model including Self（自身も同じModelで説明する）
 
 `.github` を含め、すべてのRepositoryが
 同一のRepository Governance Modelで説明される。
 Modelの外側に立つRepositoryを設けない。
 
-### 7. Explicit State over Complete Inference（完全な暗黙推論より必要な状態の明示を優先する）
+### Explicit State over Complete Inference（完全な暗黙推論より必要な状態の明示を優先する）
 
 ArchitectureやConvention（規約）を、
 個々のAssetのOwnership（所有責任）や
@@ -413,7 +413,7 @@ MetadataやDeclarationとして
 
 本文書は次を定義しない。これらは後続設計へ委譲する。
 
-### 個別System / Domain（題材領域）に関する事項
+### Individual System / Domain（個別System・Domainに関する事項）
 
 - Symnous Architecture / Specification
 - AI-CoS Architecture / Runtime
@@ -426,7 +426,7 @@ Repository-owned Asset
 本文書がShared Development Foundationの
 所有対象として先行決定するものではない。
 
-### 構造・規約に関する事項
+### Structure / Convention（構造・規約に関する事項）
 
 - Documentation階層およびDirectory構造の正式確定
 - Convention（規約）体系の詳細
@@ -435,19 +435,19 @@ Repository-owned Asset
 - Override（上書き）／Extend／Replace／Disable等の
   拡張方式
 
-### 適用方式に関する事項
+### Application Mechanism（適用方式に関する事項）
 
 - Application Mechanism（適用方式）の具体実装
 - Asset Type（資産種別）ごとの適用手順
 
-### 宣言・記述形式に関する事項
+### Declaration / Representation Format（宣言・記述形式に関する事項）
 
 - Metadata FileおよびSchema
 - Repository Manifestの具体Schema
 - Ownership（所有責任）／Application Stateの
   機械可読な表現形式
 
-### Authority Model（権威モデル）に関する事項
+### Authority Model（権威モデルに関する事項）
 
 - Formal Asset / Formal Authority / Authority Domain 等の
   Generic Authority Model
@@ -455,7 +455,7 @@ Repository-owned Asset
 本文書はOwnership（所有責任）とApplication（適用）の関係のみを定義し、
 一般化された権威体系を導入しない。
 
-### 具体資産に関する事項
+### Concrete Assets（具体資産に関する事項）
 
 - Templateの具体仕様・実装
 - Workflowの具体仕様・実装

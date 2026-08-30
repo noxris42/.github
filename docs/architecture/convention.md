@@ -25,16 +25,10 @@
 具体的な記述方法（Convention Authoring Rule）の
 存在や内容を前提としない。
 
-## Position（設計上の位置づけ）
+## Relationships（関係）
 
-本文書は
-[Repository Governance Architecture](repository-governance.md)
-を
-上位Sourceとして参照する。
+### Responsibility Boundary（責務境界）
 
-Design Dependency（設計依存）は
-**Repository Governance Architecture → 本文書 → 個別Convention（規約）**
-の一方向とする。
 本文書は、Repository Governance Architectureが定義する
 Ownership（所有責任）・Foundation Application・Shared Scopeの判断を
 再定義・上書きしない。
@@ -54,6 +48,17 @@ Ownership（所有責任）・Foundation Application・Shared Scopeの判断を
 本文書は、Convention（規約）が
 **所有され適用される対象として、内部にどのような意味構造を持つか**
 のみを定義する。
+
+### Position（設計上の位置づけ）
+
+本文書は
+[Repository Governance Architecture](repository-governance.md)
+を
+上位Sourceとして参照する。
+
+Design Dependency（設計依存）は
+**Repository Governance Architecture → 本文書 → 個別Convention（規約）**
+の一方向とする。
 
 ## Scope（対象範囲）
 
@@ -128,7 +133,7 @@ Exampleが示す形は、
 Normative Rule（規範的ルール）の理解を助ける例示であって、
 それ自体が要求・禁止を新たに生じさせるものではない。
 
-### Concept（概念）間の関係
+### Concept Relationships（Concept間の関係）
 
 ```text
 Convention
@@ -168,7 +173,7 @@ Supplementary Informationは
 Non-normative Content（非規範的内容）であり、
 それ自体では新たなNormative Requirement（規範要求）を追加しない。
 
-### Reason（理由）の要件
+### Reason Requirements（Reasonの要件）
 
 Reasonは、Rule Statement（ルール文）の
 **単なる言い換えであってはならない** 。
@@ -185,7 +190,7 @@ Reasonを必須とするのは、次のためである。
   例外を認めてよいかを判断できるようにする。
 - Ruleの変更・廃止が妥当かを、目的に照らして判断できるようにする。
 
-### Rule Name（ルール名）とRule Identity（ルール同一性）の区別
+### Distinction between Rule Name and Rule Identity（Rule NameとRule Identityの区別）
 
 Rule Name（ルール名）は
 **Human-readable Label** であり、
@@ -228,7 +233,7 @@ Convention（規約）全体で用いる共通語彙として、
 
 ## Rule Identity（ルール同一性）
 
-### Rule Identity（ルール同一性）とは何か
+### Rule Identity Definition（Rule Identityの定義）
 
 Normative Rule（規範的ルール）は、
 **Stable Reference（安定参照）** のための
@@ -240,7 +245,7 @@ Rule Identity（ルール同一性）が満たすべきことは次である。
   文書上の配置・順序・見出し・Rule Name（ルール名）に依存せず特定できる。
 - 他のNormative Rule（規範的ルール）と一意に区別できる。
 
-### 意味上の構成
+### Semantic Composition（意味上の構成）
 
 Rule Identity（ルール同一性）は意味上、次から構成される。
 
@@ -254,7 +259,7 @@ Rule Identity（ルール同一性）は意味上、次から構成される。
 **どのような表記に落とすかを定義しない** 。
 表記Formatおよび採番方法は後続設計へ委譲する。
 
-### Definition Namespace（定義名前空間）の目的
+### Definition Namespace Purpose（Definition Namespaceの目的）
 
 Definition Namespace（定義名前空間）は、
 将来のConvention Extensionを可能にするための
@@ -272,7 +277,7 @@ Definition Namespace（定義名前空間）が
 どのように成立・付与されるのかは、
 本文書では定義しない。
 
-### Namespaceから関係を推論しない
+### Do Not Infer Relationships from Namespace（Namespaceから関係を推論しない）
 
 Definition Namespace（定義名前空間）は
 **識別のための区分であり、関係を表現しない** 。
@@ -297,7 +302,7 @@ Rule Identity（ルール同一性）の安定性は、
 Development Version／Stable Versionの
 具体的なRelease Management方法は定義しない。
 
-### Development Version（開発版）における扱い
+### Development Version Handling（Development Versionにおける扱い）
 
 - Development Versionで新規に導入された
   Rule Identity（ルール同一性）は、
@@ -307,7 +312,7 @@ Development Version／Stable Versionの
   Rule Identity（ルール同一性）は、
   Development Versionの途中であっても変更しない。
 
-### Stable Version（安定版）における扱い
+### Stable Version Handling（Stable Versionにおける扱い）
 
 - Stable Releaseされた
   Rule Identity（ルール同一性）は永続化する。
@@ -318,7 +323,7 @@ Development Version／Stable Versionの
 Identity（同一性）を再利用しないのは、
 過去の参照が別の意味へ静かにすり替わることを防ぐためである。
 
-### Identity（同一性）の維持と更新
+### Identity Maintenance and Update（Identityの維持と更新）
 
 | 変更の性質 | 扱い |
 | --- | --- |
@@ -332,45 +337,45 @@ Identity（同一性）を再利用しないのは、
 
 ## Design Principles（設計原則）
 
-### 1. Normative Content is Explicit（規範的内容を明示する）
+### Normative Content is Explicit（規範的内容を明示する）
 
 Convention（規約）内で規範として効力を持つ内容は、
 Normative Rule（規範的ルール）として明示される。
 文脈や語調から規範性を暗黙に推論しない。
 
-### 2. Rule Carries Its Reason（Ruleは理由を伴う）
+### Rule Carries Its Reason（Ruleは理由を伴う）
 
 Normative Rule（規範的ルール）はReasonを必須要素として持つ。
 理由を伴わないRuleは、検証も再評価もできない。
 
-### 3. Identity over Label（Labelではなく同一性で参照する）
+### Identity over Label（Labelではなく同一性で参照する）
 
 安定した参照はRule Identity（ルール同一性）に対して行う。
 Rule Name（ルール名）・見出し・配置・順序は参照の基礎としない。
 
-### 4. Identity Reflects Normative Meaning（同一性は規範的意味に対応する）
+### Identity Reflects Normative Meaning（同一性は規範的意味に対応する）
 
 Rule Identity（ルール同一性）の維持・更新は、
 表現の変化ではなくNormative Meaning（規範的意味）の変化に対応する。
 
-### 5. Identity is Not Reused（同一性を再利用しない）
+### Identity is Not Reused（同一性を再利用しない）
 
 永続化されたRule Identity（ルール同一性）は、
 削除後も別のRuleへ再割り当てしない。
 
-### 6. Namespace Identifies, Not Relates（Namespaceは識別であって関係ではない）
+### Namespace Identifies, Not Relates（Namespaceは識別であって関係ではない）
 
 Definition Namespace（定義名前空間）は識別のための区分であり、
 Rule Relationship（ルール間関係）を含意しない。
 関係が必要な場合は明示的に定義する。
 
-### 7. Self-contained Normative Vocabulary（規範語彙を自己完結させる）
+### Self-contained Normative Vocabulary（規範語彙を自己完結させる）
 
 Requirement Level（要求レベル）等の規範語彙の意味は、
 本Architecture内で自己完結させ、
 外部文書へのNormative Dependencyを設けない。
 
-### 8. Semantics before Notation（表記より意味を先に定める）
+### Semantics before Notation（表記より意味を先に定める）
 
 本Architectureは意味構造のみを定義し、
 表記Format・記述形式・文書表現を先行して固定しない。
@@ -379,7 +384,7 @@ Requirement Level（要求レベル）等の規範語彙の意味は、
 
 本文書は次を定義しない。これらは後続設計へ委譲する。
 
-### Authoring（記述）に関する事項
+### Authoring（記述に関する事項）
 
 - Rule Identity（ルール同一性）の具体的な表記Format
 - Rule Identity（ルール同一性）に含まれるNumberの桁数・採番方法
@@ -388,7 +393,7 @@ Requirement Level（要求レベル）等の規範語彙の意味は、
 - Rule Model（ルールモデル）の各要素を文書上でどう記述単位へ対応させるか
 - RuleのCategory（分類）およびSection配置の方法
 
-### Conformance（適合）に関する事項
+### Conformance（適合に関する事項）
 
 本文書は、Normative Rule（規範的ルール）のみが
 Normative Effectを持つという境界のみを定めており、
@@ -399,7 +404,7 @@ Normative Effectを持つという境界のみを定めており、
 - `SHOULD` / `SHOULD NOT` における例外の扱い方および
   その正当化の手続き
 
-### Convention Identity（規約同一性）に関する事項
+### Convention Identity（規約同一性に関する事項）
 
 本文書はConvention Identity（規約同一性）を
 Rule Identity（ルール同一性）の意味上の構成要素として位置づけるが、
@@ -413,17 +418,17 @@ Rule Identity（ルール同一性）の意味上の構成要素として位置�
 現時点で確定していない事項を先行決定しないための
 意図的な委譲である。
 
-### Convention Extension（規約拡張）に関する事項
+### Convention Extension（規約拡張に関する事項）
 
 - Convention Extensionにおける拡張単位
 - Definition Namespace（定義名前空間）の成立・付与の方法
 
-### Convention（規約）体系に関する事項
+### Convention System（規約体系に関する事項）
 
 - Convention（規約）を代表・集約する文書の要否と責務
 - Convention（規約）の一覧・目録の構造
 
-### Application（適用）に関する事項
+### Application（適用に関する事項）
 
 - Convention Application（規約適用）の詳細
 - Override（上書き）／Extend／Replace／Disable
@@ -433,12 +438,12 @@ Convention（規約）がRepositoryにおいて有効となる関係そのもの
 [Repository Governance Architecture](repository-governance.md)の
 Foundation Applicationが扱う。
 
-### 宣言・記述形式に関する事項
+### Declaration / Representation Format（宣言・記述形式に関する事項）
 
 - MetadataおよびDeclarationのSchema
 - Rule Identity（ルール同一性）の機械可読な表現形式
 
-### Release / Versioning（版管理）に関する事項
+### Release / Versioning（版管理に関する事項）
 
 - Development Version／Stable Versionの
   具体的なRelease Management方法

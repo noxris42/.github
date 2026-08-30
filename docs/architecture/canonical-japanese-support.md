@@ -38,26 +38,7 @@ Architecture-level Semantic Modelである。
 Translation Management、
 Naming Managementを責務としない。
 
-## Position（設計上の位置づけ）
-
-本文書は、次を上位Sourceとして参照する。
-
-- [Documentation Structure Architecture](documentation-structure.md)
-- [Repository Governance Documentation Framework Architecture](repository-governance-documentation-framework.md)
-
-Design Dependency（設計依存）は次の一方向とする。
-
-```text
-Documentation Structure Architecture
-        ▲
-        │ presupposes
-Canonical Japanese Support Architecture
-
-Repository Governance Documentation Framework Architecture
-        ▲
-        │ belongs to
-Canonical Japanese Support Architecture
-```
+## Relationships（関係）
 
 本文書は
 [Repository Governance Documentation Framework Architecture](repository-governance-documentation-framework.md)
@@ -70,6 +51,13 @@ Semantic / Structural Modelの定義として、
 Boundary（境界）・Definition Authority（定義権限）を定義する。
 Areaを代表・集約するAssetではない。
 
+```text
+Repository Governance Documentation Framework Architecture
+        ▲
+        │ belongs to
+Canonical Japanese Support Architecture
+```
+
 本文書が使用する次のConcept（概念）の
 Definition Authority（定義権限）は上位設計にある。
 本文書はこれらを参照するのみで、再定義しない。
@@ -79,6 +67,21 @@ Definition Authority（定義権限）は上位設計にある。
 - Definition Authority（定義権限）
 - Documentation Area（文書責務領域）と
   Area Responsibility（領域責務）
+
+### Position（設計上の位置づけ）
+
+本文書は
+[Documentation Structure Architecture](documentation-structure.md)
+を上位Sourceとして参照する。
+
+Design Dependency（設計依存）は次の一方向とする。
+
+```text
+Documentation Structure Architecture
+        ▲
+        │ presupposes
+Canonical Japanese Support Architecture
+```
 
 ## Scope（対象範囲）
 
@@ -150,7 +153,7 @@ Definition Authority（定義権限）は上位設計にある。
 
 ## Concept Model（概念モデル）
 
-### Model全体像
+### Model Overview（Model全体像）
 
 本文書が成立させるModelは次である。
 
@@ -281,9 +284,9 @@ Japanese Representation（日本語表現）側から見た
 定義しないことは、
 逆方向に制約が存在しないことを意味しない。
 
-## Definition Authority Boundary（定義権限境界）
+## Responsibility Boundary（責務境界）
 
-### English Representation（英語表現）およびUnderlying Meaning（対象の意味）との境界
+### Boundary with English Representation and Underlying Meaning（English RepresentationおよびUnderlying Meaningとの境界）
 
 本文書がDefinition Responsibility（定義責務）を持つのは、
 Canonical Japanese Support Association（正規日本語補助対応）を
@@ -317,7 +320,7 @@ Underlying Meaning（対象の意味）に関する
 Definition Authority（定義権限）の一般Modelを
 新たに設計しない。
 
-### 別のSubject（別対象）が定義するHuman-readable Representation（人間可読表現）との境界
+### Boundary with Human-readable Representation Defined by Another Subject（別のSubjectが定義するHuman-readable Representationとの境界）
 
 Canonical Japanese Support（正規日本語補助）が扱うのは、
 Repository Documentation（Repository文書）で使用される
@@ -369,7 +372,7 @@ Canonical Japanese Support Association（正規日本語補助対応）の成立
 どのように定義または表示されるかについての
 Modelを新たに設計しない。
 
-### Architecture-level Semantic Model（アーキテクチャレベル意味モデル）とIndividual Canonical Value（個別正規値）との境界
+### Boundary between Architecture-level Semantic Model and Individual Canonical Value（Architecture-level Semantic ModelとIndividual Canonical Valueとの境界）
 
 本文書は、Architecture-level Definitionと
 Individual Canonical Valueを分離する。
@@ -432,7 +435,7 @@ Local Design Principle（局所設計原則）である。
 Philosophy Area（思想領域）が所有する
 Fundamental Principle（根本原則）ではない。
 
-### 1. Association over Classification（分類ではなく対応）
+### Association over Classification（分類ではなく対応）
 
 Canonical Japanese Support（正規日本語補助）は、
 English Representation（英語表現）に対する
@@ -440,14 +443,14 @@ Semantic Classificationを成立させない。
 成立させるのは、対応元と対応先の
 Association（対応）のみである。
 
-### 2. Support without Redefinition（補助は再定義しない）
+### Support without Redefinition（補助は再定義しない）
 
 Canonical Japanese Support Representation（正規日本語補助表現）は、
 English Representation（英語表現）そのもの、および
 Underlying Meaning（対象の意味）を再定義しない。
 担うのは日本語による理解補助のみである。
 
-### 3. Current Need Only（現在必要な範囲だけを定義する）
+### Current Need Only（現在必要な範囲だけを定義する）
 
 本Modelは、English Representation（英語表現）から
 Japanese Representation（日本語表現）への
@@ -455,7 +458,7 @@ Support Associationのみを扱う。
 Translation一般、
 Localization一般へ拡張しない。
 
-### 4. Availability and Presentation Separation（利用可能性と表示の分離）
+### Availability and Presentation Separation（利用可能性と表示の分離）
 
 Canonical Japanese Support Association（正規日本語補助対応）が
 成立していることと、

@@ -291,7 +291,7 @@ Architecture-level Conceptとして
 本節は新たなNormative Requirement（規範要求）を追加せず、
 Registration Qualificationも定めない。
 
-### Candidate Pool（候補集合）の広さ
+### Candidate Pool Breadth（Candidate Poolの広さ）
 
 Candidate Recommendation（候補提案）が生む
 Candidate Pool（候補集合）は、
@@ -331,7 +331,7 @@ Japanese Reading Supportの対象でないことが明らかな
 Literal Representation（そのままの表記）まで
 提案対象へ含めることも求めない。
 
-### 候補になり得るSignal（兆候）
+### Potential Candidate Signals（候補になり得るSignal）
 
 次は、Candidate Recommendation（候補提案）の優先を考える際に
 現時点で有用と考えられる観点である。
@@ -351,7 +351,7 @@ Candidate Pool（候補集合）へ入るための条件でもない。
 - 複数のUsage Occurrenceがあり、
   一貫した日本語補助の価値が高い。
 
-### Occurrence Count（出現回数）の扱い
+### Occurrence Count Handling（Occurrence Countの扱い）
 
 Occurrence Count（出現回数）は
 Candidate Qualificationではない。
@@ -366,7 +366,7 @@ Occurrence Count
 例として `Design Principles` のような
 Heading Label（見出しラベル）が挙げられる。
 
-### Code Block（コードブロック）の扱い
+### Code Block Handling（Code Blockの扱い）
 
 Code Block内に現れることは、
 それだけで候補から除かれることを意味しない。
@@ -400,7 +400,7 @@ Japanese Reading Supportの対象でない
 その場合、後者の使用があることをもって
 候補になり得る。
 
-### Definition-owned Representation（定義責務側の表現）の扱い
+### Definition-owned Representation Handling（Definition-owned Representationの扱い）
 
 あるHuman-readable Representation（人間可読表現）が、
 別のSubjectについての
@@ -434,7 +434,7 @@ Candidate Pool（候補集合）から外れることを意味しない。
 対象であるかは、
 Canonical Decision（正規判断）の側で確定する。
 
-### 再提案の扱い
+### Repeat Recommendation Handling（再提案の扱い）
 
 過去にCandidateが採用されなかったことを
 Permanent Rejectionとして扱うMechanismは、
@@ -451,7 +451,7 @@ Rule ID（規約ルールID）はCategory（分類）を表現しない。
 
 ### Canonical Declaration（正規宣言）
 
-#### CJS-SF-001 — Central Canonical Declaration
+#### CJS-SF-001 — Central Canonical Declaration（中央での正規宣言）
 
 **Rule ID:** `CJS-SF-001`
 
@@ -494,7 +494,7 @@ Usage Occurrenceにおける
 Documentation Presentation（文書上の表示）とは別である。
 表示は本Ruleの対象ではない。
 
-#### CJS-SF-002 — Canonical Association Declaration
+#### CJS-SF-002 — Canonical Association Declaration（正規対応の宣言）
 
 **Rule ID:** `CJS-SF-002`
 
@@ -532,7 +532,7 @@ Stable Identifier、Category（分類）、
 Formal Status（正式地位）、
 Presentation Parameter等は含めない。
 
-#### CJS-SF-003 — YAML Scalar Mapping Representation
+#### CJS-SF-003 — YAML Scalar Mapping Representation（YAML Scalar Mappingによる表現）
 
 **Rule ID:** `CJS-SF-003`
 
@@ -591,7 +591,7 @@ Canonical Declaration（正規宣言）の表現に限られる。
 
 ### Candidate Recommendation（候補提案）
 
-#### CJS-SF-004 — Candidate Recommendation
+#### CJS-SF-004 — Candidate Recommendation（候補提案）
 
 **Rule ID:** `CJS-SF-004`
 
@@ -651,7 +651,7 @@ TitleまたはHeadingであること
 「Candidate Recommendation Guidance」に示す。
 同節はNon-normative Content（非規範的内容）である。
 
-#### CJS-SF-005 — Recommendation Does Not Establish Canonicality
+#### CJS-SF-005 — Recommendation Does Not Establish Canonicality（提案は正規性を成立させない）
 
 **Rule ID:** `CJS-SF-005`
 
@@ -688,7 +688,7 @@ Human Review Workflow、
 具体的なActor、
 Approval / Rejection Stateを規定しない。
 
-#### CJS-SF-006 — Recommendation Does Not Preempt Canonical Decision
+#### CJS-SF-006 — Recommendation Does Not Preempt Canonical Decision（提案は正規判断を先取りしない）
 
 **Rule ID:** `CJS-SF-006`
 

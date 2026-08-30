@@ -25,27 +25,7 @@ CommitはDiffの記録媒体であるだけでなく、
 Commit Message上で一貫して成立させるための
 規範を定める。
 
-## Position（設計上の位置づけ）
-
-本文書は
-[Convention Architecture](../architecture/convention.md)
-および
-[Convention Authoring Convention](convention-authoring.md)
-を上位Sourceとして参照する。
-
-Design Dependency（設計依存）は
-**Convention Architecture → Convention Authoring Convention → 本文書**
-の一方向とする。
-
-```text
-Convention Architecture
-        ▲
-        │ refines
-Convention Authoring Convention
-        ▲
-        │ conforms to
-Commit Convention
-```
+## Relationships（関係）
 
 本文書は
 [Repository Governance Documentation Framework Architecture](../architecture/repository-governance-documentation-framework.md)
@@ -54,6 +34,8 @@ Commit Convention
 Commitという反復的に発生する開発作業へ
 繰り返し適用される
 Reusable Normative Standard（再利用可能な規範標準）として成立する。
+
+### Responsibility Boundary（責務境界）
 
 本文書が使用する次のConcept（概念）の
 Definition Authority（定義権限）は上位設計にある。
@@ -75,6 +57,28 @@ Formal Name（正式名称）の成立条件、および
 Naming Conventionを定義しない。
 これらを、Commit Headerを記述する必要から
 本文書側で新たに成立させることもしない。
+
+### Position（設計上の位置づけ）
+
+本文書は
+[Convention Architecture](../architecture/convention.md)
+および
+[Convention Authoring Convention](convention-authoring.md)
+を上位Sourceとして参照する。
+
+Design Dependency（設計依存）は
+**Convention Architecture → Convention Authoring Convention → 本文書**
+の一方向とする。
+
+```text
+Convention Architecture
+        ▲
+        │ refines
+Convention Authoring Convention
+        ▲
+        │ conforms to
+Commit Convention
+```
 
 ## Scope（対象範囲）
 
@@ -230,7 +234,7 @@ Diffがすでに保持している情報を
 Commit Messageへ再記述しても、
 新しい情報は生じない。
 
-### Semantic Identifier（意味識別子）と自然言語表現
+### Semantic Identifier and Natural Language Representation（Semantic Identifierと自然言語表現）
 
 Commit Semantic Modelは、
 Message Language（メッセージ言語）から独立している。
@@ -253,7 +257,7 @@ Rule ID（規約ルールID）はCategory（分類）を表現しない。
 
 ### Commit Unit（コミット単位）
 
-#### CMT-SF-001 — Single Semantic Change
+#### CMT-SF-001 — Single Semantic Change（単一の意味上の変更）
 
 **Rule ID:** `CMT-SF-001`
 
@@ -286,7 +290,7 @@ Concrete Changeは、
 Semantic Purpose（意味上の目的）へ従属する限り、
 同一Commitに含められる。
 
-#### CMT-SF-002 — Semantic Split Boundary
+#### CMT-SF-002 — Semantic Split Boundary（意味上の分割境界）
 
 **Rule ID:** `CMT-SF-002`
 
@@ -311,7 +315,7 @@ Single Semantic Changeの要求が実質的に無効化される。
 
 ### Message Structure（メッセージ構造）
 
-#### CMT-SF-003 — Message Structure
+#### CMT-SF-003 — Message Structure（メッセージ構造）
 
 **Rule ID:** `CMT-SF-003`
 
@@ -346,7 +350,7 @@ Header
 
 ### Header（ヘッダー）
 
-#### CMT-SF-004 — Header Format
+#### CMT-SF-004 — Header Format（ヘッダーの形式）
 
 **Rule ID:** `CMT-SF-004`
 
@@ -376,7 +380,7 @@ Change Subject（変更主体）がScopeとSubjectへ
 📝 docs: Repository READMEを改定
 ````
 
-#### CMT-SF-005 — Type Selection
+#### CMT-SF-005 — Type Selection（Typeの選択）
 
 **Rule ID:** `CMT-SF-005`
 
@@ -402,7 +406,7 @@ Commit Messageが
 判断が難しいCommitほど `chore` へ流れ、
 Type全体の識別力が失われる。
 
-#### CMT-SF-006 — Base Type and Gitmoji Set
+#### CMT-SF-006 — Base Type and Gitmoji Set（基本TypeとGitmojiの集合）
 
 **Rule ID:** `CMT-SF-006`
 
@@ -440,7 +444,7 @@ Gitmojiを独立した選択肢にしないのは、
 
 ### Subject（主題）
 
-#### CMT-SF-007 — Subject Composition
+#### CMT-SF-007 — Subject Composition（主題の構成）
 
 **Rule ID:** `CMT-SF-007`
 
@@ -475,7 +479,7 @@ Subject
 日本語の助詞や英語の語順等、
 Natural Language Representation（自然言語表現）上の形は固定しない。
 
-#### CMT-SF-008 — Change Subject Selection
+#### CMT-SF-008 — Change Subject Selection（変更主体の選択）
 
 **Rule ID:** `CMT-SF-008`
 
@@ -504,7 +508,7 @@ Documentation Asset（文書資産）、Model、Concept（概念）、
 Capability、Rule、Configuration、
 Infrastructure等になり得る。
 
-#### CMT-SF-009 — Change Subject Representation
+#### CMT-SF-009 — Change Subject Representation（変更主体表現）
 
 **Rule ID:** `CMT-SF-009`
 
@@ -564,7 +568,7 @@ Documentation Identity、
 Naming Rule（命名規則）、
 Metadata Schemaを定義しない。
 
-#### CMT-SF-010 — Operation Expression
+#### CMT-SF-010 — Operation Expression（操作の表現）
 
 **Rule ID:** `CMT-SF-010`
 
@@ -598,7 +602,7 @@ Operational Judgmentである。
 
 ### Message Language（メッセージ言語）
 
-#### CMT-SF-011 — Message Language
+#### CMT-SF-011 — Message Language（メッセージ言語）
 
 **Rule ID:** `CMT-SF-011`
 
@@ -653,7 +657,7 @@ Explicit Message Languageの
 
 ### Body（本文）
 
-#### CMT-SF-012 — Body Responsibility
+#### CMT-SF-012 — Body Responsibility（本文の責務）
 
 **Rule ID:** `CMT-SF-012`
 

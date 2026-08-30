@@ -40,40 +40,7 @@ Standard Section（標準Section）を定義する。
 [Documentation Structure Convention](documentation-structure.md)
 が定義するConcept（概念）・機構を再定義しない。
 
-## Position（設計上の位置づけ）
-
-本文書は、次を上位Sourceとして参照する。
-
-- [Repository Governance Documentation Framework Architecture](../architecture/repository-governance-documentation-framework.md)
-- [Documentation Structure Architecture](../architecture/documentation-structure.md)
-- [Convention Architecture](../architecture/convention.md)
-- [Documentation Structure Convention](documentation-structure.md)
-- [Convention Authoring Convention](convention-authoring.md)
-
-Design Dependency（設計依存）は次の一方向とする。
-
-```text
-Documentation Structure Architecture
-        ▲
-        │ refines
-Repository Governance Documentation Framework Architecture
-        ▲
-        │ refines
-Repository Governance Documentation Structure Convention
-
-Documentation Structure Convention
-        ▲
-        │ conforms to
-Repository Governance Documentation Structure Convention
-
-Convention Architecture
-        ▲
-        │ refines
-Convention Authoring Convention
-        ▲
-        │ conforms to
-Repository Governance Documentation Structure Convention
-```
+## Relationships（関係）
 
 本文書は
 [Repository Governance Documentation Framework Architecture](../architecture/repository-governance-documentation-framework.md)
@@ -84,6 +51,8 @@ Repository Governance Documentation Structure Convention
 Reusable Normative Standard（再利用可能な規範標準）として成立する。
 AreaまたはFramework（体系）を代表・集約する
 Assetではない。
+
+### Responsibility Boundary（責務境界）
 
 本文書が使用する次のConcept（概念）および機構の
 Definition Authority（定義権限）は上位設計にある。
@@ -124,6 +93,41 @@ Definition Authority（定義権限）は上位設計にある。
   Rule Field（規則フィールド）の構成・順序・Markdown表現、
   StabilityのField表現
 - Namespace Code（名前空間コード）の割当
+
+### Position（設計上の位置づけ）
+
+本文書は、次を上位Sourceとして参照する。
+
+- [Repository Governance Documentation Framework Architecture](../architecture/repository-governance-documentation-framework.md)
+- [Documentation Structure Architecture](../architecture/documentation-structure.md)
+- [Convention Architecture](../architecture/convention.md)
+- [Documentation Structure Convention](documentation-structure.md)
+- [Convention Authoring Convention](convention-authoring.md)
+
+Design Dependency（設計依存）は次の一方向とする。
+
+```text
+Documentation Structure Architecture
+        ▲
+        │ refines
+Repository Governance Documentation Framework Architecture
+        ▲
+        │ refines
+Repository Governance Documentation Structure Convention
+
+Documentation Structure Convention
+        ▲
+        │ conforms to
+Repository Governance Documentation Structure Convention
+
+Convention Architecture
+        ▲
+        │ refines
+Convention Authoring Convention
+        ▲
+        │ conforms to
+Repository Governance Documentation Structure Convention
+```
 
 ## Scope（対象範囲）
 
@@ -323,7 +327,7 @@ Normative Meaning（規範的意味）を保持しない。
 Standard Section（標準Section）の要件・適用・責務は、
 すべてNormative Rule（規範的ルール）側で確定する。
 
-### 本文書が所有する範囲
+### Scope Owned by This Document（本文書が所有する範囲）
 
 [Documentation Structure Convention](documentation-structure.md)
 は、Standard Section（標準Section）の一般機構と、
@@ -347,7 +351,7 @@ Repository Governance Documentation Structure Convention
 その機構へ適合する側として、
 個別のStandard Section（標準Section）を定義する。
 
-### Identity（同一性）とRepresentation（表現）
+### Identity and Representation（IdentityとRepresentation）
 
 `Position`・`Concept Model`・`Design Principles`・`Non-goals`・
 `Concrete Declarations`・`Convention Code`・`Namespace Code`・
@@ -371,7 +375,7 @@ Heading Level（見出しレベル）、
 Markdown Heading Marker（Markdown見出し記号）、
 Section Order（Section順序）は、本文書では定めない。
 
-### 一覧の開放性
+### Catalog Openness（一覧の開放性）
 
 本文書が現在定義するStandard Section（標準Section）は、
 本Framework（体系）において使用可能な
@@ -388,7 +392,7 @@ Document-specific Section（文書固有Section）として構成できる。
 Section Responsibility（Section責務）が新たに確認された場合、
 本文書へ追加され得る。
 
-### 定義と設置要求
+### Definition and Presence Requirement（定義と設置要求）
 
 本文書が現在定義するStandard Section（標準Section）について、
 Presence Requirement（設置要求）は定めない。
@@ -412,7 +416,7 @@ Rule ID（規約ルールID）はCategory（分類）を表現しない。
 
 ### Framework-wide Standard Sections（文書体系全体標準Section）
 
-#### RDS-SF-001 — Position Standard Section
+#### RDS-SF-001 — Position Standard Section（位置標準Section）
 
 **Rule ID:** `RDS-SF-001`
 
@@ -481,7 +485,7 @@ Section Responsibility（Section責務）ではない。
 
 ### Architecture Area Standard Sections（アーキテクチャ領域標準Section）
 
-#### RDS-SF-002 — Concept Model Standard Section
+#### RDS-SF-002 — Concept Model Standard Section（概念モデル標準Section）
 
 **Rule ID:** `RDS-SF-002`
 
@@ -526,7 +530,7 @@ Architecture Asset（アーキテクチャ資産）が
 独立したConcept Model（概念モデル）としての
 Section Responsibility（Section責務）が成立しない場合もある。
 
-#### RDS-SF-003 — Design Principles Standard Section
+#### RDS-SF-003 — Design Principles Standard Section（設計原則標準Section）
 
 **Rule ID:** `RDS-SF-003`
 
@@ -571,7 +575,7 @@ Fundamental Principle（根本原則）を所有しない。
 [Repository Governance Documentation Framework Architecture](../architecture/repository-governance-documentation-framework.md)
 による。
 
-#### RDS-SF-004 — Non-goals Standard Section
+#### RDS-SF-004 — Non-goals Standard Section（非目標標準Section）
 
 **Rule ID:** `RDS-SF-004`
 
@@ -625,7 +629,7 @@ Non-goalsに必要に応じて付随する情報として扱う。
 
 ### Conventions Area Standard Sections（規約領域標準Section）
 
-#### RDS-SF-005 — Concrete Declarations Standard Section
+#### RDS-SF-005 — Concrete Declarations Standard Section（具体宣言標準Section）
 
 **Rule ID:** `RDS-SF-005`
 
@@ -664,7 +668,7 @@ Presence Requirement（設置要求）を定めない。
 保持する責務であり、
 Normative Effectを持たない。
 
-#### RDS-SF-006 — Convention Code Standard Section
+#### RDS-SF-006 — Convention Code Standard Section（規約コード標準Section）
 
 **Rule ID:** `RDS-SF-006`
 
@@ -703,7 +707,7 @@ Standard Section Identity（標準Section同一性）は
 Applicability Scope（適用範囲）と
 Section Responsibility（Section責務）によって成立する。
 
-#### RDS-SF-007 — Namespace Code Standard Section
+#### RDS-SF-007 — Namespace Code Standard Section（名前空間コード標準Section）
 
 **Rule ID:** `RDS-SF-007`
 
@@ -743,7 +747,7 @@ Convention Authoring Conventionの
 Namespace Code（名前空間コード）そのものの割当である。
 両者を同一の責務として扱わない。
 
-#### RDS-SF-008 — Normative Rules Standard Section
+#### RDS-SF-008 — Normative Rules Standard Section（規範的ルール標準Section）
 
 **Rule ID:** `RDS-SF-008`
 
@@ -779,7 +783,7 @@ Presence Requirement（設置要求）を定めない。
 Category（分類）を、
 Standard Section（標準Section）として定義しない。
 
-#### RDS-SF-009 — Self Application Standard Section
+#### RDS-SF-009 — Self Application Standard Section（自己適用標準Section）
 
 **Rule ID:** `RDS-SF-009`
 
@@ -836,14 +840,9 @@ Presence Requirement（設置要求）を定めない。
 および本文書自身が定めるRuleにも従っている。
 
 - Document Responsibility（文書責務）を内容から識別可能にしている。
-- Purpose・Scopeの各
+- Purpose・Relationships・Scopeの各
   Standard Section Identity（標準Section同一性）を、
   それぞれの責務に適合するSectionへ使用している。
-- 本文書は本Framework（体系）に属するため、
-  Position Standard Sectionが適用可能である。
-  対応するSection Responsibility（Section責務）を
-  独立したSectionとして構成しているため、
-  そのStandard Section Identity（標準Section同一性）を使用している。
 - 本文書はConventions Area（規約領域）に属するため、
   Conventions Area（規約領域）を
   Applicability Scope（適用範囲）に含む
@@ -857,6 +856,10 @@ Presence Requirement（設置要求）を定めない。
   Architecture Area（アーキテクチャ領域）を
   Applicability Scope（適用範囲）に含む
   Standard Section（標準Section）は適用されない。
+- Relationships Standard Sectionの
+  Responsibility Decomposition（責務分解）として構成しているSectionへ、
+  Position・Responsibility Boundaryの
+  Standard Section Identity（標準Section同一性）を使用している。
 - Scope Standard Sectionの
   Responsibility Decomposition（責務分解）として構成しているSectionへ、
   In Scope・Out of Scopeの
@@ -876,7 +879,7 @@ Presence Requirement（設置要求）を定めない。
   Applicability Scope（適用範囲）に含むため、
   Conventions Area（規約領域）に属する本文書では
   Heading（見出し）として表現していない。
-- 本文書自身のPurpose・Scope・In Scope・Out of ScopeのHeading（見出し）は、
+- 本文書自身のPurpose・Relationships・Responsibility Boundary・Scope・In Scope・Out of ScopeのHeading（見出し）は、
   [Documentation Structure Convention](documentation-structure.md)
   が宣言したStandard Section Heading Representation（標準Section見出し表現）と
   一致している。

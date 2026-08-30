@@ -27,25 +27,13 @@
 具体的なDocumentation Framework（文書体系）の存在や内容、
 Directory構成、命名規則、記述形式を前提としない。
 
-## Position（設計上の位置づけ）
+## Relationships（関係）
 
-本文書は
+### Responsibility Boundary（責務境界）
+
+本文書は、
 [Repository Governance Architecture](repository-governance.md)
-を
-上位Sourceとして参照する。
-
-同Architectureは
-「Documentation階層およびDirectory構造の正式確定」を
-Non-goalsとしている。
-本文書は、その委譲先の一つとして、
-**Documentation Structure（文書構造）の一般Model** を定義する。
-
-Design Dependency（設計依存）は
-**Repository Governance Architecture → 本文書 →
-具体的なDocumentation Framework（文書体系）**
-の一方向とする。
-
-本文書は、同Architectureが定義する
+が定義する
 Ownership（所有責任）・Shared Scope・
 Foundation Applicationを
 再定義・上書きしない。
@@ -65,6 +53,24 @@ Foundation Applicationを
 本文書は、Documentationが
 **どのような論理単位と責務の分担として構成されるか**
 のみを定義する。
+
+### Position（設計上の位置づけ）
+
+本文書は
+[Repository Governance Architecture](repository-governance.md)
+を
+上位Sourceとして参照する。
+
+同Architectureは
+「Documentation階層およびDirectory構造の正式確定」を
+Non-goalsとしている。
+本文書は、その委譲先の一つとして、
+**Documentation Structure（文書構造）の一般Model** を定義する。
+
+Design Dependency（設計依存）は
+**Repository Governance Architecture → 本文書 →
+具体的なDocumentation Framework（文書体系）**
+の一方向とする。
 
 ## Scope（対象範囲）
 
@@ -445,7 +451,7 @@ Child Section Responsibilities
 そのDocument Responsibility（文書責務）が
 どのArea Responsibility（領域責務）の配分として成立するかによって決まる。
 
-### Area所属を一般Requirementとしない
+### Do Not Make Area Membership a General Requirement（Area所属を一般Requirementとしない）
 
 本文書は、
 **すべてのDocument Responsibility（文書責務）が
@@ -471,7 +477,7 @@ Documentation Asset（文書資産）が成立し得る余地を残す。
 自身のFramework Responsibility（体系責務）の範囲において、
 所属するAssetにArea帰属を要求することは妨げない。
 
-### Section（節）を一般Requirementとしない
+### Do Not Make Section a General Requirement（Sectionを一般Requirementとしない）
 
 Document Responsibility（文書責務）は、必要に応じて複数の
 Section Responsibility（Section責務）へ意味的に分解できる。
@@ -508,7 +514,7 @@ Coverage ModelやSectionの分類体系を導入しない。
 自身の責務範囲においてSectionの存在や
 Coverage（網羅）を要求することは妨げない。
 
-### Subject（対象）とArea（領域）の区別
+### Distinction between Subject and Area（SubjectとAreaの区別）
 
 Documentation Asset（文書資産）が
 どのSubjectを扱うかと、
@@ -521,7 +527,7 @@ Document Responsibility（文書責務）を担うか** である。
 
 ## Logical / Physical Boundary（論理／物理境界）
 
-### 境界
+### Boundary（境界）
 
 Documentation Structure（文書構造）は
 Logical Structure（論理構造）である。
@@ -534,7 +540,7 @@ Documentation Area  ≠ Directory
 Documentation Asset ≠ File
 ```
 
-### Identity（同一性）を物理配置から導出しない
+### Do Not Derive Identity from Physical Location（Identityを物理配置から導出しない）
 
 論理単位のIdentity（同一性）を、
 Physical Location（物理配置）から導出しない。
@@ -546,7 +552,7 @@ Physical Location（物理配置）から導出しない。
 - 「同一Directoryにあるから、同一のAreaに属する」
 - 「一つのFileであるから、一つのDocumentation Asset（文書資産）である」
 
-### 物理表現の不在を論理構造の不在と判断しない
+### Do Not Treat Absence of Physical Representation as Absence of Logical Structure（物理表現の不在を論理構造の不在と判断しない）
 
 逆方向の推論も成立しない。
 
@@ -557,7 +563,7 @@ Area Responsibility（領域責務）が成立していれば、
 Physical Representation（物理表現）を持たない
 Documentation Area（文書責務領域）も成立し得る。
 
-### Physical Representation（物理表現）の扱い
+### Physical Representation Handling（Physical Representationの扱い）
 
 Logical Structure（論理構造）を
 Physical Structure（物理構造）へどう対応づけるかは、
@@ -570,7 +576,7 @@ Physical Structure（物理構造）へどう対応づけるかは、
 
 ## Logical / Representation Boundary（論理／表現境界）
 
-### Representation（表現）との境界
+### Boundary with Representation（Representationとの境界）
 
 SectionはSemantic Structure（意味構造）であり、
 Heading（見出し）・Heading Label（見出しラベル）・
@@ -592,7 +598,7 @@ Heading                ≠ Markdown Heading Marker
 - Heading（見出し）と
   Markdown Heading Marker（Markdown見出し記号）
 
-### 対応関係を一般Requirementとしない
+### Do Not Make the Mapping a General Requirement（対応関係を一般Requirementとしない）
 
 本文書は次のいずれも要求しない。
 
@@ -602,7 +608,7 @@ Heading                ≠ Markdown Heading Marker
 Heading（見出し）は、Sectionを表現しない目的でも用いられ得る。
 また、Heading（見出し）を伴わないSectionも成立し得る。
 
-### Representation（表現）の不在をSemantic Structure（意味構造）の不在と判断しない
+### Do Not Treat Absence of Representation as Absence of Semantic Structure（Representationの不在をSemantic Structureの不在と判断しない）
 
 対応するHeading（見出し）が存在しないことだけを理由に、
 Sectionが存在しないと判断しない。
@@ -611,7 +617,7 @@ Section Responsibility（Section責務）が成立していれば、
 Heading（見出し）によるRepresentation（表現）を持たない
 Sectionも成立し得る。
 
-### Mappingの委譲
+### Mapping Delegation（Mappingの委譲）
 
 Sectionと、Heading（見出し）・Heading Label（見出しラベル）・
 Markdown Heading Marker（Markdown見出し記号）との
@@ -624,32 +630,32 @@ Semantic Mappingを与えることも、
 
 ## Design Principles（設計原則）
 
-### 1. Responsibility as Semantic Basis（責務を意味上の基礎とする）
+### Responsibility as Semantic Basis（責務を意味上の基礎とする）
 
 Documentation上の論理単位の意味および責務範囲は、
 Physical Structure（物理構造）ではなく
 Responsibility（責務）を中心的な
 Semantic Basis（意味上の基礎）として成立する。
 
-### 2. Logical Identity is Independent of Physical Location（同一性は物理配置から独立する）
+### Logical Identity is Independent of Physical Location（同一性は物理配置から独立する）
 
 論理単位のIdentity（同一性）を、
 Path・Directory・Fileの構成から導出しない。
 物理表現の有無は、論理構造の成立条件ではない。
 
-### 3. Decomposition over Classification（分類ではなく分解で構成する）
+### Decomposition over Classification（分類ではなく分解で構成する）
 
 Area Responsibility（領域責務）は、
 Framework Responsibility（体系責務）の意味的な分解として定める。
 既存文書を後から分類した結果として定めない。
 
-### 4. Area is Not a Container（Areaは入れ物ではない）
+### Area is Not a Container（Areaは入れ物ではない）
 
 Documentation Area（文書責務領域）は
 Documentation Asset（文書資産）の集合ではない。
 Asset数やDirectoryの存在は、Areaの成立条件ではない。
 
-### 5. No Structural Role beyond Document Responsibility（責務を超えた構造的役割を設けない）
+### No Structural Role beyond Document Responsibility（責務を超えた構造的役割を設けない）
 
 Documentation Asset（文書資産）に対して、
 Document Responsibility（文書責務）とは別の
@@ -657,20 +663,20 @@ Structural Roleを導入しない。
 Area全体に関わる責務が必要な場合も、
 通常のDocument Responsibility（文書責務）として表現する。
 
-### 6. No Logical Concept for Physical Pattern（物理パターンのために論理概念を作らない）
+### No Logical Concept for Physical Pattern（物理パターンのために論理概念を作らない）
 
 Directory名と同名のFile、
 `overview/overview.md` のような配置上のPatternを説明するために、
 特別なLogical Conceptを導入しない。
 
-### 7. Semantic Structure over Representation（表現ではなく意味構造で構成する）
+### Semantic Structure over Representation（表現ではなく意味構造で構成する）
 
 Asset内部の構造は、Section Responsibility（Section責務）による
 Semantic Structure（意味構造）として成立する。
 Heading（見出し）・Label・Markdown記法は
 その表現であり、意味の成立条件ではない。
 
-### 8. Minimal Model First（最小Modelから始める）
+### Minimal Model First（最小Modelから始める）
 
 現時点で必要性が確認されていない上位Concept（概念）を先行導入しない。
 必要性が具体的に確認された時点で追加設計する。
@@ -683,7 +689,7 @@ Heading（見出し）・Label・Markdown記法は
 定義・解決・導入の対象外としている事項であり、
 必要なものは後続設計へ委譲する。
 
-### 導入しないConcept（概念）
+### Concepts Not Introduced（導入しないConcept）
 
 - **Representative Document**
 
@@ -708,7 +714,7 @@ Heading（見出し）・Label・Markdown記法は
   Document Responsibility（文書責務）の一種として設計できる。
   現在のModelが成立するために必須の上位Concept（概念）ではない。
 
-### Identity（同一性）に関する事項
+### Identity（同一性に関する事項）
 
 - Asset Identityの完全な成立条件
 - Area Identityの完全な成立条件
@@ -728,7 +734,7 @@ Responsibility（責務）が意味上の基礎であることと、
 Physical Location（物理配置）から
 Identity（同一性）を導出しないことに限られる。
 
-### 構造・命名に関する事項
+### Structure / Naming（構造・命名に関する事項）
 
 - 具体的なDocumentation Framework（文書体系）とAreaの一覧
 - Path、Directory名、File名、およびNaming Rule（命名規則）
@@ -736,7 +742,7 @@ Identity（同一性）を導出しないことに限られる。
   Physical Structure（物理構造）のMapping Rule（対応規則）を
   どのConvention（規約）が所有するか
 
-### Section（節）に関する事項
+### Section（節に関する事項）
 
 - **具体的なStandard Section（標準Section）**
 
@@ -772,12 +778,12 @@ Identity（同一性）を導出しないことに限られる。
   Section Responsibilitiesによる
   Document Responsibility（文書責務）のCoverage（網羅）要求。
 
-### Composition（体系間構成）に関する事項
+### Composition（体系間構成に関する事項）
 
 - 複数のDocumentation Framework（文書体系）の共存Model
 - Framework（体系）間のPriority／Refinement（具体化）／Dependency（依存）
 
-### 記述・宣言に関する事項
+### Authoring / Declaration（記述・宣言に関する事項）
 
 - Documentation Asset（文書資産）の記述形式
 - MetadataおよびDeclarationのSchema
