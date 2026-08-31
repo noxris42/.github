@@ -39,7 +39,7 @@ Lifecycle等も対象としない。
 本文書は、次を上位Sourceとして参照する。
 
 - [Canonical Japanese Support Architecture](../architecture/canonical-japanese-support.md)
-- [Repository Governance Documentation Framework Architecture](../architecture/repository-governance-documentation-framework.md)
+- [Repository Governance Documentation Framework](../architecture/repository-governance-documentation-framework.md)
 - [Convention Architecture](../architecture/convention.md)
 - [Convention Authoring Convention](convention-authoring.md)
 
@@ -61,7 +61,7 @@ Canonical Japanese Support Convention
 ```
 
 本文書は
-[Repository Governance Documentation Framework Architecture](../architecture/repository-governance-documentation-framework.md)
+[Repository Governance Documentation Framework](../architecture/repository-governance-documentation-framework.md)
 が定義するConventions Area（規約領域）に属する
 通常のDocumentation Asset（文書資産）である。
 Canonical Japanese Support Association（正規日本語補助対応）へ

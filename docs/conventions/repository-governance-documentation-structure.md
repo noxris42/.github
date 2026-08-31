@@ -43,7 +43,7 @@ Standard Section（標準Section）を定義する。
 ## Relationships（関係）
 
 本文書は
-[Repository Governance Documentation Framework Architecture](../architecture/repository-governance-documentation-framework.md)
+[Repository Governance Documentation Framework](../architecture/repository-governance-documentation-framework.md)
 が定義するConventions Area（規約領域）に属する
 通常のDocumentation Asset（文書資産）である。
 本Framework（体系）に属するDocumentation Asset（文書資産）という
@@ -98,7 +98,7 @@ Definition Authority（定義権限）は上位設計にある。
 
 本文書は、次を上位Sourceとして参照する。
 
-- [Repository Governance Documentation Framework Architecture](../architecture/repository-governance-documentation-framework.md)
+- [Repository Governance Documentation Framework](../architecture/repository-governance-documentation-framework.md)
 - [Documentation Structure Architecture](../architecture/documentation-structure.md)
 - [Convention Architecture](../architecture/convention.md)
 - [Documentation Structure Convention](documentation-structure.md)
@@ -110,7 +110,7 @@ Design Dependency（設計依存）は次の一方向とする。
 Documentation Structure Architecture
         ▲
         │ refines
-Repository Governance Documentation Framework Architecture
+Repository Governance Documentation Framework
         ▲
         │ refines
 Repository Governance Documentation Structure Convention
@@ -572,7 +572,7 @@ Local Design Principlesである。
 Philosophy Area（思想領域）が所有する
 Fundamental Principle（根本原則）を所有しない。
 両者の境界は
-[Repository Governance Documentation Framework Architecture](../architecture/repository-governance-documentation-framework.md)
+[Repository Governance Documentation Framework](../architecture/repository-governance-documentation-framework.md)
 による。
 
 #### RDS-SF-004 — Non-goals Standard Section（非目標標準Section）

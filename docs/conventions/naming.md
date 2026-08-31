@@ -65,9 +65,9 @@ Responsibility（責務）を成立・推論させない。
 
 本文書は、次を上位Sourceとして参照する。
 
-- [Repository Governance Architecture](../architecture/repository-governance.md)
+- [Repository Governance](../architecture/repository-governance.md)
 - [Documentation Structure Architecture](../architecture/documentation-structure.md)
-- [Repository Governance Documentation Framework Architecture](../architecture/repository-governance-documentation-framework.md)
+- [Repository Governance Documentation Framework](../architecture/repository-governance-documentation-framework.md)
 - [Convention Architecture](../architecture/convention.md)
 - [Convention Authoring Convention](convention-authoring.md)
 
@@ -89,7 +89,7 @@ Naming Convention
 ```
 
 本文書は
-[Repository Governance Documentation Framework Architecture](../architecture/repository-governance-documentation-framework.md)
+[Repository Governance Documentation Framework](../architecture/repository-governance-documentation-framework.md)
 が定義するConventions Area（規約領域）に属する
 通常のDocumentation Asset（文書資産）である。
 Repository上で反復して成立するPhysical Name（物理名称）へ

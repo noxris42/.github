@@ -65,7 +65,7 @@ Documentation Structure Convention
 ```
 
 本文書は
-[Repository Governance Documentation Framework Architecture](../architecture/repository-governance-documentation-framework.md)
+[Repository Governance Documentation Framework](../architecture/repository-governance-documentation-framework.md)
 が定義するConventions Area（規約領域）に属する
 通常のDocumentation Asset（文書資産）である。
 Documentation Asset（文書資産）という反復的に成立する成果物へ

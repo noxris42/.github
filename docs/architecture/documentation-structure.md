@@ -1,4 +1,4 @@
-# Documentation Structure Architecture（文書構造のArchitecture）
+# Documentation Structure Architecture（文書構造アーキテクチャ）
 
 ## Purpose（目的）
 
@@ -32,7 +32,7 @@ Directory構成、命名規則、記述形式を前提としない。
 ### Responsibility Boundary（責務境界）
 
 本文書は、
-[Repository Governance Architecture](repository-governance.md)
+[Repository Governance](repository-governance.md)
 が定義する
 Ownership（所有責任）・Shared Scope・
 Foundation Applicationを
@@ -44,10 +44,10 @@ Foundation Applicationを
   Shared Foundation Assetか、
   Repository-owned Assetか
   の判定。
-  → Repository Governance Architectureの
+  → Repository Governanceの
   「Ownership Boundary（所有責任の境界）」による。
 - Documentation Asset（文書資産）が特定Repositoryで有効になる関係。
-  → Repository Governance Architectureの
+  → Repository Governanceの
   Foundation Applicationによる。
 
 本文書は、Documentationが
@@ -57,18 +57,18 @@ Foundation Applicationを
 ### Position（設計上の位置づけ）
 
 本文書は
-[Repository Governance Architecture](repository-governance.md)
+[Repository Governance](repository-governance.md)
 を
 上位Sourceとして参照する。
 
-同Architectureは
+同文書は
 「Documentation階層およびDirectory構造の正式確定」を
 Non-goalsとしている。
 本文書は、その委譲先の一つとして、
 **Documentation Structure（文書構造）の一般Model** を定義する。
 
 Design Dependency（設計依存）は
-**Repository Governance Architecture → 本文書 →
+**Repository Governance → 本文書 →
 具体的なDocumentation Framework（文書体系）**
 の一方向とする。
 
@@ -97,6 +97,8 @@ Design Dependency（設計依存）は
 - Sectionと、Heading（見出し）・Heading Label（見出しラベル）・
   Markdown Heading Marker（Markdown見出し記号）等の
   Representation（表現）との境界
+- Documentation Asset（文書資産）と
+  Document Title（文書題名）との境界
 
 ### Out of Scope（本文書が定義しない範囲）
 
@@ -628,6 +630,71 @@ Heading Level（見出しレベル）に
 Semantic Mappingを与えることも、
 本文書のような一般Structure Architectureでは行わない。
 
+### Boundary with Document Title（Document Titleとの境界）
+
+Document Title（文書題名）は、
+Documentation Asset（文書資産）について
+読み手が識別・理解するための
+Human-readable Representation（人間可読表現）である。
+Document Title（文書題名）が表すのは、
+そのDocumentation Asset（文書資産）が主として扱う
+Subject / Meaning（対象／意味）である。
+
+Document Title（文書題名）は、次と同一のConcept（概念）ではない。
+
+```text
+Document Title ≠ Documentation Asset Identity
+Document Title ≠ Document Responsibility
+Document Title ≠ Area Membership
+Document Title ≠ File Name / Path
+```
+
+すなわち本文書は、次を同一のConcept（概念）として扱わない。
+
+- Document Title（文書題名）と
+  Documentation Asset（文書資産）のIdentity（同一性）
+- Document Title（文書題名）と
+  Document Responsibility（文書責務）
+- Document Title（文書題名）と
+  Documentation Area（文書責務領域）への所属
+- Document Title（文書題名）と
+  File名・Path等のPhysical Name（物理名称）
+
+### Do Not Derive Document Title from Identity, Responsibility, or Membership（Document Titleを同一性・責務・所属から導出しない）
+
+Document Title（文書題名）を、
+Documentation Asset（文書資産）のIdentity（同一性）、
+Document Responsibility（文書責務）、
+Documentation Area（文書責務領域）への所属、
+またはPhysical Name（物理名称）から
+機械的に導出しない。
+
+あるDocumentation Asset（文書資産）が
+どのDocumentation Area（文書責務領域）へ属するか、
+どのDocument Responsibility（文書責務）を担うか、
+どのPhysical Location（物理配置）に置かれているかを
+識別する目的だけを理由として、
+Document Title（文書題名）へそれらを再提示することを、
+本文書は要求しない。
+
+逆方向の推論も成立しない。
+ある語がDocument Title（文書題名）に現れないことだけを理由に、
+そのDocumentation Asset（文書資産）が
+特定のDocumentation Area（文書責務領域）へ属さない、
+または特定のDocument Responsibility（文書責務）を担わないとは
+判断しない。
+
+### Document Title Composition Delegation（Document Title構成の委譲）
+
+Document Title（文書題名）の具体的な
+Composition Rule（構成規則）は、
+本文書では定義せず、後続のConvention（規約）へ委譲する。
+
+固定のTitle Schema、
+Title Component（題名構成要素）の集合、
+およびそれらの表記順序は、
+本文書のような一般Structure Architectureでは定義しない。
+
 ## Design Principles（設計原則）
 
 ### Responsibility as Semantic Basis（責務を意味上の基礎とする）
@@ -786,6 +853,9 @@ Identity（同一性）を導出しないことに限られる。
 ### Authoring / Declaration（記述・宣言に関する事項）
 
 - Documentation Asset（文書資産）の記述形式
+- Document Title（文書題名）の構成規則、
+  固定のTitle Schema、および
+  Title Component（題名構成要素）の集合
 - MetadataおよびDeclarationのSchema
 
 ## Usage by Downstream Design（下位設計からの参照）
@@ -833,5 +903,5 @@ Documentation Framework（文書体系）を成立させるか** であり、
 これは個々のFramework Architectureの責務に属する。
 
 `noxris42` が現在採用する具体的なFramework（体系）は、
-[Repository Governance Documentation Framework Architecture](repository-governance-documentation-framework.md)
+[Repository Governance Documentation Framework](repository-governance-documentation-framework.md)
 が定義する。

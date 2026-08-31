@@ -1,4 +1,4 @@
-# Repository Governance Architecture（Repository間の統治・責務Architecture）
+# Repository Governance（Repository間の統治・責務）
 
 ## Purpose（目的）
 

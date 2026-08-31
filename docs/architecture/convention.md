@@ -1,4 +1,4 @@
-# Convention Architecture（規約のArchitecture）
+# Convention Architecture（規約アーキテクチャ）
 
 ## Purpose（目的）
 
@@ -29,7 +29,7 @@
 
 ### Responsibility Boundary（責務境界）
 
-本文書は、Repository Governance Architectureが定義する
+本文書は、Repository Governanceが定義する
 Ownership（所有責任）・Foundation Application・Shared Scopeの判断を
 再定義・上書きしない。
 
@@ -39,10 +39,10 @@ Ownership（所有責任）・Foundation Application・Shared Scopeの判断を
   Shared Foundation Assetか、
   Repository-owned Assetか
   の判定。
-  → Repository Governance Architectureの
+  → Repository Governanceの
   「Ownership Boundary（所有責任の境界）」による。
 - あるConvention（規約）が特定Repositoryで有効になる関係。
-  → Repository Governance Architectureの
+  → Repository Governanceの
   Foundation Applicationによる。
 
 本文書は、Convention（規約）が
@@ -52,12 +52,12 @@ Ownership（所有責任）・Foundation Application・Shared Scopeの判断を
 ### Position（設計上の位置づけ）
 
 本文書は
-[Repository Governance Architecture](repository-governance.md)
+[Repository Governance](repository-governance.md)
 を
 上位Sourceとして参照する。
 
 Design Dependency（設計依存）は
-**Repository Governance Architecture → 本文書 → 個別Convention（規約）**
+**Repository Governance → 本文書 → 個別Convention（規約）**
 の一方向とする。
 
 ## Scope（対象範囲）
@@ -435,7 +435,7 @@ Rule Identity（規則同一性）の意味上の構成要素として位置づ�
 - Rule Relationship（規則間関係）の具体Model
 
 Convention（規約）がRepositoryにおいて有効となる関係そのものは、
-[Repository Governance Architecture](repository-governance.md)の
+[Repository Governance](repository-governance.md)の
 Foundation Applicationが扱う。
 
 ### Declaration / Representation Format（宣言・記述形式に関する事項）

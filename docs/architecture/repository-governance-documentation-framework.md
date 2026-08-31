@@ -1,4 +1,4 @@
-# Repository Governance Documentation Framework Architecture（Repository統治文書体系のArchitecture）
+# Repository Governance Documentation Framework（Repository統治文書体系）
 
 ## Purpose（目的）
 
@@ -42,7 +42,7 @@ Documentation Asset（文書資産）と、
 Documentation Structure Architecture
         ▲
         │ refines
-Repository Governance Documentation Framework Architecture
+Repository Governance Documentation Framework
 ```
 
 本文書が具体化するのは、
@@ -123,23 +123,23 @@ Documentation Structure（文書構造）一般の要求ではない。
 
 ### Responsibility Boundary（責務境界）
 
-[Repository Governance Architecture](repository-governance.md)
+[Repository Governance](repository-governance.md)
 は、
 **本文書とは別Subject** を扱う。
 
 | 文書 | 扱うSubject |
 | --- | --- |
-| Repository Governance Architecture | Repository間のOwnership（所有責任）、Shared Development Foundation、Foundation Application、Repository-specific Responsibility |
+| Repository Governance | Repository間のOwnership（所有責任）、Shared Development Foundation、Foundation Application、Repository-specific Responsibility |
 | 本文書 | Documentation Framework（文書体系）、Area Composition、Area Responsibility（領域責務）、Documentation上のDefinition Responsibility（定義責務）の分離 |
 
 名称および用語が類似することを理由に、両者を統合しない。
 
-Repository Governance Architectureは
+Repository Governanceは
 **Repositoryを跨ぐ所有と適用の関係** を扱い、
 本文書は
 **Documentation上で定義責務をどう分離するか** を扱う。
 
-本文書は、Repository Governance Architectureが定義する
+本文書は、Repository Governanceが定義する
 Ownership（所有責任）・Shared Scope・
 Foundation Applicationを
 再定義・上書きしない。

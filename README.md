@@ -1,1 +1,1 @@
-# .github
+# Shared Development Foundation（共通開発基盤）

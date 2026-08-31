@@ -10,7 +10,7 @@ Semantic Meaningを明確・一貫・安定して伝達するために
 Reusable Normative Standard（再利用可能な規範標準）**
 を定義するConvention Asset（規約資産）である。
 
-本文書が扱う問いは次の5点である。
+本文書が扱う問いは次の6点である。
 
 1. Repository Documentation（Repository文書）の
    Natural Language Prose（自然言語本文）は、
@@ -28,6 +28,8 @@ Reusable Normative Standard（再利用可能な規範標準）**
 5. Normative Rule（規範的規則）を記述する文章は、
    宣言されたRequirement Level（要求レベル）に対して
    どのような関係になければならないのか。
+6. Human-readableなDocument Title（文書題名）は、
+   何を表すのか。
 
 本文書が対象とするのは
 Natural Language Representation（自然言語表現）そのものである。
@@ -47,7 +49,7 @@ Canonicalityを定義しない。
 本文書は、次を上位Sourceとして参照する。
 
 - [Documentation Structure Architecture](../architecture/documentation-structure.md)
-- [Repository Governance Documentation Framework Architecture](../architecture/repository-governance-documentation-framework.md)
+- [Repository Governance Documentation Framework](../architecture/repository-governance-documentation-framework.md)
 - [Convention Architecture](../architecture/convention.md)
 - [Convention Authoring Convention](convention-authoring.md)
 - [Canonical Japanese Support Architecture](../architecture/canonical-japanese-support.md)
@@ -80,7 +82,7 @@ RuleおよびCanonical Declaration（正規宣言）を
 参照するのみであり、変更・再定義しない。
 
 本文書は
-[Repository Governance Documentation Framework Architecture](../architecture/repository-governance-documentation-framework.md)
+[Repository Governance Documentation Framework](../architecture/repository-governance-documentation-framework.md)
 が定義するConventions Area（規約領域）に属する
 通常のDocumentation Asset（文書資産）である。
 Repository Documentation（Repository文書）上で反復して成立する
@@ -199,6 +201,11 @@ Natural Language Representation（自然言語表現）は
 - Normative Meaning（規範的意味）を左右する
   条件・例外・判断境界の記述
 - Definition（定義）としてConcept（概念）を成立させる文章の記述
+- Human-readableなDocument Title（文書題名）が表す
+  Subject / Meaning（対象／意味）
+- Repository README（Repository README）の
+  Document Title（文書題名）が表す
+  Subject / Meaning（対象／意味）
 
 本文書が対象とする
 Human-readable Natural Language Representation（人間可読な自然言語表現）には、
@@ -208,11 +215,20 @@ Document Title（文書題名）およびHeading Label（見出しラベル）�
 Natural Language Representation（自然言語表現）が含まれる。
 
 Document Title（文書題名）およびHeading Label（見出しラベル）に対しては、
-Primary Languageを定める `WRT-SF-001` 、
 Canonical Japanese Support Representation（正規日本語補助表現）の
 表示を定める `WRT-SF-002` 、および
 English Representation（英語表現）の一貫した使用を定める
 `WRT-SF-003` が適用される。
+
+Heading Label（見出しラベル）に対しては、
+これらに加えて、
+Primary Languageを定める `WRT-SF-001` が適用される。
+
+Document Title（文書題名）に対しては、
+これらに加えて、
+Subject / Meaning（対象／意味）の表示を定める `WRT-SF-008` 、および
+Repository README（Repository README）の
+Document Title（文書題名）を定める `WRT-SF-009` が適用される。
 
 その他のRuleの適用範囲は、
 各RuleのRule Statement（規則文）が示す
@@ -379,8 +395,7 @@ Rule ID（規則ID）はCategory（分類）を表現しない。
 **Requirement:** MUST
 
 **Rule:** Repository Documentation（Repository文書）の
-Natural Language Prose（自然言語本文）、
-Human-readableなDocument Title（文書題名）、
+Natural Language Prose（自然言語本文）
 およびHeading Label（見出しラベル）は、
 Primary Languageである日本語で記述する。
 
@@ -405,9 +420,9 @@ External Contractが指す対象と一致しなくなり、
 対象となる自然言語表現を日本語へ固定し、
 識別を担う表記を対象外とすることで、
 読解の前提を一定にしたまま参照の同一性を保つ。
-Document Title（文書題名）およびHeading Label（見出しラベル）を
+Heading Label（見出しラベル）を
 対象へ含めるのは、
-これらが読み手にとって本文へ到達する前の自然言語表現であり、
+これが読み手にとって本文へ到達する前の自然言語表現であり、
 本文と言語が分かれると、
 同一のDocumentation Asset（文書資産）の中で
 読解の前提が二分されるためである。
@@ -416,6 +431,10 @@ Document Title（文書題名）およびHeading Label（見出しラベル）�
 対象とする自然言語表現の言語のみである。
 文末表現、Voice、文長、Typographyは
 本Ruleが定めない。
+
+Document Title（文書題名）は本Ruleの対象ではない。
+Document Title（文書題名）については
+`WRT-SF-008` および `WRT-SF-009` が適用される。
 
 Heading Label（見出しラベル）を対象とすることは、
 Section Identity（Section同一性）、
@@ -785,6 +804,130 @@ Exampleは、理解を助ける記述として有用である。
 肯定的な記述が成立したうえでこれらを併記することは、
 本Ruleが禁じるところではない。
 
+### Document Title（文書題名）
+
+#### WRT-SF-008 — Document Title Meaning（文書題名の意味）
+
+**Rule ID:** `WRT-SF-008`
+
+**Rule Name:** Document Title Meaning
+
+**Stability:** Development
+
+**Requirement:** MUST
+
+**Rule:** Human-readableな
+Document Title（文書題名）は、
+そのDocumentation Asset（文書資産）が主として扱う
+Subject / Meaning（対象／意味）を明確に表す。
+
+Documentation Area（文書責務領域）への所属、
+Document Responsibility（文書責務）、
+またはRepository由来を識別する目的だけを理由として、
+Title Component（題名構成要素）を機械的に導出しない。
+
+**Reason:** Document Title（文書題名）は、
+読み手がそのDocumentation Asset（文書資産）へ到達する前に
+受け取る唯一の自然言語表現であることが多い。
+そこに扱われるSubject / Meaning（対象／意味）が現れなければ、
+読み手は本文を読むまで
+その文書が何についてのものかを判断できない。
+一方、所属・責務・由来を識別する目的だけで
+それらの語をTitle（題名）へ再提示すると、
+Title（題名）は同じ語の反復によって占められ、
+Subject / Meaning（対象／意味）の区別が読み手に届かなくなる。
+表すべきものをSubject / Meaning（対象／意味）に定めることで、
+Title（題名）が識別と理解の双方で機能する。
+
+**Note:** 本Ruleは
+Document Title（文書題名）の
+固定Schema、Title Component（題名構成要素）の集合、
+およびそれらの表記順序を定めない。
+
+`Architecture`・`Convention`・`Framework` 等の語が
+Title（題名）へ含まれること自体を、
+本Ruleは禁じない。
+これらの語が、そのDocumentation Asset（文書資産）が主として扱う
+Subject / Meaning（対象／意味）そのものを構成する場合、
+Title（題名）へ含まれる。
+
+Documentation Asset（文書資産）のIdentity（同一性）、
+Document Responsibility（文書責務）、
+Documentation Area（文書責務領域）への所属、および
+Document Title（文書題名）との境界は
+[Documentation Structure Architecture](../architecture/documentation-structure.md)
+が定義する。
+本Ruleはこれを再定義しない。
+
+File名、Directory名、Pathは
+[Naming Convention](naming.md)
+が所有する。
+本Ruleはこれらを定めない。
+
+#### WRT-SF-009 — Repository README Title（Repository READMEの題名）
+
+**Rule ID:** `WRT-SF-009`
+
+**Rule Name:** Repository README Title
+
+**Stability:** Development
+
+**Requirement:** MUST
+
+**Rule:** Repository README（Repository README）の
+Document Title（文書題名）は、
+そのRepositoryが主として表す
+Subject / Meaning（対象／意味）を、
+読み手が識別・理解できるよう明確に表す。
+
+**Reason:** Repository README（Repository README）は、
+読み手がそのRepositoryで最初に到達する
+Documentation Asset（文書資産）である。
+そのDocument Title（文書題名）は、
+Repositoryが主として表すSubject / Meaning（対象／意味）へ
+読み手が到達する最初の自然言語表現になる。
+そこにSubject / Meaning（対象／意味）が現れなければ、
+読み手は本文を読むまで
+そのRepositoryが何を表すのかを判断できない。
+一方、Title（題名）へ含めるべき要素を固定すると、
+一つの表現でSubject / Meaning（対象／意味）が
+すでに十分に伝わる場合にも要素の追加を強いることになり、
+Title（題名）の役割が
+識別と理解から構成の充足へ置き換わる。
+要求をSubject / Meaning（対象／意味）の明確さに置くことで、
+構成の自由度を保ったままTitle（題名）が機能する。
+
+**Note:** 本Ruleは、
+Document Title（文書題名）の
+Component Structure（構成）を固定しない。
+Name（名称）とその説明を併記するかどうか、
+それらを区切るSeparator（区切り文字）、
+およびTitle（題名）のSyntaxは
+本Ruleが定めない。
+
+説明的な名称そのものが
+Subject / Meaning（対象／意味）を十分に表す場合、
+その表現だけで本Ruleは満たされる。
+
+Repository Identifier（Repository識別子）、File名、Path等を
+そのままDocument Title（文書題名）へ再提示することは、
+それだけでは本Ruleを満たさない。
+これらは、そのRepositoryが主として表す
+Subject / Meaning（対象／意味）を表すとは限らないためである。
+
+本Ruleは、あるRepositoryが
+何を主として表すのかを定めない。
+それは本文書の外側で成立する。
+
+本Ruleは、Repository README（Repository README）以外の
+Documentation Asset（文書資産）の
+Document Title（文書題名）について何も定めない。
+それらには `WRT-SF-008` が適用される。
+
+本Ruleは `WRT-SF-008` を上書きしない。
+Repository README（Repository README）の
+Document Title（文書題名）にも `WRT-SF-008` が適用される。
+
 ## Self Application（本文書自身への適用）
 
 本文書は通常のConvention Asset（規約資産）であり、
@@ -804,9 +947,11 @@ Exampleは、理解を助ける記述として有用である。
 
 また本文書は、自身が定めるRuleにも従っている。
 
-- Natural Language Prose（自然言語本文）、
-  Document Title（文書題名）、およびHeading Label（見出しラベル）を
+- Natural Language Prose（自然言語本文）および
+  Heading Label（見出しラベル）を
   日本語で記述している。
+- Document Title（文書題名）において、
+  本文書が主として扱うSubject / Meaning（対象／意味）を表している。
 - Canonical Japanese Support Association（正規日本語補助対応）が
   成立しているEnglish Representation（英語表現）を、
   Natural Language Prose（自然言語本文）、

@@ -1,4 +1,4 @@
-# Canonical Japanese Support Architecture（正規日本語補助のArchitecture）
+# Canonical Japanese Support Architecture（正規日本語補助アーキテクチャ）
 
 ## Purpose（目的）
 
@@ -41,7 +41,7 @@ Naming Managementを責務としない。
 ## Relationships（関係）
 
 本文書は
-[Repository Governance Documentation Framework Architecture](repository-governance-documentation-framework.md)
+[Repository Governance Documentation Framework](repository-governance-documentation-framework.md)
 が定義するArchitecture Area（アーキテクチャ領域）に属する
 通常のDocumentation Asset（文書資産）である。
 同AreaのArea Responsibility（領域責務）である
@@ -52,7 +52,7 @@ Boundary（境界）・Definition Authority（定義権限）を定義する。
 Areaを代表・集約するAssetではない。
 
 ```text
-Repository Governance Documentation Framework Architecture
+Repository Governance Documentation Framework
         ▲
         │ belongs to
 Canonical Japanese Support Architecture
