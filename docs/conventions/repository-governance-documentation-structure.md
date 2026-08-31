@@ -85,11 +85,11 @@ Definition Authority（定義権限）は上位設計にある。
 - Applicability Scope（適用範囲）を跨ぐ
   Standard Identityの非重複
 - Convention（規約）およびConvention Responsibility（規約責務）、
-  Normative Rule（規範的ルール）と
+  Normative Rule（規範的規則）と
   Non-normative Content（非規範的内容）の区別、
-  Rule Model（ルールモデル）、Requirement Level（要求レベル）、
-  Rule Identity（ルール同一性）とその安定性
-- Rule ID Format（規約ルールID形式）、
+  Rule Model（規則モデル）、Requirement Level（要求レベル）、
+  Rule Identity（規則同一性）とその安定性
+- Rule ID Format（規則ID形式）、
   Rule Field（規則フィールド）の構成・順序・Markdown表現、
   StabilityのField表現
 - Namespace Code（名前空間コード）の割当
@@ -193,13 +193,13 @@ Repository Governance Documentation Structure Convention
 
 本文書は、本Framework（体系）における
 Documentation Asset（文書資産）のAuthoring全般を所有しない。
-現在のNormative Rule（規範的ルール）は、
+現在のNormative Rule（規範的規則）は、
 Standard Section（標準Section）の定義のみで構成される。
 
 ## Concrete Declarations（具体宣言）
 
 本節はConcrete Assignment（具体割当）の宣言である。
-**Normative Rule（規範的ルール）ではない** 。
+**Normative Rule（規範的規則）ではない** 。
 
 ### Convention Code（規約コード）
 
@@ -211,7 +211,7 @@ Convention Code: RDS
 
 ### Namespace Code（名前空間コード）
 
-本文書のNormative Rule（規範的ルール）は、
+本文書のNormative Rule（規範的規則）は、
 [Convention Authoring Convention](convention-authoring.md)
 が割り当てたNamespace Code（名前空間コード） `SF`
 （Shared Foundation Namespace）に属する。
@@ -321,11 +321,11 @@ Japanese Heading Explanation:    本文書自身への適用
 
 ## Reading Aid（読解のための補足）
 
-本節は、以降のNormative Rule（規範的ルール）を読むための補足である。
+本節は、以降のNormative Rule（規範的規則）を読むための補足である。
 本節はNon-normative Content（非規範的内容）であり、
 Normative Meaning（規範的意味）を保持しない。
 Standard Section（標準Section）の要件・適用・責務は、
-すべてNormative Rule（規範的ルール）側で確定する。
+すべてNormative Rule（規範的規則）側で確定する。
 
 ### Scope Owned by This Document（本文書が所有する範囲）
 
@@ -409,10 +409,10 @@ Standard Section（標準Section）として定義されていることが
 
 ## Normative Rules（規範的ルール）
 
-以降の各Sectionは、1つのNormative Rule（規範的ルール）を記述する。
+以降の各Sectionは、1つのNormative Rule（規範的規則）を記述する。
 
 Category（分類）を示す小見出しは文書上の整理のためのものであり、
-Rule ID（規約ルールID）はCategory（分類）を表現しない。
+Rule ID（規則ID）はCategory（分類）を表現しない。
 
 ### Framework-wide Standard Sections（文書体系全体標準Section）
 
@@ -647,10 +647,10 @@ Concrete Declarations Standard Sectionを定義する。
 Convention Asset（規約資産）が必要とする
 Concrete Assignment（具体割当）および
 Concrete Declarationを、
-Normative Rule（規範的ルール）から区別して保持することである。
+Normative Rule（規範的規則）から区別して保持することである。
 
 **Reason:** Convention Asset（規約資産）は、
-識別子の形式および使用条件を定めるNormative Rule（規範的ルール）と、
+識別子の形式および使用条件を定めるNormative Rule（規範的規則）と、
 どの値が実際に割り当てられているかというConcrete Assignment（具体割当）の
 両方を必要とする。
 両者が区別されないまま置かれると、
@@ -690,7 +690,7 @@ Convention Code（規約コード）の
 Concrete Assignment（具体割当）を宣言することである。
 
 **Reason:** Convention Code（規約コード）は、
-その規約が定めるRule ID（規約ルールID）の解釈に必要な前提である。
+その規約が定めるRule ID（規則ID）の解釈に必要な前提である。
 どの値が割り当てられているかを保持する責務は、
 Conventions Area（規約領域）の資産へ反復して現れる。
 共通のIdentity（同一性）を与えることで、
@@ -729,10 +729,10 @@ Normative Rulesが使用する
 割当済みNamespace Code（名前空間コード）を
 Concrete Declarationとして示すことである。
 
-**Reason:** Rule ID（規約ルールID）は
+**Reason:** Rule ID（規則ID）は
 Convention（規約）とNamespaceの組合せの中で成立する。
 自身のRuleがどのNamespace Code（名前空間コード）に属するかが
-示されなければ、Rule ID（規約ルールID）の一意性の根拠が確定しない。
+示されなければ、Rule ID（規則ID）の一意性の根拠が確定しない。
 この責務は、Conventions Area（規約領域）の資産へ反復して現れる。
 
 **Note:** 本Ruleは定義であり、
@@ -763,7 +763,7 @@ Repository Governance Documentation Framework
 Normative Rules Standard Sectionを定義する。
 そのSection Responsibility（Section責務）は、
 Convention（規約）がNormative Effectを持たせる
-Normative Rule（規範的ルール）群を保持し、
+Normative Rule（規範的規則）群を保持し、
 Non-normative Content（非規範的内容）から
 意味的に区別することである。
 
@@ -779,7 +779,7 @@ Conventions Area（規約領域）の資産へ反復して現れる。
 Presence Requirement（設置要求）を定めない。
 
 本Standard Section（標準Section）は、
-個々のNormative Rule（規範的ルール）およびその
+個々のNormative Rule（規範的規則）およびその
 Category（分類）を、
 Standard Section（標準Section）として定義しない。
 
@@ -826,13 +826,13 @@ Presence Requirement（設置要求）を定めない。
 
 - Convention Code（規約コード）を
   「Concrete Declarations」で明示的に宣言している。
-- すべてのNormative Rule（規範的ルール）が
-  `RDS-SF-NNN` 形式のRule ID（規約ルールID）を持つ。
-- すべてのNormative Rule（規範的ルール）が、
+- すべてのNormative Rule（規範的規則）が
+  `RDS-SF-NNN` 形式のRule ID（規則ID）を持つ。
+- すべてのNormative Rule（規範的規則）が、
   必須Fieldを規定の順序・表現で持つ。
-- すべてのNormative Rule（規範的ルール）が
+- すべてのNormative Rule（規範的規則）が
   `Stability: Development` である。
-- Retired Rule ID（廃止済み規約ルールID）は現時点で存在しないため、
+- Retired Rule ID（廃止済み規則ID）は現時点で存在しないため、
   `Retired Rule IDs` の記録を設けていない。
 
 また本文書は、

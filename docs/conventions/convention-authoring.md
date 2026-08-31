@@ -7,15 +7,15 @@
 Convention Asset（規約資産）である。
 
 [Convention Architecture](../architecture/convention.md)
-は、Convention（規約）とNormative Rule（規範的ルール）の意味、
-Rule Model（ルールモデル）、Requirement Level（要求レベル）、
-Rule Identity（ルール同一性）とその安定性を定義する。
+は、Convention（規約）とNormative Rule（規範的規則）の意味、
+Rule Model（規則モデル）、Requirement Level（要求レベル）、
+Rule Identity（規則同一性）とその安定性を定義する。
 ただし同Architectureは、
 それらを **どのような表記へ落とすか** を意図的に定義しない。
 
 本文書はその委譲先として、
 Convention Architectureが定義する
-Convention（規約）およびRule Model（ルールモデル）を、
+Convention（規約）およびRule Model（規則モデル）を、
 Convention Asset（規約資産）上で
 **明示的・一貫的・安定参照可能に表現するための
 Reusable Normative Standard（再利用可能な規範標準）**
@@ -41,11 +41,11 @@ Convention Architectureにある。
 本文書はこれらを参照するのみで、再定義しない。
 
 - Convention（規約）およびConvention Responsibility（規約責務）
-- Normative Rule（規範的ルール）と
+- Normative Rule（規範的規則）と
   Non-normative Content（非規範的内容）の区別
-- Rule Model（ルールモデル）の必須要素・任意要素
+- Rule Model（規則モデル）の必須要素・任意要素
 - Requirement Level（要求レベル）の語彙とその意味
-- Rule Identity（ルール同一性）の意味上の構成
+- Rule Identity（規則同一性）の意味上の構成
 - Definition Namespace（定義名前空間）の意味と、
   そこから関係を推論しないこと
 - Rule Identity Stabilityの原則
@@ -72,7 +72,7 @@ Convention Authoring Convention
 ### In Scope（本文書が定義する範囲）
 
 - Convention Code（規約コード）のConcrete Representation（具体表現）
-- Rule ID Format（規約ルールID形式）
+- Rule ID Format（規則ID形式）
 - Namespace Code（名前空間コード）のConcrete Representation（具体表現）
 - Rule Numberの表記と採番
 - Rule Field（規則フィールド）の構成・順序・Markdown表現
@@ -80,21 +80,21 @@ Convention Authoring Convention
 - Rule Section Heading Representation（Rule Section見出し表現）
 - StabilityのField表現とその遷移
 - Rule ID Stability Operation
-- Retired Rule ID（廃止済み規約ルールID）の記録方法
+- Retired Rule ID（廃止済み規則ID）の記録方法
 - 現在必要なConcrete Identifier Declaration
 
 ### Out of Scope（本文書が定義しない範囲）
 
 - Convention（規約）そのものの意味、
-  Normative Rule（規範的ルール）の意味、
+  Normative Rule（規範的規則）の意味、
   Requirement Level（要求レベル）の意味
-- Rule Identity（ルール同一性）および
+- Rule Identity（規則同一性）および
   Rule Identity Stabilityの
   Semantic Model（意味モデル）
 - Definition Namespace（定義名前空間）の一般的な成立条件・付与方法
 - Convention Application（規約適用）、
   Override（上書き）／Extension等の
-  Rule Relationship（ルール間関係）
+  Rule Relationship（規則間関係）
 - 一般的なMarkdown規約
 - 一般的なDocumentation Section Structure、
   およびHeading Level（見出しレベル）の固定
@@ -110,9 +110,9 @@ Convention Authoring Convention
 ## Concrete Declarations（具体宣言）
 
 本節はConcrete Identifier Assignment（具体識別子割当）の宣言である。
-**Normative Rule（規範的ルール）ではない** 。
+**Normative Rule（規範的規則）ではない** 。
 
-Normative Rule（規範的ルール）が定めるのは
+Normative Rule（規範的規則）が定めるのは
 識別子の形式および使用条件であり、
 どの値を割り当てるかは本節の宣言による。
 両者を混同しない。
@@ -144,16 +144,16 @@ Definition Namespace（定義名前空間）がどのように付与されるか
 本節は、本文書が所有する記述上のConcept（概念）を示す。
 上位Architectureが定義するConcept（概念）を再定義するものではない。
 
-### Rule ID（規約ルールID）
+### Rule ID（規則ID）
 
-Rule ID（規約ルールID）は、
+Rule ID（規則ID）は、
 Convention Architectureが定義する
-Rule Identity（ルール同一性）の
+Rule Identity（規則同一性）の
 Concrete Representation（具体表現）である。
 
 意味上の構成要素との対応は次である。
 
-| Rule Identity（ルール同一性）の構成要素 | Rule ID（規約ルールID）上のSegment |
+| Rule Identity（規則同一性）の構成要素 | Rule ID（規則ID）上のSegment |
 | --- | --- |
 | Convention Identity（規約同一性） | Convention Code（規約コード） |
 | Definition Namespace（定義名前空間） | Namespace Code（名前空間コード） |
@@ -164,15 +164,15 @@ Concrete Representation（具体表現）である。
 Stabilityは、
 Convention Architectureが定める
 Development Version／Stable Versionの境界を、
-個々のNormative Rule（規範的ルール）上で明示するための
+個々のNormative Rule（規範的規則）上で明示するための
 Fieldである。
 
 値は次の2つに限られる。
 
 | 値 | 意味 |
 | --- | --- |
-| `Development` | Stable Release前であり、Rule ID（規約ルールID）を再編できる状態 |
-| `Stable` | Stable Release済みであり、Rule ID（規約ルールID）が永続化された状態 |
+| `Development` | Stable Release前であり、Rule ID（規則ID）を再編できる状態 |
+| `Stable` | Stable Release済みであり、Rule ID（規則ID）が永続化された状態 |
 
 遷移は一方向である。
 
@@ -184,31 +184,31 @@ Stable
 
 Releaseの手続き、Version表記、Tag運用は本文書では定義しない。
 
-### Retired Rule ID（廃止済み規約ルールID）
+### Retired Rule ID（廃止済み規則ID）
 
-Retired Rule ID（廃止済み規約ルールID）は、
+Retired Rule ID（廃止済み規則ID）は、
 `Stable` となった後にCurrent Normative Ruleから
-削除され、再利用不可となったRule ID（規約ルールID）を保持する
+削除され、再利用不可となったRule ID（規則ID）を保持する
 **Non-normative Record** である。
 
-Retired Rule ID（廃止済み規約ルールID）は
+Retired Rule ID（廃止済み規則ID）は
 `Stability` の値ではなく、
 Rule Lifecycle Stateでもない。
-記録されるのはRule ID（規約ルールID）だけであり、
+記録されるのはRule ID（規則ID）だけであり、
 Ruleそのものはすでに存在しない。
 
 ## Normative Rules（規範的ルール）
 
-以降の各Sectionは、1つのNormative Rule（規範的ルール）を記述する。
+以降の各Sectionは、1つのNormative Rule（規範的規則）を記述する。
 
 各Ruleの見出しは
 Rule Boundary（規則境界）とDocument Presentationのためにあり、
-Rule Model（ルールモデル）のCanonical Representationではない。
+Rule Model（規則モデル）のCanonical Representationではない。
 Ruleの内容は、
 見出しではなくFieldによって確定する。
 
 Category（分類）を示す小見出しは文書上の整理のためのものであり、
-Rule ID（規約ルールID）はCategory（分類）を表現しない。
+Rule ID（規則ID）はCategory（分類）を表現しない。
 
 ### Convention Identification（規約識別）
 
@@ -226,12 +226,12 @@ Rule ID（規約ルールID）はCategory（分類）を表現しない。
 自身を識別するConvention Code（規約コード）を1つ、
 その資産上で明示的に宣言する。
 
-**Reason:** Rule ID（規約ルールID）はConvention Code（規約コード）を
+**Reason:** Rule ID（規則ID）はConvention Code（規約コード）を
 先頭Segmentとして含む。
 CodeがFile名やDocument Title（文書題名）からの推論に依存すると、
-配置や題名の変更でRule ID（規約ルールID）の解釈が揺らぐ。
+配置や題名の変更でRule ID（規則ID）の解釈が揺らぐ。
 明示的宣言により、
-Rule ID（規約ルールID）の解釈を資産自身の記述だけで確定させる。
+Rule ID（規則ID）の解釈を資産自身の記述だけで確定させる。
 
 #### CVA-SF-002 — Convention Code Format（規約コードの形式）
 
@@ -247,7 +247,7 @@ Rule ID（規約ルールID）の解釈を資産自身の記述だけで確定�
 ASCII大文字英字3文字で表現する。
 
 **Reason:** 文字種と桁数を固定することで、
-Rule ID（規約ルールID）のSegmentを
+Rule ID（規則ID）のSegmentを
 表記だけで判別できる。
 同一Convention（規約）に対して
 長短の異なるCode表記が併存することも防ぐ。
@@ -266,8 +266,8 @@ Rule ID（規約ルールID）のSegmentを
 Convention Code（規約コード）を変更してはならない。
 
 **Reason:** Convention Code（規約コード）の変更は、
-すでに永続化されたすべてのRule ID（規約ルールID）を一括で無効化する。
-これはRule Identity（ルール同一性）を永続化する原則に反し、
+すでに永続化されたすべてのRule ID（規則ID）を一括で無効化する。
+これはRule Identity（規則同一性）を永続化する原則に反し、
 既存の参照を失わせる。
 
 ### Rule Identifier（規約ルール識別子）
@@ -282,13 +282,13 @@ Convention Code（規約コード）を変更してはならない。
 
 **Requirement:** MUST
 
-**Rule:** 各Normative Rule（規範的ルール）は、
-完全なRule ID（規約ルールID）を持たなければならない。
+**Rule:** 各Normative Rule（規範的規則）は、
+完全なRule ID（規則ID）を持たなければならない。
 
-**Reason:** Rule Identity（ルール同一性）は
-Normative Rule（規範的ルール）の必須要素である。
-Rule ID（規約ルールID）を欠くRuleは
-見出し・配置・Rule Name（ルール名）でしか参照できず、
+**Reason:** Rule Identity（規則同一性）は
+Normative Rule（規範的規則）の必須要素である。
+Rule ID（規則ID）を欠くRuleは
+見出し・配置・Rule Name（規則名）でしか参照できず、
 Stable Reference（安定参照）が成立しない。
 
 #### CVA-SF-005 — Rule ID Structure（規約ルールIDの構造）
@@ -301,16 +301,16 @@ Stable Reference（安定参照）が成立しない。
 
 **Requirement:** MUST
 
-**Rule:** Rule ID（規約ルールID）は、
+**Rule:** Rule ID（規則ID）は、
 `<Convention>`、`<Namespace>`、`<Number>` の3つのSegmentを
 ハイフンで連結した `<Convention>-<Namespace>-<Number>` の形式で表現する。
 
-**Reason:** Rule Identity（ルール同一性）の意味上の構成要素である
+**Reason:** Rule Identity（規則同一性）の意味上の構成要素である
 Convention Identity（規約同一性）・Definition Namespace（定義名前空間）・
 Rule-local Identityを、
 表記上も1対1で対応させる。
 構造を固定することで、
-Rule ID（規約ルールID）から所属Convention（規約）と
+Rule ID（規則ID）から所属Convention（規約）と
 Namespaceを判別できる。
 
 **Note:** 具体形式は `CCC-NN-NNN` となる。
@@ -326,15 +326,15 @@ Namespaceを判別できる。
 
 **Requirement:** MUST
 
-**Rule:** Rule ID（規約ルールID）の `<Convention>` には、
+**Rule:** Rule ID（規則ID）の `<Convention>` には、
 そのRuleが属するConvention Asset（規約資産）が
 宣言したConvention Code（規約コード）を使用する。
 
 **Reason:** 宣言された値以外を使用すると、
-Rule ID（規約ルールID）が指すConvention（規約）を
+Rule ID（規則ID）が指すConvention（規約）を
 資産の宣言から確定できなくなる。
 宣言と使用を一致させることで、
-Rule ID（規約ルールID）の解決先が一意に定まる。
+Rule ID（規則ID）の解決先が一意に定まる。
 
 #### CVA-SF-007 — Namespace Segment（名前空間Segment）
 
@@ -347,13 +347,13 @@ Rule ID（規約ルールID）の解決先が一意に定まる。
 **Requirement:** MUST
 
 **Rule:** Namespace Code（名前空間コード）はASCII大文字英字2文字で表現し、
-Rule ID（規約ルールID）の `<Namespace>` には、
+Rule ID（規則ID）の `<Namespace>` には、
 そのRuleが属するDefinition Namespace（定義名前空間）へ
 割り当てられたNamespace Code（名前空間コード）を使用する。
 
 **Reason:** Definition Namespace（定義名前空間）は
-Rule Identity（ルール同一性）の構成要素であり、
-表記上も区別できなければRule ID（規約ルールID）が衝突し得る。
+Rule Identity（規則同一性）の構成要素であり、
+表記上も区別できなければRule ID（規則ID）が衝突し得る。
 割当済みCodeに限定するのは、
 その場限りのCodeが増えて識別性が失われることを防ぐためである。
 
@@ -370,7 +370,7 @@ Rule Identity（ルール同一性）の構成要素であり、
 
 **Requirement:** MUST
 
-**Rule:** Rule ID（規約ルールID）の `<Number>` は、
+**Rule:** Rule ID（規則ID）の `<Number>` は、
 同一の `Convention × Namespace` における
 Rule-local Identityとして、
 `001` から始まる3桁ゼロ埋めの十進数で表現する。
@@ -379,7 +379,7 @@ Rule-local Identityとして、
 `1` と `01` のように同一Ruleへ複数の表記を生じさせ、
 参照の一致判定を壊す。
 開始値と桁数を固定することで、
-Rule ID（規約ルールID）の表記が一意に定まる。
+Rule ID（規則ID）の表記が一意に定まる。
 
 #### CVA-SF-009 — Opaque Rule Number（意味を持たないRule Number）
 
@@ -398,9 +398,9 @@ Rule Numberは識別のみに用いる。
 
 **Reason:** 番号へ意味を持たせると、
 分類の見直しやSectionの並べ替えのたびに再採番の圧力が生じ、
-Rule Identity（ルール同一性）の永続化と衝突する。
+Rule Identity（規則同一性）の永続化と衝突する。
 番号を識別専用に保つことで、
-文書構成の変更がRule ID（規約ルールID）へ波及しない。
+文書構成の変更がRule ID（規則ID）へ波及しない。
 
 ### Rule Presentation（規則記述形式）
 
@@ -414,23 +414,23 @@ Rule Identity（ルール同一性）の永続化と衝突する。
 
 **Requirement:** MUST
 
-**Rule:** 各Normative Rule（規範的ルール）は、
+**Rule:** 各Normative Rule（規範的規則）は、
 独立したHeading Sectionとして記述する。
 
 **Reason:** Rule Boundary（規則境界）が曖昧だと、
-どこまでが1つのNormative Rule（規範的ルール）かを判断できず、
+どこまでが1つのNormative Rule（規範的規則）かを判断できず、
 規範的内容と非規範的内容の区別も失われる。
 Section単位に分けることで、境界が一意に定まる。
 
 **Note:** Heading（見出し）はRule Boundary（規則境界）と
 Document Presentationのためのものであり、
-Rule Model（ルールモデル）のCanonical Representationではない。
+Rule Model（規則モデル）のCanonical Representationではない。
 Heading Level（見出しレベル）は、
 本Convention（規約）では固定しない。
 Heading（見出し）の文字列形式は
 `CVA-SF-023` が定める。
 本Ruleが定めるのは、
-1つのNormative Rule（規範的ルール）が
+1つのNormative Rule（規範的規則）が
 1つの独立したHeading Sectionとして記述されることに限られる。
 
 #### CVA-SF-023 — Rule Section Heading Representation（Rule Section見出し表現）
@@ -443,9 +443,9 @@ Heading（見出し）の文字列形式は
 
 **Requirement:** MUST
 
-**Rule:** Normative Rule（規範的ルール）の
+**Rule:** Normative Rule（規範的規則）の
 Rule Section（ルールSection）のHeading（見出し）は、
-そのRuleのRule ID（規約ルールID）、Rule Name（ルール名）、および
+そのRuleのRule ID（規則ID）、Rule Name（規則名）、および
 Japanese Heading Explanation（日本語見出し説明）を、
 次の形式で表示する。
 
@@ -461,7 +461,7 @@ Rule Section Responsibility（Rule Section責務）を
 Human-readable Representation（人間可読表現）である。
 
 **Reason:** Rule Section Heading（Rule Section見出し）が
-Rule ID（規約ルールID）とRule Name（ルール名）だけで構成される場合、
+Rule ID（規則ID）とRule Name（規則名）だけで構成される場合、
 そのRule Section（ルールSection）が何を扱う責務なのかを
 Heading（見出し）から日本語で把握できない。
 Heading（見出し）へ日本語の理解補助を含めることで、
@@ -469,28 +469,28 @@ Heading（見出し）へ日本語の理解補助を含めることで、
 Definition Responsibility（定義責務）を
 Rule Section Heading Presentation（Rule Section見出し表示）側へ置くのは、
 この日本語値がHeading（見出し）という表示のために必要となる値であり、
-Rule Model（ルールモデル）が保持すべき
+Rule Model（規則モデル）が保持すべき
 Normative Content（規範的内容）ではないためである。
 定義の所在を表示側に限定することで、
 Heading（見出し）の都合が
-Rule Model（ルールモデル）およびRule Identity（ルール同一性）へ
+Rule Model（規則モデル）およびRule Identity（規則同一性）へ
 波及しない。
 
 **Note:** Japanese Heading Explanation（日本語見出し説明）は
-Rule Model（ルールモデル）のFieldではなく、
+Rule Model（規則モデル）のFieldではなく、
 Rule Field（規則フィールド）として記述しない。
-Rule Name（ルール名）の
+Rule Name（規則名）の
 Japanese Rule Name Representation（日本語Rule Name表現）でもない。
 
 Japanese Heading Explanation（日本語見出し説明）が
-Rule Name（ルール名）の自然な日本語訳と
+Rule Name（規則名）の自然な日本語訳と
 同じ文字列になることは許容する。
 ただしその文字列一致から、
 Japanese Rule Name（日本語Rule Name）という
 Semantic Role（意味上の役割）は導出されない。
 
 本Ruleは、
-Rule Identity（ルール同一性）およびRule Name（ルール名）へ
+Rule Identity（規則同一性）およびRule Name（規則名）へ
 Japanese Representation（日本語表現）を追加しない。
 
 Japanese Heading Explanation（日本語見出し説明）としての値は、
@@ -526,11 +526,11 @@ Heading Level（見出しレベル）は `CVA-SF-010` と同様、
 
 **Requirement:** MUST
 
-**Rule:** 各Normative Rule（規範的ルール）は、
+**Rule:** 各Normative Rule（規範的規則）は、
 `Rule ID`、`Rule Name`、`Stability`、`Requirement`、`Rule`、`Reason`
 の各Fieldを持つ。
 
-**Reason:** Rule Model（ルールモデル）の必須要素を
+**Reason:** Rule Model（規則モデル）の必須要素を
 文書上の明示的な記述単位へ対応させ、要素の欠落を検出可能にする。
 Fieldとして明示しない限り、
 要求水準やReasonは本文へ埋没し、
@@ -546,14 +546,14 @@ Fieldとして明示しない限り、
 
 **Requirement:** MUST
 
-**Rule:** Normative Rule（規範的ルール）に
+**Rule:** Normative Rule（規範的規則）に
 Supplementary Informationを含める場合は、
 `Note` Fieldとして記述する。
 `Note` Fieldは必須ではなく、
 不要な場合はField自体を省略する。
 
 **Reason:** 補足の置き場所を1つに定めることで、
-非規範的内容がRule Statement（ルール文）やReasonへ混入し、
+非規範的内容がRule Statement（規則文）やReasonへ混入し、
 規範的効力を持つ範囲が曖昧になることを防ぐ。
 空のFieldを残さないのは、
 補足の有無をFieldの有無で判別できるようにするためである。
@@ -597,7 +597,7 @@ Field間には空行を置く。
 **Reason:** 表現を固定することで、
 Fieldの開始位置と値の範囲が一意に定まり、
 Heading（見出し）に依存せずRuleの内容を取り出せる。
-Rule Model（ルールモデル）の要素と文書上の記述単位が対応するため、
+Rule Model（規則モデル）の要素と文書上の記述単位が対応するため、
 将来Machine-readable Structureが必要になった場合も、
 既存記述から変換可能な状態を保てる。
 
@@ -631,13 +631,13 @@ Rule Model（ルールモデル）の要素と文書上の記述単位が対応�
 
 **Requirement:** MUST
 
-**Rule:** 新規に追加するNormative Rule（規範的ルール）は、
+**Rule:** 新規に追加するNormative Rule（規範的規則）は、
 `Stability: Development` として記述する。
 
-**Reason:** Rule ID（規約ルールID）を再編してよいかは、
+**Reason:** Rule ID（規則ID）を再編してよいかは、
 Stable Releaseの有無で決まる。
 初期値を `Development` に固定することで、
-未リリースのRule ID（規約ルールID）が
+未リリースのRule ID（規則ID）が
 誤って永続化済みとして扱われることを防ぐ。
 
 #### CVA-SF-016 — Stable Transition（Stableへの遷移）
@@ -653,10 +653,10 @@ Stable Releaseの有無で決まる。
 **Rule:** Stable ReleaseされたRuleは
 `Stability: Stable` とし、以後 `Development` へ戻さない。
 
-**Reason:** `Stable` は、そのRule ID（規約ルールID）が
+**Reason:** `Stable` は、そのRule ID（規則ID）が
 すでに外部から参照され得ることを示す。
 `Development` へ戻せてしまえば再採番の余地が復活し、
-永続化されたはずのRule Identity（ルール同一性）の保証が失われる。
+永続化されたはずのRule Identity（規則同一性）の保証が失われる。
 
 #### CVA-SF-017 — Development Rule ID Changes（Development時の規約ルールID変更）
 
@@ -669,7 +669,7 @@ Stable Releaseの有無で決まる。
 **Requirement:** MAY
 
 **Rule:** `Stability: Development` のRuleの
-Rule ID（規約ルールID）は、
+Rule ID（規則ID）は、
 Stable Release前であれば削除または再採番できる。
 欠番を詰めることは要求しない。
 
@@ -688,14 +688,14 @@ Stable Release前であれば削除または再採番できる。
 
 **Requirement:** MUST NOT
 
-**Rule:** `Stability: Stable` のRule ID（規約ルールID）を再採番してはならず、
+**Rule:** `Stability: Stable` のRule ID（規則ID）を再採番してはならず、
 他のRuleへ再利用してもならない。
 新しいNormative Meaning（規範的意味）には、
-新しいRule ID（規約ルールID）を割り当てる。
+新しいRule ID（規則ID）を割り当てる。
 
-**Reason:** 永続化されたRule ID（規約ルールID）が別の意味へ振り替わると、
+**Reason:** 永続化されたRule ID（規則ID）が別の意味へ振り替わると、
 過去の参照が気づかれないまま異なる規範を指すようになる。
-新しい意味へ新しいRule ID（規約ルールID）を割り当てることで、
+新しい意味へ新しいRule ID（規則ID）を割り当てることで、
 参照先の意味が後から静かに変わることを防ぐ。
 
 ### Number Allocation（番号割当）
@@ -713,11 +713,11 @@ Stable Release前であれば削除または再採番できる。
 **Rule:** 新規Ruleには、
 同一の `Convention × Namespace` において
 Current Rule IDまたは
-Retired Rule ID（廃止済み規約ルールID）として使用されている
+Retired Rule ID（廃止済み規則ID）として使用されている
 最大のRule Numberの次の番号を割り当てる。
 
 **Reason:** 割当元をCurrentとRetiredの双方から取ることで、
-削除済みRule ID（規約ルールID）の再利用が
+削除済みRule ID（規則ID）の再利用が
 採番手順の側から生じないようにする。
 最大値の次という一意の手順とすることで、
 番号の選択に判断の余地を残さない。
@@ -741,10 +741,10 @@ Retired Rule ID（廃止済み規約ルールID）として使用されている
 **Rule:** `Stability: Stable` のRuleを
 Current Normative Ruleから削除する場合は、
 そのRuleのSectionを削除したうえで、
-Rule ID（規約ルールID）を
-Retired Rule ID（廃止済み規約ルールID）として保持する。
+Rule ID（規則ID）を
+Retired Rule ID（廃止済み規則ID）として保持する。
 
-**Reason:** Rule ID（規約ルールID）の記録が残らなければ、
+**Reason:** Rule ID（規則ID）の記録が残らなければ、
 その番号が過去に使用されたことを後から確認できず、再利用が起こり得る。
 Rule本体を残さないのは、
 廃止された規範が現在の規範として読まれることを防ぐためである。
@@ -759,16 +759,16 @@ Rule本体を残さないのは、
 
 **Requirement:** MUST
 
-**Rule:** Retired Rule ID（廃止済み規約ルールID）は、
-`Retired Rule IDs` の記録にRule ID（規約ルールID）として保持する。
+**Rule:** Retired Rule ID（廃止済み規則ID）は、
+`Retired Rule IDs` の記録にRule ID（規則ID）として保持する。
 この記録は、
-Retired Rule ID（廃止済み規約ルールID）が存在する場合にのみ設ける。
-旧Rule Name（ルール名）、旧Rule Statement（ルール文）等の保持は
+Retired Rule ID（廃止済み規則ID）が存在する場合にのみ設ける。
+旧Rule Name（規則名）、旧Rule Statement（規則文）等の保持は
 要求しない。
 
 **Reason:** 記録場所を1箇所に定めることで、
 採番時に参照すべき対象が明確になる。
-保持対象をRule ID（規約ルールID）に限るのは、
+保持対象をRule ID（規則ID）に限るのは、
 この記録の目的が再利用の防止であり、
 廃止された規範内容の保存ではないためである。
 
@@ -793,13 +793,13 @@ Retired Rule ID（廃止済み規約ルールID）が存在する場合にのみ
 
 **Rule:** Stable Release前に
 `Stability: Development` のRuleを削除した場合、
-そのRule ID（規約ルールID）について
-Retired Rule ID（廃止済み規約ルールID）を作成してはならない。
+そのRule ID（規則ID）について
+Retired Rule ID（廃止済み規則ID）を作成してはならない。
 
-**Reason:** Stable Release前のRule ID（規約ルールID）は、
+**Reason:** Stable Release前のRule ID（規則ID）は、
 Stable Reference（安定参照）として永続化されていないため、
 削除後のIdentity（同一性）を将来にわたって保持する必要がない。
-これをRetired Rule ID（廃止済み規約ルールID）として記録すると、
+これをRetired Rule ID（廃止済み規則ID）として記録すると、
 永続化されていない番号までStable Rule IDと同様に
 再利用不可となり、
 Development Versionに認められた再編の自由を不要に失わせる。
@@ -811,16 +811,16 @@ Development Versionに認められた再編の自由を不要に失わせる。
 
 - Convention Code（規約コード）を
   「Concrete Declarations」で明示的に宣言している。
-- すべてのNormative Rule（規範的ルール）が
-  `CVA-SF-NNN` 形式のRule ID（規約ルールID）を持つ。
-- すべてのNormative Rule（規範的ルール）のRule Section（ルールSection）が、
+- すべてのNormative Rule（規範的規則）が
+  `CVA-SF-NNN` 形式のRule ID（規則ID）を持つ。
+- すべてのNormative Rule（規範的規則）のRule Section（ルールSection）が、
   `Rule ID — Rule Name（Japanese Heading Explanation）` の形式の
   Heading（見出し）を持つ。
-- すべてのNormative Rule（規範的ルール）が、
+- すべてのNormative Rule（規範的規則）が、
   必須Fieldを規定の順序・表現で持つ。
-- すべてのNormative Rule（規範的ルール）が
+- すべてのNormative Rule（規範的規則）が
   `Stability: Development` である。
-- Retired Rule ID（廃止済み規約ルールID）は現時点で存在しないため、
+- Retired Rule ID（廃止済み規則ID）は現時点で存在しないため、
   `Retired Rule IDs` の記録を設けていない。
 
 本節はNon-normative Content（非規範的内容）であり、

@@ -42,12 +42,12 @@ Definition Authority（定義権限）は上位設計にある。
 本文書はこれらを参照するのみで、再定義しない。
 
 - Convention（規約）およびConvention Responsibility（規約責務）
-- Normative Rule（規範的ルール）と
+- Normative Rule（規範的規則）と
   Non-normative Content（非規範的内容）の区別
-- Rule Model（ルールモデル）の必須要素・任意要素
+- Rule Model（規則モデル）の必須要素・任意要素
 - Requirement Level（要求レベル）の語彙とその意味
-- Rule Identity（ルール同一性）とその安定性
-- Rule ID Format（規約ルールID形式）、
+- Rule Identity（規則同一性）とその安定性
+- Rule ID Format（規則ID形式）、
   Rule Field（規則フィールド）の構成・順序・Markdown表現、
   StabilityのField表現
 - Namespace Code（名前空間コード）の割当
@@ -119,12 +119,12 @@ Commit Convention
   Compatibility要求
 - Convention Application（規約適用）、
   Override（上書き）／Extension等の
-  Rule Relationship（ルール間関係）
+  Rule Relationship（規則間関係）
 
 ## Concrete Declarations（具体宣言）
 
 本節はConcrete Identifier Assignment（具体識別子割当）の宣言である。
-**Normative Rule（規範的ルール）ではない** 。
+**Normative Rule（規範的規則）ではない** 。
 
 ### Convention Code（規約コード）
 
@@ -136,7 +136,7 @@ Convention Code: CMT
 
 ### Namespace Code（名前空間コード）
 
-本文書のNormative Rule（規範的ルール）は、
+本文書のNormative Rule（規範的規則）は、
 [Convention Authoring Convention](convention-authoring.md)
 が割り当てたNamespace Code（名前空間コード） `SF`
 （Shared Foundation Namespace）に属する。
@@ -145,7 +145,7 @@ Convention Code: CMT
 
 ## Commit Model（コミットモデル）
 
-本節は、本文書のNormative Rule（規範的ルール）が前提とする
+本節は、本文書のNormative Rule（規範的規則）が前提とする
 Concept（概念）を示す。
 本節はNon-normative Content（非規範的内容）である。
 
@@ -246,14 +246,14 @@ Message Language（メッセージ言語）から独立している。
 
 ## Normative Rules（規範的ルール）
 
-以降の各Sectionは、1つのNormative Rule（規範的ルール）を記述する。
+以降の各Sectionは、1つのNormative Rule（規範的規則）を記述する。
 
 各Ruleの見出しは
 Rule Boundary（規則境界）とDocument Presentationのためにあり、
-Rule Model（ルールモデル）のCanonical Representationではない。
+Rule Model（規則モデル）のCanonical Representationではない。
 
 Category（分類）を示す小見出しは文書上の整理のためのものであり、
-Rule ID（規約ルールID）はCategory（分類）を表現しない。
+Rule ID（規則ID）はCategory（分類）を表現しない。
 
 ### Commit Unit（コミット単位）
 
@@ -759,13 +759,13 @@ Natural Language Representation（自然言語表現）は、
 
 - Convention Code（規約コード）を
   「Concrete Declarations」で明示的に宣言している。
-- すべてのNormative Rule（規範的ルール）が
-  `CMT-SF-NNN` 形式のRule ID（規約ルールID）を持つ。
-- すべてのNormative Rule（規範的ルール）が、
+- すべてのNormative Rule（規範的規則）が
+  `CMT-SF-NNN` 形式のRule ID（規則ID）を持つ。
+- すべてのNormative Rule（規範的規則）が、
   必須Fieldを規定の順序・表現で持つ。
-- すべてのNormative Rule（規範的ルール）が
+- すべてのNormative Rule（規範的規則）が
   `Stability: Development` である。
-- Retired Rule ID（廃止済み規約ルールID）は現時点で存在しないため、
+- Retired Rule ID（廃止済み規則ID）は現時点で存在しないため、
   `Retired Rule IDs` の記録を設けていない。
 
 本節はNon-normative Content（非規範的内容）であり、

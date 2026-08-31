@@ -25,7 +25,7 @@ Reusable Normative Standard（再利用可能な規範標準）**
    その対象を参照する箇所では、どの表現を使用するのか。
 4. 文章が伝えるSemantic Meaningは、
    何が満たされているとき明確に成立するのか。
-5. Normative Rule（規範的ルール）を記述する文章は、
+5. Normative Rule（規範的規則）を記述する文章は、
    宣言されたRequirement Level（要求レベル）に対して
    どのような関係になければならないのか。
 
@@ -101,13 +101,13 @@ Definition Authority（定義権限）は上位設計にある。
 - Documentation Framework（文書体系）と
   Documentation Area（文書責務領域）
 - Convention（規約）およびConvention Responsibility（規約責務）
-- Normative Rule（規範的ルール）と
+- Normative Rule（規範的規則）と
   Non-normative Content（非規範的内容）の区別
-- Rule Model（ルールモデル）の必須要素・任意要素、
-  およびRule Statement（ルール文）・Reasonの位置づけ
+- Rule Model（規則モデル）の必須要素・任意要素、
+  およびRule Statement（規則文）・Reasonの位置づけ
 - Requirement Level（要求レベル）の語彙とその意味
-- Rule Identity（ルール同一性）とその安定性
-- Rule ID Format（規約ルールID形式）、
+- Rule Identity（規則同一性）とその安定性
+- Rule ID Format（規則ID形式）、
   Rule Field（規則フィールド）の構成・順序・Markdown表現、
   StabilityのField表現
 - Namespace Code（名前空間コード）の割当
@@ -193,7 +193,7 @@ Natural Language Representation（自然言語表現）は
 - Subject・Responsibility Holder・
   Reference Target等に関する
   Semantic Reference Clarity
-- Rule Statement（ルール文）の
+- Rule Statement（規則文）の
   Natural Language Representation（自然言語表現）と、
   宣言されたRequirement Level（要求レベル）との整合
 - Normative Meaning（規範的意味）を左右する
@@ -215,14 +215,14 @@ English Representation（英語表現）の一貫した使用を定める
 `WRT-SF-003` が適用される。
 
 その他のRuleの適用範囲は、
-各RuleのRule Statement（ルール文）が示す
+各RuleのRule Statement（規則文）が示す
 Semantic Subjectによって定まる。
 本文書は、すべてのRuleを
 Document Title（文書題名）およびHeading Label（見出しラベル）へ
 一律に適用しない。
 
 各Ruleが個別に定める適用条件は、
-当該RuleのRule Statement（ルール文）が確定する。
+当該RuleのRule Statement（規則文）が確定する。
 
 ### Out of Scope（本文書が定義しない範囲）
 
@@ -268,7 +268,7 @@ Document Title（文書題名）およびHeading Label（見出しラベル）�
 ## Concrete Declarations（具体宣言）
 
 本節はConcrete Identifier Assignment（具体識別子割当）の宣言である。
-**Normative Rule（規範的ルール）ではない** 。
+**Normative Rule（規範的規則）ではない** 。
 
 ### Convention Code（規約コード）
 
@@ -280,7 +280,7 @@ Convention Code: WRT
 
 ### Namespace Code（名前空間コード）
 
-本文書のNormative Rule（規範的ルール）は、
+本文書のNormative Rule（規範的規則）は、
 [Convention Authoring Convention](convention-authoring.md)
 が割り当てたNamespace Code（名前空間コード） `SF`
 （Shared Foundation Namespace）に属する。
@@ -289,12 +289,12 @@ Convention Code: WRT
 
 ## Reading Aid（読解のための補足）
 
-本節は、以降のNormative Rule（規範的ルール）が
+本節は、以降のNormative Rule（規範的規則）が
 適用対象を区別するために用いる局所的な区別を示す。
 本節はNon-normative Content（非規範的内容）であり、
 Normative Meaning（規範的意味）を保持しない。
 各Ruleの適用対象と内容は、
-すべてNormative Rule（規範的ルール）側で確定する。
+すべてNormative Rule（規範的規則）側で確定する。
 
 ここで示すのは本文書が必要とする範囲の区別であり、
 English Representation（英語表現）またはその表示について
@@ -313,9 +313,9 @@ Literal Representation（そのままの表記）は、
 
 Document Title（文書題名）およびHeading Label（見出しラベル）は、
 Natural Language Prose（自然言語本文）とは別に、
-各RuleのRule Statement（ルール文）が
+各RuleのRule Statement（規則文）が
 対象として名指す。
-Rule Statement（ルール文）が
+Rule Statement（規則文）が
 Natural Language Prose（自然言語本文）のみを対象とする場合、
 その適用は本文に限られる。
 
@@ -348,7 +348,7 @@ Association / English Representationの成立
 ### Normative Strength（規範強度）
 
 Normative Strengthは、
-Rule Statement（ルール文）の
+Rule Statement（規則文）の
 Natural Language Representation（自然言語表現）が
 読み手に対して生じさせる要求・禁止の強さである。
 
@@ -357,14 +357,14 @@ Requirement Level（要求レベル）の意味は
 が所有する。
 本文書はこれを再定義せず、
 宣言されたRequirement Level（要求レベル）と
-Rule Statement（ルール文）の表現との関係のみを扱う。
+Rule Statement（規則文）の表現との関係のみを扱う。
 
 ## Normative Rules（規範的ルール）
 
-以降の各Sectionは、1つのNormative Rule（規範的ルール）を記述する。
+以降の各Sectionは、1つのNormative Rule（規範的規則）を記述する。
 
 Category（分類）を示す小見出しは文書上の整理のためのものであり、
-Rule ID（規約ルールID）はCategory（分類）を表現しない。
+Rule ID（規則ID）はCategory（分類）を表現しない。
 
 ### Language（言語）
 
@@ -527,7 +527,7 @@ Code・Identifier（識別子）・Path等として機能する
 Literal Representation（そのままの表記）は、
 Human-readable Natural Language Representation（人間可読な自然言語表現）としての
 使用ではなく、本Ruleの対象ではない。
-Rule ID（規約ルールID）、Rule Name（ルール名）等、
+Rule ID（規則ID）、Rule Name（規則名）等、
 対象を識別するIdentifier（識別子）または
 Labelとしての表記も同様である。
 
@@ -678,9 +678,9 @@ Semantic Meaningが読み手側で分岐する。
 
 **Requirement:** MUST NOT
 
-**Rule:** Rule Statement（ルール文）の
+**Rule:** Rule Statement（規則文）の
 Natural Language Representation（自然言語表現）は、
-そのNormative Rule（規範的ルール）が宣言する
+そのNormative Rule（規範的規則）が宣言する
 Requirement Level（要求レベル）と異なる
 Normative Strengthを導入してはならない。
 
@@ -793,13 +793,13 @@ Exampleは、理解を助ける記述として有用である。
 
 - Convention Code（規約コード）を
   「Concrete Declarations」で明示的に宣言している。
-- すべてのNormative Rule（規範的ルール）が
-  `WRT-SF-NNN` 形式のRule ID（規約ルールID）を持つ。
-- すべてのNormative Rule（規範的ルール）が、
+- すべてのNormative Rule（規範的規則）が
+  `WRT-SF-NNN` 形式のRule ID（規則ID）を持つ。
+- すべてのNormative Rule（規範的規則）が、
   必須Fieldを規定の順序・表現で持つ。
-- すべてのNormative Rule（規範的ルール）が
+- すべてのNormative Rule（規範的規則）が
   `Stability: Development` である。
-- Retired Rule ID（廃止済み規約ルールID）は現時点で存在しないため、
+- Retired Rule ID（廃止済み規則ID）は現時点で存在しないため、
   `Retired Rule IDs` の記録を設けていない。
 
 また本文書は、自身が定めるRuleにも従っている。
@@ -817,7 +817,7 @@ Exampleは、理解を助ける記述として有用である。
 - Definition Authority（定義権限）側で成立している
   English Representation（英語表現）を、
   参照箇所において一貫して使用している。
-- 各Rule Statement（ルール文）の表現を、
+- 各Rule Statement（規則文）の表現を、
   宣言したRequirement Level（要求レベル）へ一致させている。
 
 本節はNon-normative Content（非規範的内容）であり、

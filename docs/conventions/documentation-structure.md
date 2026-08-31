@@ -90,12 +90,12 @@ Definition Authority（定義権限）は上位設計にある。
 - Documentation Framework（文書体系）と
   Documentation Area（文書責務領域）
 - Convention（規約）およびConvention Responsibility（規約責務）
-- Normative Rule（規範的ルール）と
+- Normative Rule（規範的規則）と
   Non-normative Content（非規範的内容）の区別
-- Rule Model（ルールモデル）の必須要素・任意要素
+- Rule Model（規則モデル）の必須要素・任意要素
 - Requirement Level（要求レベル）の語彙とその意味
-- Rule Identity（ルール同一性）とその安定性
-- Rule ID Format（規約ルールID形式）、
+- Rule Identity（規則同一性）とその安定性
+- Rule ID Format（規則ID形式）、
   Rule Field（規則フィールド）の構成・順序・Markdown表現、
   StabilityのField表現
 - Namespace Code（名前空間コード）の割当
@@ -175,7 +175,7 @@ Definition Authority（定義権限）は上位設計にある。
 ## Concrete Declarations（具体宣言）
 
 本節はConcrete Assignment（具体割当）の宣言である。
-**Normative Rule（規範的ルール）ではない** 。
+**Normative Rule（規範的規則）ではない** 。
 
 ### Convention Code（規約コード）
 
@@ -187,7 +187,7 @@ Convention Code: DST
 
 ### Namespace Code（名前空間コード）
 
-本文書のNormative Rule（規範的ルール）は、
+本文書のNormative Rule（規範的規則）は、
 [Convention Authoring Convention](convention-authoring.md)
 が割り当てたNamespace Code（名前空間コード） `SF`
 （Shared Foundation Namespace）に属する。
@@ -281,11 +281,11 @@ Japanese Heading Explanation:    責務境界
 
 ## Reading Aid（読解のための補足）
 
-本節は、以降のNormative Rule（規範的ルール）を読むための補足である。
+本節は、以降のNormative Rule（規範的規則）を読むための補足である。
 本節はNon-normative Content（非規範的内容）であり、
 Normative Meaning（規範的意味）を保持しない。
 Standard Section（標準Section）の要件・適用・責務は、
-すべてNormative Rule（規範的ルール）側で確定する。
+すべてNormative Rule（規範的規則）側で確定する。
 
 ### Standard Section Positioning（Standard Sectionの位置づけ）
 
@@ -477,10 +477,10 @@ Standard Section（標準Section）の機構と責務までである。
 
 ## Normative Rules（規範的ルール）
 
-以降の各Sectionは、1つのNormative Rule（規範的ルール）を記述する。
+以降の各Sectionは、1つのNormative Rule（規範的規則）を記述する。
 
 Category（分類）を示す小見出しは文書上の整理のためのものであり、
-Rule ID（規約ルールID）はCategory（分類）を表現しない。
+Rule ID（規則ID）はCategory（分類）を表現しない。
 
 ### Section Structure（Section構造）
 
@@ -699,7 +699,7 @@ Document Responsibility（文書責務）に照らして
 
 **Note:** Presence Requirement（設置要求）が必要な場合は、
 そのStandard Section（標準Section）ごとに
-独立したNormative Rule（規範的ルール）として定める。
+独立したNormative Rule（規範的規則）として定める。
 
 #### DST-SF-010 — Open Section Vocabulary（Section語彙の開放性）
 
@@ -1130,13 +1130,13 @@ Relationships Standard Section自身が直接担う。
 
 - Convention Code（規約コード）を
   「Concrete Declarations」で明示的に宣言している。
-- すべてのNormative Rule（規範的ルール）が
-  `DST-SF-NNN` 形式のRule ID（規約ルールID）を持つ。
-- すべてのNormative Rule（規範的ルール）が、
+- すべてのNormative Rule（規範的規則）が
+  `DST-SF-NNN` 形式のRule ID（規則ID）を持つ。
+- すべてのNormative Rule（規範的規則）が、
   必須Fieldを規定の順序・表現で持つ。
-- すべてのNormative Rule（規範的ルール）が
+- すべてのNormative Rule（規範的規則）が
   `Stability: Development` である。
-- Retired Rule ID（廃止済み規約ルールID）は現時点で存在しないため、
+- Retired Rule ID（廃止済み規則ID）は現時点で存在しないため、
   `Retired Rule IDs` の記録を設けていない。
 
 また本文書は、自身が定めるRuleにも従っている。

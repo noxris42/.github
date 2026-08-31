@@ -159,7 +159,7 @@ Foundation Applicationを
 
 - 個々のDocumentation Asset（文書資産）の内容
 - Documentation Asset（文書資産）の命名、Path、File構成に関する
-  Normative Rule（規範的ルール）
+  Normative Rule（規範的規則）
 - Area間の固定的なLayer Hierarchyや
   一般的な依存規則
 - 他のDocumentation Framework（文書体系）との
@@ -244,7 +244,7 @@ Definition Responsibility（定義責務）によって決まる。
 SubjectとAreaが独立であることの例として、
 [Convention Architecture](convention.md) がある。
 同文書はConvention（規約）をSubjectとするが、
-Normative Rule（規範的ルール）を定義するのではなく、
+Normative Rule（規範的規則）を定義するのではなく、
 Convention（規約）を成立させるConcept（概念）・Responsibility（責務）・
 Relationshipを定義する。
 したがって同文書はArchitecture Area（アーキテクチャ領域）に属し、

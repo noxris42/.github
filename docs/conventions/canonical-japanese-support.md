@@ -88,12 +88,12 @@ Definition Authority（定義権限）は上位設計にある。
   Document Responsibility（文書責務）
 - Definition Authority（定義権限）
 - Convention（規約）およびConvention Responsibility（規約責務）
-- Normative Rule（規範的ルール）と
+- Normative Rule（規範的規則）と
   Non-normative Content（非規範的内容）の区別
-- Rule Model（ルールモデル）の必須要素・任意要素
+- Rule Model（規則モデル）の必須要素・任意要素
 - Requirement Level（要求レベル）の語彙とその意味
-- Rule Identity（ルール同一性）とその安定性
-- Rule ID Format（規約ルールID形式）、
+- Rule Identity（規則同一性）とその安定性
+- Rule ID Format（規則ID形式）、
   Rule Field（規則フィールド）の構成・順序・Markdown表現、
   StabilityのField表現
 - Namespace Code（名前空間コード）の割当
@@ -194,7 +194,7 @@ Human-readable Natural Language Representation（人間可読な自然言語表�
 ## Concrete Declarations（具体宣言）
 
 本節はConcrete Identifier Assignment（具体識別子割当）の宣言である。
-**Normative Rule（規範的ルール）ではない** 。
+**Normative Rule（規範的規則）ではない** 。
 
 ### Convention Code（規約コード）
 
@@ -206,7 +206,7 @@ Convention Code: CJS
 
 ### Namespace Code（名前空間コード）
 
-本文書のNormative Rule（規範的ルール）は、
+本文書のNormative Rule（規範的規則）は、
 [Convention Authoring Convention](convention-authoring.md)
 が割り当てたNamespace Code（名前空間コード） `SF`
 （Shared Foundation Namespace）に属する。
@@ -233,7 +233,7 @@ Asset Type Rule等の一般Ruleは、
 
 ## Reading Aid（読解のための補足）
 
-本節は、以降のNormative Rule（規範的ルール）が
+本節は、以降のNormative Rule（規範的規則）が
 対象を指すために用いる局所的な区別を示す。
 本節はNon-normative Content（非規範的内容）であり、
 Normative Meaning（規範的意味）を保持しない。
@@ -444,10 +444,10 @@ Permanent Rejectionとして扱うMechanismは、
 
 ## Normative Rules（規範的ルール）
 
-以降の各Sectionは、1つのNormative Rule（規範的ルール）を記述する。
+以降の各Sectionは、1つのNormative Rule（規範的規則）を記述する。
 
 Category（分類）を示す小見出しは文書上の整理のためのものであり、
-Rule ID（規約ルールID）はCategory（分類）を表現しない。
+Rule ID（規則ID）はCategory（分類）を表現しない。
 
 ### Canonical Declaration（正規宣言）
 
@@ -760,13 +760,13 @@ Approval / Rejection Stateを規定しない。
   Central Concrete Declaration Source（中央具体宣言情報源）の
   Concrete Source Assignmentを
   「Concrete Declarations」で明示的に宣言している。
-- すべてのNormative Rule（規範的ルール）が
-  `CJS-SF-NNN` 形式のRule ID（規約ルールID）を持つ。
-- すべてのNormative Rule（規範的ルール）が、
+- すべてのNormative Rule（規範的規則）が
+  `CJS-SF-NNN` 形式のRule ID（規則ID）を持つ。
+- すべてのNormative Rule（規範的規則）が、
   必須Fieldを規定の順序・表現で持つ。
-- すべてのNormative Rule（規範的ルール）が
+- すべてのNormative Rule（規範的規則）が
   `Stability: Development` である。
-- Retired Rule ID（廃止済み規約ルールID）は現時点で存在しないため、
+- Retired Rule ID（廃止済み規則ID）は現時点で存在しないため、
   `Retired Rule IDs` の記録を設けていない。
 
 また本文書自身のPhysical Name（物理名称）は、

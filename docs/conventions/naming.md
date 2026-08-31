@@ -111,12 +111,12 @@ Definition Authority（定義権限）は上位設計にある。
   Documentation Asset（文書資産）と、
   それぞれのResponsibility（責務）
 - Convention（規約）およびConvention Responsibility（規約責務）
-- Normative Rule（規範的ルール）と
+- Normative Rule（規範的規則）と
   Non-normative Content（非規範的内容）の区別
-- Rule Model（ルールモデル）の必須要素・任意要素
+- Rule Model（規則モデル）の必須要素・任意要素
 - Requirement Level（要求レベル）の語彙とその意味
-- Rule Identity（ルール同一性）とその安定性
-- Rule ID Format（規約ルールID形式）、
+- Rule Identity（規則同一性）とその安定性
+- Rule ID Format（規則ID形式）、
   Rule Field（規則フィールド）の構成・順序・Markdown表現、
   StabilityのField表現
 - Namespace Code（名前空間コード）の割当
@@ -159,7 +159,7 @@ Logical Modelへ制約を課さない。
   日英表記、文体、用語選択
 - Programming Language固有のIdentifier（識別子）命名
 - Branch / Tag / Version / Issue / Pull Request / Commitの命名
-- Rule ID（規約ルールID）・Convention Code（規約コード）・
+- Rule ID（規則ID）・Convention Code（規約コード）・
   Namespace Code（名前空間コード）のFormat
 - Convention Code Uniquenessの量化範囲、
   およびConvention Registry
@@ -171,7 +171,7 @@ Logical Modelへ制約を課さない。
 ## Concrete Declarations（具体宣言）
 
 本節はConcrete Identifier Assignment（具体識別子割当）の宣言である。
-**Normative Rule（規範的ルール）ではない** 。
+**Normative Rule（規範的規則）ではない** 。
 
 ### Convention Code（規約コード）
 
@@ -183,7 +183,7 @@ Convention Code: NAM
 
 ### Namespace Code（名前空間コード）
 
-本文書のNormative Rule（規範的ルール）は、
+本文書のNormative Rule（規範的規則）は、
 [Convention Authoring Convention](convention-authoring.md)
 が割り当てたNamespace Code（名前空間コード） `SF`
 （Shared Foundation Namespace）に属する。
@@ -192,7 +192,7 @@ Convention Code: NAM
 
 ## Naming Concepts（本文書が用いる命名上の概念）
 
-本節は、以降のNormative Rule（規範的ルール）が
+本節は、以降のNormative Rule（規範的規則）が
 適用対象を区別するために用いる局所Concept（概念）を示す。
 本節はNon-normative Content（非規範的内容）である。
 ここで示すのは本文書が必要とする範囲の区別であり、
@@ -253,7 +253,7 @@ Physical Naming Formに関する適用の分離を示すものであり、
 本文書のすべてのRuleについての
 Applicability Mapではない。
 `NAM-SF-003` ・ `NAM-SF-005` ・ `NAM-SF-006` ・ `NAM-SF-007` の
-適用対象は、各RuleのRule Statement（ルール文）が定める。
+適用対象は、各RuleのRule Statement（規則文）が定める。
 
 ## Convention Code Selection Guidance（規約コード選定の指針）
 
@@ -286,15 +286,15 @@ Convention Code（規約コード）を選ぶ際、
 Stable Rule IDで使用済みの
 Convention Code（規約コード）に対する変更制約は、
 [Convention Authoring Convention](convention-authoring.md)
-のNormative Rule（規範的ルール）による。
+のNormative Rule（規範的規則）による。
 本節はそれを再定義しない。
 
 ## Normative Rules（規範的ルール）
 
-以降の各Sectionは、1つのNormative Rule（規範的ルール）を記述する。
+以降の各Sectionは、1つのNormative Rule（規範的規則）を記述する。
 
 Category（分類）を示す小見出しは文書上の整理のためのものであり、
-Rule ID（規約ルールID）はCategory（分類）を表現しない。
+Rule ID（規則ID）はCategory（分類）を表現しない。
 
 ### Physical Naming Form（物理命名形式）
 
@@ -326,13 +326,13 @@ space・underscore・camelCase等の複数の表現方式が併存すると、
 どの経路からも同じ綴りで対象へ到達できる。
 
 **Note:** 本Ruleが規定するのは、
-Rule Statement（ルール文）に挙げた2つの制約のみである。
+Rule Statement（規則文）に挙げた2つの制約のみである。
 `lowercase kebab-case` は、
 その形を想起するためのNon-normative Labelとして
 用いることができるが、
 本RuleのNormative Meaning（規範的意味）は
 その一般用語の解釈ではなく
-Rule Statement（ルール文）によって確定する。
+Rule Statement（規則文）によって確定する。
 
 次は本Ruleが定めない。
 
@@ -371,14 +371,14 @@ Path上のRepository-controlled Nameへ
 Path全体が一貫した綴りとして扱える。
 
 **Note:** 本Ruleが規定するのは、
-Rule Statement（ルール文）に挙げた2つの制約のみであり、
+Rule Statement（規則文）に挙げた2つの制約のみであり、
 その内容は `NAM-SF-001` と同一のLexical Constraintである。
 `lowercase kebab-case` は、
 その形を想起するためのNon-normative Labelとして
 用いることができるが、
 本RuleのNormative Meaning（規範的意味）は
 その一般用語の解釈ではなく
-Rule Statement（ルール文）によって確定する。
+Rule Statement（規則文）によって確定する。
 
 次は本Ruleが定めない。
 
@@ -627,13 +627,13 @@ Subject Identityの一部として成立している場合、
 
 - Convention Code（規約コード）を
   「Concrete Declarations」で明示的に宣言している。
-- すべてのNormative Rule（規範的ルール）が
-  `NAM-SF-NNN` 形式のRule ID（規約ルールID）を持つ。
-- すべてのNormative Rule（規範的ルール）が、
+- すべてのNormative Rule（規範的規則）が
+  `NAM-SF-NNN` 形式のRule ID（規則ID）を持つ。
+- すべてのNormative Rule（規範的規則）が、
   必須Fieldを規定の順序・表現で持つ。
-- すべてのNormative Rule（規範的ルール）が
+- すべてのNormative Rule（規範的規則）が
   `Stability: Development` である。
-- Retired Rule ID（廃止済み規約ルールID）は現時点で存在しないため、
+- Retired Rule ID（廃止済み規則ID）は現時点で存在しないため、
   `Retired Rule IDs` の記録を設けていない。
 
 また本文書自身のPhysical Name（物理名称）は、
