@@ -53,7 +53,7 @@ Repository-specific concernを持つ。
 
 `.github` も1つのRepositoryであり、この定義の例外ではない。
 
-### Shared Development Foundation（複数Repositoryで共有する開発基盤）
+### Shared Development Foundation（共通開発基盤）
 
 複数Repositoryに共通する **開発上の責務** を、一元的に所有・維持するための基盤。
 `noxris42/.github` はこのShared Development Foundation
@@ -63,7 +63,7 @@ Repository-specific concernを持つ。
 **開発上の共通責務** を対象とする基盤であり、
 各RepositoryのDomain（題材領域）やSystem Architectureを対象としない。
 
-### Shared Foundation Asset（共通開発基盤が所有する共有定義・共有資産）
+### Shared Foundation Asset（共通開発基盤資産）
 
 Shared Development Foundationに属し、
 複数Repository向けの共通内容を持つ定義または資産。
@@ -91,7 +91,7 @@ Repository-owned Assetで
 制約の下で固有内容を決定する責務が対象Repositoryにあることと、
 外部からの制約が存在しないこととは別の事柄である。
 
-### Foundation Application（共通開発基盤を対象Repositoryへ適用する関係）
+### Foundation Application（共通開発基盤資産の適用関係）
 
 Shared Foundation Assetを、
 特定Repositoryにおいて利用可能・有効な状態にする **関係** 。
@@ -227,7 +227,7 @@ Shared Foundation Asset由来の内容が
 Repository-owned Asset
 となる可能性を、本文書は妨げない。
 
-## Foundation Application（共通開発基盤を対象Repositoryへ適用する関係）
+## Foundation Application（共通開発基盤資産の適用関係）
 
 ### Foundation Application Definition（Foundation Applicationの定義）
 
