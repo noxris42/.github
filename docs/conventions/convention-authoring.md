@@ -77,6 +77,7 @@ Convention Authoring Convention
 - Rule Numberの表記と採番
 - Rule Field（規則フィールド）の構成・順序・Markdown表現
 - Rule Boundary（規則境界）の取り方
+- Rule Section Heading Representation（Rule Section見出し表現）
 - StabilityのField表現とその遷移
 - Rule ID Stability Operation
 - Retired Rule ID（廃止済み規約ルールID）の記録方法
@@ -424,8 +425,96 @@ Section単位に分けることで、境界が一意に定まる。
 **Note:** Heading（見出し）はRule Boundary（規則境界）と
 Document Presentationのためのものであり、
 Rule Model（ルールモデル）のCanonical Representationではない。
-Heading Level（見出しレベル）およびHeading（見出し）の文字列形式は、
+Heading Level（見出しレベル）は、
 本Convention（規約）では固定しない。
+Heading（見出し）の文字列形式は
+`CVA-SF-023` が定める。
+本Ruleが定めるのは、
+1つのNormative Rule（規範的ルール）が
+1つの独立したHeading Sectionとして記述されることに限られる。
+
+#### CVA-SF-023 — Rule Section Heading Representation（Rule Section見出し表現）
+
+**Rule ID:** `CVA-SF-023`
+
+**Rule Name:** Rule Section Heading Representation
+
+**Stability:** Development
+
+**Requirement:** MUST
+
+**Rule:** Normative Rule（規範的ルール）の
+Rule Section（ルールSection）のHeading（見出し）は、
+そのRuleのRule ID（規約ルールID）、Rule Name（ルール名）、および
+Japanese Heading Explanation（日本語見出し説明）を、
+次の形式で表示する。
+
+````text
+Rule ID — Rule Name（Japanese Heading Explanation）
+````
+
+Japanese Heading Explanation（日本語見出し説明）は、
+Rule Section Heading Presentation（Rule Section見出し表示）側で定義する。
+その値は、当該Rule Section（ルールSection）の
+Rule Section Responsibility（Rule Section責務）を
+日本語で理解可能にする
+Human-readable Representation（人間可読表現）である。
+
+**Reason:** Rule Section Heading（Rule Section見出し）が
+Rule ID（規約ルールID）とRule Name（ルール名）だけで構成される場合、
+そのRule Section（ルールSection）が何を扱う責務なのかを
+Heading（見出し）から日本語で把握できない。
+Heading（見出し）へ日本語の理解補助を含めることで、
+読み手は本文を読む前に対象Ruleを絞り込める。
+Definition Responsibility（定義責務）を
+Rule Section Heading Presentation（Rule Section見出し表示）側へ置くのは、
+この日本語値がHeading（見出し）という表示のために必要となる値であり、
+Rule Model（ルールモデル）が保持すべき
+Normative Content（規範的内容）ではないためである。
+定義の所在を表示側に限定することで、
+Heading（見出し）の都合が
+Rule Model（ルールモデル）およびRule Identity（ルール同一性）へ
+波及しない。
+
+**Note:** Japanese Heading Explanation（日本語見出し説明）は
+Rule Model（ルールモデル）のFieldではなく、
+Rule Field（規則フィールド）として記述しない。
+Rule Name（ルール名）の
+Japanese Rule Name Representation（日本語Rule Name表現）でもない。
+
+Japanese Heading Explanation（日本語見出し説明）が
+Rule Name（ルール名）の自然な日本語訳と
+同じ文字列になることは許容する。
+ただしその文字列一致から、
+Japanese Rule Name（日本語Rule Name）という
+Semantic Role（意味上の役割）は導出されない。
+
+本Ruleは、
+Rule Identity（ルール同一性）およびRule Name（ルール名）へ
+Japanese Representation（日本語表現）を追加しない。
+
+Japanese Heading Explanation（日本語見出し説明）としての値は、
+Rule Section Heading Presentation（Rule Section見出し表示）側で定義され、
+Canonical Japanese Support（正規日本語補助）によって
+定義または導出されない。
+
+同じConcrete Japanese String（具体日本語文字列）が、
+別途Canonical Japanese Support Representation（正規日本語補助表現）として
+成立することは妨げない。
+ただしその文字列一致から、
+両者のSemantic Role（意味上の役割）または
+Definition Responsibility（定義責務）が
+同一であることは導出されない。
+
+本Ruleが定めるのはHeading（見出し）の文字列形式に限られる。
+Heading Level（見出しレベル）は `CVA-SF-010` と同様、
+本Convention（規約）では固定しない。
+
+記述例は次である。
+
+````text
+#### CVA-SF-001 — Convention Code Declaration（規約コードの宣言）
+````
 
 #### CVA-SF-011 — Required Rule Fields（必須ルールフィールド）
 
@@ -724,6 +813,9 @@ Development Versionに認められた再編の自由を不要に失わせる。
   「Concrete Declarations」で明示的に宣言している。
 - すべてのNormative Rule（規範的ルール）が
   `CVA-SF-NNN` 形式のRule ID（規約ルールID）を持つ。
+- すべてのNormative Rule（規範的ルール）のRule Section（ルールSection）が、
+  `Rule ID — Rule Name（Japanese Heading Explanation）` の形式の
+  Heading（見出し）を持つ。
 - すべてのNormative Rule（規範的ルール）が、
   必須Fieldを規定の順序・表現で持つ。
 - すべてのNormative Rule（規範的ルール）が
