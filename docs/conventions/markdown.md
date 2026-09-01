@@ -328,7 +328,7 @@ GitHub上で利用可能であることは、
 
 本Ruleは、Baselineを特定の単一のMarkdown仕様だけへ限定しない。
 
-個々のSyntaxまたはRepresentationを使用するかどうかは、
+個々のSyntaxまたはRepresentation（表現）を使用するかどうかは、
 以降のNormative Rule（規範的規則）が定める。
 
 ### Document and Heading Representation（DocumentおよびHeadingの表現）
