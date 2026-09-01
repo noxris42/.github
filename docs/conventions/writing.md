@@ -1006,11 +1006,11 @@ File名、Directory名、Pathは
 
 **Requirement:** MUST
 
-**Rule:** Repository README（Repository README）の
-Document Title（文書題名）は、
+**Rule:** Repository README（Repository README）は、
 そのRepositoryが主として表す
 Subject / Meaning（対象／意味）を、
-読み手が識別・理解できるよう明確に表す。
+読み手が識別・理解できるよう明確に表す
+Document Title（文書題名）を持つ。
 
 **Reason:** Repository README（Repository README）は、
 読み手がそのRepositoryで最初に到達する
