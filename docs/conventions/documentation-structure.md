@@ -206,61 +206,25 @@ Standard Section Heading Representation（標準Section見出し表現）を宣�
 Standard Section Identity（標準Section同一性）の
 Meaning（意味）を変更しない。
 
-以下の各Child Section（子Section）のHeading（見出し）は、
-どのStandard Section（標準Section）に対する
-Concrete Assignment（具体割当）を宣言しているかを示すものであり、
-Standard Section Heading Representation（標準Section見出し表現）そのものではない。
-
-#### Purpose Standard Section（目的標準Section）
-
-```text
-Standard Section:                Purpose
-English Heading Representation:  Purpose
-Primary Language Heading Explanation:    目的
-```
-
-#### Scope Standard Section（対象範囲標準Section）
-
-```text
-Standard Section:                Scope
-English Heading Representation:  Scope
-Primary Language Heading Explanation:    対象範囲
-```
+| Standard Section | English Heading Representation | Primary Language Heading Explanation |
+| --- | --- | --- |
+| Purpose | Purpose | 目的 |
+| Scope | Scope | 対象範囲 |
+| Relationships | Relationships | 関係 |
+| In Scope | In Scope | 本文書が定義する範囲 |
+| Out of Scope | Out of Scope | 本文書が定義しない範囲 |
+| Responsibility Boundary | Responsibility Boundary | 責務境界 |
 
 `Scope` のPrimary Language Heading Explanation（主要言語見出し説明）を
 `対象範囲` とするのは、当該Standard Section（標準Section）が
 適用される範囲だけでなく、何を扱い何を扱わないかという
 Responsibility Boundary（責務境界）まで含むためである。
 
-#### Relationships Standard Section（関係標準Section）
-
-```text
-Standard Section:                Relationships
-English Heading Representation:  Relationships
-Primary Language Heading Explanation:    関係
-```
-
 `Relationships` のPrimary Language Heading Explanation（主要言語見出し説明）を
 `関係` とするのは、当該Standard Section（標準Section）が
 他のDocumentation Asset（文書資産）・Responsibility（責務）・
 Concept（概念）等とのSemantic Relationship全般を
 対象とするためである。
-
-#### In Scope Standard Section（対象範囲内標準Section）
-
-```text
-Standard Section:                In Scope
-English Heading Representation:  In Scope
-Primary Language Heading Explanation:    本文書が定義する範囲
-```
-
-#### Out of Scope Standard Section（対象範囲外標準Section）
-
-```text
-Standard Section:                Out of Scope
-English Heading Representation:  Out of Scope
-Primary Language Heading Explanation:    本文書が定義しない範囲
-```
 
 `In Scope` / `Out of Scope` のPrimary Language Heading Explanation（主要言語見出し説明）
 を
@@ -270,14 +234,6 @@ Responsibility Decomposition（責務分解）であり、
 当該Documentation Asset（文書資産）自身の
 Document Responsibility（文書責務）の内外を対象とすることを
 示すためである。
-
-#### Responsibility Boundary Standard Section（責務境界標準Section）
-
-```text
-Standard Section:                Responsibility Boundary
-English Heading Representation:  Responsibility Boundary
-Primary Language Heading Explanation:    責務境界
-```
 
 ## Reading Aid（読解のための補足）
 

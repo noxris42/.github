@@ -227,18 +227,17 @@ Standard Section（標準Section）ごとに次のとおり宣言する。
 Standard Section Identity（標準Section同一性）の
 Meaning（意味）を変更しない。
 
-以下の各Child Section（子Section）のHeading（見出し）は、
-どのStandard Section（標準Section）に対する
-Concrete Assignment（具体割当）を宣言しているかを示すものであり、
-Standard Section Heading Representation（標準Section見出し表現）そのものではない。
-
-#### Position Standard Section（位置標準Section）
-
-```text
-Standard Section:                Position
-English Heading Representation:  Position
-Primary Language Heading Explanation:    設計上の位置づけ
-```
+| Standard Section | English Heading Representation | Primary Language Heading Explanation |
+| --- | --- | --- |
+| Position | Position | 設計上の位置づけ |
+| Concept Model | Concept Model | 概念モデル |
+| Design Principles | Design Principles | 設計原則 |
+| Non-goals | Non-goals | 現在扱わない事項 |
+| Concrete Declarations | Concrete Declarations | 具体宣言 |
+| Convention Code | Convention Code | 規約コード |
+| Namespace Code | Namespace Code | 名前空間コード |
+| Normative Rules | Normative Rules | 規範的ルール |
+| Self Application | Self Application | 本文書自身への適用 |
 
 `Position` のPrimary Language Heading Explanation（主要言語見出し説明）を
 `設計上の位置づけ` とするのは、当該Standard Section（標準Section）の
@@ -247,30 +246,6 @@ Section Responsibility（Section責務）が、
 本Framework（体系）における当該資産の位置づけ全体を
 対象とするためである。
 
-#### Concept Model Standard Section（概念モデル標準Section）
-
-```text
-Standard Section:                Concept Model
-English Heading Representation:  Concept Model
-Primary Language Heading Explanation:    概念モデル
-```
-
-#### Design Principles Standard Section（設計原則標準Section）
-
-```text
-Standard Section:                Design Principles
-English Heading Representation:  Design Principles
-Primary Language Heading Explanation:    設計原則
-```
-
-#### Non-goals Standard Section（非目標標準Section）
-
-```text
-Standard Section:                Non-goals
-English Heading Representation:  Non-goals
-Primary Language Heading Explanation:    現在扱わない事項
-```
-
 `Non-goals` のPrimary Language Heading Explanation（主要言語見出し説明）に
 Delegationを含めないのは、
 `RDS-SF-004` においてDelegationが
@@ -278,46 +253,6 @@ Delegationを含めないのは、
 当該Standard Section（標準Section）の
 Section Responsibility（Section責務）を常に構成するものでは
 ないためである。
-
-#### Concrete Declarations Standard Section（具体宣言標準Section）
-
-```text
-Standard Section:                Concrete Declarations
-English Heading Representation:  Concrete Declarations
-Primary Language Heading Explanation:    具体宣言
-```
-
-#### Convention Code Standard Section（規約コード標準Section）
-
-```text
-Standard Section:                Convention Code
-English Heading Representation:  Convention Code
-Primary Language Heading Explanation:    規約コード
-```
-
-#### Namespace Code Standard Section（名前空間コード標準Section）
-
-```text
-Standard Section:                Namespace Code
-English Heading Representation:  Namespace Code
-Primary Language Heading Explanation:    名前空間コード
-```
-
-#### Normative Rules Standard Section（規範的ルール標準Section）
-
-```text
-Standard Section:                Normative Rules
-English Heading Representation:  Normative Rules
-Primary Language Heading Explanation:    規範的ルール
-```
-
-#### Self Application Standard Section（自己適用標準Section）
-
-```text
-Standard Section:                Self Application
-English Heading Representation:  Self Application
-Primary Language Heading Explanation:    本文書自身への適用
-```
 
 ## Reading Aid（読解のための補足）
 
