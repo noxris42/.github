@@ -435,7 +435,7 @@ Repository-owned Asset
 - Override（上書き）／Extend／Replace／Disable等の
   拡張方式
 
-### Application Mechanism（適用方式に関する事項）
+### Application Mechanism（適用方式）
 
 - Application Mechanism（適用方式）の具体実装
 - Asset Type（資産種別）ごとの適用手順

@@ -404,7 +404,7 @@ Normative Effectを持つという境界のみを定めており、
 - `SHOULD` / `SHOULD NOT` における例外の扱い方および
   その正当化の手続き
 
-### Convention Identity（規約同一性に関する事項）
+### Convention Identity（規約同一性）
 
 本文書はConvention Identity（規約同一性）を
 Rule Identity（規則同一性）の意味上の構成要素として位置づけるが、
