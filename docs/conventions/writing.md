@@ -468,9 +468,9 @@ Message Language（メッセージ言語）は
 Human-readable Natural Language Representation（人間可読な自然言語表現）で
 使用する場合、次の形式で表示する。
 
-````text
+```text
 English Representation（Canonical Japanese Support Representation）
-````
+```
 
 本Ruleの適用対象は次の3つである。
 
@@ -636,10 +636,10 @@ Japanese Support側の一貫性は、
 本Ruleが要求するのは参照表現の一貫性であり、
 文章全体で同じ単語を機械的に反復することではない。
 
-````text
+```text
 English Representation Consistency
 ≠ Mechanical Word Repetition
-````
+```
 
 Definition Authority（定義権限）側で
 English Representation（英語表現）が成立していない対象について、

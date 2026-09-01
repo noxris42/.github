@@ -520,11 +520,11 @@ Canonical Japanese Support Association（正規日本語補助対応）そのも
 
 **Note:** 意味上必要なのは次のAssociation（対応）である。
 
-````text
+```text
 English Representation
 +
 Canonical Japanese Support Representation
-````
+```
 
 本Ruleは、これ以外の要素を
 Canonical Declaration（正規宣言）へ導入しない。
@@ -568,18 +568,18 @@ YAMLのImplicit Typingや特殊文字によって
 
 **Note:** Canonical Shapeは次である。
 
-````yaml
+```yaml
 "Design Principles": "設計原則"
 "Design Dependency": "設計依存"
-````
+```
 
 Record Mappingは採用しない。
 次の形は本Ruleに適合しない。
 
-````yaml
+```yaml
 "Design Principles":
   japanese: "設計原則"
-````
+```
 
 Double Quoteの要求は、
 空白を含む表記への対処を目的とするものではない。
@@ -638,14 +638,14 @@ Candidate Recommendation（候補提案）の対象から
 
 本Ruleは、次のいずれも必要条件としない。
 
-````text
+```text
 Occurrence Count
 Formal Status
 専門用語であること
 英語難易度
 Category
 TitleまたはHeadingであること
-````
+```
 
 解釈補助は
 「Candidate Recommendation Guidance」に示す。

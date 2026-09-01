@@ -430,37 +430,37 @@ Subjectだけで
 
 理解を助ける関係として、次が挙げられる。
 
-````text
+```text
 docs/conventions/commit.md
-````
+```
 
 は、`commit` だけで現在の対象を十分に識別できる場合がある。
 一方、
 
-````text
+```text
 documentation.md
-````
+```
 
 より、
 
-````text
+```text
 documentation-structure.md
-````
+```
 
 の方が、Documentationに関するどの責務を扱う対象なのかを
 識別するために適切となり得る。
 同様に、かつて
 
-````text
+```text
 docs/conventions/convention.md
-````
+```
 
 であった資産について、その資産の責務が
 Convention Authoringであることから、
 
-````text
+```text
 docs/conventions/convention-authoring.md
-````
+```
 
 の方が識別上より適切であるという設計判断が成立した。
 この資産のCurrent Physical Nameは後者であり、
@@ -468,12 +468,12 @@ docs/conventions/convention-authoring.md
 
 本Ruleが扱う方向は次に限られる。
 
-````text
+```text
 Responsibility → Naming Input
 Physical Name  → Representation
 
 Physical Name  ✕→ Responsibility Definition
-````
+```
 
 すなわち、Responsibility（責務）は
 名称選択の入力になり得るが、

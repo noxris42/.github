@@ -449,9 +449,9 @@ Rule Section（ルールSection）のHeading（見出し）は、
 Japanese Heading Explanation（日本語見出し説明）を、
 次の形式で表示する。
 
-````text
+```text
 Rule ID — Rule Name（Japanese Heading Explanation）
-````
+```
 
 Japanese Heading Explanation（日本語見出し説明）は、
 Rule Section Heading Presentation（Rule Section見出し表示）側で定義する。
@@ -512,9 +512,9 @@ Heading Level（見出しレベル）は `CVA-SF-010` と同様、
 
 記述例は次である。
 
-````text
+```text
 #### CVA-SF-001 — Convention Code Declaration（規約コードの宣言）
-````
+```
 
 #### CVA-SF-011 — Required Rule Fields（必須ルールフィールド）
 
@@ -603,7 +603,7 @@ Rule Model（規則モデル）の要素と文書上の記述単位が対応す�
 
 **Note:** 記述例は次である。
 
-````text
+```text
 **Rule ID:** `CVA-SF-001`
 
 **Rule Name:** Convention Code Declaration
@@ -617,7 +617,7 @@ Rule Model（規則モデル）の要素と文書上の記述単位が対応す�
 **Reason:** ...
 
 **Note:** ...
-````
+```
 
 ### Rule Stability（規則の安定性）
 
@@ -774,12 +774,12 @@ Retired Rule ID（廃止済み規則ID）が存在する場合にのみ設ける
 
 **Note:** 最小の記録形式は次である。
 
-````text
+```text
 ## Retired Rule IDs
 
 - `CVA-SF-003`
 - `CVA-SF-006`
-````
+```
 
 #### CVA-SF-022 — Development Rule Removal（Development時のルール削除）
 

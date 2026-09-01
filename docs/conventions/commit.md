@@ -343,10 +343,10 @@ Headerの終端をBodyの内容から
 
 **Note:** 構造は次である。
 
-````text
+```text
 Header
 [Body]
-````
+```
 
 ### Header（ヘッダー）
 
@@ -376,9 +376,9 @@ Change Subject（変更主体）がScopeとSubjectへ
 
 **Note:** 記述例は次である。
 
-````text
+```text
 📝 docs: Repository READMEを改定
-````
+```
 
 #### CMT-SF-005 — Type Selection（Typeの選択）
 
@@ -470,11 +470,11 @@ Information Responsibilityを分離し、
 **Note:** Subjectの
 Semantic Structure（意味構造）は次である。
 
-````text
+```text
 Subject
 = Change Subject Representation
 + Operation Representation
-````
+```
 
 日本語の助詞や英語の語順等、
 Natural Language Representation（自然言語表現）上の形は固定しない。
@@ -542,11 +542,11 @@ Namingの決定権を持たないためである。
 
 **Note:** 代表的な例は次である。
 
-````text
+```text
 README.md
 → Repository README
 → 📝 docs: Repository READMEを改定
-````
+```
 
 この例が成立するのは、
 `Repository README` という安定した
@@ -639,13 +639,13 @@ Formal Name（正式名称）を翻訳しないのは、
 
 **Note:** 決定順序は次である。
 
-````text
+```text
 Explicit Message Languageあり
 → その指定を優先
 
 指定なし
 → Japanese
-````
+```
 
 Japaneseを既定とするのは、
 本Shared Development Foundationの
@@ -687,11 +687,11 @@ Diffから得られる情報を自然言語で再記述しても
 
 **Note:** Information Responsibilityの分担は次である。
 
-````text
+```text
 Header = What
 Body   = Commit-specific Why / Context
 Diff   = How
-````
+```
 
 Bodyは任意である。
 記録すべきCommit固有の理由・背景が存在しない場合は、
