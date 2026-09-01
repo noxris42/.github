@@ -1,4 +1,4 @@
-# Canonical Japanese Support Registry（正規日本語補助登録簿）
+# Canonical Primary Language Support Registry（正規主要言語補助登録簿）
 
 "Applicability Scope": "適用範囲"
 "Application Mechanism": "適用方式"
@@ -14,9 +14,9 @@
 "Canonical Association Establishment": "正規対応成立"
 "Canonical Decision": "正規判断"
 "Canonical Declaration": "正規宣言"
-"Canonical Japanese Support Association": "正規日本語補助対応"
-"Canonical Japanese Support Representation": "正規日本語補助表現"
-"Canonical Japanese Support": "正規日本語補助"
+"Canonical Primary Language Support Association": "正規主要言語補助対応"
+"Canonical Primary Language Support Representation": "正規主要言語補助表現"
+"Canonical Primary Language Support": "正規主要言語補助"
 "Category": "分類"
 "Central Concrete Declaration Source": "中央具体宣言情報源"
 "Change Subject Representation": "変更主体表現"
@@ -68,8 +68,6 @@
 "Human-readable Representation": "人間可読表現"
 "Identifier": "識別子"
 "Identity": "同一性"
-"Japanese Heading Explanation": "日本語見出し説明"
-"Japanese Representation": "日本語表現"
 "Literal Representation": "そのままの表記"
 "Local Design Principle": "局所設計原則"
 "Logical Identity": "論理的同一性"
@@ -98,6 +96,8 @@
 "Physical Structure": "物理構造"
 "Preferred Operation Vocabulary": "推奨操作語彙"
 "Presence Requirement": "設置要求"
+"Primary Language Heading Explanation": "主要言語見出し説明"
+"Primary Language Representation": "主要言語表現"
 "Reading Aid": "読解のための補足"
 "Refinement": "具体化"
 "Repository Documentation": "Repository文書"

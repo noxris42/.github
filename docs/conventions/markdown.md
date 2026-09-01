@@ -102,7 +102,7 @@ Definition Authority（定義権限）は本文書の外にある。
 - Standard Section（標準Section）と
   Standard Section Heading Representation（標準Section見出し表現）
 - Human-readable Natural Language Representation（人間可読な自然言語表現）、
-  およびCanonical Japanese Support（正規日本語補助）の表示
+  およびCanonical Primary Language Support（正規主要言語補助）の表示
 - Physical Name（物理名称）とその形式
 - Convention（規約）およびConvention Responsibility（規約責務）
 - Normative Rule（規範的規則）と

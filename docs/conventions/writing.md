@@ -13,9 +13,11 @@ Reusable Normative Standard（再利用可能な規範標準）**
 本文書が扱う問いは次の6点である。
 
 1. Repository Documentation（Repository文書）の
-   Natural Language Prose（自然言語本文）は、
-   どの言語で記述されるのか。
-2. Canonical Japanese Support Association（正規日本語補助対応）が
+   Natural Language Prose（自然言語本文）、
+   Document Title（文書題名）、および
+   Heading Label（見出しラベル）は、
+   どの言語でMeaning（意味）を伝えるのか。
+2. Canonical Primary Language Support Association（正規主要言語補助対応）が
    成立しているEnglish Representation（英語表現）は、
    Human-readable Natural Language Representation（人間可読な自然言語表現）において
    どのように表示されるのか。
@@ -39,7 +41,7 @@ Natural Language Representation（自然言語表現）そのものである。
 本文書が担うのは
 Presentation / Usage Responsibilityである。
 本文書は、English Representation（英語表現）そのもの、および
-Canonical Japanese Support（正規日本語補助）の
+Canonical Primary Language Support（正規主要言語補助）の
 Canonicalityを定義しない。
 
 本文書は、上位設計が定義するConcept（概念）を再定義しない。
@@ -52,8 +54,8 @@ Canonicalityを定義しない。
 - [Repository Governance Documentation Framework](../architecture/repository-governance-documentation-framework.md)
 - [Convention Architecture](../architecture/convention.md)
 - [Convention Authoring Convention](convention-authoring.md)
-- [Canonical Japanese Support Architecture](../architecture/canonical-japanese-support.md)
-- [Canonical Japanese Support Convention](canonical-japanese-support.md)
+- [Canonical Primary Language Support Architecture](../architecture/canonical-primary-language-support.md)
+- [Canonical Primary Language Support Convention](canonical-primary-language-support.md)
 
 Design Dependency（設計依存）は次の一方向とする。
 
@@ -66,18 +68,18 @@ Convention Authoring Convention
         │ conforms to
 Writing Convention
 
-Canonical Japanese Support Architecture
+Canonical Primary Language Support Architecture
         ▲
         │ presupposes
 Writing Convention
 
-Canonical Japanese Support Convention
+Canonical Primary Language Support Convention
         ▲
         │ presupposes
 Writing Convention
 ```
 
-本文書は、Canonical Japanese Support（正規日本語補助）側の
+本文書は、Canonical Primary Language Support（正規主要言語補助）側の
 RuleおよびCanonical Declaration（正規宣言）を
 参照するのみであり、変更・再定義しない。
 
@@ -115,13 +117,13 @@ Definition Authority（定義権限）は上位設計にある。
 - Namespace Code（名前空間コード）の割当
 - English Representation（英語表現）のIdentity（同一性）および
   Meaning（意味）
-- Canonical Japanese Support Representation（正規日本語補助表現）の意味
-- Canonical Japanese Support Association（正規日本語補助対応）の意味、
+- Canonical Primary Language Support Representation（正規主要言語補助表現）の意味
+- Canonical Primary Language Support Association（正規主要言語補助対応）の意味、
   その成立、およびMultiplicity（多重度）
 - 同Association（対応）の成立と
   Documentation Presentation（文書上の表示）との
   Boundary（境界）
-- 個々のCanonical Japanese Support Association（正規日本語補助対応）の値、
+- 個々のCanonical Primary Language Support Association（正規主要言語補助対応）の値、
   およびそのCanonical Declaration（正規宣言）としての保持
 
 ### Responsibility Boundary（責務境界）
@@ -142,13 +144,13 @@ English Representationそのもの、および
 それが指すUnderlying Meaning
     → それぞれの対象を所有するDefinition Authority
 
-Canonical Japanese Support Associationの
+Canonical Primary Language Support Associationの
 Semantic Modelとその成立
-    → Canonical Japanese Support Architecture
+    → Canonical Primary Language Support Architecture
 
-個々のCanonical Japanese Support Associationの値と
+個々のCanonical Primary Language Support Associationの値と
 そのCanonical Declaration
-    → Canonical Japanese Support Convention、および
+    → Canonical Primary Language Support Convention、および
       同規約が定める
       Central Concrete Declaration Source
 
@@ -166,7 +168,7 @@ Physical Name（物理名称）、
 Markdown Syntaxを定義しない。
 本文書は、English Representation（英語表現）の
 Definition Authority（定義権限）を取得せず、
-Canonical Japanese Support Association（正規日本語補助対応）の
+Canonical Primary Language Support Association（正規主要言語補助対応）の
 成立可否およびCanonicalityも定めない。
 本文書は、Markdown Syntaxの責務を担う
 Convention（規約）の存在や内容を前提とせず、
@@ -183,11 +185,15 @@ Natural Language Representation（自然言語表現）は
 ### In Scope（本文書が定義する範囲）
 
 - Repository Documentation（Repository文書）の
-  Natural Language Prose（自然言語本文）における
+  Natural Language Prose（自然言語本文）、
+  Document Title（文書題名）、および
+  Heading Label（見出しラベル）における
   Primary Language
-- Canonical Japanese Support Association（正規日本語補助対応）が
+- Current Repositoryにおける
+  Primary LanguageのConcrete Assignment（具体割当）
+- Canonical Primary Language Support Association（正規主要言語補助対応）が
   成立しているEnglish Representation（英語表現）に対する
-  Canonical Japanese Support Representation（正規日本語補助表現）の
+  Canonical Primary Language Support Representation（正規主要言語補助表現）の
   表示形式と、その適用対象
 - Definition Authority（定義権限）側で成立している
   English Representation（英語表現）の、
@@ -215,14 +221,11 @@ Document Title（文書題名）およびHeading Label（見出しラベル）�
 Natural Language Representation（自然言語表現）が含まれる。
 
 Document Title（文書題名）およびHeading Label（見出しラベル）に対しては、
-Canonical Japanese Support Representation（正規日本語補助表現）の
+Primary Languageを定める `WRT-SF-001` 、
+Canonical Primary Language Support Representation（正規主要言語補助表現）の
 表示を定める `WRT-SF-002` 、および
 English Representation（英語表現）の一貫した使用を定める
 `WRT-SF-003` が適用される。
-
-Heading Label（見出しラベル）に対しては、
-これらに加えて、
-Primary Languageを定める `WRT-SF-001` が適用される。
 
 Document Title（文書題名）に対しては、
 これらに加えて、
@@ -264,9 +267,9 @@ Document Title（文書題名）およびHeading Label（見出しラベル）�
   およびName Status
 - English Representation（英語表現）が指す
   Underlying Meaning（対象の意味）
-- Canonical Japanese Support Association（正規日本語補助対応）の成立、
+- Canonical Primary Language Support Association（正規主要言語補助対応）の成立、
   そのMultiplicity（多重度）、および
-  Canonical Japanese Support Representation（正規日本語補助表現）の値
+  Canonical Primary Language Support Representation（正規主要言語補助表現）の値
 - Canonical Declaration（正規宣言）の保持先、
   そのConcrete Representation（具体表現）、および
   Candidate Recommendation（候補提案）
@@ -283,7 +286,8 @@ Document Title（文書題名）およびHeading Label（見出しラベル）�
 
 ## Concrete Declarations（具体宣言）
 
-本節はConcrete Identifier Assignment（具体識別子割当）の宣言である。
+本節はConcrete Identifier Assignment（具体識別子割当）および
+Concrete Assignment（具体割当）の宣言である。
 **Normative Rule（規範的規則）ではない** 。
 
 ### Convention Code（規約コード）
@@ -302,6 +306,28 @@ Convention Code: WRT
 （Shared Foundation Namespace）に属する。
 
 本文書はNamespace Code（名前空間コード）を新たに割り当てない。
+
+### Primary Language（主要言語）
+
+Current Repositoryにおいて
+`WRT-SF-001` が対象とするPrimary Languageは次である。
+
+```text
+Primary Language = Japanese
+```
+
+本宣言はCurrent Repositoryにおける
+Concrete Assignment（具体割当）の値のみを示す。
+`Japanese` はPrimary LanguageそのもののDefinition（定義）ではない。
+Primary Languageが何であるかは
+`WRT-SF-001` が示し、
+どの言語がそれに割り当てられているかを本宣言が示す。
+
+本宣言によって、
+Primary Languageの選定基準、
+Repositoryごとの設定機構、
+またはPrimary Language以外の言語に関する
+一般Ruleは成立しない。
 
 ## Reading Aid（読解のための補足）
 
@@ -335,15 +361,15 @@ Rule Statement（規則文）が
 Natural Language Prose（自然言語本文）のみを対象とする場合、
 その適用は本文に限られる。
 
-### Relationship with Canonical Japanese Support Establishment（Canonical Japanese Support側の成立との関係）
+### Relationship with Canonical Primary Language Support Establishment（Canonical Primary Language Support側の成立との関係）
 
 本文書は、あるEnglish Representation（英語表現）について
-Canonical Japanese Support Association（正規日本語補助対応）が
+Canonical Primary Language Support Association（正規主要言語補助対応）が
 成立しているかどうか、および
-Canonical Japanese Support Representation（正規日本語補助表現）の値を
+Canonical Primary Language Support Representation（正規主要言語補助表現）の値を
 自ら判断しない。
 いずれも
-[Canonical Japanese Support Convention](canonical-japanese-support.md)
+[Canonical Primary Language Support Convention](canonical-primary-language-support.md)
 が定めるCanonical Declaration（正規宣言）から得られる。
 
 同様に、あるSubject / Meaning（意味）について
@@ -394,13 +420,28 @@ Rule ID（規則ID）はCategory（分類）を表現しない。
 
 **Requirement:** MUST
 
-**Rule:** Repository Documentation（Repository文書）の
-Natural Language Prose（自然言語本文）
-およびHeading Label（見出しラベル）は、
-Primary Languageである日本語で記述する。
+**Rule:** Primary Languageは、
+Repository Documentation（Repository文書）の
+Human-readable Natural Language Representation（人間可読な自然言語表現）が
+Meaning（意味）を伝える基準言語である。
+
+Repository Documentation（Repository文書）の
+Natural Language Prose（自然言語本文）、
+Human-readableなDocument Title（文書題名）、および
+Heading Label（見出しラベル）は、
+そこで伝えるMeaning（意味）を
+読み手がPrimary Languageで受け取れるように記述する。
+
+本Ruleが要求するのは、
+当該Human-readable Representation（人間可読表現）が伝える
+Meaning（意味）がPrimary Languageで成立していることである。
+表現全体をPrimary Languageのみで構成することではない。
+English Representation（英語表現）その他
+Primary Language以外の表記を含むことは、
+それ自体では本Ruleに反しない。
 
 次は本Ruleの対象ではなく、
-日本語化を要求されない。
+Primary Languageによる表記を要求されない。
 
 - CodeおよびIdentifier（識別子）
 - File名、Directory名、Path
@@ -408,35 +449,63 @@ Primary Languageである日本語で記述する。
 - External Contractによって表記が固定される文字列
 - 原文を維持する必要がある引用
 
+Current RepositoryにおけるPrimary Languageの
+Concrete Assignment（具体割当）は
+「Concrete Declarations」が宣言する。
+本RuleのRequirementはその具体値に依存しない。
+
 **Reason:** Primary Languageが定まっていなければ、
 同一のRepository Documentation（Repository文書）内で
 記述者ごとに言語が分岐し、
 読み手はSemantic Meaningを受け取る前に
 言語の切り替えを強いられる。
-一方で、対象を識別する表記そのものを日本語へ置き換えると、
+一方で、対象を識別する表記そのものを
+Primary Languageへ置き換えると、
 Code・Identifier（識別子）・
 External Contractが指す対象と一致しなくなり、
 参照が成立しなくなる。
-対象となる自然言語表現を日本語へ固定し、
+Meaning（意味）の成立をPrimary Languageへ固定し、
 識別を担う表記を対象外とすることで、
 読解の前提を一定にしたまま参照の同一性を保つ。
-Heading Label（見出しラベル）を
+要求を表現全体の構成ではなく
+Meaning（意味）の成立に置くのは、
+Definition Authority（定義権限）側で成立している
+English Representation（英語表現）を
+参照箇所で使用することが
+`WRT-SF-003` によって要求されており、
+構成をPrimary Languageのみへ限ると
+その要求と両立しないためである。
+Document Title（文書題名）およびHeading Label（見出しラベル）を
 対象へ含めるのは、
-これが読み手にとって本文へ到達する前の自然言語表現であり、
+これらが読み手にとって本文へ到達する前の自然言語表現であり、
 本文と言語が分かれると、
 同一のDocumentation Asset（文書資産）の中で
 読解の前提が二分されるためである。
 
 **Note:** 本Ruleが定めるのは、
-対象とする自然言語表現の言語のみである。
+対象とするHuman-readable Natural Language Representation（人間可読な自然言語表現）の
+言語のみである。
 文末表現、Voice、文長、Typographyは
 本Ruleが定めない。
 
-Document Title（文書題名）は本Ruleの対象ではない。
-Document Title（文書題名）については
-`WRT-SF-008` および `WRT-SF-009` が適用される。
+本Ruleが担うのはLanguage Responsibilityである。
+Document Title（文書題名）が表す
+Subject / Meaning（対象／意味）は本Ruleが定めない。
+それらは `WRT-SF-008` および `WRT-SF-009` が定める。
 
-Heading Label（見出しラベル）を対象とすることは、
+Canonical Primary Language Support Representation（正規主要言語補助表現）の
+表示形式は `WRT-SF-002` が定める。
+本Ruleは表示形式を定めない。
+
+`Japanese` はPrimary Languageの
+Definition（定義）ではなく、
+Current RepositoryにおけるConcrete Assignment（具体割当）である。
+本Ruleは、その割当の変更手順、
+Repositoryごとの設定機構、および
+Primary Language以外の言語の扱いを定めない。
+
+Document Title（文書題名）およびHeading Label（見出しラベル）を
+対象とすることは、
 Section Identity（Section同一性）、
 Standard Section（標準Section）、
 Heading Level（見出しレベル）、
@@ -451,25 +520,25 @@ Message Language（メッセージ言語）は
 [Commit Convention](commit.md)
 が所有する。
 
-### English Representation and Japanese Support（英語表現と日本語補助）
+### English Representation and Primary Language Support（英語表現と主要言語補助）
 
-#### WRT-SF-002 — Canonical Japanese Support Presentation（正規日本語補助の表示）
+#### WRT-SF-002 — Canonical Primary Language Support Presentation（正規主要言語補助の表示）
 
 **Rule ID:** `WRT-SF-002`
 
-**Rule Name:** Canonical Japanese Support Presentation
+**Rule Name:** Canonical Primary Language Support Presentation
 
 **Stability:** Development
 
 **Requirement:** MUST
 
-**Rule:** Canonical Japanese Support Association（正規日本語補助対応）が
+**Rule:** Canonical Primary Language Support Association（正規主要言語補助対応）が
 成立しているEnglish Representation（英語表現）を
 Human-readable Natural Language Representation（人間可読な自然言語表現）で
 使用する場合、次の形式で表示する。
 
 ```text
-English Representation（Canonical Japanese Support Representation）
+English Representation（Canonical Primary Language Support Representation）
 ```
 
 本Ruleの適用対象は次の3つである。
@@ -491,24 +560,25 @@ Definition Responsibility（定義責務）によって
 Human-readable Representation（人間可読表現）をそのまま使用し、
 本Ruleの表示形式がそれを置換・上書きすることはない。
 
-Canonical Japanese Support Association（正規日本語補助対応）の有無、
-およびCanonical Japanese Support Representation（正規日本語補助表現）の値は
+Canonical Primary Language Support Association（正規主要言語補助対応）の有無、
+およびCanonical Primary Language Support Representation（正規主要言語補助表現）の値は
 本Ruleが決定しない。
 いずれも
-[Canonical Japanese Support Convention](canonical-japanese-support.md)
+[Canonical Primary Language Support Convention](canonical-primary-language-support.md)
 が定めるCanonical Declaration（正規宣言）による。
 
-**Reason:** Canonical Japanese Support Association（正規日本語補助対応）は、
+**Reason:** Canonical Primary Language Support Association（正規主要言語補助対応）は、
 そのEnglish Representation（英語表現）の理解補助として
 Repositoryが一貫して再利用すると決定した
-Japanese Representation（日本語表現）を保持している。
+Primary Language Representation（主要言語表現）を保持している。
 その決定が使用箇所へ現れなければ、
 読み手は成立済みの理解補助を受け取れず、
 決定が読み手に対して機能しない。
 English Representation（英語表現）と
-Canonical Japanese Support Representation（正規日本語補助表現）を
+Canonical Primary Language Support Representation（正規主要言語補助表現）を
 同じ箇所へ併記することで、
-読み手は参照される表現とその日本語補助を対応付けたまま読み進められる。
+読み手は参照される表現とそのPrimary Languageによる補助を
+対応付けたまま読み進められる。
 初出箇所に限定しないのは、
 Documentation Asset（文書資産）が
 先頭から通読されるとは限らず、
@@ -516,7 +586,7 @@ Section単位または検索経由での参照において
 初出箇所の表示が読み手へ届かないためである。
 Association（対応）の有無と値を本Ruleが決定しないのは、
 Canonicalityの成立が
-Canonical Japanese Support（正規日本語補助）側の責務であり、
+Canonical Primary Language Support（正規主要言語補助）側の責務であり、
 表示側でそれを再判断すると
 中央で成立した決定と使用箇所の表示が分岐するためである。
 
@@ -533,12 +603,12 @@ Human-readable Representation（人間可読表現）そのものであるため
 定義側で成立した決定が使用箇所においても保たれる。
 
 **Note:** 本Ruleは
-Canonical Japanese Support Association（正規日本語補助対応）を
+Canonical Primary Language Support Association（正規主要言語補助対応）を
 成立させず、
 どのEnglish Representation（英語表現）について
 対応を成立させるべきかも定めない。
 
-Canonical Japanese Support Association（正規日本語補助対応）が
+Canonical Primary Language Support Association（正規主要言語補助対応）が
 成立していないEnglish Representation（英語表現）の表示について、
 本Ruleは何も定めない。
 
@@ -571,7 +641,7 @@ Standard Section Heading Representation（標準Section見出し表現）が
 その定義済みRepresentation（表現）が現れる箇所であり、
 本Ruleの適用対象ではない。
 そのHeading（見出し）に含まれるEnglish Representation（英語表現）について
-Canonical Japanese Support Association（正規日本語補助対応）が
+Canonical Primary Language Support Association（正規主要言語補助対応）が
 成立していたとしても、
 本Ruleを根拠として
 そのHeading（見出し）を上記の表示形式へ置き換えることはない。
@@ -626,11 +696,11 @@ Formal Status（正式地位）、Category（分類）、
 いずれもその対象を所有する
 Definition Authority（定義権限）側で成立する。
 
-Canonical Japanese Support Representation（正規日本語補助表現）の一貫性は
+Canonical Primary Language Support Representation（正規主要言語補助表現）の一貫性は
 本Ruleが扱わない。
-Japanese Support側の一貫性は、
+Canonical Primary Language Support側の一貫性は、
 `WRT-SF-002` と
-[Canonical Japanese Support Convention](canonical-japanese-support.md)
+[Canonical Primary Language Support Convention](canonical-primary-language-support.md)
 が定めるCanonical Declaration（正規宣言）によって成立する。
 
 本Ruleが要求するのは参照表現の一貫性であり、
@@ -936,6 +1006,9 @@ Document Title（文書題名）にも `WRT-SF-008` が適用される。
 
 - Convention Code（規約コード）を
   「Concrete Declarations」で明示的に宣言している。
+- Current RepositoryにおけるPrimary Languageの
+  Concrete Assignment（具体割当）を
+  「Concrete Declarations」で明示的に宣言している。
 - すべてのNormative Rule（規範的規則）が
   `WRT-SF-NNN` 形式のRule ID（規則ID）を持つ。
 - すべてのNormative Rule（規範的規則）が、
@@ -947,17 +1020,19 @@ Document Title（文書題名）にも `WRT-SF-008` が適用される。
 
 また本文書は、自身が定めるRuleにも従っている。
 
-- Natural Language Prose（自然言語本文）および
-  Heading Label（見出しラベル）を
-  日本語で記述している。
+- Natural Language Prose（自然言語本文）、
+  Document Title（文書題名）、および
+  Heading Label（見出しラベル）が伝えるMeaning（意味）を、
+  Current RepositoryのPrimary Languageである
+  日本語で受け取れるように記述している。
 - Document Title（文書題名）において、
   本文書が主として扱うSubject / Meaning（対象／意味）を表している。
-- Canonical Japanese Support Association（正規日本語補助対応）が
+- Canonical Primary Language Support Association（正規主要言語補助対応）が
   成立しているEnglish Representation（英語表現）を、
   Natural Language Prose（自然言語本文）、
   Document Title（文書題名）、およびHeading Label（見出しラベル）の
   いずれにおいても
-  `English Representation（Canonical Japanese Support Representation）`
+  `English Representation（Canonical Primary Language Support Representation）`
   の形式で表示している。
 - Definition Authority（定義権限）側で成立している
   English Representation（英語表現）を、

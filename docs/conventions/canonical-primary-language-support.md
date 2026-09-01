@@ -1,10 +1,10 @@
-# Canonical Japanese Support Convention（正規日本語補助規約）
+# Canonical Primary Language Support Convention（正規主要言語補助規約）
 
 ## Purpose（目的）
 
 本文書は、`noxris42` において
-**[Canonical Japanese Support Architecture](../architecture/canonical-japanese-support.md)
-上で成立するCanonical Japanese Support Association（正規日本語補助対応）について、
+**[Canonical Primary Language Support Architecture](../architecture/canonical-primary-language-support.md)
+上で成立するCanonical Primary Language Support Association（正規主要言語補助対応）について、
 Candidate Recommendation（候補提案）と
 Canonical Declaration（正規宣言）を一貫して扱うための
 Reusable Normative Standard（再利用可能な規範標準）**
@@ -12,10 +12,10 @@ Reusable Normative Standard（再利用可能な規範標準）**
 
 本文書が扱う問いは次の3点である。
 
-1. 成立したCanonical Japanese Support Association（正規日本語補助対応）は、
+1. 成立したCanonical Primary Language Support Association（正規主要言語補助対応）は、
    どこに、どのようなConcrete Representation（具体表現）で
    Canonical Declaration（正規宣言）として保持されるのか。
-2. Canonical Japanese Support Association（正規日本語補助対応）の
+2. Canonical Primary Language Support Association（正規主要言語補助対応）の
    Candidate Recommendation（候補提案）は、
    何を優先して行い、
    何を根拠として対象から除外しないのか。
@@ -38,7 +38,7 @@ Lifecycle等も対象としない。
 
 本文書は、次を上位Sourceとして参照する。
 
-- [Canonical Japanese Support Architecture](../architecture/canonical-japanese-support.md)
+- [Canonical Primary Language Support Architecture](../architecture/canonical-primary-language-support.md)
 - [Repository Governance Documentation Framework](../architecture/repository-governance-documentation-framework.md)
 - [Convention Architecture](../architecture/convention.md)
 - [Convention Authoring Convention](convention-authoring.md)
@@ -46,10 +46,10 @@ Lifecycle等も対象としない。
 Design Dependency（設計依存）は次の一方向とする。
 
 ```text
-Canonical Japanese Support Architecture
+Canonical Primary Language Support Architecture
         ▲
         │ refines
-Canonical Japanese Support Convention
+Canonical Primary Language Support Convention
 
 Convention Architecture
         ▲
@@ -57,14 +57,14 @@ Convention Architecture
 Convention Authoring Convention
         ▲
         │ conforms to
-Canonical Japanese Support Convention
+Canonical Primary Language Support Convention
 ```
 
 本文書は
 [Repository Governance Documentation Framework](../architecture/repository-governance-documentation-framework.md)
 が定義するConventions Area（規約領域）に属する
 通常のDocumentation Asset（文書資産）である。
-Canonical Japanese Support Association（正規日本語補助対応）へ
+Canonical Primary Language Support Association（正規主要言語補助対応）へ
 繰り返し適用される
 Reusable Normative Standard（再利用可能な規範標準）として成立する。
 Areaを代表・集約するAssetではない。
@@ -76,12 +76,12 @@ Definition Authority（定義権限）は上位設計にある。
 - English Representation（英語表現）が
   本Modelにおいて対応元として扱われること、および
   そのIdentity（同一性）・Meaning（意味）を
-  Canonical Japanese Support（正規日本語補助）が定義しないこと
-- Canonical Japanese Support Representation（正規日本語補助表現）の意味
-- Canonical Japanese Support Association（正規日本語補助対応）の意味、
+  Canonical Primary Language Support（正規主要言語補助）が定義しないこと
+- Canonical Primary Language Support Representation（正規主要言語補助表現）の意味
+- Canonical Primary Language Support Association（正規主要言語補助対応）の意味、
   およびその成立
 - 同Association（対応）のMultiplicity（多重度）
-- Canonical Japanese Support Association（正規日本語補助対応）の成立と
+- Canonical Primary Language Support Association（正規主要言語補助対応）の成立と
   Documentation Presentation（文書上の表示）との
   Boundary（境界）
 - Documentation Asset（文書資産）と
@@ -100,14 +100,14 @@ Definition Authority（定義権限）は上位設計にある。
 
 ### Responsibility Boundary（責務境界）
 
-Canonical Japanese Support（正規日本語補助）に関する
+Canonical Primary Language Support（正規主要言語補助）に関する
 Definition Authority（定義権限）は次のように分離される。
 本文書は、上位および隣接する責務を補完しない。
 
 ```text
-Canonical Japanese Support Associationの
+Canonical Primary Language Support Associationの
 Semantic Model・Boundary
-    → Canonical Japanese Support Architecture
+    → Canonical Primary Language Support Architecture
 
 English Representationそのもの、および
 Underlying Meaning
@@ -119,7 +119,7 @@ Candidate Recommendationと
 Canonical Decisionとの分離
     → 本文書
 
-個々のCanonical Japanese Support Associationの値
+個々のCanonical Primary Language Support Associationの値
     → Central Concrete Declaration Source
 
 Documentation Presentation
@@ -146,7 +146,7 @@ Human-readable Natural Language Representation（人間可読な自然言語表�
 
 ### In Scope（本文書が定義する範囲）
 
-- 成立したCanonical Japanese Support Association（正規日本語補助対応）を
+- 成立したCanonical Primary Language Support Association（正規主要言語補助対応）を
   Central Concrete Declaration Source（中央具体宣言情報源）へ
   Canonical Declaration（正規宣言）として保持すること
 - 各Canonical Declaration（正規宣言）が表現する
@@ -201,7 +201,7 @@ Human-readable Natural Language Representation（人間可読な自然言語表�
 本Convention Asset（規約資産）のConvention Code（規約コード）は次である。
 
 ```text
-Convention Code: CJS
+Convention Code: CPL
 ```
 
 ### Namespace Code（名前空間コード）
@@ -216,12 +216,12 @@ Convention Code: CJS
 ### Central Concrete Declaration Source（中央具体宣言情報源）
 
 Current Repositoryにおいて
-`CJS-SF-001` が要求する
+`CPL-SF-001` が要求する
 Central Concrete Declaration Source（中央具体宣言情報源）の役割を
 担うAssetは次である。
 
 ```text
-docs/canonical-japanese-support.yaml
+docs/canonical-primary-language-support.yaml
 ```
 
 本宣言はCurrent Repositoryにおける
@@ -244,7 +244,7 @@ Normative Meaning（規範的意味）を保持しない。
 ### Central Concrete Declaration Source（中央具体宣言情報源）
 
 Central Concrete Declaration Source（中央具体宣言情報源）は、
-成立したCanonical Japanese Support Association（正規日本語補助対応）の
+成立したCanonical Primary Language Support Association（正規主要言語補助対応）の
 Canonical Declaration（正規宣言）を
 Repository内で中央に保持する
 Central Locationである。
@@ -260,14 +260,14 @@ Current Repositoryにおいて
 
 Canonical Declaration（正規宣言）は、
 Central Concrete Declaration Source（中央具体宣言情報源）において
-1つのCanonical Japanese Support Association（正規日本語補助対応）について
+1つのCanonical Primary Language Support Association（正規主要言語補助対応）について
 記述される保持の単位である。
 
 ### Candidate Recommendation（候補提案）
 
 Candidate Recommendation（候補提案）は、
 あるEnglish Representation（英語表現）について
-Canonical Japanese Support Association（正規日本語補助対応）を
+Canonical Primary Language Support Association（正規主要言語補助対応）を
 成立させることを提案する行為である。
 
 Candidate Recommendation（候補提案）は
@@ -287,7 +287,7 @@ Architecture-level Conceptとして
 ## Candidate Recommendation Guidance（候補提案指針）
 
 本節はNon-normative Content（非規範的内容）であり、
-`CJS-SF-004` および `CJS-SF-006` の解釈補助として置かれる。
+`CPL-SF-004` および `CPL-SF-006` の解釈補助として置かれる。
 本節は新たなNormative Requirement（規範要求）を追加せず、
 Registration Qualificationも定めない。
 
@@ -299,11 +299,11 @@ Canonical Decision（正規判断）を受ける前の集合である。
 したがって、そこへ現れることは
 成立の見込みが高いことを意味しない。
 
-`CJS-SF-004` が述べるのは提案の優先であり、
+`CPL-SF-004` が述べるのは提案の優先であり、
 提案順序または提示上の強調として働く。
 優先度が低いことは、
 Candidate Pool（候補集合）へ現れないことを意味しない。
-`CJS-SF-006` は、成立の見込みが低い・不明であることのみを根拠として
+`CPL-SF-006` は、成立の見込みが低い・不明であることのみを根拠として
 Candidate Pool（候補集合）から落とすことを禁じる。
 
 ```text
@@ -321,13 +321,13 @@ Candidate Pool（候補集合）から消えることを防ぐためのもので
   対象外を示す文脈で現れる
 - Repository横断の概念ではなく、
   局所的な区別として現れる
-- 日本語補助を定める価値があるかどうかが判断しにくい
+- Primary Languageによる補助を定める価値があるかどうかが判断しにくい
 
 一方、Candidate Pool（候補集合）は
 Repository Documentation（Repository文書）に現れる
 英語表記の網羅一覧ではない。
-`CJS-SF-006` はCompletenessを要求せず、
-Japanese Reading Supportの対象でないことが明らかな
+`CPL-SF-006` はCompletenessを要求せず、
+Primary Language Reading Supportの対象でないことが明らかな
 Literal Representation（そのままの表記）まで
 提案対象へ含めることも求めない。
 
@@ -342,14 +342,14 @@ Candidate Pool（候補集合）へ入るための条件でもない。
 
 - Concept（概念）・Responsibility（責務）・Role・
   Relationship・Principle等の理解に
-  日本語による補助が有用である。
+  Primary Languageによる補助が有用である。
 - Document Title（文書題名）およびHeading Label（見出しラベル）等、
   文書の理解上重要な位置で使用されている。
-- Japanese Representation（日本語表現）が複数考えられ、
-  1つのCanonical Japanese Support Representation（正規日本語補助表現）を
+- Primary Language Representation（主要言語表現）が複数考えられ、
+  1つのCanonical Primary Language Support Representation（正規主要言語補助表現）を
   定めることで表現の揺れを抑えられる。
 - 複数のUsage Occurrenceがあり、
-  一貫した日本語補助の価値が高い。
+  一貫したPrimary Languageによる補助の価値が高い。
 
 ### Occurrence Count Handling（Occurrence Countの扱い）
 
@@ -383,15 +383,15 @@ Literal Representation（そのままの表記）は、
 
 これはHard Exclusion Ruleではない。
 
-この扱いが `CJS-SF-006` と衝突しないのは、
+この扱いが `CPL-SF-006` と衝突しないのは、
 除外の根拠が成立の見込みではないためである。
 
 ```text
-Japanese Reading Supportの対象でない
-→ CJS-SF-006が禁じる除外根拠ではない
+Primary Language Reading Supportの対象でない
+→ CPL-SF-006が禁じる除外根拠ではない
 
 成立の見込みが低い・不明である
-→ CJS-SF-006が禁じる除外根拠である
+→ CPL-SF-006が禁じる除外根拠である
 ```
 
 同じSurface Formが、
@@ -407,11 +407,11 @@ Japanese Reading Supportの対象でない
 Definition Responsibility（定義責務）によって
 すでに定義されていることがある。
 そのような箇所は
-Canonical Japanese Support（正規日本語補助）の
+Canonical Primary Language Support（正規主要言語補助）の
 Definition Authority（定義権限）の外にある。
 
 この境界は
-[Canonical Japanese Support Architecture](../architecture/canonical-japanese-support.md)
+[Canonical Primary Language Support Architecture](../architecture/canonical-primary-language-support.md)
 が保持するものであり、
 Candidate Recommendation（候補提案）の段階で
 判断を先取りする根拠にはならない。
@@ -430,7 +430,7 @@ Candidate Pool（候補集合）から外れることを意味しない。
 ```
 
 どこまでが定義責務側の表現であり、
-どこからがCanonical Japanese Support Association（正規日本語補助対応）の
+どこからがCanonical Primary Language Support Association（正規主要言語補助対応）の
 対象であるかは、
 Canonical Decision（正規判断）の側で確定する。
 
@@ -451,9 +451,9 @@ Rule ID（規則ID）はCategory（分類）を表現しない。
 
 ### Canonical Declaration（正規宣言）
 
-#### CJS-SF-001 — Central Canonical Declaration（中央での正規宣言）
+#### CPL-SF-001 — Central Canonical Declaration（中央での正規宣言）
 
-**Rule ID:** `CJS-SF-001`
+**Rule ID:** `CPL-SF-001`
 
 **Rule Name:** Central Canonical Declaration
 
@@ -461,18 +461,18 @@ Rule ID（規則ID）はCategory（分類）を表現しない。
 
 **Requirement:** MUST
 
-**Rule:** [Canonical Japanese Support Architecture](../architecture/canonical-japanese-support.md)
-上で成立したCanonical Japanese Support Association（正規日本語補助対応）は、
+**Rule:** [Canonical Primary Language Support Architecture](../architecture/canonical-primary-language-support.md)
+上で成立したCanonical Primary Language Support Association（正規主要言語補助対応）は、
 Repository内の
 Central Concrete Declaration Source（中央具体宣言情報源）へ
 Canonical Declaration（正規宣言）として保持する。
 
 **Reason:** 成立したCanonical Decision（正規判断）が
 中央に保持されていなければ、
-どのJapanese Representation（日本語表現）を用いるかを
+どのPrimary Language Representation（主要言語表現）を用いるかを
 使用箇所ごとに記述者が改めて判断することになり、
 同一のEnglish Representation（英語表現）に対して
-異なる日本語補助が併存する。
+異なるPrimary Languageによる補助が併存する。
 Canonical Declaration（正規宣言）を1箇所へ集約することで、
 すでに成立している決定を検索して再利用でき、
 使用箇所ごとの再判断が生じない。
@@ -494,9 +494,9 @@ Usage Occurrenceにおける
 Documentation Presentation（文書上の表示）とは別である。
 表示は本Ruleの対象ではない。
 
-#### CJS-SF-002 — Canonical Association Declaration（正規対応の宣言）
+#### CPL-SF-002 — Canonical Association Declaration（正規対応の宣言）
 
-**Rule ID:** `CJS-SF-002`
+**Rule ID:** `CPL-SF-002`
 
 **Rule Name:** Canonical Association Declaration
 
@@ -506,15 +506,15 @@ Documentation Presentation（文書上の表示）とは別である。
 
 **Rule:** 各Canonical Declaration（正規宣言）は、
 対象となるEnglish Representation（英語表現）と
-Canonical Japanese Support Representation（正規日本語補助表現）との
-Canonical Japanese Support Association（正規日本語補助対応）を
+Canonical Primary Language Support Representation（正規主要言語補助表現）との
+Canonical Primary Language Support Association（正規主要言語補助対応）を
 表現する。
 
 **Reason:** Canonical Declaration（正規宣言）が保持すべき意味は、
-Canonical Japanese Support Association（正規日本語補助対応）そのものである。
+Canonical Primary Language Support Association（正規主要言語補助対応）そのものである。
 対応元と対応先のいずれかを欠く宣言は、
 どのEnglish Representation（英語表現）に対して
-どのJapanese Representation（日本語表現）を
+どのPrimary Language Representation（主要言語表現）を
 一貫して再利用するのかを確定させず、
 中央から検索して再利用するという目的を満たさない。
 
@@ -523,7 +523,7 @@ Canonical Japanese Support Association（正規日本語補助対応）そのも
 ```text
 English Representation
 +
-Canonical Japanese Support Representation
+Canonical Primary Language Support Representation
 ```
 
 本Ruleは、これ以外の要素を
@@ -532,9 +532,9 @@ Stable Identifier、Category（分類）、
 Formal Status（正式地位）、
 Presentation Parameter等は含めない。
 
-#### CJS-SF-003 — YAML Scalar Mapping Representation（YAML Scalar Mappingによる表現）
+#### CPL-SF-003 — YAML Scalar Mapping Representation（YAML Scalar Mappingによる表現）
 
-**Rule ID:** `CJS-SF-003`
+**Rule ID:** `CPL-SF-003`
 
 **Rule Name:** YAML Scalar Mapping Representation
 
@@ -547,15 +547,15 @@ YAMLで表現する。
 各Canonical Declaration（正規宣言）は、
 English Representation（英語表現）を
 Mapping Keyとし、
-Canonical Japanese Support Representation（正規日本語補助表現）を
+Canonical Primary Language Support Representation（正規主要言語補助表現）を
 Scalar Valueとする
 Scalar Mappingとして表現する。
 Mapping KeyとScalar Valueは、
 双方ともDouble-quoted Stringで表記する。
 
-**Reason:** `CJS-SF-002` が要求するSemantic Contentは、
+**Reason:** `CPL-SF-002` が要求するSemantic Contentは、
 English Representation（英語表現）から
-Canonical Japanese Support Representation（正規日本語補助表現）への
+Canonical Primary Language Support Representation（正規主要言語補助表現）への
 単純なAssociation（対応）である。
 Scalar Mappingは、この意味内容を
 余分な構造を挟まずそのまま表す最も直接的な形であり、
@@ -591,9 +591,9 @@ Canonical Declaration（正規宣言）の表現に限られる。
 
 ### Candidate Recommendation（候補提案）
 
-#### CJS-SF-004 — Candidate Recommendation（候補提案）
+#### CPL-SF-004 — Candidate Recommendation（候補提案）
 
-**Rule ID:** `CJS-SF-004`
+**Rule ID:** `CPL-SF-004`
 
 **Rule Name:** Candidate Recommendation
 
@@ -602,11 +602,11 @@ Canonical Declaration（正規宣言）の表現に限られる。
 **Requirement:** SHOULD
 
 **Rule:** Candidate Recommendation（候補提案）を行う場合は、
-Canonical Japanese Support Representation（正規日本語補助表現）を
+Canonical Primary Language Support Representation（正規主要言語補助表現）を
 定めることが、
 そのEnglish Representation（英語表現）の理解補助、または
 Repository Documentation（Repository文書）における
-Japanese Support Representationの一貫性に対して
+Primary Language Support Representationの一貫性に対して
 意味を持つと合理的に見込まれるものを優先して提案する。
 
 **Reason:** Candidate Recommendation（候補提案）は
@@ -626,7 +626,7 @@ Inputである。
 **Note:** 本Ruleは
 Registration Qualificationではない。
 本Ruleが述べるのは提案の優先であり、
-Canonical Japanese Support Association（正規日本語補助対応）が
+Canonical Primary Language Support Association（正規主要言語補助対応）が
 成立し得る対象を限定しない。
 
 本Ruleが述べる優先は、
@@ -634,7 +634,7 @@ Canonical Japanese Support Association（正規日本語補助対応）が
 優先されないことは、
 Candidate Recommendation（候補提案）の対象から
 除外されることを意味しない。
-除外してはならない根拠は `CJS-SF-006` が定める。
+除外してはならない根拠は `CPL-SF-006` が定める。
 
 本Ruleは、次のいずれも必要条件としない。
 
@@ -651,9 +651,9 @@ TitleまたはHeadingであること
 「Candidate Recommendation Guidance」に示す。
 同節はNon-normative Content（非規範的内容）である。
 
-#### CJS-SF-005 — Recommendation Does Not Establish Canonicality（提案は正規性を成立させない）
+#### CPL-SF-005 — Recommendation Does Not Establish Canonicality（提案は正規性を成立させない）
 
-**Rule ID:** `CJS-SF-005`
+**Rule ID:** `CPL-SF-005`
 
 **Rule Name:** Recommendation Does Not Establish Canonicality
 
@@ -662,10 +662,10 @@ TitleまたはHeadingであること
 **Requirement:** MUST NOT
 
 **Rule:** Candidate Recommendation（候補提案）が行われたことのみを根拠として、
-Canonical Japanese Support Association（正規日本語補助対応）が
+Canonical Primary Language Support Association（正規主要言語補助対応）が
 成立したものとして扱ってはならない。
 
-**Reason:** Canonical Japanese Support Association（正規日本語補助対応）は、
+**Reason:** Canonical Primary Language Support Association（正規主要言語補助対応）は、
 Repositoryが一貫して再利用すると決定したときに成立する。
 提案の存在を成立と同一視すると、
 決定されていない対応がCanonicalとして
@@ -680,7 +680,7 @@ Canonical Declaration（正規宣言）が
 Candidate Recommendation（候補提案）のみを根拠として
 成立を認めることである。
 Human Direct Decisionから
-Canonical Japanese Support Association（正規日本語補助対応）が
+Canonical Primary Language Support Association（正規主要言語補助対応）が
 成立する経路は妨げない。
 
 本Ruleは、
@@ -688,9 +688,9 @@ Human Review Workflow、
 具体的なActor、
 Approval / Rejection Stateを規定しない。
 
-#### CJS-SF-006 — Recommendation Does Not Preempt Canonical Decision（提案は正規判断を先取りしない）
+#### CPL-SF-006 — Recommendation Does Not Preempt Canonical Decision（提案は正規判断を先取りしない）
 
-**Rule ID:** `CJS-SF-006`
+**Rule ID:** `CPL-SF-006`
 
 **Rule Name:** Recommendation Does Not Preempt Canonical Decision
 
@@ -699,7 +699,7 @@ Approval / Rejection Stateを規定しない。
 **Requirement:** MUST NOT
 
 **Rule:** あるEnglish Representation（英語表現）について
-Canonical Japanese Support Association（正規日本語補助対応）が
+Canonical Primary Language Support Association（正規主要言語補助対応）が
 成立する見込みが低いこと、または
 成立するかどうかが不明であることのみを根拠として、
 そのEnglish Representation（英語表現）を
@@ -712,7 +712,7 @@ Canonical Association Establishment（正規対応成立）の側で決まる。
 成立させるか否かの判断自体が行われず、
 判断されなかったことと
 判断のうえ成立しなかったこととが区別できなくなる。
-`CJS-SF-005` は、提案されたことを成立と扱うことを禁じて
+`CPL-SF-005` は、提案されたことを成立と扱うことを禁じて
 提案と決定を分離している。
 成立の見込みを提案の可否へ持ち込むことは、
 同じ分離を逆向きに崩し、
@@ -725,7 +725,7 @@ Canonical Decision（正規判断）が
 成立の見込みのみを根拠とする除外である。
 他の根拠による除外は本Ruleの対象ではない。
 Code・Identifier（識別子）・Path等として機能し、
-Japanese Reading Supportの対象でないことが
+Primary Language Reading Supportの対象でないことが
 明らかなLiteral Representation（そのままの表記）を
 提案対象としないことは、
 成立の見込みを根拠とする除外ではない。
@@ -738,7 +738,7 @@ Completenessを要求しない。
 提案数を増やすことも要求しない。
 
 本Ruleは、
-`CJS-SF-004` が述べる提案の優先を妨げない。
+`CPL-SF-004` が述べる提案の優先を妨げない。
 優先度の差は提案対象の順序または提示上の強調として働き、
 除外としては働かない。
 
@@ -761,7 +761,7 @@ Approval / Rejection Stateを規定しない。
   Concrete Source Assignmentを
   「Concrete Declarations」で明示的に宣言している。
 - すべてのNormative Rule（規範的規則）が
-  `CJS-SF-NNN` 形式のRule ID（規則ID）を持つ。
+  `CPL-SF-NNN` 形式のRule ID（規則ID）を持つ。
 - すべてのNormative Rule（規範的規則）が、
   必須Fieldを規定の順序・表現で持つ。
 - すべてのNormative Rule（規範的規則）が
@@ -776,7 +776,7 @@ Approval / Rejection Stateを規定しない。
 - File Stemは
   英字をすべて小文字で表記し、語をハイフンで区切っている。
 - 現在のPath Contextにおいて、
-  `canonical-japanese-support` はその対象を十分に識別している。
+  `canonical-primary-language-support` はその対象を十分に識別している。
 
 本節はNon-normative Content（非規範的内容）であり、
 新たなNormative Requirement（規範要求）を追加しない。

@@ -237,10 +237,10 @@ Standard Section Heading Representation（標準Section見出し表現）その�
 ```text
 Standard Section:                Position
 English Heading Representation:  Position
-Japanese Heading Explanation:    設計上の位置づけ
+Primary Language Heading Explanation:    設計上の位置づけ
 ```
 
-`Position` のJapanese Heading Explanation（日本語見出し説明）を
+`Position` のPrimary Language Heading Explanation（主要言語見出し説明）を
 `設計上の位置づけ` とするのは、当該Standard Section（標準Section）の
 Section Responsibility（Section責務）が、
 上位Sourceとの関係に限らず、
@@ -252,7 +252,7 @@ Section Responsibility（Section責務）が、
 ```text
 Standard Section:                Concept Model
 English Heading Representation:  Concept Model
-Japanese Heading Explanation:    概念モデル
+Primary Language Heading Explanation:    概念モデル
 ```
 
 #### Design Principles Standard Section（設計原則標準Section）
@@ -260,7 +260,7 @@ Japanese Heading Explanation:    概念モデル
 ```text
 Standard Section:                Design Principles
 English Heading Representation:  Design Principles
-Japanese Heading Explanation:    設計原則
+Primary Language Heading Explanation:    設計原則
 ```
 
 #### Non-goals Standard Section（非目標標準Section）
@@ -268,10 +268,10 @@ Japanese Heading Explanation:    設計原則
 ```text
 Standard Section:                Non-goals
 English Heading Representation:  Non-goals
-Japanese Heading Explanation:    現在扱わない事項
+Primary Language Heading Explanation:    現在扱わない事項
 ```
 
-`Non-goals` のJapanese Heading Explanation（日本語見出し説明）に
+`Non-goals` のPrimary Language Heading Explanation（主要言語見出し説明）に
 Delegationを含めないのは、
 `RDS-SF-004` においてDelegationが
 必要な場合にのみ付随する情報であり、
@@ -284,7 +284,7 @@ Section Responsibility（Section責務）を常に構成するものでは
 ```text
 Standard Section:                Concrete Declarations
 English Heading Representation:  Concrete Declarations
-Japanese Heading Explanation:    具体宣言
+Primary Language Heading Explanation:    具体宣言
 ```
 
 #### Convention Code Standard Section（規約コード標準Section）
@@ -292,7 +292,7 @@ Japanese Heading Explanation:    具体宣言
 ```text
 Standard Section:                Convention Code
 English Heading Representation:  Convention Code
-Japanese Heading Explanation:    規約コード
+Primary Language Heading Explanation:    規約コード
 ```
 
 #### Namespace Code Standard Section（名前空間コード標準Section）
@@ -300,7 +300,7 @@ Japanese Heading Explanation:    規約コード
 ```text
 Standard Section:                Namespace Code
 English Heading Representation:  Namespace Code
-Japanese Heading Explanation:    名前空間コード
+Primary Language Heading Explanation:    名前空間コード
 ```
 
 #### Normative Rules Standard Section（規範的ルール標準Section）
@@ -308,7 +308,7 @@ Japanese Heading Explanation:    名前空間コード
 ```text
 Standard Section:                Normative Rules
 English Heading Representation:  Normative Rules
-Japanese Heading Explanation:    規範的ルール
+Primary Language Heading Explanation:    規範的ルール
 ```
 
 #### Self Application Standard Section（自己適用標準Section）
@@ -316,7 +316,7 @@ Japanese Heading Explanation:    規範的ルール
 ```text
 Standard Section:                Self Application
 English Heading Representation:  Self Application
-Japanese Heading Explanation:    本文書自身への適用
+Primary Language Heading Explanation:    本文書自身への適用
 ```
 
 ## Reading Aid（読解のための補足）

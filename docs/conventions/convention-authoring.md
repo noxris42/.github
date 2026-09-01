@@ -446,29 +446,30 @@ Heading（見出し）の文字列形式は
 **Rule:** Normative Rule（規範的規則）の
 Rule Section（ルールSection）のHeading（見出し）は、
 そのRuleのRule ID（規則ID）、Rule Name（規則名）、および
-Japanese Heading Explanation（日本語見出し説明）を、
+Primary Language Heading Explanation（主要言語見出し説明）を、
 次の形式で表示する。
 
 ```text
-Rule ID — Rule Name（Japanese Heading Explanation）
+Rule ID — Rule Name（Primary Language Heading Explanation）
 ```
 
-Japanese Heading Explanation（日本語見出し説明）は、
+Primary Language Heading Explanation（主要言語見出し説明）は、
 Rule Section Heading Presentation（Rule Section見出し表示）側で定義する。
 その値は、当該Rule Section（ルールSection）の
 Rule Section Responsibility（Rule Section責務）を
-日本語で理解可能にする
+Primary Languageで理解可能にする
 Human-readable Representation（人間可読表現）である。
 
 **Reason:** Rule Section Heading（Rule Section見出し）が
 Rule ID（規則ID）とRule Name（規則名）だけで構成される場合、
 そのRule Section（ルールSection）が何を扱う責務なのかを
-Heading（見出し）から日本語で把握できない。
-Heading（見出し）へ日本語の理解補助を含めることで、
+Heading（見出し）からPrimary Languageで把握できない。
+Heading（見出し）へPrimary Languageによる理解補助を含めることで、
 読み手は本文を読む前に対象Ruleを絞り込める。
 Definition Responsibility（定義責務）を
 Rule Section Heading Presentation（Rule Section見出し表示）側へ置くのは、
-この日本語値がHeading（見出し）という表示のために必要となる値であり、
+このPrimary Languageによる値がHeading（見出し）という
+表示のために必要となる値であり、
 Rule Model（規則モデル）が保持すべき
 Normative Content（規範的内容）ではないためである。
 定義の所在を表示側に限定することで、
@@ -476,30 +477,30 @@ Heading（見出し）の都合が
 Rule Model（規則モデル）およびRule Identity（規則同一性）へ
 波及しない。
 
-**Note:** Japanese Heading Explanation（日本語見出し説明）は
+**Note:** Primary Language Heading Explanation（主要言語見出し説明）は
 Rule Model（規則モデル）のFieldではなく、
 Rule Field（規則フィールド）として記述しない。
 Rule Name（規則名）の
-Japanese Rule Name Representation（日本語Rule Name表現）でもない。
+Primary Language Rule Name Representation（主要言語Rule Name表現）でもない。
 
-Japanese Heading Explanation（日本語見出し説明）が
-Rule Name（規則名）の自然な日本語訳と
+Primary Language Heading Explanation（主要言語見出し説明）が
+Rule Name（規則名）の自然なPrimary Languageによる訳と
 同じ文字列になることは許容する。
 ただしその文字列一致から、
-Japanese Rule Name（日本語Rule Name）という
+Primary Language Rule Name（主要言語Rule Name）という
 Semantic Role（意味上の役割）は導出されない。
 
 本Ruleは、
 Rule Identity（規則同一性）およびRule Name（規則名）へ
-Japanese Representation（日本語表現）を追加しない。
+Primary Language Representation（主要言語表現）を追加しない。
 
-Japanese Heading Explanation（日本語見出し説明）としての値は、
+Primary Language Heading Explanation（主要言語見出し説明）としての値は、
 Rule Section Heading Presentation（Rule Section見出し表示）側で定義され、
-Canonical Japanese Support（正規日本語補助）によって
+Canonical Primary Language Support（正規主要言語補助）によって
 定義または導出されない。
 
-同じConcrete Japanese String（具体日本語文字列）が、
-別途Canonical Japanese Support Representation（正規日本語補助表現）として
+同じConcrete Primary Language String（具体主要言語文字列）が、
+別途Canonical Primary Language Support Representation（正規主要言語補助表現）として
 成立することは妨げない。
 ただしその文字列一致から、
 両者のSemantic Role（意味上の役割）または
@@ -814,7 +815,7 @@ Development Versionに認められた再編の自由を不要に失わせる。
 - すべてのNormative Rule（規範的規則）が
   `CVA-SF-NNN` 形式のRule ID（規則ID）を持つ。
 - すべてのNormative Rule（規範的規則）のRule Section（ルールSection）が、
-  `Rule ID — Rule Name（Japanese Heading Explanation）` の形式の
+  `Rule ID — Rule Name（Primary Language Heading Explanation）` の形式の
   Heading（見出し）を持つ。
 - すべてのNormative Rule（規範的規則）が、
   必須Fieldを規定の順序・表現で持つ。

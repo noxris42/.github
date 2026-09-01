@@ -216,7 +216,7 @@ Standard Section Heading Representation（標準Section見出し表現）その�
 ```text
 Standard Section:                Purpose
 English Heading Representation:  Purpose
-Japanese Heading Explanation:    目的
+Primary Language Heading Explanation:    目的
 ```
 
 #### Scope Standard Section（対象範囲標準Section）
@@ -224,10 +224,10 @@ Japanese Heading Explanation:    目的
 ```text
 Standard Section:                Scope
 English Heading Representation:  Scope
-Japanese Heading Explanation:    対象範囲
+Primary Language Heading Explanation:    対象範囲
 ```
 
-`Scope` のJapanese Heading Explanation（日本語見出し説明）を
+`Scope` のPrimary Language Heading Explanation（主要言語見出し説明）を
 `対象範囲` とするのは、当該Standard Section（標準Section）が
 適用される範囲だけでなく、何を扱い何を扱わないかという
 Responsibility Boundary（責務境界）まで含むためである。
@@ -237,10 +237,10 @@ Responsibility Boundary（責務境界）まで含むためである。
 ```text
 Standard Section:                Relationships
 English Heading Representation:  Relationships
-Japanese Heading Explanation:    関係
+Primary Language Heading Explanation:    関係
 ```
 
-`Relationships` のJapanese Heading Explanation（日本語見出し説明）を
+`Relationships` のPrimary Language Heading Explanation（主要言語見出し説明）を
 `関係` とするのは、当該Standard Section（標準Section）が
 他のDocumentation Asset（文書資産）・Responsibility（責務）・
 Concept（概念）等とのSemantic Relationship全般を
@@ -251,7 +251,7 @@ Concept（概念）等とのSemantic Relationship全般を
 ```text
 Standard Section:                In Scope
 English Heading Representation:  In Scope
-Japanese Heading Explanation:    本文書が定義する範囲
+Primary Language Heading Explanation:    本文書が定義する範囲
 ```
 
 #### Out of Scope Standard Section（対象範囲外標準Section）
@@ -259,10 +259,10 @@ Japanese Heading Explanation:    本文書が定義する範囲
 ```text
 Standard Section:                Out of Scope
 English Heading Representation:  Out of Scope
-Japanese Heading Explanation:    本文書が定義しない範囲
+Primary Language Heading Explanation:    本文書が定義しない範囲
 ```
 
-`In Scope` / `Out of Scope` のJapanese Heading Explanation（日本語見出し説明）
+`In Scope` / `Out of Scope` のPrimary Language Heading Explanation（主要言語見出し説明）
 を
 `本文書が定義する範囲` / `本文書が定義しない範囲` とするのは、
 両者がいずれもScope Standard Sectionの
@@ -276,7 +276,7 @@ Document Responsibility（文書責務）の内外を対象とすることを
 ```text
 Standard Section:                Responsibility Boundary
 English Heading Representation:  Responsibility Boundary
-Japanese Heading Explanation:    責務境界
+Primary Language Heading Explanation:    責務境界
 ```
 
 ## Reading Aid（読解のための補足）
@@ -391,7 +391,7 @@ Standard Section
     │
     └─ 0..1 Standard Section Heading Representation
           ├─ English Heading Representation
-          └─ Japanese Heading Explanation
+          └─ Primary Language Heading Explanation
 ```
 
 Standard Section Heading Representation（標準Section見出し表現）は
@@ -402,19 +402,19 @@ Standard Section（標準Section）の成立を妨げない。
 同一のHeading（見出し）文字列であることから
 Standard Section Identity（標準Section同一性）を導出しない。
 
-Japanese Heading Explanation（日本語見出し説明）は
-Canonical Japanese Support Representation（正規日本語補助表現）ではない。
+Primary Language Heading Explanation（主要言語見出し説明）は
+Canonical Primary Language Support Representation（正規主要言語補助表現）ではない。
 
 ```text
-Japanese Heading Explanation
-    ≠ Canonical Japanese Support Representation
+Primary Language Heading Explanation
+    ≠ Canonical Primary Language Support Representation
 
 same value
     ≠ same semantic responsibility
 ```
 
-同一のJapanese Valueが
-Canonical Japanese Support（正規日本語補助）側にも存在し得ることは
+同一のPrimary Language Valueが
+Canonical Primary Language Support（正規主要言語補助）側にも存在し得ることは
 禁止されない。
 両者はSemantic Responsibility（意味上の責務）が異なる。
 
@@ -778,7 +778,7 @@ Standard Section Heading Representation（標準Section見出し表現）を
 Convention（規約）上で行い、
 1つのStandard Section（標準Section）につき最大1つとし、
 English Heading Representationと、
-それに対応するJapanese Heading Explanation（日本語見出し説明）によって
+それに対応するPrimary Language Heading Explanation（主要言語見出し説明）によって
 構成しなければならない。
 
 **Reason:** 同一のStandard Section Identity（標準Section同一性）は
@@ -797,9 +797,9 @@ Standard Section Heading Representation（標準Section見出し表現）を
 本Ruleが必須とするのは定義する場合の構成条件のみである。
 定義されていないことは、
 `DST-SF-005` によるStandard Section（標準Section）の成立を妨げない。
-Japanese Heading Explanation（日本語見出し説明）は
-当該Heading Representation（見出し表現）を日本語で説明するものであり、
-Canonical Japanese Support Representation（正規日本語補助表現）ではない。
+Primary Language Heading Explanation（主要言語見出し説明）は
+当該Heading Representation（見出し表現）をPrimary Languageで説明するものであり、
+Canonical Primary Language Support Representation（正規主要言語補助表現）ではない。
 
 #### DST-SF-019 — Standard Section Heading Representation Reuse（標準Section見出し表現の再利用）
 
