@@ -170,6 +170,7 @@ Markdown上で表現する場合の表現を扱うが、
   Link Reference Representation
 - Image RepresentationにおけるAlt Textの保持
 - Markdown Source上のBlock Spacingおよび行末表現
+- Markdown Source上のNatural Language Prose（自然言語本文）のSource Line Wrapping
 - Markdown RepresentationとHTMLの選択
 
 ### Out of Scope（本文書が定義しない範囲）
@@ -198,7 +199,7 @@ Markdown上で表現する場合の表現を扱うが、
   Documentation Asset（文書資産）全体にわたる
   Heading（見出し）の一意性、
   およびList Nestingの深さ制限
-- Line Length上限およびHard Wrap
+- Line Length上限
 - File Encoding、Byte Order Mark、Final Newline等の
   Repository全体のFile Property
 - Front Matter、Metadata、およびそれらのSchema
@@ -1246,7 +1247,7 @@ Hard Line Breakという表現自体を禁止しない。
 
 本Ruleは、
 行内および行頭の空白、Indent、
-Line Length、Hard Wrapを定めない。
+Line Lengthを定めない。
 
 #### MDK-SF-023 — Markdown over HTML（HTMLよりMarkdown表現を優先する）
 
@@ -1278,3 +1279,21 @@ HTMLを使用することは本Ruleの対象ではない。
 
 本Ruleは、
 使用してよいHTML要素のCatalogを保持しない。
+
+#### MDK-SF-024 — Prose Source Line Wrapping（自然言語本文のSource行折返し）
+
+**Rule ID:** `MDK-SF-024`
+
+**Rule Name:** Prose Source Line Wrapping
+
+**Stability:** Development
+
+**Requirement:** MUST NOT
+
+**Rule:** Markdown Source内のNatural Language Prose（自然言語本文）を、表示上の理由だけでSource上において途中で改行してはならない。
+
+**Reason:** 表示のためだけに置かれたSource Line Breakは、Meaning（意味）ともSemantic Structure（意味構造）とも対応しないSource Boundary（Source上の境界）を作る。その境界は、Paragraph等の内容を編集するたびに前後の行へ波及して再調整を必要とし、Meaningを変更していないにもかかわらずSource Formattingだけが変化するDiffを生じさせる。表示幅への適応はEditorおよびViewerが担えるため、どこで折り返すかという表示上の判断をRepository Sourceへ保持する必要がない。表示のための折返しをSourceへ持ち込まないことで、Meaning（意味）またはSemantic Structure（意味構造）と対応しないPresentation-only Source Boundaryが生じることを防ぐ。
+
+**Note:** 本Ruleは、Maximum Line Length（最大行長）を定めない。
+
+Markdown Syntax、Semantic Structure（意味構造）、またはContentのMeaning（意味）によってSource Line Breakが必要となる場合、そのLine Breakは本Ruleが禁止するPresentation-only Source Line Wrappingには当たらない。
