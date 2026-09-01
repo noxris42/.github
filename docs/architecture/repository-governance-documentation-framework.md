@@ -49,7 +49,7 @@ Repository Governance Documentation Framework
 **一つの具体的なDocumentation Framework（文書体系）** である。
 Documentation Structure（文書構造）の一般Modelを拡張・上書きしない。
 
-#### Relationship with Document Responsibility（Document Responsibilityとの関係）
+#### Relationship with Document Responsibility（文書責務との関係）
 
 同Architectureにおける
 Document Responsibility（文書責務）は、
@@ -79,7 +79,7 @@ Document Responsibility（文書責務）の一般Concept（概念）を
 本Framework（体系）の範囲において具体化したものである。
 一般Concept（概念）を置き換えるものではない。
 
-#### Relationship with Area Responsibility（Area Responsibilityとの関係）
+#### Relationship with Area Responsibility（領域責務との関係）
 
 同Architectureにおける
 Area Responsibility（領域責務）は、
@@ -286,7 +286,7 @@ Repositoryにおける設計・判断の根拠となる
 - Reusable Normative Rule
 - Subject-specific Contract
 
-### Boundary with Architecture Area（Architecture Areaとの境界）
+### Boundary with Architecture Area（アーキテクチャ領域との境界）
 
 ここで示すのは、
 **Philosophy Area（思想領域）と
@@ -361,7 +361,7 @@ Repositoryが扱うSubjectについて、
 - Reusable Normative Standard（再利用可能な規範標準） / Rule
 - Subject-specific Concrete Contract
 
-### Local Design Principle Handling（Local Design Principleの扱い）
+### Local Design Principle Handling（局所設計原則の扱い）
 
 Architecture Area（アーキテクチャ領域）の文書が、
 自身が定義するModelの内部で成立する
@@ -419,7 +419,7 @@ Conventions Area（規約領域）は、それらを参照して規範を定め�
 そのSubjectを成立・実現・運用・検証可能にする
 **Concrete Contract** を定義する。
 
-### Boundary with Conventions Area（Conventions Areaとの境界）
+### Boundary with Conventions Area（規約領域との境界）
 
 両者の差は、
 **Normativeか Non-normativeかではない** 。
@@ -520,7 +520,7 @@ Documentation Structure（文書構造）全般に適用される
 これは本Framework（体系）が現在採る対応であり、
 一般Modelの要求ではない。
 
-### Mapping Rule Ownership（Mapping Ruleの所有）
+### Mapping Rule Ownership（対応規則の所有責任）
 
 具体的なPhysical Mapping Ruleを
 最終的にどのConvention（規約）が所有するかは、

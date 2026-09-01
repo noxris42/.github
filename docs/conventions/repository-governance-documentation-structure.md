@@ -351,7 +351,7 @@ Repository Governance Documentation Structure Convention
 その機構へ適合する側として、
 個別のStandard Section（標準Section）を定義する。
 
-### Identity and Representation（IdentityとRepresentation）
+### Standard Section Identity and Standard Section Heading Representation（標準Section同一性と標準Section見出し表現）
 
 `Position`・`Concept Model`・`Design Principles`・`Non-goals`・
 `Concrete Declarations`・`Convention Code`・`Namespace Code`・

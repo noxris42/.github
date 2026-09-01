@@ -301,7 +301,7 @@ Primary Language Representation（主要言語表現）側から見た
 
 ## Responsibility Boundary（責務境界）
 
-### Boundary with English Representation and Underlying Meaning（English RepresentationおよびUnderlying Meaningとの境界）
+### Boundary with English Representation and Underlying Meaning（英語表現および対象の意味との境界）
 
 本文書がDefinition Responsibility（定義責務）を持つのは、
 Canonical Primary Language Support Association（正規主要言語補助対応）を

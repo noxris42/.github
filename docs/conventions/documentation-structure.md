@@ -287,7 +287,7 @@ Normative Meaning（規範的意味）を保持しない。
 Standard Section（標準Section）の要件・適用・責務は、
 すべてNormative Rule（規範的規則）側で確定する。
 
-### Standard Section Positioning（Standard Sectionの位置づけ）
+### Standard Section Positioning（標準Sectionの位置づけ）
 
 Standard Section（標準Section）は、
 複数のDocumentation Asset（文書資産）へ反復適用され得る

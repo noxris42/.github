@@ -361,7 +361,7 @@ Rule Statement（規則文）が
 Natural Language Prose（自然言語本文）のみを対象とする場合、
 その適用は本文に限られる。
 
-### Relationship with Canonical Primary Language Support Establishment（Canonical Primary Language Support側の成立との関係）
+### Relationship with Canonical Primary Language Support Establishment（正規主要言語補助側の成立との関係）
 
 本文書は、あるEnglish Representation（英語表現）について
 Canonical Primary Language Support Association（正規主要言語補助対応）が
@@ -532,14 +532,41 @@ Message Language（メッセージ言語）は
 
 **Requirement:** MUST
 
-**Rule:** Canonical Primary Language Support Association（正規主要言語補助対応）が
-成立しているEnglish Representation（英語表現）を
-Human-readable Natural Language Representation（人間可読な自然言語表現）で
-使用する場合、次の形式で表示する。
+**Rule:** Human-readable Natural Language Representation（人間可読な自然言語表現）において、
+Defined English Representation（定義済み英語表現）が
+Defined Subject（定義済み対象）そのものへの
+Semantic Reference（意味参照）として機能する場合、
+その個々のSemantic Reference Usage（意味参照使用）を
+本Ruleの使用単位とする。
+
+Composite Human-readable Natural Language Representation
+（複合人間可読自然言語表現）に
+Defined English Representation（定義済み英語表現）と同じSurface Formが
+文字列として含まれるだけでは、
+独立したSemantic Reference Usage（意味参照使用）は成立しない。
+
+Semantic Reference（意味参照）の対象であるEnglish Representation（英語表現）に
+Canonical Primary Language Support Association（正規主要言語補助対応）が
+成立している場合、
+そのSemantic Reference Usage（意味参照使用）に対応する
+Canonical Primary Language Support Representation（正規主要言語補助表現）を、
+同じHuman-readable Natural Language Representation内で
+意味上明確に提示する。
+
+Semantic Reference Usage（意味参照使用）自体を
+独立してPresentation（表示）する場合は、次の形式で表示する。
 
 ```text
 English Representation（Canonical Primary Language Support Representation）
 ```
+
+Composite Human-readable Natural Language Representationでは、
+Canonical Primary Language Support Representation（正規主要言語補助表現）を
+独立したNested Presentation（入れ子表示）として挿入せず、
+Enclosing Human-readable Representation（包含する人間可読表現）の
+Primary Language Representation（主要言語表現）内部へ、
+当該Semantic Reference（意味参照）との対応が意味上明確になるよう
+Composition（合成）してもよい。
 
 本Ruleの適用対象は次の3つである。
 
@@ -558,7 +585,8 @@ Definition Responsibility（定義責務）によって
 その使用箇所は本Ruleの適用対象ではない。
 その箇所では定義済みの
 Human-readable Representation（人間可読表現）をそのまま使用し、
-本Ruleの表示形式がそれを置換・上書きすることはない。
+本RuleのPresentation Requirement（表示要求）が
+それを置換・上書きすることはない。
 
 Canonical Primary Language Support Association（正規主要言語補助対応）の有無、
 およびCanonical Primary Language Support Representation（正規主要言語補助表現）の値は
@@ -574,9 +602,12 @@ Primary Language Representation（主要言語表現）を保持している。
 その決定が使用箇所へ現れなければ、
 読み手は成立済みの理解補助を受け取れず、
 決定が読み手に対して機能しない。
-English Representation（英語表現）と
-Canonical Primary Language Support Representation（正規主要言語補助表現）を
-同じ箇所へ併記することで、
+English Representation（英語表現）へのSemantic Reference（意味参照）と
+Canonical Primary Language Support Representation（正規主要言語補助表現）との
+対応を同じ使用箇所で意味上明確にすることで、
+独立したPresentation（表示）か
+Composite Human-readable Natural Language Representation内の
+Composition（合成）かにかかわらず、
 読み手は参照される表現とそのPrimary Languageによる補助を
 対応付けたまま読み進められる。
 初出箇所に限定しないのは、
@@ -596,7 +627,7 @@ Canonical Primary Language Support（正規主要言語補助）側の責務で�
 English Representation（英語表現）の理解補助として選ばれた表現ではなく、
 その対象を所有するDefinition Authority（定義権限）が定義した
 Human-readable Representation（人間可読表現）そのものであるためである。
-そこへ本Ruleの表示形式を適用すると、
+そこへ本RuleのPresentation Requirement（表示要求）を適用すると、
 表示側が定義済みの表現を置き換えることになり、
 定義の所在と使用箇所の表現が分岐する。
 定義済みの表現をそのまま現すことで、
@@ -611,6 +642,37 @@ Canonical Primary Language Support Association（正規主要言語補助対応�
 Canonical Primary Language Support Association（正規主要言語補助対応）が
 成立していないEnglish Representation（英語表現）の表示について、
 本Ruleは何も定めない。
+
+たとえば、`Document Title` へのSemantic Reference（意味参照）と
+`Document Title` から `文書題名` への
+Canonical Primary Language Support Association（正規主要言語補助対応）が
+成立している場合、次のHeading Label（見出しラベル）は、
+Enclosing Human-readable Representation（包含する人間可読表現）の
+Primary Language Representation（主要言語表現）内部で
+Canonical Primary Language Support Representation（正規主要言語補助表現）を
+意味上明確にComposition（合成）している。
+
+```text
+Boundary with Document Title（文書題名との境界）
+```
+
+一方、次のHeading Label（見出しラベル）は、
+Representation（表現）全体のMeaning（意味）を
+Primary Languageで受け取れる場合であっても、
+`Document Title` へのSemantic Reference（意味参照）に対応する
+Canonical Primary Language Support Representation（正規主要言語補助表現）を
+提示していないため、同Association（対応）が成立している場合は
+本Ruleを満たさない。
+
+```text
+Boundary with Document Title（Document Titleとの境界）
+```
+
+本Ruleは、Composite Human-readable Natural Language Representationの
+一般的なComposition Model（合成モデル）または
+Translation Ruleを定めない。
+定めるのは、成立済みのCanonical Primary Language Support Associationを
+Semantic Reference Usage（意味参照使用）へ提示するために必要な境界のみである。
 
 Code・Identifier（識別子）・Path等として機能する
 Literal Representation（そのままの表記）は、
@@ -644,7 +706,7 @@ Standard Section Heading Representation（標準Section見出し表現）が
 Canonical Primary Language Support Association（正規主要言語補助対応）が
 成立していたとしても、
 本Ruleを根拠として
-そのHeading（見出し）を上記の表示形式へ置き換えることはない。
+そのHeading（見出し）を別のPresentation（表示）へ置き換えることはない。
 これは本Ruleの適用境界の一例であり、
 Standard Section（標準Section）に固有の例外ではない。
 
@@ -1028,12 +1090,17 @@ Document Title（文書題名）にも `WRT-SF-008` が適用される。
 - Document Title（文書題名）において、
   本文書が主として扱うSubject / Meaning（対象／意味）を表している。
 - Canonical Primary Language Support Association（正規主要言語補助対応）が
-  成立しているEnglish Representation（英語表現）を、
+  成立しているEnglish Representation（英語表現）への
+  Semantic Reference Usage（意味参照使用）に対し、
   Natural Language Prose（自然言語本文）、
   Document Title（文書題名）、およびHeading Label（見出しラベル）の
-  いずれにおいても
-  `English Representation（Canonical Primary Language Support Representation）`
-  の形式で表示している。
+  いずれにおいてもCanonical Primary Language Support Representation
+  （正規主要言語補助表現）を提示している。
+  独立したPresentation（表示）には規定の形式を使用し、
+  Composite Human-readable Natural Language Representationでは、
+  Enclosing Human-readable Representation（包含する人間可読表現）の
+  Primary Language Representation（主要言語表現）内部への
+  意味上明確なComposition（合成）によって提示している。
 - Definition Authority（定義権限）側で成立している
   English Representation（英語表現）を、
   参照箇所において一貫して使用している。

@@ -291,7 +291,7 @@ Architecture-level Conceptとして
 本節は新たなNormative Requirement（規範要求）を追加せず、
 Registration Qualificationも定めない。
 
-### Candidate Pool Breadth（Candidate Poolの広さ）
+### Candidate Pool Breadth（候補集合の広さ）
 
 Candidate Recommendation（候補提案）が生む
 Candidate Pool（候補集合）は、

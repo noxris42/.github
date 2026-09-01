@@ -565,7 +565,7 @@ Area Responsibility（領域責務）が成立していれば、
 Physical Representation（物理表現）を持たない
 Documentation Area（文書責務領域）も成立し得る。
 
-### Physical Representation Handling（Physical Representationの扱い）
+### Physical Representation Handling（物理表現の扱い）
 
 Logical Structure（論理構造）を
 Physical Structure（物理構造）へどう対応づけるかは、
@@ -630,7 +630,7 @@ Heading Level（見出しレベル）に
 Semantic Mappingを与えることも、
 本文書のような一般Structure Architectureでは行わない。
 
-### Boundary with Document Title（Document Titleとの境界）
+### Boundary with Document Title（文書題名との境界）
 
 Document Title（文書題名）は、
 Documentation Asset（文書資産）について
@@ -660,7 +660,7 @@ Document Title ≠ File Name / Path
 - Document Title（文書題名）と
   File名・Path等のPhysical Name（物理名称）
 
-### Do Not Derive Document Title from Identity, Responsibility, or Membership（Document Titleを同一性・責務・所属から導出しない）
+### Do Not Derive Document Title from Identity, Document Responsibility, or Membership（文書題名を同一性・文書責務・所属から導出しない）
 
 Document Title（文書題名）を、
 Documentation Asset（文書資産）のIdentity（同一性）、
@@ -684,7 +684,7 @@ Document Title（文書題名）へそれらを再提示することを、
 または特定のDocument Responsibility（文書責務）を担わないとは
 判断しない。
 
-### Document Title Composition Delegation（Document Title構成の委譲）
+### Document Title Composition Delegation（文書題名構成の委譲）
 
 Document Title（文書題名）の具体的な
 Composition Rule（構成規則）は、

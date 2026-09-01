@@ -190,7 +190,7 @@ Reasonを必須とするのは、次のためである。
   例外を認めてよいかを判断できるようにする。
 - Ruleの変更・廃止が妥当かを、目的に照らして判断できるようにする。
 
-### Distinction between Rule Name and Rule Identity（Rule NameとRule Identityの区別）
+### Distinction between Rule Name and Rule Identity（規則名と規則同一性の区別）
 
 Rule Name（規則名）は
 **Human-readable Label** であり、
@@ -233,7 +233,7 @@ Convention（規約）全体で用いる共通語彙として、
 
 ## Rule Identity（規則同一性）
 
-### Rule Identity Definition（Rule Identityの定義）
+### Rule Identity Definition（規則同一性の定義）
 
 Normative Rule（規範的規則）は、
 **Stable Reference（安定参照）** のための
@@ -259,7 +259,7 @@ Rule Identity（規則同一性）は意味上、次から構成される。
 **どのような表記に落とすかを定義しない** 。
 表記Formatおよび採番方法は後続設計へ委譲する。
 
-### Definition Namespace Purpose（Definition Namespaceの目的）
+### Definition Namespace Purpose（定義名前空間の目的）
 
 Definition Namespace（定義名前空間）は、
 将来のConvention Extensionを可能にするための
@@ -323,7 +323,7 @@ Development Version／Stable Versionの
 Identity（同一性）を再利用しないのは、
 過去の参照が別の意味へ静かにすり替わることを防ぐためである。
 
-### Identity Maintenance and Update（Identityの維持と更新）
+### Rule Identity Maintenance and Update（規則同一性の維持と更新）
 
 | 変更の性質 | 扱い |
 | --- | --- |

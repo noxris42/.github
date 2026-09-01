@@ -331,7 +331,7 @@ GitHub上で利用可能であることは、
 個々のSyntaxまたはRepresentation（表現）を使用するかどうかは、
 以降のNormative Rule（規範的規則）が定める。
 
-### Document and Heading Representation（DocumentおよびHeadingの表現）
+### Document and Heading Representation（Documentおよび見出しの表現）
 
 #### MDK-SF-002 — Document Title Heading Representation（文書題名の見出し表現）
 

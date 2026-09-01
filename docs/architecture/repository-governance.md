@@ -242,7 +242,7 @@ Shared Foundation Assetを、
 - 適用先：特定のRepository
 - 適用の判断主体：適用先Repository
 
-### Separation of Ownership and Application（OwnershipとApplicationの分離）
+### Separation of Ownership and Application（所有責任と適用の分離）
 
 Ownership（所有責任）とApplication（適用）は独立した概念であり、
 混同してはならない。
