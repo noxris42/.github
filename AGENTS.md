@@ -1,0 +1,1 @@
+このFileは、このRepositoryにおけるAI IntegrationのCross-agent Entryである。
