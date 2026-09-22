@@ -257,7 +257,7 @@ Cross-agent Entryの成立
 Navigation / Resolutionの成立
 ```
 
-Cross-agent Entry（Agent横断入口）が成立するために、次の接続先が定義済みであることを要求しない。本文書は、具体的なnext-hopを定義せず、要求せず、推奨しない。
+Cross-agent Entry（Agent横断入口）が成立するために、次の接続先が定義済みであることを要求しない。本文書は、具体的なnext-hopの内容を定義しない。
 
 現在正式に成立している状態は次である。
 
@@ -266,16 +266,19 @@ AGENTS.md
 = Cross-agent Entry
 
 next-hop
-= unspecified
+= 後続のAI Context Resolution Specificationが定義する
+  Resolution Resourceへの参照
 ```
 
-next-hopのDefinition（定義）はNavigation / Resolution Designの責務である。現在next-hopが未定義であることは、意図されたDownstream Delegation（後続委譲）であり、Design Gap（設計上の不足）ではない。
+next-hopのDefinition（定義）は[AI Context Resolution Specification](ai-context-resolution.md)が持つ。本文書が扱うのは、Entry（入口）がそのResolution Resourceを参照することまでであり、Navigation / Resolution（Navigation／解決）の内容は本文書の責務ではない。
+
+Entry（入口）がResolution Resourceを参照することは、Entry Responsibility（入口責務）を拡張せず、そのResolution Resourceが保持する内容に対するDefinition Authority（定義権限）も成立させない。
 
 ## Deferred to Downstream Design（後続設計へ委譲する事項）
 
 本文書は次を定義しない。ここで示す事項は、本文書の現在の責務に基づいて、意図的に定義・解決の対象外としている事項である。
 
-- next-hopのDefinition（定義）、Navigation / Resolution Mechanism（Navigation／解決機構）の設計、およびそのConcrete Representation（具体表現）。→ AI Context Resolution / Navigation Designへ委譲する。
+- next-hopのDefinition（定義）、Navigation / Resolution Mechanism（Navigation／解決機構）の設計、およびそのConcrete Representation（具体表現）。→ [AI Context Resolution Specification](ai-context-resolution.md)へ委譲する。
 - Effective Foundation State（有効基盤状態）のConcrete Representation（具体表現）。→ Foundation Application State Designへ委譲する。
 - Vendor-specific Entry（Vendor固有入口）が必要となった場合のConcrete Representation（具体表現）。→ Vendor-specific Integrationへ委譲する。
 - `.github` 以外のRepositoryにおけるEntry（入口）の設置。→ 当該RepositoryへのFoundation Applicationへ委譲する。
