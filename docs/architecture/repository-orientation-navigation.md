@@ -75,7 +75,7 @@ Repository Orientation / Navigation Architecture
 - 参照先Resource・Subjectそれぞれの内容、およびそのDefinition（定義）
 - 全Repositoryへ適用するRule、およびShared Foundation Assetとしての位置づけ
 - AI-specific Metadata / Manifest / Schema / Navigation Mechanism
-- Authoritative Foundation Resolution（正式基盤解決）、Primary Resolution（主たる解決）、およびFallback Foundation-wide Navigation / Discovery
+- Authoritative Foundation Resolution（正式基盤解決）およびPrimary Resolution（主たる解決）
 - Coverage（網羅）の検証方法、Validation、およびTool要求
 - Navigation Composition（Navigation構成）を構成するDocumentation Asset（文書資産）の更新手順その他のDocumentation Lifecycle（文書の生涯管理）
 
@@ -226,6 +226,4 @@ AI Consumer Usage     → permitted, secondary
 AI Consumer Usage     ≠ AI-specific Requirement
 ```
 
-Authoritative Foundation Resolution（正式基盤解決）は[AI Integration Architecture](ai-integration.md)が定義する責務であり、その経路は同Architectureを具体化する後続設計が定める。本Modelは、その経路、Primary Resolution（主たる解決）、およびPrimary Resolution（主たる解決）が成立しない場合のFallback Foundation-wide Navigation / Discoveryを定義・変更せず、それらの代替としても位置づけない。
-
-とくに、Complete Resource Coverage（完全資源網羅）がVersion管理されているFileを網羅することは、それがFallback Foundation-wide Navigation / Discoveryとして成立することを意味しない。
+Authoritative Foundation Resolution（正式基盤解決）は[AI Integration Architecture](ai-integration.md)が定義する責務であり、その経路は同Architectureを具体化する後続設計が定める。本Modelは、その経路およびPrimary Resolution（主たる解決）を定義・変更せず、それらの代替としても位置づけない。

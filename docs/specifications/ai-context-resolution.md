@@ -87,7 +87,6 @@ AI Context Resolution Specification
 - Effective Foundation State（有効基盤状態）の生成方式、Schema、Manifest等のConcrete Representation（具体表現）
 - Foundation Applicationの判断、およびその適用方式
 - Repository内のAsset全体を対象とするNavigation、およびその一覧
-- Primary Resolution（主たる解決）が成立しない場合のFallback Mechanism（代替機構）
 - Foundation Provider（基盤提供主体）をRemote Locationとして解決する方式
 - AI-consumedなResource一般のTaxonomy（分類体系）、Convention（規約）、およびSpecification（仕様）
 - Task Procedure（タスク手順）およびSpecialized Capability（専門能力）のDefinition（定義）
@@ -318,7 +317,6 @@ Cross-agent Entry（Agent横断入口）が保持するのは、本Concrete Repr
 
 本文書は次を定義しない。ここで示す事項は、本文書の現在の責務に基づいて、意図的に定義・解決の対象外としている事項である。
 
-- Primary Resolution（主たる解決）が成立しない場合のFallback Foundation-wide Navigation / Discovery。そのCurrent Semantic Need（現在の意味上の必要性）は確認されている。ただしこれはPrimary Resolution（主たる解決）とは別のWork Subject（作業主体）であり、そのConcrete Contract（具体契約）・Concrete Representation（具体表現）・Completeness（網羅性）を本文書では設計しない。
 - Repository内のAsset全体を対象とするNavigation、およびそのConcrete Representation（具体表現）。
 - Foundation Provider（基盤提供主体）をRemote Locationとして解決する方式。
 - Effective Foundation State（有効基盤状態）のConcrete Representation（具体表現）。→ Foundation Application State Designへ委譲する。
