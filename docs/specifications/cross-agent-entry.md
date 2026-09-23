@@ -168,11 +168,11 @@ AI-consumedであることは、そのResourceのConsumption Characteristic（�
 
 ### Minimum Semantic Content（最小意味内容）
 
-`AGENTS.md` は、Entry Responsibility（入口責務）を成立させるために必要な最小Semantic Content（最小意味内容）のみを保持する。
+`AGENTS.md` は、Cross-agent Entry（Agent横断入口）のConcrete Contract（具体契約）を成立させるために必要な最小Semantic Content（最小意味内容）のみを保持する。
 
 他のAuthoritative Source（正式Source）または後続Resourceが所有する説明・定義・Navigationを、Persistent Context（永続文脈）へ複製しない。利便性のみを根拠とする複製は、保持の根拠として成立しない。
 
-本項は分量に関するRule（規則）を定めない。Entry Responsibility（入口責務）の成立に必要なSemantic Content（意味内容）は削らない。
+本項は分量に関するRule（規則）を定めない。Cross-agent Entry（Agent横断入口）のConcrete Contract（具体契約）の成立に必要なSemantic Content（意味内容）は削らない。
 
 ### Language（言語）
 
@@ -265,20 +265,30 @@ Cross-agent Entry（Agent横断入口）が成立するために、次の接続�
 AGENTS.md
 = Cross-agent Entry
 
-next-hop
-= 後続のAI Context Resolution Specificationが定義する
-  Resolution Resourceへの参照
+Authoritative Foundation Resolution
+→ .ai/foundation-resolution.md
+
+Repository-level understanding / exploration
+→ README.md
 ```
 
-next-hopのDefinition（定義）は[AI Context Resolution Specification](ai-context-resolution.md)が持つ。本文書が扱うのは、Entry（入口）がそのResolution Resourceを参照することまでであり、Navigation / Resolution（Navigation／解決）の内容は本文書の責務ではない。
+各Routeは、それぞれ必要な場合にのみ利用を開始する条件付きのnext-hopである。Entry（入口）は、いずれかのRoute先の常時読込を要求しない。
 
-Entry（入口）がResolution Resourceを参照することは、Entry Responsibility（入口責務）を拡張せず、そのResolution Resourceが保持する内容に対するDefinition Authority（定義権限）も成立させない。
+Authoritative Foundation Resolution（正式基盤解決）へのnext-hopのDefinition（定義）は[AI Context Resolution Specification](ai-context-resolution.md)が持つ。Repository-level understanding / explorationのRoute先が担うResponsibility（責務）は[Repository Orientation / Navigation Architecture](../architecture/repository-orientation-navigation.md)による。後者のRouteは、既存のHuman-facingなResource（資源）をAI Consumer（AI利用主体）へ接続するDelivery Adaptation（提供適応）である。本文書が扱うのは、Entry（入口）がこれらのRoute先を参照することまでであり、Navigation / Resolution（Navigation／解決）の内容は本文書の責務ではない。
+
+RouteをEntry（入口）が保持することは、Entry Responsibility（入口責務）を拡張せず、Route先のResponsibility（責務）を所有することも、Route先が保持する内容に対するDefinition Authority（定義権限）を成立させることもない。
+
+```text
+RouteをAGENTS.mdが保持する
+≠
+Entry ResponsibilityがそのRoute先のResponsibilityを所有する
+```
 
 ## Deferred to Downstream Design（後続設計へ委譲する事項）
 
 本文書は次を定義しない。ここで示す事項は、本文書の現在の責務に基づいて、意図的に定義・解決の対象外としている事項である。
 
-- next-hopのDefinition（定義）、Navigation / Resolution Mechanism（Navigation／解決機構）の設計、およびそのConcrete Representation（具体表現）。→ [AI Context Resolution Specification](ai-context-resolution.md)へ委譲する。
+- Authoritative Foundation Resolution（正式基盤解決）へのnext-hopのDefinition（定義）、Resolution Mechanism（解決機構）の設計、およびそのConcrete Representation（具体表現）。→ [AI Context Resolution Specification](ai-context-resolution.md)へ委譲する。
 - Effective Foundation State（有効基盤状態）のConcrete Representation（具体表現）。→ Foundation Application State Designへ委譲する。
 - Vendor-specific Entry（Vendor固有入口）が必要となった場合のConcrete Representation（具体表現）。→ Vendor-specific Integrationへ委譲する。
 - `.github` 以外のRepositoryにおけるEntry（入口）の設置。→ 当該RepositoryへのFoundation Applicationへ委譲する。
