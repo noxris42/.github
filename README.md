@@ -75,6 +75,7 @@ Repository間のOwnership（所有責任）、Shared Scope、およびFoundation
 | --- | --- | --- |
 | [Cross-agent Entry Specification（Agent横断入口仕様）](docs/specifications/cross-agent-entry.md) | `docs/specifications/cross-agent-entry.md` | Cross-agent Entry（Agent横断入口）のConcrete Contract（具体契約） |
 | [AI Context Resolution Specification（AI文脈解決仕様）](docs/specifications/ai-context-resolution.md) | `docs/specifications/ai-context-resolution.md` | Cross-agent Entry（Agent横断入口）以降、RelevantなAuthoritative Foundation Source（正式基盤Source）を解決するConcrete Contract（具体契約） |
+| [Foundation Application State Specification（基盤適用状態仕様）](docs/specifications/foundation-application-state.md) | `docs/specifications/foundation-application-state.md` | Foundation Applicationの状態の宣言・解決と、Effective Foundation State（有効基盤状態）の導出に関するConcrete Contract（具体契約） |
 
 ### Supporting Declaration（補助宣言）
 

@@ -20,6 +20,7 @@
 - Shared Development Foundationの位置づけ
 - Shared Foundation AssetとRepository-owned Assetの区別
 - Foundation Applicationの概念
+- Foundation ApplicationとTarget-specific Applicability（対象固有適用範囲）の区別
 - 共有基盤へ含めるか否かの判断原則（Shared Scope Principles）
 - `.github` 自身への適用（Self Application）
 
@@ -190,6 +191,29 @@ Foundation Applicationの**具体方式、すなわちApplication Mechanism（�
 
 本文書が要求するのは、どの方式を採る場合でもOwnership（所有責任）とApplication（適用）の分離が保たれることのみである。
 
+### Target-specific Applicability（対象固有適用範囲）
+
+Target-specific Applicability（対象固有適用範囲）とは、Foundation Applicationによって特定Repositoryで有効となっているConvention（規約）について、そのConvention（規約）が定める個々のRuleが、当該Repository内の特定Targetに対してApplicableであるか否かを、適用先Repository側で具体化したものである。
+
+Foundation ApplicationとTarget-specific Applicability（対象固有適用範囲）は別の事柄であり、混同してはならない。
+
+```text
+Foundation Application
+≠ Target-specific Applicability
+```
+
+- **Foundation Application**：Shared Foundation Assetが、特定Repositoryで有効か否か。
+- **Target-specific Applicability（対象固有適用範囲）**：当該Repositoryで有効なConvention（規約）の個々のRuleが、そのRepository内の特定TargetへApplicableか否か。
+
+したがって次が成立する。
+
+- 適用先Repositoryは、自身へ適用されたConvention（規約）について、Target-specific Applicability（対象固有適用範囲）を持ち得る。その判断主体は、Foundation Applicationと同じく適用先Repositoryである。
+- Target-specific Applicability（対象固有適用範囲）は、Foundation Applicationそのものを変更しない。あるTargetであるRuleがApplicableでないことは、そのConvention（規約）が当該Repositoryで有効でないことを意味しない。
+- 当該Repositoryで有効になっていないConvention（規約）を、Target-specific Applicability（対象固有適用範囲）によって特定Targetでのみ有効にしない。
+- 個々のRuleが自身の内容として定めるApplicabilityは、そのRuleを定めるConvention（規約）が決定する。Target-specific Applicability（対象固有適用範囲）は、それを拡張・上書きしない。
+
+Target-specific Applicability（対象固有適用範囲）におけるTargetの指定方式、複数の指定の合成方式、およびその表現形式は本文書で固定しない。これらは後続設計へ委譲する。
+
 ## Shared Scope Principles（共有基盤へ含める範囲の判断原則）
 
 ### Responsibility-based Sharing（再利用性ではなく共有責務に基づいて共通化する）
@@ -288,6 +312,7 @@ ArchitectureやConvention（規約）を、個々のAssetのOwnership（所有�
 
 - Application Mechanism（適用方式）の具体実装
 - Asset Type（資産種別）ごとの適用手順
+- Target-specific Applicability（対象固有適用範囲）におけるTargetの指定方式・合成方式
 
 ### Declaration / Representation Format（宣言・記述形式に関する事項）
 

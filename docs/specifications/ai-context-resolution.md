@@ -84,7 +84,7 @@ AI Context Resolution Specification
 - Cross-agent Entry（Agent横断入口）の成立、Entry Responsibility（入口責務）、およびそのConcrete Representation（具体表現）
 - Task Context（タスク文脈）の内部要素、Schema、およびTask Model
 - Task Relevance（タスク関連性）の判断基準、およびその判断結果の保持形式
-- Effective Foundation State（有効基盤状態）の生成方式、Schema、Manifest等のConcrete Representation（具体表現）
+- Effective Foundation State（有効基盤状態）の生成方式、Schema、Manifest等のConcrete Representation（具体表現）。→ [Foundation Application State Specification](foundation-application-state.md)による。
 - Foundation Applicationの判断、およびその適用方式
 - Repository Orientation / Navigation（Repository方向付け／探索）、およびそのConcrete Representation（具体表現）。→ [Repository Orientation / Navigation Architecture](../architecture/repository-orientation-navigation.md)による。
 - Foundation Provider（基盤提供主体）をRemote Locationとして解決する方式
@@ -318,7 +318,6 @@ Cross-agent Entry（Agent横断入口）が保持するのは、本Concrete Repr
 本文書は次を定義しない。ここで示す事項は、本文書の現在の責務に基づいて、意図的に定義・解決の対象外としている事項である。
 
 - Foundation Provider（基盤提供主体）をRemote Locationとして解決する方式。
-- Effective Foundation State（有効基盤状態）のConcrete Representation（具体表現）。→ Foundation Application State Designへ委譲する。
 - Consumer Repository（利用Repository）におけるFoundation ProviderのLocationの決定方式。→ 当該RepositoryへのFoundation Applicationへ委譲する。
 - Vendor固有のResource（資源）およびAdapter。→ Vendor-specific Integrationへ委譲する。
 

@@ -123,7 +123,22 @@ Authoritative Source（正式Source）は、あるFoundation Definition（基盤
 
 Effective Foundation State（有効基盤状態）は、Foundation Applicationの結果として、特定Repositoryで現在有効になっているShared Foundation（共通基盤）の状態である。
 
+Effective Foundation State（有効基盤状態）は、次を含み得る。
+
+- 当該Repositoryで有効なShared Foundation Asset、すなわち解決済みのFoundation Application
+- 当該Repositoryで有効なConvention（規約）について成立しているTarget-specific Applicability（対象固有適用範囲）
+
+したがって、Target-specific Applicability（対象固有適用範囲）は、Effective Foundation State（有効基盤状態）の一部として参照され得る。Foundation ApplicationおよびTarget-specific Applicability（対象固有適用範囲）の意味と、両者の境界は[Repository Governance](repository-governance.md)が定める。本文書はこれらを再定義しない。
+
 Effective Foundation State（有効基盤状態）は、AI Integration（AI連携）にとって外部から与えられる入力である。本文書は、その生成方式、Schema、Manifest等のConcrete Representation（具体表現）を定義しない。
+
+Effective Foundation State（有効基盤状態）を成立させるFoundation Application State（基盤適用状態）は、AI Integration（AI連携）の下位設計ではない。AI Integration（AI連携）がその結果であるEffective Foundation State（有効基盤状態）を消費する、隣接Subjectである。
+
+```text
+Foundation Application State
+  = 隣接Subject
+  ≠ AI Integrationの下位設計
+```
 
 ### Task Context（タスク文脈）
 
@@ -148,6 +163,7 @@ Task Relevance（タスク関連性）はApplicabilityを変更しない。す�
 | Shared Development Foundation | [Repository Governance](repository-governance.md) |
 | Shared Foundation Asset | [Repository Governance](repository-governance.md) |
 | Foundation Application | [Repository Governance](repository-governance.md) |
+| Target-specific Applicability（対象固有適用範囲） | [Repository Governance](repository-governance.md) |
 | Ownership（所有責任） | [Repository Governance](repository-governance.md) |
 | Repository-specific State（Repository固有状態） | 当該Consumer Repository（利用Repository） |
 | Definition Authority（定義権限）の成立条件 | [Documentation Structure Architecture](documentation-structure.md) |
@@ -208,7 +224,7 @@ AI Integration（AI連携）のCore Responsibility（中核責務）は次の3�
 
 Foundation Applicationによって決定済みのEffective Foundation State（有効基盤状態）を参照・利用する責務である。
 
-AI Integration（AI連携）自身は、Foundation Applicationを決定・変更・上書きしない。Effective Foundation State（有効基盤状態）は、AI Integration（AI連携）にとって参照の対象であり、生成または改変の対象ではない。
+AI Integration（AI連携）自身は、Foundation ApplicationおよびTarget-specific Applicability（対象固有適用範囲）を決定・変更・上書きしない。Effective Foundation State（有効基盤状態）は、AI Integration（AI連携）にとって参照の対象であり、生成または改変の対象ではない。
 
 #### Task Relevance Resolution（タスク関連性解決）
 
@@ -411,19 +427,10 @@ Semantic Model（意味モデル）を、特定Productの機構から導出し�
 
 - Cross-agent Entry Design
 - AI Context Resolution / Navigation Design
-- Foundation Application State Design
 - Task Procedure Model
 - Specialized Capability Model
 - Vendor-specific Integration
 - Enforcement Integration
-
-Foundation Application State Designは、AI Integration（AI連携）の単純な下位設計ではない。AI Integration（AI連携）がその結果であるEffective Foundation State（有効基盤状態）を消費する、隣接Subjectとして扱う。
-
-```text
-Foundation Application State Design
-  = 隣接Subject
-  ≠ AI Integrationの下位設計
-```
 
 ### Concepts Not Introduced（導入しないConcept）
 
