@@ -41,6 +41,7 @@ Design Dependency（設計依存）は**Repository Governance → 本文書 →�
 
 - Documentation Structure（文書構造）がResponsibility（責務）に基づくLogical Structure（論理構造）として成立すること
 - Documentation Asset（文書資産）とDocument Responsibility（文書責務）の定義
+- Repository Documentation（Repository文書）とDocumentation Asset（文書資産）の包含関係
 - Definition Authority（定義権限）が成立する条件
 - Documentation Area（文書責務領域）とArea Responsibility（領域責務）の定義
 - Documentation Framework（文書体系）とFramework Responsibility（体系責務）の定義
@@ -58,6 +59,7 @@ Design Dependency（設計依存）は**Repository Governance → 本文書 →�
 - Logical Structure（論理構造）とPhysical Structure（物理構造）のMapping Rule（対応規則）
 - Document Responsibility（文書責務）の分類体系
 - Asset Identity／Area Identityの完全な成立条件、およびIdentity Model
+- Repository Documentation（Repository文書）の完全な成立条件
 - Documentation Area（文書責務領域）へ属さないDocumentation Asset（文書資産）の分類体系および成立条件
 - Sectionと、Heading（見出し）・Heading Label（見出しラベル）・Markdown Heading Marker（Markdown見出し記号）との具体的なMapping Rule（対応規則）、およびHeading Level（見出しレベル）の意味対応
 - `Purpose`・`Scope`等、具体的なStandard Section（標準Section）の定義
@@ -114,6 +116,16 @@ Documentation Asset（文書資産）の意味および責務範囲を成立さ�
 Documentation Asset（文書資産）のIdentity（同一性）を、何個のFileに分割されているか、どのPathに置かれているかから導出しない。
 
 本文書は、Asset Identityの**完全な成立条件を定義しない** 。定めるのは、Document Responsibility（文書責務）が意味上の基礎であることと、Physical Location（物理配置）からIdentity（同一性）を導出しないことである。
+
+Repository Documentation（Repository文書）として成立する対象は、Documentation Asset（文書資産）である。
+
+```text
+Repository Documentation ⊆ Documentation Asset
+```
+
+したがって、Documentation Asset（文書資産）として成立しない対象は、Repository Documentation（Repository文書）として成立しない。
+
+本文書が定めるのはこの包含関係のみである。Repository Documentation（Repository文書）の完全な成立条件、すなわちどのDocumentation Asset（文書資産）がRepository Documentation（Repository文書）として成立するかは定義しない。
 
 ### Document Responsibility（文書責務）
 
@@ -509,7 +521,7 @@ Asset内部の構造は、Section Responsibility（Section責務）によるSema
 具体的なDocumentation Framework（文書体系）は、本文書を参照して次を前提にできる。これらを再定義する必要はない。
 
 1. Documentation Structure（文書構造）がResponsibility（責務）に基づいて成立すること。
-2. Documentation Framework（文書体系）・Documentation Area（文書責務領域）・Documentation Asset（文書資産）の意味と、それぞれの責務。
+2. Documentation Framework（文書体系）・Documentation Area（文書責務領域）・Documentation Asset（文書資産）の意味と、それぞれの責務、およびRepository Documentation（Repository文書）がDocumentation Asset（文書資産）に包含されること。
 3. Definition Authority（定義権限）が、Definition（定義）を担うDocument Responsibility（文書責務）の場合に成立すること。
 4. Areaへ所属するAssetについての、Framework Responsibility（体系責務）からDocument Responsibility（文書責務）までの粒度関係。
 5. SectionがDocumentation Asset（文書資産）内部のSemantic Unitであり、Section Responsibility（Section責務）がDocument Responsibility（文書責務）に従属すること。

@@ -69,6 +69,7 @@ AI Context Resolution Specification
 
 - Cross-agent Entry（Agent横断入口）以降のResolution（解決）が前提とするConcrete Representation（具体表現）
 - 同Concrete Representation（具体表現）が担う責務、および担わない責務
+- 同Concrete Representation（具体表現）のCurrent Resource Classification（現在の資源分類）
 - 同Concrete Representation（具体表現）が保持する最小のResolution Information（解決情報）
 - Resolution Information（解決情報）とTask Relevance Resolution（タスク関連性解決）の境界
 - Resolution Information（解決情報）とEffective Foundation State（有効基盤状態）の境界
@@ -172,6 +173,19 @@ Responsibility（責務）として保持するのは、他のSourceとの区別
 `.ai/foundation-resolution.md` はAI Integration Resource（AI連携資源）であり、その内容がAI Consumer（AI利用主体）のContext（文脈）へ直接投入されるAI-consumedなResourceである。
 
 AI-consumedであることは、そのResourceのConsumption Characteristic（消費特性）である。新たなAsset Type（資産種別）またはDocumentation Area（文書責務領域）として扱わない。
+
+### Resource Classification（資源分類）
+
+Current Concrete Contract（現在の具体契約）において、`.ai/foundation-resolution.md` はDocumentation Asset（文書資産）ではない。
+
+```text
+.ai/foundation-resolution.md
+= Resolution ResourceのConcrete Representation
+= AI Integration Resource
+≠ Documentation Asset
+```
+
+これは `.ai/foundation-resolution.md` についてのCurrent Resource Classification（現在の資源分類）である。AI Integration Resource（AI連携資源）であること、AI-consumedであること、Markdown Fileであること、または `.ai/` 等のPhysical Location（物理配置）から導出したものではない。AI Integration Resource（AI連携資源）一般、およびAI-consumedなResource一般の分類を定めるものでもない。
 
 ### Context Minimization（文脈の最小化）
 

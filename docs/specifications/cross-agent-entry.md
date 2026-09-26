@@ -66,6 +66,7 @@ Cross-agent Entry Specification
 - Cross-agent Entry（Agent横断入口）の成立と、そのConcrete Representation（具体表現）
 - Cross-agent Entry（Agent横断入口）のEntry Responsibility（入口責務）
 - Cross-agent Entry（Agent横断入口）が保持しない権限および内容
+- Cross-agent Entry（Agent横断入口）のConcrete Representation（具体表現）のCurrent Resource Classification（現在の資源分類）
 - Cross-agent Entry（Agent横断入口）のConcrete Representation（具体表現）が、AI-consumedなResourceとして保持する内容の境界
 - 同Concrete Representation（具体表現）のCurrent Language Decision（現在の言語判断）、およびConvention（規約）の適用判断
 - Vendor-specific Entry（Vendor固有入口）の扱いと、その再評価が成立する条件
@@ -165,6 +166,19 @@ Vendor固有の必要性は、Entry（入口）の内容としてではなく、
 `AGENTS.md` はAI Integration Resource（AI連携資源）であり、その内容がAI Consumer（AI利用主体）のContext（文脈）へ直接投入されるAI-consumedなResourceである。
 
 AI-consumedであることは、そのResourceのConsumption Characteristic（消費特性）である。新たなAsset Type（資産種別）またはDocumentation Area（文書責務領域）として扱わない。
+
+### Resource Classification（資源分類）
+
+Current Concrete Contract（現在の具体契約）において、`AGENTS.md` はDocumentation Asset（文書資産）ではない。
+
+```text
+AGENTS.md
+= Cross-agent EntryのConcrete Representation
+= AI Integration Resource
+≠ Documentation Asset
+```
+
+これは `AGENTS.md` についてのCurrent Resource Classification（現在の資源分類）である。AI Integration Resource（AI連携資源）であること、AI-consumedであること、Markdown Fileであること、またはRepository root等のPhysical Location（物理配置）から導出したものではない。AI Integration Resource（AI連携資源）一般、およびAI-consumedなResource一般の分類を定めるものでもない。
 
 ### Minimum Semantic Content（最小意味内容）
 

@@ -2,7 +2,7 @@
 
 ## Purpose（目的）
 
-本文書は、`noxris42` において**Repository Documentation（Repository文書）のHuman-readable Natural Language Representation（人間可読な自然言語表現）について、Semantic Meaningを明確・一貫・安定して伝達するために反復適用されるReusable Normative Standard（再利用可能な規範標準）**を定義するConvention Asset（規約資産）である。
+本文書は、`noxris42` において**Repository内で成立するHuman-readable Natural Language Representation（人間可読な自然言語表現）について、Semantic Meaningを明確・一貫・安定して伝達するために反復適用されるReusable Normative Standard（再利用可能な規範標準）**を定義するConvention Asset（規約資産）である。
 
 本文書が扱う問いは次の6点である。
 
@@ -54,7 +54,7 @@ Writing Convention
 
 本文書は、Canonical Primary Language Support（正規主要言語補助）側のRuleおよびCanonical Declaration（正規宣言）を参照するのみであり、変更・再定義しない。
 
-本文書は[Repository Governance Documentation Framework](../architecture/repository-governance-documentation-framework.md)が定義するConventions Area（規約領域）に属する通常のDocumentation Asset（文書資産）である。Repository Documentation（Repository文書）上で反復して成立するNatural Language Representation（自然言語表現）へ繰り返し適用されるReusable Normative Standard（再利用可能な規範標準）として成立する。Areaを代表・集約するAssetではない。
+本文書は[Repository Governance Documentation Framework](../architecture/repository-governance-documentation-framework.md)が定義するConventions Area（規約領域）に属する通常のDocumentation Asset（文書資産）である。Repository内で反復して成立するHuman-readable Natural Language Representation（人間可読な自然言語表現）を扱うReusable Normative Standard（再利用可能な規範標準）として成立する。Areaを代表・集約するAssetではない。
 
 本文書が使用する次のConcept（概念）のDefinition Authority（定義権限）は上位設計にある。本文書はこれらを参照するのみで、再定義しない。
 
@@ -126,15 +126,11 @@ Commit MessageのNatural Language Representation（自然言語表現）は[Comm
 - Human-readableなDocument Title（文書題名）が表すSubject / Meaning（対象／意味）
 - Repository README（Repository README）のDocument Title（文書題名）が表すSubject / Meaning（対象／意味）
 
-本文書が対象とするHuman-readable Natural Language Representation（人間可読な自然言語表現）には、Natural Language Prose（自然言語本文）に加えて、Human-readableなDocument Title（文書題名）およびHeading Label（見出しラベル）のNatural Language Representation（自然言語表現）が含まれる。
+本文書が扱うHuman-readable Natural Language Representation（人間可読な自然言語表現）には、Natural Language Prose（自然言語本文）に加えて、Human-readableなDocument Title（文書題名）およびHeading Label（見出しラベル）のNatural Language Representation（自然言語表現）が含まれる。
 
-Document Title（文書題名）およびHeading Label（見出しラベル）に対しては、Primary Languageを定める `WRT-SF-001` 、 Canonical Primary Language Support Representation（正規主要言語補助表現）の表示を定める `WRT-SF-002` 、およびEnglish Representation（英語表現）の一貫した使用を定める`WRT-SF-003` が適用される。
+本文書がこれらを扱うことは、各Normative Rule（規範的規則）のApplicabilityを定めない。各RuleのApplicabilityは、当該RuleのRule Statement（規則文）が規定する対象・条件によって確定する。本節その他のNon-normative Content（非規範的内容）は、Ruleの対象・条件を追加・変更しない。
 
-Document Title（文書題名）に対しては、これらに加えて、Subject / Meaning（対象／意味）の表示を定める `WRT-SF-008` 、およびRepository README（Repository README）のDocument Title（文書題名）を定める `WRT-SF-009` が適用される。
-
-その他のRuleの適用範囲は、各RuleのRule Statement（規則文）が示すSemantic Subjectによって定まる。本文書は、すべてのRuleをDocument Title（文書題名）およびHeading Label（見出しラベル）へ一律に適用しない。
-
-各Ruleが個別に定める適用条件は、当該RuleのRule Statement（規則文）が確定する。
+Rule Statement（規則文）がDocument Title（文書題名）およびHeading Label（見出しラベル）を対象として名指すのは、`WRT-SF-001` 、`WRT-SF-002` 、および`WRT-SF-003` である。Document Title（文書題名）を対象として名指すのは、これらに加えて `WRT-SF-008` および `WRT-SF-009` である。本文書は、すべてのRuleをDocument Title（文書題名）およびHeading Label（見出しラベル）へ一律に適用しない。
 
 ### Out of Scope（本文書が定義しない範囲）
 
@@ -143,7 +139,7 @@ Document Title（文書題名）に対しては、これらに加えて、Subjec
 - 固定のHeading Catalog、および`Purpose → 目的` のような固定翻訳Catalog
 - File名、Directory名、Path等のPhysical Name（物理名称）
 - Markdown Syntaxその他の記述媒体固有表現
-- Commit Message等、Documentation Asset（文書資産）以外の成果物のNatural Language Representation（自然言語表現）
+- Commit Message等、他のConvention（規約）がNatural Language Representation（自然言語表現）についての責務を所有する成果物のNatural Language Representation（自然言語表現）
 - English Representation（英語表現）のIdentity（同一性）、Meaning（意味）、Canonical Name、 Formal Status（正式地位）、Category（分類）、およびName Status
 - English Representation（英語表現）が指すUnderlying Meaning（対象の意味）
 - Canonical Primary Language Support Association（正規主要言語補助対応）の成立、そのMultiplicity（多重度）、およびCanonical Primary Language Support Representation（正規主要言語補助表現）の値
@@ -193,7 +189,7 @@ Primary Language = Japanese
 
 ### Natural Language Prose（自然言語本文）
 
-Natural Language Prose（自然言語本文）は、Documentation Asset（文書資産）のうち、読み手へ意味を伝えるために自然言語で記述される部分である。
+Natural Language Prose（自然言語本文）は、Human-readable Natural Language Representation（人間可読な自然言語表現）のうち、読み手へ意味を伝えるために自然言語で記述される本文部分である。
 
 Code Block内のCode、 Identifier（識別子）、Path等のLiteral Representation（そのままの表記）は、それ自体が自然言語として意味を伝える部分ではない。
 
@@ -281,7 +277,9 @@ Commit MessageのMessage Language（メッセージ言語）は[Commit Conventio
 
 **Requirement:** MUST
 
-**Rule:** Human-readable Natural Language Representation（人間可読な自然言語表現）において、Defined English Representation（定義済み英語表現）がDefined Subject（定義済み対象）そのものへのSemantic Reference（意味参照）として機能する場合、その個々のSemantic Reference Usage（意味参照使用）を本Ruleの使用単位とする。
+**Rule:** 人間の読み手へMeaning（意味）を伝えることを目的としてPresentation（表示）されるHuman-readable Natural Language Representation（人間可読な自然言語表現）において、Defined English Representation（定義済み英語表現）がDefined Subject（定義済み対象）そのものへのSemantic Reference（意味参照）として機能する場合、その個々のSemantic Reference Usage（意味参照使用）を本Ruleの使用単位とする。
+
+Human-readable Natural Language Representationであっても、そのPresentation Usageが、AI Consumer（AI利用主体）その他の人間以外のConsumerへMeaning（意味）を伝えることのみを目的とする場合、本Ruleの使用単位は成立しない。Presentation Usageが人間の読み手へMeaning（意味）を伝えることを目的とするかどうかは、その表現を保持する対象について成立している責務と、その表現がMeaning（意味）を伝える相手によって、使用箇所ごとに定まる。File種別、Physical Location（物理配置）、またはHuman-readableであることだけからは定まらない。
 
 Composite Human-readable Natural Language Representation（複合人間可読自然言語表現）にDefined English Representation（定義済み英語表現）と同じSurface Formが文字列として含まれるだけでは、独立したSemantic Reference Usage（意味参照使用）は成立しない。
 
@@ -307,7 +305,9 @@ Composite Human-readable Natural Language Representationでは、Canonical Prima
 
 Canonical Primary Language Support Association（正規主要言語補助対応）の有無、およびCanonical Primary Language Support Representation（正規主要言語補助表現）の値は本Ruleが決定しない。いずれも[Canonical Primary Language Support Convention](canonical-primary-language-support.md)が定めるCanonical Declaration（正規宣言）による。
 
-**Reason:** Canonical Primary Language Support Association（正規主要言語補助対応）は、そのEnglish Representation（英語表現）の理解補助としてRepositoryが一貫して再利用すると決定したPrimary Language Representation（主要言語表現）を保持している。その決定が使用箇所へ現れなければ、読み手は成立済みの理解補助を受け取れず、決定が読み手に対して機能しない。English Representation（英語表現）へのSemantic Reference（意味参照）とCanonical Primary Language Support Representation（正規主要言語補助表現）との対応を同じ使用箇所で意味上明確にすることで、独立したPresentation（表示）かComposite Human-readable Natural Language Representation内のComposition（合成）かにかかわらず、読み手は参照される表現とそのPrimary Languageによる補助を対応付けたまま読み進められる。初出箇所に限定しないのは、Documentation Asset（文書資産）が先頭から通読されるとは限らず、Section単位または検索経由での参照において初出箇所の表示が読み手へ届かないためである。Association（対応）の有無と値を本Ruleが決定しないのは、Canonicalityの成立がCanonical Primary Language Support（正規主要言語補助）側の責務であり、表示側でそれを再判断すると中央で成立した決定と使用箇所の表示が分岐するためである。
+**Reason:** Canonical Primary Language Support Association（正規主要言語補助対応）は、そのEnglish Representation（英語表現）の理解補助としてRepositoryが一貫して再利用すると決定したPrimary Language Representation（主要言語表現）を保持している。その決定が使用箇所へ現れなければ、読み手は成立済みの理解補助を受け取れず、決定が読み手に対して機能しない。English Representation（英語表現）へのSemantic Reference（意味参照）とCanonical Primary Language Support Representation（正規主要言語補助表現）との対応を同じ使用箇所で意味上明確にすることで、独立したPresentation（表示）かComposite Human-readable Natural Language Representation内のComposition（合成）かにかかわらず、読み手は参照される表現とそのPrimary Languageによる補助を対応付けたまま読み進められる。初出箇所に限定しないのは、表現を保持する対象が先頭から通読されるとは限らず、Section単位または検索経由での参照において初出箇所の表示が読み手へ届かないためである。Association（対応）の有無と値を本Ruleが決定しないのは、Canonicalityの成立がCanonical Primary Language Support（正規主要言語補助）側の責務であり、表示側でそれを再判断すると中央で成立した決定と使用箇所の表示が分岐するためである。
+
+使用単位を人間の読み手へMeaning（意味）を伝えるPresentation（表示）に限るのは、本Ruleが提示する表現が人間の読み手の理解補助だからである。Human-readableであることは、人間が読み得ることを示すにすぎず、人間の読み手へMeaning（意味）を伝えることを目的とするかどうかを定めない。人間以外のConsumerへのみMeaning（意味）を伝える表現へ理解補助の提示を要求すると、受け取る人間の読み手が存在しない箇所に、Meaning（意味）の伝達に寄与しない表現を加えることになる。
 
 定義済みのHuman-readable Representation（人間可読表現）を適用対象から外すのは、その箇所に現れる表現が、English Representation（英語表現）の理解補助として選ばれた表現ではなく、その対象を所有するDefinition Authority（定義権限）が定義したHuman-readable Representation（人間可読表現）そのものであるためである。そこへ本RuleのPresentation Requirement（表示要求）を適用すると、表示側が定義済みの表現を置き換えることになり、定義の所在と使用箇所の表現が分岐する。定義済みの表現をそのまま現すことで、定義側で成立した決定が使用箇所においても保たれる。
 
@@ -380,9 +380,9 @@ Definition Authority（定義権限）側でEnglish Representation（英語表�
 
 **Requirement:** MUST
 
-**Rule:** Subject、Responsibility Holder、 Reference Target等について、その文脈で複数の合理的解釈が成立する場合は、対象を明示する。
+**Rule:** Human-readable Natural Language Representation（人間可読な自然言語表現）において、Subject、Responsibility Holder、 Reference Target等について、その文脈で複数の合理的解釈が成立する場合は、対象を明示する。
 
-**Reason:** これらは、文がどの対象について何を述べているかを確定させる要素である。複数の解釈が成立したまま残ると、読み手ごとに異なる対象へ内容が適用され、Documentation Asset（文書資産）が伝えるはずのSemantic Meaningが読み手側で分岐する。明示を求める条件を複数の合理的解釈が成立する場合に限定するのは、文脈から対象が一意に定まる箇所にまで反復的な明示を強いないためである。
+**Reason:** これらは、文がどの対象について何を述べているかを確定させる要素である。複数の解釈が成立したまま残ると、読み手ごとに異なる対象へ内容が適用され、その表現が伝えるはずのSemantic Meaningが読み手側で分岐する。この分岐は、読み手が人間であるかAI Consumer（AI利用主体）であるかを問わず生じる。明示を求める条件を複数の合理的解釈が成立する場合に限定するのは、文脈から対象が一意に定まる箇所にまで反復的な明示を強いないためである。
 
 **Note:** 本Ruleが対象とするのは解釈の分岐であり、特定の語や文型ではない。
 

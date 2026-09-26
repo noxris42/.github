@@ -2,7 +2,7 @@
 
 ## Purpose（目的）
 
-本文書は、`noxris42` において**Repository Documentation（Repository文書）がMarkdownで記述される場合のMarkdown SyntaxおよびMarkup Representationについて、既に成立しているMeaning（意味）およびSemantic Structure（意味構造）を変更せず、一貫したPhysical Representation（物理表現）を成立させるReusable Normative Standard（再利用可能な規範標準）**を定義するConvention Asset（規約資産）である。
+本文書は、`noxris42` において**Repository内で成立するMarkdown Representation（Markdown表現）のMarkdown SyntaxおよびMarkup Representationについて、既に成立しているMeaning（意味）およびSemantic Structure（意味構造）を変更せず、一貫したPhysical Representation（物理表現）を成立させるReusable Normative Standard（再利用可能な規範標準）**を定義するConvention Asset（規約資産）である。
 
 本文書が扱う問いは次の3点である。
 
@@ -24,7 +24,7 @@
 - [Convention Architecture](../architecture/convention.md)
 - [Convention Authoring Convention](convention-authoring.md)
 
-本文書は[Repository Governance Documentation Framework](../architecture/repository-governance-documentation-framework.md)が定義するConventions Area（規約領域）に属する通常のDocumentation Asset（文書資産）である。Markdownで記述されるRepository Documentation（Repository文書）という反復して成立する対象へ繰り返し適用されるReusable Normative Standard（再利用可能な規範標準）として成立する。Areaを代表・集約するAssetではない。
+本文書は[Repository Governance Documentation Framework](../architecture/repository-governance-documentation-framework.md)が定義するConventions Area（規約領域）に属する通常のDocumentation Asset（文書資産）である。Repository内で反復して成立するMarkdown Representation（Markdown表現）を扱うReusable Normative Standard（再利用可能な規範標準）として成立する。Areaを代表・集約するAssetではない。
 
 ### Responsibility Boundary（責務境界）
 
@@ -99,7 +99,7 @@ Markdown Convention
 
 ### In Scope（本文書が定義する範囲）
 
-- 本文書のRuleが適用されるMarkdown RepresentationのMarkdown Baselineの定義
+- 本文書のRuleがMarkdown Representation（Markdown表現）を解釈する基準としてのMarkdown Baseline（Markdown基準）の定義
 - Document Title（文書題名）をMarkdown上で表現する場合のMarkdown Heading Marker（Markdown見出し記号）
 - Heading（見出し）をMarkdown上で表現する場合のHeading Level（見出しレベル）の使用
 - Heading（見出し）として表現する対象に対するMarkdown Syntaxの選択、およびHeading Syntaxの表現
@@ -182,7 +182,9 @@ External Toolが報告するErrorは、あるMarkdown Representationを検討す
 
 Category（分類）を示す小見出しは文書上の整理のためのものであり、Rule ID（規則ID）はCategory（分類）を表現しない。
 
-各Ruleは、Markdown上の表現のみを対象とする。Ruleが適用されるのは、対象がMarkdownで記述され、かつそのRuleが対象とする表現がその文書上に現れる場合である。本文書のいずれのRuleも、Documentation Asset（文書資産）に対してDocument Title（文書題名）・Heading（見出し）・List・Table・ Blockquote・Code・Link・Image等を設けること自体を要求しない。
+本文書のRuleは、Markdown Representation（Markdown表現）を扱う。各RuleのApplicabilityは、当該RuleのRule Statement（規則文）が規定する対象・条件によって確定する。本節その他のNon-normative Content（非規範的内容）は、Ruleの対象・条件を追加・変更しない。
+
+本文書のいずれのRuleも、Document Title（文書題名）・Heading（見出し）・List・Table・ Blockquote・Code・Link・Image等を設けること自体を要求しない。
 
 ### Markdown Baseline（Markdown基準）
 
@@ -196,9 +198,11 @@ Category（分類）を示す小見出しは文書上の整理のためのもの
 
 **Requirement:** MUST
 
-**Rule:** 本文書のRuleは、GitHub上でRepository Documentation（Repository文書）として表示・解釈可能なMarkdown RepresentationをMarkdown Baselineとして適用する。
+**Rule:** 本文書のRuleがRepository内のMarkdown Representation（Markdown表現）について規定する内容は、GitHub上で表示・解釈可能なMarkdown RepresentationをMarkdown Baselineとして解釈する。
 
-**Reason:** Markdownには複数の仕様と実装が存在し、同じ記述が受け手によって異なる結果へ解釈され得る。Baselineが定まっていなければ、以降のRuleがどの解釈のもとで成立しているかが確定せず、ある環境では意図した表現になり、別の環境では成立しないという分岐をRule側から判別できない。Repository Documentation（Repository文書）が実際に読まれる場であるGitHub上での表示・解釈をBaselineとすることで、各Ruleが前提とする解釈が一意に定まり、Ruleへの適合が読み手の受け取る結果と対応する。
+Markdown Baselineは、本文書のRuleをどのMarkdown解釈のもとで読むかを定める基準である。Markdown Baselineは、本文書のいずれのRuleがどの対象へApplicableであるかを定めない。
+
+**Reason:** Markdownには複数の仕様と実装が存在し、同じ記述が受け手によって異なる結果へ解釈され得る。Baselineが定まっていなければ、以降のRuleがどの解釈のもとで成立しているかが確定せず、ある環境では意図した表現になり、別の環境では成立しないという分岐をRule側から判別できない。Repository内のMarkdown RepresentationがRepositoryとともに表示・解釈される共通の場であるGitHub上での表示・解釈をBaselineとすることで、各Ruleが前提とする解釈が一意に定まり、Ruleへの適合が読み手の受け取る結果と対応する。
 
 **Note:** 本Ruleは、GitHub上で表示・解釈可能なSyntaxをすべて使用することを要求しない。GitHub上で利用可能であることは、その記法を使用しなければならないことを意味しない。
 
@@ -290,7 +294,7 @@ Heading Label（見出しラベル）のNatural Language Representation（自然
 
 **Requirement:** SHOULD
 
-**Rule:** 同一のParent Heading（親見出し）の配下では、同一のHeading Representation（見出し表現）を重複させるべきではない。
+**Rule:** Markdown上で表現されたHeading（見出し）について、同一のParent Heading（親見出し）の配下では、同一のHeading Representation（見出し表現）を重複させるべきではない。
 
 **Reason:** Markdown上のHeading（見出し）は、文書内の位置を指し示すために使用される。同一のParent Heading（親見出し）の配下に同じ表現のHeading（見出し）が複数現れると、その表現ではどちらを指しているかを特定できず、読み手も参照する側も、前後の本文を読むまで対象を決められない。同じ範囲の中で表現を重複させないことで、Heading（見出し）が位置の指示として機能する。
 
@@ -310,7 +314,7 @@ Heading Label（見出しラベル）のNatural Language Representation（自然
 
 **Requirement:** MUST NOT
 
-**Rule:** Heading（見出し）として表現する対象に対して、Emphasis SyntaxをHeading Syntaxの代用として使用してはならない。
+**Rule:** Heading（見出し）として表現する対象をMarkdown上で表現する場合、Emphasis SyntaxをHeading Syntaxの代用として使用してはならない。
 
 **Reason:** Emphasis Syntaxは、文中の一部を強調するための表現であり、Markdownを解釈する側にとってはHeading（見出し）ではない。Heading（見出し）として意図した表現をEmphasis Syntaxで代用すると、その表現はOutline上に現れず、文書内の位置として参照することもできない。見た目が近いことは、表現としての役割が同じであることを意味しない。Heading（見出し）として表現する対象へHeading Syntaxを使用することで、その表現がHeading（見出し）として扱われる。
 
@@ -395,7 +399,7 @@ Canonical Formは次である。
 
 **Requirement:** MUST
 
-**Rule:** Unordered ListのList Markerには、ハイフン `-` を使用し、Markerの直後にASCII Spaceを1つ置く。
+**Rule:** Markdown上でUnordered Listを表現する場合、List Markerには、ハイフン `-` を使用し、Markerの直後にASCII Spaceを1つ置く。
 
 Canonical Formは次である。
 
@@ -419,7 +423,7 @@ Canonical Formは次である。
 
 **Requirement:** MUST
 
-**Rule:** Ordered ListのList Markerは、十進数の番号にピリオド `.` を続け、その直後にASCII Spaceを1つ置いた形とする。
+**Rule:** Markdown上でOrdered Listを表現する場合、List Markerは、十進数の番号にピリオド `.` を続け、その直後にASCII Spaceを1つ置いた形とする。
 
 各ItemのSource上の番号は、意図されたOrdered Sequenceにおけるその項目の番号を明示し、連続するItemでは順に増加させる。
 
@@ -455,7 +459,7 @@ Canonical Formは次である。
 
 **Requirement:** SHOULD
 
-**Rule:** 複数の対象について、同じ観点による比較または対応関係を表現する内容が、RowとColumnによって明確に表現できる場合、Tableを使用すべきである。
+**Rule:** 複数の対象について、同じ観点による比較または対応関係を表現する内容をMarkdown上で表現する場合、その内容がRowとColumnによって明確に表現できるときは、Tableを使用すべきである。
 
 **Reason:** 比較・対応の内容は、どの対象のどの観点についての記述かという2つの軸を同時に持つ。これを本文やListで表現すると、2つの軸は記述の順序としてしか現れず、読み手は対応関係を読み進めながら組み立て直すことになる。またある対象について観点が欠けていても、表現からはそれが読み取れない。Tableで表現すると、2つの軸が行と列としてそのまま現れ、対応と欠落の双方を表現から確認できる。
 
@@ -585,7 +589,7 @@ Code Block自身がMarkdownのFenceを内容として含む場合のように、
 
 **Requirement:** MUST
 
-**Rule:** File名、Path、Command、Identifier（識別子）、Literal Value、 Syntax等を、具体的なLiteral Stringとして本文中へ現す場合、Inline Codeを使用する。
+**Rule:** File名、Path、Command、Identifier（識別子）、Literal Value、 Syntax等を、具体的なLiteral StringとしてMarkdown上の本文中へ現す場合、Inline Codeを使用する。
 
 Inline CodeのDelimiterには、通常はBacktick 1個を使用する。Content自身がBacktickを含む場合に限り、衝突しない必要最小の長さまでDelimiter Lengthを増やす。
 
@@ -695,7 +699,7 @@ Markdownの構文上、空行を置かないことが自然である箇所は本
 
 **Requirement:** MUST NOT
 
-**Rule:** 行末に空白文字を残してはならない。
+**Rule:** Markdown Sourceの行末に空白文字を残してはならない。
 
 Hard Line Breakを表現する目的であっても、行末の空白をCanonical Formとしない。
 
@@ -715,7 +719,7 @@ Hard Line Breakを表現する目的であっても、行末の空白をCanonica
 
 **Requirement:** SHOULD
 
-**Rule:** 同等の内容をMarkdown Representationで表現できる場合は、HTMLではなくMarkdown Representationを使用すべきである。
+**Rule:** Markdown Source上で表現する内容について、同等の内容をMarkdown Representationで表現できる場合は、HTMLではなくMarkdown Representationを使用すべきである。
 
 **Reason:** 同じ内容に対してMarkdownとHTMLの双方が使用されると、同一の対象が文書ごと・箇所ごとに異なる表現を持ち、読み手も編集者も、まずどちらの記法で書かれているかを確認してからでなければ内容へ到達できない。またHTMLは表示環境によって扱いが異なり得るため、Markdownで表現できる内容をHTMLで表現すると、表示上の結果まで環境に依存させることになる。Markdownで表現できる範囲をMarkdownへそろえることで、表現の選択が内容の違いだけを反映する。
 
