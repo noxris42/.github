@@ -126,9 +126,11 @@ Effective Foundation State（有効基盤状態）は、Foundation Application�
 Effective Foundation State（有効基盤状態）は、次を含み得る。
 
 - 当該Repositoryで有効なShared Foundation Asset、すなわち解決済みのFoundation Application
-- 当該Repositoryで有効なConvention（規約）について成立しているTarget-specific Applicability（対象固有適用範囲）
+- 当該Repositoryで有効なConvention（規約）について成立しているTarget-specific Rule Selection（対象固有規則選択）、すなわち解決済みのTarget-specific Rule Selection（対象固有規則選択）
 
-したがって、Target-specific Applicability（対象固有適用範囲）は、Effective Foundation State（有効基盤状態）の一部として参照され得る。Foundation ApplicationおよびTarget-specific Applicability（対象固有適用範囲）の意味と、両者の境界は[Repository Governance](repository-governance.md)が定める。本文書はこれらを再定義しない。
+したがって、Target-specific Rule Selection（対象固有規則選択）は、Effective Foundation State（有効基盤状態）の一部として参照され得る。Foundation ApplicationおよびTarget-specific Rule Selection（対象固有規則選択）の意味と、両者およびRule Applicabilityとの境界は[Repository Governance](repository-governance.md)が定める。本文書はこれらを再定義しない。
+
+Rule Applicability、すなわち各Normative Rule（規範的規則）が何に対してApplicableであるかは、[Convention Architecture](convention.md)が定めるとおり、そのRule Statement（規則文）が規定する対象・条件から定まる。Effective Foundation State（有効基盤状態）がTarget-specific Rule Selection（対象固有規則選択）を含むことは、Rule Applicabilityを含む・変更することではない。
 
 Effective Foundation State（有効基盤状態）は、AI Integration（AI連携）にとって外部から与えられる入力である。本文書は、その生成方式、Schema、Manifest等のConcrete Representation（具体表現）を定義しない。
 
@@ -152,7 +154,7 @@ Task Context（タスク文脈）はTask Relevance（タスク関連性）へ影
 
 Task Relevance（タスク関連性）は、Effective Foundation State（有効基盤状態）に含まれるFoundation Definition（基盤定義）またはResourceが、Task Context（タスク文脈）に対して現在関連するという関係である。
 
-Task Relevance（タスク関連性）はApplicabilityを変更しない。すなわち、あるFoundation Definition（基盤定義）がRelevantであるか否かは、それが当該Repositoryで有効であるか否かを変えない。
+Task Relevance（タスク関連性）はEffective Foundation State（有効基盤状態）およびRule Applicabilityを変更しない。すなわち、あるFoundation Definition（基盤定義）がRelevantであるか否かは、それが当該Repositoryで有効であるか否か、Target-specific Rule Selection（対象固有規則選択）の結果、およびRule Applicabilityを変えない。
 
 ### Referenced External Definitions（参照する外部定義）
 
@@ -163,7 +165,8 @@ Task Relevance（タスク関連性）はApplicabilityを変更しない。す�
 | Shared Development Foundation | [Repository Governance](repository-governance.md) |
 | Shared Foundation Asset | [Repository Governance](repository-governance.md) |
 | Foundation Application | [Repository Governance](repository-governance.md) |
-| Target-specific Applicability（対象固有適用範囲） | [Repository Governance](repository-governance.md) |
+| Target-specific Rule Selection（対象固有規則選択） | [Repository Governance](repository-governance.md) |
+| Rule Applicability | 各Normative Rule（規範的規則）のRule Statement（規則文）。その意味は[Convention Architecture](convention.md) |
 | Ownership（所有責任） | [Repository Governance](repository-governance.md) |
 | Repository-specific State（Repository固有状態） | 当該Consumer Repository（利用Repository） |
 | Definition Authority（定義権限）の成立条件 | [Documentation Structure Architecture](documentation-structure.md) |
@@ -224,13 +227,13 @@ AI Integration（AI連携）のCore Responsibility（中核責務）は次の3�
 
 Foundation Applicationによって決定済みのEffective Foundation State（有効基盤状態）を参照・利用する責務である。
 
-AI Integration（AI連携）自身は、Foundation ApplicationおよびTarget-specific Applicability（対象固有適用範囲）を決定・変更・上書きしない。Effective Foundation State（有効基盤状態）は、AI Integration（AI連携）にとって参照の対象であり、生成または改変の対象ではない。
+AI Integration（AI連携）自身は、Foundation Application、Target-specific Rule Selection（対象固有規則選択）、およびRule Applicabilityのいずれも決定・変更・上書きしない。Effective Foundation State（有効基盤状態）は、AI Integration（AI連携）にとって参照の対象であり、生成または改変の対象ではない。
 
 #### Task Relevance Resolution（タスク関連性解決）
 
 Effective Foundation State（有効基盤状態）の中から、Task Context（タスク文脈）に対して現在RelevantなFoundation Definition（基盤定義）またはResourceを特定する責務である。
 
-この特定は、Task Relevance（タスク関連性）を確定させる。Applicability、すなわちEffective Foundation State（有効基盤状態）そのものは変更しない。
+この特定は、Task Relevance（タスク関連性）を確定させる。Foundation ApplicationおよびTarget-specific Rule Selection（対象固有規則選択）によって成立したEffective Foundation State（有効基盤状態）そのもの、ならびにRule Applicabilityは変更しない。
 
 ### Boundary Responsibilities（境界責務）
 

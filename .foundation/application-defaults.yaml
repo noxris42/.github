@@ -1,0 +1,10 @@
+defaults:
+  docs/conventions/canonical-primary-language-support.md: applied
+  docs/conventions/commit.md: applied
+  docs/conventions/convention-authoring.md: applied
+  docs/conventions/documentation-structure.md: applied
+  docs/conventions/markdown.md: applied
+  docs/conventions/naming.md: applied
+  docs/conventions/repository-governance-documentation-structure.md: applied
+  docs/conventions/writing.md: applied
+  docs/specifications/cross-agent-entry.md: applied

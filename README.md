@@ -16,6 +16,9 @@ Repository間のOwnership（所有責任）、Shared Scope、およびFoundation
 ├─ AGENTS.md
 ├─ .ai/
 │  └─ foundation-resolution.md
+├─ .foundation/
+│  ├─ application-defaults.yaml
+│  └─ application.yaml
 └─ docs/
    ├─ architecture/
    ├─ conventions/
@@ -82,6 +85,8 @@ Repository間のOwnership（所有責任）、Shared Scope、およびFoundation
 | Resource | Location | Responsibility（責務） |
 | --- | --- | --- |
 | [Canonical Primary Language Support Registry](docs/canonical-primary-language-support.yaml) | `docs/canonical-primary-language-support.yaml` | Canonical Primary Language Support Association（正規主要言語補助対応）の具体値を保持するCentral Concrete Declaration Source（中央具体宣言情報源） |
+| [Provider Declaration（提供側宣言）](.foundation/application-defaults.yaml) | `.foundation/application-defaults.yaml` | Foundation Provider（基盤提供主体）としての現在のFoundation Application Target（基盤適用対象）と、そのShared Application Default（共有適用既定） |
+| [Consumer Declaration（利用側宣言）](.foundation/application.yaml) | `.foundation/application.yaml` | `.github` 自身のConsumer Repository（利用Repository）としてのFoundation Application State（基盤適用状態） |
 
 ## Exploration Guidance（探索案内）
 

@@ -106,6 +106,6 @@ Agent横断入口の具体契約。入口責務と、入口が保持しない内
 
 ## Foundation Application State Specification
 
-基盤適用状態の宣言・解決の具体契約。共有適用既定、利用側宣言、対象固有適用範囲の解決、有効基盤状態の導出、宣言の具体表現と検証条件。
+基盤適用状態の宣言・解決の具体契約。共有適用既定、利用側宣言、対象固有規則選択の解決、有効基盤状態の導出、宣言の具体表現と検証条件。
 
 `docs/specifications/foundation-application-state.md`

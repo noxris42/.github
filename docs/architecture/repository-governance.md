@@ -20,7 +20,9 @@
 - Shared Development Foundationの位置づけ
 - Shared Foundation AssetとRepository-owned Assetの区別
 - Foundation Applicationの概念
-- Foundation ApplicationとTarget-specific Applicability（対象固有適用範囲）の区別
+- Foundation Application Target（基盤適用対象）の意味と、その判断主体
+- Target-specific Rule Selection（対象固有規則選択）の意味と、その判断主体
+- Foundation Application・Target-specific Rule Selection（対象固有規則選択）・Rule Applicabilityの区別
 - 共有基盤へ含めるか否かの判断原則（Shared Scope Principles）
 - `.github` 自身への適用（Self Application）
 
@@ -64,7 +66,7 @@ Repository-owned Assetについて、そのAssetが扱うRepository固有の内�
 
 ### Foundation Application（共通開発基盤資産の適用関係）
 
-Shared Foundation Assetを、特定Repositoryにおいて利用可能・有効な状態にする **関係** 。
+Foundation Application Target（基盤適用対象）として成立しているShared Foundation Assetを、特定Repositoryにおいて利用可能・有効な状態にする **関係** 。
 
 Foundation Applicationは関係そのものであり、Application Mechanism（適用方式）としての実現手段とは区別される。
 
@@ -75,15 +77,17 @@ Shared Development Foundation
   │
   └─ owns ─▶ Shared Foundation Asset
                   │
-                  └─ Foundation Application
-                          │
-                          ▼
-                     Repository
-                          │
-                          └─ owns ─▶ Repository-owned Asset
+                  └─ may be ─▶ Foundation Application Target
+                                    │
+                                    └─ Foundation Application
+                                            │
+                                            ▼
+                                       Repository
+                                            │
+                                            └─ owns ─▶ Repository-owned Asset
 ```
 
-OwnerはShared Development Foundation側にあり、どのShared Foundation Assetを自身へ適用するかの判断は、適用先Repository側にある。
+OwnerはShared Development Foundation側にある。どのShared Foundation AssetがFoundation Application Target（基盤適用対象）であるかの判断は `.github` 側にあり、どのFoundation Application Target（基盤適用対象）を自身へ適用するかの判断は、適用先Repository側にある。
 
 ## Responsibility Model（責務モデル）
 
@@ -92,21 +96,22 @@ OwnerはShared Development Foundation側にあり、どのShared Foundation Asse
 `.github` は次の責務を持つ。
 
 - Shared Development FoundationのOwnerとして、Shared Foundation Assetの**内容** を決定・維持する。
-- Shared Foundation Assetを、他Repositoryが適用可能な形でProviderとして提供する。
+- Shared Foundation Assetを、他Repositoryが参照し、Foundation Application Target（基盤適用対象）であるものについては適用できる形で、Providerとして提供する。
 - 何がShared Development Foundationに属するか／属さないかを判断する。
+- Shared Foundation Assetのうち、どれがFoundation Application Target（基盤適用対象）として成立するかを判断する。
 
 `.github` は次の責務を **持たない** 。
 
 - 他RepositoryのDomain Modelを所有すること。
 - 他RepositoryのSystem Architectureを所有・中央管理すること。
-- 他Repositoryに対して、特定のShared Foundation Assetの適用を機械的に決定すること。
+- 他Repositoryに対して、特定のFoundation Application Target（基盤適用対象）の適用を機械的に決定すること。
 
 ### Individual Repository Responsibility（個別Repositoryの責務）
 
 個別Repositoryは次の責務を持つ。
 
 - 自身のDomain（題材領域）・System・ Repository-specific concernに関するRepository-owned Assetを所有する。
-- どのShared Foundation Assetを自身へ適用するかを判断する（Foundation Application）。
+- どのFoundation Application Target（基盤適用対象）を自身へ適用するかを判断する（Foundation Application）。
 - 適用した結果として自Repositoryが満たすべき状態に責任を持つ。
 
 個別Repositoryは、適用したからといってShared Foundation Asset**そのもの** を所有することにはならない。Shared Foundation Assetそのものの内容に対する変更要求は、Shared Development FoundationのOwnerである `.github` 側の判断を経る。
@@ -155,13 +160,58 @@ Ownership（所有責任）は、**その定義・資産の内容を決定し維
 
 ### Foundation Application Definition（Foundation Applicationの定義）
 
-Foundation Applicationとは、Shared Foundation Assetを、特定Repositoryにおいて利用可能・有効にする関係である。
+Foundation Applicationとは、Foundation Application Target（基盤適用対象）として成立しているShared Foundation Assetを、特定Repositoryにおいて利用可能・有効にする関係である。
 
 この関係は次を含意する。
 
-- 適用元：Shared Development Foundationが所有するShared Foundation Asset
+- 適用元：Shared Development Foundationが所有するShared Foundation Assetのうち、Foundation Application Target（基盤適用対象）として成立しているもの
 - 適用先：特定のRepository
 - 適用の判断主体：適用先Repository
+
+### Foundation Application Target（基盤適用対象）
+
+Foundation Application Target（基盤適用対象）とは、Shared Foundation Assetのうち、Foundation Applicationによって、適用先Repositoryごとに有効か否かを判断する対象として成立しているものである。
+
+```text
+Foundation Application Target
+⊂ Shared Foundation Asset
+```
+
+すべてのShared Foundation AssetがFoundation Application Target（基盤適用対象）であるとは限らない。Shared Foundation Assetであることだけからは、適用先Repositoryごとに有効か否かを判断する対象であることは導かれない。
+
+判断主体は次のとおり分かれる。
+
+- あるShared Foundation AssetがFoundation Application Target（基盤適用対象）として成立するか否かは、Shared Development FoundationのOwnerである `.github` が判断する。
+- Foundation Application Target（基盤適用対象）として成立しているShared Foundation Assetを自身へ適用するか否かは、従来どおり適用先Repositoryが判断する。
+
+```text
+.github
+  → Foundation Application Targetであるかを判断する
+
+適用先Repository
+  → Foundation Application Targetを自身へ適用するかを判断する
+```
+
+両者を混同してはならない。`.github` があるShared Foundation AssetをFoundation Application Target（基盤適用対象）とすることは、いずれの適用先Repositoryについても、その適用を決定することではない。
+
+Foundation Application Target（基盤適用対象）でないShared Foundation Assetは、Foundation ApplicationによるRepositoryごとの有効／非有効の判断の対象外であり、Application State（適用状態）を持たない。適用されているとも、適用されていないとも解釈しない。これは、Application State（適用状態）に第三の値を加えるものではない。
+
+```text
+not a Foundation Application Target
+≠ applied
+≠ not-applied
+```
+
+Foundation Application Target（基盤適用対象）でないShared Foundation Assetも、Shared Development Foundationに属し、正式な定義として参照・解決の対象となり得る。参照・解決の対象となることは、Foundation Applicationによって適用されていることではない。そのShared Foundation Assetを参照可能にするために、Application State（適用状態）を与えない。
+
+```text
+Referenceable / Authoritative
+≠ Applied through Foundation Application
+```
+
+Foundation Application Target（基盤適用対象）として成立するか否かは、Asset Type（資産種別）から機械的に導出しない。判断の根拠となるのは、適用先Repositoryごとに、そのShared Foundation Assetを有効にするか否かというFoundation Applicationの判断を持つSemantic Need（意味上の必要性）が現在存在するかである。
+
+Foundation Application Target（基盤適用対象）のTargetは、「Target-specific Rule Selection（対象固有規則選択）」におけるRepository内の特定Targetとは別の事柄である。
 
 ### Separation of Ownership and Application（所有責任と適用の分離）
 
@@ -172,7 +222,7 @@ Ownership（所有責任）とApplication（適用）は独立した概念であ
 
 したがって次が成立する。
 
-- Shared Foundation Assetが存在しても、あるRepositoryに適用されているとは限らない。
+- Foundation Application Target（基盤適用対象）が存在しても、あるRepositoryに適用されているとは限らない。
 - あるRepositoryに適用されていても、そのことだけで、そのRepositoryがShared Foundation Assetそのものの内容を所有することにはならない。
 - 適用状態（Application State）の変化は、Shared Foundation AssetそのもののOwnership（所有責任）を移動させない。ただしこれは、適用の結果として成立したRepository-localなAssetのOwnership（所有責任）を本文書が決定することを意味しない（「適用済みAssetの扱い」を参照）。
 
@@ -191,28 +241,56 @@ Foundation Applicationの**具体方式、すなわちApplication Mechanism（�
 
 本文書が要求するのは、どの方式を採る場合でもOwnership（所有責任）とApplication（適用）の分離が保たれることのみである。
 
-### Target-specific Applicability（対象固有適用範囲）
+### Target-specific Rule Selection（対象固有規則選択）
 
-Target-specific Applicability（対象固有適用範囲）とは、Foundation Applicationによって特定Repositoryで有効となっているConvention（規約）について、そのConvention（規約）が定める個々のRuleが、当該Repository内の特定Targetに対してApplicableであるか否かを、適用先Repository側で具体化したものである。
+Target-specific Rule Selection（対象固有規則選択）とは、Foundation Application Target（基盤適用対象）であり、Foundation Applicationによって特定Repositoryで有効となっているConvention（規約）について、適用先Repositoryが、当該Repository内の特定Targetにおいて、Foundation ApplicationによるNormative Effect（規範的効力）の候補とするRule Set（規則集合）を選択することである。
 
-Foundation ApplicationとTarget-specific Applicability（対象固有適用範囲）は別の事柄であり、混同してはならない。
+Target-specific Rule Selection（対象固有規則選択）は、個々のNormative Rule（規範的規則）が何に対してApplicableであるかを決定しない。Normative Rule（規範的規則）が何に対してApplicableであるかは、そのRule Statement（規則文）が規定する対象・条件からのみ定まる。本文書では、これをRule Applicabilityと表記する。
+
+Foundation Application、Target-specific Rule Selection（対象固有規則選択）、およびRule Applicabilityは別の事柄であり、混同してはならない。
 
 ```text
 Foundation Application
-≠ Target-specific Applicability
+≠ Target-specific Rule Selection
+≠ Rule Applicability
 ```
 
-- **Foundation Application**：Shared Foundation Assetが、特定Repositoryで有効か否か。
-- **Target-specific Applicability（対象固有適用範囲）**：当該Repositoryで有効なConvention（規約）の個々のRuleが、そのRepository内の特定TargetへApplicableか否か。
+- **Foundation Application**：Foundation Application Target（基盤適用対象）が、特定Repositoryで有効か否か。
+- **Target-specific Rule Selection（対象固有規則選択）**：当該Repositoryで有効なConvention（規約）のRuleのうち、どれを、そのRepository内の特定TargetにおけるNormative Effect（規範的効力）の候補とするか。
+- **Rule Applicability**：個々のNormative Rule（規範的規則）が、そのRule Statement（規則文）が規定する対象・条件により、何に対してApplicableであるか。
+
+判断主体・Definition Authority（定義権限）の所在は次のとおり分かれる。
+
+```text
+Foundation Application
+  → 適用先Repository
+
+Target-specific Rule Selection
+  → 適用先Repository
+
+Rule Applicability
+  → 各Normative RuleのRule Statement
+```
 
 したがって次が成立する。
 
-- 適用先Repositoryは、自身へ適用されたConvention（規約）について、Target-specific Applicability（対象固有適用範囲）を持ち得る。その判断主体は、Foundation Applicationと同じく適用先Repositoryである。
-- Target-specific Applicability（対象固有適用範囲）は、Foundation Applicationそのものを変更しない。あるTargetであるRuleがApplicableでないことは、そのConvention（規約）が当該Repositoryで有効でないことを意味しない。
-- 当該Repositoryで有効になっていないConvention（規約）を、Target-specific Applicability（対象固有適用範囲）によって特定Targetでのみ有効にしない。
-- 個々のRuleが自身の内容として定めるApplicabilityは、そのRuleを定めるConvention（規約）が決定する。Target-specific Applicability（対象固有適用範囲）は、それを拡張・上書きしない。
+- 適用先Repositoryは、自身へ適用されたConvention（規約）について、Target-specific Rule Selection（対象固有規則選択）を持ち得る。その判断主体は、Foundation Applicationと同じく適用先Repositoryである。
+- Target-specific Rule Selection（対象固有規則選択）は、Foundation Applicationそのものを変更しない。あるTargetであるRuleが選択されていないことは、そのConvention（規約）が当該Repositoryで有効でないことを意味しない。
+- 当該Repositoryで有効になっていないConvention（規約）を、Target-specific Rule Selection（対象固有規則選択）によって特定Targetでのみ有効にしない。
+- Target-specific Rule Selection（対象固有規則選択）は、Rule Statement（規則文）を変更せず、Rule Applicabilityを拡張・上書きしない。Rule Statement（規則文）が規定する対象・条件を満たさないTargetに対して、選択によってRuleをApplicableにしない。
+- Target-specific Rule Selection（対象固有規則選択）は、Convention（規約）が定めるRuleそのものの追加・変更・無効化ではない。Override（上書き）／Extend／Replace／Disable等の拡張方式とは別の事柄である（「Non-goals」を参照）。
 
-Target-specific Applicability（対象固有適用範囲）におけるTargetの指定方式、複数の指定の合成方式、およびその表現形式は本文書で固定しない。これらは後続設計へ委譲する。
+あるTargetにおいて、RuleがFoundation ApplicationによるNormative Effect（規範的効力）を持つには、少なくとも次のすべてが成立することを要する。
+
+```text
+そのRuleを定めるConventionが、当該Repositoryで有効である（Foundation Application）
+AND
+そのRuleが、当該TargetについてのTarget-specific Rule Selectionの結果に含まれる
+AND
+当該Targetが、そのRuleのRule Statementが規定する対象・条件を満たす（Rule Applicability）
+```
+
+Target-specific Rule Selection（対象固有規則選択）におけるTargetの指定方式、複数の指定の合成方式、およびその表現形式は本文書で固定しない。これらは後続設計へ委譲する。
 
 ## Shared Scope Principles（共有基盤へ含める範囲の判断原則）
 
@@ -312,13 +390,14 @@ ArchitectureやConvention（規約）を、個々のAssetのOwnership（所有�
 
 - Application Mechanism（適用方式）の具体実装
 - Asset Type（資産種別）ごとの適用手順
-- Target-specific Applicability（対象固有適用範囲）におけるTargetの指定方式・合成方式
+- Target-specific Rule Selection（対象固有規則選択）におけるTargetの指定方式・合成方式
 
 ### Declaration / Representation Format（宣言・記述形式に関する事項）
 
 - Metadata FileおよびSchema
 - Repository Manifestの具体Schema
 - Ownership（所有責任）／Application Stateの機械可読な表現形式
+- Foundation Application Target（基盤適用対象）の宣言形式
 
 ### Authority Model（権威モデルに関する事項）
 
