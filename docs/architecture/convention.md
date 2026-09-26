@@ -72,6 +72,8 @@ Normative Rule（規範的規則）は、Convention（規約）が対象に対�
 
 Convention（規約）のNormative Effectは、Normative Rule（規範的規則）を通じて表現される。すなわち、Convention（規約）が対象に対して持つ規範的な効力は、Normative Rule（規範的規則）として明示された内容に由来する。
 
+各Normative Rule（規範的規則）が何に対してApplicableであるかは、そのRule Statement（規則文）が規定する対象・条件によって定まる。Applicabilityは、Rule Statement（規則文）とは別の要素として保持されない。
+
 ### Non-normative Content（非規範的内容）
 
 Convention（規約）に含まれる、Normative Rule（規範的規則）以外の内容。説明・Example・背景・補足等がこれに当たる。
@@ -79,6 +81,8 @@ Convention（規約）に含まれる、Normative Rule（規範的規則）以�
 Non-normative Content（非規範的内容）は理解を助けるが、**それ自体では新たなNormative Requirement（規範要求）を追加しない** 。
 
 したがって、説明・Example・背景・補足等は、それ自体がRuleとして扱われることはない。Exampleが示す形は、Normative Rule（規範的規則）の理解を助ける例示であって、それ自体が要求・禁止を新たに生じさせるものではない。
+
+Convention（規約）のPurpose・Scope等、Convention Responsibility（規約責務）やその定義境界を説明する内容も、Non-normative Content（非規範的内容）である。これらはConvention（規約）の理解や境界を示し得るが、それ自体からNormative Rule（規範的規則）のApplicabilityを追加・変更しない。
 
 ### Concept Relationships（Concept間の関係）
 
@@ -105,7 +109,7 @@ Normative Rule（規範的規則）は意味上、次の要素を持つ。
 | Rule Identity（規則同一性） | そのRuleをStable Reference（安定参照）するための同一性 |
 | Rule Name（規則名） | そのRuleを人間が識別・想起するためのLabel |
 | Requirement Level（要求レベル） | そのRuleが要求・禁止・推奨・許容のいずれであるかの水準 |
-| Rule Statement（規則文） | そのRuleが対象に対して規定する内容そのもの |
+| Rule Statement（規則文） | そのRuleが対象に対して規定する内容そのもの。そのRuleがApplicableとなる対象・条件を含む |
 | Reason | そのRuleが必要である目的・問題・制約 |
 
 ### Optional Elements（任意要素）
@@ -238,6 +242,8 @@ Identity（同一性）を再利用しないのは、過去の参照が別の意
 ### Normative Content is Explicit（規範的内容を明示する）
 
 Convention（規約）内で規範として効力を持つ内容は、Normative Rule（規範的規則）として明示される。文脈や語調から規範性を暗黙に推論しない。
+
+Normative Rule（規範的規則）のApplicabilityも同様に、Rule Statement（規則文）が規定する対象・条件から定まる。Non-normative Content（非規範的内容）からApplicabilityを推論しない。
 
 ### Rule Carries Its Reason（Ruleは理由を伴う）
 

@@ -215,6 +215,10 @@ Exception / Waiver（例外／免除）は本Contract（契約）に含めない
   そのLocationがRule-defined Applicabilityの範囲内である
 ```
 
+Target Declaration（対象宣言）の解決結果、すなわち本文書におけるResolved Applicability（解決済み適用範囲）は、Consumer Repository（利用Repository）側で選択されたRule Set（規則集合）であり、LocationにおけるRuleの最終的なApplicabilityそのものではない。本文書における「Repository側でApplicable対象とする」「Applicable対象へ加える」等の表現は、このRepository側のRule Selection（規則選択）を指す。
+
+`include` / `add` 等によってRuleをRule Set（規則集合）へ含めることは、Rule-defined Applicabilityを拡張・上書きしない。Rule-defined Applicabilityの範囲外にあるLocationでは、Resolved Applicability（解決済み適用範囲）に含まれるRuleであってもApplicableではない。
+
 ### Target Scope（対象範囲）
 
 Target Declaration（対象宣言）が扱うTarget Scope（対象範囲）は次の2つに限られる。
@@ -284,7 +288,7 @@ Refine（具体化）は、Parent Resolved Applicability（親解決済み適用
 
 #### Resolution Formula（解決式）
 
-`All(C)` を `C` が定めるすべてのRuleの集合、`P` をParent Resolved Applicability（親解決済み適用範囲）とするとき、各段のResolved Applicability（解決済み適用範囲） `R` は次である。
+`All(C)` を `C` が定めるすべてのRuleの集合（各RuleのRule-defined Applicabilityによる限定を含まない）、`P` をParent Resolved Applicability（親解決済み適用範囲）とするとき、各段のResolved Applicability（解決済み適用範囲） `R` は次である。
 
 ```text
 Repository段:            R = All(C)
