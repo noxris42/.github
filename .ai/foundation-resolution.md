@@ -109,3 +109,9 @@ Agent横断入口の具体契約。入口責務と、入口が保持しない内
 基盤適用状態の宣言・解決の具体契約。共有適用既定、利用側宣言、対象固有規則選択の解決、有効基盤状態の導出、宣言の具体表現と検証条件。
 
 `docs/specifications/foundation-application-state.md`
+
+## Rule Applicability Resolution Support Specification
+
+規則適用解決補助の具体契約。Target Fileごとの候補規則集合の事前解決、Target Shardの配置と内容、網羅、および決定論的な完全再生成。
+
+`docs/specifications/rule-applicability-resolution-support.md`
