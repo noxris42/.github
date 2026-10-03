@@ -2,50 +2,53 @@
 
 ## Purpose（目的）
 
-本文書は、`noxris42` において**Repository内のTarget File（対象File）ごとに、Normative Rule（規範的規則）のCandidate Rule Set（候補規則集合）をRepository-managed Derived Information（Repository管理の派生情報）として保持するRule Applicability Resolution Support（規則適用解決補助）について、そのConcrete Contract（具体契約）を定義する**Specification Asset（仕様資産）である。
+本文書は、`noxris42` において**最終的なRule Applicability（規則適用性）の判断へ渡すNormative Rule（規範的規則）の候補を安全に絞り込み、その解決知識をDerived Information（派生情報）として再利用可能にするRule Applicability Resolution Support（規則適用解決補助）について、そのConcrete Contract（具体契約）を定義する**Specification Asset（仕様資産）である。
 
-本文書が扱う問いは次の5点である。
+本文書が扱う問いは次の6点である。
 
 1. Rule Applicability Resolution Support（規則適用解決補助）は、既存のFoundation Application、Target-specific Rule Selection（対象固有規則選択）、およびRule Applicabilityに対して、どの位置を占めるのか。
-2. Candidate Rule Set（候補規則集合）は、何から、どのように解決されるのか。
-3. どのTarget File（対象File）について解決し、何を解決対象としないのか。
-4. 解決結果は、どのPhysical Representation（物理表現）として保持されるのか。
-5. 解決結果は、どのように生成・再生成され、Current Authoritative State（現在の正式状態）と整合した状態に保たれるのか。
+2. Candidate Rule Set（候補規則集合）は、どのResolution Phase（解決フェーズ）を経て成立するのか。
+3. 各Resolution Phase（解決フェーズ）の結果は、何を保持し、どの条件で再利用でき、どの条件で再利用を停止するのか。
+4. Rule Catalog Resolution（規則一覧解決）は、何を対象として、どのPhysical Representation（物理表現）の結果を生成するのか。
+5. Repository-level Rule Resolution（Repository共通規則解決）とTarget-specific Rule Resolution（対象固有規則解決）は、適用・選択の設定から、どの規則を有効とし、どの結果を保持するのか。
+6. Applicability Pre-resolution and Candidate Composition（適用性事前解決と候補合成）は、どの規則を非適用として除き、どのCandidate Rule Set（候補規則集合）を保持するのか。
 
-本文書が定義するのは、この5点に対するConcrete Contract（具体契約）に限られる。本文書は、Rule ApplicabilityのSemantic Model（意味モデル）を定義しない。
+本文書が定義するのは、この6点に対するConcrete Contract（具体契約）に限られる。本文書は、Rule ApplicabilityのSemantic Model（意味モデル）を定義しない。
 
 ## Relationships（関係）
 
-本文書は[Repository Governance Documentation Framework](../architecture/repository-governance-documentation-framework.md)が定義するSpecifications Area（仕様領域）に属する通常のDocumentation Asset（文書資産）である。Rule Applicabilityの解決という特定Subjectについて、その解決を補助するDerived Information（派生情報）を生成・保持可能にするConcrete Contract（具体契約）として成立する。AreaまたはFramework（体系）を代表・集約するAssetではない。
+本文書は[Repository Governance Documentation Framework](../architecture/repository-governance-documentation-framework.md)が定義するSpecifications Area（仕様領域）に属する通常のDocumentation Asset（文書資産）である。Rule Applicabilityの解決という特定Subjectについて、その解決を補助するDerived Information（派生情報）を生成・保持・再利用可能にするConcrete Contract（具体契約）として成立する。AreaまたはFramework（体系）を代表・集約するAssetではない。
 
-Rule Applicability Resolution Support（規則適用解決補助）のConcrete Contract（具体契約）、すなわちTarget-specific Applicability Pre-resolution（対象固有適用性事前解決）の結果の扱い、Resolution Target（解決対象）のCoverage（網羅）、Target Shard（対象Shard）のPhysical Representation（物理表現）、および生成についてのDefinition Authority（定義権限）は本文書が持つ。
+Rule Applicability Resolution Support（規則適用解決補助）のConcrete Contract（具体契約）、すなわちResolution Phase（解決フェーズ）の構成、Minimum Connection Contract（最小接続契約）、ならびに各Resolution Phase（解決フェーズ）の入力・結果・Physical Representation（物理表現）・検証条件・利用停止条件についてのDefinition Authority（定義権限）は本文書が持つ。
 
 ### Responsibility Boundary（責務境界）
 
 本文書が使用する次のConcept（概念）のDefinition Authority（定義権限）は本文書の外にある。本文書はこれらを参照するのみで、再定義・上書きしない。
 
-- Foundation Application、Target-specific Rule Selection（対象固有規則選択）、およびRule Applicabilityの意味と、三者の境界
-- Convention（規約）、Normative Rule（規範的規則）、Rule Identity（規則同一性）、およびRule ApplicabilityがRule Statement（規則文）の規定する対象・条件から定まること
-- Rule ID（規則ID）およびConvention Code（規約コード）の形式
-- Resolved Repository-level Application State（解決済みRepositoryレベル適用状態）、Resolved Rule Selection（解決済み規則選択）、およびEffective Foundation State（有効基盤状態）の具体的な構成と導出
+- Foundation Application、Foundation Application Target（基盤適用対象）、Target-specific Rule Selection（対象固有規則選択）、およびRule Applicabilityの意味と、三者の境界
+- Convention（規約）、Normative Rule（規範的規則）、Non-normative Content（非規範的内容）、Rule Identity（規則同一性）、およびRule ApplicabilityがRule Statement（規則文）の規定する対象・条件から定まること
+- Rule ID（規則ID）の形式、およびNormative Rule（規範的規則）のConvention Asset（規約資産）上の記述形式
+- Current Foundation Application Target Set（現在の基盤適用対象集合）の宣言、Resolved Repository-level Application State（解決済みRepositoryレベル適用状態）、Resolved Rule Selection（解決済み規則選択）、およびEffective Foundation State（有効基盤状態）の具体的な構成と導出
 - Foundation Provider（基盤提供主体）・Consumer Repository（利用Repository）・AI Consumer（AI利用主体）の間のResponsibility Relationship（責務関係）
+- Foundation ProviderのLocationとProvider内部のSource Locationの区別
 
 したがって次は本文書の責務ではない。
 
-- Foundation ApplicationおよびTarget-specific Rule Selection（対象固有規則選択）の意味と境界。→ [Repository Governance](../architecture/repository-governance.md)による。
-- Rule Applicabilityの意味。→ [Convention Architecture](../architecture/convention.md)による。
+- Foundation Application、Foundation Application Target（基盤適用対象）、およびTarget-specific Rule Selection（対象固有規則選択）の意味と境界。→ [Repository Governance](../architecture/repository-governance.md)による。
+- Convention（規約）およびNormative Rule（規範的規則）の意味、ならびにRule Applicabilityの意味。→ [Convention Architecture](../architecture/convention.md)による。
 - 各Normative Rule（規範的規則）のRule Applicability。→ 当該Normative Rule（規範的規則）のRule Statement（規則文）による。
-- Rule ID（規則ID）およびConvention Code（規約コード）の形式。→ [Convention Authoring Convention](../conventions/convention-authoring.md)による。
-- Target-specific Rule Selection（対象固有規則選択）の宣言・解決、およびEffective Foundation State（有効基盤状態）の導出。→ [Foundation Application State Specification](foundation-application-state.md)による。
-- AI Integration（AI連携）がEffective Foundation State（有効基盤状態）およびDerived Information（派生情報）を参照・利用する責務。→ [AI Integration Architecture](../architecture/ai-integration.md)による。
+- Rule ID（規則ID）の形式、およびNormative Rule（規範的規則）の記述形式。→ [Convention Authoring Convention](../conventions/convention-authoring.md)による。
+- Current Foundation Application Target Set（現在の基盤適用対象集合）の宣言、Target-specific Rule Selection（対象固有規則選択）の宣言・解決、およびEffective Foundation State（有効基盤状態）の導出。→ [Foundation Application State Specification](foundation-application-state.md)による。
+- AI Integration（AI連携）がEffective Foundation State（有効基盤状態）を参照・利用する責務。→ [AI Integration Architecture](../architecture/ai-integration.md)による。
+- Foundation ProviderのLocationとProvider内部のSource Locationの区別と合成。→ [AI Context Resolution Specification](ai-context-resolution.md)による。
 
-本文書が定めるのは、これらによってすでに成立しているModelと解決結果を前提として、Target File（対象File）ごとのCandidate Rule Set（候補規則集合）をどのように解決・保持するかである。
+本文書が定めるのは、これらによってすでに成立しているModelと解決結果を前提として、Candidate Rule Set（候補規則集合）へ至る解決をどのように分割し、その結果をどのように保持・再利用するかである。
 
 ### Position（設計上の位置づけ）
 
 本文書は、[Convention Architecture](../architecture/convention.md)、[Repository Governance](../architecture/repository-governance.md)、および[Foundation Application State Specification](foundation-application-state.md)を前提とする。
 
-Rule Applicability Resolution Support（規則適用解決補助）は、[Foundation Application State Specification](foundation-application-state.md)が定める解決の結果を入力として利用し、その後段で、各Normative Rule（規範的規則）のRule Statement（規則文）に照らしてTarget File（対象File）ごとの候補を絞り込む。本文書はいずれのSourceもRefinement（具体化）しない。
+Rule Applicability Resolution Support（規則適用解決補助）は、[Foundation Application State Specification](foundation-application-state.md)が定める宣言と解決の結果を入力として利用し、その後段で、各Normative Rule（規範的規則）のRule Statement（規則文）に照らして候補を絞り込む。本文書はいずれのSourceもRefinement（具体化）しない。
 
 Design Dependency（設計依存）は次の一方向とする。
 
@@ -63,40 +66,26 @@ Rule Applicability Resolution Support Specification
 ### In Scope（本文書が定義する範囲）
 
 - Rule Applicability Resolution Support（規則適用解決補助）の位置づけと、Definition Authority（定義権限）との境界
-- Target-specific Effective Rule Set（対象固有有効規則集合）の参照
-- Target-specific Applicability Pre-resolution（対象固有適用性事前解決）の結果と、Candidate Rule Set（候補規則集合）の成立
-- Pre-resolution Unit（事前解決単位）とRuntime Applicability Unit（実行時適用単位）の境界
-- Resolution Target（解決対象）のRepository Locality（Repository局所性）とCoverage（網羅）
-- 自己再帰を防ぐStructural Boundary（構造境界）
-- Target Shard（対象Shard）のPhysical Location（物理配置）、Path Mapping、および内容
-- Canonical / Deterministic Generation（正規／決定論的生成）とFull Regeneration（完全再生成）
-- Repositoryが本Supportを維持する責務
+- 4つのResolution Phase（解決フェーズ）の構成と、Candidate Rule Set（候補規則集合）の成立
+- Resolution Result（解決結果）の保持・再利用の範囲と、共通のPhysical Representation（物理表現）
+- Minimum Connection Contract（最小接続契約）
+- 各Resolution Phase（解決フェーズ）の対象、入力、解決、Physical Location（物理配置）、内容、検証条件、および利用停止条件
 
 ### Out of Scope（本文書が定義しない範囲）
 
 - Foundation Application、Target-specific Rule Selection（対象固有規則選択）、およびRule Applicabilityの意味
-- 各Normative Rule（規範的規則）のRule Applicability、およびその判断内容
+- 各Normative Rule（規範的規則）のRule Applicabilityの最終判断
 - Target-specific Rule Selection（対象固有規則選択）の宣言・解決方式
-- Target Shard（対象Shard）の実体、およびその生成を行うGenerator・Script
-- 変更検知、Regeneration Trigger、Hook、Skill、Agent / Workflow、CI / Enforcement
-- Partial Regeneration、およびSemantic Impactの事前判定
-- AI Consumer（AI利用主体）によるTarget Shard（対象Shard）の利用方式、およびRouting
-- 本Supportが生成するDerived Output（派生出力）自身へのConvention（規約）およびRuleの適用判断
+- 変更検知機構、Generator、Hook、Skill、Agent / Workflow、CI / Enforcement
+- AI Consumer（AI利用主体）によるResolution Result（解決結果）の利用方式、およびRouting
 
 ## Position of Support（補助の位置づけ）
 
 ### Derived Information（派生情報）
 
-Rule Applicability Resolution Support（規則適用解決補助）は、Current Authoritative State（現在の正式状態）から導出され、Repositoryが管理するDerived Information（派生情報）である。Current Authoritative State（現在の正式状態）とは、次の現在の内容である。
+Rule Applicability Resolution Support（規則適用解決補助）が保持する情報は、Current Authoritative Source（現在の正式Source）から導出されるDerived Information（派生情報）である。Current Authoritative Source（現在の正式Source）とは、各Resolution Phase（解決フェーズ）が必要とするDefinition Authority（定義権限）を持つ、現在のSourceである。本文書は、これらのSourceの固定一覧または分類を定めない。
 
-- Foundation Application State（基盤適用状態）のDeclaration、およびそこから導出されるEffective Foundation State（有効基盤状態）
-- 各Convention（規約）が定めるNormative Rule（規範的規則）とそのRule Statement（規則文）
-- 各Target File（対象File）自身
-- Target-specific Applicability Pre-resolution（対象固有適用性事前解決）に必要なConcept（概念）・Classification（分類）・Condition（条件）等のTarget-level Semantic Fact（対象レベル意味事実）について、Definition Authority（定義権限）を持つCurrent Authoritative Source（現在の正式Source）
-
-たとえば、あるTarget File（対象File）がDocumentation Asset（文書資産）として成立するかという事実は、Target File（対象File）自身やRule Statement（規則文）ではなく、そのDefinition Authority（定義権限）を持つArchitecture（アーキテクチャ）・Specification（仕様）等から成立し得る。Current Authoritative State（現在の正式状態）が含むのは、Pre-resolutionに必要なTarget-level Semantic Fact（対象レベル意味事実）のDefinition Authority（定義権限）を持つSourceに限られる。Repository内のあらゆる情報を含むものではない。本文書は、これらのSourceの固定一覧または分類を定めない。
-
-Rule Applicability Resolution Support（規則適用解決補助）はSource of Truth（正本）ではない。その内容とCurrent Authoritative State（現在の正式状態）から導出される結果とが一致しない場合、成立している内容はCurrent Authoritative State（現在の正式状態）側である。
+Rule Applicability Resolution Support（規則適用解決補助）はSource of Truth（正本）ではない。保持された情報とCurrent Authoritative Source（現在の正式Source）から導出される結果とが一致しない場合、成立している内容はCurrent Authoritative Source（現在の正式Source）側である。
 
 ### Authority Boundary（権限の境界）
 
@@ -105,7 +94,7 @@ Rule Applicability Resolution Support（規則適用解決補助）は、Foundat
 ```text
 Rule Applicability Resolution Support
   derives from
-Current Authoritative State
+Current Authoritative Source
 
 Rule Applicability Resolution Support
   does not define
@@ -114,229 +103,636 @@ Foundation Application / Target-specific Rule Selection / Rule Applicability
 
 Rule ApplicabilityのDefinition Authority（定義権限）は、[Convention Architecture](../architecture/convention.md)および各Normative Rule（規範的規則）のRule Statement（規則文）に残る。
 
-## Resolution Model（解決モデル）
-
-### Target-specific Effective Rule Set（対象固有有効規則集合）
-
-Target-specific Effective Rule Set（対象固有有効規則集合）は、あるTarget File（対象File）について、Resolved Repository-level Application State（解決済みRepositoryレベル適用状態）が `applied` である各Convention（規約）のResolved Rule Selection（解決済み規則選択）を合わせたRule Set（規則集合）である。
-
-本文書は、その解決方式を新たに定めない。[Foundation Application State Specification](foundation-application-state.md)が定める解決の結果をそのまま用いる。
-
-### Target-specific Applicability Pre-resolution（対象固有適用性事前解決）
-
-Target-specific Applicability Pre-resolution（対象固有適用性事前解決）は、Target-specific Effective Rule Set（対象固有有効規則集合）の各Normative Rule（規範的規則）について、そのTarget File（対象File）に対するApplicabilityを、Current Authoritative State（現在の正式状態）から事前に判定することである。
-
-判定結果は次の3つのいずれかであり、Candidate Rule Set（候補規則集合）への扱いは次のとおりである。
-
-| 判定結果 | 意味 | Candidate Rule Set（候補規則集合） |
-| --- | --- | --- |
-| `False` | Current Authoritative State（現在の正式状態）とTarget-levelの状態から、当該Target File（対象File）についてNot Applicable（非適用）と確定できる | 除外する |
-| `True` | Current Authoritative State（現在の正式状態）とTarget-levelの状態から、当該Target File（対象File）についてApplicableと確定できる | 残す |
-| `Unknown` | Applicableか否かをCurrent Authoritative State（現在の正式状態）とTarget-levelの状態から確定できない | 残す |
-
-判定は、各Normative Rule（規範的規則）のRule Statement（規則文）が規定する対象・条件に照らして行う。当該Target File（対象File）自身、その属性、または当該Target File（対象File）内に成立するObject・Representation（表現）がRule Statement（規則文）の対象となり得る場合、判定結果は `True` または `Unknown` となり得る。
-
-当該Target File（対象File）が、Rule Statement（規則文）の対象である行為・判断の素材、入力、参照元、または結果の保持先となり得ることだけでは、当該Target File（対象File）についてApplicableとはならない。同様に、ある定義を参照・利用することだけでは、その定義を成立させるNormative Rule（規範的規則）が参照側のTarget File（対象File）についてApplicableとはならない。
-
-```text
-Target File is material / input / reference / storage for a ruled action
-≠ Rule is applicable to the Target File
-```
-
-これらは新たな判定基準ではない。ApplicabilityがRule Statement（規則文）の規定する対象・条件から定まるという[Convention Architecture](../architecture/convention.md)の意味と、判定結果が当該Target File（対象File）についてのものであることを明確にするものである。
-
-`False` とするのは、Not Applicable（非適用）が確定できる場合に限られる。確定できない場合は `Unknown` とする。
-
-Current TargetにRule Statement（規則文）が対象とするRepresentation（表現）・Occurrenceが現在存在しないことだけでは、`False` としない。Taskによる当該Target File（対象File）自身の内容・表現・属性の変更の結果として、そのRepresentation（表現）・Occurrenceが当該Target File（対象File）内または当該Target File（対象File）自身について成立し得る場合、そのRuleは `Unknown` である。
-
-```text
-Current absence
-≠ structural impossibility
-```
-
-ここでいう変更は、当該Target File（対象File）自身に対する変更に限られる。新規Fileの作成、Directoryの作成・改名、Commit、Candidate Recommendation（候補提案）、他のTarget File（対象File）の変更等、当該Target File（対象File）以外を対象とする作業は含まない。
-
 ### Candidate Rule Set（候補規則集合）
 
-Candidate Rule Set（候補規則集合）は、Target-specific Effective Rule Set（対象固有有効規則集合）から、Target-specific Applicability Pre-resolution（対象固有適用性事前解決）が `False` としたNormative Rule（規範的規則）を除いたRule Set（規則集合）である。
+Candidate Rule Set（候補規則集合）は、ある対象Fileについて、最終的なRule Applicabilityの判断へ渡すNormative Rule（規範的規則）の集合である。
 
-```text
-Candidate Rule Set
-= Target-specific Effective Rule Set − { r | Pre-resolution(r) = False }
-```
-
-あるNormative Rule（規範的規則）がすべてのResolution Target（解決対象）について `False` となり、いずれのTarget Shard（対象Shard）にも現れないことは、正常な解決結果である。本SupportのResolution FailureまたはCoverageの不足を意味しない。
-
-Candidate Rule Set（候補規則集合）は、Applicable Rule Set（適用規則集合）ではない。Candidate Rule Set（候補規則集合）に含まれることは、そのRuleがApplicableであること、またはNormative Effect（規範的効力）を持つことを意味しない。各RuleがApplicableであるかは、引き続きそのRule Statement（規則文）によって判定される。
+Candidate Rule Set（候補規則集合）は、Applicable Rule Set（適用規則集合）ではない。Candidate Rule Set（候補規則集合）に含まれることは、そのRuleがApplicableであること、またはNormative Effect（規範的効力）を持つことを意味しない。最終的なApplicabilityの判断は、実行時に、各RuleのAuthoritative Rule Statement（正式規則文）から行う。
 
 ```text
 Candidate Rule Set
 ≠ Applicable Rule Set
 ```
 
-Target-specific Applicability Pre-resolution（対象固有適用性事前解決）は、Target-specific Rule Selection（対象固有規則選択）ではない。前者はRule Applicabilityについての事前判定であり、後者が選択したRule Set（規則集合）を変更しない。
+Rule Statement（規則文）が定めるRuntime Applicability Unit（実行時適用単位）、すなわちFile・Section・Representation（表現）・Occurrence・Development Action等の単位を、本Supportは変更しない。
 
-### Pre-resolution Unit and Runtime Applicability Unit（事前解決単位と実行時適用単位）
+## Resolution Phases（解決フェーズ）
 
-Target Shard（対象Shard）はPre-resolution Unit（事前解決単位）である。Runtime Applicability Unit（実行時適用単位）ではない。
+### Phase Composition（フェーズの構成）
 
-Runtime Applicability Unit（実行時適用単位）は、各Rule Statement（規則文）が定める。File・Section・Representation（表現）・Occurrence・Usage・Development Action等、Rule Statement（規則文）が規定する単位を、本SupportはFile単位へ変更しない。
+Candidate Rule Set（候補規則集合）は、次の4つのResolution Phase（解決フェーズ）を経て成立する。
 
-たとえば、Commit等、File Target（File対象）へ帰属しないDevelopment Action（開発行為）をRule Statement（規則文）の対象とするNormative Rule（規範的規則）は、Rule Statement（規則文）の対象がTarget File（対象File）自身・その属性・その内部に成立するObject・Representation（表現）のいずれでもないため、すべてのTarget File（対象File）について `False` となる。その結果、いずれのTarget Shard（対象Shard）にも現れない。これは「Target-specific Applicability Pre-resolution（対象固有適用性事前解決）」の判定から導かれる例であり、別の除外機構ではない。
-
-## Resolution Target（解決対象）
-
-### Repository Locality（Repository局所性）
-
-Rule Applicability Resolution Support（規則適用解決補助）はRepository-localである。各Repositoryは、そのRepository自身のTarget File（対象File）について本Supportを生成する。
-
-Foundation Provider（基盤提供主体）側のAuthoritative Source（正式Source）は、Resolution Source（解決Source）として用いられ得る。Consumer Repository（利用Repository）側のResolution Target（解決対象）にはしない。
-
-### Complete Coverage（完全網羅）
-
-Resolution Target（解決対象）は、当該RepositoryがVersion管理する各File、すなわちRepository-managed Target File（Repository管理対象File）である。ただし「Self-recursion Boundary（自己再帰の境界）」が定めるDerived Output（派生出力）を除く。
-
-各Resolution Target（解決対象）について、Target Shard（対象Shard）を1つ生成する。Candidate Rule Set（候補規則集合）が空であっても、Target Shard（対象Shard）を生成する。
-
-Complete Coverage（完全網羅）が要求するのはResolution Target（解決対象）の網羅である。各Normative Rule（規範的規則）がいずれかのTarget Shard（対象Shard）に現れることは要求しない。
-
-Candidate Rule Set（候補規則集合）が空であることは、明示的な解決結果として次のとおり保持する。
-
-```yaml
-candidate_rules: {}
-```
-
-Target Shard（対象Shard）が存在しないことを、Candidate Rule Set（候補規則集合）が空であることとして扱わない。
+1. Rule Catalog Resolution（規則一覧解決）：Target Convention（対象規約）が定めるすべてのNormative Rule（規範的規則）と、その所属を解決する。適用・選択の設定によって一覧を変えない。
+2. Repository-level Rule Resolution（Repository共通規則解決）：Repository共通の正式な適用判断を解決し、Rule Catalog Resolution（規則一覧解決）の結果を、`applied` のTarget Convention（対象規約）とその全Ruleと、`not-applied` のTarget Convention（対象規約）とその全Ruleとに二分する。Target-specific Rule Selection（対象固有規則選択）を反映しない。
+3. Target-specific Rule Resolution（対象固有規則解決）：Repository-level Rule Resolution（Repository共通規則解決）が有効としたRuleについて、対象FileのTarget-specific Rule Selection（対象固有規則選択）を[Foundation Application State Specification](foundation-application-state.md)どおりに解決し、選択されたRuleと、選択から外れたRuleとに二分する。
+4. Applicability Pre-resolution and Candidate Composition（適用性事前解決と候補合成）：Target-specific Rule Resolution（対象固有規則解決）が選択したRuleについて、Authoritative Rule Statement（正式規則文）、Target State（対象状態）、および必要な正式定義から、対象File全体についてNot Applicable（非適用）を十分確定したRuleを除き、残るRuleをCandidate Rule Set（候補規則集合）とする。
 
 ```text
-Target Shard absent
-≠ candidate_rules: {}
+Rule Catalog Resolution
+  → Repository-level Rule Resolution
+  → Target-specific Rule Resolution
+  → Applicability Pre-resolution and Candidate Composition
 ```
 
-### Self-recursion Boundary（自己再帰の境界）
+```text
+Candidate Rule Set(T)
+= rules(Target-specific Rule Resolution, T) − { r | Not Applicable to the whole of T is sufficiently determined }
+```
 
-Rule Applicability Resolution Support（規則適用解決補助）自身が生成したDerived Output（派生出力）は、Resolution Target（解決対象）としない。
+### Phase-local Exclusion（段階ごとの除外）
 
-これは、解決結果がさらに解決対象となる自己再帰を防ぐための、本Resolution Mechanism固有のStructural Boundary（構造境界）である。Convention（規約）のApplicabilityに対する例外ではない。
+各Phaseが規則一覧から外すRuleは、Phaseごとに意味が異なる。
 
-Derived Output（派生出力）自身に、どのConvention（規約）およびRuleがApplicableであるかは、Foundation ApplicationおよびRule Applicabilityによって定まる。本文書はこれを変更しない。
+| Phase | 外す理由 | 意味 |
+| --- | --- | --- |
+| Repository-level Rule Resolution（Repository共通規則解決） | Resolved Repository-level Application State（解決済みRepositoryレベル適用状態）が `not-applied` である | Configuration Exclusion（設定による除外） |
+| Target-specific Rule Resolution（対象固有規則解決） | 対象FileのResolved Rule Selection（解決済み規則選択）に含まれない | Selection Exclusion（選択による除外） |
+| Applicability Pre-resolution and Candidate Composition（適用性事前解決と候補合成） | 対象File全体についてNot Applicable（非適用）を十分確定した | Not-applicable Exclusion（非適用による除外） |
 
-## Target Shard（対象Shard）
+設定・選択による除外と、非適用による除外は、別の意味として扱う。設定・選択による除外を、Rule Applicabilityの判断として扱わない。
+
+```text
+Configuration / Selection Exclusion
+≠ Not-applicable Exclusion
+```
+
+各Phaseが保持する除外の一覧には、そのPhaseで外したRuleだけを含める。前段階で外したRuleを、累積して再列挙しない。後続Phaseは、前段階で外したRuleを再び含めない。
+
+### Conservative Exclusion（保守的な除外）
+
+Applicability Pre-resolution and Candidate Composition（適用性事前解決と候補合成）がNot-applicable Exclusion（非適用による除外）とするのは、対象File全体についてNot Applicable（非適用）を十分確定できるRuleに限られる。Not Applicable（非適用）を十分確定できないRule、すなわち不明または未確定のRuleは、Candidate Rule Set（候補規則集合）へ残す。
+
+本文書は、Candidate Rule Set（候補規則集合）へ残すRuleについて、Applicableと確定できるか否か、すなわちTrue / Unknownの区別を要求しない。また、異なるAI Consumer（AI利用主体）の間で解決結果が完全に一致することを要求しない。要求するのは、Not-applicable Exclusion（非適用による除外）が十分確定したNot Applicable（非適用）だけから成ることである。
+
+```text
+not sufficiently determined as Not Applicable to the whole target file
+→ remains in Candidate Rule Set
+```
+
+## Result Retention and Reuse（結果の保持と再利用）
+
+### Retained Results（保持する結果）
+
+各Resolution Phase（解決フェーズ）の結果は、人が直接確認できるDerived Information（派生情報）として、次の基点の下に保持する。
+
+```text
+.ai/resolution-support/rule-applicability/
+```
+
+| Resolution Phase | 配置 | 結果の範囲 |
+| --- | --- | --- |
+| Rule Catalog Resolution（規則一覧解決） | `rule-catalog/` | Repository共通 |
+| Repository-level Rule Resolution（Repository共通規則解決） | `effective-rules/` | Repository共通 |
+| Target-specific Rule Resolution（対象固有規則解決） | `target-selection/<対象FileのRepository相対Path>/` | 対象File |
+| Applicability Pre-resolution and Candidate Composition（適用性事前解決と候補合成） | `candidate-rules/<対象FileのRepository相対Path>/` | 対象File |
+
+対象Fileごとの結果は、現在の解決に必要な対象Fileについてのみ保持する。Repository内のすべてのFileについての生成は要求しない。
+
+配置は、結果の対応関係を認識しやすくするための整理である。対象FileのPathは結果の対象を識別するために用い、PathからRule Applicability、その他の意味を導出しない。`.ai/` 以下の配置は本SupportのPhysical Location（物理配置）であり、本文書は、これらのDirectoryに対してDocumentation Area（文書責務領域）その他のSemantic Responsibility（意味上の責務）を成立させない。
+
+### Result File Set（結果のFileの組）
+
+各Phaseの結果は、次のFileの組として表現する。
+
+| File | 保持する内容 | 該当Phase |
+| --- | --- | --- |
+| `rules.yaml` | そのPhaseの結果として残るRuleの一覧 | すべて |
+| `excluded.yaml` | そのPhaseで外したRuleの一覧 | Rule Catalog Resolution（規則一覧解決）以外 |
+| `inputs.yaml` | 対応する解決で直接使用した入力File | すべて |
+
+- 同一Phase・同一対象のFileは、同一の解決によって、対応する組として生成・更新する。一部だけを別の解決の結果で生成・更新しない。いずれのFileも正本ではない。
+- 対応関係を確認できない `inputs.yaml` を、再利用可否の判断に用いない。
+- 本文書は、対応関係を成立させるためのID、Timestamp、Fingerprint等を導入しない。
+- 除外理由の文章、および除外の根拠を示すFieldを保持しない。除外の妥当性は、対象、規則一覧、および入力の内容から確認・再解決する。
+
+### Common Content（共通の内容）
+
+`rules.yaml` と `excluded.yaml` のFile FormatはYAMLとし、意味構造は次である。
+
+```yaml
+conventions:
+  <convention-reference>:
+    - <rule-id>
+```
+
+- Top-level Fieldは `conventions` のみである。`conventions` は、Convention Reference（規約参照）から、列挙したRule ID（規則ID）のListへのMappingである。
+- Rule ID（規則ID）は列挙して保持する。すべてのRuleを示す記号、Wildcard、および他の一覧の参照によって列挙を省略しない。
+- Rule Name（規則名）・Rule Statement（規則文）の複製、判定結果、Task Relevance（タスク関連性）、行番号、Timestamp、およびFingerprintを保持しない。
+
+`inputs.yaml` のFile FormatはYAMLとし、意味構造は次である。
+
+```yaml
+inputs:
+  - <source-reference>
+```
+
+- Top-level Fieldは `inputs` のみである。
+- `inputs` は、対応する解決で直接使用した入力Fileの記録である。前段階の入力を機械的に再列挙しない。前段階の結果を用いた場合は、その結果のFileを記録する。
+- `inputs` は固定の必須一覧、および全Phaseに共通する完全な入力一覧ではない。Source Record（使用Source記録）として扱い、記録されていないSourceを無関係とは扱わない（「Source Record（使用Source記録）」を参照）。
+
+Convention Reference（規約参照）・Rule Reference（規則参照）・Source Reference（Source参照）の形式、およびbyte-wise ascendingの正規順序は、「Rule Catalog Resolution（規則一覧解決）」の「Reference Form（参照の形式）」と「Canonical Order（正規順序）」に従う。Foundation Provider（基盤提供主体）とConsumer Repository（利用Repository）が同一のRepositoryである場合、Source Reference（Source参照）は当該RepositoryのRepository rootを基準とするRelative Path（相対Path）である。
+
+### Source Record（使用Source記録）
+
+Resolution Result（解決結果）が、その解決に使用したSourceを記録する場合、その記録は次の用途に用いる。
+
+- 再解決または確認のための探索の手掛かり
+- 記録された入力の変更を、Resolution Result（解決結果）の再利用可否と照合するための材料
+
+前回の解決で使用されなかったSourceを、そのResolution Result（解決結果）に無関係であるとは扱わない。Source Record（使用Source記録）は、入力範囲を閉じた集合として確定するものではない。
+
+```text
+not used in previous resolution
+≠ irrelevant to the resolution
+```
+
+本文書は、Source間・Resolution Result（解決結果）間のComplete Dependency Graph（完全依存グラフ）を要求しない。
+
+## Minimum Connection Contract（最小接続契約）
+
+本節は、Resolution Phase（解決フェーズ）間の接続と、Resolution Result（解決結果）の再利用について、すべてのPhaseが満たすべき最小の条件を定める。
+
+### Result Scope Correspondence（結果の対象・範囲の対応）
+
+各Resolution Result（解決結果）は、それが成立する対象と範囲を持つ。後続Phaseは、先行Phaseの結果を、その対象・範囲が対応する場合にのみ用いる。
+
+対象Fileごとの結果は、その対象File全体について成立する。ある対象Fileについての結果を、別の対象Fileへ流用しない。Not-applicable Exclusion（非適用による除外）を、それが成立した対象File、および成立時に用いた規則一覧の範囲外のRuleへ適用しない。一部のSection（節）等についてのみ成立するNot Applicable（非適用）を、対象File全体のNot-applicable Exclusion（非適用による除外）へ拡張しない。
+
+### Result Availability States（結果の利用可能状態）
+
+Resolution Result（解決結果）について、次の3つの状態を区別する。
+
+| 状態 | 意味 |
+| --- | --- |
+| Not Generated（未生成） | 当該対象・範囲についてのResolution Result（解決結果）が存在しない |
+| Invalidated（利用停止） | Resolution Result（解決結果）は存在するが、現在の候補の解決へ用いることができない |
+| Empty（空） | 現在利用可能なResolution Result（解決結果）であり、その要素がない |
+
+Empty（空）は、Not Generated（未生成）およびInvalidated（利用停止）のいずれでもない。Not Generated（未生成）またはInvalidated（利用停止）を、Empty（空）として扱わない。
+
+```text
+Not Generated
+≠ Invalidated
+≠ Empty
+```
+
+`excluded.yaml` が `conventions: {}` であることは、当該対象・範囲についてそのPhaseで外したRuleがないことを意味する。`excluded.yaml` が存在しないことを、`conventions: {}` として扱わない。
+
+### Fallback Resolution（結果が利用不能な場合の解決）
+
+Not Generated（未生成）またはInvalidated（利用停止）であるResolution Result（解決結果）は、利用不能である。
+
+- Rule Catalog Resolution（規則一覧解決）、Repository-level Rule Resolution（Repository共通規則解決）、またはTarget-specific Rule Resolution（対象固有規則解決）の結果が利用不能である場合、必要な対象・範囲について、Current Authoritative Source（現在の正式Source）から解決してから候補を提供する。
+- Target-specific Rule Resolution（対象固有規則解決）を解決できない場合、不完全な規則集合を正常な結果として後続Phaseへ渡さない。
+- Applicability Pre-resolution and Candidate Composition（適用性事前解決と候補合成）の結果が利用不能である場合、当該対象Fileの現在のTarget-specific Rule Resolution（対象固有規則解決）の `rules.yaml` 全体を、Candidate Rule Set（候補規則集合）として用いることができる。
+
+```text
+Not-applicable Exclusion unavailable
+→ Candidate Rule Set(T) = rules(Target-specific Rule Resolution, T)
+```
+
+### Invalidation（利用停止）
+
+次の変更が、あるResolution Phase（解決フェーズ）の入力に影響し得る場合、当該Phaseの影響し得る結果と、それを用いる後続Phaseの結果の再利用を停止する。
+
+- Current Authoritative Source（現在の正式Source）の変更
+- 対象Fileの内容・属性等、Target State（対象状態）の変更
+
+対象Fileごとの結果は、File単位の組として利用停止する。影響し得る変更がある場合、Ruleごとに部分的に継続利用せず、当該対象Fileの当該Phaseの結果全体の再利用を停止する。
+
+あるPhaseの結果が変更前後で同じであっても、後続Phaseが自身の入力として用いるSourceの変更は無視しない。たとえば、Rule Catalog Resolution（規則一覧解決）の結果が変わらない場合でも、あるRuleのAuthoritative Rule Statement（正式規則文）の変更は、そのRuleを含む対象FileのApplicability Pre-resolution and Candidate Composition（適用性事前解決と候補合成）の結果の再利用を停止させる。
+
+```text
+unchanged intermediate result
+≠ unchanged downstream input
+```
+
+Source Record（使用Source記録）に記録されていないSourceの変更、および新規に追加されたSourceも、各Phaseの入力範囲に照らして扱う。その影響範囲を限定できない場合、全Phaseの結果の再利用を停止する。
+
+Current Authoritative Source（現在の正式Source）またはTarget State（対象状態）の変更、あるいはその影響を十分把握できない状態では、Not-applicable Exclusion（非適用による除外）の安全な継続利用を認めない。
+
+これらの再利用の停止は、すべての対象の即時再生成を要求しない（「Invalidation and Regeneration Separation（利用停止と再生成の分離）」を参照）。
+
+本文書の契約の変更は、全Phaseの入力に影響し得る変更として扱う。
+
+### Invalidation and Regeneration Separation（利用停止と再生成の分離）
+
+Invalidation（利用停止）は、Immediate Regeneration（即時再生成）を要求しない。Invalidated（利用停止）である結果は、その対象・範囲が必要となった時点で、必要な対象・範囲についてのみ再解決すればよい。
+
+Invalidated（利用停止）である過去の結果は、確認のための資料として保持できる。ただし、利用不能であるNot-applicable Exclusion（非適用による除外）を、現在の候補の削減へ用いない。
+
+### Not Required（要求しない事項）
+
+本文書は次を要求しない。
+
+- Repository内のすべてのFileについての、対象Fileごとの結果の網羅
+- 生成のたびにすべての対象を再生成するFull Regeneration（完全再生成）
+- Repository全体のResolution Result（解決結果）を常に最新に保つこと
+
+### Change Handling Examples（変更の扱いの例示）
+
+次は、Minimum Connection Contract（最小接続契約）から導かれる扱いの例示である。新たな規定ではない。
+
+| 変更・状態 | 扱い |
+| --- | --- |
+| Convention（規約）へのNormative Rule（規範的規則）の追加 | Rule Catalog Resolution（規則一覧解決）の結果、および後続Phaseの結果の再利用を停止する。追加されたRuleは、再解決したRule Catalog Resolution（規則一覧解決）の結果から後続Phaseへ渡る |
+| `applications` 等のRepository共通の適用判断の変更 | Repository-level Rule Resolution（Repository共通規則解決）以降の結果の再利用を停止する。その変更がRule Catalog Resolution（規則一覧解決）の解決に影響せず、他の利用停止条件にも該当しない場合、Rule Catalog Resolution（規則一覧解決）の結果は再利用できる |
+| Target Declaration（対象宣言）の変更 | 影響し得る対象FileのTarget-specific Rule Resolution（対象固有規則解決）以降の結果の再利用を停止する。影響し得る対象Fileを限定できない場合は、すべての対象Fileについて停止する。Target Declaration（対象宣言）だけの変更であっても、`effective-rules/inputs.yaml` に記録された `.foundation/application.yaml` が変更された場合は、Repository-level Rule Resolution（Repository共通規則解決）の結果の再利用も停止する |
+| Authoritative Rule Statement（正式規則文）の変更 | Rule Catalog Resolution（規則一覧解決）の結果が変わらない場合でも、当該Ruleを含む対象FileのApplicability Pre-resolution and Candidate Composition（適用性事前解決と候補合成）の結果の再利用を停止する |
+| 対象Fileの内容・属性等、Target State（対象状態）の変更 | 当該対象FileのApplicability Pre-resolution and Candidate Composition（適用性事前解決と候補合成）の結果の再利用を停止する |
+| Applicability Pre-resolution and Candidate Composition（適用性事前解決と候補合成）の結果のInvalidation（利用停止） | 当該対象Fileの現在のTarget-specific Rule Resolution（対象固有規則解決）の `rules.yaml` 全体を候補として用いることができる |
+| 保存されたResolution Result（解決結果）がない | Rule Catalog Resolution（規則一覧解決）からTarget-specific Rule Resolution（対象固有規則解決）までをCurrent Authoritative Source（現在の正式Source）から解決し、Not-applicable Exclusion（非適用による除外）なしで候補を提供する |
+| 影響範囲を限定できない変更、または変更・影響を十分把握できない状態 | 全Phaseの結果の再利用を停止する。Not-applicable Exclusion（非適用による除外）を継続利用しない |
+
+## Rule Catalog Resolution（規則一覧解決）
+
+### Target Conventions（対象規約）
+
+Rule Catalog Resolution（規則一覧解決）の対象は、Current Foundation Application Target Set（現在の基盤適用対象集合）に含まれるFoundation Application Target（基盤適用対象）のうち、現在Convention（規約）として成立するものである。本文書ではこれをTarget Convention（対象規約）と呼ぶ。
+
+- Current Foundation Application Target Set（現在の基盤適用対象集合）は、[Foundation Application State Specification](foundation-application-state.md)が定めるとおり、Provider Declaration（提供側宣言）の `defaults` のKey集合から特定する。
+- Foundation Application Target（基盤適用対象）がConvention（規約）として成立するか否かは、当該Asset、および[Convention Architecture](../architecture/convention.md)と[Repository Governance Documentation Framework](../architecture/repository-governance-documentation-framework.md)が定める意味に照らして判断する。File名、Directory、その他のPhysical Location（物理配置）から推論しない。
+- Target Convention（対象規約）は、Resolved Repository-level Application State（解決済みRepositoryレベル適用状態）が `applied` であるか `not-applied` であるかにかかわらず含める。
+
+Consumer Declaration（利用側宣言）である `.foundation/application.yaml` は、Repository-level Rule Resolution（Repository共通規則解決）およびTarget-specific Rule Resolution（対象固有規則解決）の入力である。適用・選択の設定だけを扱うことを理由として、Rule Catalog Resolution（規則一覧解決）の入力に含めない。
+
+### Rule Extraction（規則の抽出）
+
+Rule Catalog Resolution（規則一覧解決）が規則として抽出するのは、各Target Convention（対象規約）が明示的に定義するNormative Rule（規範的規則）に限られる。
+
+- 各Normative Rule（規範的規則）は、そのConvention Asset（規約資産）上の既存のRule ID（規則ID）によって識別する。
+- Non-normative Content（非規範的内容）、すなわち説明・Example・記述例・Concrete Declaration等に現れるRule ID（規則ID）またはRuleに類する記述は抽出しない。
+- Retired Rule ID（廃止済み規則ID）は、Current Normative Ruleではないため抽出しない。
+- Normative Rule（規範的規則）を持たないTarget Convention（対象規約）も、Resolved Rule Catalog（解決済み規則一覧）へ含める。
 
 ### Physical Location（物理配置）
 
-Target Shard（対象Shard）は、次のPhysical Location（物理配置）に置く。
+Resolved Rule Catalog（解決済み規則一覧）は、本Supportを保持するRepositoryの次のPhysical Location（物理配置）に、2つのFileとして表現する。Phaseごとの配置は、結果の対応関係を認識しやすくするための整理である。PathからRule Applicability、その他の意味を導出しない。
 
 ```text
 Repository root
 └─ .ai/
    └─ resolution-support/
       └─ rule-applicability/
-         └─ targets/
+         └─ rule-catalog/
+            ├─ rules.yaml
+            └─ inputs.yaml
 ```
+
+| File | 保持する内容 |
+| --- | --- |
+| `rule-catalog/rules.yaml` | Rule List（規則一覧）：Target Convention（対象規約）ごとのRule ID（規則ID） |
+| `rule-catalog/inputs.yaml` | Catalog Input Record（規則一覧入力記録）：対応するRule List（規則一覧）の解決に実際に使用したSource |
 
 `.ai/` 以下の配置は、本SupportのPhysical Location（物理配置）である。本文書は、これらのDirectoryに対して、Documentation Area（文書責務領域）その他のSemantic Responsibility（意味上の責務）を成立させない。
 
-### Path Mapping（Pathの対応）
+### File Separation（Fileの分離）
 
-Resolution Target（解決対象）からTarget Shard（対象Shard）へのPath Mappingは次である。
+2つのFileへ分離するのは、Rule List（規則一覧）とCatalog Input Record（規則一覧入力記録）を、それぞれ必要とする用途でのみ読めるようにし、AI Context（AI文脈）として読み込む量を削減するためである。Rule List（規則一覧）を用いる解決はCatalog Input Record（規則一覧入力記録）を読む必要がなく、再利用可否の判断はCatalog Input Record（規則一覧入力記録）を用いる。
 
-```text
-<repository-relative target path>
-→ .ai/resolution-support/rule-applicability/targets/<repository-relative target path>.yaml
-```
+2つのFileは、1つのResolved Rule Catalog（解決済み規則一覧）に対応する表現である。それぞれが独立したResolution Phase（解決フェーズ）の結果ではなく、いずれも正本ではない。
 
 ```text
-AGENTS.md
-→ .ai/resolution-support/rule-applicability/targets/AGENTS.md.yaml
-
-docs/architecture/convention.md
-→ .ai/resolution-support/rule-applicability/targets/docs/architecture/convention.md.yaml
+rule-catalog/rules.yaml + rule-catalog/inputs.yaml
+= one Resolved Rule Catalog
 ```
 
-Target File（対象File）のRepository root相対Pathは、名称を変換せずに保持し、末尾へ `.yaml` を追加する。
+- 2つのFileは、同一の解決によって、対応する組として生成・更新する。一方だけを別の解決の結果で生成・更新しない。
+- Catalog Input Record（規則一覧入力記録）は、対応するRule List（規則一覧）の解決に実際に使用したSourceの記録である。全Phaseに共通する完全な入力一覧ではない。
+- 対応関係を確認できないCatalog Input Record（規則一覧入力記録）を、Rule List（規則一覧）の再利用可否の判断に用いない。
+- 本文書は、対応関係を成立させるためのID、Timestamp、Fingerprint等を導入しない。
 
-Target Shard（対象Shard）のPathのうち、Target File（対象File）に由来する部分は、Target Identity（対象同一性）を機械的に保持するRepresentation（表現）である。本Supportによる独立したPhysical Name（物理名称）の選択ではない。
+### Rule List Content（規則一覧の内容）
 
-`.ai/resolution-support/rule-applicability/targets/` までの、本Supportが所有する部分は、通常のRepository-controlled Physical Structure（物理構造）として扱う。
-
-本文書は、[Naming Convention](../conventions/naming.md)のRuleおよびそのRule Applicabilityを変更しない。
-
-### Content（内容）
-
-Target Shard（対象Shard）のFile FormatはYAMLとする。意味構造は次である。
+`rule-catalog/rules.yaml` のFile FormatはYAMLとする。意味構造は次である。
 
 ```yaml
-candidate_rules:
-  <convention-code>:
+conventions:
+  <convention-reference>:
     - <rule-id>
 ```
 
 ```yaml
-candidate_rules:
-  MDK:
-    - MDK-SF-003
-    - MDK-SF-004
-  WRT:
+conventions:
+  docs/conventions/naming.md:
+    - NAM-SF-001
+    - NAM-SF-002
+  docs/conventions/writing.md:
     - WRT-SF-001
+```
+
+上記の第2例は意味構造を示すための例示であり、Current State（現在状態）の宣言ではない。
+
+| Field | 必須性 | Allowed Value | 意味 |
+| --- | --- | --- | --- |
+| `conventions` | 必須 | Convention Reference（規約参照）からRule ID（規則ID）のListへのMapping | Target Convention（対象規約）ごとの、現在のNormative Rule（規範的規則）のRule ID（規則ID） |
+
+- `conventions` は、すべてのTarget Convention（対象規約）をKeyとして含む。Normative Rule（規範的規則）を持たないTarget Convention（対象規約）の値は、空のList `[]` とする。
+- 各Ruleは、所属するTarget Convention（対象規約）のConvention Reference（規約参照）と既存のRule ID（規則ID）によって、そのConvention Asset（規約資産）上の正式定義へ到達できる。
+- `rule-catalog/rules.yaml` は、`conventions` 以外のTop-level Fieldを持たない。Rule Name（規則名）・Rule Statement（規則文）の複製、Application State（適用状態）、判定結果、行番号、Timestamp、およびFingerprintを保持しない。
+
+### Catalog Input Record Content（規則一覧入力記録の内容）
+
+`rule-catalog/inputs.yaml` のFile FormatはYAMLとする。意味構造は次である。
+
+```yaml
+inputs:
+  - <source-reference>
 ```
 
 | Field | 必須性 | Allowed Value | 意味 |
 | --- | --- | --- | --- |
-| `candidate_rules` | 必須 | Convention Code（規約コード）からRule ID（規則ID）のListへのMapping | 当該Target File（対象File）のCandidate Rule Set（候補規則集合） |
+| `inputs` | 必須 | Source Reference（Source参照）のList | 対応するRule List（規則一覧）の解決に実際に使用した入力File |
 
-- Candidate Rule Set（候補規則集合）は、各Rule ID（規則ID）が属するConvention Code（規約コード）でGroupingする。このGroupingは、既存のRule ID（規則ID）およびConvention Code（規約コード）を用いたRetrieval Structure（取得構造）であり、新たなSemantic Classification（意味分類）ではない。
-- Candidateを持たないConvention Code（規約コード）のGroupは出力しない。
-- Candidate Rule Set（候補規則集合）全体が空である場合は、`candidate_rules: {}` とする。
-- 同一のRule ID（規則ID）を重複させない。
+`inputs` には、次を記録する。
 
-Target Shard（対象Shard）は `candidate_rules` 以外のFieldを持たない。Target File（対象File）のIdentity（同一性）はTarget Shard（対象Shard）のPathが担うため、Target Fieldを持たない。Timestamp、Fingerprint、Generation Metadata、判定理由、およびSource一覧を保持しない。
+- Target Convention（対象規約）の集合を特定するために使用した正式な宣言・契約のSource
+- Normative Rule（規範的規則）の抽出に使用したSource
+- 上記以外に、当該解決のために実際に必要としたSource
 
-## Generation（生成）
+`inputs` は、実際に使用したSourceの記録である。固定の必須一覧ではない。Source Record（使用Source記録）として扱い、入力範囲の閉じた一覧として扱わない（「Source Record（使用Source記録）」を参照）。
 
-### Canonical / Deterministic Generation（正規／決定論的生成）
+`rule-catalog/inputs.yaml` は、`inputs` 以外のTop-level Fieldを持たない。Timestamp、Fingerprint、およびSourceごとの使用理由を保持しない。
 
-同一のSemantic Resolution Result（意味上の解決結果）からは、同一のPhysical Result（物理結果）が生成されなければならない。
+### Reference Form（参照の形式）
 
-- Convention Code（規約コード）のGroupは、Convention Code（規約コード）のbyte-wise ascendingに並べる。
-- 各Group内のRule ID（規則ID）は、Rule ID（規則ID）のbyte-wise ascendingに並べる。
+| 参照 | 形式 |
+| --- | --- |
+| Convention Reference（規約参照） | [Foundation Application State Specification](foundation-application-state.md)が定めるConvention Reference（規約参照）と同じく、Foundation Provider（基盤提供主体）のRepository rootを基準とするRelative Path（相対Path） |
+| Rule Reference（規則参照） | 既存のRule ID（規則ID）。例：`WRT-SF-001` |
+| Source Reference（Source参照） | Foundation Provider（基盤提供主体）側のSourceについて、Foundation Provider（基盤提供主体）のRepository rootを基準とするRelative Path（相対Path） |
 
-いずれの比較もLocaleに依存しない。
+いずれのFileも、Consumer Repository（利用Repository）の環境上でのFoundation ProviderのLocationを保持しない。その区別と合成は[AI Context Resolution Specification](ai-context-resolution.md)による。
 
-Indent、Quote、Document Marker等、Semantic Need（意味上の必要性）を持たないSerializationの詳細は本文書が固定しない。ただし、いずれの詳細を用いる場合も、同一のSemantic Resolution Result（意味上の解決結果）から同一のPhysical Result（物理結果）が生成されることを要する。
+Foundation Provider（基盤提供主体）のRepository root以外を基準とする参照を必要とする入力が判明した場合、本文書はそのための参照方式を定めていない。その入力を独自の方式で表現せず、未確定事項として扱う。
 
-### Full Regeneration（完全再生成）
+### Canonical Order（正規順序）
 
-生成は、Full Regeneration（完全再生成）を基本とする。生成のたびに、次をCurrent Authoritative State（現在の正式状態）から解決し、すべてのTarget Shard（対象Shard）を再構成する。
+同一の解決結果からは、同一のPhysical Result（物理結果）が生成されなければならない。
 
-1. Generation Input（生成入力）
-2. 各Resolution Target（解決対象）のTarget-specific Effective Rule Set（対象固有有効規則集合）
-3. 各Resolution Target（解決対象）のCandidate Rule Set（候補規則集合）
+- `rule-catalog/rules.yaml` の `conventions` のKeyは、Convention Reference（規約参照）のbyte-wise ascendingに並べる。
+- `rule-catalog/rules.yaml` の各List内のRule ID（規則ID）は、Rule ID（規則ID）のbyte-wise ascendingに並べる。
+- `rule-catalog/inputs.yaml` の `inputs` のSource Reference（Source参照）は、byte-wise ascendingに並べる。
 
-Generation Input Resolution（生成入力解決）は、生成時の一時的なIntermediate Step（中間段階）である。本Contract（契約）は、その結果を保持する永続的なResolution Support、Input Manifest、およびFingerprintを持たない。
+いずれの比較もLocaleに依存しない。Indent、Quote、Document Marker等、Semantic Need（意味上の必要性）を持たないSerializationの詳細は本文書が固定しない。
 
-Resolution Target（解決対象）の削除、またはResolution Target（解決対象）でなくなったことにより対応するTarget Shard（対象Shard）が不要となった場合、そのTarget Shard（対象Shard）は生成結果に含まれない。
+### Validation Conditions（検証条件）
 
-### Maintenance Responsibility（維持責務）
+`rule-catalog/rules.yaml` は、次のすべてを満たす場合に有効である。
 
-Repositoryは、本Supportを、Current Authoritative State（現在の正式状態）と整合したCanonical Derived State（正規派生状態）として維持する責務を持つ。
+- YAMLとして解釈でき、Top-level Fieldは `conventions` のみである。
+- `conventions` のKey集合は、Target Convention（対象規約）の集合と一致する。
+- 各Keyの値は、当該Target Convention（対象規約）が現在明示的に定義するNormative Rule（規範的規則）のRule ID（規則ID）の集合と一致し、欠落・混入がない。
+- 同一のMapping内でKeyを重複させず、同一のList内でRule ID（規則ID）を重複させない。
+- 各Rule ID（規則ID）は、それが属するTarget Convention（対象規約）のListにのみ現れる。
+- 「Canonical Order（正規順序）」に従う。
 
-本文書は、この責務を果たすための変更検知、Regeneration Trigger、およびその実行主体を定めない。
+`rule-catalog/inputs.yaml` は、次のすべてを満たす場合に有効である。
+
+- YAMLとして解釈でき、Top-level Fieldは `inputs` のみである。
+- `inputs` は、対応する `rule-catalog/rules.yaml` の解決において、Target Convention（対象規約）の集合の特定とNormative Rule（規範的規則）の抽出に実際に使用したSourceを含む。
+- 同一のList内でSource Reference（Source参照）を重複させない。
+- 「Canonical Order（正規順序）」に従う。
+
+2つのFileは、同一の解決によって生成・更新された組である。
+
+### Catalog Invalidation（規則一覧の利用停止）
+
+Resolved Rule Catalog（解決済み規則一覧）は、次のいずれかに該当する場合、Invalidated（利用停止）となる。
+
+- 対応するCatalog Input Record（規則一覧入力記録）の `inputs` に記録されたSourceが変更された。
+- `inputs` に記録されていないSourceの変更または追加が、Target Convention（対象規約）の集合、またはNormative Rule（規範的規則）の抽出に影響し得る。
+- 上記に該当するか否かを判断できない。対応関係を確認できるCatalog Input Record（規則一覧入力記録）がない場合を含む。
+
+Invalidated（利用停止）であるResolved Rule Catalog（解決済み規則一覧）を用いる後続Phaseの結果も、「Invalidation（利用停止）」に従って扱う。
+
+## Repository-level Rule Resolution（Repository共通規則解決）
+
+### Repository-level Position（位置づけ）
+
+Repository-level Rule Resolution（Repository共通規則解決）は、[Foundation Application State Specification](foundation-application-state.md)が定めるRepository-level Resolution（Repositoryレベルの解決）を用いて、Target Convention（対象規約）ごとのResolved Repository-level Application State（解決済みRepositoryレベル適用状態）を解決する。本文書は、新しいApplication State（適用状態）、解決方式、およびValidation Condition（検証条件）を定義しない。
+
+Target Declaration（対象宣言）は、Repository-level Rule Resolution（Repository共通規則解決）の結果へ適用しない。Target-specific Rule Selection（対象固有規則選択）は、Target-specific Rule Resolution（対象固有規則解決）においてのみ反映される。
+
+### Repository-level Input（入力）
+
+| 入力 | 用途 |
+| --- | --- |
+| 現在利用可能なRule Catalog Resolution（規則一覧解決）の `rule-catalog/rules.yaml` | Target Convention（対象規約）の集合、および各Convention（規約）が定めるすべてのRule、すなわち `All(C)` |
+| Provider Declaration（提供側宣言）`.foundation/application-defaults.yaml` | Shared Application Default（共有適用既定） |
+| Consumer Declaration（利用側宣言）`.foundation/application.yaml` | Repository-level Application Difference（Repositoryレベル適用差分） |
+| [Foundation Application State Specification](foundation-application-state.md)が定める条件を満たし、Repository-specific Application Decision（Repository固有適用判断）を一意に成立させている他のAuthoritative Declaration（正式宣言） | Repository-specific Application Decision（Repository固有適用判断） |
+
+Rule Catalog Resolution（規則一覧解決）の結果が利用不能である場合は、「Fallback Resolution（結果が利用不能な場合の解決）」に従い、Current Authoritative Source（現在の正式Source）から解決してから用いる。`rule-catalog/inputs.yaml` は、Repository-level Rule Resolution（Repository共通規則解決）の入力ではない。Rule Catalog Resolution（規則一覧解決）の結果が利用可能かの判断にのみ用いる。
+
+### Repository-level Result（結果）
+
+Repository-level Rule Resolution（Repository共通規則解決）の結果は、本Supportを保持するRepositoryの `.ai/resolution-support/rule-applicability/effective-rules/` に、3つのFileとして保持する。
+
+| File | 保持する内容 |
+| --- | --- |
+| `effective-rules/rules.yaml` | Resolved Repository-level Application State（解決済みRepositoryレベル適用状態）が `applied` であるTarget Convention（対象規約）と、そのすべてのRule |
+| `effective-rules/excluded.yaml` | Resolved Repository-level Application State（解決済みRepositoryレベル適用状態）が `not-applied` であるTarget Convention（対象規約）と、そのすべてのRule |
+| `effective-rules/inputs.yaml` | 対応する両一覧の解決で直接使用した入力File |
+
+両一覧は、Rule Catalog Resolution（規則一覧解決）の結果を、適用状態によって二分したものである。各Target Convention（対象規約）は、そのすべてのRuleとともに、いずれか一方の一覧にのみ現れる。
+
+```text
+conventions(rules) ∩ conventions(excluded) = ∅
+conventions(rules) ∪ conventions(excluded) = conventions(rule-catalog)
+rules(rules) ∩ rules(excluded) = ∅
+rules(rules) ∪ rules(excluded) = rules(rule-catalog)
+```
+
+- Normative Rule（規範的規則）を持たないTarget Convention（対象規約）の値は、空のList `[]` とする。
+- 一覧へ振り分けるTarget Convention（対象規約）がない場合、そのFileは `conventions: {}` とする。
+- `effective-rules/inputs.yaml` には、用いた `rule-catalog/rules.yaml` を記録する。Rule Catalog Resolution（規則一覧解決）の入力を機械的に再列挙しない。Repository-level Rule Resolution（Repository共通規則解決）が直接使用したSourceは、Rule Catalog Resolution（規則一覧解決）の入力でもある場合を含めて記録する。
+
+`effective-rules/rules.yaml` は、Target-specific Rule Selection（対象固有規則選択）を反映しない。いずれの対象FileについてのRule Set（規則集合）でもなく、最終的なApplicable Rule Set（適用規則集合）でもない。
+
+### Repository-level Validation Conditions（検証条件）
+
+Provider Declaration（提供側宣言）およびConsumer Declaration（利用側宣言）が[Foundation Application State Specification](foundation-application-state.md)のValidation Conditions（検証条件）を満たし、用いるRule Catalog Resolution（規則一覧解決）の結果が現在利用可能である場合にのみ、結果を正常な解決結果として保持する。満たさない場合は不足する内容を補完せず、不整合として報告する。
+
+保持する3つのFileは、次のすべてを満たす場合に有効である。
+
+- 「Common Content（共通の内容）」に従う。
+- `effective-rules/rules.yaml` のKey集合は `applied` であるTarget Convention（対象規約）の集合と、`effective-rules/excluded.yaml` のKey集合は `not-applied` であるTarget Convention（対象規約）の集合と、それぞれ一致する。各値は当該Convention（規約）の `All(C)` と一致する。
+- 両一覧のConvention Reference（規約参照）の集合、およびRule ID（規則ID）の集合は、それぞれ互いに素であり、その和集合はRule Catalog Resolution（規則一覧解決）の結果と一致する。
+- `effective-rules/inputs.yaml` は、対応する解決で直接使用したSourceを含み、用いた `rule-catalog/rules.yaml` を含む。
+- 同一のMapping内でKeyを重複させず、同一のList内でRule ID（規則ID）またはSource Reference（Source参照）を重複させない。
+
+### Repository-level Invalidation（利用停止）
+
+Repository-level Rule Resolution（Repository共通規則解決）の結果は、次のいずれかに該当する場合、Invalidated（利用停止）となる。
+
+- `effective-rules/inputs.yaml` に記録されたSourceが変更された。
+- 記録されていないSourceの変更または追加が、結果に影響し得る。
+- 用いたRule Catalog Resolution（規則一覧解決）の結果がInvalidated（利用停止）となった、または更新された。
+- 上記に該当するか否かを判断できない。対応関係を確認できる `effective-rules/inputs.yaml` がない場合を含む。
+
+適用・選択の設定変更がRule Catalog Resolution（規則一覧解決）の解決に影響せず、かつ他の利用停止条件にも該当しない場合、Rule Catalog Resolution（規則一覧解決）の結果は再利用できる。`rule-catalog/inputs.yaml` に記録されていないことだけを、Rule Catalog Resolution（規則一覧解決）に影響しないことの根拠としない。Rule Catalog Resolution（規則一覧解決）の結果の再利用可否は、「Catalog Invalidation（規則一覧の利用停止）」に従って判断する。
+
+## Target-specific Rule Resolution（対象固有規則解決）
+
+### Target-specific Position（位置づけ）
+
+Target-specific Rule Resolution（対象固有規則解決）は、Repository-level Rule Resolution（Repository共通規則解決）が `effective-rules/rules.yaml` に保持したRuleについて、対象FileのResolved Rule Selection（解決済み規則選択）を、[Foundation Application State Specification](foundation-application-state.md)のHierarchical Resolution（階層的解決）とConvention-level Composition（規約単位の合成）に従って解決する。本文書は、Rule Selection（規則選択）の方式、`independent` / `refine` の意味、およびDeclarationのValidation Conditions（検証条件）を再定義しない。
+
+Target-specific Rule Resolution（対象固有規則解決）は、Repository-level Rule Resolution（Repository共通規則解決）が外したRuleを再び含めない。また、Rule Applicability、Not Applicable（非適用）、およびTask Relevance（タスク関連性）を判断しない。解決結果は、Declaration上の記述順、Declarationの読込順、および解決を行う主体に依存しない。
+
+### Target File（対象File）
+
+対象Fileは、現在の解決に必要なRepository内のFileに限られる。Repository内のすべてのFileの列挙、およびすべてのFileの解決は要求しない。
+
+対象Fileは、Repository内の対象を特定でき、かつ既存のTarget Declaration（対象宣言）の `path` と `scope` が当該対象Fileを包含するかを判定できる形で示されなければならない。[Foundation Application State Specification](foundation-application-state.md)が定める `path` の形式条件は、Target Declaration（対象宣言）そのものの検証条件である。本文書は、これを対象Fileの受入条件へ転用しない。Target Declaration（対象宣言）の `path` は、引き続き同仕様のValidation Conditions（検証条件）に従って検証する。
+
+Pathは、対象Fileの識別と、Target Declaration（対象宣言）による包含の判定にのみ用いる。Pathから対象FileのSemantic Responsibility（意味上の責務）、Classification（分類）、またはRule Applicabilityを推論しない。
+
+### Target-specific Input（入力）
+
+| 入力 | 用途 |
+| --- | --- |
+| 現在利用可能なRepository-level Rule Resolution（Repository共通規則解決）の `effective-rules/rules.yaml` | 有効なTarget Convention（対象規約）と、その `All(C)` |
+| Target Declaration（対象宣言）を保持するConsumer Declaration（利用側宣言）`.foundation/application.yaml` | Target-specific Rule Selection（対象固有規則選択） |
+| [Foundation Application State Specification](foundation-application-state.md) `docs/specifications/foundation-application-state.md` | Target-specific Rule Selection（対象固有規則選択）の解決方式と、Declarationの検証条件 |
+| 対象File | 解決の対象 |
+
+Repository-level Rule Resolution（Repository共通規則解決）の結果が利用不能である場合は、「Fallback Resolution（結果が利用不能な場合の解決）」に従い、Current Authoritative Source（現在の正式Source）から解決してから用いる。
+
+### Target-specific Result（結果）
+
+Target-specific Rule Resolution（対象固有規則解決）の結果は、本Supportを保持するRepositoryの次のPhysical Location（物理配置）に、3つのFileとして保持する。
+
+```text
+.ai/resolution-support/rule-applicability/target-selection/<対象FileのRepository相対Path>/
+├─ rules.yaml
+├─ excluded.yaml
+└─ inputs.yaml
+```
+
+| File | 保持する内容 |
+| --- | --- |
+| `rules.yaml` | 対象FileのResolved Rule Selection（解決済み規則選択）として選択されたRule |
+| `excluded.yaml` | `effective-rules/rules.yaml` のRuleのうち、対象Fileの選択から外れたRule |
+| `inputs.yaml` | 対応する解決で直接使用した入力File |
+
+- `rules.yaml` は、`effective-rules/rules.yaml` のすべてのConvention Reference（規約参照）をKeyとして保持する。すべてのRuleが選択から外れたConvention（規約）の値は、空のList `[]` とする。
+- `excluded.yaml` は、選択から外れたRuleを持つConvention（規約）だけをKeyとして保持する。選択から外れたRuleがない場合は、`conventions: {}` とする。
+- 同一のConvention Reference（規約参照）が、`rules.yaml` と `excluded.yaml` の双方に現れてよい。
+- 各Convention（規約）について、両一覧のRule ID（規則ID）は重ならず、その和集合は `effective-rules/rules.yaml` の当該Convention（規約）のRule ID（規則ID）の一覧と一致する。
+- `inputs.yaml` には、用いた `effective-rules/rules.yaml`、Target Declaration（対象宣言）を保持するConsumer Declaration（利用側宣言）、および対応する解決で使用した[Foundation Application State Specification](foundation-application-state.md)を記録する。前段階の入力を一律に再列挙しない。
+
+`rules.yaml` は、対象FileのEffective Rule Set（有効規則集合）であり、Applicable Rule Set（適用規則集合）ではない。
+
+### Target-specific Validation Conditions（検証条件）
+
+次のすべてを満たす場合にのみ、結果を正常な解決結果として保持し、後続Phaseへ渡す。
+
+- Provider Declaration（提供側宣言）およびConsumer Declaration（利用側宣言）が、[Foundation Application State Specification](foundation-application-state.md)のValidation Conditions（検証条件）を満たす。
+- 用いるRepository-level Rule Resolution（Repository共通規則解決）の結果が現在利用可能である。
+- Target Declaration（対象宣言）の各Convention Reference（規約参照）が、Target Convention（対象規約）である。
+- 対象Fileが、対象を特定でき、Target Declaration（対象宣言）との包含関係を判定できる形で示されている。
+
+いずれかを満たさない場合、Rule Selection（規則選択）を解決できない。不足する内容を補完せず、不整合として報告する。不完全な規則集合を、正常な解決結果として保持・後続Phaseへ渡さない。
+
+保持する3つのFileは、「Common Content（共通の内容）」と「Target-specific Result（結果）」の内容契約に従い、同一のMapping内でKeyを、同一のList内でRule ID（規則ID）またはSource Reference（Source参照）を重複させない場合に有効である。
+
+### Target-specific Invalidation（利用停止）
+
+対象Fileの結果は、次のいずれかに該当する場合、その対象File単位でInvalidated（利用停止）となる。
+
+- 当該 `inputs.yaml` に記録されたSourceが変更された。
+- 記録されていないSourceの変更または追加が、当該結果に影響し得る。
+- 用いたRepository-level Rule Resolution（Repository共通規則解決）の結果がInvalidated（利用停止）となった、または更新された。
+- 上記に該当するか否かを判断できない。対応関係を確認できる `inputs.yaml` がない場合を含む。
+
+## Applicability Pre-resolution and Candidate Composition（適用性事前解決と候補合成）
+
+### Pre-resolution Position（位置づけ）
+
+Applicability Pre-resolution and Candidate Composition（適用性事前解決と候補合成）は、対象FileのTarget-specific Rule Resolution（対象固有規則解決）の `rules.yaml` の各Ruleについて、Not Applicable（非適用）を事前に判断し、残るRuleをCandidate Rule Set（候補規則集合）とする。
+
+その結果は、最終的なRule Applicabilityの判定ではない。
+
+### Pre-resolution Input（入力）
+
+| 入力 | 用途 |
+| --- | --- |
+| 現在利用可能な対象FileのTarget-specific Rule Resolution（対象固有規則解決）の `rules.yaml` | 判断の対象とするRule |
+| 対象File | Target State（対象状態） |
+| 判断に用いたRuleを定めるConvention Asset（規約資産） | Authoritative Rule Statement（正式規則文） |
+| 判断に必要な正式定義のSource | 対象Fileについての事実を成立させるDefinition Authority（定義権限）を持つ定義 |
+
+Target-specific Rule Resolution（対象固有規則解決）の結果が利用不能である場合は、「Fallback Resolution（結果が利用不能な場合の解決）」に従う。
+
+### Not-applicable Determination（非適用の判断）
+
+Not-applicable Exclusion（非適用による除外）とするのは、Authoritative Rule Statement（正式規則文）、Target State（対象状態）、および必要な正式定義から、対象File全体についてNot Applicable（非適用）を十分確定したRuleに限られる。次を根拠としてRuleを除外しない。
+
+- 不明または未確定であること
+- 一部のSection（節）等についてのみNot Applicable（非適用）が成立すること
+- 現在の作業で使用しなさそうであること
+- Path・名称だけから推測した対象Fileの意味
+- Development Action（開発行為）を対象とするRuleが、File本文に対するRuleではないこと
+
+Development Action（開発行為）を対象とするRuleは、対象File本文に対するRuleではないことだけを理由として、作業全体から除外しない。
+
+### Pre-resolution Result（結果）
+
+結果は、本Supportを保持するRepositoryの次のPhysical Location（物理配置）に、3つのFileとして保持する。
+
+```text
+.ai/resolution-support/rule-applicability/candidate-rules/<対象FileのRepository相対Path>/
+├─ rules.yaml
+├─ excluded.yaml
+└─ inputs.yaml
+```
+
+| File | 保持する内容 |
+| --- | --- |
+| `rules.yaml` | Candidate Rule Set（候補規則集合） |
+| `excluded.yaml` | Not-applicable Exclusion（非適用による除外）としたRule |
+| `inputs.yaml` | 対応する解決で直接使用した入力File |
+
+- `rules.yaml` は、Target-specific Rule Resolution（対象固有規則解決）の `rules.yaml` のすべてのConvention Reference（規約参照）をKeyとして保持する。すべてのRuleが除外されたConvention（規約）の値は、空のList `[]` とする。
+- `excluded.yaml` は、Not-applicable Exclusion（非適用による除外）としたRuleを持つConvention（規約）だけをKeyとして保持する。除外したRuleがない場合は、`conventions: {}` とする。
+- 同一のConvention Reference（規約参照）が、`rules.yaml` と `excluded.yaml` の双方に現れてよい。
+- 各Convention（規約）について、両一覧のRule ID（規則ID）は重ならず、その和集合はTarget-specific Rule Resolution（対象固有規則解決）の `rules.yaml` の当該Convention（規約）のRule ID（規則ID）の一覧と一致する。Target-specific Rule Resolution（対象固有規則解決）が外したRuleを、いずれの一覧にも含めない。
+- `inputs.yaml` には、用いたTarget-specific Rule Resolution（対象固有規則解決）の `rules.yaml`、対象File、および判断に直接使用したSourceを記録する。
+
+### Pre-resolution Validation Conditions（検証条件）
+
+用いるTarget-specific Rule Resolution（対象固有規則解決）の結果が現在利用可能である場合にのみ、結果を保持する。保持する3つのFileは、「Common Content（共通の内容）」と「Pre-resolution Result（結果）」の内容契約に従い、同一のMapping内でKeyを、同一のList内でRule ID（規則ID）またはSource Reference（Source参照）を重複させない場合に有効である。
+
+### Pre-resolution Invalidation（利用停止）
+
+対象Fileの結果は、次のいずれかに該当する場合、その対象File単位でInvalidated（利用停止）となる。
+
+- 当該 `inputs.yaml` に記録されたSource、または対象Fileが変更された。
+- 記録されていないSourceの変更または追加、あるいはTarget State（対象状態）の変更が、当該結果に影響し得る。
+- 用いたTarget-specific Rule Resolution（対象固有規則解決）の結果がInvalidated（利用停止）となった、または更新された。
+- 上記に該当するか否かを判断できない。対応関係を確認できる `inputs.yaml` がない場合を含む。
+
+Invalidated（利用停止）である場合、当該対象Fileの現在のTarget-specific Rule Resolution（対象固有規則解決）の `rules.yaml` 全体を、Candidate Rule Set（候補規則集合）として用いることができる。
 
 ## Self Application（`.github`自身への適用）
 
 `.github` も、本文書が定めるContract（契約）に従う。`.github` のためのModel上の例外を設けない。
 
-`.github` がConsumer Repository（利用Repository）である場合、Foundation Provider（基盤提供主体）は当該Repository自身である。このとき `.github` がVersion管理するFileは、Foundation Provider（基盤提供主体）側のAuthoritative Source（正式Source）であることによってResolution Target（解決対象）から除かれない。`.github` 自身のRepository-managed Target File（Repository管理対象File）として、「Complete Coverage（完全網羅）」に従う。
+`.github` がConsumer Repository（利用Repository）である場合、Foundation Provider（基盤提供主体）は当該Repository自身である。このとき、Convention Reference（規約参照）およびSource Reference（Source参照）は、`.github` のRepository root相対Pathとしてそのまま解決される。
 
 ## Deferred to Downstream Design（後続設計へ委譲する事項）
 
 本文書は次を定義しない。ここで示す事項は、本文書の現在の責務に基づいて、意図的に定義・解決の対象外としている事項である。
 
-- Target Shard（対象Shard）の実体生成、およびそれを行うGenerator・Script。
-- 変更検知、Regeneration Trigger、Hook、Skill、Agent / Workflow。
+- 本Supportが生成するDerived Output（派生出力）自身の扱い。
+- Consumer Repository（利用Repository）におけるRule Catalog Resolution（規則一覧解決）の結果の保持・参照の方式。
+- Foundation Provider（基盤提供主体）のRepository root以外を基準とする入力の参照方式、およびFoundation Provider（基盤提供主体）とConsumer Repository（利用Repository）が別のRepositoryである場合の入力の参照方式。
+- 同一Phase・同一対象のFileの組が、同一の解決によるものであることを確認する具体的な方式。
+- 対象FileとしてのRepository root・未作成の対象の扱い、およびPathの正規化方式。
+- 変更検知機構、Generator、Hook、Skill、Agent / Workflow。
 - 本Contract（契約）に対するValidation Tool、Enforcement、およびCI。
-- Partial Regeneration、Semantic Diff、Dependency Graph等の生成最適化。
-- AI Consumer（AI利用主体）によるTarget Shard（対象Shard）の利用方式、およびRouting。→ AI Consumption Workflowへ委譲する。
+- AI Consumer（AI利用主体）によるResolution Result（解決結果）の利用方式、およびRouting。→ AI Consumption Workflowへ委譲する。
 
 これらが未確定であることは、本文書のDesign Gap（設計上の不足）ではない。

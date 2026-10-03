@@ -112,6 +112,6 @@ Agent横断入口の具体契約。入口責務と、入口が保持しない内
 
 ## Rule Applicability Resolution Support Specification
 
-規則適用解決補助の具体契約。Target Fileごとの候補規則集合の事前解決、Target Shardの配置と内容、網羅、および決定論的な完全再生成。
+規則適用解決補助の具体契約。規則一覧解決・Repository共通規則解決・対象固有規則解決・適用性事前解決と候補合成の四段階構成、各段階の入力・結果の配置と内容・検証条件、および結果の保持・再利用と利用停止の最小接続契約。対象固有規則解決と適用性事前解決と候補合成は、対象Fileごとの結果を保持する。
 
 `docs/specifications/rule-applicability-resolution-support.md`

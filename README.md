@@ -79,7 +79,7 @@ Repository間のOwnership（所有責任）、Shared Scope、およびFoundation
 | [Cross-agent Entry Specification（Agent横断入口仕様）](docs/specifications/cross-agent-entry.md) | `docs/specifications/cross-agent-entry.md` | Cross-agent Entry（Agent横断入口）のConcrete Contract（具体契約） |
 | [AI Context Resolution Specification（AI文脈解決仕様）](docs/specifications/ai-context-resolution.md) | `docs/specifications/ai-context-resolution.md` | Cross-agent Entry（Agent横断入口）以降、RelevantなAuthoritative Foundation Source（正式基盤Source）を解決するConcrete Contract（具体契約） |
 | [Foundation Application State Specification（基盤適用状態仕様）](docs/specifications/foundation-application-state.md) | `docs/specifications/foundation-application-state.md` | Foundation Applicationの状態の宣言・解決と、Effective Foundation State（有効基盤状態）の導出に関するConcrete Contract（具体契約） |
-| [Rule Applicability Resolution Support Specification（規則適用解決補助仕様）](docs/specifications/rule-applicability-resolution-support.md) | `docs/specifications/rule-applicability-resolution-support.md` | Target File（対象File）ごとのCandidate Rule Set（候補規則集合）をRepository-managed Derived Information（Repository管理の派生情報）として解決・保持するConcrete Contract（具体契約） |
+| [Rule Applicability Resolution Support Specification（規則適用解決補助仕様）](docs/specifications/rule-applicability-resolution-support.md) | `docs/specifications/rule-applicability-resolution-support.md` | 最終的なRule Applicability（規則適用性）の判断へ渡すCandidate Rule Set（候補規則集合）を安全に絞り込み、その解決知識をDerived Information（派生情報）として再利用可能にするConcrete Contract（具体契約） |
 
 ### Supporting Declaration（補助宣言）
 
