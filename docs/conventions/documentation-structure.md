@@ -267,6 +267,8 @@ Category（分類）を示す小見出しは文書上の整理のためのもの
 
 **Stability:** Development
 
+**Scope:** Documentation Asset（文書資産）。
+
 **Requirement:** MUST
 
 **Rule:** Documentation Asset（文書資産）は、自身が何を保持・提供する責務を担うのか、すなわちDocument Responsibility（文書責務）を、その内容から識別可能にしなければならない。
@@ -283,6 +285,8 @@ Category（分類）を示す小見出しは文書上の整理のためのもの
 
 **Stability:** Development
 
+**Scope:** Documentation Asset（文書資産）が構成するSection。
+
 **Requirement:** MUST
 
 **Rule:** Documentation Asset（文書資産）がSectionを構成する場合、各Sectionは、Document Responsibility（文書責務）を内部で分担するSection Responsibility（Section責務）に基づかなければならない。
@@ -297,6 +301,8 @@ Category（分類）を示す小見出しは文書上の整理のためのもの
 
 **Stability:** Development
 
+**Scope:** Documentation Asset（文書資産）内のSectionのSection Responsibility（Section責務）。
+
 **Requirement:** MUST
 
 **Rule:** Section Responsibility（Section責務）は、包含するDocumentation Asset（文書資産）のDocument Responsibility（文書責務）の範囲内に留まらなければならない。
@@ -310,6 +316,8 @@ Category（分類）を示す小見出しは文書上の整理のためのもの
 **Rule Name:** Child Section Responsibility Boundary
 
 **Stability:** Development
+
+**Scope:** Child Section（子Section）のSection Responsibility（Section責務）。
 
 **Requirement:** MUST
 
@@ -327,6 +335,8 @@ Category（分類）を示す小見出しは文書上の整理のためのもの
 
 **Stability:** Development
 
+**Scope:** Convention（規約）によるStandard Section（標準Section）の定義。
+
 **Requirement:** MUST
 
 **Rule:** Standard Section（標準Section）は、少なくともApplicability Scope（適用範囲）とSection Responsibility（Section責務）を明示して定義しなければならない。
@@ -340,6 +350,8 @@ Category（分類）を示す小見出しは文書上の整理のためのもの
 **Rule Name:** Standard Section Applicability
 
 **Stability:** Development
+
+**Scope:** Standard Section（標準Section）のDocumentation Asset（文書資産）への適用。そのApplicability Scope（適用範囲）に含まれないDocumentation Asset（文書資産）への適用を含む。
 
 **Requirement:** MUST
 
@@ -357,6 +369,8 @@ Category（分類）を示す小見出しは文書上の整理のためのもの
 
 **Stability:** Development
 
+**Scope:** Documentation Asset（文書資産）が独立したSectionとして構成するSectionと、そのSectionが使用するSection Identity（Section同一性）。
+
 **Requirement:** MUST
 
 **Rule:** Documentation Asset（文書資産）が、適用可能なStandard Section（標準Section）と同一のSection Responsibility（Section責務）を独立したSectionとして構成する場合、対応するStandard Section Identity（標準Section同一性）を使用しなければならない。
@@ -373,6 +387,8 @@ Category（分類）を示す小見出しは文書上の整理のためのもの
 
 **Stability:** Development
 
+**Scope:** Standard Section Identity（標準Section同一性）を使用するSection。
+
 **Requirement:** MUST
 
 **Rule:** Standard Section Identity（標準Section同一性）を使用するSectionは、そのStandard Section（標準Section）のSection Responsibility（Section責務）へ適合しなければならない。
@@ -386,6 +402,8 @@ Category（分類）を示す小見出しは文書上の整理のためのもの
 **Rule Name:** Standard Identity and Presence Separation
 
 **Stability:** Development
+
+**Scope:** Standard Section（標準Section）に対応するSectionの設置を要求すること。
 
 **Requirement:** MUST NOT
 
@@ -403,6 +421,8 @@ Category（分類）を示す小見出しは文書上の整理のためのもの
 
 **Stability:** Development
 
+**Scope:** Standard Section Catalogの扱い。
+
 **Requirement:** MUST NOT
 
 **Rule:** Standard Section Catalogを、使用可能なSection Responsibility（Section責務）またはSection Identity（Section同一性）のClosed Set（閉じた集合）として扱ってはならない。
@@ -418,6 +438,8 @@ Category（分類）を示す小見出しは文書上の整理のためのもの
 **Rule Name:** Standard Section Non-duplication
 
 **Stability:** Development
+
+**Scope:** Convention（規約）によるStandard Section Identity（標準Section同一性）の定義。
 
 **Requirement:** MUST NOT
 
@@ -437,6 +459,8 @@ Category（分類）を示す小見出しは文書上の整理のためのもの
 
 **Stability:** Development
 
+**Scope:** Standard Section（標準Section）を定義するConvention（規約）が、当該Standard Section（標準Section）に対して行うStandard Section Heading Representation（標準Section見出し表現）の定義。
+
 **Requirement:** MUST
 
 **Rule:** Standard Section（標準Section）に対してStandard Section Heading Representation（標準Section見出し表現）を定義する場合、その定義は、当該Standard Section（標準Section）を定義するConvention（規約）上で行い、1つのStandard Section（標準Section）につき最大1つとし、English Heading Representationと、それに対応するPrimary Language Heading Explanation（主要言語見出し説明）によって構成しなければならない。
@@ -452,6 +476,8 @@ Category（分類）を示す小見出しは文書上の整理のためのもの
 **Rule Name:** Standard Section Heading Representation Reuse
 
 **Stability:** Development
+
+**Scope:** Standard Section Heading Representation（標準Section見出し表現）が定義されているStandard Section Identity（標準Section同一性）を、Documentation Asset（文書資産）が表現するHeading（見出し）。
 
 **Requirement:** MUST
 
@@ -471,6 +497,8 @@ Category（分類）を示す小見出しは文書上の整理のためのもの
 
 **Stability:** Development
 
+**Scope:** 本Convention（規約）におけるPurpose Standard Sectionの定義。
+
 **Requirement:** MUST
 
 **Rule:** Applicability Scope（適用範囲）をDocumentation-wideとするPurpose Standard Sectionを定義する。そのSection Responsibility（Section責務）は、Documentation Asset（文書資産）が何を保持・提供するために存在するのか、すなわちそのDocument Responsibility（文書責務）と文書として果たす役割を明確にすることである。
@@ -486,6 +514,8 @@ Category（分類）を示す小見出しは文書上の整理のためのもの
 **Rule Name:** Purpose Presence
 
 **Stability:** Development
+
+**Scope:** Documentation Asset（文書資産）。
 
 **Requirement:** SHOULD
 
@@ -503,6 +533,8 @@ Category（分類）を示す小見出しは文書上の整理のためのもの
 
 **Stability:** Development
 
+**Scope:** 本Convention（規約）におけるScope Standard Sectionの定義。
+
 **Requirement:** MUST
 
 **Rule:** Applicability Scope（適用範囲）をDocumentation-wideとするScope Standard Sectionを定義する。そのSection Responsibility（Section責務）は、Document Responsibility（文書責務）が適用される範囲および必要な境界を明示し、Documentation Asset（文書資産）が何を扱い、何を扱わないかを区別可能にすることである。
@@ -518,6 +550,8 @@ Category（分類）を示す小見出しは文書上の整理のためのもの
 **Rule Name:** Scope Information Requirement
 
 **Stability:** Development
+
+**Scope:** Documentation Asset（文書資産）。
 
 **Requirement:** MUST
 
@@ -535,6 +569,8 @@ Category（分類）を示す小見出しは文書上の整理のためのもの
 
 **Stability:** Development
 
+**Scope:** Documentation Asset（文書資産）が保持するScope Information。
+
 **Requirement:** SHOULD
 
 **Rule:** Scope Informationが独立したSection Responsibility（Section責務）としての意味的まとまりを持ち、その分離が責務境界の理解を改善する場合、Scope Standard Sectionとして構成する。
@@ -551,6 +587,8 @@ Category（分類）を示す小見出しは文書上の整理のためのもの
 
 **Stability:** Development
 
+**Scope:** 本Convention（規約）におけるRelationships Standard Sectionの定義。
+
 **Requirement:** MUST
 
 **Rule:** Applicability Scope（適用範囲）をDocumentation-wideとするRelationships Standard Sectionを定義する。そのSection Responsibility（Section責務）は、Documentation Asset（文書資産）またはそのSubjectが、他のDocumentation Asset（文書資産）・Responsibility（責務）・Concept（概念）等と持つ、当該Assetの意味成立に必要なSemantic Relationshipを明確にすることである。
@@ -566,6 +604,8 @@ Category（分類）を示す小見出しは文書上の整理のためのもの
 **Rule Name:** In Scope Standard Section
 
 **Stability:** Development
+
+**Scope:** 本Convention（規約）におけるIn Scope Standard Sectionの定義。
 
 **Requirement:** MUST
 
@@ -585,6 +625,8 @@ Category（分類）を示す小見出しは文書上の整理のためのもの
 
 **Stability:** Development
 
+**Scope:** 本Convention（規約）におけるOut of Scope Standard Sectionの定義。
+
 **Requirement:** MUST
 
 **Rule:** Applicability Scope（適用範囲）をDocumentation-wideとするOut of Scope Standard Sectionを定義する。そのSection Responsibility（Section責務）は、Scope Standard SectionのResponsibility Decomposition（責務分解）として、当該Documentation Asset（文書資産）がDocument Responsibility（文書責務）の範囲外として扱わない事項を明確にすることである。
@@ -602,6 +644,8 @@ Category（分類）を示す小見出しは文書上の整理のためのもの
 **Rule Name:** Responsibility Boundary Standard Section
 
 **Stability:** Development
+
+**Scope:** 本Convention（規約）におけるResponsibility Boundary Standard Sectionの定義。
 
 **Requirement:** MUST
 

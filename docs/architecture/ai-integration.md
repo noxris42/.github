@@ -130,7 +130,7 @@ Effective Foundation State（有効基盤状態）は、次を含み得る。
 
 したがって、Target-specific Rule Selection（対象固有規則選択）は、Effective Foundation State（有効基盤状態）の一部として参照され得る。Foundation ApplicationおよびTarget-specific Rule Selection（対象固有規則選択）の意味と、両者およびRule Applicabilityとの境界は[Repository Governance](repository-governance.md)が定める。本文書はこれらを再定義しない。
 
-Rule Applicability、すなわち各Normative Rule（規範的規則）が何に対してApplicableであるかは、[Convention Architecture](convention.md)が定めるとおり、そのRule Statement（規則文）が規定する対象・条件から定まる。Effective Foundation State（有効基盤状態）がTarget-specific Rule Selection（対象固有規則選択）を含むことは、Rule Applicabilityを含む・変更することではない。
+Rule Applicability、すなわち各Normative Rule（規範的規則）が何に対してApplicableであるかは、[Convention Architecture](convention.md)が定めるとおり、そのApplicability Scope（適用範囲）とRule Statement（規則文）から定まる。Effective Foundation State（有効基盤状態）がTarget-specific Rule Selection（対象固有規則選択）を含むことは、Rule Applicabilityを含む・変更することではない。
 
 Effective Foundation State（有効基盤状態）は、AI Integration（AI連携）にとって外部から与えられる入力である。本文書は、その生成方式、Schema、Manifest等のConcrete Representation（具体表現）を定義しない。
 
@@ -166,7 +166,7 @@ Task Relevance（タスク関連性）はEffective Foundation State（有効基�
 | Shared Foundation Asset | [Repository Governance](repository-governance.md) |
 | Foundation Application | [Repository Governance](repository-governance.md) |
 | Target-specific Rule Selection（対象固有規則選択） | [Repository Governance](repository-governance.md) |
-| Rule Applicability | 各Normative Rule（規範的規則）のRule Statement（規則文）。その意味は[Convention Architecture](convention.md) |
+| Rule Applicability | 各Normative Rule（規範的規則）。その意味は[Convention Architecture](convention.md) |
 | Ownership（所有責任） | [Repository Governance](repository-governance.md) |
 | Repository-specific State（Repository固有状態） | 当該Consumer Repository（利用Repository） |
 | Definition Authority（定義権限）の成立条件 | [Documentation Structure Architecture](documentation-structure.md) |

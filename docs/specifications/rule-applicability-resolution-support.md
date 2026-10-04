@@ -26,7 +26,7 @@ Rule Applicability Resolution Support（規則適用解決補助）のConcrete C
 本文書が使用する次のConcept（概念）のDefinition Authority（定義権限）は本文書の外にある。本文書はこれらを参照するのみで、再定義・上書きしない。
 
 - Foundation Application、Foundation Application Target（基盤適用対象）、Target-specific Rule Selection（対象固有規則選択）、およびRule Applicabilityの意味と、三者の境界
-- Convention（規約）、Normative Rule（規範的規則）、Non-normative Content（非規範的内容）、Rule Identity（規則同一性）、およびRule ApplicabilityがRule Statement（規則文）の規定する対象・条件から定まること
+- Convention（規約）、Normative Rule（規範的規則）、Non-normative Content（非規範的内容）、Rule Identity（規則同一性）、およびRule ApplicabilityがApplicability Scope（適用範囲）とRule Statement（規則文）から定まること
 - Rule ID（規則ID）の形式、およびNormative Rule（規範的規則）のConvention Asset（規約資産）上の記述形式
 - Current Foundation Application Target Set（現在の基盤適用対象集合）の宣言、Resolved Repository-level Application State（解決済みRepositoryレベル適用状態）、Resolved Rule Selection（解決済み規則選択）、およびEffective Foundation State（有効基盤状態）の具体的な構成と導出
 - Foundation Provider（基盤提供主体）・Consumer Repository（利用Repository）・AI Consumer（AI利用主体）の間のResponsibility Relationship（責務関係）
@@ -36,7 +36,7 @@ Rule Applicability Resolution Support（規則適用解決補助）のConcrete C
 
 - Foundation Application、Foundation Application Target（基盤適用対象）、およびTarget-specific Rule Selection（対象固有規則選択）の意味と境界。→ [Repository Governance](../architecture/repository-governance.md)による。
 - Convention（規約）およびNormative Rule（規範的規則）の意味、ならびにRule Applicabilityの意味。→ [Convention Architecture](../architecture/convention.md)による。
-- 各Normative Rule（規範的規則）のRule Applicability。→ 当該Normative Rule（規範的規則）のRule Statement（規則文）による。
+- 各Normative Rule（規範的規則）のRule Applicability。→ 当該Normative Rule（規範的規則）のApplicability Scope（適用範囲）とRule Statement（規則文）による。
 - Rule ID（規則ID）の形式、およびNormative Rule（規範的規則）の記述形式。→ [Convention Authoring Convention](../conventions/convention-authoring.md)による。
 - Current Foundation Application Target Set（現在の基盤適用対象集合）の宣言、Target-specific Rule Selection（対象固有規則選択）の宣言・解決、およびEffective Foundation State（有効基盤状態）の導出。→ [Foundation Application State Specification](foundation-application-state.md)による。
 - AI Integration（AI連携）がEffective Foundation State（有効基盤状態）を参照・利用する責務。→ [AI Integration Architecture](../architecture/ai-integration.md)による。
@@ -48,7 +48,7 @@ Rule Applicability Resolution Support（規則適用解決補助）のConcrete C
 
 本文書は、[Convention Architecture](../architecture/convention.md)、[Repository Governance](../architecture/repository-governance.md)、および[Foundation Application State Specification](foundation-application-state.md)を前提とする。
 
-Rule Applicability Resolution Support（規則適用解決補助）は、[Foundation Application State Specification](foundation-application-state.md)が定める宣言と解決の結果を入力として利用し、その後段で、各Normative Rule（規範的規則）のRule Statement（規則文）に照らして候補を絞り込む。本文書はいずれのSourceもRefinement（具体化）しない。
+Rule Applicability Resolution Support（規則適用解決補助）は、[Foundation Application State Specification](foundation-application-state.md)が定める宣言と解決の結果を入力として利用し、その後段で、各Normative Rule（規範的規則）のApplicability Scope（適用範囲）とRule Statement（規則文）に照らして候補を絞り込む。本文書はいずれのSourceもRefinement（具体化）しない。
 
 Design Dependency（設計依存）は次の一方向とする。
 
@@ -101,20 +101,20 @@ Rule Applicability Resolution Support
 Foundation Application / Target-specific Rule Selection / Rule Applicability
 ```
 
-Rule ApplicabilityのDefinition Authority（定義権限）は、[Convention Architecture](../architecture/convention.md)および各Normative Rule（規範的規則）のRule Statement（規則文）に残る。
+Rule ApplicabilityのDefinition Authority（定義権限）は、[Convention Architecture](../architecture/convention.md)および各Normative Rule（規範的規則）のApplicability Scope（適用範囲）とRule Statement（規則文）に残る。
 
 ### Candidate Rule Set（候補規則集合）
 
 Candidate Rule Set（候補規則集合）は、ある対象Fileについて、最終的なRule Applicabilityの判断へ渡すNormative Rule（規範的規則）の集合である。
 
-Candidate Rule Set（候補規則集合）は、Applicable Rule Set（適用規則集合）ではない。Candidate Rule Set（候補規則集合）に含まれることは、そのRuleがApplicableであること、またはNormative Effect（規範的効力）を持つことを意味しない。最終的なApplicabilityの判断は、実行時に、各RuleのAuthoritative Rule Statement（正式規則文）から行う。
+Candidate Rule Set（候補規則集合）は、Applicable Rule Set（適用規則集合）ではない。Candidate Rule Set（候補規則集合）に含まれることは、そのRuleがApplicableであること、またはNormative Effect（規範的効力）を持つことを意味しない。最終的なApplicabilityの判断は、実行時に、各Ruleの正式なApplicability Scope（適用範囲）とRule Statement（規則文）から行う。
 
 ```text
 Candidate Rule Set
 ≠ Applicable Rule Set
 ```
 
-Rule Statement（規則文）が定めるRuntime Applicability Unit（実行時適用単位）、すなわちFile・Section・Representation（表現）・Occurrence・Development Action等の単位を、本Supportは変更しない。
+Applicability Scope（適用範囲）とRule Statement（規則文）が定めるRuntime Applicability Unit（実行時適用単位）、すなわちFile・Section・Representation（表現）・Occurrence・Development Action等の単位を、本Supportは変更しない。
 
 ## Resolution Phases（解決フェーズ）
 
@@ -125,7 +125,7 @@ Candidate Rule Set（候補規則集合）は、次の4つのResolution Phase（
 1. Rule Catalog Resolution（規則一覧解決）：Target Convention（対象規約）が定めるすべてのNormative Rule（規範的規則）と、その所属を解決する。適用・選択の設定によって一覧を変えない。
 2. Repository-level Rule Resolution（Repository共通規則解決）：Repository共通の正式な適用判断を解決し、Rule Catalog Resolution（規則一覧解決）の結果を、`applied` のTarget Convention（対象規約）とその全Ruleと、`not-applied` のTarget Convention（対象規約）とその全Ruleとに二分する。Target-specific Rule Selection（対象固有規則選択）を反映しない。
 3. Target-specific Rule Resolution（対象固有規則解決）：Repository-level Rule Resolution（Repository共通規則解決）が有効としたRuleについて、対象FileのTarget-specific Rule Selection（対象固有規則選択）を[Foundation Application State Specification](foundation-application-state.md)どおりに解決し、選択されたRuleと、選択から外れたRuleとに二分する。
-4. Applicability Pre-resolution and Candidate Composition（適用性事前解決と候補合成）：Target-specific Rule Resolution（対象固有規則解決）が選択したRuleについて、Authoritative Rule Statement（正式規則文）、Target State（対象状態）、および必要な正式定義から、対象File全体についてNot Applicable（非適用）を十分確定したRuleを除き、残るRuleをCandidate Rule Set（候補規則集合）とする。
+4. Applicability Pre-resolution and Candidate Composition（適用性事前解決と候補合成）：Target-specific Rule Resolution（対象固有規則解決）が選択したRuleについて、正式なApplicability Scope（適用範囲）とRule Statement（規則文）、Target State（対象状態）、および必要な正式定義から、対象File全体についてNot Applicable（非適用）を十分確定したRuleを除き、残るRuleをCandidate Rule Set（候補規則集合）とする。
 
 ```text
 Rule Catalog Resolution
@@ -300,7 +300,7 @@ Not-applicable Exclusion unavailable
 
 対象Fileごとの結果は、File単位の組として利用停止する。影響し得る変更がある場合、Ruleごとに部分的に継続利用せず、当該対象Fileの当該Phaseの結果全体の再利用を停止する。
 
-あるPhaseの結果が変更前後で同じであっても、後続Phaseが自身の入力として用いるSourceの変更は無視しない。たとえば、Rule Catalog Resolution（規則一覧解決）の結果が変わらない場合でも、あるRuleのAuthoritative Rule Statement（正式規則文）の変更は、そのRuleを含む対象FileのApplicability Pre-resolution and Candidate Composition（適用性事前解決と候補合成）の結果の再利用を停止させる。
+あるPhaseの結果が変更前後で同じであっても、後続Phaseが自身の入力として用いるSourceの変更は無視しない。たとえば、Rule Catalog Resolution（規則一覧解決）の結果が変わらない場合でも、あるRuleの正式なApplicability Scope（適用範囲）またはRule Statement（規則文）の変更は、そのRuleを含む対象FileのApplicability Pre-resolution and Candidate Composition（適用性事前解決と候補合成）の結果の再利用を停止させる。
 
 ```text
 unchanged intermediate result
@@ -338,7 +338,7 @@ Invalidated（利用停止）である過去の結果は、確認のための資
 | Convention（規約）へのNormative Rule（規範的規則）の追加 | Rule Catalog Resolution（規則一覧解決）の結果、および後続Phaseの結果の再利用を停止する。追加されたRuleは、再解決したRule Catalog Resolution（規則一覧解決）の結果から後続Phaseへ渡る |
 | `applications` 等のRepository共通の適用判断の変更 | Repository-level Rule Resolution（Repository共通規則解決）以降の結果の再利用を停止する。その変更がRule Catalog Resolution（規則一覧解決）の解決に影響せず、他の利用停止条件にも該当しない場合、Rule Catalog Resolution（規則一覧解決）の結果は再利用できる |
 | Target Declaration（対象宣言）の変更 | 影響し得る対象FileのTarget-specific Rule Resolution（対象固有規則解決）以降の結果の再利用を停止する。影響し得る対象Fileを限定できない場合は、すべての対象Fileについて停止する。Target Declaration（対象宣言）だけの変更であっても、`effective-rules/inputs.yaml` に記録された `.foundation/application.yaml` が変更された場合は、Repository-level Rule Resolution（Repository共通規則解決）の結果の再利用も停止する |
-| Authoritative Rule Statement（正式規則文）の変更 | Rule Catalog Resolution（規則一覧解決）の結果が変わらない場合でも、当該Ruleを含む対象FileのApplicability Pre-resolution and Candidate Composition（適用性事前解決と候補合成）の結果の再利用を停止する |
+| 正式なApplicability Scope（適用範囲）またはRule Statement（規則文）の変更 | Rule Catalog Resolution（規則一覧解決）の結果が変わらない場合でも、当該Ruleを含む対象FileのApplicability Pre-resolution and Candidate Composition（適用性事前解決と候補合成）の結果の再利用を停止する |
 | 対象Fileの内容・属性等、Target State（対象状態）の変更 | 当該対象FileのApplicability Pre-resolution and Candidate Composition（適用性事前解決と候補合成）の結果の再利用を停止する |
 | Applicability Pre-resolution and Candidate Composition（適用性事前解決と候補合成）の結果のInvalidation（利用停止） | 当該対象Fileの現在のTarget-specific Rule Resolution（対象固有規則解決）の `rules.yaml` 全体を候補として用いることができる |
 | 保存されたResolution Result（解決結果）がない | Rule Catalog Resolution（規則一覧解決）からTarget-specific Rule Resolution（対象固有規則解決）までをCurrent Authoritative Source（現在の正式Source）から解決し、Not-applicable Exclusion（非適用による除外）なしで候補を提供する |
@@ -661,14 +661,14 @@ Applicability Pre-resolution and Candidate Composition（適用性事前解決�
 | --- | --- |
 | 現在利用可能な対象FileのTarget-specific Rule Resolution（対象固有規則解決）の `rules.yaml` | 判断の対象とするRule |
 | 対象File | Target State（対象状態） |
-| 判断に用いたRuleを定めるConvention Asset（規約資産） | Authoritative Rule Statement（正式規則文） |
+| 判断に用いたRuleを定めるConvention Asset（規約資産） | 正式なApplicability Scope（適用範囲）とRule Statement（規則文） |
 | 判断に必要な正式定義のSource | 対象Fileについての事実を成立させるDefinition Authority（定義権限）を持つ定義 |
 
 Target-specific Rule Resolution（対象固有規則解決）の結果が利用不能である場合は、「Fallback Resolution（結果が利用不能な場合の解決）」に従う。
 
 ### Not-applicable Determination（非適用の判断）
 
-Not-applicable Exclusion（非適用による除外）とするのは、Authoritative Rule Statement（正式規則文）、Target State（対象状態）、および必要な正式定義から、対象File全体についてNot Applicable（非適用）を十分確定したRuleに限られる。次を根拠としてRuleを除外しない。
+Not-applicable Exclusion（非適用による除外）とするのは、正式なApplicability Scope（適用範囲）とRule Statement（規則文）、Target State（対象状態）、および必要な正式定義から、対象File全体についてNot Applicable（非適用）を十分確定したRuleに限られる。次を根拠としてRuleを除外しない。
 
 - 不明または未確定であること
 - 一部のSection（節）等についてのみNot Applicable（非適用）が成立すること

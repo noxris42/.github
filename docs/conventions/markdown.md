@@ -182,7 +182,7 @@ External Toolが報告するErrorは、あるMarkdown Representationを検討す
 
 Category（分類）を示す小見出しは文書上の整理のためのものであり、Rule ID（規則ID）はCategory（分類）を表現しない。
 
-本文書のRuleは、Markdown Representation（Markdown表現）を扱う。各RuleのApplicabilityは、当該RuleのRule Statement（規則文）が規定する対象・条件によって確定する。本節その他のNon-normative Content（非規範的内容）は、Ruleの対象・条件を追加・変更しない。
+本文書のRuleは、Markdown Representation（Markdown表現）を扱う。各RuleのApplicabilityは、当該RuleのApplicability Scope（適用範囲）とRule Statement（規則文）によって確定する。本節その他のNon-normative Content（非規範的内容）は、Ruleの対象・条件を追加・変更しない。
 
 本文書のいずれのRuleも、Document Title（文書題名）・Heading（見出し）・List・Table・ Blockquote・Code・Link・Image等を設けること自体を要求しない。
 
@@ -195,6 +195,8 @@ Category（分類）を示す小見出しは文書上の整理のためのもの
 **Rule Name:** Markdown Baseline
 
 **Stability:** Development
+
+**Scope:** 本Convention（規約）のRuleがRepository内のMarkdown Representation（Markdown表現）について規定する内容の解釈。
 
 **Requirement:** MUST
 
@@ -220,6 +222,8 @@ Markdown Baselineは、本文書のRuleをどのMarkdown解釈のもとで読む
 
 **Stability:** Development
 
+**Scope:** Markdownで記述されたDocumentation Asset（文書資産）における、Document Title（文書題名）のMarkdown上の表現と、Heading Level（見出しレベル）1の使用。
+
 **Requirement:** MUST
 
 **Rule:** Markdownで記述されたDocumentation Asset（文書資産）において、Document Title（文書題名）をMarkdown上で表現する場合、Heading Level（見出しレベル）1を使用する。
@@ -242,6 +246,8 @@ Heading Level（見出しレベル）1をDocument Title（文書題名）以外�
 
 **Stability:** Development
 
+**Scope:** Markdown上で表現するHeading（見出し）のHeading Level（見出しレベル）。
+
 **Requirement:** MUST
 
 **Rule:** Markdown上でHeading（見出し）を表現する場合、直前のHeading（見出し）より深いHeading Level（見出しレベル）を使用するときは、1段だけ深いHeading Level（見出しレベル）を使用する。Heading Level（見出しレベル）を飛ばして深くしない。
@@ -261,6 +267,8 @@ Heading Level（見出しレベル）1をDocument Title（文書題名）以外�
 **Rule Name:** Heading Syntax Representation
 
 **Stability:** Development
+
+**Scope:** Markdown上で表現するHeading（見出し）の記法。
 
 **Requirement:** MUST
 
@@ -292,6 +300,8 @@ Heading Label（見出しラベル）のNatural Language Representation（自然
 
 **Stability:** Development
 
+**Scope:** Markdown上で表現されたHeading（見出し）のHeading Representation（見出し表現）。
+
 **Requirement:** SHOULD
 
 **Rule:** Markdown上で表現されたHeading（見出し）について、同一のParent Heading（親見出し）の配下では、同一のHeading Representation（見出し表現）を重複させるべきではない。
@@ -312,6 +322,8 @@ Heading Label（見出しラベル）のNatural Language Representation（自然
 
 **Stability:** Development
 
+**Scope:** Heading（見出し）として表現する対象のMarkdown上の表現。
+
 **Requirement:** MUST NOT
 
 **Rule:** Heading（見出し）として表現する対象をMarkdown上で表現する場合、Emphasis SyntaxをHeading Syntaxの代用として使用してはならない。
@@ -331,6 +343,8 @@ Heading Label（見出しラベル）のNatural Language Representation（自然
 **Rule Name:** Emphasis Marker Representation
 
 **Stability:** Development
+
+**Scope:** Markdown上のEmphasisおよびStrong Emphasisの表現。
 
 **Requirement:** MUST
 
@@ -361,6 +375,8 @@ Canonical Formは次である。
 
 **Stability:** Development
 
+**Scope:** 順序そのものに意味を持たない列挙のMarkdown上の表現。
+
 **Requirement:** SHOULD
 
 **Rule:** 順序そのものに意味を持たない列挙をMarkdown上で表現する場合、Unordered Listを使用すべきである。
@@ -379,6 +395,8 @@ Canonical Formは次である。
 
 **Stability:** Development
 
+**Scope:** 順序そのものに意味を持つ列挙のMarkdown上の表現。
+
 **Requirement:** SHOULD
 
 **Rule:** 順序そのものに意味を持つ列挙をMarkdown上で表現する場合、Ordered Listを使用すべきである。
@@ -396,6 +414,8 @@ Canonical Formは次である。
 **Rule Name:** Unordered List Marker
 
 **Stability:** Development
+
+**Scope:** Markdown上のUnordered ListのList Marker。
 
 **Requirement:** MUST
 
@@ -420,6 +440,8 @@ Canonical Formは次である。
 **Rule Name:** Ordered List Marker and Numbering Representation
 
 **Stability:** Development
+
+**Scope:** Markdown上のOrdered ListのList Markerと、各ItemのSource上の番号。
 
 **Requirement:** MUST
 
@@ -457,6 +479,8 @@ Canonical Formは次である。
 
 **Stability:** Development
 
+**Scope:** 複数の対象について、同じ観点による比較または対応関係を表現する内容のMarkdown上の表現。
+
 **Requirement:** SHOULD
 
 **Rule:** 複数の対象について、同じ観点による比較または対応関係を表現する内容をMarkdown上で表現する場合、その内容がRowとColumnによって明確に表現できるときは、Tableを使用すべきである。
@@ -474,6 +498,8 @@ Canonical Formは次である。
 **Rule Name:** Table Source Representation
 
 **Stability:** Development
+
+**Scope:** Markdown上のTableのSource上の表現。
 
 **Requirement:** MUST
 
@@ -517,6 +543,8 @@ Canonical Formは次である。
 
 **Stability:** Development
 
+**Scope:** 他の情報源からの引用として提示する内容のMarkdown上の表現。
+
 **Requirement:** SHOULD
 
 **Rule:** 他の情報源からの引用として提示する内容をMarkdown上で表現する場合、Blockquote Syntaxを使用すべきである。
@@ -536,6 +564,8 @@ Canonical Formは次である。
 **Rule Name:** Fenced Code Block Representation
 
 **Stability:** Development
+
+**Scope:** Markdown上のCode Blockの表現。
 
 **Requirement:** MUST
 
@@ -567,6 +597,8 @@ Code Block自身がMarkdownのFenceを内容として含む場合のように、
 
 **Stability:** Development
 
+**Scope:** Markdown上のFenced Code Block。
+
 **Requirement:** MUST
 
 **Rule:** Fenced Code Blockには、その内容が何であるかを示すLanguageまたはContent Identifierを指定する。
@@ -586,6 +618,8 @@ Code Block自身がMarkdownのFenceを内容として含む場合のように、
 **Rule Name:** Inline Code Representation
 
 **Stability:** Development
+
+**Scope:** File名、Path、Command、Identifier（識別子）、Literal Value、Syntax等を具体的なLiteral StringとしてMarkdown上の本文中へ現す表現と、そのInline CodeのDelimiter。
 
 **Requirement:** MUST
 
@@ -615,6 +649,8 @@ Inline CodeのDelimiterには、通常はBacktick 1個を使用する。Content�
 
 **Stability:** Development
 
+**Scope:** Markdown上のLinkの表現。
+
 **Requirement:** SHOULD
 
 **Rule:** Markdown上でLinkを表現する場合、Inline Link Syntaxを使用すべきである。
@@ -639,6 +675,8 @@ Canonical Formは次である。
 
 **Stability:** Development
 
+**Scope:** 同一Repository内のMarkdown文書その他のAssetを参照するMarkdown上のLink。
+
 **Requirement:** MUST
 
 **Rule:** 同一Repository内のMarkdown文書その他のAssetをMarkdown上のLinkとして参照する場合、参照元のFileからRepository内で解決できるRelative Referenceを使用する。
@@ -658,6 +696,8 @@ File名およびPathの形式は[Naming Convention](naming.md)が所有する。
 **Rule Name:** Image Alt Text
 
 **Stability:** Development
+
+**Scope:** Markdown上で表現するImage。
 
 **Requirement:** MUST
 
@@ -679,6 +719,8 @@ File名およびPathの形式は[Naming Convention](naming.md)が所有する。
 
 **Stability:** Development
 
+**Scope:** Markdown Source上の独立したMarkdown Block間の分離。
+
 **Requirement:** SHOULD
 
 **Rule:** 独立したMarkdown Block間は、1行の空行で分離すべきである。
@@ -696,6 +738,8 @@ Markdownの構文上、空行を置かないことが自然である箇所は本
 **Rule Name:** Trailing Space
 
 **Stability:** Development
+
+**Scope:** Markdown Sourceの行末。
 
 **Requirement:** MUST NOT
 
@@ -717,6 +761,8 @@ Hard Line Breakを表現する目的であっても、行末の空白をCanonica
 
 **Stability:** Development
 
+**Scope:** Markdown Source上で表現する内容と、その表現に用いるMarkdown RepresentationまたはHTML。
+
 **Requirement:** SHOULD
 
 **Rule:** Markdown Source上で表現する内容について、同等の内容をMarkdown Representationで表現できる場合は、HTMLではなくMarkdown Representationを使用すべきである。
@@ -734,6 +780,8 @@ Hard Line Breakを表現する目的であっても、行末の空白をCanonica
 **Rule Name:** Prose Source Line Wrapping
 
 **Stability:** Development
+
+**Scope:** Markdown Source内のNatural Language Prose（自然言語本文）のSource上の改行。
 
 **Requirement:** MUST NOT
 

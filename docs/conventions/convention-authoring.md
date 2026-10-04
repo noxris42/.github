@@ -47,6 +47,7 @@ Convention Authoring Convention
 - Rule ID Format（規則ID形式）
 - Namespace Code（名前空間コード）のConcrete Representation（具体表現）
 - Rule Numberの表記と採番
+- Rule Model（規則モデル）の要素とRule Field（規則フィールド）の対応
 - Rule Field（規則フィールド）の構成・順序・Markdown表現
 - Rule Boundary（規則境界）の取り方
 - Rule Section Heading Representation（Rule Section見出し表現）
@@ -109,6 +110,26 @@ Rule ID（規則ID）は、Convention Architectureが定義するRule Identity�
 | Definition Namespace（定義名前空間） | Namespace Code（名前空間コード） |
 | Rule-local Identity | Rule Number |
 
+### Rule Field（規則フィールド）
+
+Rule Field（規則フィールド）は、Convention Architectureが定義するRule Model（規則モデル）の各要素を、Convention Asset（規約資産）上で記述する単位である。
+
+Rule Model（規則モデル）の要素との対応は次である。
+
+| Rule Model（規則モデル）の要素 | Rule Field（規則フィールド） |
+| --- | --- |
+| Rule Identity（規則同一性） | `Rule ID` |
+| Rule Name（規則名） | `Rule Name` |
+| Requirement Level（要求レベル） | `Requirement` |
+| Applicability Scope（適用範囲） | `Scope` |
+| Rule Statement（規則文） | `Rule` |
+| Reason | `Reason` |
+| Supplementary Information | `Note` |
+
+`Stability` はRule Model（規則モデル）の要素に対応するFieldではなく、本文書が定めるFieldである（「Stability（安定性）」を参照）。
+
+`Scope` の値は、自然言語による自由記述とする。本文書は、`Scope` の値について固定の分類・語彙・専用構文を定めない。`Scope` が保持する内容と保持しない内容は、Convention ArchitectureのApplicability Scope（適用範囲）による。
+
 ### Stability（安定性）
 
 Stabilityは、Convention Architectureが定めるDevelopment Version／Stable Versionの境界を、個々のNormative Rule（規範的規則）上で明示するためのFieldである。
@@ -154,6 +175,8 @@ Category（分類）を示す小見出しは文書上の整理のためのもの
 
 **Stability:** Development
 
+**Scope:** 各Convention Asset（規約資産）。
+
 **Requirement:** MUST
 
 **Rule:** 各Convention Asset（規約資産）は、自身を識別するConvention Code（規約コード）を1つ、その資産上で明示的に宣言する。
@@ -168,6 +191,8 @@ Category（分類）を示す小見出しは文書上の整理のためのもの
 
 **Stability:** Development
 
+**Scope:** Convention Asset（規約資産）を識別するために定めるConvention Code（規約コード）の表記。
+
 **Requirement:** MUST
 
 **Rule:** Convention Code（規約コード）は、ASCII大文字英字3文字で表現する。
@@ -181,6 +206,8 @@ Category（分類）を示す小見出しは文書上の整理のためのもの
 **Rule Name:** Convention Code Stability
 
 **Stability:** Development
+
+**Scope:** Stable Rule IDの一部として使用されたConvention Code（規約コード）と、その変更。
 
 **Requirement:** MUST NOT
 
@@ -198,6 +225,8 @@ Category（分類）を示す小見出しは文書上の整理のためのもの
 
 **Stability:** Development
 
+**Scope:** 各Normative Rule（規範的規則）。
+
 **Requirement:** MUST
 
 **Rule:** 各Normative Rule（規範的規則）は、完全なRule ID（規則ID）を持たなければならない。
@@ -211,6 +240,8 @@ Category（分類）を示す小見出しは文書上の整理のためのもの
 **Rule Name:** Rule ID Structure
 
 **Stability:** Development
+
+**Scope:** Normative Rule（規範的規則）に定めるRule ID（規則ID）の表記。
 
 **Requirement:** MUST
 
@@ -228,6 +259,8 @@ Category（分類）を示す小見出しは文書上の整理のためのもの
 
 **Stability:** Development
 
+**Scope:** Normative Rule（規範的規則）に定めるRule ID（規則ID）の `<Convention>` Segment。
+
 **Requirement:** MUST
 
 **Rule:** Rule ID（規則ID）の `<Convention>` には、そのRuleが属するConvention Asset（規約資産）が宣言したConvention Code（規約コード）を使用する。
@@ -241,6 +274,8 @@ Category（分類）を示す小見出しは文書上の整理のためのもの
 **Rule Name:** Namespace Segment
 
 **Stability:** Development
+
+**Scope:** Definition Namespace（定義名前空間）へ割り当てるNamespace Code（名前空間コード）の表記、およびNormative Rule（規範的規則）に定めるRule ID（規則ID）の `<Namespace>` Segment。
 
 **Requirement:** MUST
 
@@ -258,6 +293,8 @@ Category（分類）を示す小見出しは文書上の整理のためのもの
 
 **Stability:** Development
 
+**Scope:** Normative Rule（規範的規則）に定めるRule ID（規則ID）の `<Number>` Segment。
+
 **Requirement:** MUST
 
 **Rule:** Rule ID（規則ID）の `<Number>` は、同一の `Convention × Namespace` におけるRule-local Identityとして、`001` から始まる3桁ゼロ埋めの十進数で表現する。
@@ -271,6 +308,8 @@ Category（分類）を示す小見出しは文書上の整理のためのもの
 **Rule Name:** Opaque Rule Number
 
 **Stability:** Development
+
+**Scope:** Rule ID（規則ID）のRule Numberと、その割当および使用。
 
 **Requirement:** MUST NOT
 
@@ -288,6 +327,8 @@ Category（分類）を示す小見出しは文書上の整理のためのもの
 
 **Stability:** Development
 
+**Scope:** 各Normative Rule（規範的規則）の記述。
+
 **Requirement:** MUST
 
 **Rule:** 各Normative Rule（規範的規則）は、独立したHeading Sectionとして記述する。
@@ -303,6 +344,8 @@ Category（分類）を示す小見出しは文書上の整理のためのもの
 **Rule Name:** Rule Section Heading Representation
 
 **Stability:** Development
+
+**Scope:** Normative Rule（規範的規則）のRule Section（ルールSection）のHeading（見出し）と、そこで表示するPrimary Language Heading Explanation（主要言語見出し説明）。
 
 **Requirement:** MUST
 
@@ -342,11 +385,15 @@ Primary Language Heading Explanation（主要言語見出し説明）として�
 
 **Stability:** Development
 
+**Scope:** 各Normative Rule（規範的規則）の記述。
+
 **Requirement:** MUST
 
-**Rule:** 各Normative Rule（規範的規則）は、`Rule ID`、`Rule Name`、`Stability`、`Requirement`、`Rule`、`Reason`の各Fieldを持つ。
+**Rule:** 各Normative Rule（規範的規則）は、`Rule ID`、`Rule Name`、`Stability`、`Scope`、`Requirement`、`Rule`、`Reason`の各Fieldを持つ。
 
-**Reason:** Rule Model（規則モデル）の必須要素を文書上の明示的な記述単位へ対応させ、要素の欠落を検出可能にする。Fieldとして明示しない限り、要求水準やReasonは本文へ埋没し、後からの検証・再評価ができなくなる。
+**Reason:** Rule Model（規則モデル）の必須要素を文書上の明示的な記述単位へ対応させ、要素の欠落を検出可能にする。Fieldとして明示しない限り、要求水準・対象範囲・Reasonは本文へ埋没し、後からの検証・再評価ができなくなる。
+
+**Note:** 必須Fieldを欠くNormative Rule（規範的規則）の記述は、Rule Model（規則モデル）の必須要素を欠く記述として本Ruleに適合しない。本Ruleは、この不適合を理由としてConvention（規約）全体を無効とする状態を定めない。
 
 #### CVA-SF-012 — Optional Note Field（任意のNote Field）
 
@@ -355,6 +402,8 @@ Primary Language Heading Explanation（主要言語見出し説明）として�
 **Rule Name:** Optional Note Field
 
 **Stability:** Development
+
+**Scope:** Normative Rule（規範的規則）の記述に含めるSupplementary Informationと、`Note` Field。
 
 **Requirement:** MUST
 
@@ -370,9 +419,11 @@ Primary Language Heading Explanation（主要言語見出し説明）として�
 
 **Stability:** Development
 
+**Scope:** Normative Rule（規範的規則）の記述におけるRule Field（規則フィールド）の並び。
+
 **Requirement:** MUST
 
-**Rule:** Rule Field（規則フィールド）は、`Rule ID` → `Rule Name` → `Stability` → `Requirement` → `Rule` → `Reason` → `Note`の順で記述する。
+**Rule:** Rule Field（規則フィールド）は、`Rule ID` → `Rule Name` → `Stability` → `Scope` → `Requirement` → `Rule` → `Reason` → `Note`の順で記述する。
 
 **Reason:** 順序を固定することで、複数のConvention Asset（規約資産）を横断して読む場合でも同じ位置に同じ要素が現れ、欠落や誤配置を目視でも機械的にも検出できる。
 
@@ -383,6 +434,8 @@ Primary Language Heading Explanation（主要言語見出し説明）として�
 **Rule Name:** Rule Field Presentation
 
 **Stability:** Development
+
+**Scope:** Normative Rule（規範的規則）の記述におけるRule Field（規則フィールド）の表示。
 
 **Requirement:** MUST
 
@@ -398,6 +451,8 @@ Primary Language Heading Explanation（主要言語見出し説明）として�
 **Rule Name:** Convention Code Declaration
 
 **Stability:** Development
+
+**Scope:** ...
 
 **Requirement:** MUST
 
@@ -418,6 +473,8 @@ Primary Language Heading Explanation（主要言語見出し説明）として�
 
 **Stability:** Development
 
+**Scope:** 新規に追加するNormative Rule（規範的規則）と、その `Stability` Field。
+
 **Requirement:** MUST
 
 **Rule:** 新規に追加するNormative Rule（規範的規則）は、`Stability: Development` として記述する。
@@ -431,6 +488,8 @@ Primary Language Heading Explanation（主要言語見出し説明）として�
 **Rule Name:** Stable Transition
 
 **Stability:** Development
+
+**Scope:** Stable ReleaseされたNormative Rule（規範的規則）の `Stability` Field。
 
 **Requirement:** MUST
 
@@ -446,6 +505,8 @@ Primary Language Heading Explanation（主要言語見出し説明）として�
 
 **Stability:** Development
 
+**Scope:** `Stability: Development` のNormative Rule（規範的規則）のRule ID（規則ID）に対する削除・再採番と、それによって生じる欠番。
+
 **Requirement:** MAY
 
 **Rule:** `Stability: Development` のRuleのRule ID（規則ID）は、Stable Release前であれば削除または再採番できる。欠番を詰めることは要求しない。
@@ -459,6 +520,8 @@ Primary Language Heading Explanation（主要言語見出し説明）として�
 **Rule Name:** Stable Rule ID Preservation
 
 **Stability:** Development
+
+**Scope:** `Stability: Stable` のRule ID（規則ID）の再採番および他のRuleへの再利用、ならびに新しいNormative Meaning（規範的意味）へのRule ID（規則ID）の割当。
 
 **Requirement:** MUST NOT
 
@@ -475,6 +538,8 @@ Primary Language Heading Explanation（主要言語見出し説明）として�
 **Rule Name:** New Rule Number Allocation
 
 **Stability:** Development
+
+**Scope:** 新規Normative Rule（規範的規則）へのRule Numberの割当。
 
 **Requirement:** MUST
 
@@ -494,6 +559,8 @@ Primary Language Heading Explanation（主要言語見出し説明）として�
 
 **Stability:** Development
 
+**Scope:** `Stability: Stable` のNormative Rule（規範的規則）のCurrent Normative Ruleからの削除。
+
 **Requirement:** MUST
 
 **Rule:** `Stability: Stable` のRuleをCurrent Normative Ruleから削除する場合は、そのRuleのSectionを削除したうえで、Rule ID（規則ID）をRetired Rule ID（廃止済み規則ID）として保持する。
@@ -507,6 +574,8 @@ Primary Language Heading Explanation（主要言語見出し説明）として�
 **Rule Name:** Retired Rule ID Record
 
 **Stability:** Development
+
+**Scope:** Retired Rule ID（廃止済み規則ID）の保持と、`Retired Rule IDs` の記録。
 
 **Requirement:** MUST
 
@@ -530,6 +599,8 @@ Primary Language Heading Explanation（主要言語見出し説明）として�
 **Rule Name:** Development Rule Removal
 
 **Stability:** Development
+
+**Scope:** Stable Release前に削除された `Stability: Development` のNormative Rule（規範的規則）のRule ID（規則ID）についての、Retired Rule ID（廃止済み規則ID）の作成。
 
 **Requirement:** MUST NOT
 

@@ -39,6 +39,7 @@ Design Dependency（設計依存）は**Repository Governance → 本文書 → 
 - Convention（規約）の意味とConvention Responsibility（規約責務）
 - Normative Rule（規範的規則）の定義と、Convention（規約）内の非規範的内容との区別
 - Rule Model（規則モデル）：Normative Rule（規範的規則）が意味上持つ要素
+- Rule Applicabilityの成立と、要求への適合との区別
 - Requirement Level（要求レベル）の共通語彙とその意味
 - Rule Identity（規則同一性）の意味上の構成
 - Rule Identity Stabilityの原則
@@ -72,7 +73,7 @@ Normative Rule（規範的規則）は、Convention（規約）が対象に対�
 
 Convention（規約）のNormative Effectは、Normative Rule（規範的規則）を通じて表現される。すなわち、Convention（規約）が対象に対して持つ規範的な効力は、Normative Rule（規範的規則）として明示された内容に由来する。
 
-各Normative Rule（規範的規則）が何に対してApplicableであるかは、そのRule Statement（規則文）が規定する対象・条件によって定まる。Applicabilityは、Rule Statement（規則文）とは別の要素として保持されない。
+各Normative Rule（規範的規則）が何に対してApplicableであるかは、そのNormative Rule（規範的規則）のApplicability Scope（適用範囲）とRule Statement（規則文）によって定まる（「Rule Applicability（規則適用性）」を参照）。
 
 ### Non-normative Content（非規範的内容）
 
@@ -109,7 +110,8 @@ Normative Rule（規範的規則）は意味上、次の要素を持つ。
 | Rule Identity（規則同一性） | そのRuleをStable Reference（安定参照）するための同一性 |
 | Rule Name（規則名） | そのRuleを人間が識別・想起するためのLabel |
 | Requirement Level（要求レベル） | そのRuleが要求・禁止・推奨・許容のいずれであるかの水準 |
-| Rule Statement（規則文） | そのRuleが対象に対して規定する内容そのもの。そのRuleがApplicableとなる対象・条件を含む |
+| Applicability Scope（適用範囲） | そのRuleが直接対象とする主体・表現・行為等の範囲 |
+| Rule Statement（規則文） | そのRuleがApplicability Scope（適用範囲）に属する対象に対して規定する要求と、そのRuleがApplicableとなる適用条件 |
 | Reason | そのRuleが必要である目的・問題・制約 |
 
 ### Optional Elements（任意要素）
@@ -119,6 +121,52 @@ Normative Rule（規範的規則）は意味上、次の要素を持つ。
 | Supplementary Information | 理解を助ける説明・Example・注意点等 |
 
 Supplementary InformationはNon-normative Content（非規範的内容）であり、それ自体では新たなNormative Requirement（規範要求）を追加しない。
+
+### Applicability Scope（適用範囲）
+
+Applicability Scope（適用範囲）は、Normative Rule（規範的規則）が直接対象とする主体・表現・行為等の範囲を正式に保持する要素である。対象を特定するために必要な限定、所属関係、および定義側／利用側の区別は、Applicability Scope（適用範囲）に含まれる。
+
+Applicability Scope（適用範囲）は、対象範囲の意味によって成立する。対象範囲を理解するために、正式なConcept（概念）の定義を参照できる。Path・File種別、およびReason・Example等の周辺の内容だけに、対象範囲の補完を委ねない。Path等の物理的な条件は、それ自体が正式な対象条件である場合に限り、Applicability Scope（適用範囲）に含まれる。
+
+1つのNormative Rule（規範的規則）が複数の要求を持つ場合、Applicability Scope（適用範囲）は、それらの要求が直接対象とするすべての対象を含む。
+
+### Division between Applicability Scope and Rule Statement（適用範囲と規則文の分担）
+
+Applicability Scope（適用範囲）とRule Statement（規則文）は、次のとおり責務を分担する。
+
+```text
+Applicability Scope
+  → 直接対象の範囲
+
+Rule Statement
+  → その対象への要求と、適用条件
+```
+
+要求・適用条件・Reason・Exampleは、Applicability Scope（適用範囲）に含めない。
+
+Rule Statement（規則文）は、読解に必要な範囲で対象へ言及し、Concept（概念）を説明できる。ただしRule Statement（規則文）は、Applicability Scope（適用範囲）から独立して対象範囲を再定義しない。
+
+Applicability Scope（適用範囲）とRule Statement（規則文）が直接対象について矛盾する場合、いずれかを優先して解釈することで救済しない。その矛盾は、当該Normative Rule（規範的規則）の不整合として解決する。
+
+### Rule Applicability（規則適用性）
+
+Rule Applicabilityは、あるNormative Rule（規範的規則）が、ある対象に対してApplicableであるという関係である。Rule Applicabilityは、その対象がそのRuleのApplicability Scope（適用範囲）に属し、かつRule Statement（規則文）が規定する適用条件を満たすことによって成立する。
+
+```text
+Rule Applicability
+= 対象がApplicability Scopeに属する
+  AND
+  対象がRule Statementの適用条件を満たす
+```
+
+Rule Applicabilityは、要求への適合とは別の事柄である。Applicableである対象は、要求に適合する場合も、適合しない場合もある。要求に適合しないことを理由として、その対象をApplicability Scope（適用範囲）から除外しない。
+
+```text
+Rule Applicability
+≠ 要求への適合
+```
+
+Rule Applicabilityは、各Normative Rule（規範的規則）自身によって定まる。Non-normative Content（非規範的内容）は、Rule Applicabilityを追加・変更しない。Foundation ApplicationおよびTarget-specific Rule Selection（対象固有規則選択）も、Rule Applicabilityを変更しない。三者の区別は[Repository Governance](repository-governance.md)による。
 
 ### Reason Requirements（Reasonの要件）
 
@@ -243,7 +291,7 @@ Identity（同一性）を再利用しないのは、過去の参照が別の意
 
 Convention（規約）内で規範として効力を持つ内容は、Normative Rule（規範的規則）として明示される。文脈や語調から規範性を暗黙に推論しない。
 
-Normative Rule（規範的規則）のApplicabilityも同様に、Rule Statement（規則文）が規定する対象・条件から定まる。Non-normative Content（非規範的内容）からApplicabilityを推論しない。
+Normative Rule（規範的規則）のApplicabilityも同様に、Applicability Scope（適用範囲）とRule Statement（規則文）から定まる。Non-normative Content（非規範的内容）からApplicabilityを推論しない。
 
 ### Rule Carries Its Reason（Ruleは理由を伴う）
 

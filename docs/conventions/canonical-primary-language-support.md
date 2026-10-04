@@ -279,6 +279,8 @@ Category（分類）を示す小見出しは文書上の整理のためのもの
 
 **Stability:** Development
 
+**Scope:** Canonical Primary Language Support Architecture上で成立したCanonical Primary Language Support Association（正規主要言語補助対応）の保持。
+
 **Requirement:** MUST
 
 **Rule:** [Canonical Primary Language Support Architecture](../architecture/canonical-primary-language-support.md)上で成立したCanonical Primary Language Support Association（正規主要言語補助対応）は、Repository内のCentral Concrete Declaration Source（中央具体宣言情報源）へCanonical Declaration（正規宣言）として保持する。
@@ -296,6 +298,8 @@ Category（分類）を示す小見出しは文書上の整理のためのもの
 **Rule Name:** Canonical Association Declaration
 
 **Stability:** Development
+
+**Scope:** 各Canonical Declaration（正規宣言）。
 
 **Requirement:** MUST
 
@@ -320,6 +324,8 @@ Canonical Primary Language Support Representation
 **Rule Name:** YAML Scalar Mapping Representation
 
 **Stability:** Development
+
+**Scope:** Central Concrete Declaration Source（中央具体宣言情報源）の表現と、そこに保持する各Canonical Declaration（正規宣言）の表現。
 
 **Requirement:** MUST
 
@@ -355,6 +361,8 @@ Double Quoteの要求は、空白を含む表記への対処を目的とする�
 
 **Stability:** Development
 
+**Scope:** Candidate Recommendation（候補提案）と、その提案対象の優先。
+
 **Requirement:** SHOULD
 
 **Rule:** Candidate Recommendation（候補提案）を行う場合は、Canonical Primary Language Support Representation（正規主要言語補助表現）を定めることが、そのEnglish Representation（英語表現）の理解補助、またはRepository Documentation（Repository文書）におけるPrimary Language Support Representationの一貫性に対して意味を持つと合理的に見込まれるものを優先して提案する。
@@ -386,6 +394,8 @@ TitleまたはHeadingであること
 
 **Stability:** Development
 
+**Scope:** Canonical Primary Language Support Association（正規主要言語補助対応）を成立したものとして扱う判断。
+
 **Requirement:** MUST NOT
 
 **Rule:** Candidate Recommendation（候補提案）が行われたことのみを根拠として、Canonical Primary Language Support Association（正規主要言語補助対応）が成立したものとして扱ってはならない。
@@ -403,6 +413,8 @@ TitleまたはHeadingであること
 **Rule Name:** Recommendation Does Not Preempt Canonical Decision
 
 **Stability:** Development
+
+**Scope:** English Representation（英語表現）をCandidate Recommendation（候補提案）の対象から除外する判断。
 
 **Requirement:** MUST NOT
 

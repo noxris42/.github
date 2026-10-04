@@ -163,7 +163,7 @@ Externally Constrained Name
 
 `NAM-SF-004` は`NAM-SF-001` ・ `NAM-SF-002` のException Catalogではない。両者は適用対象が異なる。
 
-この図は、Physical Naming Formに関する適用の分離を示すものであり、本文書のすべてのRuleについてのApplicability Mapではない。`NAM-SF-003` ・ `NAM-SF-005` ・ `NAM-SF-006` ・ `NAM-SF-007` の適用対象は、各RuleのRule Statement（規則文）が定める。
+この図は、Physical Naming Formに関する適用の分離を示すものであり、本文書のすべてのRuleについてのApplicability Mapではない。`NAM-SF-003` ・ `NAM-SF-005` ・ `NAM-SF-006` ・ `NAM-SF-007` の適用対象は、各RuleのApplicability Scope（適用範囲）が定める。
 
 ## Convention Code Selection Guidance（規約コード選定の指針）
 
@@ -195,6 +195,8 @@ Category（分類）を示す小見出しは文書上の整理のためのもの
 
 **Stability:** Development
 
+**Scope:** Repository-controlled File NameのFile Stem。
+
 **Requirement:** MUST
 
 **Rule:** Repository-controlled File NameのFile Stemは、次を満たすように表現する。
@@ -221,6 +223,8 @@ Externally Constrained Name（外部制約名称）は本Ruleの対象ではな�
 **Rule Name:** Directory Name Form
 
 **Stability:** Development
+
+**Scope:** Repository-controlled Directory Name。
 
 **Requirement:** MUST
 
@@ -250,6 +254,8 @@ Externally Constrained Name（外部制約名称）は本Ruleの対象ではな�
 **Rule Name:** Responsibility-distinguishing Name
 
 **Stability:** Development
+
+**Scope:** Repository-controlled Physical Name。
 
 **Requirement:** SHOULD
 
@@ -312,6 +318,8 @@ Physical Name  ✕→ Responsibility Definition
 
 **Stability:** Development
 
+**Scope:** Externally Constrained Name（外部制約名称）。
+
 **Requirement:** MUST
 
 **Rule:** Concrete Spelling（具体表記）がExternal System、Platform、 Tool等とのContractによって制約されるExternally Constrained Name（外部制約名称）は、そのExternal Contractへ適合しなければならない。
@@ -332,13 +340,15 @@ Physical Name  ✕→ Responsibility Definition
 
 **Stability:** Development
 
+**Scope:** Repository-controlled Nameの選択。
+
 **Requirement:** SHOULD
 
 **Rule:** Repository-controlled Nameは、一時的な作業状態ではなく、対象を継続的に識別できる比較的安定した特徴に基づいて選択すべきである。
 
 **Reason:** Physical Name（物理名称）は、Path・Link・履歴・外部参照を通じて選択の時点よりも長く使われ続ける。選択の根拠が短期間で変化する特徴であれば、名称は早期に対象を正しく識別しなくなり、その時点で名称変更か、実態と合わない名称の放置かのいずれかを強いる。安定した特徴を根拠として選ぶことで、その必要が初回のNamingの時点から生じにくくなる。
 
-**Note:** 本Ruleは初回のNamingにおける選択の根拠を対象とする。既存名称を変更してよいかは `NAM-SF-006` が扱う。
+**Note:** 本Ruleは名称を選択する際の根拠を扱う。既存名称を変更してよいかは `NAM-SF-006` が扱う。
 
 #### NAM-SF-006 — Existing Name Stability（既存名称の安定性）
 
@@ -347,6 +357,8 @@ Physical Name  ✕→ Responsibility Definition
 **Rule Name:** Existing Name Stability
 
 **Stability:** Development
+
+**Scope:** 既存の参照で使用されているPhysical Name（物理名称）の変更。
 
 **Requirement:** SHOULD
 
@@ -363,6 +375,8 @@ Physical Name  ✕→ Responsibility Definition
 **Rule Name:** Temporary State Naming
 
 **Stability:** Development
+
+**Scope:** Repository-controlled Nameへ含める語。
 
 **Requirement:** SHOULD NOT
 

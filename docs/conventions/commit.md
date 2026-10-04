@@ -183,6 +183,8 @@ Category（分類）を示す小見出しは文書上の整理のためのもの
 
 **Stability:** Development
 
+**Scope:** 各Commitと、そのCommitへ含めるConcrete Change。
+
 **Requirement:** MUST
 
 **Rule:** 1つのCommitは、1つのChange Subject（変更主体）に対する1つのSemantic Purpose（意味上の目的）を持つSemantic Changeを表す。複数のConcrete Changeを含む場合は、それらがその単一のChange Subject（変更主体）とSemantic Purpose（意味上の目的）へ従属するかどうかによって、同一Commitへ含めてよいかを判断する。
@@ -199,6 +201,8 @@ Category（分類）を示す小見出しは文書上の整理のためのもの
 
 **Stability:** Development
 
+**Scope:** 複数の変更を同一Commitへ含めるか分割するかの判断と、そのために用いるChange Subject（変更主体）。
+
 **Requirement:** MUST
 
 **Rule:** 独立したChange Subject（変更主体）または独立したSemantic Purpose（意味上の目的）が複数存在する場合は、それらを同一Commitへ含めず、Commitを分割する。このとき、複数の変更を1つのCommitへまとめることのみを目的として、実在しないHigher-order Change Subjectを作らない。
@@ -214,6 +218,8 @@ Category（分類）を示す小見出しは文書上の整理のためのもの
 **Rule Name:** Message Structure
 
 **Stability:** Development
+
+**Scope:** Commit Messageの構成。
 
 **Requirement:** MUST
 
@@ -238,6 +244,8 @@ Header
 
 **Stability:** Development
 
+**Scope:** Commit MessageのHeader。
+
 **Requirement:** MUST
 
 **Rule:** Headerは`<gitmoji> <type>: <subject>` の形式で記述する。`<gitmoji>` と `<type>` の間は半角空白1つで区切り、`<type>` の直後にコロンと半角空白1つを置く。Scopeは使用しない。
@@ -258,6 +266,8 @@ Header
 
 **Stability:** Development
 
+**Scope:** Commit MessageのHeaderにおける `<type>` の選択。
+
 **Requirement:** MUST
 
 **Rule:** `<type>` は、そのCommitのSemantic Purpose（意味上の目的）から選択する。File拡張子、Directory、変更File数、使用Tool等のPhysical Attributeのみを根拠として決定しない。`chore` は、Repository MaintenanceそのものがSemantic Purpose（意味上の目的）である場合に使用し、分類できない場合のFallbackとして使用しない。
@@ -271,6 +281,8 @@ Header
 **Rule Name:** Base Type and Gitmoji Set
 
 **Stability:** Development
+
+**Scope:** Commit MessageのHeaderにおける `<type>` と `<gitmoji>`。
 
 **Requirement:** MUST
 
@@ -302,6 +314,8 @@ Header
 
 **Stability:** Development
 
+**Scope:** Commit MessageのHeaderにおける `<subject>`。
+
 **Requirement:** MUST
 
 **Rule:** `<subject>` は、Change Subject Representation（変更主体表現）とOperation Representationから構成し、そのCommitのWhatを表す。Whyを `<subject>` へ含めない。
@@ -326,6 +340,8 @@ Subject
 
 **Stability:** Development
 
+**Scope:** CommitのChange Subject（変更主体）の確定。
+
 **Requirement:** MUST
 
 **Rule:** Change Subject（変更主体）は、そのCommitのSemantic Purpose（意味上の目的）の中心となる意味的対象として確定する。あるFileまたはDocumentation Asset（文書資産）を変更したというPhysical Factのみを根拠に、それをChange Subject（変更主体）としない。
@@ -341,6 +357,8 @@ Subject
 **Rule Name:** Change Subject Representation
 
 **Stability:** Development
+
+**Scope:** CommitのChange Subject Representation（変更主体表現）の決定と、Commit Headerの記述を目的とするFormal Name（正式名称）・Identity（同一性）・Documentation Ruleの成立。
 
 **Requirement:** MUST
 
@@ -370,6 +388,8 @@ README.md
 
 **Stability:** Development
 
+**Scope:** Commit MessageのSubjectにおけるOperation Representation。
+
 **Requirement:** SHOULD
 
 **Rule:** Operation Representationには、Preferred Operation Vocabulary（推奨操作語彙）に適切な語が存在する場合、その語を優先して使用する。適切な語が存在しない場合は、Preferred Operation Vocabulary（推奨操作語彙）に含まれないOperationを使用してよい。
@@ -387,6 +407,8 @@ README.md
 **Rule Name:** Message Language
 
 **Stability:** Development
+
+**Scope:** Commit MessageのNatural Language Representation（自然言語表現）と、Commit Messageに現れるSemantic Identifier、Formal Name（正式名称）、Identifier（識別子）、Product Name等。
 
 **Requirement:** MUST
 
@@ -417,6 +439,8 @@ Explicit Message Languageの具体的な宣言方法・保存場所・Schemaは�
 **Rule Name:** Body Responsibility
 
 **Stability:** Development
+
+**Scope:** Commit MessageのBody。
 
 **Requirement:** MAY
 

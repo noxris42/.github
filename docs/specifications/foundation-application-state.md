@@ -33,7 +33,7 @@ Foundation Application State（基盤適用状態）のConcrete Contract（具�
 - Foundation Provider（基盤提供主体）・Consumer Repository（利用Repository）・AI Consumer（AI利用主体）の間のResponsibility Relationship（責務関係）
 - Effective Foundation State（有効基盤状態）の意味、すなわちFoundation Applicationの結果として成立し、解決済みのFoundation ApplicationとTarget-specific Rule Selection（対象固有規則選択）を含み得ること、およびAI Integration（AI連携）にとって外部から与えられる入力であること
 - Effective Foundation State Access（有効基盤状態参照）、Task Relevance（タスク関連性）、およびDefinition Authority（定義権限）・Foundation Application・Task Relevance（タスク関連性）の分離
-- Convention（規約）、Normative Rule（規範的規則）、Rule Identity（規則同一性）、およびNormative Rule（規範的規則）のApplicabilityがそのRule Statement（規則文）が規定する対象・条件から定まること
+- Convention（規約）、Normative Rule（規範的規則）、Rule Identity（規則同一性）、およびNormative Rule（規範的規則）のApplicabilityがそのApplicability Scope（適用範囲）とRule Statement（規則文）から定まること
 - Rule ID（規則ID）の形式
 
 したがって次は本文書の責務ではない。
@@ -45,7 +45,7 @@ Foundation Application State（基盤適用状態）のConcrete Contract（具�
 - Foundation Application Target（基盤適用対象）の意味と、その成立の判断主体。→ [Repository Governance](../architecture/repository-governance.md)による。
 - Convention（規約）およびNormative Rule（規範的規則）の意味、ならびにRule Identity（規則同一性）の成立。→ [Convention Architecture](../architecture/convention.md)による。
 - Rule ID（規則ID）の具体形式。→ [Convention Authoring Convention](../conventions/convention-authoring.md)による。
-- 各Normative Rule（規範的規則）のApplicability、すなわちRule Applicability。→ 当該Normative Rule（規範的規則）のRule Statement（規則文）による。Applicabilityがそこから定まることは[Convention Architecture](../architecture/convention.md)による。
+- 各Normative Rule（規範的規則）のApplicability、すなわちRule Applicability。→ 当該Normative Rule（規範的規則）のApplicability Scope（適用範囲）とRule Statement（規則文）による。Applicabilityがそこから定まることは[Convention Architecture](../architecture/convention.md)による。
 - AI Integration（AI連携）がEffective Foundation State（有効基盤状態）を参照・利用する責務。→ [AI Integration Architecture](../architecture/ai-integration.md)による。
 
 本文書が定めるのは、これらによってすでに成立しているModelを前提として、Foundation Applicationの状態をどのDeclarationとして保持し、どのように解決するかである。すなわち本文書が所有するのは、Shared Application Default（共有適用既定）のDeclaration、Consumer Declaration（利用側宣言）、Resolution Algorithm（解決手順）、Target Scope（対象範囲）、Composition（合成）、YAML Representation（YAML表現）、Field Contract（Field契約）、およびValidation Condition（検証条件）というConcrete Contract（具体契約）に限られる。
@@ -235,13 +235,13 @@ Repository-specific Application Decision（Repository固有適用判断）が優
 
 ### Upper Model Handling（上位Modelの扱い）
 
-Target-specific Rule Selection（対象固有規則選択）の意味、Foundation Applicationとの境界、およびRule Applicabilityとの境界は[Repository Governance](../architecture/repository-governance.md)が定める。Rule Applicabilityが各Normative Rule（規範的規則）のRule Statement（規則文）が規定する対象・条件から定まることは[Convention Architecture](../architecture/convention.md)が定める。本文書はこれらを再定義せず、それを前提として、Target Declaration（対象宣言）とその解決をConcrete Contract（具体契約）として具体化する。
+Target-specific Rule Selection（対象固有規則選択）の意味、Foundation Applicationとの境界、およびRule Applicabilityとの境界は[Repository Governance](../architecture/repository-governance.md)が定める。Rule Applicabilityが各Normative Rule（規範的規則）のApplicability Scope（適用範囲）とRule Statement（規則文）から定まることは[Convention Architecture](../architecture/convention.md)が定める。本文書はこれらを再定義せず、それを前提として、Target Declaration（対象宣言）とその解決をConcrete Contract（具体契約）として具体化する。
 
 上位Modelが定める境界は、本Contract（契約）において次のとおり具体化される。
 
 - Target Declaration（対象宣言）は、Resolved Repository-level Application State（解決済みRepositoryレベル適用状態）が `applied` であるConvention（規約）についてのみ置ける。`not-applied` であるConvention（規約）へのTarget Declaration（対象宣言）は、「Validation Conditions（検証条件）」により無効である。
 - Target Declaration（対象宣言）の解決は、Resolved Repository-level Application State（解決済みRepositoryレベル適用状態）を変更しない。
-- Target Declaration（対象宣言）の解決結果は、Rule Statement（規則文）を変更せず、Rule Applicabilityによってさらに限定される。
+- Target Declaration（対象宣言）の解決結果は、Applicability Scope（適用範囲）およびRule Statement（規則文）を変更せず、Rule Applicabilityによってさらに限定される。
 
 Exception / Waiver（例外／免除）は本Contract（契約）に含めない。
 
@@ -249,7 +249,7 @@ Exception / Waiver（例外／免除）は本Contract（契約）に含めない
 
 Target Declaration（対象宣言）の解決結果を、本文書ではResolved Rule Selection（解決済み規則選択）と呼ぶ。Resolved Rule Selection（解決済み規則選択）は、Consumer Repository（利用Repository）側で選択されたRule Set（規則集合）であり、LocationにおけるRuleの最終的なApplicabilityそのものではない。
 
-Rule Applicabilityは、各Normative Rule（規範的規則）のRule Statement（規則文）が規定する対象・条件からのみ定まる。本Contract（契約）のいずれのDeclarationも、Rule Applicabilityを追加・変更・上書きしない。
+Rule Applicabilityは、各Normative Rule（規範的規則）のApplicability Scope（適用範囲）とRule Statement（規則文）からのみ定まる。本Contract（契約）のいずれのDeclarationも、Rule Applicabilityを追加・変更・上書きしない。
 
 本Contract（契約）において、あるLocationでRuleがFoundation ApplicationによるNormative Effect（規範的効力）を持つことは、次によって判定される。
 
@@ -259,10 +259,10 @@ Rule Applicabilityは、各Normative Rule（規範的規則）のRule Statement�
   かつ
   そのRuleが、そのLocationについてのResolved Rule Selectionに含まれる
   かつ
-  そのRuleのRule Statementが、そのLocationをApplicableとする
+  そのRuleのApplicability ScopeとRule Statementが、そのLocationをApplicableとする
 ```
 
-`include` / `add` 等によってRuleをRule Set（規則集合）へ含めることは、Rule Applicabilityを拡張・上書きしない。Rule Statement（規則文）がApplicableとしないLocationでは、Resolved Rule Selection（解決済み規則選択）に含まれるRuleであってもApplicableではなく、Normative Effect（規範的効力）を持たない。
+`include` / `add` 等によってRuleをRule Set（規則集合）へ含めることは、Rule Applicabilityを拡張・上書きしない。Applicability Scope（適用範囲）とRule Statement（規則文）がApplicableとしないLocationでは、Resolved Rule Selection（解決済み規則選択）に含まれるRuleであってもApplicableではなく、Normative Effect（規範的効力）を持たない。
 
 Target Declaration（対象宣言）が存在しない場合、Repository-levelで `applied` であるConvention（規約）について、そのすべてのRuleがResolved Rule Selection（解決済み規則選択）のBaseline（基準状態）となる（「Hierarchical Resolution（階層的解決）」を参照）。これは、すべてのRuleがすべてのLocationへApplicableであることを意味しない。
 
@@ -349,7 +349,7 @@ refine:                  R = (P ∪ add) − remove
 
 `refine` において `add` または `remove` を持たない場合、その値は空集合として扱う。双方を持たない `refine` の結果は `R = P` である。
 
-Location `L` において `C` のRule `r` がFoundation ApplicationによるNormative Effect（規範的効力）を持つのは、`r` がDeclaration Chain（宣言連鎖）の最終段の `R` に含まれ、かつ `r` のRule Statement（規則文）が `L` をApplicableとする場合である。
+Location `L` において `C` のRule `r` がFoundation ApplicationによるNormative Effect（規範的効力）を持つのは、`r` がDeclaration Chain（宣言連鎖）の最終段の `R` に含まれ、かつ `r` のApplicability Scope（適用範囲）とRule Statement（規則文）が `L` をApplicableとする場合である。
 
 #### Resolution Example（解決の例示）
 
@@ -375,7 +375,7 @@ L = docs/specifications/other.md の解決:
   （Exact File Declarationなし） R = { WRT-SF-001, WRT-SF-003 }
 ```
 
-いずれの場合も、各Ruleが実際にApplicableであるかは、さらに各RuleのRule Statement（規則文）が定めるRule Applicabilityによって限定される。
+いずれの場合も、各Ruleが実際にApplicableであるかは、さらに各RuleのApplicability Scope（適用範囲）とRule Statement（規則文）が定めるRule Applicabilityによって限定される。
 
 ## Effective Foundation State（有効基盤状態）
 
@@ -392,7 +392,7 @@ Effective Foundation State
 - Resolved Repository-level Foundation Application（解決済みRepositoryレベル基盤適用）：Current Foundation Application Target Set（現在の基盤適用対象集合）に含まれるすべてのFoundation Application Target（基盤適用対象）についての、Resolved Repository-level Application State（解決済みRepositoryレベル適用状態）。Foundation Application Target（基盤適用対象）でないShared Foundation AssetについてはApplication State（適用状態）を含まない
 - Resolved Target-specific Rule Selection（解決済み対象固有規則選択）：Repository-levelで `applied` である各Convention（規約）についての、Repository内の各LocationにおけるResolved Rule Selection（解決済み規則選択）
 
-Effective Foundation State（有効基盤状態）は、Rule Applicabilityを含まず、変更しない。あるLocationでRuleがNormative Effect（規範的効力）を持つか否かは、Effective Foundation State（有効基盤状態）と各RuleのRule Statement（規則文）から、「Rule Selection and Rule Applicability（規則選択とRule Applicability）」に従って判定される。
+Effective Foundation State（有効基盤状態）は、Rule Applicabilityを含まず、変更しない。あるLocationでRuleがNormative Effect（規範的効力）を持つか否かは、Effective Foundation State（有効基盤状態）と各RuleのApplicability Scope（適用範囲）およびRule Statement（規則文）から、「Rule Selection and Rule Applicability（規則選択とRule Applicability）」に従って判定される。
 
 ### Deterministic Derivation（決定論的導出）
 

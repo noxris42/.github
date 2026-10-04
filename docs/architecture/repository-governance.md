@@ -245,7 +245,7 @@ Foundation Applicationの**具体方式、すなわちApplication Mechanism（�
 
 Target-specific Rule Selection（対象固有規則選択）とは、Foundation Application Target（基盤適用対象）であり、Foundation Applicationによって特定Repositoryで有効となっているConvention（規約）について、適用先Repositoryが、当該Repository内の特定Targetにおいて、Foundation ApplicationによるNormative Effect（規範的効力）の候補とするRule Set（規則集合）を選択することである。
 
-Target-specific Rule Selection（対象固有規則選択）は、個々のNormative Rule（規範的規則）が何に対してApplicableであるかを決定しない。Normative Rule（規範的規則）が何に対してApplicableであるかは、そのRule Statement（規則文）が規定する対象・条件からのみ定まる。本文書では、これをRule Applicabilityと表記する。
+Target-specific Rule Selection（対象固有規則選択）は、個々のNormative Rule（規範的規則）が何に対してApplicableであるかを決定しない。Normative Rule（規範的規則）が何に対してApplicableであるかは、そのNormative Rule（規範的規則）自身が規定する対象・条件からのみ定まる。本文書では、これをRule Applicabilityと表記する。Normative Rule（規範的規則）のどの内部要素が対象・条件を保持するかは、本文書では定義せず、後続設計へ委譲する。
 
 Foundation Application、Target-specific Rule Selection（対象固有規則選択）、およびRule Applicabilityは別の事柄であり、混同してはならない。
 
@@ -257,7 +257,7 @@ Foundation Application
 
 - **Foundation Application**：Foundation Application Target（基盤適用対象）が、特定Repositoryで有効か否か。
 - **Target-specific Rule Selection（対象固有規則選択）**：当該Repositoryで有効なConvention（規約）のRuleのうち、どれを、そのRepository内の特定TargetにおけるNormative Effect（規範的効力）の候補とするか。
-- **Rule Applicability**：個々のNormative Rule（規範的規則）が、そのRule Statement（規則文）が規定する対象・条件により、何に対してApplicableであるか。
+- **Rule Applicability**：個々のNormative Rule（規範的規則）が、そのNormative Rule（規範的規則）が規定する対象・条件により、何に対してApplicableであるか。
 
 判断主体・Definition Authority（定義権限）の所在は次のとおり分かれる。
 
@@ -269,7 +269,7 @@ Target-specific Rule Selection
   → 適用先Repository
 
 Rule Applicability
-  → 各Normative RuleのRule Statement
+  → 各Normative Rule
 ```
 
 したがって次が成立する。
@@ -277,7 +277,7 @@ Rule Applicability
 - 適用先Repositoryは、自身へ適用されたConvention（規約）について、Target-specific Rule Selection（対象固有規則選択）を持ち得る。その判断主体は、Foundation Applicationと同じく適用先Repositoryである。
 - Target-specific Rule Selection（対象固有規則選択）は、Foundation Applicationそのものを変更しない。あるTargetであるRuleが選択されていないことは、そのConvention（規約）が当該Repositoryで有効でないことを意味しない。
 - 当該Repositoryで有効になっていないConvention（規約）を、Target-specific Rule Selection（対象固有規則選択）によって特定Targetでのみ有効にしない。
-- Target-specific Rule Selection（対象固有規則選択）は、Rule Statement（規則文）を変更せず、Rule Applicabilityを拡張・上書きしない。Rule Statement（規則文）が規定する対象・条件を満たさないTargetに対して、選択によってRuleをApplicableにしない。
+- Target-specific Rule Selection（対象固有規則選択）は、Normative Rule（規範的規則）が規定する対象・条件を変更せず、Rule Applicabilityを拡張・上書きしない。Normative Rule（規範的規則）が規定する対象・条件を満たさないTargetに対して、選択によってRuleをApplicableにしない。
 - Target-specific Rule Selection（対象固有規則選択）は、Convention（規約）が定めるRuleそのものの追加・変更・無効化ではない。Override（上書き）／Extend／Replace／Disable等の拡張方式とは別の事柄である（「Non-goals」を参照）。
 
 あるTargetにおいて、RuleがFoundation ApplicationによるNormative Effect（規範的効力）を持つには、少なくとも次のすべてが成立することを要する。
@@ -287,7 +287,7 @@ Rule Applicability
 AND
 そのRuleが、当該TargetについてのTarget-specific Rule Selectionの結果に含まれる
 AND
-当該Targetが、そのRuleのRule Statementが規定する対象・条件を満たす（Rule Applicability）
+当該Targetが、そのRuleが規定する対象・条件を満たす（Rule Applicability）
 ```
 
 Target-specific Rule Selection（対象固有規則選択）におけるTargetの指定方式、複数の指定の合成方式、およびその表現形式は本文書で固定しない。これらは後続設計へ委譲する。

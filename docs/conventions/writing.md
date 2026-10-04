@@ -128,9 +128,9 @@ Commit MessageのNatural Language Representation（自然言語表現）は[Comm
 
 本文書が扱うHuman-readable Natural Language Representation（人間可読な自然言語表現）には、Natural Language Prose（自然言語本文）に加えて、Human-readableなDocument Title（文書題名）およびHeading Label（見出しラベル）のNatural Language Representation（自然言語表現）が含まれる。
 
-本文書がこれらを扱うことは、各Normative Rule（規範的規則）のApplicabilityを定めない。各RuleのApplicabilityは、当該RuleのRule Statement（規則文）が規定する対象・条件によって確定する。本節その他のNon-normative Content（非規範的内容）は、Ruleの対象・条件を追加・変更しない。
+本文書がこれらを扱うことは、各Normative Rule（規範的規則）のApplicabilityを定めない。各RuleのApplicabilityは、当該RuleのApplicability Scope（適用範囲）とRule Statement（規則文）によって確定する。本節その他のNon-normative Content（非規範的内容）は、Ruleの対象・条件を追加・変更しない。
 
-Rule Statement（規則文）がDocument Title（文書題名）およびHeading Label（見出しラベル）を対象として名指すのは、`WRT-SF-001` 、`WRT-SF-002` 、および`WRT-SF-003` である。Document Title（文書題名）を対象として名指すのは、これらに加えて `WRT-SF-008` および `WRT-SF-009` である。本文書は、すべてのRuleをDocument Title（文書題名）およびHeading Label（見出しラベル）へ一律に適用しない。
+Applicability Scope（適用範囲）がDocument Title（文書題名）およびHeading Label（見出しラベル）を対象として名指すのは、`WRT-SF-001` 、`WRT-SF-002` 、および`WRT-SF-003` である。Document Title（文書題名）を対象として名指すのは、これらに加えて `WRT-SF-008` および `WRT-SF-009` である。本文書は、すべてのRuleをDocument Title（文書題名）およびHeading Label（見出しラベル）へ一律に適用しない。
 
 ### Out of Scope（本文書が定義しない範囲）
 
@@ -193,7 +193,7 @@ Natural Language Prose（自然言語本文）は、Human-readable Natural Langu
 
 Code Block内のCode、 Identifier（識別子）、Path等のLiteral Representation（そのままの表記）は、それ自体が自然言語として意味を伝える部分ではない。
 
-Document Title（文書題名）およびHeading Label（見出しラベル）は、Natural Language Prose（自然言語本文）とは別に、各RuleのRule Statement（規則文）が対象として名指す。Rule Statement（規則文）がNatural Language Prose（自然言語本文）のみを対象とする場合、その適用は本文に限られる。
+Document Title（文書題名）およびHeading Label（見出しラベル）は、Natural Language Prose（自然言語本文）とは別に、各RuleのApplicability Scope（適用範囲）が対象として名指す。Applicability Scope（適用範囲）がNatural Language Prose（自然言語本文）のみを対象とする場合、その適用は本文に限られる。
 
 ### Relationship with Canonical Primary Language Support Establishment（正規主要言語補助側の成立との関係）
 
@@ -233,21 +233,15 @@ Category（分類）を示す小見出しは文書上の整理のためのもの
 
 **Stability:** Development
 
+**Scope:** Repository Documentation（Repository文書）のNatural Language Prose（自然言語本文）、Human-readableなDocument Title（文書題名）、およびHeading Label（見出しラベル）。ただし、CodeおよびIdentifier（識別子）、File名・Directory名・Path、External Product / Tool / Protocol等の正式名称、External Contractによって表記が固定される文字列、および原文を維持する必要がある引用を除く。
+
 **Requirement:** MUST
 
 **Rule:** Primary Languageは、Repository Documentation（Repository文書）のHuman-readable Natural Language Representation（人間可読な自然言語表現）がMeaning（意味）を伝える基準言語である。
 
-Repository Documentation（Repository文書）のNatural Language Prose（自然言語本文）、Human-readableなDocument Title（文書題名）、およびHeading Label（見出しラベル）は、そこで伝えるMeaning（意味）を読み手がPrimary Languageで受け取れるように記述する。
+本Ruleの対象となる表現は、そこで伝えるMeaning（意味）を読み手がPrimary Languageで受け取れるように記述する。
 
 本Ruleが要求するのは、当該Human-readable Representation（人間可読表現）が伝えるMeaning（意味）がPrimary Languageで成立していることである。表現全体をPrimary Languageのみで構成することではない。English Representation（英語表現）その他Primary Language以外の表記を含むことは、それ自体では本Ruleに反しない。
-
-次は本Ruleの対象ではなく、Primary Languageによる表記を要求されない。
-
-- CodeおよびIdentifier（識別子）
-- File名、Directory名、Path
-- External Product / Tool / Protocol等の正式名称
-- External Contractによって表記が固定される文字列
-- 原文を維持する必要がある引用
 
 Current RepositoryにおけるPrimary LanguageのConcrete Assignment（具体割当）は「Concrete Declarations」が宣言する。本RuleのRequirementはその具体値に依存しない。
 
@@ -275,11 +269,13 @@ Commit MessageのMessage Language（メッセージ言語）は[Commit Conventio
 
 **Stability:** Development
 
+**Scope:** 人間の読み手へMeaning（意味）を伝えることを目的としてPresentation（表示）されるHuman-readable Natural Language Representation（人間可読な自然言語表現）のうち、Natural Language Prose（自然言語本文）、Human-readableなDocument Title（文書題名）、およびHeading Label（見出しラベル）において、Defined English Representation（定義済み英語表現）がDefined Subject（定義済み対象）そのものへのSemantic Reference（意味参照）として機能する個々のSemantic Reference Usage（意味参照使用）。ただし、その使用箇所のHuman-readable Representation（人間可読表現）が、別のSubjectについてのDefinition Responsibility（定義責務）によってすでに定義されている使用箇所を除く。
+
 **Requirement:** MUST
 
-**Rule:** 人間の読み手へMeaning（意味）を伝えることを目的としてPresentation（表示）されるHuman-readable Natural Language Representation（人間可読な自然言語表現）において、Defined English Representation（定義済み英語表現）がDefined Subject（定義済み対象）そのものへのSemantic Reference（意味参照）として機能する場合、その個々のSemantic Reference Usage（意味参照使用）を本Ruleの使用単位とする。
+**Rule:** 本Ruleの使用単位は、本RuleのApplicability Scope（適用範囲）に属する個々のSemantic Reference Usage（意味参照使用）である。
 
-Human-readable Natural Language Representationであっても、そのPresentation Usageが、AI Consumer（AI利用主体）その他の人間以外のConsumerへMeaning（意味）を伝えることのみを目的とする場合、本Ruleの使用単位は成立しない。Presentation Usageが人間の読み手へMeaning（意味）を伝えることを目的とするかどうかは、その表現を保持する対象について成立している責務と、その表現がMeaning（意味）を伝える相手によって、使用箇所ごとに定まる。File種別、Physical Location（物理配置）、またはHuman-readableであることだけからは定まらない。
+Presentation Usageが人間の読み手へMeaning（意味）を伝えることを目的とするかどうかは、その表現を保持する対象について成立している責務と、その表現がMeaning（意味）を伝える相手によって、使用箇所ごとに定まる。File種別、Physical Location（物理配置）、またはHuman-readableであることだけからは定まらない。AI Consumer（AI利用主体）その他の人間以外のConsumerへMeaning（意味）を伝えることのみを目的とするPresentation Usageは、この目的を持たない。
 
 Composite Human-readable Natural Language Representation（複合人間可読自然言語表現）にDefined English Representation（定義済み英語表現）と同じSurface Formが文字列として含まれるだけでは、独立したSemantic Reference Usage（意味参照使用）は成立しない。
 
@@ -293,15 +289,9 @@ English Representation（Canonical Primary Language Support Representation）
 
 Composite Human-readable Natural Language Representationでは、Canonical Primary Language Support Representation（正規主要言語補助表現）を独立したNested Presentation（入れ子表示）として挿入せず、Enclosing Human-readable Representation（包含する人間可読表現）のPrimary Language Representation（主要言語表現）内部へ、当該Semantic Reference（意味参照）との対応が意味上明確になるようComposition（合成）してもよい。
 
-本Ruleの適用対象は次の3つである。
-
-- Natural Language Prose（自然言語本文）
-- Human-readableなDocument Title（文書題名）
-- Heading Label（見出しラベル）
-
 この表示は初出箇所に限らず、対象となる使用箇所へ適用する。
 
-ただし、ある使用箇所のHuman-readable Representation（人間可読表現）が、別のSubjectについてのDefinition Responsibility（定義責務）によってすでに定義されている場合、その使用箇所は本Ruleの適用対象ではない。その箇所では定義済みのHuman-readable Representation（人間可読表現）をそのまま使用し、本RuleのPresentation Requirement（表示要求）がそれを置換・上書きすることはない。
+別のSubjectについてのDefinition Responsibility（定義責務）によってすでに定義されているHuman-readable Representation（人間可読表現）が現れる使用箇所では、その定義済みの表現をそのまま使用し、本RuleのPresentation Requirement（表示要求）がそれを置換・上書きすることはない。
 
 Canonical Primary Language Support Association（正規主要言語補助対応）の有無、およびCanonical Primary Language Support Representation（正規主要言語補助表現）の値は本Ruleが決定しない。いずれも[Canonical Primary Language Support Convention](canonical-primary-language-support.md)が定めるCanonical Declaration（正規宣言）による。
 
@@ -347,11 +337,11 @@ Document Title（文書題名）およびHeading Label（見出しラベル）�
 
 **Stability:** Development
 
+**Scope:** Definition Authority（定義権限）側でEnglish Representation（英語表現）が成立しているSubject / Meaning（意味）を、Repository Documentation（Repository文書）のNatural Language Prose（自然言語本文）、Human-readableなDocument Title（文書題名）、およびHeading Label（見出しラベル）において参照する表現。
+
 **Requirement:** MUST
 
 **Rule:** あるSubject / Meaning（意味）について、そのDefinition Authority（定義権限）側でEnglish Representation（英語表現）が成立している場合、その対象をRepository Documentation（Repository文書）上で参照するときは、その定義済みEnglish Representation（英語表現）を一貫して使用する。
-
-本Ruleは、Natural Language Prose（自然言語本文）における参照に加えて、Human-readableなDocument Title（文書題名）およびHeading Label（見出しラベル）における参照へ適用する。
 
 **Reason:** Definition Authority（定義権限）側で成立しているEnglish Representation（英語表現）は、その対象を参照するための表現である。参照箇所ごとに異なる表現が用いられると、読み手はそれらが同じ対象を指すのか別の対象を指すのかを判定できず、表現の同一性による参照が成立しない。また、使用箇所の表現が定義側の表現と一致しなければ、読み手は使用箇所から定義へ到達できない。定義済みの表現をそのまま使用することで、参照の同一性と定義への到達可能性が保たれる。
 
@@ -378,6 +368,8 @@ Definition Authority（定義権限）側でEnglish Representation（英語表�
 
 **Stability:** Development
 
+**Scope:** Human-readable Natural Language Representation（人間可読な自然言語表現）における、Subject、Responsibility Holder、Reference Target等の対象の示し方。
+
 **Requirement:** MUST
 
 **Rule:** Human-readable Natural Language Representation（人間可読な自然言語表現）において、Subject、Responsibility Holder、 Reference Target等について、その文脈で複数の合理的解釈が成立する場合は、対象を明示する。
@@ -398,6 +390,8 @@ Definition Authority（定義権限）側でEnglish Representation（英語表�
 
 **Stability:** Development
 
+**Scope:** Normative Rule（規範的規則）のRule Statement（規則文）のNatural Language Representation（自然言語表現）。
+
 **Requirement:** MUST NOT
 
 **Rule:** Rule Statement（規則文）のNatural Language Representation（自然言語表現）は、そのNormative Rule（規範的規則）が宣言するRequirement Level（要求レベル）と異なるNormative Strengthを導入してはならない。
@@ -415,6 +409,8 @@ Definition Authority（定義権限）側でEnglish Representation（英語表�
 **Rule Name:** Normative Condition Clarity
 
 **Stability:** Development
+
+**Scope:** Normative Meaning（規範的意味）を左右する条件・例外・判断境界の記述。
 
 **Requirement:** MUST
 
@@ -436,6 +432,8 @@ Definition Authority（定義権限）側でEnglish Representation（英語表�
 
 **Stability:** Development
 
+**Scope:** Definition（定義）としてConcept（概念）を成立させる文章。
+
 **Requirement:** MUST
 
 **Rule:** Definition（定義）としてConcept（概念）を成立させる文章は、Definition Targetを識別可能にし、その対象が何であるかを肯定的に示す。Negative Statement、他のConcept（概念）との差分、およびExampleは、この肯定的な記述の代替として用いない。
@@ -455,6 +453,8 @@ Negative Statement、他のConcept（概念）との差分、Exampleは、理解
 **Rule Name:** Document Title Meaning
 
 **Stability:** Development
+
+**Scope:** Documentation Asset（文書資産）のHuman-readableなDocument Title（文書題名）と、そのTitle Component（題名構成要素）。
 
 **Requirement:** MUST
 
@@ -479,6 +479,8 @@ File名、Directory名、Pathは[Naming Convention](naming.md)が所有する。
 **Rule Name:** Repository README Title
 
 **Stability:** Development
+
+**Scope:** Repository README（Repository README）と、そのDocument Title（文書題名）。
 
 **Requirement:** MUST
 
