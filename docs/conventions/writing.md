@@ -117,7 +117,7 @@ Markdown Syntax / Markup Representation
 
 本文書はSemantic Structure（意味構造）、Identifier（識別子）およびPhysical Name（物理名称）そのものの成立・形式・選択・変更、Markdown Syntaxを定義しない。本文書は、English Representation（英語表現）のDefinition Authority（定義権限）を取得せず、Canonical Primary Language Support Association（正規主要言語補助対応）の成立可否およびCanonicalityも定めない。本文書は、Markdown Syntaxの責務を担うConvention（規約）の存在や内容を前提とせず、その責務を本文書側で新たに成立させることもしない。
 
-Commit MessageのNatural Language Representation（自然言語表現）は[Commit Convention](commit.md)が所有する。本文書はこれを再定義しない。
+Commit MessageのNatural Language Representation（自然言語表現）に固有の責務、すなわちMessage Language（メッセージ言語）、構成、Subjectの選択、Bodyの責務等は[Commit Convention](commit.md)が所有する。本文書はこれを再定義しない。`WRT-SF-003` が要求する参照表現の一貫性はCommit Messageにも及ぶが、これらの固有責務を定めない。
 
 ## Scope（対象範囲）
 
@@ -139,7 +139,7 @@ Commit MessageのNatural Language Representation（自然言語表現）は[Comm
 
 本文書がこれらを扱うことは、各Normative Rule（規範的規則）のApplicabilityを定めない。各RuleのApplicabilityは、当該RuleのApplicability Scope（適用範囲）とRule Statement（規則文）によって確定する。本節その他のNon-normative Content（非規範的内容）は、Ruleの対象・条件を追加・変更しない。
 
-Applicability Scope（適用範囲）がDocument Title（文書題名）およびHeading Label（見出しラベル）を対象として名指すのは、`WRT-SF-001` 、`WRT-SF-002` 、および`WRT-SF-003` である。Document Title（文書題名）を対象として名指すのは、これらに加えて `WRT-SF-008` および `WRT-SF-009` である。本文書は、すべてのRuleをDocument Title（文書題名）およびHeading Label（見出しラベル）へ一律に適用しない。
+Applicability Scope（適用範囲）がDocument Title（文書題名）およびHeading Label（見出しラベル）を対象として名指すのは、`WRT-SF-001` および`WRT-SF-002` である。Document Title（文書題名）を対象として名指すのは、これらに加えて `WRT-SF-008` および `WRT-SF-009` である。`WRT-SF-003` のApplicability Scope（適用範囲）は、Document Title（文書題名）およびHeading Label（見出しラベル）を含むRepository内のNatural Language Representation（自然言語表現）を対象とする。本文書は、すべてのRuleをDocument Title（文書題名）およびHeading Label（見出しラベル）へ一律に適用しない。
 
 ### Out of Scope（本文書が定義しない範囲）
 
@@ -148,7 +148,7 @@ Applicability Scope（適用範囲）がDocument Title（文書題名）およ�
 - 固定のHeading Catalog、および`Purpose → 目的` のような固定翻訳Catalog
 - File名、Directory名、Path等のPhysical Name（物理名称）、およびIdentifier（識別子）そのものの成立・形式・選択・変更
 - Markdown Syntaxその他の記述媒体固有表現
-- Commit Message等、他のConvention（規約）がNatural Language Representation（自然言語表現）についての責務を所有する成果物のNatural Language Representation（自然言語表現）
+- Commit Message等、他のConvention（規約）がNatural Language Representation（自然言語表現）についての責務を所有する成果物における、その成果物に固有の表現責務
 - English Representation（英語表現）のIdentity（同一性）、Meaning（意味）、Canonical Name、 Formal Status（正式地位）、Category（分類）、およびName Status
 - English Representation（英語表現）が指すUnderlying Meaning（対象の意味）
 - Canonical Primary Language Support Association（正規主要言語補助対応）の成立、そのMultiplicity（多重度）、およびCanonical Primary Language Support Representation（正規主要言語補助表現）の値
@@ -346,17 +346,17 @@ Document Title（文書題名）およびHeading Label（見出しラベル）�
 
 **Stability:** Development
 
-**Scope:** Definition Authority（定義権限）側でEnglish Representation（英語表現）が成立しているSubject / Meaning（意味）を、Repository Documentation（Repository文書）のNatural Language Prose（自然言語本文）、Human-readableなDocument Title（文書題名）、およびHeading Label（見出しラベル）において参照する表現。
+**Scope:** Definition Authority（定義権限）側でEnglish Representation（英語表現）が成立しているSubject / Meaning（意味）を、Repository内のNatural Language Representation（自然言語表現）において参照する表現。
 
 **Requirement:** MUST
 
-**Rule:** あるSubject / Meaning（意味）について、そのDefinition Authority（定義権限）側でEnglish Representation（英語表現）が成立している場合、その対象をRepository Documentation（Repository文書）上で参照するときは、その定義済みEnglish Representation（英語表現）を一貫して使用する。
+**Rule:** あるSubject / Meaning（意味）について、そのDefinition Authority（定義権限）側でEnglish Representation（英語表現）が成立している場合、その対象をRepository内のNatural Language Representation（自然言語表現）において参照するときは、定義側が言語または用途ごとの参照表現を定めている場合はその定めに従い、それ以外の場合はその定義済みEnglish Representation（英語表現）を一貫して使用する。
 
-**Reason:** Definition Authority（定義権限）側で成立しているEnglish Representation（英語表現）は、その対象を参照するための表現である。参照箇所ごとに異なる表現が用いられると、読み手はそれらが同じ対象を指すのか別の対象を指すのかを判定できず、表現の同一性による参照が成立しない。また、使用箇所の表現が定義側の表現と一致しなければ、読み手は使用箇所から定義へ到達できない。定義済みの表現をそのまま使用することで、参照の同一性と定義への到達可能性が保たれる。
+**Reason:** Definition Authority（定義権限）側で成立しているEnglish Representation（英語表現）は、その対象を参照するための表現である。参照箇所ごとに異なる表現が用いられると、読み手はそれらが同じ対象を指すのか別の対象を指すのかを判定できず、表現の同一性による参照が成立しない。また、使用箇所の表現が定義側の表現と一致しなければ、読み手は使用箇所から定義へ到達できない。定義側が定めた参照表現を使用することで、参照の同一性と定義への到達可能性が保たれる。定義側が言語または用途ごとの参照表現を定めている場合にその定めに従うのは、どの場面でどの表現が対象を指すかも定義側の決定であり、使用箇所で一律にEnglish Representation（英語表現）へ置き換えると、定義側の決定と使用箇所の表現が分岐するためである。
 
 **Note:** 本Ruleは、English Representation（英語表現）のIdentity（同一性）、Meaning（意味）、Canonical Name、 Formal Status（正式地位）、Category（分類）、およびName Statusを定義しない。いずれもその対象を所有するDefinition Authority（定義権限）側で成立する。
 
-Canonical Primary Language Support Representation（正規主要言語補助表現）の一貫性は本Ruleが扱わない。Canonical Primary Language Support側の一貫性は、`WRT-SF-002` と[Canonical Primary Language Support Convention](canonical-primary-language-support.md)が定めるCanonical Declaration（正規宣言）によって成立する。
+Canonical Primary Language Support Representation（正規主要言語補助表現）の一貫性は本Ruleが扱わない。Canonical Primary Language Support側の一貫性は、`WRT-SF-002` と[Canonical Primary Language Support Convention](canonical-primary-language-support.md)が定めるCanonical Declaration（正規宣言）によって成立する。`WRT-SF-002` によるCanonical Primary Language Support Representation（正規主要言語補助表現）の提示は、参照表現を置き換えるものではない。
 
 本Ruleが要求するのは参照表現の一貫性であり、文章全体で同じ単語を機械的に反復することではない。
 
@@ -366,6 +366,8 @@ English Representation Consistency
 ```
 
 Definition Authority（定義権限）側でEnglish Representation（英語表現）が成立していない対象について、本Ruleは使用する表現を定めない。通常の説明文において、読みやすさのために語や言い回しを変えることは本Ruleが禁じるところではない。
+
+成立済みのIdentifier（識別子）またはPhysical Name（物理名称）を用いる参照表記は `WRT-SF-010` が扱う。
 
 ### Semantic Clarity（意味の明確性）
 
