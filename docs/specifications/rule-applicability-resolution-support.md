@@ -679,7 +679,7 @@ Not-applicable Exclusion（非適用による除外）とするのは、正式�
 
 現在存在しない表現またはDevelopment Action（開発行為）については、対象Fileの責務の範囲内で成立し得るものと、対象Fileの責務の変更を要するものとを区別する。前者を対象とするRuleは、その不在だけを根拠として除外しない。後者の成立可能性は、Ruleを候補として残す根拠としない。別の文書種別への転換、または別のFileの変更を、対象Fileについて自動的に想定しない。いずれに当たるかが不明または未確定であるRuleは、Candidate Rule Set（候補規則集合）へ残す。この候補保持は、当該RuleのRule Applicabilityが現在成立することを意味しない。
 
-Repository共通のDevelopment Action（開発行為）を対象とするRuleは、そのDevelopment Action（開発行為）が現在発生していないこと、対象File本文に対するRuleではないこと、または対象Fileがその結果の表示先ではないことだけを理由として、作業全体から除外しない。一方、Development Action（開発行為）を対象とすることだけを理由として、正式なApplicability Scope（適用範囲）が定める限定を無視しない。
+Repository共通のDevelopment Action（開発行為）を対象とするRuleは、そのDevelopment Action（開発行為）が現在発生していないこと、対象File本文に対するRuleではないこと、または対象Fileがその結果の表示先ではないことだけを理由として、対象FileのCandidate Rule Set（候補規則集合）から除外しない。一方、Development Action（開発行為）を対象とすることだけを理由として、正式なApplicability Scope（適用範囲）が定める限定を無視しない。
 
 ### Pre-resolution Result（結果）
 
