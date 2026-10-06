@@ -2,9 +2,9 @@
 
 ## Purpose（目的）
 
-本文書は、`noxris42` において**Repository内で成立するHuman-readable Natural Language Representation（人間可読な自然言語表現）について、Semantic Meaningを明確・一貫・安定して伝達するために反復適用されるReusable Normative Standard（再利用可能な規範標準）**を定義するConvention Asset（規約資産）である。
+本文書は、`noxris42` において**Repository内で成立するHuman-readable Natural Language Representation（人間可読な自然言語表現）、および成立済みのIdentifier（識別子）・Physical Name（物理名称）を用いる参照表記について、Semantic Meaningを明確・一貫・安定して伝達するために反復適用されるReusable Normative Standard（再利用可能な規範標準）**を定義するConvention Asset（規約資産）である。
 
-本文書が扱う問いは次の6点である。
+本文書が扱う問いは次の7点である。
 
 1. Repository Documentation（Repository文書）のNatural Language Prose（自然言語本文）、Document Title（文書題名）、およびHeading Label（見出しラベル）は、どの言語でMeaning（意味）を伝えるのか。
 2. Canonical Primary Language Support Association（正規主要言語補助対応）が成立しているEnglish Representation（英語表現）は、Human-readable Natural Language Representation（人間可読な自然言語表現）においてどのように表示されるのか。
@@ -12,8 +12,9 @@
 4. 文章が伝えるSemantic Meaningは、何が満たされているとき明確に成立するのか。
 5. Normative Rule（規範的規則）を記述する文章は、宣言されたRequirement Level（要求レベル）に対してどのような関係になければならないのか。
 6. Human-readableなDocument Title（文書題名）は、何を表すのか。
+7. 成立済みのIdentifier（識別子）またはPhysical Name（物理名称）を用いて対象を参照する箇所では、どの表記を維持するのか。
 
-本文書が対象とするのはNatural Language Representation（自然言語表現）そのものである。本文書は、文章術一般、またはStyle Guide一般を目的としない。
+本文書が対象とするのはこれらの表現そのものである。本文書は、文章術一般、またはStyle Guide一般を目的としない。
 
 本文書が担うのはPresentation / Usage Responsibilityである。本文書は、English Representation（英語表現）そのもの、およびCanonical Primary Language Support（正規主要言語補助）のCanonicalityを定義しない。
 
@@ -54,7 +55,7 @@ Writing Convention
 
 本文書は、Canonical Primary Language Support（正規主要言語補助）側のRuleおよびCanonical Declaration（正規宣言）を参照するのみであり、変更・再定義しない。
 
-本文書は[Repository Governance Documentation Framework](../architecture/repository-governance-documentation-framework.md)が定義するConventions Area（規約領域）に属する通常のDocumentation Asset（文書資産）である。Repository内で反復して成立するHuman-readable Natural Language Representation（人間可読な自然言語表現）を扱うReusable Normative Standard（再利用可能な規範標準）として成立する。Areaを代表・集約するAssetではない。
+本文書は[Repository Governance Documentation Framework](../architecture/repository-governance-documentation-framework.md)が定義するConventions Area（規約領域）に属する通常のDocumentation Asset（文書資産）である。Repository内で反復して成立するHuman-readable Natural Language Representation（人間可読な自然言語表現）、および成立済みのIdentifier（識別子）・Physical Name（物理名称）を用いる参照表記を扱うReusable Normative Standard（再利用可能な規範標準）として成立する。Areaを代表・集約するAssetではない。
 
 本文書が使用する次のConcept（概念）のDefinition Authority（定義権限）は上位設計にある。本文書はこれらを参照するのみで、再定義しない。
 
@@ -76,14 +77,17 @@ Writing Convention
 
 ### Responsibility Boundary（責務境界）
 
-本文書が担うのはHuman-readable Natural Language Representation（人間可読な自然言語表現）に限られる。隣接する責務との境界は次である。
+本文書が担うのは、Human-readable Natural Language Representation（人間可読な自然言語表現）と、成立済みのIdentifier（識別子）・Physical Name（物理名称）を用いる参照表記に限られる。隣接する責務との境界は次である。
 
 ```text
 Semantic Structure
     → Documentation Structure Convention
 
-Physical Name
-    → Naming Convention
+Identifier / Physical Nameそのものの
+成立・形式・選択・変更
+    → それぞれの対象を所有するSource
+      （Convention Authoring Convention、
+        Naming Convention等）
 
 English Representationそのもの、および
 それが指すUnderlying Meaning
@@ -103,11 +107,15 @@ Human-readable Natural Language Representationにおける
 使用と表示
     → 本文書
 
+成立済みのIdentifier / Physical Nameを
+用いる参照表記の維持
+    → 本文書
+
 Markdown Syntax / Markup Representation
     → 本文書の責務ではない
 ```
 
-本文書はSemantic Structure（意味構造）、Physical Name（物理名称）、Markdown Syntaxを定義しない。本文書は、English Representation（英語表現）のDefinition Authority（定義権限）を取得せず、Canonical Primary Language Support Association（正規主要言語補助対応）の成立可否およびCanonicalityも定めない。本文書は、Markdown Syntaxの責務を担うConvention（規約）の存在や内容を前提とせず、その責務を本文書側で新たに成立させることもしない。
+本文書はSemantic Structure（意味構造）、Identifier（識別子）およびPhysical Name（物理名称）そのものの成立・形式・選択・変更、Markdown Syntaxを定義しない。本文書は、English Representation（英語表現）のDefinition Authority（定義権限）を取得せず、Canonical Primary Language Support Association（正規主要言語補助対応）の成立可否およびCanonicalityも定めない。本文書は、Markdown Syntaxの責務を担うConvention（規約）の存在や内容を前提とせず、その責務を本文書側で新たに成立させることもしない。
 
 Commit MessageのNatural Language Representation（自然言語表現）は[Commit Convention](commit.md)が所有する。本文書はこれを再定義しない。
 
@@ -119,6 +127,7 @@ Commit MessageのNatural Language Representation（自然言語表現）は[Comm
 - Current RepositoryにおけるPrimary LanguageのConcrete Assignment（具体割当）
 - Canonical Primary Language Support Association（正規主要言語補助対応）が成立しているEnglish Representation（英語表現）に対するCanonical Primary Language Support Representation（正規主要言語補助表現）の表示形式と、その適用対象
 - Definition Authority（定義権限）側で成立しているEnglish Representation（英語表現）の、参照箇所における一貫した使用
+- 成立済みのIdentifier（識別子）またはPhysical Name（物理名称）を用いて対象を参照する表記における、そのConcrete Spelling（具体表記）の維持
 - Subject・Responsibility Holder・ Reference Target等に関するSemantic Reference Clarity
 - Rule Statement（規則文）のNatural Language Representation（自然言語表現）と、宣言されたRequirement Level（要求レベル）との整合
 - Convention（規約）のNormative Rule（規範的規則）またはSpecification（仕様）のConcrete Contract（具体契約）において、Normative Meaning（規範的意味）を左右する条件・例外・判断境界の記述
@@ -137,7 +146,7 @@ Applicability Scope（適用範囲）がDocument Title（文書題名）およ�
 - Section・Section Responsibility（Section責務）・Standard Section（標準Section）等のSemantic Structure（意味構造）
 - Section Identity（Section同一性）、Heading Level（見出しレベル）、Markdown Heading Marker（Markdown見出し記号）、およびSectionとHeading（見出し）のMapping Rule（対応規則）
 - 固定のHeading Catalog、および`Purpose → 目的` のような固定翻訳Catalog
-- File名、Directory名、Path等のPhysical Name（物理名称）
+- File名、Directory名、Path等のPhysical Name（物理名称）、およびIdentifier（識別子）そのものの成立・形式・選択・変更
 - Markdown Syntaxその他の記述媒体固有表現
 - Commit Message等、他のConvention（規約）がNatural Language Representation（自然言語表現）についての責務を所有する成果物のNatural Language Representation（自然言語表現）
 - English Representation（英語表現）のIdentity（同一性）、Meaning（意味）、Canonical Name、 Formal Status（正式地位）、Category（分類）、およびName Status
@@ -379,6 +388,24 @@ Definition Authority（定義権限）側でEnglish Representation（英語表�
 **Note:** 本Ruleが対象とするのは解釈の分岐であり、特定の語や文型ではない。
 
 「これ」「それ」「上記」等の指示語、および日本語における主語の省略それ自体は、本Ruleが禁じるところではない。これらの表現が用いられている場合であっても、対象が一意に定まるならば本Ruleは適用されない。
+
+#### WRT-SF-010 — Reference Spelling Consistency（参照表記の一貫性）
+
+**Rule ID:** `WRT-SF-010`
+
+**Rule Name:** Reference Spelling Consistency
+
+**Stability:** Development
+
+**Scope:** Repository内で、成立済みのIdentifier（識別子）またはPhysical Name（物理名称）を用いて対象を参照する表記。
+
+**Requirement:** MUST
+
+**Rule:** 対象を参照する際は、その対象について成立しているIdentifier（識別子）またはPhysical Name（物理名称）のConcrete Spelling（具体表記）を維持する。
+
+**Reason:** 参照箇所でIdentifier（識別子）やPhysical Name（物理名称）の表記を独自に変更すると、参照先との対応が失われ、対象の識別や到達を妨げる。成立した表記を維持することで、参照箇所ごとの再解釈を避け、同じ対象への対応を保つ。
+
+**Note:** 本Ruleは、Identifier（識別子）やPhysical Name（物理名称）の成立・選択・変更を定めない。参照位置に応じたRelative Path、媒体固有の表現方法、およびIdentifier（識別子）・Physical Name（物理名称）そのものではない表示ラベルを固定しない。
 
 ### Normative Writing（規範的記述）
 

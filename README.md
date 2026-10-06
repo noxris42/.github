@@ -70,7 +70,7 @@ Repository間のOwnership（所有責任）、Shared Scope、およびFoundation
 | [Markdown Convention（Markdown規約）](docs/conventions/markdown.md) | `docs/conventions/markdown.md` | Markdown上のSyntaxおよびMarkupによる表現 |
 | [Naming Convention（命名規約）](docs/conventions/naming.md) | `docs/conventions/naming.md` | File名・Directory名・Path等のPhysical Name（物理名称）の形式と選択 |
 | [Repository Governance Documentation Structure Convention（Repository統治文書構造規約）](docs/conventions/repository-governance-documentation-structure.md) | `docs/conventions/repository-governance-documentation-structure.md` | Repository Governance Documentation Frameworkに固有のStandard Section（標準Section） |
-| [Writing Convention（文章規約）](docs/conventions/writing.md) | `docs/conventions/writing.md` | Repository Documentation（Repository文書）の自然言語による文章表現 |
+| [Writing Convention（文章規約）](docs/conventions/writing.md) | `docs/conventions/writing.md` | Repository内の自然言語による文章表現、および成立済みのIdentifier（識別子）・Physical Name（物理名称）の参照表記の維持 |
 
 ### Specifications（仕様）
 

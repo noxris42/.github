@@ -58,7 +58,7 @@ Repository統治文書体系に固有のStandard Section。
 
 ## Writing Convention
 
-文章表現。Primary Language、日英併記、用語の一貫性、定義の記述、文書題名。
+文章表現。Primary Language、日英併記、用語の一貫性、定義の記述、文書題名、Identifier・Physical Nameの参照表記の維持。
 
 `docs/conventions/writing.md`
 
