@@ -202,7 +202,7 @@ Current Concrete Contract（現在の具体契約）において、`.ai/foundati
 現在維持するのは次である。
 
 - Subjectとして使用するFormal Name（正式名称）についての、Definition Authority（定義権限）側で成立しているEnglish Representation（英語表現）
-- Repository-controlled Nameとしての `.ai/foundation-resolution.md` のPhysical Name（物理名称）の形式
+- `.ai/foundation-resolution.md` のPhysical Name（物理名称）に対する[Naming Convention](../conventions/naming.md)の適用。選択されるRuleは当該RepositoryのTarget-specific Rule Selection（対象固有規則選択）により、そのApplicabilityは各RuleのApplicability Scope（適用範囲）とRule Statement（規則文）による。
 
 次は本Resource（資源）へ自動的には要求しない。
 

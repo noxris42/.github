@@ -123,7 +123,9 @@ Antigravity
 
 ### Physical Name Handling（物理名称の扱い）
 
-`AGENTS.md` は、Concrete AI Consumer（具体AI利用主体）側がConcrete Spelling（具体表記）を認識の条件とするExternally Constrained Name（外部制約名称）である。したがって、その綴りは[Naming Convention](../conventions/naming.md)が定めるExternal Naming Contract（外部命名契約）へ適合する形で保持する。Repository-controlled Nameに対するPhysical Naming Formを根拠として、この綴りを変更しない。
+`AGENTS.md` というConcrete Spelling（具体表記）は、Concrete AI Consumer（具体AI利用主体）がEntry（入口）の認識に用いるものであり、本Concrete Contract（具体契約）の一部として保持する。この綴りがConcrete AI Consumer（具体AI利用主体）側の契約に適合していることは本Concrete Contract（具体契約）が扱い、[Naming Convention](../conventions/naming.md)へ委ねない。
+
+本Specification（仕様）を適用するRepositoryにおいて、Naming Convention（命名規約）のどのRuleを `AGENTS.md` へ選択するかは、当該RepositoryのTarget-specific Rule Selection（対象固有規則選択）による。その宣言の具体表現は[Foundation Application State Specification](foundation-application-state.md)による。
 
 ## Entry Responsibility（入口責務）
 
@@ -204,9 +206,7 @@ English onlyへ固定する根拠は現在不足している。必要性また�
 
 `AGENTS.md` がAI Integration Resource（AI連携資源）であることだけを根拠として、Current Documentation Convention（現在文書規約）を全面適用または全面除外しない。各Convention（規約）およびRule（規則）の適用は、そのApplicability（適用範囲）とCurrent Semantic Need（現在の意味上の必要性）から判断する。
 
-現在維持するのは次である。
-
-- `AGENTS.md` というPhysical Name（物理名称）に対するExternal Naming Contract（外部命名契約）
+[Naming Convention](../conventions/naming.md)のRuleの選択は、「Physical Name Handling（物理名称の扱い）」による。
 
 次は`AGENTS.md` へ自動的には要求しない。
 

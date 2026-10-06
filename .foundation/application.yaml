@@ -1,1 +1,15 @@
 baseline: shared-default
+
+targets:
+  - path: AGENTS.md
+    scope: file
+    conventions:
+      docs/conventions/naming.md:
+        mode: independent
+        include: []
+  - path: README.md
+    scope: file
+    conventions:
+      docs/conventions/naming.md:
+        mode: independent
+        include: []

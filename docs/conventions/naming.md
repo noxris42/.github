@@ -20,9 +20,9 @@ Symbolic Identifier
 
 本文書が扱う問いは次の3点である。
 
-1. Repository側が綴りを選択できるNameは、どのような形式で表現されなければならないのか。
+1. Physical Name（物理名称）は、どのような形式で表現されなければならないのか。
 2. Physical Name（物理名称）は、対象を識別するために何を含んでいるべきなのか。
-3. Concrete Spelling（具体表記）がExternal System等によって制約される場合、その適合はどう扱われるのか。
+3. Physical Name（物理名称）は、何に基づいて選択され、既存の名称はどのような場合に変更されるのか。
 
 本文書はNamingのRepresentation（表現）のみを扱う。本文書はLogical Identity（論理的同一性）またはResponsibility（責務）のDefinition Authority（定義権限）を持たない。
 
@@ -77,18 +77,20 @@ Naming Convention
 - Rule Identity（規則同一性）とその安定性
 - Rule ID Format（規則ID形式）、Rule Field（規則フィールド）の構成・順序・Markdown表現、StabilityのField表現
 - Namespace Code（名前空間コード）の割当
+- Rule Applicability、およびFoundation Application・Target-specific Rule Selection（対象固有規則選択）との区別
 
 本文書は、これら上位設計が定義するLogical Modelを再定義せず、Physical Name（物理名称）側からLogical Modelへ制約を課さない。
+
+本文書のRuleのうち、どれを特定TargetにおけるRule Set（規則集合）とするかは、[Repository Governance](../architecture/repository-governance.md)が定めるTarget-specific Rule Selection（対象固有規則選択）による。選択されたRuleがApplicableであるかは、[Convention Architecture](../architecture/convention.md)が定めるとおり、各RuleのApplicability Scope（適用範囲）とRule Statement（規則文）から定まる。
 
 ## Scope（対象範囲）
 
 ### In Scope（本文書が定義する範囲）
 
-- Repository-controlled File NameのPhysical Naming Form
-- Repository-controlled Directory NameのPhysical Naming Form
+- File NameのPhysical Naming Form
+- Directory NameのPhysical Naming Form
 - Physical Name（物理名称）の識別性、およびPath Contextにおける対象の区別
 - Responsibility（責務）をNaming Inputとして利用する場合の境界
-- External Naming Contractとの境界と、Repository-controlled Nameとの適用分離
 - Name Selection Stability
 - Existing Name Stability
 - Convention Code Selectionに関するNon-normative Guidance
@@ -105,7 +107,7 @@ Naming Convention
 - Rule ID（規則ID）・Convention Code（規約コード）・Namespace Code（名前空間コード）のFormat
 - Convention Code Uniquenessの量化範囲、およびConvention Registry
 - Markdown Syntaxその他の記述媒体固有表現
-- External Platformの予約名称・特別扱い名称の完全Catalog
+- External System・Platform・Tool等がConcrete Spelling（具体表記）を定める契約の収集・追従、およびその契約への適合の検証。→ 当該Tool／Resourceの契約責務による。
 - Validator / Linter / CI / Rename Automation
 
 ## Concrete Declarations（具体宣言）
@@ -128,42 +130,13 @@ Convention Code: NAM
 
 ## Naming Concepts（本文書が用いる命名上の概念）
 
-本節は、以降のNormative Rule（規範的規則）が適用対象を区別するために用いる局所Concept（概念）を示す。本節はNon-normative Content（非規範的内容）である。ここで示すのは本文書が必要とする範囲の区別であり、一般Naming Modelではない。
+本節は、以降のNormative Rule（規範的規則）が用いる局所Concept（概念）を示す。本節はNon-normative Content（非規範的内容）である。ここで示すのは本文書が必要とする範囲の説明であり、一般Naming Modelではない。
 
 ### Physical Name（物理名称）
 
 Physical Name（物理名称）は、Repository上でFile・Directory等の対象を実際に指し示すために使用されるConcrete Spelling（具体表記）である。
 
 Physical Name（物理名称）はRepresentation（表現）であり、Logical Identity（論理的同一性）でもResponsibility（責務）でもない。
-
-### Repository-controlled Name（Repository管理名称）
-
-Repository-controlled Nameは、Concrete Spelling（具体表記）をRepository側が選択できるPhysical Name（物理名称）である。
-
-### Externally Constrained Name（外部制約名称）
-
-Externally Constrained Name（外部制約名称）は、External System、Platform、 Tool等がConcrete Spelling（具体表記）へ意味または制約を与えるPhysical Name（物理名称）である。
-
-この場合、綴りの選択はRepository側の自由ではなく、外部との契約に従属する。
-
-### Application Separation in Physical Naming Form（Physical Naming Formにおける適用の分離）
-
-Concrete Spelling（具体表記）をRepository側が決める名称と、外部から制約される名称とでは、Physical Naming Formの適用が分かれる。
-
-```text
-Repository-controlled File Name
-    → NAM-SF-001
-
-Repository-controlled Directory Name
-    → NAM-SF-002
-
-Externally Constrained Name
-    → NAM-SF-004
-```
-
-`NAM-SF-004` は`NAM-SF-001` ・ `NAM-SF-002` のException Catalogではない。両者は適用対象が異なる。
-
-この図は、Physical Naming Formに関する適用の分離を示すものであり、本文書のすべてのRuleについてのApplicability Mapではない。`NAM-SF-003` ・ `NAM-SF-005` ・ `NAM-SF-006` ・ `NAM-SF-007` の適用対象は、各RuleのApplicability Scope（適用範囲）が定める。
 
 ## Convention Code Selection Guidance（規約コード選定の指針）
 
@@ -195,11 +168,11 @@ Category（分類）を示す小見出しは文書上の整理のためのもの
 
 **Stability:** Development
 
-**Scope:** Repository-controlled File NameのFile Stem。
+**Scope:** File NameのFile Stem。
 
 **Requirement:** MUST
 
-**Rule:** Repository-controlled File NameのFile Stemは、次を満たすように表現する。
+**Rule:** File NameのFile Stemは、次を満たすように表現する。
 
 - 英字を使用する場合は、小文字を使用する。
 - 複数の語を区切る場合は、ハイフン `-` を使用する。
@@ -214,8 +187,6 @@ Category（分類）を示す小見出しは文書上の整理のためのもの
 - 数字その他の文字を使用してよいか
 - File Extensionの種類および選択
 
-Externally Constrained Name（外部制約名称）は本Ruleの対象ではなく、`NAM-SF-004` が扱う。
-
 #### NAM-SF-002 — Directory Name Form（Directory名の形式）
 
 **Rule ID:** `NAM-SF-002`
@@ -224,16 +195,16 @@ Externally Constrained Name（外部制約名称）は本Ruleの対象ではな�
 
 **Stability:** Development
 
-**Scope:** Repository-controlled Directory Name。
+**Scope:** Directory Name。
 
 **Requirement:** MUST
 
-**Rule:** Repository-controlled Directory Nameは、次を満たすように表現する。
+**Rule:** Directory Nameは、次を満たすように表現する。
 
 - 英字を使用する場合は、小文字を使用する。
 - 複数の語を区切る場合は、ハイフン `-` を使用する。
 
-**Reason:** Directory NameはPathの構成要素として、File Nameと同じ経路から参照される。Path内で表記方式が要素ごとに異なると、Path全体の綴りを記憶・再現できず、File Name側で表記を固定した効果も失われる。Path上のRepository-controlled Nameへ同一の表記形式を適用することで、Path全体が一貫した綴りとして扱える。
+**Reason:** Directory NameはPathの構成要素として、File Nameと同じ経路から参照される。Path内で表記方式が要素ごとに異なると、Path全体の綴りを記憶・再現できず、File Name側で表記を固定した効果も失われる。Path上のDirectory NameとFile Nameへ同一の表記形式を適用することで、Path全体が一貫した綴りとして扱える。
 
 **Note:** 本Ruleが規定するのは、Rule Statement（規則文）に挙げた2つの制約のみであり、その内容は `NAM-SF-001` と同一のLexical Constraintである。`lowercase kebab-case` は、その形を想起するためのNon-normative Labelとして用いることができるが、本RuleのNormative Meaning（規範的意味）はその一般用語の解釈ではなくRule Statement（規則文）によって確定する。
 
@@ -242,8 +213,6 @@ Externally Constrained Name（外部制約名称）は本Ruleの対象ではな�
 - 使用可能なCharacter Set、および言語・文字種の限定
 - 数字その他の文字を使用してよいか
 - Directoryの責務、配置、およびDocumentation Area（文書責務領域）等のLogical UnitとのMapping
-
-Externally Constrained Name（外部制約名称）は本Ruleの対象ではなく、`NAM-SF-004` が扱う。
 
 ### Name Identification（名称の識別性）
 
@@ -255,11 +224,11 @@ Externally Constrained Name（外部制約名称）は本Ruleの対象ではな�
 
 **Stability:** Development
 
-**Scope:** Repository-controlled Physical Name。
+**Scope:** Physical Name（物理名称）。
 
 **Requirement:** SHOULD
 
-**Rule:** Repository-controlled Physical Nameは、そのPath ContextにおいてSubjectを示す語だけでは異なるResponsibility（責務）を十分に区別できない場合、区別に必要なResponsibility（責務）を表す語を含めるべきである。
+**Rule:** Physical Name（物理名称）は、そのPath ContextにおいてSubjectを示す語だけでは異なるResponsibility（責務）を十分に区別できない場合、区別に必要なResponsibility（責務）を表す語を含めるべきである。
 
 **Reason:** Physical Name（物理名称）が果たすべきことは、参照者が目的の対象へ到達できることである。同一のSubjectについて異なる責務を担う対象が複数成立し得る場合、Subjectだけの名称ではどちらを指しているのかを名称から判別できず、参照のたびに内容を開いて確かめることを要求する。区別に必要な語を含めることで、参照の時点で対象を特定できる。
 
@@ -308,28 +277,6 @@ Physical Name  ✕→ Responsibility Definition
 
 すなわち、Responsibility（責務）は名称選択の入力になり得るが、Physical Name（物理名称）からResponsibility（責務）を成立させたり推論したりしない。名称に語が含まれていないことは、その責務が存在しないことを意味しない。
 
-### External Naming Contract（外部命名契約）
-
-#### NAM-SF-004 — External Naming Contract（外部命名契約）
-
-**Rule ID:** `NAM-SF-004`
-
-**Rule Name:** External Naming Contract
-
-**Stability:** Development
-
-**Scope:** Externally Constrained Name（外部制約名称）。
-
-**Requirement:** MUST
-
-**Rule:** Concrete Spelling（具体表記）がExternal System、Platform、 Tool等とのContractによって制約されるExternally Constrained Name（外部制約名称）は、そのExternal Contractへ適合しなければならない。
-
-**Reason:** Externally Constrained Name（外部制約名称）では、綴りそのものが外部による認識の条件になっている。Repository内部の表記上の都合で綴りを変更すると、外部はその対象を認識できなくなり、名称が成立させるはずの参照そのものが失われる。適合を要求することで、Repository内部の表記方針が外部との契約を破壊しないようにする。
-
-**Note:** 本Ruleは`NAM-SF-001` ・ `NAM-SF-002` のException Catalogではない。Repository-controlled NameとExternally Constrained Name（外部制約名称）は適用対象として分離されている。
-
-本Ruleは、どのNameがExternally Constrained Name（外部制約名称）に当たるかの完全なCatalogを保持しない。適合すべきContractの内容はそのExternal System側にあり、本文書がそれを複製・代理しない。
-
 ### Name Stability（名称の安定性）
 
 #### NAM-SF-005 — Stable Name Selection（安定した名称の選択）
@@ -340,11 +287,11 @@ Physical Name  ✕→ Responsibility Definition
 
 **Stability:** Development
 
-**Scope:** Repository-controlled Nameの選択。
+**Scope:** Physical Name（物理名称）の選択。
 
 **Requirement:** SHOULD
 
-**Rule:** Repository-controlled Nameは、一時的な作業状態ではなく、対象を継続的に識別できる比較的安定した特徴に基づいて選択すべきである。
+**Rule:** Physical Name（物理名称）は、一時的な作業状態ではなく、対象を継続的に識別できる比較的安定した特徴に基づいて選択すべきである。
 
 **Reason:** Physical Name（物理名称）は、Path・Link・履歴・外部参照を通じて選択の時点よりも長く使われ続ける。選択の根拠が短期間で変化する特徴であれば、名称は早期に対象を正しく識別しなくなり、その時点で名称変更か、実態と合わない名称の放置かのいずれかを強いる。安定した特徴を根拠として選ぶことで、その必要が初回のNamingの時点から生じにくくなる。
 
@@ -376,11 +323,11 @@ Physical Name  ✕→ Responsibility Definition
 
 **Stability:** Development
 
-**Scope:** Repository-controlled Nameへ含める語。
+**Scope:** Physical Name（物理名称）へ含める語。
 
 **Requirement:** SHOULD NOT
 
-**Rule:** 一時的な作業状態だけを区別する目的で、その状態をRepository-controlled Nameへ埋め込むべきではない。
+**Rule:** 一時的な作業状態だけを区別する目的で、その状態をPhysical Name（物理名称）へ埋め込むべきではない。
 
 **Reason:** 作業状態は作業の進行によって変化するが、名称へ埋め込まれた状態は変化しない。その結果、名称は現在の状態を誤って示すか、状態が変わるたびに名称変更を要求するかのいずれかになり、どちらの場合も名称が対象を識別する働きを損なう。状態は名称ではなく、状態を保持できる手段によって区別されるべきである。
 
