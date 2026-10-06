@@ -165,6 +165,8 @@ Vendor固有の必要性は、Entry（入口）の内容としてではなく、
 
 `AGENTS.md` はAI Integration Resource（AI連携資源）であり、その内容がAI Consumer（AI利用主体）のContext（文脈）へ直接投入されるAI-consumedなResourceである。
 
+`AGENTS.md` は、AI Consumer（AI利用主体）へ効率的にMeaning（意味）を伝えることのみを目的とする。人による保守上の閲読は、人間の読み手へMeaning（意味）を伝えることを目的とするPresentation（表示）として扱わない。
+
 AI-consumedであることは、そのResourceのConsumption Characteristic（消費特性）である。新たなAsset Type（資産種別）またはDocumentation Area（文書責務領域）として扱わない。
 
 ### Resource Classification（資源分類）
@@ -186,7 +188,7 @@ AGENTS.md
 
 他のAuthoritative Source（正式Source）または後続Resourceが所有する説明・定義・Navigationを、Persistent Context（永続文脈）へ複製しない。利便性のみを根拠とする複製は、保持の根拠として成立しない。
 
-本項は分量に関するRule（規則）を定めない。Cross-agent Entry（Agent横断入口）のConcrete Contract（具体契約）の成立に必要なSemantic Content（意味内容）は削らない。
+本項は分量に関するRule（規則）を定めない。Cross-agent Entry（Agent横断入口）のConcrete Contract（具体契約）の成立に必要なSemantic Content（意味内容）は削らない。そのSemantic Content（意味内容）を保持したうえで、同じMeaning（意味）を伝える表現の簡潔さとContext Cost（文脈コスト）の削減を優先する。
 
 ### Language（言語）
 

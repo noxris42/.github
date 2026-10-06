@@ -335,7 +335,7 @@ Category（分類）を示す小見出しは文書上の整理のためのもの
 
 **Stability:** Development
 
-**Scope:** Convention（規約）によるStandard Section（標準Section）の定義。
+**Scope:** Standard Section（標準Section）の一般機構またはStandard Section Catalogを定義する責務を持つConvention（規約）によるStandard Section（標準Section）の定義。
 
 **Requirement:** MUST
 
@@ -439,7 +439,7 @@ Category（分類）を示す小見出しは文書上の整理のためのもの
 
 **Stability:** Development
 
-**Scope:** Convention（規約）によるStandard Section Identity（標準Section同一性）の定義。
+**Scope:** Standard Section（標準Section）の一般機構またはStandard Section Catalogを定義する責務を持つConvention（規約）によるStandard Section Identity（標準Section同一性）の定義。
 
 **Requirement:** MUST NOT
 
@@ -459,7 +459,7 @@ Category（分類）を示す小見出しは文書上の整理のためのもの
 
 **Stability:** Development
 
-**Scope:** Standard Section（標準Section）を定義するConvention（規約）が、当該Standard Section（標準Section）に対して行うStandard Section Heading Representation（標準Section見出し表現）の定義。
+**Scope:** Standard Section（標準Section）の一般機構またはStandard Section Catalogを定義する責務を持ち、当該Standard Section（標準Section）を定義するConvention（規約）が行う、当該Standard Section（標準Section）のStandard Section Heading Representation（標準Section見出し表現）の定義。
 
 **Requirement:** MUST
 

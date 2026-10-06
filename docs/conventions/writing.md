@@ -121,7 +121,7 @@ Commit MessageのNatural Language Representation（自然言語表現）は[Comm
 - Definition Authority（定義権限）側で成立しているEnglish Representation（英語表現）の、参照箇所における一貫した使用
 - Subject・Responsibility Holder・ Reference Target等に関するSemantic Reference Clarity
 - Rule Statement（規則文）のNatural Language Representation（自然言語表現）と、宣言されたRequirement Level（要求レベル）との整合
-- Normative Meaning（規範的意味）を左右する条件・例外・判断境界の記述
+- Convention（規約）のNormative Rule（規範的規則）またはSpecification（仕様）のConcrete Contract（具体契約）において、Normative Meaning（規範的意味）を左右する条件・例外・判断境界の記述
 - Definition（定義）としてConcept（概念）を成立させる文章の記述
 - Human-readableなDocument Title（文書題名）が表すSubject / Meaning（対象／意味）
 - Repository README（Repository README）のDocument Title（文書題名）が表すSubject / Meaning（対象／意味）
@@ -410,15 +410,15 @@ Definition Authority（定義権限）側でEnglish Representation（英語表�
 
 **Stability:** Development
 
-**Scope:** Normative Meaning（規範的意味）を左右する条件・例外・判断境界の記述。
+**Scope:** Convention（規約）のNormative Rule（規範的規則）またはSpecification（仕様）のConcrete Contract（具体契約）において、Normative Meaning（規範的意味）を左右する条件・例外・判断境界の記述。
 
 **Requirement:** MUST
 
 **Rule:** Normative Meaning（規範的意味）を左右する条件・例外・判断境界は、何が満たされるときにそれが成立するのかを判断可能な形で示す。「適切に」「必要に応じて」「原則として」等、判断基準を伴わない表現だけにNormative Meaning（規範的意味）を依存させない。
 
-**Reason:** 条件・例外・判断境界は、そのRuleが適用されるかどうかを分ける要素である。判断基準を伴わない表現だけでそれが示されると、適用の可否が読み手の裁量で決まり、Ruleが対象へ及ぶ範囲が箇所ごとに変わる。判断可能な形を要求することで、適合の判定を記述内容から行える。
+**Reason:** 条件・例外・判断境界は、そのNormative Rule（規範的規則）またはConcrete Contract（具体契約）が適用されるかどうかを分ける要素である。判断基準を伴わない表現だけでそれが示されると、適用の可否が読み手の裁量で決まり、規範が対象へ及ぶ範囲が箇所ごとに変わる。判断可能な形を要求することで、適合の判定を記述内容から行える。
 
-**Note:** 本Ruleが対象とするのは、Normative Meaning（規範的意味）を左右する箇所である。Non-normative Content（非規範的内容）における同種の表現は本Ruleの対象ではない。
+**Note:** 本Ruleが対象とするのは、Normative Meaning（規範的意味）を左右する箇所である。Non-normative Content（非規範的内容）、およびConcrete Contract（具体契約）を定義せず案内・参照するだけの記述における同種の表現は本Ruleの対象ではない。
 
 本RuleはProhibited Word Catalogを定義しない。挙げた表現は、判断基準を伴わない記述の例示であり、語そのものの使用可否を定めるものではない。
 

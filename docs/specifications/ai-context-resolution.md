@@ -172,6 +172,8 @@ Responsibility（責務）として保持するのは、他のSourceとの区別
 
 `.ai/foundation-resolution.md` はAI Integration Resource（AI連携資源）であり、その内容がAI Consumer（AI利用主体）のContext（文脈）へ直接投入されるAI-consumedなResourceである。
 
+`.ai/foundation-resolution.md` は、AI Consumer（AI利用主体）へ効率的にMeaning（意味）を伝えることのみを目的とする。人による保守上の閲読は、人間の読み手へMeaning（意味）を伝えることを目的とするPresentation（表示）として扱わない。
+
 AI-consumedであることは、そのResourceのConsumption Characteristic（消費特性）である。新たなAsset Type（資産種別）またはDocumentation Area（文書責務領域）として扱わない。
 
 ### Resource Classification（資源分類）
@@ -189,7 +191,7 @@ Current Concrete Contract（現在の具体契約）において、`.ai/foundati
 
 ### Context Minimization（文脈の最小化）
 
-`.ai/foundation-resolution.md` は、「Minimum Resolution Information（保持する最小の解決情報）」が定める内容を成立させるために必要な範囲のみを保持する。
+`.ai/foundation-resolution.md` は、「Minimum Resolution Information（保持する最小の解決情報）」が定める内容を成立させるために必要な範囲のみを保持する。その内容を保持したうえで、同じMeaning（意味）を伝える表現の簡潔さとContext Cost（文脈コスト）の削減を優先する。
 
 通常のAI利用において、本Resource（資源）はResolution（解決）に先立ってContext（文脈）へ投入され得る。Human-facingなDocumentation（文書）としての説明構造を保持することは、Resolution（解決）の成立に必要ではなく、Context Cost（文脈コスト）のみを増加させる。
 

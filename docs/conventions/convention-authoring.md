@@ -275,7 +275,7 @@ Category（分類）を示す小見出しは文書上の整理のためのもの
 
 **Stability:** Development
 
-**Scope:** Definition Namespace（定義名前空間）へ割り当てるNamespace Code（名前空間コード）の表記、およびNormative Rule（規範的規則）に定めるRule ID（規則ID）の `<Namespace>` Segment。
+**Scope:** Convention Asset（規約資産）上でDefinition Namespace（定義名前空間）へ割り当てるNamespace Code（名前空間コード）の表記、およびNormative Rule（規範的規則）に定めるRule ID（規則ID）の `<Namespace>` Segment。
 
 **Requirement:** MUST
 
@@ -309,13 +309,13 @@ Category（分類）を示す小見出しは文書上の整理のためのもの
 
 **Stability:** Development
 
-**Scope:** Rule ID（規則ID）のRule Numberと、その割当および使用。
+**Scope:** Rule ID（規則ID）の定義時に行うRule Numberの割当。
 
 **Requirement:** MUST NOT
 
-**Rule:** Rule Numberに、Category（分類）、Document Order、その他のSemantic Meaningを持たせてはならない。Rule Numberは識別のみに用いる。
+**Rule:** Rule Numberを割り当てる際、Category（分類）、Document Order、その他のSemantic Meaningを持たせてはならない。
 
-**Reason:** 番号へ意味を持たせると、分類の見直しやSectionの並べ替えのたびに再採番の圧力が生じ、Rule Identity（規則同一性）の永続化と衝突する。番号を識別専用に保つことで、文書構成の変更がRule ID（規則ID）へ波及しない。
+**Reason:** 番号へ意味を持たせると、分類の見直しやSectionの並べ替えのたびに再採番の圧力が生じ、Rule Identity（規則同一性）の永続化と衝突する。意味を持たせずに番号を割り当てることで、文書構成の変更がRule ID（規則ID）へ波及しない。
 
 ### Rule Presentation（規則記述形式）
 
