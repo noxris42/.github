@@ -147,7 +147,9 @@ Current Repositoryにおいて`CPL-SF-001` が要求するCentral Concrete Decla
 docs/canonical-primary-language-support.yaml
 ```
 
-本宣言はCurrent RepositoryにおけるConcrete Source Assignmentの値のみを示す。Central Concrete Declaration Source（中央具体宣言情報源）に関するNaming Rule（命名規則）・Path Rule・ Asset Type Rule等の一般Ruleは、本宣言によって成立しない。
+この指定された資産はDocumentation Asset（文書資産）である。そのDocument Responsibility（文書責務）は、成立済みのCanonical Primary Language Support Association（正規主要言語補助対応）をCanonical Declaration（正規宣言）として保持・提供することである。
+
+本宣言はCurrent RepositoryにおけるConcrete Source Assignmentの値と、その指定された資産の位置づけのみを示す。Central Concrete Declaration Source（中央具体宣言情報源）に関するNaming Rule（命名規則）・Path Rule・ Asset Type Rule等の一般Ruleは、本宣言によって成立しない。
 
 ## Reading Aid（読解のための補足）
 

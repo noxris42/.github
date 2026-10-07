@@ -431,6 +431,8 @@ Repository root
 | `application-defaults.yaml` | Provider Declaration（提供側宣言）：Shared Application Default（共有適用既定） | Foundation Provider（基盤提供主体） |
 | `application.yaml` | Consumer Declaration（利用側宣言）：当該RepositoryのFoundation Application State（基盤適用状態） | Consumer Repository（利用Repository） |
 
+Provider Declaration（提供側宣言）を保持する資産、およびConsumer Declaration（利用側宣言）を保持する資産は、それぞれDocumentation Asset（文書資産）である。各資産のDocument Responsibility（文書責務）は、当該Declarationを保持・提供することである。
+
 `.foundation/` は、Foundation Applicationに関するConcrete Declaration（具体宣言）を収めるPhysical Container（物理的入れ物）である。本文書は `.foundation/` に対して、Documentation Area（文書責務領域）、Architecture上のResponsibility（責務）・Area、その他のSemantic Responsibility（意味上の責務）を成立させない。
 
 `application-defaults.yaml` はFoundation Provider（基盤提供主体）に置く。`application.yaml` は各Consumer Repository（利用Repository）に置く。
