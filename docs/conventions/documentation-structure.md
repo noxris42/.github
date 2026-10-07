@@ -497,11 +497,11 @@ Category（分類）を示す小見出しは文書上の整理のためのもの
 
 **Stability:** Development
 
-**Scope:** 本Convention（規約）におけるPurpose Standard Sectionの定義。
+**Scope:** 本Convention（規約）におけるPurpose Standard Sectionの定義、およびDocumentation Asset（文書資産）における同Standard Sectionの使用。
 
 **Requirement:** MUST
 
-**Rule:** Applicability Scope（適用範囲）をDocumentation-wideとするPurpose Standard Sectionを定義する。そのSection Responsibility（Section責務）は、Documentation Asset（文書資産）が何を保持・提供するために存在するのか、すなわちそのDocument Responsibility（文書責務）と文書として果たす役割を明確にすることである。
+**Rule:** Purpose Standard SectionのApplicability Scope（適用範囲）はDocumentation-wideとする。そのSection Responsibility（Section責務）は、Documentation Asset（文書資産）が何を保持・提供するために存在するのか、すなわちそのDocument Responsibility（文書責務）と文書として果たす役割を明確にすることである。
 
 **Reason:** Document Responsibility（文書責務）はすべてのDocumentation Asset（文書資産）に成立する責務であり、それを明確にする責務も資産の種類を問わず反復して必要になる。共通のIdentity（同一性）を与えることで、読み手は資産の役割を一貫した根拠から確認できる。
 
@@ -533,11 +533,11 @@ Category（分類）を示す小見出しは文書上の整理のためのもの
 
 **Stability:** Development
 
-**Scope:** 本Convention（規約）におけるScope Standard Sectionの定義。
+**Scope:** 本Convention（規約）におけるScope Standard Sectionの定義、およびDocumentation Asset（文書資産）における同Standard Sectionの使用。
 
 **Requirement:** MUST
 
-**Rule:** Applicability Scope（適用範囲）をDocumentation-wideとするScope Standard Sectionを定義する。そのSection Responsibility（Section責務）は、Document Responsibility（文書責務）が適用される範囲および必要な境界を明示し、Documentation Asset（文書資産）が何を扱い、何を扱わないかを区別可能にすることである。
+**Rule:** Scope Standard SectionのApplicability Scope（適用範囲）はDocumentation-wideとする。そのSection Responsibility（Section責務）は、Document Responsibility（文書責務）が適用される範囲および必要な境界を明示し、Documentation Asset（文書資産）が何を扱い、何を扱わないかを区別可能にすることである。
 
 **Reason:** 責務境界の明示は、資産の種類を問わず必要になり得る反復的な責務である。共通のIdentity（同一性）を与えることで、境界の確認と見直しを資産横断で同じ根拠から行える。
 
@@ -587,11 +587,11 @@ Category（分類）を示す小見出しは文書上の整理のためのもの
 
 **Stability:** Development
 
-**Scope:** 本Convention（規約）におけるRelationships Standard Sectionの定義。
+**Scope:** 本Convention（規約）におけるRelationships Standard Sectionの定義、およびDocumentation Asset（文書資産）における同Standard Sectionの使用。
 
 **Requirement:** MUST
 
-**Rule:** Applicability Scope（適用範囲）をDocumentation-wideとするRelationships Standard Sectionを定義する。そのSection Responsibility（Section責務）は、Documentation Asset（文書資産）またはそのSubjectが、他のDocumentation Asset（文書資産）・Responsibility（責務）・Concept（概念）等と持つ、当該Assetの意味成立に必要なSemantic Relationshipを明確にすることである。
+**Rule:** Relationships Standard SectionのApplicability Scope（適用範囲）はDocumentation-wideとする。そのSection Responsibility（Section責務）は、Documentation Asset（文書資産）またはそのSubjectが、他のDocumentation Asset（文書資産）・Responsibility（責務）・Concept（概念）等と持つ、当該Assetの意味成立に必要なSemantic Relationshipを明確にすることである。
 
 **Reason:** 資産の意味は、それ単体で閉じているとは限らない。上位Source・Definition Authority（定義権限）の所在・他資産との責務境界といった関係が示されなければ、その資産の内容をどの前提の下で読むべきかが確定しない。この責務は資産の種類を問わず反復して現れる。
 
@@ -605,11 +605,11 @@ Category（分類）を示す小見出しは文書上の整理のためのもの
 
 **Stability:** Development
 
-**Scope:** 本Convention（規約）におけるIn Scope Standard Sectionの定義。
+**Scope:** 本Convention（規約）におけるIn Scope Standard Sectionの定義、およびDocumentation Asset（文書資産）における同Standard Sectionの使用。
 
 **Requirement:** MUST
 
-**Rule:** Applicability Scope（適用範囲）をDocumentation-wideとするIn Scope Standard Sectionを定義する。そのSection Responsibility（Section責務）は、Scope Standard SectionのResponsibility Decomposition（責務分解）として、当該Documentation Asset（文書資産）がDocument Responsibility（文書責務）の範囲内で扱う事項を明確にすることである。
+**Rule:** In Scope Standard SectionのApplicability Scope（適用範囲）はDocumentation-wideとする。そのSection Responsibility（Section責務）は、Scope Standard SectionのResponsibility Decomposition（責務分解）として、当該Documentation Asset（文書資産）がDocument Responsibility（文書責務）の範囲内で扱う事項を明確にすることである。
 
 **Reason:** 何を扱うかと何を扱わないかは、いずれもResponsibility Boundary（責務境界）を構成するが、読み手と書き手が参照する場面は異なる。扱う事項の側を独立した責務として分離できる場合、その責務は資産の種類を問わず反復して現れる。共通のIdentity（同一性）を与えることで、その所在を資産横断で同じ根拠から確認できる。
 
@@ -625,11 +625,11 @@ Category（分類）を示す小見出しは文書上の整理のためのもの
 
 **Stability:** Development
 
-**Scope:** 本Convention（規約）におけるOut of Scope Standard Sectionの定義。
+**Scope:** 本Convention（規約）におけるOut of Scope Standard Sectionの定義、およびDocumentation Asset（文書資産）における同Standard Sectionの使用。
 
 **Requirement:** MUST
 
-**Rule:** Applicability Scope（適用範囲）をDocumentation-wideとするOut of Scope Standard Sectionを定義する。そのSection Responsibility（Section責務）は、Scope Standard SectionのResponsibility Decomposition（責務分解）として、当該Documentation Asset（文書資産）がDocument Responsibility（文書責務）の範囲外として扱わない事項を明確にすることである。
+**Rule:** Out of Scope Standard SectionのApplicability Scope（適用範囲）はDocumentation-wideとする。そのSection Responsibility（Section責務）は、Scope Standard SectionのResponsibility Decomposition（責務分解）として、当該Documentation Asset（文書資産）がDocument Responsibility（文書責務）の範囲外として扱わない事項を明確にすることである。
 
 **Reason:** 扱わない事項が明示されなければ、その資産が担っていない事柄が担われているものとして参照され、あるいは担うべき事柄が他所で重複して定義される。この責務を独立して保持できる場合、その責務は資産の種類を問わず反復して現れる。共通のIdentity（同一性）を与えることで、その所在を資産横断で同じ根拠から確認できる。
 
@@ -645,11 +645,11 @@ Category（分類）を示す小見出しは文書上の整理のためのもの
 
 **Stability:** Development
 
-**Scope:** 本Convention（規約）におけるResponsibility Boundary Standard Sectionの定義。
+**Scope:** 本Convention（規約）におけるResponsibility Boundary Standard Sectionの定義、およびDocumentation Asset（文書資産）における同Standard Sectionの使用。
 
 **Requirement:** MUST
 
-**Rule:** Applicability Scope（適用範囲）をDocumentation-wideとするResponsibility Boundary Standard Sectionを定義する。そのSection Responsibility（Section責務）は、Relationships Standard SectionのResponsibility Decomposition（責務分解）として、当該Documentation Asset（文書資産）が担うResponsibility（責務）およびDefinition Authority（定義権限）と、隣接する責務主体とのBoundary（境界）を明確にすることである。
+**Rule:** Responsibility Boundary Standard SectionのApplicability Scope（適用範囲）はDocumentation-wideとする。そのSection Responsibility（Section責務）は、Relationships Standard SectionのResponsibility Decomposition（責務分解）として、当該Documentation Asset（文書資産）が担うResponsibility（責務）およびDefinition Authority（定義権限）と、隣接する責務主体とのBoundary（境界）を明確にすることである。
 
 **Reason:** 他の責務主体との関係のうち、どこまでを自身が担い、どこから先を他が担うのかという境界は、参照関係や依存関係の記述とは別の判断根拠として使われる。この境界を独立した責務として保持できる場合、その責務は資産の種類を問わず反復して現れる。共通のIdentity（同一性）を与えることで、Definition Authority（定義権限）の所在を資産横断で同じ根拠から確認できる。
 

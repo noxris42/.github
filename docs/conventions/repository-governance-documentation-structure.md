@@ -97,7 +97,7 @@ Repository Governance Documentation Structure Convention
 - MetadataおよびDeclarationのSchema、 Template
 - Documentation Lifecycle（文書の生涯管理）・Review・Validation
 
-本文書は、本Framework（体系）におけるDocumentation Asset（文書資産）のAuthoring全般を所有しない。現在のNormative Rule（規範的規則）は、Standard Section（標準Section）の定義のみで構成される。
+本文書は、本Framework（体系）におけるDocumentation Asset（文書資産）のAuthoring全般を所有しない。現在のNormative Rule（規範的規則）は、Standard Section（標準Section）のApplicability Scope（適用範囲）とSection Responsibility（Section責務）を定める。
 
 ## Concrete Declarations（具体宣言）
 
@@ -197,11 +197,11 @@ Category（分類）を示す小見出しは文書上の整理のためのもの
 
 **Stability:** Development
 
-**Scope:** 本Convention（規約）におけるPosition Standard Sectionの定義。
+**Scope:** 本Convention（規約）におけるPosition Standard Sectionの定義、およびRepository Governance Documentation Frameworkに属するDocumentation Asset（文書資産）における同Standard Sectionの使用。
 
 **Requirement:** MUST
 
-**Rule:** Applicability Scope（適用範囲）をRepository Governance Documentation Framework全体とするPosition Standard Sectionを定義する。そのSection Responsibility（Section責務）は、[Documentation Structure Convention](documentation-structure.md)が定義するRelationships Standard SectionのResponsibility Decomposition（責務分解）として、本Framework（体系）に属するDocumentation Asset（文書資産）自身が、どの上位Definition（定義）を前提とし、何をRefinement（具体化）し、一方向のDesign Dependency（設計依存）の中でどの位置を占めるのかを明確にすることである。
+**Rule:** Position Standard SectionのApplicability Scope（適用範囲）はRepository Governance Documentation Framework全体とする。そのSection Responsibility（Section責務）は、[Documentation Structure Convention](documentation-structure.md)が定義するRelationships Standard SectionのResponsibility Decomposition（責務分解）として、本Framework（体系）に属するDocumentation Asset（文書資産）自身が、どの上位Definition（定義）を前提とし、何をRefinement（具体化）し、一方向のDesign Dependency（設計依存）の中でどの位置を占めるのかを明確にすることである。
 
 **Reason:** 本Framework（体系）は、Definition（定義）をSemantic Responsibility（意味上の責務）の違いに応じて分離する体系である。そのため、上位Definition（定義）への依存やRefinement（具体化）の関係を示す責務が、本Framework（体系）に属する資産へ反復して現れる。その責務が成立する資産ごとに別のIdentity（同一性）で現れると、同じ位置情報が資産ごとに別物として解釈される。共通のIdentity（同一性）を与えることで、読み手はその資産をどの前提の下で読むべきかを一貫した根拠から確認できる。
 
@@ -221,11 +221,11 @@ Responsibility Boundary Standard Sectionとは、同一のRelationships Standard
 
 **Stability:** Development
 
-**Scope:** 本Convention（規約）におけるConcept Model Standard Sectionの定義。
+**Scope:** 本Convention（規約）におけるConcept Model Standard Sectionの定義、およびRepository Governance Documentation FrameworkのArchitecture Area（アーキテクチャ領域）に属するDocumentation Asset（文書資産）における同Standard Sectionの使用。
 
 **Requirement:** MUST
 
-**Rule:** Applicability Scope（適用範囲）をRepository Governance Documentation FrameworkおよびArchitecture Area（アーキテクチャ領域）とするConcept Model Standard Sectionを定義する。そのSection Responsibility（Section責務）は、Architecture Asset（アーキテクチャ資産）が定義するSubjectを成立させる主要Concept（概念）と、それらの基本的な意味・成立条件・Semantic Relationshipを、後続の詳細Modelが前提として利用できる全体像として明確にすることである。
+**Rule:** Concept Model Standard SectionのApplicability Scope（適用範囲）はRepository Governance Documentation FrameworkおよびArchitecture Area（アーキテクチャ領域）とする。そのSection Responsibility（Section責務）は、Architecture Asset（アーキテクチャ資産）が定義するSubjectを成立させる主要Concept（概念）と、それらの基本的な意味・成立条件・Semantic Relationshipを、後続の詳細Modelが前提として利用できる全体像として明確にすることである。
 
 **Reason:** Architecture Area（アーキテクチャ領域）のArea Responsibility（領域責務）は、Subjectの意味を成立させるSemantic / Structural Modelを定義することである。そのため、詳細Modelが前提とするConcept（概念）の全体像を先に保持する責務が、同領域の資産へ反復して現れる。その責務が成立する資産ごとに別のIdentity（同一性）で現れると、読み手はどこに前提となるConcept（概念）が置かれているかを資産ごとに探すことになる。共通のIdentity（同一性）を与えることで、その所在を一貫した根拠から確認できる。
 
@@ -241,11 +241,11 @@ Responsibility Boundary Standard Sectionとは、同一のRelationships Standard
 
 **Stability:** Development
 
-**Scope:** 本Convention（規約）におけるDesign Principles Standard Sectionの定義。
+**Scope:** 本Convention（規約）におけるDesign Principles Standard Sectionの定義、およびRepository Governance Documentation FrameworkのArchitecture Area（アーキテクチャ領域）に属するDocumentation Asset（文書資産）における同Standard Sectionの使用。
 
 **Requirement:** MUST
 
-**Rule:** Applicability Scope（適用範囲）をRepository Governance Documentation FrameworkおよびArchitecture Area（アーキテクチャ領域）とするDesign Principles Standard Sectionを定義する。そのSection Responsibility（Section責務）は、Architecture Asset（アーキテクチャ資産）が定義するSemantic Model（意味モデル）またはStructural Modelについて、設計判断および解釈を一貫させるためのLocal Design Principlesを明確にすることである。
+**Rule:** Design Principles Standard SectionのApplicability Scope（適用範囲）はRepository Governance Documentation FrameworkおよびArchitecture Area（アーキテクチャ領域）とする。そのSection Responsibility（Section責務）は、Architecture Asset（アーキテクチャ資産）が定義するSemantic Model（意味モデル）またはStructural Modelについて、設計判断および解釈を一貫させるためのLocal Design Principlesを明確にすることである。
 
 **Reason:** Architecture Asset（アーキテクチャ資産）が定義するModelに、それを前提として成立するLocal Design Principlesが伴う場合がある。そうした判断基準を保持する責務は、Modelを定義する同領域の資産へ反復して現れる。その責務が成立する資産ごとに別のIdentity（同一性）で現れると、判断基準がModelの記述と区別されないまま読まれ、何が解釈を一貫させるための基準なのかが不明確になる。共通のIdentity（同一性）を与えることで、その区別を一貫した根拠から確認できる。
 
@@ -261,11 +261,11 @@ Responsibility Boundary Standard Sectionとは、同一のRelationships Standard
 
 **Stability:** Development
 
-**Scope:** 本Convention（規約）におけるNon-goals Standard Sectionの定義。
+**Scope:** 本Convention（規約）におけるNon-goals Standard Sectionの定義、およびRepository Governance Documentation FrameworkのArchitecture Area（アーキテクチャ領域）に属するDocumentation Asset（文書資産）における同Standard Sectionの使用。
 
 **Requirement:** MUST
 
-**Rule:** Applicability Scope（適用範囲）をRepository Governance Documentation FrameworkおよびArchitecture Area（アーキテクチャ領域）とするNon-goals Standard Sectionを定義する。そのSection Responsibility（Section責務）は、Architecture Asset（アーキテクチャ資産）が、そのResponsibility Boundary（責務境界）を踏まえて意図的に定義・解決しない事項を明確にし、必要な場合には、その事項を担う後続のDesign ResponsibilityまたはDocumentation Asset（文書資産）へのDelegationを示すことである。
+**Rule:** Non-goals Standard SectionのApplicability Scope（適用範囲）はRepository Governance Documentation FrameworkおよびArchitecture Area（アーキテクチャ領域）とする。そのSection Responsibility（Section責務）は、Architecture Asset（アーキテクチャ資産）が、そのResponsibility Boundary（責務境界）を踏まえて意図的に定義・解決しない事項を明確にし、必要な場合には、その事項を担う後続のDesign ResponsibilityまたはDocumentation Asset（文書資産）へのDelegationを示すことである。
 
 **Reason:** Architecture Asset（アーキテクチャ資産）が、自身の責務境界を踏まえて意図的に定義・解決しないという設計判断を持つ場合がある。その判断を保持する責務は、同領域の資産へ反復して現れる。その責務が成立する資産ごとに別のIdentity（同一性）で現れると、読み手は意図的な設計判断と単に検討されていない事項とを区別する根拠を資産ごとに探すことになり、委譲先の所在も同様に定まらない。共通のIdentity（同一性）を与えることで、その区別と委譲先を一貫した根拠から確認できる。
 
@@ -285,11 +285,11 @@ Delegationは、Non-goalsに必要に応じて付随する情報として扱う�
 
 **Stability:** Development
 
-**Scope:** 本Convention（規約）におけるConcrete Declarations Standard Sectionの定義。
+**Scope:** 本Convention（規約）におけるConcrete Declarations Standard Sectionの定義、およびRepository Governance Documentation FrameworkのConventions Area（規約領域）に属するDocumentation Asset（文書資産）における同Standard Sectionの使用。
 
 **Requirement:** MUST
 
-**Rule:** Applicability Scope（適用範囲）をRepository Governance Documentation FrameworkおよびConventions Area（規約領域）とするConcrete Declarations Standard Sectionを定義する。そのSection Responsibility（Section責務）は、Convention Asset（規約資産）が必要とするConcrete Assignment（具体割当）およびConcrete Declarationを、Normative Rule（規範的規則）から区別して保持することである。
+**Rule:** Concrete Declarations Standard SectionのApplicability Scope（適用範囲）はRepository Governance Documentation FrameworkおよびConventions Area（規約領域）とする。そのSection Responsibility（Section責務）は、Convention Asset（規約資産）が必要とするConcrete Assignment（具体割当）およびConcrete Declarationを、Normative Rule（規範的規則）から区別して保持することである。
 
 **Reason:** Convention Asset（規約資産）は、識別子の形式および使用条件を定めるNormative Rule（規範的規則）と、どの値が実際に割り当てられているかというConcrete Assignment（具体割当）の両方を必要とする。両者が区別されないまま置かれると、値の変更が規範の変更として読まれ、規範の変更が値の変更として読まれる。この区別を保持する責務は、Conventions Area（規約領域）の資産へ反復して現れる。共通のIdentity（同一性）を与えることで、その区別を一貫した根拠から確認できる。
 
@@ -305,11 +305,11 @@ Delegationは、Non-goalsに必要に応じて付随する情報として扱う�
 
 **Stability:** Development
 
-**Scope:** 本Convention（規約）におけるConvention Code Standard Sectionの定義。
+**Scope:** 本Convention（規約）におけるConvention Code Standard Sectionの定義、およびRepository Governance Documentation FrameworkのConventions Area（規約領域）に属するDocumentation Asset（文書資産）における同Standard Sectionの使用。
 
 **Requirement:** MUST
 
-**Rule:** Applicability Scope（適用範囲）をRepository Governance Documentation FrameworkおよびConventions Area（規約領域）とするConvention Code Standard Sectionを定義する。そのSection Responsibility（Section責務）は、Concrete Declarations Standard SectionのResponsibility Decomposition（責務分解）として、包含するConvention Asset（規約資産）へ割り当てられたConvention Code（規約コード）のConcrete Assignment（具体割当）を宣言することである。
+**Rule:** Convention Code Standard SectionのApplicability Scope（適用範囲）はRepository Governance Documentation FrameworkおよびConventions Area（規約領域）とする。そのSection Responsibility（Section責務）は、Concrete Declarations Standard SectionのResponsibility Decomposition（責務分解）として、包含するConvention Asset（規約資産）へ割り当てられたConvention Code（規約コード）のConcrete Assignment（具体割当）を宣言することである。
 
 **Reason:** Convention Code（規約コード）は、その規約が定めるRule ID（規則ID）の解釈に必要な前提である。どの値が割り当てられているかを保持する責務は、Conventions Area（規約領域）の資産へ反復して現れる。共通のIdentity（同一性）を与えることで、その所在を資産横断で同じ根拠から確認できる。
 
@@ -325,11 +325,11 @@ Convention Authoring Conventionに存在するConvention Code（規約コード�
 
 **Stability:** Development
 
-**Scope:** 本Convention（規約）におけるNamespace Code Standard Sectionの定義。
+**Scope:** 本Convention（規約）におけるNamespace Code Standard Sectionの定義、およびRepository Governance Documentation FrameworkのConventions Area（規約領域）に属するDocumentation Asset（文書資産）における同Standard Sectionの使用。
 
 **Requirement:** MUST
 
-**Rule:** Applicability Scope（適用範囲）をRepository Governance Documentation FrameworkおよびConventions Area（規約領域）とするNamespace Code Standard Sectionを定義する。そのSection Responsibility（Section責務）は、Concrete Declarations Standard SectionのResponsibility Decomposition（責務分解）として、当該Convention Asset（規約資産）のNormative Rulesが使用する割当済みNamespace Code（名前空間コード）をConcrete Declarationとして示すことである。
+**Rule:** Namespace Code Standard SectionのApplicability Scope（適用範囲）はRepository Governance Documentation FrameworkおよびConventions Area（規約領域）とする。そのSection Responsibility（Section責務）は、Concrete Declarations Standard SectionのResponsibility Decomposition（責務分解）として、当該Convention Asset（規約資産）のNormative Rulesが使用する割当済みNamespace Code（名前空間コード）をConcrete Declarationとして示すことである。
 
 **Reason:** Rule ID（規則ID）はConvention（規約）とNamespaceの組合せの中で成立する。自身のRuleがどのNamespace Code（名前空間コード）に属するかが示されなければ、Rule ID（規則ID）の一意性の根拠が確定しない。この責務は、Conventions Area（規約領域）の資産へ反復して現れる。
 
@@ -345,11 +345,11 @@ Convention Authoring Conventionの`Namespace Code Assignment` とは別のStanda
 
 **Stability:** Development
 
-**Scope:** 本Convention（規約）におけるNormative Rules Standard Sectionの定義。
+**Scope:** 本Convention（規約）におけるNormative Rules Standard Sectionの定義、およびRepository Governance Documentation FrameworkのConventions Area（規約領域）に属するDocumentation Asset（文書資産）における同Standard Sectionの使用。
 
 **Requirement:** MUST
 
-**Rule:** Applicability Scope（適用範囲）をRepository Governance Documentation FrameworkおよびConventions Area（規約領域）とするNormative Rules Standard Sectionを定義する。そのSection Responsibility（Section責務）は、Convention（規約）がNormative Effectを持たせるNormative Rule（規範的規則）群を保持し、Non-normative Content（非規範的内容）から意味的に区別することである。
+**Rule:** Normative Rules Standard SectionのApplicability Scope（適用範囲）はRepository Governance Documentation FrameworkおよびConventions Area（規約領域）とする。そのSection Responsibility（Section責務）は、Convention（規約）がNormative Effectを持たせるNormative Rule（規範的規則）群を保持し、Non-normative Content（非規範的内容）から意味的に区別することである。
 
 **Reason:** Convention Asset（規約資産）は、規範的効力を持つ内容と持たない内容を併せ持つ。どこからどこまでが規範であるかが構造から判別できなければ、補足や説明が規範として運用され、あるいは規範が参考情報として扱われる。この区別を保持する責務は、Conventions Area（規約領域）の資産へ反復して現れる。
 
@@ -365,11 +365,11 @@ Convention Authoring Conventionの`Namespace Code Assignment` とは別のStanda
 
 **Stability:** Development
 
-**Scope:** 本Convention（規約）におけるSelf Application Standard Sectionの定義。
+**Scope:** 本Convention（規約）におけるSelf Application Standard Sectionの定義、およびRepository Governance Documentation FrameworkのConventions Area（規約領域）に属するDocumentation Asset（文書資産）における同Standard Sectionの使用。
 
 **Requirement:** MUST
 
-**Rule:** Applicability Scope（適用範囲）をRepository Governance Documentation FrameworkおよびConventions Area（規約領域）とするSelf Application Standard Sectionを定義する。そのSection Responsibility（Section責務）は、当該Convention Asset（規約資産）自身へ適用されるConvention（規約）およびRuleについて、そのSelf ApplicationおよびConformanceを明確にすることである。
+**Rule:** Self Application Standard SectionのApplicability Scope（適用範囲）はRepository Governance Documentation FrameworkおよびConventions Area（規約領域）とする。そのSection Responsibility（Section責務）は、当該Convention Asset（規約資産）自身へ適用されるConvention（規約）およびRuleについて、そのSelf ApplicationおよびConformanceを明確にすることである。
 
 **Reason:** Convention Asset（規約資産）は、自身も他のConvention（規約）の適用対象であり、場合によっては自身が定めるRuleの適用対象でもある。その適合状況が示されなければ、規約が自身に適用されない例外として運用され、規約の妥当性を自身の記述から検証できなくなる。この責務は、Conventions Area（規約領域）の資産へ反復して現れる。
 
