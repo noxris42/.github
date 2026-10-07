@@ -403,7 +403,7 @@ Category（分類）を示す小見出しは文書上の整理のためのもの
 
 **Stability:** Development
 
-**Scope:** Standard Section（標準Section）に対応するSectionの設置を要求すること。
+**Scope:** Repositoryにおける、Standard Section（標準Section）に対応するSectionの設置を要求する判断。
 
 **Requirement:** MUST NOT
 
@@ -421,7 +421,7 @@ Category（分類）を示す小見出しは文書上の整理のためのもの
 
 **Stability:** Development
 
-**Scope:** Standard Section Catalogの扱い。
+**Scope:** Repositoryにおける、Standard Section Catalogの解釈・使用に関する判断。
 
 **Requirement:** MUST NOT
 
