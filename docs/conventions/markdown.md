@@ -2,7 +2,7 @@
 
 ## Purpose（目的）
 
-本文書は、`noxris42` において**Repository内で成立するMarkdown Representation（Markdown表現）のMarkdown SyntaxおよびMarkup Representationについて、既に成立しているMeaning（意味）およびSemantic Structure（意味構造）を変更せず、一貫したPhysical Representation（物理表現）を成立させるReusable Normative Standard（再利用可能な規範標準）**を定義するConvention Asset（規約資産）である。
+本文書は、`noxris42` において**Repository内のMarkdown形式のFile、およびMarkdownとして扱うことが明示された埋め込み領域において成立するMarkdown Representation（Markdown表現）のMarkdown SyntaxおよびMarkup Representationについて、既に成立しているMeaning（意味）およびSemantic Structure（意味構造）を変更せず、一貫したPhysical Representation（物理表現）を成立させるReusable Normative Standard（再利用可能な規範標準）**を定義するConvention Asset（規約資産）である。
 
 本文書が扱う問いは次の3点である。
 
@@ -129,7 +129,7 @@ Markdown Convention
 - File Encoding、Byte Order Mark、Final Newline等のRepository全体のFile Property
 - Front Matter、Metadata、およびそれらのSchema
 - Lint、Validator、Formatter、Editor等のExternal Toolの設定・実行・適合判定、およびそれらのRuleとの対応関係
-- Markdownを使用しない記述媒体上の表現
+- Markdown形式のFile、およびMarkdownとして扱うことが明示された埋め込み領域のいずれにも当たらない記述媒体上の表現
 - Markdown Rendererの実装差異の完全なCatalog
 
 ## Concrete Declarations（具体宣言）
@@ -182,7 +182,7 @@ External Toolが報告するErrorは、あるMarkdown Representationを検討す
 
 Category（分類）を示す小見出しは文書上の整理のためのものであり、Rule ID（規則ID）はCategory（分類）を表現しない。
 
-本文書のRuleは、Markdown Representation（Markdown表現）を扱う。各RuleのApplicabilityは、当該RuleのApplicability Scope（適用範囲）とRule Statement（規則文）によって確定する。本節その他のNon-normative Content（非規範的内容）は、Ruleの対象・条件を追加・変更しない。
+本文書のRuleは、Markdown形式のFile、またはMarkdownとして扱うことが明示された埋め込み領域におけるMarkdown Representation（Markdown表現）を扱う。埋め込み領域をMarkdownとして扱うことの明示は、当該領域の媒体指定、または当該領域を所有する正式な契約による。記号の類似、Markdownとして記述できること、および将来Markdownを導入し得ることは、その明示に当たらない。各RuleのApplicabilityは、当該RuleのApplicability Scope（適用範囲）とRule Statement（規則文）によって確定する。本節その他のNon-normative Content（非規範的内容）は、Ruleの対象・条件を追加・変更しない。
 
 本文書のいずれのRuleも、Document Title（文書題名）・Heading（見出し）・List・Table・ Blockquote・Code・Link・Image等を設けること自体を要求しない。
 
@@ -196,7 +196,7 @@ Category（分類）を示す小見出しは文書上の整理のためのもの
 
 **Stability:** Development
 
-**Scope:** 本Convention（規約）のRuleがRepository内のMarkdown Representation（Markdown表現）について規定する内容の解釈。
+**Scope:** 本Convention（規約）のRuleが、Repository内のMarkdown形式のFile、またはMarkdownとして扱うことが明示された埋め込み領域におけるMarkdown Representation（Markdown表現）について規定する内容の解釈。
 
 **Requirement:** MUST
 
@@ -222,7 +222,7 @@ Markdown Baselineは、本文書のRuleをどのMarkdown解釈のもとで読む
 
 **Stability:** Development
 
-**Scope:** Markdownで記述されたDocumentation Asset（文書資産）における、Document Title（文書題名）のMarkdown上の表現と、Heading Level（見出しレベル）1の使用。
+**Scope:** Markdown形式のFile、またはMarkdownとして扱うことが明示された埋め込み領域として記述されたDocumentation Asset（文書資産）における、Document Title（文書題名）のMarkdown上の表現と、Heading Level（見出しレベル）1の使用。
 
 **Requirement:** MUST
 
@@ -246,7 +246,7 @@ Heading Level（見出しレベル）1をDocument Title（文書題名）以外�
 
 **Stability:** Development
 
-**Scope:** Markdown上で表現するHeading（見出し）のHeading Level（見出しレベル）。
+**Scope:** Markdown形式のFile、またはMarkdownとして扱うことが明示された埋め込み領域における、Markdown上で表現するHeading（見出し）のHeading Level（見出しレベル）。
 
 **Requirement:** MUST
 
@@ -268,7 +268,7 @@ Heading Level（見出しレベル）1をDocument Title（文書題名）以外�
 
 **Stability:** Development
 
-**Scope:** Markdown上で表現するHeading（見出し）の記法。
+**Scope:** Markdown形式のFile、またはMarkdownとして扱うことが明示された埋め込み領域における、Markdown上で表現するHeading（見出し）の記法。
 
 **Requirement:** MUST
 
@@ -300,7 +300,7 @@ Heading Label（見出しラベル）のNatural Language Representation（自然
 
 **Stability:** Development
 
-**Scope:** Markdown上で表現されたHeading（見出し）のHeading Representation（見出し表現）。
+**Scope:** Markdown形式のFile、またはMarkdownとして扱うことが明示された埋め込み領域における、Markdown上で表現されたHeading（見出し）のHeading Representation（見出し表現）。
 
 **Requirement:** SHOULD
 
@@ -322,7 +322,7 @@ Heading Label（見出しラベル）のNatural Language Representation（自然
 
 **Stability:** Development
 
-**Scope:** Heading（見出し）として表現する対象のMarkdown上の表現。
+**Scope:** Markdown形式のFile、またはMarkdownとして扱うことが明示された埋め込み領域における、Heading（見出し）として表現する対象のMarkdown上の表現。
 
 **Requirement:** MUST NOT
 
@@ -344,7 +344,7 @@ Heading Label（見出しラベル）のNatural Language Representation（自然
 
 **Stability:** Development
 
-**Scope:** Markdown上のEmphasisおよびStrong Emphasisの表現。
+**Scope:** Markdown形式のFile、またはMarkdownとして扱うことが明示された埋め込み領域における、Markdown上のEmphasisおよびStrong Emphasisの表現。
 
 **Requirement:** MUST
 
@@ -375,7 +375,7 @@ Canonical Formは次である。
 
 **Stability:** Development
 
-**Scope:** 順序そのものに意味を持たない列挙のMarkdown上の表現。
+**Scope:** Markdown形式のFile、またはMarkdownとして扱うことが明示された埋め込み領域における、順序そのものに意味を持たない列挙のMarkdown上の表現。
 
 **Requirement:** SHOULD
 
@@ -395,7 +395,7 @@ Canonical Formは次である。
 
 **Stability:** Development
 
-**Scope:** 順序そのものに意味を持つ列挙のMarkdown上の表現。
+**Scope:** Markdown形式のFile、またはMarkdownとして扱うことが明示された埋め込み領域における、順序そのものに意味を持つ列挙のMarkdown上の表現。
 
 **Requirement:** SHOULD
 
@@ -415,7 +415,7 @@ Canonical Formは次である。
 
 **Stability:** Development
 
-**Scope:** Markdown上のUnordered ListのList Marker。
+**Scope:** Markdown形式のFile、またはMarkdownとして扱うことが明示された埋め込み領域における、Markdown上のUnordered ListのList Marker。
 
 **Requirement:** MUST
 
@@ -441,7 +441,7 @@ Canonical Formは次である。
 
 **Stability:** Development
 
-**Scope:** Markdown上のOrdered ListのList Markerと、各ItemのSource上の番号。
+**Scope:** Markdown形式のFile、またはMarkdownとして扱うことが明示された埋め込み領域における、Markdown上のOrdered ListのList Markerと、各ItemのSource上の番号。
 
 **Requirement:** MUST
 
@@ -479,7 +479,7 @@ Canonical Formは次である。
 
 **Stability:** Development
 
-**Scope:** 複数の対象について、同じ観点による比較または対応関係を表現する内容のMarkdown上の表現。
+**Scope:** Markdown形式のFile、またはMarkdownとして扱うことが明示された埋め込み領域における、複数の対象について、同じ観点による比較または対応関係を表現する内容のMarkdown上の表現。
 
 **Requirement:** SHOULD
 
@@ -499,7 +499,7 @@ Canonical Formは次である。
 
 **Stability:** Development
 
-**Scope:** Markdown上のTableのSource上の表現。
+**Scope:** Markdown形式のFile、またはMarkdownとして扱うことが明示された埋め込み領域における、Markdown上のTableのSource上の表現。
 
 **Requirement:** MUST
 
@@ -543,7 +543,7 @@ Canonical Formは次である。
 
 **Stability:** Development
 
-**Scope:** 他の情報源からの引用として提示する内容のMarkdown上の表現。
+**Scope:** Markdown形式のFile、またはMarkdownとして扱うことが明示された埋め込み領域における、他の情報源からの引用として提示する内容のMarkdown上の表現。
 
 **Requirement:** SHOULD
 
@@ -565,7 +565,7 @@ Canonical Formは次である。
 
 **Stability:** Development
 
-**Scope:** Markdown上のCode Blockの表現。
+**Scope:** Markdown形式のFile、またはMarkdownとして扱うことが明示された埋め込み領域における、Markdown上のCode Blockの表現。
 
 **Requirement:** MUST
 
@@ -597,7 +597,7 @@ Code Block自身がMarkdownのFenceを内容として含む場合のように、
 
 **Stability:** Development
 
-**Scope:** Markdown上のFenced Code Block。
+**Scope:** Markdown形式のFile、またはMarkdownとして扱うことが明示された埋め込み領域における、Markdown上のFenced Code Block。
 
 **Requirement:** MUST
 
@@ -619,7 +619,7 @@ Code Block自身がMarkdownのFenceを内容として含む場合のように、
 
 **Stability:** Development
 
-**Scope:** File名、Path、Command、Identifier（識別子）、Literal Value、Syntax等を具体的なLiteral StringとしてMarkdown上の本文中へ現す表現と、そのInline CodeのDelimiter。
+**Scope:** Markdown形式のFile、またはMarkdownとして扱うことが明示された埋め込み領域における、File名、Path、Command、Identifier（識別子）、Literal Value、Syntax等を具体的なLiteral StringとしてMarkdown上の本文中へ現す表現と、そのInline CodeのDelimiter。
 
 **Requirement:** MUST
 
@@ -649,7 +649,7 @@ Inline CodeのDelimiterには、通常はBacktick 1個を使用する。Content�
 
 **Stability:** Development
 
-**Scope:** Markdown上のLinkの表現。
+**Scope:** Markdown形式のFile、またはMarkdownとして扱うことが明示された埋め込み領域における、Markdown上のLinkの表現。
 
 **Requirement:** SHOULD
 
@@ -675,7 +675,7 @@ Canonical Formは次である。
 
 **Stability:** Development
 
-**Scope:** 同一Repository内のMarkdown文書その他のAssetを参照するMarkdown上のLink。
+**Scope:** Markdown形式のFile、またはMarkdownとして扱うことが明示された埋め込み領域における、同一Repository内のMarkdown文書その他のAssetを参照するMarkdown上のLink。
 
 **Requirement:** MUST
 
@@ -697,7 +697,7 @@ File名およびPathの形式は[Naming Convention](naming.md)が所有する。
 
 **Stability:** Development
 
-**Scope:** Markdown上で表現するImage。
+**Scope:** Markdown形式のFile、またはMarkdownとして扱うことが明示された埋め込み領域における、Markdown上で表現するImage。
 
 **Requirement:** MUST
 
@@ -719,7 +719,7 @@ File名およびPathの形式は[Naming Convention](naming.md)が所有する。
 
 **Stability:** Development
 
-**Scope:** Markdown Source上の独立したMarkdown Block間の分離。
+**Scope:** Markdown形式のFile、またはMarkdownとして扱うことが明示された埋め込み領域における、Markdown Source上の独立したMarkdown Block間の分離。
 
 **Requirement:** SHOULD
 
@@ -739,7 +739,7 @@ Markdownの構文上、空行を置かないことが自然である箇所は本
 
 **Stability:** Development
 
-**Scope:** Markdown Sourceの行末。
+**Scope:** Markdown形式のFile、またはMarkdownとして扱うことが明示された埋め込み領域における、Markdown Sourceの行末。
 
 **Requirement:** MUST NOT
 
@@ -761,7 +761,7 @@ Hard Line Breakを表現する目的であっても、行末の空白をCanonica
 
 **Stability:** Development
 
-**Scope:** Markdown Source上で表現する内容と、その表現に用いるMarkdown RepresentationまたはHTML。
+**Scope:** Markdown形式のFile、またはMarkdownとして扱うことが明示された埋め込み領域における、Markdown Source上で表現する内容と、その表現に用いるMarkdown RepresentationまたはHTML。
 
 **Requirement:** SHOULD
 
@@ -781,7 +781,7 @@ Hard Line Breakを表現する目的であっても、行末の空白をCanonica
 
 **Stability:** Development
 
-**Scope:** Markdown Source内のNatural Language Prose（自然言語本文）のSource上の改行。
+**Scope:** Markdown形式のFile、またはMarkdownとして扱うことが明示された埋め込み領域における、Markdown Source内のNatural Language Prose（自然言語本文）のSource上の改行。
 
 **Requirement:** MUST NOT
 
