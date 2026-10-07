@@ -587,7 +587,7 @@ Target-specific Rule Resolution（対象固有規則解決）は、Repository-le
 
 対象Fileは、Repository内の対象を特定でき、かつ既存のTarget Declaration（対象宣言）の `path` と `scope` が当該対象Fileを包含するかを判定できる形で示されなければならない。[Foundation Application State Specification](foundation-application-state.md)が定める `path` の形式条件は、Target Declaration（対象宣言）そのものの検証条件である。本文書は、これを対象Fileの受入条件へ転用しない。Target Declaration（対象宣言）の `path` は、引き続き同仕様のValidation Conditions（検証条件）に従って検証する。
 
-Pathは、対象Fileの識別と、Target Declaration（対象宣言）による包含の判定にのみ用いる。Pathから対象FileのSemantic Responsibility（意味上の責務）、Classification（分類）、またはRule Applicabilityを推論しない。
+Pathは、対象Fileの識別と、Target Declaration（対象宣言）による包含の判定に用いる。また、対象FileのFile名、およびそのRepository相対Pathを構成するDirectory名は、物理的事実として確認し、それらの名称を直接の対象とするRuleを候補に保持するかの判断に用いることができる。本文で参照する別FileのPath、および対象FileのPathを構成しないDirectoryは、これに含めない。Pathの綴り・配置だけから、対象FileのSemantic Responsibility（意味上の責務）、Classification（分類）、またはRule Applicabilityを推論しない。
 
 ### Target-specific Input（入力）
 
@@ -680,6 +680,8 @@ Not-applicable Exclusion（非適用による除外）とするのは、正式�
 現在存在しない表現またはDevelopment Action（開発行為）については、対象Fileの責務の範囲内で成立し得るものと、対象Fileの責務の変更を要するものとを区別する。前者を対象とするRuleは、その不在だけを根拠として除外しない。後者の成立可能性は、Ruleを候補として残す根拠としない。別の文書種別への転換、または別のFileの変更を、対象Fileについて自動的に想定しない。記述媒体についても、成立済みの記述媒体内で個別の表現を現在使用していないことと、別の記述媒体を導入・使用することを区別する。別の記述媒体の導入・使用が対象Fileの責務の範囲内で成立し得るかは、媒体指定または正式な契約に基づいて判断する。対象Fileまたはその中の領域を、ある記述媒体として扱う根拠は、当該対象の媒体指定、または当該対象を所有する正式な契約に確認する。別の記述媒体で技術的に記述できることだけを、その記述媒体を対象とするRuleを候補として残す根拠としない。記述媒体の扱いが不明または未確定である場合を含め、いずれに当たるかが不明または未確定であるRuleは、Candidate Rule Set（候補規則集合）へ残す。この候補保持、および記述媒体の特定は、当該RuleのRule Applicabilityが現在成立することを意味しない。
 
 Repository共通のDevelopment Action（開発行為）を対象とするRuleは、そのDevelopment Action（開発行為）が現在発生していないこと、対象File本文に対するRuleではないこと、または対象Fileがその結果の表示先ではないことだけを理由として、対象FileのCandidate Rule Set（候補規則集合）から除外しない。一方、Development Action（開発行為）を対象とすることだけを理由として、正式なApplicability Scope（適用範囲）が定める限定を無視しない。
+
+対象FileのRepository相対Pathを構成するDirectory名を対象とするRuleは、対象File自身のFile名を対象としていないことだけを理由として、対象FileのCandidate Rule Set（候補規則集合）から除外しない。この候補保持は、Path構成との関係に基づくものであり、当該Directoryを対象Fileとして扱うこと、Directory名を対象とするRuleをFile名へ適用すること、または当該Directory自身についてのRule Selection（規則選択）を変更することを意味しない。Target-specific Rule Resolution（対象固有規則解決）が外したRuleを、この関係を理由に再び含めない。
 
 ### Pre-resolution Result（結果）
 
