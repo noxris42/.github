@@ -147,7 +147,9 @@ Current Repositoryにおいて`CPL-SF-001` が要求するCentral Concrete Decla
 docs/canonical-primary-language-support.yaml
 ```
 
-この指定された資産はDocumentation Asset（文書資産）である。そのDocument Responsibility（文書責務）は、成立済みのCanonical Primary Language Support Association（正規主要言語補助対応）をCanonical Declaration（正規宣言）として保持・提供することである。
+この指定された資産の責務は、成立済みのCanonical Primary Language Support Association（正規主要言語補助対応）の個別対応値を、Canonical Declaration（正規宣言）として正式に保持・提供することである。同資産は、個々のCanonical Primary Language Support Association（正規主要言語補助対応）の値についてDefinition Authority（定義権限）を持つ。そのDefinition Authority（定義権限）は、本文書が定めるRuleには及ばない。
+
+同資産の責務は個別対応値を正式に保持することであり、それだけからはDocumentation Asset（文書資産）としての成立は導かれない。したがって同資産はDocumentation Asset（文書資産）として扱わず、[Repository Governance Documentation Framework](../architecture/repository-governance-documentation-framework.md)にも属さない。
 
 本宣言はCurrent RepositoryにおけるConcrete Source Assignmentの値と、その指定された資産の位置づけのみを示す。Central Concrete Declaration Source（中央具体宣言情報源）に関するNaming Rule（命名規則）・Path Rule・ Asset Type Rule等の一般Ruleは、本宣言によって成立しない。
 

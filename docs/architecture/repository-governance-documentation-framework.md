@@ -88,7 +88,7 @@ Repository Governance Documentation Framework
 
 Repository Governanceは**Repositoryを跨ぐ所有と適用の関係** を扱い、本文書は**Documentation上で定義責務をどう分離するか** を扱う。
 
-本文書は、Repository Governanceが定義するOwnership（所有責任）・Shared Scope・ Foundation Applicationを再定義・上書きしない。
+本文書は、Repository Governanceが定義するOwnership（所有責任）・Shared Scope・ Foundation Application・Definition Authority（定義権限）を再定義・上書きしない。
 
 ## Scope（対象範囲）
 
@@ -98,11 +98,13 @@ Repository Governanceは**Repositoryを跨ぐ所有と適用の関係** を扱�
 - Area Composition
 - 各AreaのArea Responsibility（領域責務）、およびOwns／Does Not Own
 - Area間の境界判断の基準
+- 本Framework（体系）が組織するDefinition Responsibility（定義責務）と、本Framework（体系）の外で正式に保持される具体宣言・具体値との境界
 - 現在採用するPhysical Representation（物理表現）
 
 ### Out of Scope（本文書が定義しない範囲）
 
 - 個々のDocumentation Asset（文書資産）の内容
+- 本Framework（体系）に属さない資産の分類・一覧
 - Documentation Asset（文書資産）の命名、Path、File構成に関するNormative Rule（規範的規則）
 - Area間の固定的なLayer Hierarchyや一般的な依存規則
 - 他のDocumentation Framework（文書体系）とのComposition・Priority・Refinement（具体化）
@@ -132,6 +134,24 @@ Traceabilityは、本Framework（体系）の最上位目的ではない。
 本Framework（体系）が第一に行うのは**Semantic Responsibility（意味上の責務）による分離** であり、Traceabilityはその分離の結果として成立する性質として扱う。
 
 したがって、Traceabilityを高めること自体を根拠として、責務分離に反する構造を導入しない。
+
+### Boundary with Concrete Declarations outside the Framework（体系外の具体宣言との境界）
+
+本Framework（体系）が組織するのは、本Framework（体系）に属するDocumentation Asset（文書資産）が担うDefinition Responsibility（定義責務）である。
+
+Repositoryには、本Framework（体系）のDefinition（定義）が定める契約・規則・意味モデルに従う具体宣言・具体値を、本Framework（体系）に属さない資産が正式に保持する場合がある。そのような資産は、[Repository Governance](repository-governance.md)が定めるとおり、自身が正式に保持する具体宣言・具体値についてDefinition Authority（定義権限）を持ち得る。
+
+```text
+契約・規則・意味モデルのDefinition
+  → 本Framework（体系）に属するDocumentation Asset
+
+それらに従う体系外の具体宣言・具体値
+  → それを正式に保持する、本Framework（体系）に属さない資産
+```
+
+本Framework（体系）に属するDocumentation Asset（文書資産）は、そのような具体宣言・具体値を再定義せず参照する。また、そのような資産のDefinition Authority（定義権限）は、それが従う契約・規則・意味モデルには及ばない。
+
+そのような資産が本Framework（体系）に属さないことの判断は「Membership Decision Criteria（帰属の判断基準）」による。本文書は、そのような資産の分類・一覧を定義しない。
 
 ## Area Composition（領域構成）
 
@@ -175,6 +195,14 @@ Framework Membershipについても同じ判断による。あるDocumentation A
 - 本Framework（体系）とは別のSubjectを扱うこと
 
 本文書自身も、この判断の例外ではない。
+
+Framework Membershipは、Documentation Asset（文書資産）として成立した資産についてのみ判断される。[Documentation Structure Architecture](documentation-structure.md)のDocumentation Asset（文書資産）として成立しない資産は、本Framework（体系）に属さない。
+
+また、次はそれだけではFramework Membershipを成立させない。
+
+- 正式なSourceであること
+- 本Framework（体系）のDefinition（定義）に従う具体宣言・具体値を正式に保持すること
+- 本Framework（体系）のPhysical Representation（物理表現）を収める配置上の単位に置かれていること
 
 ## Philosophy Area（思想領域）
 
@@ -381,7 +409,7 @@ Areaの分離は、抽象度・粒度・対象の種類ではなく、Definition
 
 ### Single Definition Authority（定義権限を一箇所に置く）
 
-あるDefinition（定義）のDefinition Authority（定義権限）は、一つのDocumentation Asset（文書資産）に置く。他のAssetは、それを再定義せず参照する。
+本Framework（体系）が組織するあるDefinition（定義）のDefinition Authority（定義権限）は、本Framework（体系）に属する一つのDocumentation Asset（文書資産）に置く。他のAssetは、それを再定義せず参照する。本Framework（体系）の外で正式に保持される具体宣言・具体値も、本Framework（体系）のDocumentation Asset（文書資産）は再定義せず参照する。
 
 ### No Fixed Layer Hierarchy（固定階層を設けない）
 

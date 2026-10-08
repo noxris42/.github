@@ -17,13 +17,14 @@
 
 ### Responsibility Boundary（責務境界）
 
-本文書は、[Repository Governance](repository-governance.md)が定義するOwnership（所有責任）・Shared Scope・Foundation Applicationを再定義・上書きしない。また、[Documentation Structure Architecture](documentation-structure.md)および[Repository Governance Documentation Framework](repository-governance-documentation-framework.md)が定義するDocumentation上の論理単位・Definition Authority（定義権限）の成立条件・Area Responsibility（領域責務）も再定義・上書きしない。
+本文書は、[Repository Governance](repository-governance.md)が定義するOwnership（所有責任）・Shared Scope・Foundation Application・Definition Authority（定義権限）を再定義・上書きしない。また、[Documentation Structure Architecture](documentation-structure.md)および[Repository Governance Documentation Framework](repository-governance-documentation-framework.md)が定義するDocumentation上の論理単位・Documentation Asset（文書資産）にDefinition Authority（定義権限）が成立する場合・Area Responsibility（領域責務）も再定義・上書きしない。
 
 したがって次は本文書の責務ではない。
 
 - ある定義・資産がShared Foundation Assetか、Repository-owned Assetかの判定。→ Repository Governanceの「Ownership Boundary（所有責任の境界）」による。
 - あるShared Foundation Assetが特定Repositoryで有効になる関係、およびその判断。→ Repository GovernanceのFoundation Applicationによる。
-- Documentation Asset（文書資産）にDefinition Authority（定義権限）が成立する条件。→ Documentation Structure Architectureによる。
+- Definition Authority（定義権限）の意味と成立根拠。→ Repository Governanceによる。
+- Documentation Asset（文書資産）にDefinition Authority（定義権限）が成立する場合。→ Documentation Structure Architectureによる。
 - Convention（規約）の内部構造およびNormative Rule（規範的規則）の意味。→ [Convention Architecture](convention.md)による。
 
 本文書が定義するのは、これらによってすでに成立しているDefinition（定義）とその適用結果を、AI Consumer（AI利用主体）が利用する際の責務体系のみである。
@@ -109,7 +110,7 @@ AI Consumer（AI利用主体）は、Foundation Applicationに対するDecision 
 
 Foundation Definition（基盤定義）は、Shared Foundation Assetとして成立しているDefinition（定義）のうち、AI Integration（AI連携）が解決・参照の対象とするものである。本文書がAI Integration（AI連携）のModelを成立させるために定義するConcept（概念）であり、[Repository Governance](repository-governance.md)が定義するConcept（概念）ではない。
 
-Shared Foundation Assetとしての成立、そのOwnership（所有責任）、およびそれが特定Repositoryで有効になる関係は、いずれも[Repository Governance](repository-governance.md)が定める。Definition Authority（定義権限）の成立条件は[Documentation Structure Architecture](documentation-structure.md)が定める。本文書はいずれも再定義せず、Foundation Definition（基盤定義）についてOwnership（所有責任）に関するModelを新たに導入しない。
+Shared Foundation Assetとしての成立、そのOwnership（所有責任）、およびそれが特定Repositoryで有効になる関係は、いずれも[Repository Governance](repository-governance.md)が定める。Definition Authority（定義権限）の意味と成立根拠は[Repository Governance](repository-governance.md)が定める。本文書はいずれも再定義せず、Foundation Definition（基盤定義）についてOwnership（所有責任）に関するModelを新たに導入しない。
 
 Repository-owned Assetは、Foundation Definition（基盤定義）に含まれない。本文書は、AI Integration（AI連携）におけるRepository-owned Assetの扱いを定義しない。
 
@@ -169,7 +170,7 @@ Task Relevance（タスク関連性）はEffective Foundation State（有効基�
 | Rule Applicability | 各Normative Rule（規範的規則）。その意味は[Convention Architecture](convention.md) |
 | Ownership（所有責任） | [Repository Governance](repository-governance.md) |
 | Repository-specific State（Repository固有状態） | 当該Consumer Repository（利用Repository） |
-| Definition Authority（定義権限）の成立条件 | [Documentation Structure Architecture](documentation-structure.md) |
+| Definition Authority（定義権限）の意味と成立根拠 | [Repository Governance](repository-governance.md) |
 
 Foundation Definition（基盤定義）は本文書が定義するConcept（概念）であり、上表には含まれない。Foundation Definition（基盤定義）がShared Foundation Assetとして成立する条件は[Repository Governance](repository-governance.md)の責務に属する。
 
@@ -363,7 +364,7 @@ Definition Authority over the resolved Foundation Definition
 本境界が定めるのは、Resolution（解決）・Reference（参照）という役割と、その対象であるFoundation Definition（基盤定義）のDefinition Authority（定義権限）との関係のみである。次は本境界が定めるものではない。
 
 - AI Integration Resource（AI連携資源）が、別のSubjectについてDefinition Responsibility（定義責務）を担うこと。本境界は、その可能性を否定しない。
-- あるDocumentation Asset（文書資産）にDefinition Authority（定義権限）が成立する条件。Definition Authority（定義権限）はAsset Type（資産種別）ではなく、そのAssetが担うDefinition Responsibility（定義責務）によって成立する。その成立条件は[Documentation Structure Architecture](documentation-structure.md)が定める。本文書はこれを再定義しない。
+- ある資産にDefinition Authority（定義権限）が成立する条件。Definition Authority（定義権限）はAsset Type（資産種別）ではなく、その資産が担う、定義内容を正式に確定・保持する責務によって成立する。その意味と成立根拠は[Repository Governance](repository-governance.md)が、Documentation Asset（文書資産）に成立する場合は[Documentation Structure Architecture](documentation-structure.md)が定める。本文書はこれを再定義しない。
 
 ## Independence（非依存）
 

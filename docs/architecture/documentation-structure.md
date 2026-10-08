@@ -24,6 +24,7 @@
 
 - あるDocumentation Asset（文書資産）がShared Foundation Assetか、Repository-owned Assetかの判定。→ Repository Governanceの「Ownership Boundary（所有責任の境界）」による。
 - Documentation Asset（文書資産）が特定Repositoryで有効になる関係。→ Repository GovernanceのFoundation Applicationによる。
+- Definition Authority（定義権限）の一般的な意味と成立根拠。→ Repository Governanceの「Definition Authority（定義権限）」による。
 
 本文書は、Documentationが**どのような論理単位と責務の分担として構成されるか**のみを定義する。
 
@@ -41,8 +42,9 @@ Design Dependency（設計依存）は**Repository Governance → 本文書 →�
 
 - Documentation Structure（文書構造）がResponsibility（責務）に基づくLogical Structure（論理構造）として成立すること
 - Documentation Asset（文書資産）とDocument Responsibility（文書責務）の定義
+- Documentation Asset（文書資産）として成立するか否かの境界
 - Repository Documentation（Repository文書）とDocumentation Asset（文書資産）の包含関係
-- Definition Authority（定義権限）が成立する条件
+- Documentation Asset（文書資産）にDefinition Authority（定義権限）が成立する場合
 - Documentation Area（文書責務領域）とArea Responsibility（領域責務）の定義
 - Documentation Framework（文書体系）とFramework Responsibility（体系責務）の定義
 - Areaへ所属するAssetについての責務粒度の関係
@@ -54,6 +56,8 @@ Design Dependency（設計依存）は**Repository Governance → 本文書 →�
 
 ### Out of Scope（本文書が定義しない範囲）
 
+- Definition Authority（定義権限）の一般的な意味と成立根拠
+- Documentation Asset（文書資産）として成立しない資産の分類体系
 - 具体的なDocumentation Framework（文書体系）と、それを構成するAreaの一覧
 - Path、Directory名、File名、およびそれらのNaming Rule（命名規則）
 - Logical Structure（論理構造）とPhysical Structure（物理構造）のMapping Rule（対応規則）
@@ -117,6 +121,22 @@ Documentation Asset（文書資産）のIdentity（同一性）を、何個のFi
 
 本文書は、Asset Identityの**完全な成立条件を定義しない** 。定めるのは、Document Responsibility（文書責務）が意味上の基礎であることと、Physical Location（物理配置）からIdentity（同一性）を導出しないことである。
 
+Documentation Asset（文書資産）は、対象の意味・根拠・記録、および理解や探索に必要な情報を、文書として保持・提供する責務を担う資産として成立する。
+
+具体値・具体宣言を正式に保持する責務だけからは、Documentation Asset（文書資産）としての成立は導かれない。そのような資産は、[Repository Governance](repository-governance.md)が定めるとおり、当該具体値・具体宣言についてDefinition Authority（定義権限）を持ち得るが、そのことによってDocumentation Asset（文書資産）となるものではない。
+
+一方、次はいずれもDocumentation Asset（文書資産）の一律の必要条件ではない。
+
+- 説明文であること
+- 自然言語を主体とすること
+- 規範的な意味を持つこと
+
+Documentation Asset（文書資産）が具体値を含むことも妨げない。
+
+Documentation Asset（文書資産）であるか否かを、File形式・表現形式・Physical Location（物理配置）・Heading（見出し）の有無から導出しない。
+
+本文書は、Documentation Asset（文書資産）として成立しない資産の分類体系を定義しない。
+
 Repository Documentation（Repository文書）として成立する対象は、Documentation Asset（文書資産）である。
 
 ```text
@@ -137,18 +157,20 @@ Document Responsibility（文書責務）は、Definition（定義）を保持�
 
 ### Definition Authority（定義権限）
 
-Definition Authority（定義権限）は、あるConcept（概念）・Rule・Contract等について、**その内容を最終的に定義する責務を持つのはどのAssetか**を確定させるものである。
+Definition Authority（定義権限）の意味と成立根拠は、[Repository Governance](repository-governance.md)が定める。Definition Authority（定義権限）は、特定の定義内容を正式に確定・保持する責務を担う資産に成立し、Documentation Asset（文書資産）に限定されない。本文書はこれを再定義せず、Documentation Asset（文書資産）にDefinition Authority（定義権限）が成立する場合を、その適用として示す。
 
 Definition Authority（定義権限）は、Documentation Asset（文書資産）一般が当然に持つものではない。
 
 ```text
-Definition Authority
-= Definitionを担うDocument Responsibilityの場合に成立する責務
+Documentation AssetのDefinition Authority
+= Definitionを正式に確定・保持するDocument Responsibilityの場合に成立する
 ```
 
-すなわち、Definition Authority（定義権限）が成立するのは、そのDocumentation Asset（文書資産）のDocument Responsibility（文書責務）がDefinition（定義）を保持する責務である場合に限られる。
+すなわち、Documentation Asset（文書資産）にDefinition Authority（定義権限）が成立するのは、そのDocument Responsibility（文書責務）がDefinition（定義）を正式に確定・保持する責務を含む場合に限られる。
 
-Definition（定義）を保持しないDocument Responsibility（文書責務）を担うAssetは、Definition Authority（定義権限）を持たない。
+Definition（定義）を保持しないDocument Responsibility（文書責務）を担うDocumentation Asset（文書資産）は、Definition Authority（定義権限）を持たない。記録・説明・Navigation等を担うDocumentation Asset（文書資産）が他の定義内容を参照・再掲することは、その定義内容のDefinition Authority（定義権限）を成立させない。
+
+Documentation Asset（文書資産）として成立しない資産がDefinition Authority（定義権限）を持つかどうかは、本文書のModelではなく、Repository Governanceによって定まる。
 
 ### Section（節）
 
@@ -181,7 +203,7 @@ Section Responsibility is bounded by Document Responsibility
 
 この関係は責務境界の内包を示すものであり、集合としての包含関係を定義するものではない。本文書は、Document Responsibility（文書責務）をSection Responsibilitiesの集合として定義しない。
 
-Sectionを導入したことによって、新たなDefinition AuthorityModelは成立しない。Definition Authority（定義権限）は、引き続きDocumentation Asset（文書資産）とDocument Responsibility（文書責務）に基づいて成立する。
+Sectionを導入したことによって、新たなDefinition Authority Modelは成立しない。Documentation Asset（文書資産）におけるDefinition Authority（定義権限）は、引き続きDocumentation Asset（文書資産）とDocument Responsibility（文書責務）に基づいて成立する。
 
 ### Nested Section Structure（Section入れ子構造）
 
@@ -521,8 +543,8 @@ Asset内部の構造は、Section Responsibility（Section責務）によるSema
 具体的なDocumentation Framework（文書体系）は、本文書を参照して次を前提にできる。これらを再定義する必要はない。
 
 1. Documentation Structure（文書構造）がResponsibility（責務）に基づいて成立すること。
-2. Documentation Framework（文書体系）・Documentation Area（文書責務領域）・Documentation Asset（文書資産）の意味と、それぞれの責務、およびRepository Documentation（Repository文書）がDocumentation Asset（文書資産）に包含されること。
-3. Definition Authority（定義権限）が、Definition（定義）を担うDocument Responsibility（文書責務）の場合に成立すること。
+2. Documentation Framework（文書体系）・Documentation Area（文書責務領域）・Documentation Asset（文書資産）の意味と、それぞれの責務、Documentation Asset（文書資産）として成立するか否かの境界、およびRepository Documentation（Repository文書）がDocumentation Asset（文書資産）に包含されること。
+3. Documentation Asset（文書資産）にDefinition Authority（定義権限）が成立するのは、Definition（定義）を正式に確定・保持するDocument Responsibility（文書責務）の場合であること。
 4. Areaへ所属するAssetについての、Framework Responsibility（体系責務）からDocument Responsibility（文書責務）までの粒度関係。
 5. SectionがDocumentation Asset（文書資産）内部のSemantic Unitであり、Section Responsibility（Section責務）がDocument Responsibility（文書責務）に従属すること。
 6. Document Responsibility（文書責務）からSection Responsibility（Section責務）、さらにChild Section（子Section）への任意のResponsibility Decomposition（責務分解）。

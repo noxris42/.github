@@ -21,6 +21,16 @@
 
 Foundation Application State（基盤適用状態）のConcrete Contract（具体契約）、すなわちそのDeclarationのConcrete Representation（具体表現）、Effective Foundation State（有効基盤状態）の導出方式、およびValidation ConditionについてのDefinition Authority（定義権限）は本文書が持つ。
 
+本Contract（契約）に従って宣言される具体的なDeclaration内容のDefinition Authority（定義権限）は、本文書ではなく、それを正式に保持するDeclaration資産が持つ（「Physical Location（物理配置）」を参照）。本文書は、いずれのRepositoryのCurrent State（現在状態）も宣言しない。
+
+```text
+Declarationの契約（具体表現・解決・検証条件）
+  → 本文書
+
+契約に従う具体的なDeclaration内容
+  → 当該Declarationを正式に保持する資産
+```
+
 ### Responsibility Boundary（責務境界）
 
 本文書が使用する次のConcept（概念）のDefinition Authority（定義権限）は上位設計にある。本文書はこれらを参照するのみで、再定義・上書きしない。
@@ -30,6 +40,8 @@ Foundation Application State（基盤適用状態）のConcrete Contract（具�
 - Ownership（所有責任）とFoundation Applicationの分離、およびApplication Mechanism（適用方式）を上位で固定しないこと
 - Target-specific Rule Selection（対象固有規則選択）の意味、その判断主体、Foundation Applicationとの境界、およびRule Applicabilityとの境界
 - `.github` のSelf Application
+- Definition Authority（定義権限）の意味と成立根拠
+- Documentation Asset（文書資産）として成立するか否かの境界
 - Foundation Provider（基盤提供主体）・Consumer Repository（利用Repository）・AI Consumer（AI利用主体）の間のResponsibility Relationship（責務関係）
 - Effective Foundation State（有効基盤状態）の意味、すなわちFoundation Applicationの結果として成立し、解決済みのFoundation ApplicationとTarget-specific Rule Selection（対象固有規則選択）を含み得ること、およびAI Integration（AI連携）にとって外部から与えられる入力であること
 - Effective Foundation State Access（有効基盤状態参照）、Task Relevance（タスク関連性）、およびDefinition Authority（定義権限）・Foundation Application・Task Relevance（タスク関連性）の分離
@@ -43,6 +55,8 @@ Foundation Application State（基盤適用状態）のConcrete Contract（具�
 - Effective Foundation State（有効基盤状態）のArchitecture上の意味、およびそれがTarget-specific Rule Selection（対象固有規則選択）を含み得ること。→ [AI Integration Architecture](../architecture/ai-integration.md)による。
 - あるAssetがShared Foundation Assetとして成立するか否かの判定。→ [Repository Governance](../architecture/repository-governance.md)の「Ownership Boundary（所有責任の境界）」による。
 - Foundation Application Target（基盤適用対象）の意味と、その成立の判断主体。→ [Repository Governance](../architecture/repository-governance.md)による。
+- Definition Authority（定義権限）の意味と成立根拠。→ [Repository Governance](../architecture/repository-governance.md)による。
+- Documentation Asset（文書資産）として成立するか否かの境界。→ [Documentation Structure Architecture](../architecture/documentation-structure.md)による。
 - Convention（規約）およびNormative Rule（規範的規則）の意味、ならびにRule Identity（規則同一性）の成立。→ [Convention Architecture](../architecture/convention.md)による。
 - Rule ID（規則ID）の具体形式。→ [Convention Authoring Convention](../conventions/convention-authoring.md)による。
 - 各Normative Rule（規範的規則）のApplicability、すなわちRule Applicability。→ 当該Normative Rule（規範的規則）のApplicability Scope（適用範囲）とRule Statement（規則文）による。Applicabilityがそこから定まることは[Convention Architecture](../architecture/convention.md)による。
@@ -138,6 +152,8 @@ Shared Application Default
 ```
 
 AI Integration（AI連携）およびAI Consumer（AI利用主体）は、いずれの内容の所有主体でもない。
+
+上表の所有主体は、各Declaration内容を判断する主体である。判断された内容を正式に保持する資産は「Physical Location（物理配置）」が定める。資産が内容を正式に保持することは、所有主体の判断権限をその資産へ移すものではない。
 
 ## Repository-level Foundation Application（Repositoryレベルの基盤適用）
 
@@ -431,7 +447,14 @@ Repository root
 | `application-defaults.yaml` | Provider Declaration（提供側宣言）：Shared Application Default（共有適用既定） | Foundation Provider（基盤提供主体） |
 | `application.yaml` | Consumer Declaration（利用側宣言）：当該RepositoryのFoundation Application State（基盤適用状態） | Consumer Repository（利用Repository） |
 
-Provider Declaration（提供側宣言）を保持する資産、およびConsumer Declaration（利用側宣言）を保持する資産は、それぞれDocumentation Asset（文書資産）である。各資産のDocument Responsibility（文書責務）は、当該Declarationを保持・提供することである。
+各資産の責務は次である。
+
+- `application-defaults.yaml`：Provider Declaration（提供側宣言）として、Current Foundation Application Target Set（現在の基盤適用対象集合）とShared Application Default（共有適用既定）を正式に保持する。
+- `application.yaml`：Consumer Declaration（利用側宣言）として、当該RepositoryのBaseline Adoption（基準採用）、Repository-level Application Difference（Repositoryレベル適用差分）、およびTarget-specific Rule Selection（対象固有規則選択）を正式に保持する。
+
+各資産は、[Repository Governance](../architecture/repository-governance.md)が定めるとおり、自身が正式に保持するDeclaration内容についてDefinition Authority（定義権限）を持つ。このDefinition Authority（定義権限）は、本文書が定めるConcrete Contract（具体契約）には及ばない。また、「Authority Allocation（権限の配分）」が定める所有主体の判断権限を資産へ移すものではない。
+
+各資産の責務は具体宣言を正式に保持することであり、それだけからはDocumentation Asset（文書資産）としての成立は導かれない（[Documentation Structure Architecture](../architecture/documentation-structure.md)を参照）。したがって、いずれの資産もDocumentation Asset（文書資産）として扱わず、[Repository Governance Documentation Framework](../architecture/repository-governance-documentation-framework.md)にも属さない。本文書は、これらの資産について新たな資産分類を導入しない。
 
 `.foundation/` は、Foundation Applicationに関するConcrete Declaration（具体宣言）を収めるPhysical Container（物理的入れ物）である。本文書は `.foundation/` に対して、Documentation Area（文書責務領域）、Architecture上のResponsibility（責務）・Area、その他のSemantic Responsibility（意味上の責務）を成立させない。
 

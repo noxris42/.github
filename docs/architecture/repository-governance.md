@@ -10,6 +10,8 @@
 2. Shared Development Foundationに**何を含めてよいのか（Shared Scope）**。
 3. 共有された定義・資産が、どのようにして特定Repositoryで**有効になるのか（Foundation Application）**。
 
+また本文書は、これらの判断によって決定された内容を正式に保持する資産を特定するために、**Definition Authority（定義権限）** の意味を、本Modelと後続設計に必要な範囲で定義する。
+
 本文書は上位Architectureとして自己完結する。後続設計（具体的なConvention（規約）体系、Application Mechanism（適用方式）、Metadata Schema等）の存在や内容を前提としない。
 
 ## Scope（対象範囲）
@@ -24,6 +26,7 @@
 - Target-specific Rule Selection（対象固有規則選択）の意味と、その判断主体
 - Foundation Application・Target-specific Rule Selection（対象固有規則選択）・Rule Applicabilityの区別
 - 共有基盤へ含めるか否かの判断原則（Shared Scope Principles）
+- Definition Authority（定義権限）の意味と成立根拠、および契約・規則・意味モデルの定義と、それらに従う具体宣言・個別値の定義との分離
 - `.github` 自身への適用（Self Application）
 
 ### Out of Scope（本文書が定義しない範囲）
@@ -69,6 +72,36 @@ Repository-owned Assetについて、そのAssetが扱うRepository固有の内�
 Foundation Application Target（基盤適用対象）として成立しているShared Foundation Assetを、特定Repositoryにおいて利用可能・有効な状態にする **関係** 。
 
 Foundation Applicationは関係そのものであり、Application Mechanism（適用方式）としての実現手段とは区別される。
+
+### Definition Authority（定義権限）
+
+Definition Authority（定義権限）は、ある定義内容について、**その内容を正式に確定・保持する責務がどの資産にあるか** を示す。
+
+Definition Authority（定義権限）は、特定の定義内容を正式に確定・保持する責務を担う資産に成立する。Documentation Asset（文書資産）であることは、その成立の必要条件ではない。Asset Type（資産種別）・表現形式・Physical Location（物理配置）からは導出しない。
+
+定義内容を参照・複製・導出するだけの資産は、その定義内容のDefinition Authority（定義権限）を持たない。
+
+Definition Authority（定義権限）は、内容を判断・決定する主体と区別される。Ownership（所有責任）や判断主体が示すのは、内容を誰が決定するかである。Definition Authority（定義権限）が示すのは、決定された内容をどの資産が正式に保持するかである。資産がDefinition Authority（定義権限）を持つことは、判断主体の権限をその資産へ移すものではない。
+
+```text
+判断主体
+  decides
+定義内容
+  is formally held by
+Definition Authorityを持つ資産
+```
+
+Definition Authority（定義権限）は、定義内容ごとに成立する。契約・規則・意味モデルを定義する資産のDefinition Authority（定義権限）は、それらに従う具体宣言・個別値の内容には及ばない。具体宣言・個別値を正式に保持する資産のDefinition Authority（定義権限）は、それが従う契約・規則・意味モデルには及ばない。
+
+```text
+契約・規則・意味モデル
+  → それを定義する資産
+
+それらに従う具体宣言・個別値
+  → それを正式に保持する資産
+```
+
+本文書がDefinition Authority（定義権限）について定めるのは上記に限られる。一般化された権威体系は導入しない（「Non-goals」を参照）。
 
 ### Concept Relationships（Concept間の関係）
 
@@ -272,6 +305,8 @@ Rule Applicability
   → 各Normative Rule
 ```
 
+Foundation ApplicationおよびTarget-specific Rule Selection（対象固有規則選択）について上図が示すのは判断主体である。判断の結果を正式に保持する資産と、そのDefinition Authority（定義権限）は、「Definition Authority（定義権限）」に従って後続設計で定まる。
+
 したがって次が成立する。
 
 - 適用先Repositoryは、自身へ適用されたConvention（規約）について、Target-specific Rule Selection（対象固有規則選択）を持ち得る。その判断主体は、Foundation Applicationと同じく適用先Repositoryである。
@@ -403,7 +438,7 @@ ArchitectureやConvention（規約）を、個々のAssetのOwnership（所有�
 
 - Formal Asset / Formal Authority / Authority Domain 等のGeneric Authority Model
 
-本文書はOwnership（所有責任）とApplication（適用）の関係のみを定義し、一般化された権威体系を導入しない。
+本文書はOwnership（所有責任）とApplication（適用）の関係、および本Modelと後続設計に必要な範囲のDefinition Authority（定義権限）のみを定義し、一般化された権威体系を導入しない。Definition Authority（定義権限）の定義は、Authority Domain、権威の階層・優先順位、および資産の分類体系を導入するものではない。
 
 ### Concrete Assets（具体資産に関する事項）
 
@@ -419,5 +454,7 @@ ArchitectureやConvention（規約）を、個々のAssetのOwnership（所有�
 2. Shared Development Foundationへ含めてよいか。→ 「Shared Scope Principles」による。
 
 3. 適用に関する設計をどこで行うか。→ Foundation Applicationの具体方式は、各Asset単位の後続設計で決定する。
+
+4. ある定義内容のDefinition Authority（定義権限）がどの資産にあるか。→ 「Definition Authority（定義権限）」による。
 
 本文書からは判断できないのは、個々のAsset Type（資産種別）の内容そのものと、その適用手順である。これらは後続設計の責務に属する。

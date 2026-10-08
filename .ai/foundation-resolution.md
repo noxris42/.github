@@ -4,7 +4,7 @@ Current TaskにRelevantなAuthoritative Foundation Sourceを選択するため�
 
 ## Repository Governance
 
-Repository間のOwnership Boundaryと、Shared Development Foundationを各Repositoryへ適用する関係。
+Repository間のOwnership Boundaryと、Shared Development Foundationを各Repositoryへ適用する関係。Definition Authorityの意味と成立根拠。
 
 `docs/architecture/repository-governance.md`
 
@@ -16,7 +16,7 @@ Repository間のOwnership Boundaryと、Shared Development Foundationを各Repos
 
 ## Documentation Structure Architecture
 
-Documentation Structureが何によって成立するか。Section・Section Responsibility・Definition Authorityの成立条件。
+Documentation Structureが何によって成立するか。Documentation Assetとして成立するか否かの境界。Section・Section Responsibilityの成立条件と、Documentation AssetにDefinition Authorityが成立する場合。
 
 `docs/architecture/documentation-structure.md`
 
