@@ -279,9 +279,9 @@ Physical Name  ✕→ Responsibility Definition
 
 ### Name Stability（名称の安定性）
 
-#### NAM-SF-005 — Stable Name Selection（安定した名称の選択）
+#### NAM-SF-004 — Stable Name Selection（安定した名称の選択）
 
-**Rule ID:** `NAM-SF-005`
+**Rule ID:** `NAM-SF-004`
 
 **Rule Name:** Stable Name Selection
 
@@ -295,11 +295,11 @@ Physical Name  ✕→ Responsibility Definition
 
 **Reason:** Physical Name（物理名称）は、Path・Link・履歴・外部参照を通じて選択の時点よりも長く使われ続ける。選択の根拠が短期間で変化する特徴であれば、名称は早期に対象を正しく識別しなくなり、その時点で名称変更か、実態と合わない名称の放置かのいずれかを強いる。安定した特徴を根拠として選ぶことで、その必要が初回のNamingの時点から生じにくくなる。
 
-**Note:** 本Ruleは名称を選択する際の根拠を扱う。既存名称を変更してよいかは `NAM-SF-006` が扱う。
+**Note:** 本Ruleは名称を選択する際の根拠を扱う。既存名称を変更してよいかは `NAM-SF-005` が扱う。
 
-#### NAM-SF-006 — Existing Name Stability（既存名称の安定性）
+#### NAM-SF-005 — Existing Name Stability（既存名称の安定性）
 
-**Rule ID:** `NAM-SF-006`
+**Rule ID:** `NAM-SF-005`
 
 **Rule Name:** Existing Name Stability
 
@@ -315,9 +315,9 @@ Physical Name  ✕→ Responsibility Definition
 
 **Note:** Name StabilityはImmutable Namingではない。名称が現在の対象を十分に識別できない場合、または対象を誤認させる場合は、識別精度を改善するRenameが妥当になり得る。本Ruleが抑止するのは、識別上の理由を持たない変更である。
 
-#### NAM-SF-007 — Temporary State Naming（一時的な作業状態の命名）
+#### NAM-SF-006 — Temporary State Naming（一時的な作業状態の命名）
 
-**Rule ID:** `NAM-SF-007`
+**Rule ID:** `NAM-SF-006`
 
 **Rule Name:** Temporary State Naming
 
