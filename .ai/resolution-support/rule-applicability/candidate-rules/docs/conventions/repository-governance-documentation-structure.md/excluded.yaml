@@ -1,0 +1,5 @@
+conventions:
+  docs/conventions/canonical-primary-language-support.md:
+    - CPL-SF-003
+  docs/conventions/writing.md:
+    - WRT-SF-009

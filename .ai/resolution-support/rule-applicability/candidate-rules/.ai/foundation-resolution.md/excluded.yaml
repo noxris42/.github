@@ -1,0 +1,67 @@
+conventions:
+  docs/conventions/canonical-primary-language-support.md:
+    - CPL-SF-003
+  docs/conventions/convention-authoring.md:
+    - CVA-SF-001
+    - CVA-SF-002
+    - CVA-SF-003
+    - CVA-SF-004
+    - CVA-SF-005
+    - CVA-SF-006
+    - CVA-SF-007
+    - CVA-SF-008
+    - CVA-SF-009
+    - CVA-SF-010
+    - CVA-SF-011
+    - CVA-SF-012
+    - CVA-SF-013
+    - CVA-SF-014
+    - CVA-SF-015
+    - CVA-SF-016
+    - CVA-SF-017
+    - CVA-SF-018
+    - CVA-SF-019
+    - CVA-SF-020
+    - CVA-SF-021
+    - CVA-SF-022
+    - CVA-SF-023
+  docs/conventions/documentation-structure.md:
+    - DST-SF-001
+    - DST-SF-002
+    - DST-SF-003
+    - DST-SF-004
+    - DST-SF-005
+    - DST-SF-006
+    - DST-SF-007
+    - DST-SF-008
+    - DST-SF-011
+    - DST-SF-012
+    - DST-SF-013
+    - DST-SF-014
+    - DST-SF-015
+    - DST-SF-016
+    - DST-SF-017
+    - DST-SF-018
+    - DST-SF-019
+    - DST-SF-020
+    - DST-SF-021
+    - DST-SF-022
+  docs/conventions/markdown.md:
+    - MDK-SF-002
+  docs/conventions/repository-governance-documentation-structure.md:
+    - RDS-SF-001
+    - RDS-SF-002
+    - RDS-SF-003
+    - RDS-SF-004
+    - RDS-SF-005
+    - RDS-SF-006
+    - RDS-SF-007
+    - RDS-SF-008
+    - RDS-SF-009
+  docs/conventions/writing.md:
+    - WRT-SF-001
+    - WRT-SF-002
+    - WRT-SF-005
+    - WRT-SF-006
+    - WRT-SF-008
+    - WRT-SF-009

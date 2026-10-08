@@ -1,0 +1,5 @@
+inputs:
+  - .ai/resolution-support/rule-applicability/rule-catalog/rules.yaml
+  - .foundation/application-defaults.yaml
+  - .foundation/application.yaml
+  - docs/specifications/foundation-application-state.md

@@ -1,0 +1,15 @@
+inputs:
+  - .ai/foundation-resolution.md
+  - .ai/resolution-support/rule-applicability/target-selection/.ai/foundation-resolution.md/rules.yaml
+  - docs/architecture/convention.md
+  - docs/architecture/documentation-structure.md
+  - docs/architecture/repository-governance-documentation-framework.md
+  - docs/conventions/canonical-primary-language-support.md
+  - docs/conventions/commit.md
+  - docs/conventions/convention-authoring.md
+  - docs/conventions/documentation-structure.md
+  - docs/conventions/markdown.md
+  - docs/conventions/naming.md
+  - docs/conventions/repository-governance-documentation-structure.md
+  - docs/conventions/writing.md
+  - docs/specifications/ai-context-resolution.md

@@ -1,0 +1,4 @@
+inputs:
+  - .ai/resolution-support/rule-applicability/effective-rules/rules.yaml
+  - .foundation/application.yaml
+  - docs/specifications/foundation-application-state.md

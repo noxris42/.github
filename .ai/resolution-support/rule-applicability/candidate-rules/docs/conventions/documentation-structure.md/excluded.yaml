@@ -1,0 +1,9 @@
+conventions:
+  docs/conventions/canonical-primary-language-support.md:
+    - CPL-SF-003
+  docs/conventions/repository-governance-documentation-structure.md:
+    - RDS-SF-002
+    - RDS-SF-003
+    - RDS-SF-004
+  docs/conventions/writing.md:
+    - WRT-SF-009
