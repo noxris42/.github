@@ -11,3 +11,4 @@ inputs:
   - docs/conventions/repository-governance-documentation-structure.md
   - docs/conventions/writing.md
   - docs/specifications/foundation-application-state.md
+  - docs/specifications/rule-applicability-resolution-support.md

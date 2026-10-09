@@ -13,3 +13,4 @@ inputs:
   - docs/conventions/repository-governance-documentation-structure.md
   - docs/conventions/writing.md
   - docs/specifications/ai-context-resolution.md
+  - docs/specifications/rule-applicability-resolution-support.md

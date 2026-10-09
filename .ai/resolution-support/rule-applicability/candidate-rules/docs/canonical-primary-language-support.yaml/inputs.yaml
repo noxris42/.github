@@ -12,3 +12,4 @@ inputs:
   - docs/conventions/naming.md
   - docs/conventions/repository-governance-documentation-structure.md
   - docs/conventions/writing.md
+  - docs/specifications/rule-applicability-resolution-support.md

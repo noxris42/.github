@@ -12,3 +12,4 @@ inputs:
   - docs/conventions/writing.md
   - docs/specifications/cross-agent-entry.md
   - docs/specifications/foundation-application-state.md
+  - docs/specifications/rule-applicability-resolution-support.md

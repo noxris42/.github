@@ -3,3 +3,4 @@ inputs:
   - .foundation/application-defaults.yaml
   - .foundation/application.yaml
   - docs/specifications/foundation-application-state.md
+  - docs/specifications/rule-applicability-resolution-support.md
